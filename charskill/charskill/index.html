@@ -22,7 +22,7 @@
 
     <script src="../../h5web.js"></script>
 
- 
+
 
     <script src="jsbin/modules/SkillSceneChar.js"></script>
     <script src="jsbin/modules/SkillMouseEventModel.js"></script>
@@ -31,55 +31,46 @@
     <script src="jsbin/modules/TpModuleList.js"></script>
     <script src="jsbin/TpGame.js"></script>
 
-    SkillSceneChar
 
 
     <script>
-        
+
 
 
         var game;
         var hasInit = false;
         function init() {
-   
-
-            Scene_data.fileRoot =   " http://"+ document.domain+"/arpg/res/";
+            Scene_data.fileRoot = " http://" + document.domain + "/arpg/res/";
 
             hasInit = true;
- 
             Engine.init(document.getElementById('ArpgStageCanvas'));
             Scene_data.user = 0;
             FpsStage.getInstance().init(document.getElementById('FpsTipsCanvas'), document.getElementById('LoadCanvas'));
-
             game = new TpGame();
             game.init();
-
             resetSize();
             addEvents();
-    
-
             window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-            if (requestAnimationFrame ) {
+            if (requestAnimationFrame) {
                 requestAnimationFrame(step);
             }
             setInterval("update()", 1000);//特别加一次系统时间的UPdata
-
-            document.addEventListener('visibilitychange', function() { 
+            document.addEventListener('visibilitychange', function () {
                 //alert(document.visibilityState);
             });
         }
         function step(timestamp) {
             update()
             requestAnimationFrame(step);
+            //window.setTimeout(nextFun, 1000 / 60)
         }
-        function nextFun()
-        {
+        function nextFun() {
         }
         function addEvents() {
             UIManager.getInstance().regEvent(null);
         }
         function resetSize() {
-            if(hasInit){
+            if (hasInit) {
                 Engine.resetSize();
                 FpsStage.getInstance().resetSize();
             }
@@ -87,9 +78,12 @@
         function update() {
             Engine.update();
         }
-  
-
-
+        function unload() {
+            Engine.unload();
+        }
+        window.onbeforeunload = function (e) {
+            Engine.unload();
+        }
 
 
     </script>
