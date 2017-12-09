@@ -1,0 +1,12 @@
+F:\slefSvn\trunk\h5ts\cartoonshader\cartoonscene\cartoonscene\bin\cartoonscene.dll.config
+F:\slefSvn\trunk\h5ts\cartoonshader\cartoonscene\cartoonscene\bin\cartoonscene.dll
+F:\slefSvn\trunk\h5ts\cartoonshader\cartoonscene\cartoonscene\bin\cartoonscene.pdb
+F:\slefSvn\trunk\h5ts\cartoonshader\cartoonscene\cartoonscene\obj\Debug\cartoonscene.dll
+F:\slefSvn\trunk\h5ts\cartoonshader\cartoonscene\cartoonscene\obj\Debug\cartoonscene.pdb
+F:\slefSvn\trunk\h5ts\ziph5\cartoonscene\cartoonscene\bin\cartoonscene.dll.config
+F:\slefSvn\trunk\h5ts\ziph5\cartoonscene\cartoonscene\bin\cartoonscene.dll
+F:\slefSvn\trunk\h5ts\ziph5\cartoonscene\cartoonscene\bin\cartoonscene.pdb
+F:\slefSvn\trunk\h5ts\ziph5\cartoonscene\cartoonscene\obj\Debug\cartoonscene.csproj.CoreCompileInputs.cache
+F:\slefSvn\trunk\h5ts\ziph5\cartoonscene\cartoonscene\obj\Debug\cartoonscene.dll
+F:\slefSvn\trunk\h5ts\ziph5\cartoonscene\cartoonscene\obj\Debug\cartoonscene.pdb
+F:\slefSvn\trunk\h5ts\ziph5\cartoonscene\cartoonscene\obj\Debug\cartoonscene.csprojResolveAssemblyReference.cache

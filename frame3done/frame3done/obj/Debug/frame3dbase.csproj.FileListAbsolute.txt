@@ -1,0 +1,5 @@
+F:\slefSvn\trunk\h5ts\fram3d\frame3dbase\frame3dbase\bin\frame3dbase.dll.config
+F:\slefSvn\trunk\h5ts\fram3d\frame3dbase\frame3dbase\bin\frame3dbase.dll
+F:\slefSvn\trunk\h5ts\fram3d\frame3dbase\frame3dbase\bin\frame3dbase.pdb
+F:\slefSvn\trunk\h5ts\fram3d\frame3dbase\frame3dbase\obj\Debug\frame3dbase.dll
+F:\slefSvn\trunk\h5ts\fram3d\frame3dbase\frame3dbase\obj\Debug\frame3dbase.pdb

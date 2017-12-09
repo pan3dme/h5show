@@ -1,0 +1,6 @@
+F:\slefSvn\trunk\h5ts\cartoonshader\cartoonbase\cartoonbase\bin\cartoonbase.dll.config
+F:\slefSvn\trunk\h5ts\cartoonshader\cartoonbase\cartoonbase\bin\cartoonbase.dll
+F:\slefSvn\trunk\h5ts\cartoonshader\cartoonbase\cartoonbase\bin\cartoonbase.pdb
+F:\slefSvn\trunk\h5ts\cartoonshader\cartoonbase\cartoonbase\obj\Debug\cartoonbase.dll
+F:\slefSvn\trunk\h5ts\cartoonshader\cartoonbase\cartoonbase\obj\Debug\cartoonbase.pdb
+F:\slefSvn\trunk\h5ts\cartoonshader\cartoonbase\cartoonbase\obj\Debug\cartoonbase.csprojResolveAssemblyReference.cache

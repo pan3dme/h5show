@@ -1,0 +1,12 @@
+F:\slefSvn\trunk\h5ts\fram3d\frame3donedts\frame3donedts\bin\frame3donedts.dll.config
+F:\slefSvn\trunk\h5ts\fram3d\frame3donedts\frame3donedts\bin\frame3donedts.dll
+F:\slefSvn\trunk\h5ts\fram3d\frame3donedts\frame3donedts\bin\frame3donedts.pdb
+F:\slefSvn\trunk\h5ts\fram3d\frame3donedts\frame3donedts\obj\Debug\frame3donedts.csproj.CoreCompileInputs.cache
+F:\slefSvn\trunk\h5ts\fram3d\frame3donedts\frame3donedts\obj\Debug\frame3donedts.dll
+F:\slefSvn\trunk\h5ts\fram3d\frame3donedts\frame3donedts\obj\Debug\frame3donedts.pdb
+F:\slefSvn\trunk\h5ts\ziph5\frame3donedts\frame3donedts\bin\frame3donedts.dll.config
+F:\slefSvn\trunk\h5ts\ziph5\frame3donedts\frame3donedts\bin\frame3donedts.dll
+F:\slefSvn\trunk\h5ts\ziph5\frame3donedts\frame3donedts\bin\frame3donedts.pdb
+F:\slefSvn\trunk\h5ts\ziph5\frame3donedts\frame3donedts\obj\Debug\frame3donedts.csproj.CoreCompileInputs.cache
+F:\slefSvn\trunk\h5ts\ziph5\frame3donedts\frame3donedts\obj\Debug\frame3donedts.dll
+F:\slefSvn\trunk\h5ts\ziph5\frame3donedts\frame3donedts\obj\Debug\frame3donedts.pdb

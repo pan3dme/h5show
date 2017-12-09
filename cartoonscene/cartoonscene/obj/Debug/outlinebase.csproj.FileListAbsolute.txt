@@ -1,0 +1,6 @@
+F:\slefSvn\trunk\h5ts\outline\outlinebase\outlinebase\bin\outlinebase.dll.config
+F:\slefSvn\trunk\h5ts\outline\outlinebase\outlinebase\bin\outlinebase.dll
+F:\slefSvn\trunk\h5ts\outline\outlinebase\outlinebase\bin\outlinebase.pdb
+F:\slefSvn\trunk\h5ts\outline\outlinebase\outlinebase\obj\Debug\outlinebase.dll
+F:\slefSvn\trunk\h5ts\outline\outlinebase\outlinebase\obj\Debug\outlinebase.pdb
+F:\slefSvn\trunk\h5ts\outline\outlinebase\outlinebase\obj\Debug\outlinebase.csprojResolveAssemblyReference.cache

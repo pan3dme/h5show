@@ -1,0 +1,12 @@
+F:\slefSvn\trunk\h5ts\arpg\shadowexp\shadowexp\bin\shadowexp.dll.config
+F:\slefSvn\trunk\h5ts\arpg\shadowexp\shadowexp\bin\shadowexp.dll
+F:\slefSvn\trunk\h5ts\arpg\shadowexp\shadowexp\bin\shadowexp.pdb
+F:\slefSvn\trunk\h5ts\arpg\shadowexp\shadowexp\obj\Debug\shadowexp.dll
+F:\slefSvn\trunk\h5ts\arpg\shadowexp\shadowexp\obj\Debug\shadowexp.pdb
+F:\slefSvn\trunk\h5ts\ziph5\shadowexp\shadowexp\bin\shadowexp.dll.config
+F:\slefSvn\trunk\h5ts\ziph5\shadowexp\shadowexp\bin\shadowexp.dll
+F:\slefSvn\trunk\h5ts\ziph5\shadowexp\shadowexp\bin\shadowexp.pdb
+F:\slefSvn\trunk\h5ts\ziph5\shadowexp\shadowexp\obj\Debug\shadowexp.csproj.CoreCompileInputs.cache
+F:\slefSvn\trunk\h5ts\ziph5\shadowexp\shadowexp\obj\Debug\shadowexp.dll
+F:\slefSvn\trunk\h5ts\ziph5\shadowexp\shadowexp\obj\Debug\shadowexp.pdb
+F:\slefSvn\trunk\h5ts\ziph5\shadowexp\shadowexp\obj\Debug\shadowexp.csprojResolveAssemblyReference.cache

@@ -1,0 +1,12 @@
+F:\slefSvn\trunk\h5ts\outline\outlinescene\outlinescene\bin\outlinescene.dll.config
+F:\slefSvn\trunk\h5ts\outline\outlinescene\outlinescene\bin\outlinescene.dll
+F:\slefSvn\trunk\h5ts\outline\outlinescene\outlinescene\bin\outlinescene.pdb
+F:\slefSvn\trunk\h5ts\outline\outlinescene\outlinescene\obj\Debug\outlinescene.dll
+F:\slefSvn\trunk\h5ts\outline\outlinescene\outlinescene\obj\Debug\outlinescene.pdb
+F:\slefSvn\trunk\h5ts\ziph5\outlinescene\outlinescene\bin\outlinescene.dll.config
+F:\slefSvn\trunk\h5ts\ziph5\outlinescene\outlinescene\bin\outlinescene.dll
+F:\slefSvn\trunk\h5ts\ziph5\outlinescene\outlinescene\bin\outlinescene.pdb
+F:\slefSvn\trunk\h5ts\ziph5\outlinescene\outlinescene\obj\Debug\outlinescene.csproj.CoreCompileInputs.cache
+F:\slefSvn\trunk\h5ts\ziph5\outlinescene\outlinescene\obj\Debug\outlinescene.dll
+F:\slefSvn\trunk\h5ts\ziph5\outlinescene\outlinescene\obj\Debug\outlinescene.pdb
+F:\slefSvn\trunk\h5ts\ziph5\outlinescene\outlinescene\obj\Debug\outlinescene.csprojResolveAssemblyReference.cache
