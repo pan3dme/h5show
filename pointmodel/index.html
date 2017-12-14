@@ -39,8 +39,8 @@
             var $point = new Array();
             var $color = new Array();
             for (var i = 0; i < 6000; i++) {
-                $point.push(random(100) - 50, random(100) - 50, random(100) - 50);
-                $color.push(Math.random(), Math.random(), Math.random(), Math.random());
+                $point.push(random(100) - 50, random(100) - 50, random(100) - 50);   //坐标点(xyz)
+                $color.push(Math.random(), Math.random(), Math.random(), Math.random());  //颜色  (rgba)
             }
             PointShowModel.setPointData($point, $color)
 
