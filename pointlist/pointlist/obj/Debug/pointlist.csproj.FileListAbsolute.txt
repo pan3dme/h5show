@@ -1,0 +1,6 @@
+F:\slefSvn\trunk\h5show\pointlist\pointlist\bin\pointlist.dll.config
+F:\slefSvn\trunk\h5show\pointlist\pointlist\bin\pointlist.dll
+F:\slefSvn\trunk\h5show\pointlist\pointlist\bin\pointlist.pdb
+F:\slefSvn\trunk\h5show\pointlist\pointlist\obj\Debug\pointlist.csproj.CoreCompileInputs.cache
+F:\slefSvn\trunk\h5show\pointlist\pointlist\obj\Debug\pointlist.dll
+F:\slefSvn\trunk\h5show\pointlist\pointlist\obj\Debug\pointlist.pdb

@@ -1,0 +1,5 @@
+F:\slefSvn\trunk\h5ts\2darpg\arpg2d\arpg2d\bin\arpg2d.dll.config
+F:\slefSvn\trunk\h5ts\2darpg\arpg2d\arpg2d\bin\arpg2d.dll
+F:\slefSvn\trunk\h5ts\2darpg\arpg2d\arpg2d\bin\arpg2d.pdb
+F:\slefSvn\trunk\h5ts\2darpg\arpg2d\arpg2d\obj\Debug\arpg2d.dll
+F:\slefSvn\trunk\h5ts\2darpg\arpg2d\arpg2d\obj\Debug\arpg2d.pdb

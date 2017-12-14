@@ -1,0 +1,5 @@
+F:\slefSvn\trunk\h5ts\arpg\modelshow\modelshow\bin\modelshow.dll.config
+F:\slefSvn\trunk\h5ts\arpg\modelshow\modelshow\bin\modelshow.dll
+F:\slefSvn\trunk\h5ts\arpg\modelshow\modelshow\bin\modelshow.pdb
+F:\slefSvn\trunk\h5ts\arpg\modelshow\modelshow\obj\Debug\modelshow.dll
+F:\slefSvn\trunk\h5ts\arpg\modelshow\modelshow\obj\Debug\modelshow.pdb

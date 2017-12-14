@@ -1,0 +1,5 @@
+F:\slefSvn\trunk\h5ts\2darpg\arpg2dastar\arpg2dastar\bin\arpg2dastar.dll.config
+F:\slefSvn\trunk\h5ts\2darpg\arpg2dastar\arpg2dastar\bin\arpg2dastar.dll
+F:\slefSvn\trunk\h5ts\2darpg\arpg2dastar\arpg2dastar\bin\arpg2dastar.pdb
+F:\slefSvn\trunk\h5ts\2darpg\arpg2dastar\arpg2dastar\obj\Debug\arpg2dastar.dll
+F:\slefSvn\trunk\h5ts\2darpg\arpg2dastar\arpg2dastar\obj\Debug\arpg2dastar.pdb

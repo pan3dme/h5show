@@ -1,0 +1,6 @@
+F:\slefSvn\trunk\h5ts\2darpg\arpg2dmap\arpg2dmap\bin\arpg2dmap.dll.config
+F:\slefSvn\trunk\h5ts\2darpg\arpg2dmap\arpg2dmap\bin\arpg2dmap.dll
+F:\slefSvn\trunk\h5ts\2darpg\arpg2dmap\arpg2dmap\bin\arpg2dmap.pdb
+F:\slefSvn\trunk\h5ts\2darpg\arpg2dmap\arpg2dmap\obj\Debug\arpg2dmap.dll
+F:\slefSvn\trunk\h5ts\2darpg\arpg2dmap\arpg2dmap\obj\Debug\arpg2dmap.pdb
+F:\slefSvn\trunk\h5ts\2darpg\arpg2dmap\arpg2dmap\obj\Debug\arpg2dmap.csprojResolveAssemblyReference.cache
