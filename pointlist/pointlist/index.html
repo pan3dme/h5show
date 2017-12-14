@@ -307,7 +307,7 @@
         function init() {
 
             PointShowModel.hasMouseEvent = true //是否有鼠标事件
-            PointShowModel.showGridline = true  //绘制网格线
+            PointShowModel.showGridline = false  //绘制网格线
             PointShowModel.init()   //初始场景
 
             setPointData();
@@ -316,7 +316,7 @@
         }
  
         function setPointData() {
-            PointShowModel.PointSize = 2; //点的大小
+            PointShowModel.PointSize = 3; //点的大小
             Scene_data.focus3D.rotationX = -45;   //镜头旋转X
             Scene_data.focus3D.rotationY = 135; //镜头旋转Y
             Scene_data.cam3D.distance = 500;    //镜头旋转距离
@@ -325,10 +325,11 @@
             var $point = new Array();
             var $color = new Array();
             for (var i = 0; i < 6000; i++) {
-                $point.push(random(100) - 50, random(100) - 50, random(100) - 50); 
-                $color.push(Math.random(), Math.random(), Math.random(), Math.random());
+                $point.push(Math.random() * 60 - 30, Math.random() * 50 - 25, Math.random() *100 - 50); 
+                $color.push(1, 0, 0,1);
             }
-            PointShowModel.setPointData($point, $color)
+            PointShowModel.setPointData($point, $color)   //$point为点坐标
+            PointShowModel.setBoxScale(60, 50, 100,[1,1,1])//长宽高  数组为颜色rgb
 
         }
      

@@ -11,12 +11,12 @@
     getVertexShaderString(): string {
         var $str: string =
             "attribute vec3 v3Position;" +
-            "attribute vec4 n3Position;" +
+            "attribute vec3 n3Position;" +
             "uniform mat4 viewMatrix3D;" +
             "uniform mat4 camMatrix3D;" +
             "uniform mat4 posMatrix3D;" +
             "uniform vec4 scalesizenum;" +
-            "varying vec4 v_colorvec;" +
+            "varying vec3 v_colorvec;" +
 
             "void main(void)" +
             "{" +
@@ -36,10 +36,10 @@
     getFragmentShaderString(): string {
         var $str: string =
             "precision mediump float;\n" +
-            "varying vec4 v_colorvec;" +
+            "varying vec3 v_colorvec;" +
             "void main(void)\n" +
             "{\n" +
-                  "gl_FragColor =v_colorvec;\n" +
+                  "gl_FragColor =vec4(v_colorvec, 1.0);\n" +
             "}"
         return $str
 
@@ -64,11 +64,9 @@ class PointListSpriter extends BaseDiplay3dSprite {
 
         for (var i: number = 0; i < 1000; i++) {
             $point.push(random(100) - 50, random(100) - 50, random(100) - 50);
-            $color.push(Math.random(), Math.random(), Math.random(), Math.random());
+            $color.push(Math.random(), Math.random(), Math.random());
 
         }
-
-
         this.setNewItemData($point, $color);
     }
     public setNewItemData($point: Array<number>, $color: Array<number> = null): void {
@@ -82,10 +80,11 @@ class PointListSpriter extends BaseDiplay3dSprite {
                 if ($point.length == $color.length) {
                     this.objData.normals.push($color[i * 3 + 0], $color[i * 3 + 1], $color[i * 3 + 2]);
                 } else {
-                    this.objData.normals.push($color[i * 3 + 0], $color[i * 3 + 1], $color[i * 3 + 2],  $color[i * 3 + 3]);
+                    var $alpha: number = $color[i * 4 + 3]
+                    this.objData.normals.push($color[i * 4 + 0] * $alpha, $color[i * 4 + 1] * $alpha, $color[i * 4 + 2] * $alpha);
                 }
             } else {
-                this.objData.normals.push(1,0, 0, 1);
+                this.objData.normals.push(1,0, 0);
             }
 
         }
@@ -105,6 +104,12 @@ class PointListSpriter extends BaseDiplay3dSprite {
     public update(): void {
         if (this.objData && this.objData.vertexBuffer ) {
             Scene_data.context3D.setProgram(this.shader.program);
+
+            Scene_data.context3D.setWriteDepth(false);
+            Scene_data.context3D.setDepthTest(false);
+            Scene_data.context3D.setBlendParticleFactors(1);
+
+
             Scene_data.context3D.setVcMatrix4fv(this.shader, "viewMatrix3D", Scene_data.viewMatrx3D.m);
             Scene_data.context3D.setVcMatrix4fv(this.shader, "camMatrix3D", Scene_data.cam3D.cameraMatrix.m);
             Scene_data.context3D.setVcMatrix4fv(this.shader, "posMatrix3D", this.posMatrix.m);
@@ -112,7 +117,7 @@ class PointListSpriter extends BaseDiplay3dSprite {
             Scene_data.context3D.setVc4fv(this.shader, "scalesizenum", [PointListSpriter.PointSize, 1, 1, 1]);
 
             Scene_data.context3D.setVa(0, 3, this.objData.vertexBuffer);
-            Scene_data.context3D.setVa(1, 4, this.objData.normalsBuffer);
+            Scene_data.context3D.setVa(1, 3, this.objData.normalsBuffer);
             Scene_data.context3D.renderContext.drawArrays(Scene_data.context3D.renderContext.POINTS, 0, this.objData.treNum)
 
     

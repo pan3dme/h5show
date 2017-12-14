@@ -21,6 +21,10 @@ var PointShowModel = (function () {
     PointShowModel.loadDataComplet = function () {
         this._pointListSpriter = new PointListSpriter();
         SceneManager.getInstance().addDisplay(this._pointListSpriter);
+        ProgrmaManager.getInstance().registe(LineDisplayShader.LineShader, new LineDisplayShader);
+        this._hitBoxSprite = new LineDisplaySprite();
+        SceneManager.getInstance().addDisplay(this._hitBoxSprite);
+        this.setBoxScale(100, 100, 100);
         SceneManager.getInstance().ready = true;
         if (this.hasMouseEvent) {
             GameMouseManager.getInstance().addMouseEvent();
@@ -29,6 +33,30 @@ var PointShowModel = (function () {
         if (this.showGridline) {
             this.addGridLineSprite();
         }
+    };
+    PointShowModel.setBoxScale = function ($x, $y, $z, $color) {
+        if ($color === void 0) { $color = null; }
+        $x /= 2;
+        $y /= 2;
+        $z /= 2;
+        this._hitBoxSprite.clear();
+        this._hitBoxSprite.baseColor = new Vector3D(1, 0, 0);
+        if ($color && $color.length >= 3) {
+            this._hitBoxSprite.baseColor = new Vector3D($color[0], $color[1], $color[2]);
+        }
+        this._hitBoxSprite.makeLineMode(new Vector3D(-$x, +$y, +$z), new Vector3D(+$x, +$y, +$z));
+        this._hitBoxSprite.makeLineMode(new Vector3D(-$x, -$y, +$z), new Vector3D(+$x, -$y, +$z));
+        this._hitBoxSprite.makeLineMode(new Vector3D(-$x, +$y, +$z), new Vector3D(-$x, -$y, +$z));
+        this._hitBoxSprite.makeLineMode(new Vector3D(+$x, +$y, +$z), new Vector3D(+$x, -$y, +$z));
+        this._hitBoxSprite.makeLineMode(new Vector3D(-$x, +$y, -$z), new Vector3D(+$x, +$y, -$z));
+        this._hitBoxSprite.makeLineMode(new Vector3D(-$x, -$y, -$z), new Vector3D(+$x, -$y, -$z));
+        this._hitBoxSprite.makeLineMode(new Vector3D(-$x, +$y, -$z), new Vector3D(-$x, -$y, -$z));
+        this._hitBoxSprite.makeLineMode(new Vector3D(+$x, +$y, -$z), new Vector3D(+$x, -$y, -$z));
+        this._hitBoxSprite.makeLineMode(new Vector3D(-$x, +$y, +$z), new Vector3D(-$x, +$y, -$z));
+        this._hitBoxSprite.makeLineMode(new Vector3D(+$x, +$y, +$z), new Vector3D(+$x, +$y, -$z));
+        this._hitBoxSprite.makeLineMode(new Vector3D(-$x, -$y, +$z), new Vector3D(-$x, -$y, -$z));
+        this._hitBoxSprite.makeLineMode(new Vector3D(+$x, -$y, +$z), new Vector3D(+$x, -$y, -$z));
+        this._hitBoxSprite.upToGpu();
     };
     PointShowModel.setPointData = function ($point, $color) {
         if ($color === void 0) { $color = null; }

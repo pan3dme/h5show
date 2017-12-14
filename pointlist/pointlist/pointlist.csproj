@@ -25,7 +25,6 @@
     <Content Include="index.html" />
     <Content Include="libs\cannon\cannon.js" />
     <Content Include="libs\patrol\astar.js" />
-    <Content Include="main.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
