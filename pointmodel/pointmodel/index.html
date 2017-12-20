@@ -24,14 +24,16 @@
             PointShowModel.showGridline = false  //绘制网格线
             PointShowModel.init()   //初始场景
 
-            setPointData();
+           // setPointData();
    
             loadTextByUrlA("3d-50-25-25.txt",(str) => {
 			
 					pointStrA=str 
 					finishEnd()
 			})
-		
+			loadTextByUrlA("3d-64-32-32.txt",(str) => {
+					//finishEnd()
+			})
   
         }
 		var  pointStrA
@@ -51,17 +53,47 @@
             var $color = new Array();
 			
 	
-		    for (var i = 0; i < configText.length; i++) {
-                var kx = i % 50-50/2
-                var ky = Math.floor(i / 50)%25 -25/2
-                var kz = (i / (50*25))%2 
-				$point.push(kx,ky,kz); 
-				$color.push(configText[i]/255, configText[i]/255, configText[i]/255,configText[i]/255);  //颜色 rgb  
-            }
 		
-		     PointShowModel.setPointData($point, $color)   //$point为点坐标
-            PointShowModel.setBoxScale(50, 25, 25,[1,1,1])//长宽高  数组为颜色rgb
+		
+	        var mixPos
+			var maxPos
+		    for (var i = 0; i < configText.length/3; i++) {
+			     var p={}
+				 p.x=Number(configText[i*3+0])
+				 p.y=Number(configText[i*3+1])
+				 p.z=Number(configText[i*3+2])
+				 if(mixPos){
+					mixPos.x=Math.min(mixPos.x,p.x)
+					mixPos.y=Math.min(mixPos.y,p.y)
+					mixPos.z=Math.min(mixPos.z,p.z)
+					maxPos.x=Math.max(maxPos.x,p.x)
+					maxPos.y=Math.max(maxPos.y,p.y)
+					maxPos.z=Math.max(maxPos.z,p.z)
+				 }else{
+					mixPos={}
+					maxPos={}
+					mixPos.x=p.x
+					mixPos.y=p.y
+					mixPos.z=p.z
+					maxPos.x=p.x
+					maxPos.y=p.y
+					maxPos.z=p.z
+				 }
+		    }
+			var scaleNum=1
+			console.log(mixPos,maxPos);		
+		   var cetentpos={}
+		   	cetentpos.x=(maxPos.x-mixPos.x)/2
+			cetentpos.y=(maxPos.y-mixPos.y)/2
+			cetentpos.z=(maxPos.z-mixPos.z)/2
+            for (var i = 0; i < configText.length/3; i++) {
+                $point.push(parseFloat(configText[i*3+0])*scaleNum-cetentpos.x,parseFloat(configText[i*3+1])*scaleNum-cetentpos.y,parseFloat(configText[i*3+2])*scaleNum-cetentpos.z); 
+                $color.push(1, 1, 0,0.5);  //颜色 rgb 
+            }
 	
+            PointShowModel.setPointData($point, $color)   //$point为点坐标
+            PointShowModel.setBoxScale(maxPos.x-mixPos.x,maxPos.y-mixPos.y,  maxPos.z-mixPos.z,[1,1,1])//长宽高  数组为颜色rgb
+		   
 		    
 		}
 		
