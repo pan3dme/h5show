@@ -24,10 +24,92 @@
             PointShowModel.showGridline = false  //绘制网格线
             PointShowModel.init()   //初始场景
 
-            setPointData();
+           // setPointData();
    
-
+            loadTextByUrlA("3d-50-25-25.txt",(str) => {
+			
+					pointStrA=str 
+					finishEnd()
+			})
+			loadTextByUrlA("3d-64-32-32.txt",(str) => {
+					//finishEnd()
+			})
+  
         }
+		var  pointStrA
+		 
+		function finishEnd()
+		{
+		
+		   var configText = pointStrA.split("\n");
+
+		    PointShowModel.PointSize = 3; //点的大小
+            Scene_data.focus3D.rotationX = -45;   //镜头旋转X
+            Scene_data.focus3D.rotationY = 135; //镜头旋转Y
+            Scene_data.cam3D.distance = 500;    //镜头旋转距离
+
+
+            var $point = new Array();
+            var $color = new Array();
+			
+	
+		
+		
+	        var mixPos
+			var maxPos
+		    for (var i = 0; i < configText.length/3; i++) {
+			     var p={}
+				 p.x=Number(configText[i*3+0])
+				 p.y=Number(configText[i*3+1])
+				 p.z=Number(configText[i*3+2])
+				 if(mixPos){
+					mixPos.x=Math.min(mixPos.x,p.x)
+					mixPos.y=Math.min(mixPos.y,p.y)
+					mixPos.z=Math.min(mixPos.z,p.z)
+					maxPos.x=Math.max(maxPos.x,p.x)
+					maxPos.y=Math.max(maxPos.y,p.y)
+					maxPos.z=Math.max(maxPos.z,p.z)
+				 }else{
+					mixPos={}
+					maxPos={}
+					mixPos.x=p.x
+					mixPos.y=p.y
+					mixPos.z=p.z
+					maxPos.x=p.x
+					maxPos.y=p.y
+					maxPos.z=p.z
+				 }
+		    }
+			var scaleNum=1
+			console.log(mixPos,maxPos);		
+		   var cetentpos={}
+		   	cetentpos.x=(maxPos.x-mixPos.x)/2
+			cetentpos.y=(maxPos.y-mixPos.y)/2
+			cetentpos.z=(maxPos.z-mixPos.z)/2
+            for (var i = 0; i < configText.length/3; i++) {
+                $point.push(parseFloat(configText[i*3+0])*scaleNum-cetentpos.x,parseFloat(configText[i*3+1])*scaleNum-cetentpos.y,parseFloat(configText[i*3+2])*scaleNum-cetentpos.z); 
+                $color.push(1, 1, 0,0.5);  //颜色 rgb 
+            }
+	
+            PointShowModel.setPointData($point, $color)   //$point为点坐标
+            PointShowModel.setBoxScale(maxPos.x-mixPos.x,maxPos.y-mixPos.y,  maxPos.z-mixPos.z,[1,1,1])//长宽高  数组为颜色rgb
+		   
+		    
+		}
+		
+		function loadTextByUrlA($url,$fun)
+		{
+			var _xhr=new  XMLHttpRequest;
+			_xhr.onreadystatechange = () => {
+				if (_xhr.status == 200 && _xhr.readyState == 4) {
+					$fun(_xhr.response)
+				}
+			}
+		    _xhr.open("GET", $url, true);
+            _xhr.responseType = "text";
+            _xhr.send();
+		}
+	
  
         function setPointData() {
             PointShowModel.PointSize = 3; //点的大小
