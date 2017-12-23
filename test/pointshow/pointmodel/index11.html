@@ -1,0 +1,231 @@
+﻿<html>
+
+<head>
+    <title>index</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="IE=11.00" http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+    <link rel="apple-touch-icon-precomposed" href="icon.png" />
+    <link rel="touch-icon-precomposed" href="icon.png" />
+
+
+    <script src="h5web.min.js"></script>
+
+
+
+    <script>
+
+
+
+
+        function init() {
+
+            PointShowModel.hasMouseEvent = true //是否有鼠标事件
+            PointShowModel.showGridline = false  //绘制网格线
+            PointShowModel.init()   //初始场景
+
+           // setPointData();
+
+            loadTextByUrlA("3d-50-25-25.txt",(str) => {
+		
+					pointStrA=str 
+					finishEnd()
+			})
+		
+  
+        }
+		var  pointStrA
+		 function  Value2Color5(value)
+									{
+									var SEG0_BASE = 0;
+									var SEG0_TOP = 125;
+									var SEG0_SPAN = (SEG0_TOP - SEG0_BASE + 1);
+									var SEG1_BASE = 126;
+									var SEG1_TOP = 187;
+									var SEG1_SPAN = (SEG1_TOP - SEG1_BASE + 1);
+									var SEG2_BASE = 188;
+									var SEG2_TOP  = 255;
+									var SEG2_SPAN = (SEG2_TOP - SEG2_BASE + 1);
+
+									   var h = 0;
+									   var s = 0;
+									   var v = 0;
+
+										if ((value >= SEG0_BASE) && (value <= SEG0_TOP))
+										{
+											h = 240 - (24.0 / SEG0_SPAN) * (value - SEG0_BASE);
+											s = (73.0 / SEG0_SPAN) * (value - SEG0_BASE);
+											v = 100 - (21.0 / SEG0_SPAN) * (value - SEG0_BASE); // 51.0 => 21.0
+										}
+										else if ((value >= SEG1_BASE) && (value <= SEG1_TOP))
+										{ 
+											h = 141 - (84.0 / SEG1_SPAN) * (value - SEG1_BASE);
+											s = 86 - (15.0 / SEG1_SPAN) * (value - SEG1_BASE);
+											v = 55 + (36.0 / SEG1_SPAN) * (value - SEG1_BASE);
+										}
+										else if ((value >= SEG2_BASE) && (value <= SEG2_TOP))
+										{
+											h = 1;
+											s = 86 + (13.0 / SEG2_SPAN) * (value - SEG2_BASE);
+											v = 82 + (17.0 / SEG2_SPAN) * (value - SEG2_BASE);
+										}
+									   return hsv2rgb(h, s, v);
+									}
+								function  hsv2rgb(h,s,v)
+									{
+										s = s / 100.0;
+										v = v / 100.0;
+										var c = v * s;
+									  // var x = c * (1 - abs(fmod(h / 60,2) - 1));
+			   var x = c*(1-Math.abs((h / 60)%2)-1 );
+										var m = v - c;
+										var r = 0, g = 0, b = 0;
+
+										if(/*( h >= 0 ) &&*/ ( h < 60 ))
+										{
+											r = c;
+											g = x;
+											b = 0;
+										}
+										else if(( h >= 60 ) && ( h < 120 ))
+										{
+											r = x;
+											g = c;
+											b = 0;
+										}
+										else if(( h >= 120 ) && ( h < 180 ))
+										{
+											r = 0;
+											g = c;
+											b = x;
+										}
+										else if(( h >= 180 ) && ( h < 240 ))
+										{
+											r = 0;
+											g = x;
+											b = c;
+										}
+										else if(( h >= 240 ) && ( h < 300 ))
+										{
+											r = x;
+											g = 0;
+											b = c;
+										}
+										else if(( h >= 300 ) && ( h < 360 ))
+										{
+											r = c;
+											g = 0;
+											b = x;
+										}
+
+										r = (r + m) * 255 + 0.5;//round((r + m) * 255);
+										g = (g + m) * 255 + 0.5;//round((g + m) * 255);
+										b = (b + m) * 255 + 0.5;//round((b + m) * 255);
+										return [r, g, b]
+
+
+									}
+		function finishEnd()
+		{
+		   
+		   var configText = pointStrA.split("\n");
+
+		    PointShowModel.PointSize = 4; //点的大小
+            Scene_data.focus3D.rotationX = -45;   //镜头旋转X
+            Scene_data.focus3D.rotationY = 135; //镜头旋转Y
+            Scene_data.cam3D.distance = 100;    //镜头旋转距离
+
+
+            var $point = new Array();
+            var $color = new Array();
+
+		
+			var  skipnum=0
+			for (var i = 0; i < 50; i++) {
+				for(var j = 0; j < 25; j++){
+					for(var u = 0; u < 25; u++){
+						var total=i*j*u
+							if(total < configText.length){
+							var k={}
+							var kx = i  -50/2
+							var ky = j -25/2
+							var kz = u -25/2
+							$point.push(kx,ky,kz); 
+							
+						var temp=0
+						if(configText[skipnum]){
+							temp=Number(configText[skipnum])/255
+							var value=configText[skipnum]
+
+								//console.log(Value2Color5(value))
+									skipnum++
+									var  colorTemp=Value2Color5(value)
+									$color.push(colorTemp[0]/255,colorTemp[1]/255,colorTemp[2]/255,temp);    //颜色 rgb 
+								}
+								
+	
+						
+							}
+						}
+					}
+				}
+
+    alert("load finish")
+		     PointShowModel.setPointData($point, $color)   //$point为点坐标
+            PointShowModel.setBoxScale(50, 25, 25,[1,1,1])//长宽高  数组为颜色rgb
+	
+		    
+		}
+		
+
+		
+
+		function loadTextByUrlA($url,$fun)
+		{
+			var _xhr=new  XMLHttpRequest;
+			_xhr.onreadystatechange = () => {
+				if (_xhr.status == 200 && _xhr.readyState == 4) {
+					$fun(_xhr.response)
+				}
+			}
+		    _xhr.open("GET", $url, true);
+            _xhr.responseType = "text";
+            _xhr.send();
+		}
+	
+ 
+        function setPointData() {
+            PointShowModel.PointSize = 1; //点的大小
+            Scene_data.focus3D.rotationX = -45;   //镜头旋转X
+            Scene_data.focus3D.rotationY = 135; //镜头旋转Y
+            Scene_data.cam3D.distance = 500;    //镜头旋转距离
+
+
+            var $point = new Array();
+            var $color = new Array();
+            for (var i = 0; i < 6000; i++) {
+                $point.push(Math.random() * 60 - 30, Math.random() * 200 - 100, Math.random() *100 - 50); 
+                $color.push(1, 1, 0,0.5);  //颜色 rgb  
+            }
+            PointShowModel.setPointData($point, $color)   //$point为点坐标
+            PointShowModel.setBoxScale(60, 200, 100,[1,1,1])//长宽高  数组为颜色rgb
+
+        }
+     
+   
+
+    </script>
+
+
+</head>
+
+<body onload='init()' ontouchmove="event.preventDefault()" style="overflow-x: hidden; overflow-y: hidden;background-color:#000000">
+    <canvas id="ArpgStageCanvas" width="600" height="600" style="z-index:1"></canvas>
+
+</body>
+
+</html>

@@ -27,12 +27,9 @@
             setPointData();
    
             loadTextByUrlA("3d-50-25-25.txt",(str) => {
-			
 					pointStrA=str 
 					finishEnd()
 			})
-		
-  
         }
 		var  pointStrA
 		 
@@ -46,11 +43,9 @@
             Scene_data.focus3D.rotationY = 135; //镜头旋转Y
             Scene_data.cam3D.distance = 500;    //镜头旋转距离
 
-
             var $point = new Array();
             var $color = new Array();
 			
-	
 		    for (var i = 0; i < configText.length; i++) {
                 var kx = i % 50-50/2
                 var ky = Math.floor(i / 50)%25 -25/2

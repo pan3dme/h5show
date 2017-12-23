@@ -1,0 +1,7 @@
+F:\slefSvn\trunk\test\reflectivity\reflectivity\bin\reflectivity.dll.config
+F:\slefSvn\trunk\test\reflectivity\reflectivity\bin\reflectivity.dll
+F:\slefSvn\trunk\test\reflectivity\reflectivity\bin\reflectivity.pdb
+F:\slefSvn\trunk\test\reflectivity\reflectivity\obj\Debug\reflectivity.csproj.CoreCompileInputs.cache
+F:\slefSvn\trunk\test\reflectivity\reflectivity\obj\Debug\reflectivity.dll
+F:\slefSvn\trunk\test\reflectivity\reflectivity\obj\Debug\reflectivity.pdb
+F:\slefSvn\trunk\test\reflectivity\reflectivity\obj\Debug\reflectivity.csprojResolveAssemblyReference.cache
