@@ -1,0 +1,7 @@
+F:\slefSvn\trunk\h5show\marmoset\plantjzshow\plantjzshow\bin\plantjzshow.dll.config
+F:\slefSvn\trunk\h5show\marmoset\plantjzshow\plantjzshow\bin\plantjzshow.dll
+F:\slefSvn\trunk\h5show\marmoset\plantjzshow\plantjzshow\bin\plantjzshow.pdb
+F:\slefSvn\trunk\h5show\marmoset\plantjzshow\plantjzshow\obj\Debug\plantjzshow.csproj.CoreCompileInputs.cache
+F:\slefSvn\trunk\h5show\marmoset\plantjzshow\plantjzshow\obj\Debug\plantjzshow.dll
+F:\slefSvn\trunk\h5show\marmoset\plantjzshow\plantjzshow\obj\Debug\plantjzshow.pdb
+F:\slefSvn\trunk\h5show\marmoset\plantjzshow\plantjzshow\obj\Debug\plantjzshow.csprojResolveAssemblyReference.cache
