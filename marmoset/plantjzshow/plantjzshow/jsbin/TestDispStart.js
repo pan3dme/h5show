@@ -23,6 +23,7 @@ var testScene;
             SkillMouseEventModel.getInstance().initSceneFocueEvent();
             SceneManager.getInstance().addDisplay(new ProdkarenModelSprite());
             SceneManager.getInstance().ready = true;
+            console.log("fuckddd");
         };
         TestDispStart.prototype.upFrameData = function () {
             TimeUtil.update();

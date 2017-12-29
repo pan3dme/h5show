@@ -1,7 +1,0 @@
-F:\slefSvn\trunk\h5show\marmoset\plantshow\plantshow\bin\plantshow.dll.config
-F:\slefSvn\trunk\h5show\marmoset\plantshow\plantshow\bin\plantshow.dll
-F:\slefSvn\trunk\h5show\marmoset\plantshow\plantshow\bin\plantshow.pdb
-F:\slefSvn\trunk\h5show\marmoset\plantshow\plantshow\obj\Debug\plantshow.csproj.CoreCompileInputs.cache
-F:\slefSvn\trunk\h5show\marmoset\plantshow\plantshow\obj\Debug\plantshow.dll
-F:\slefSvn\trunk\h5show\marmoset\plantshow\plantshow\obj\Debug\plantshow.pdb
-F:\slefSvn\trunk\h5show\marmoset\plantshow\plantshow\obj\Debug\plantshow.csprojResolveAssemblyReference.cache

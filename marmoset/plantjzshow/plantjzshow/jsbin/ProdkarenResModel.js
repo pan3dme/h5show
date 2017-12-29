@@ -85,9 +85,6 @@ var ProdkarenResModel = /** @class */ (function () {
             $fun($buffData);
         });
     };
-    ProdkarenResModel.prototype.fromFilesMergeAlpha = function (a, b) {
-        return RgbAndAlphaModel.getInstance().fromFilesMergeAlpha(a, b);
-    };
     ProdkarenResModel.prototype.flectAlphaByUrl = function (rgburl, alphaurl, $fun) {
         var _this = this;
         LoadManager.getInstance().load(Scene_data.fileRoot + rgburl, LoadManager.XML_TYPE, function ($rgbstr) {
