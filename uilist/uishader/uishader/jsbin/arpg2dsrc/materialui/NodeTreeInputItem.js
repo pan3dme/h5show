@@ -11,6 +11,9 @@ var materialui;
             _super.call(this);
         }
         Object.defineProperty(NodeTreeInputItem.prototype, "parentNodeItem", {
+            get: function () {
+                return this._parentNodeItem;
+            },
             set: function (value) {
                 this._parentNodeItem = value;
             },

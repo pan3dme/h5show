@@ -88,5 +88,17 @@
 
       
         }
+
+        public  remove():void{
+            this.removeStage();
+			if(this.fromNode) {
+                this.fromNode.removeOut(this);
+                (<NodeTreeOutoutItem>this.fromNode.nodeTreeItem).removeSunNode(<NodeTreeInputItem>this.endNode.nodeTreeItem);
+            }
+			if(this.endNode) {
+                this.endNode.removeIn();
+               (<NodeTreeInputItem>this.endNode.nodeTreeItem).parentNodeItem = null;
+            }
+        }
     }
 }

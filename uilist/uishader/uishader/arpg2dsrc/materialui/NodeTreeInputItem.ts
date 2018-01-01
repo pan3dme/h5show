@@ -9,6 +9,11 @@
         public  set parentNodeItem(value: NodeTreeOutoutItem) {
            this. _parentNodeItem = value;
         }
+        public  get parentNodeItem(): NodeTreeOutoutItem {
+            return this._parentNodeItem;
+        }
+
+   
     }
 
 }

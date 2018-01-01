@@ -55,9 +55,17 @@ var materialui;
                     this.stopDragLine($mevent_Material_Connect.itemNode);
                 }
                 if ($mevent_Material_Connect.type == materialui.MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_REMOVELINE) {
-                    this.stopDragLine($mevent_Material_Connect.itemNode);
+                    this.removeLine($mevent_Material_Connect.line);
+                }
+                if ($mevent_Material_Connect.type == materialui.MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_DOUBLUELINE) {
                 }
             }
+        };
+        MaterialProcessor.prototype.setConnetLine = function ($line) {
+            // this.lineContainer.removeLine($line);
+        };
+        MaterialProcessor.prototype.removeLine = function ($line) {
+            this.lineContainer.removeLine($line);
         };
         MaterialProcessor.prototype.startDragLine = function ($node) {
             this.lineContainer.startLine($node);
@@ -71,6 +79,7 @@ var materialui;
                 new materialui.MEvent_Material_Connect(materialui.MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STARTDRAG),
                 new materialui.MEvent_Material_Connect(materialui.MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STOPDRAG),
                 new materialui.MEvent_Material_Connect(materialui.MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_REMOVELINE),
+                new materialui.MEvent_Material_Connect(materialui.MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_DOUBLUELINE),
             ];
         };
         MaterialProcessor.prototype.openMaterialPanel = function () {
@@ -92,10 +101,13 @@ var materialui;
             document.addEventListener(MouseType.MouseUp, function ($evt) { _this.onMouseUp($evt); });
             document.addEventListener(MouseType.KeyDown, function ($evt) { _this.onKeyDown($evt); });
             document.addEventListener(MouseType.KeyUp, function ($evt) { _this.onKeyUp($evt); });
-            var myMenu = document.getElementById("myMenu");
             document.addEventListener("contextmenu", function (event) {
                 event.preventDefault();
                 console.log("右键");
+                var menu = document.getElementById("menu");
+                menu.style.top = event.clientY + "px";
+                menu.style.left = event.clientX + "px";
+                menu.style.visibility = "visible";
             });
             GameMouseManager.getInstance().addMouseEvent();
         };

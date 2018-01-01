@@ -36,6 +36,16 @@
             this.addEvents(this.intAItem);
             this.addEvents(this.intBItem);
             this.addEvents(this.outItem);
+
+            this.addDisEvent(this.intAItem);
+            this.addDisEvent(this.intBItem);
+            this.addDisEvent(this.outItem);
+            this.addDisEvent(this.outRItem);
+            this.addDisEvent(this.outGItem);
+            this.addDisEvent(this.outBItem);
+            this.addDisEvent(this.outXYItem);
+            this.addDisEvent(this.outRGBItem);
+            this.addDisEvent(this.outAItem);
 			
  
         }

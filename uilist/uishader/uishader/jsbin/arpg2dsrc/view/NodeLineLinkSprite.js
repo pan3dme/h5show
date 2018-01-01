@@ -171,6 +171,15 @@ var materialui;
             this._currentLine.setFromNode($item);
             Scene_data.uiStage.addEventListener(InteractiveEvent.Up, this.onMouseUp, this);
         };
+        MaterialLineContainer.prototype.removeLine = function ($line) {
+            for (var i; i < this._lineList.length; i++) {
+                if (this._lineList[i] == $line) {
+                    this._lineList.splice(i, 1);
+                    break;
+                }
+            }
+            $line.remove();
+        };
         MaterialLineContainer.prototype.globalToLocal = function ($v) {
             var p = new Vector2D($v.x - Arpg2dGameStart.stagePos.x, $v.y - Arpg2dGameStart.stagePos.y);
             return p;

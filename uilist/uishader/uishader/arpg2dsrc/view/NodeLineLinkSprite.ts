@@ -203,6 +203,17 @@ module materialui {
   
             Scene_data.uiStage.addEventListener(InteractiveEvent.Up, this.onMouseUp, this);
         }
+
+        public removeLine($line: MaterialNodeLineUI): void {
+            for (var i: number; i < this._lineList.length; i++) {
+                if (this._lineList[i] == $line) {
+                    this. _lineList.splice(i, 1);
+                    break;
+                }
+            }
+            $line.remove();
+        }
+		
         public globalToLocal($v: Vector2D): Vector2D {
             var p: Vector2D = new Vector2D($v.x - Arpg2dGameStart.stagePos.x, $v.y - Arpg2dGameStart.stagePos.y)
             return p

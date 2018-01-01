@@ -15,6 +15,14 @@ var materialui;
         NodeTreeOutoutItem.prototype.pushSunNode = function (nodeitem) {
             this.sunNodeItems.push(nodeitem);
         };
+        NodeTreeOutoutItem.prototype.removeSunNode = function (nodeitem) {
+            for (var i = 0; i < this.sunNodeItems.length; i++) {
+                if (this.sunNodeItems[i] == nodeitem) {
+                    this.sunNodeItems.splice(i, 1);
+                    break;
+                }
+            }
+        };
         return NodeTreeOutoutItem;
     })(materialui.NodeTreeItem);
     materialui.NodeTreeOutoutItem = NodeTreeOutoutItem;

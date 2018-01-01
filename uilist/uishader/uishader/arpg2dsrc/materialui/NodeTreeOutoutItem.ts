@@ -10,6 +10,14 @@
         public  pushSunNode(nodeitem:NodeTreeInputItem):void{
             this.sunNodeItems.push(nodeitem);
         }
+        public removeSunNode(nodeitem: NodeTreeInputItem): void {
+            for (var i: number=0; i < this.sunNodeItems.length; i++) {
+                if (this.sunNodeItems[i] == nodeitem) {
+                    this.sunNodeItems.splice(i, 1);
+                    break;
+                }
+            }
+        }
     }
 
 }

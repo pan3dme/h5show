@@ -13,6 +13,8 @@
         {
             this.panel.removeChild($ui.pointframe);
             this.panel.removeChild($ui.labelframe);
+            $ui.pointframe = null
+            $ui.labelframe = null
             $ui.parent=null
         }
         
@@ -23,7 +25,7 @@
                 $ui.pointframe = this.panel.addEvntBut("a_point_frame", this.uiRender);
                 $ui.labelframe = this.panel.addEvntBut("a_label_txt", this.uiRender);
                 $ui.pointframe.data = $ui
-            }
+            } 
             switch ($ui.titleLabeltext) {
                 case "UV":
                     $ui.labelframe.goToAndStop(7)

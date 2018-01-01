@@ -38,12 +38,22 @@
                     this.stopDragLine($mevent_Material_Connect.itemNode);
                 }
                 if ($mevent_Material_Connect.type == MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_REMOVELINE) {
-                    this.stopDragLine($mevent_Material_Connect.itemNode);
+                    this.removeLine($mevent_Material_Connect.line);
                 }
+                if ($mevent_Material_Connect.type == MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_DOUBLUELINE) {
+                    //this.setConnetLine($mevent_Material_Connect.endNode);
+                }
+
 
             }
      
 
+        }
+        public setConnetLine($line: MaterialNodeLineUI): void {
+           // this.lineContainer.removeLine($line);
+        }
+        public  removeLine($line:MaterialNodeLineUI):void{
+            this.lineContainer.removeLine($line);
         }
         public  startDragLine($node:ItemMaterialUI):void{
             this.lineContainer.startLine($node);
@@ -61,6 +71,7 @@
                 new MEvent_Material_Connect(MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STARTDRAG),
                 new MEvent_Material_Connect(MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STOPDRAG),
                 new MEvent_Material_Connect(MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_REMOVELINE),
+                new MEvent_Material_Connect(MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_DOUBLUELINE),
 
             ];
         }
@@ -89,13 +100,27 @@
             document.addEventListener(MouseType.KeyDown, ($evt: KeyboardEvent) => { this.onKeyDown($evt) })
             document.addEventListener(MouseType.KeyUp, ($evt: KeyboardEvent) => { this.onKeyUp($evt) })
 
-            var myMenu = document.getElementById("myMenu");
+
+           
             document.addEventListener("contextmenu", (event: any) => {
                 event.preventDefault();
                 console.log("右键");
+
+                var menu = document.getElementById("menu");
+                menu.style.top = event.clientY + "px";
+                menu.style.left = event.clientX + "px";
+                menu.style.visibility = "visible";
             });
+
             GameMouseManager.getInstance().addMouseEvent();
+
+ 
+        
+           
+            
         }
+       
+
         public onKeyDown($evt: KeyboardEvent): void {
             Arpg2dGameStart.altKey = $evt.altKey
             switch ($evt.keyCode) {

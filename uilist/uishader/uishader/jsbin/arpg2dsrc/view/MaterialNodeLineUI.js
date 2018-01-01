@@ -73,6 +73,17 @@ var materialui;
             $arr.push(this.endPoint);
             this.lineRender.makeLineUiItem($arr);
         };
+        MaterialNodeLineUI.prototype.remove = function () {
+            this.removeStage();
+            if (this.fromNode) {
+                this.fromNode.removeOut(this);
+                this.fromNode.nodeTreeItem.removeSunNode(this.endNode.nodeTreeItem);
+            }
+            if (this.endNode) {
+                this.endNode.removeIn();
+                this.endNode.nodeTreeItem.parentNodeItem = null;
+            }
+        };
         return MaterialNodeLineUI;
     })();
     materialui.MaterialNodeLineUI = MaterialNodeLineUI;

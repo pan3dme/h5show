@@ -29,6 +29,25 @@
             this.drawSp();
    
         }
+        public removeOut($line: MaterialNodeLineUI): void {
+            for (var i: number=0; i < this.outLineList.length; i++) {
+                if (this.outLineList[i] == $line) {
+                    this.outLineList.splice(i, 1);
+                    break;
+                }
+            }
+            if (!this.inOut && this.outLineList.length == 0) {
+                this.hasConnet = false;
+                this.dispatchEvent(new BaseEvent("DisConnect"));
+            }
+        }
+        public  removeIn():void{
+            this._inLine = null;
+            if (this.inOut) {
+                this.hasConnet = false;
+                this.dispatchEvent(new BaseEvent("DisConnect"));
+            }
+        }
         public  setConnect():void{
             this.hasConnet = true;
             this.dispatchEvent(new BaseEvent("Connect"));

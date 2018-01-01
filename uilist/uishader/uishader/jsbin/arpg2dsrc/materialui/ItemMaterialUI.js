@@ -22,6 +22,25 @@ var materialui;
             this.typets = $type;
             this.drawSp();
         }
+        ItemMaterialUI.prototype.removeOut = function ($line) {
+            for (var i = 0; i < this.outLineList.length; i++) {
+                if (this.outLineList[i] == $line) {
+                    this.outLineList.splice(i, 1);
+                    break;
+                }
+            }
+            if (!this.inOut && this.outLineList.length == 0) {
+                this.hasConnet = false;
+                this.dispatchEvent(new BaseEvent("DisConnect"));
+            }
+        };
+        ItemMaterialUI.prototype.removeIn = function () {
+            this._inLine = null;
+            if (this.inOut) {
+                this.hasConnet = false;
+                this.dispatchEvent(new BaseEvent("DisConnect"));
+            }
+        };
         ItemMaterialUI.prototype.setConnect = function () {
             this.hasConnet = true;
             this.dispatchEvent(new BaseEvent("Connect"));

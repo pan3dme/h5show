@@ -8,6 +8,8 @@ var materialui;
         PanelContainer.prototype.removeChild = function ($ui) {
             this.panel.removeChild($ui.pointframe);
             this.panel.removeChild($ui.labelframe);
+            $ui.pointframe = null;
+            $ui.labelframe = null;
             $ui.parent = null;
         };
         PanelContainer.prototype.addChild = function ($ui) {
