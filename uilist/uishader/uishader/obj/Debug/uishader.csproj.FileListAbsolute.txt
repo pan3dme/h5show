@@ -1,0 +1,5 @@
+C:\wamp\www\uilist\uishader\uishader\bin\uishader.dll.config
+C:\wamp\www\uilist\uishader\uishader\bin\uishader.dll
+C:\wamp\www\uilist\uishader\uishader\bin\uishader.pdb
+C:\wamp\www\uilist\uishader\uishader\obj\Debug\uishader.dll
+C:\wamp\www\uilist\uishader\uishader\obj\Debug\uishader.pdb
