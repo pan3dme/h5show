@@ -262,6 +262,7 @@
             return;
         }
         $uiRender.container = this;
+       
         $uiRender.sortnum = this._layer;
         this.renderList.push($uiRender);
         if (this.hasStage) {

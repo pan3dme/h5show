@@ -176,7 +176,7 @@ module materialui {
 
         public constructor() {
             super();
-
+            this.layer=-1
             this.width = 200;
             this.height = 200;
 

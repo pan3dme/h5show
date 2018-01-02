@@ -1,22 +1,16 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var faction;
 (function (faction) {
-    var FactionBuildList = /** @class */ (function (_super) {
+    var FactionBuildList = (function (_super) {
         __extends(FactionBuildList, _super);
         function FactionBuildList() {
-            var _this = _super.call(this) || this;
-            _this.left = 54;
-            _this.top = 88;
-            return _this;
+            _super.call(this);
+            this.left = 54;
+            this.top = 88;
         }
         FactionBuildList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -59,12 +53,12 @@ var faction;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return FactionBuildList;
-    }(SList));
+    })(SList);
     faction.FactionBuildList = FactionBuildList;
-    var FactionBuildRender = /** @class */ (function (_super) {
+    var FactionBuildRender = (function (_super) {
         __extends(FactionBuildRender, _super);
         function FactionBuildRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         FactionBuildRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -148,23 +142,22 @@ var faction;
             LabelTextFont.clearLabel(this.uiAtlas, this.ItemBg.skinName);
         };
         return FactionBuildRender;
-    }(SListItem));
+    })(SListItem);
     faction.FactionBuildRender = FactionBuildRender;
-    var FactionBuildRightPanel = /** @class */ (function (_super) {
+    var FactionBuildRightPanel = (function (_super) {
         __extends(FactionBuildRightPanel, _super);
         function FactionBuildRightPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._publicRender = new UIRenderComponent;
-            _this.addRender(_this._publicRender);
-            _this._bottomRender = new UIRenderComponent;
-            _this.addRender(_this._bottomRender);
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            return _this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._publicRender = new UIRenderComponent;
+            this.addRender(this._publicRender);
+            this._bottomRender = new UIRenderComponent;
+            this.addRender(this._bottomRender);
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
         }
         FactionBuildRightPanel.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -376,7 +369,7 @@ var faction;
             return false;
         };
         return FactionBuildRightPanel;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     faction.FactionBuildRightPanel = FactionBuildRightPanel;
 })(faction || (faction = {}));
 //# sourceMappingURL=FactionBuildList.js.map

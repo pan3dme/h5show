@@ -7,7 +7,7 @@
        
         ModuleList.startup();//启动所有模块
 
-        UIData.Scale=0.5
+        UIData.Scale=1.0
         ModuleEventManager.dispatchEvent(new materialui.MaterialEvent(materialui.MaterialEvent.SHOW_MATERIA_PANEL));
 
 

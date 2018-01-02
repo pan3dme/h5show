@@ -10,6 +10,8 @@
             this.nodeTree.ui = this;
             this.nodeTree.type = NodeTree.ADD;
             this.initItem();
+
+            this.drawTitleToFrame("加法(Add+)")
       
         }
 

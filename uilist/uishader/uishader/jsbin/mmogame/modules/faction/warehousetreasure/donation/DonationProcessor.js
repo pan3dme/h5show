@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var donation;
 (function (donation) {
-    var DonationModule = /** @class */ (function (_super) {
+    var DonationModule = (function (_super) {
         __extends(DonationModule, _super);
         function DonationModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         DonationModule.prototype.getModuleName = function () {
             return "DonationModule";
@@ -22,22 +17,22 @@ var donation;
             return [new DonationRrocessor()];
         };
         return DonationModule;
-    }(Module));
+    })(Module);
     donation.DonationModule = DonationModule;
-    var DonationEvent = /** @class */ (function (_super) {
+    var DonationEvent = (function (_super) {
         __extends(DonationEvent, _super);
         function DonationEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         DonationEvent.SHOW_DONATION_PANEL = "SHOW_DONATION_PANEL";
         DonationEvent.HIDE_DONATION_PANEL = "HIDE_DONATION_PANEL";
         return DonationEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     donation.DonationEvent = DonationEvent;
-    var DonationRrocessor = /** @class */ (function (_super) {
+    var DonationRrocessor = (function (_super) {
         __extends(DonationRrocessor, _super);
         function DonationRrocessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         DonationRrocessor.prototype.getName = function () {
             return "DonationRrocessor";
@@ -83,7 +78,7 @@ var donation;
             ];
         };
         return DonationRrocessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     donation.DonationRrocessor = DonationRrocessor;
 })(donation || (donation = {}));
 //# sourceMappingURL=DonationProcessor.js.map

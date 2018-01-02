@@ -1,14 +1,9 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var AnimManager = /** @class */ (function () {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var AnimManager = (function () {
     function AnimManager() {
         this._dic = new Object();
     }
@@ -190,12 +185,10 @@ var AnimManager = /** @class */ (function () {
                     //newM.append(fatherBone.matrix);
                     newM.append(frameMatrixAry[xyzfarme0.father]);
                     frameMatrixAry.push(newM);
-                    //xyzfarme0.matrix = newM;
                 }
             }
             for (i = 0; i < frameMatrixAry.length; i++) {
                 frameMatrixAry[i].appendScale(-1, 1, 1); //特别标记，因为四元数和矩阵运算结果不一  先存正确的矩阵
-                //xyzfarme0.matrix.appendScale(-1, 1, 1);
             }
         }
         return matrixAry;
@@ -211,16 +204,16 @@ var AnimManager = /** @class */ (function () {
         return t;
     };
     return AnimManager;
-}());
-var ObjectBaseBone = /** @class */ (function () {
+})();
+var ObjectBaseBone = (function () {
     function ObjectBaseBone() {
     }
     return ObjectBaseBone;
-}());
-var ObjectBone = /** @class */ (function (_super) {
+})();
+var ObjectBone = (function (_super) {
     __extends(ObjectBone, _super);
     function ObjectBone() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     ObjectBone.prototype.clone = function () {
         var newBone = new ObjectBone;
@@ -240,5 +233,5 @@ var ObjectBone = /** @class */ (function (_super) {
         return newBone;
     };
     return ObjectBone;
-}(ObjectBaseBone));
+})(ObjectBaseBone);
 //# sourceMappingURL=AnimManager.js.map

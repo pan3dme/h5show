@@ -1,19 +1,13 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var GiftPacksData = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var GiftPacksData = (function (_super) {
     __extends(GiftPacksData, _super);
     function GiftPacksData() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this._dataState = 0;
-        return _this;
+        _super.apply(this, arguments);
+        this._dataState = 0;
     }
     GiftPacksData.prototype.onBaseCreated = function () {
         var _this = this;
@@ -103,8 +97,8 @@ var GiftPacksData = /** @class */ (function (_super) {
         this._giftList.push($vo);
     };
     return GiftPacksData;
-}(GuidObject));
-var GiftBaseVo = /** @class */ (function () {
+})(GuidObject);
+var GiftBaseVo = (function () {
     function GiftBaseVo() {
     }
     //GIFTPACKS_INFO_INT_ID = 0,	//礼包ID
@@ -132,5 +126,5 @@ var GiftBaseVo = /** @class */ (function () {
         this.item = $pake.GetStr(strStart + SharedDef.GIFTPACKS_INFO_STRING_GIFT_ITEM);
     };
     return GiftBaseVo;
-}());
+})();
 //# sourceMappingURL=GiftPacksData.js.map

@@ -1,6 +1,6 @@
 var Hangup;
 (function (Hangup) {
-    var HangupSettingModel = /** @class */ (function () {
+    var HangupSettingModel = (function () {
         function HangupSettingModel() {
         }
         HangupSettingModel.getInstance = function () {
@@ -34,7 +34,7 @@ var Hangup;
             return this._tb_hook_hp_item_list;
         };
         return HangupSettingModel;
-    }());
+    })();
     Hangup.HangupSettingModel = HangupSettingModel;
 })(Hangup || (Hangup = {}));
 //# sourceMappingURL=HangupSettingModel.js.map

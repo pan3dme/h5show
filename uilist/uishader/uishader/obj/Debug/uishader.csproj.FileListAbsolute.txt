@@ -8,7 +8,6 @@ C:\wamp\www\h5show\uilist\uishader\uishader\bin\uishader.dll
 C:\wamp\www\h5show\uilist\uishader\uishader\bin\uishader.pdb
 C:\wamp\www\h5show\uilist\uishader\uishader\obj\Debug\uishader.dll
 C:\wamp\www\h5show\uilist\uishader\uishader\obj\Debug\uishader.pdb
-C:\wamp\www\h5show\uilist\uishader\uishader\obj\Debug\uishader.csprojResolveAssemblyReference.cache
 F:\slefSvn\trunk\h5show\uilist\uishader\uishader\bin\uishader.dll.config
 F:\slefSvn\trunk\h5show\uilist\uishader\uishader\bin\uishader.dll
 F:\slefSvn\trunk\h5show\uilist\uishader\uishader\bin\uishader.pdb

@@ -1,30 +1,24 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var selectserver;
 (function (selectserver) {
-    var Ssxuanfu = /** @class */ (function (_super) {
+    var Ssxuanfu = (function (_super) {
         __extends(Ssxuanfu, _super);
         function Ssxuanfu() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
             // this._bottomRender = new UIRenderComponent;
             // this.addRender(this._bottomRender)
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            return _this;
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
         }
         Ssxuanfu.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -93,18 +87,17 @@ var selectserver;
             }
         };
         return Ssxuanfu;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     selectserver.Ssxuanfu = Ssxuanfu;
     /**
      * 左侧tablist
      */
-    var SsTabList = /** @class */ (function (_super) {
+    var SsTabList = (function (_super) {
         __extends(SsTabList, _super);
         function SsTabList() {
-            var _this = _super.call(this) || this;
-            _this.left = 111;
-            _this.top = 98;
-            return _this;
+            _super.call(this);
+            this.left = 111;
+            this.top = 98;
         }
         SsTabList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -147,12 +140,12 @@ var selectserver;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return SsTabList;
-    }(SList));
+    })(SList);
     selectserver.SsTabList = SsTabList;
-    var SsTabListRender = /** @class */ (function (_super) {
+    var SsTabListRender = (function (_super) {
         __extends(SsTabListRender, _super);
         function SsTabListRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         // private RedPoint: UICompenent;
         SsTabListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
@@ -244,7 +237,7 @@ var selectserver;
             //    this.RedPoint.preHide();
         };
         return SsTabListRender;
-    }(SListItem));
+    })(SListItem);
     selectserver.SsTabListRender = SsTabListRender;
 })(selectserver || (selectserver = {}));
 //# sourceMappingURL=Ssxuanfu.js.map

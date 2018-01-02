@@ -1,22 +1,16 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var charbg;
 (function (charbg) {
-    var BagItemRender = /** @class */ (function (_super) {
+    var BagItemRender = (function (_super) {
         __extends(BagItemRender, _super);
         function BagItemRender() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.equUpDown = false;
-            _this.disableEqu = false;
-            return _this;
+            _super.apply(this, arguments);
+            this.equUpDown = false;
+            this.disableEqu = false;
         }
         BagItemRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -159,15 +153,14 @@ var charbg;
             this.draw();
         };
         return BagItemRender;
-    }(SListItem));
+    })(SListItem);
     charbg.BagItemRender = BagItemRender;
-    var BagList = /** @class */ (function (_super) {
+    var BagList = (function (_super) {
         __extends(BagList, _super);
         function BagList() {
-            var _this = _super.call(this) || this;
-            _this.center = 205;
-            _this.middle = 0;
-            return _this;
+            _super.call(this);
+            this.center = 205;
+            this.middle = 0;
         }
         BagList.prototype.initData = function () {
             var $ary = new Array();
@@ -180,27 +173,26 @@ var charbg;
             }
         };
         return BagList;
-    }(SList));
+    })(SList);
     charbg.BagList = BagList;
-    var BagPanel = /** @class */ (function (_super) {
+    var BagPanel = (function (_super) {
         __extends(BagPanel, _super);
         function BagPanel() {
-            var _this = _super.call(this) || this;
-            _this.uiAtlasComplet = false;
-            _this.selcetTabId = 0;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._bgRender = new UIRenderComponent();
-            _this._baseRender = new UIRenderComponent();
+            _super.call(this);
+            this.uiAtlasComplet = false;
+            this.selcetTabId = 0;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._bgRender = new UIRenderComponent();
+            this._baseRender = new UIRenderComponent();
             //this._listRender = new UIListRenderComponent();
-            _this.addRender(_this._bgRender);
+            this.addRender(this._bgRender);
             //this.addRender(this._listRender);
-            _this.addRender(_this._baseRender);
+            this.addRender(this._baseRender);
             //this.addList();
-            _this._bgList = new BagList();
-            return _this;
+            this._bgList = new BagList();
             // this._bgList.x = 512;
             // this._bgList.y = 90;
         }
@@ -284,9 +276,6 @@ var charbg;
                 var bgData = GuidData.bag.getBgItemData($data[i], type);
                 if (bgData) {
                     this._bgList.setItemData(bgData, bgData.pos);
-                    // if (!tf) {
-                    //     this._bgList.setGridItemFun(($listItemData: ListItemData) => { this.itemDataClick($listItemData) }, bgData.pos);
-                    // }
                 }
                 else {
                     this._bgList.clearItemByPos($data[i]);
@@ -370,7 +359,7 @@ var charbg;
             }
         };
         return BagPanel;
-    }(UIConatiner));
+    })(UIConatiner);
     charbg.BagPanel = BagPanel;
 })(charbg || (charbg = {}));
 //# sourceMappingURL=BagPanel.js.map

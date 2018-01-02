@@ -1,17 +1,12 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var GroupRes = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var GroupRes = (function (_super) {
     __extends(GroupRes, _super);
     function GroupRes() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     GroupRes.prototype.load = function (url, $fun) {
         var _this = this;
@@ -118,12 +113,12 @@ var GroupRes = /** @class */ (function (_super) {
         this._materialDic = null;
     };
     return GroupRes;
-}(BaseRes));
-var GroupItem = /** @class */ (function (_super) {
+})(BaseRes);
+var GroupItem = (function (_super) {
     __extends(GroupItem, _super);
     function GroupItem() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     return GroupItem;
-}(Object3D));
+})(Object3D);
 //# sourceMappingURL=GroupRes.js.map

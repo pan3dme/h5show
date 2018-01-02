@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var sboss;
 (function (sboss) {
-    var SbossRankPanelRender = /** @class */ (function (_super) {
+    var SbossRankPanelRender = (function (_super) {
         __extends(SbossRankPanelRender, _super);
         function SbossRankPanelRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         SbossRankPanelRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -56,15 +51,14 @@ var sboss;
             this.uiAtlas.clearCtxTextureBySkilname(this.R_BG.skinName);
         };
         return SbossRankPanelRender;
-    }(SListItem));
+    })(SListItem);
     sboss.SbossRankPanelRender = SbossRankPanelRender;
-    var SbossRankPanelList = /** @class */ (function (_super) {
+    var SbossRankPanelList = (function (_super) {
         __extends(SbossRankPanelList, _super);
         function SbossRankPanelList() {
-            var _this = _super.call(this) || this;
-            _this.left = 325;
-            _this.top = 149;
-            return _this;
+            _super.call(this);
+            this.left = 325;
+            this.top = 149;
         }
         SbossRankPanelList.prototype.init = function ($uiAtlas) {
             SbossRankPanelRender.baseAtlas = $uiAtlas;
@@ -99,25 +93,24 @@ var sboss;
             }
         };
         return SbossRankPanelList;
-    }(SList));
+    })(SList);
     sboss.SbossRankPanelList = SbossRankPanelList;
-    var SbossRandPanel = /** @class */ (function (_super) {
+    var SbossRandPanel = (function (_super) {
         __extends(SbossRandPanel, _super);
         function SbossRandPanel() {
-            var _this = _super.call(this) || this;
-            _this.uiAtlasComplet = false;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.middle = 0;
-            _this.center = 0;
+            _super.call(this);
+            this.uiAtlasComplet = false;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.middle = 0;
+            this.center = 0;
             //添加好友面板渲染器
-            _this._bottomRender = new UIRenderComponent;
-            _this.addRender(_this._bottomRender);
-            _this._midRender = new UIRenderComponent;
-            _this.addRender(_this._midRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            return _this;
+            this._bottomRender = new UIRenderComponent;
+            this.addRender(this._bottomRender);
+            this._midRender = new UIRenderComponent;
+            this.addRender(this._midRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
         }
         SbossRandPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -163,7 +156,7 @@ var sboss;
             this.sbossRankPanelList.setRandData($data);
         };
         return SbossRandPanel;
-    }(WindowCentenMin));
+    })(WindowCentenMin);
     sboss.SbossRandPanel = SbossRandPanel;
 })(sboss || (sboss = {}));
 //# sourceMappingURL=SbossRandPanel.js.map

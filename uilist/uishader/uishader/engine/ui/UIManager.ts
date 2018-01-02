@@ -274,6 +274,7 @@ class UIManager {
     }
 
     public update(): void {
+        this.upBgGroundZero()
         for (var i: number = 0; i < this._uiList.length; i++) {
             if (this._uiList[i].container.layer >= 0) {
                 this._uiList[i].update();

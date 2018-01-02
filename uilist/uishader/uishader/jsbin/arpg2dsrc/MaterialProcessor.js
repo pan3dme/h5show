@@ -1,30 +1,25 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var materialui;
 (function (materialui) {
-    var MaterialEvent = /** @class */ (function (_super) {
+    var MaterialEvent = (function (_super) {
         __extends(MaterialEvent, _super);
         function MaterialEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MaterialEvent.SHOW_MATERIA_PANEL = "INIT_MATERIA_PANEL"; //显示面板
         MaterialEvent.SAVE_MATERIA_PANEL = "SAVE_MATERIA_PANEL"; //显示面板
         MaterialEvent.SELECT_MATERIAL_NODE_UI = "SELECT_MATERIAL_NODE_UI"; //显示面板
         return MaterialEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     materialui.MaterialEvent = MaterialEvent;
-    var MaterialModule = /** @class */ (function (_super) {
+    var MaterialModule = (function (_super) {
         __extends(MaterialModule, _super);
         function MaterialModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MaterialModule.prototype.getModuleName = function () {
             return "MaterialModule";
@@ -33,12 +28,12 @@ var materialui;
             return [new MaterialProcessor()];
         };
         return MaterialModule;
-    }(Module));
+    })(Module);
     materialui.MaterialModule = MaterialModule;
-    var MaterialProcessor = /** @class */ (function (_super) {
+    var MaterialProcessor = (function (_super) {
         __extends(MaterialProcessor, _super);
         function MaterialProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MaterialProcessor.prototype.getName = function () {
             return "MaterialProcessor";
@@ -221,7 +216,7 @@ var materialui;
             UIManager.getInstance().resize();
         };
         return MaterialProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     materialui.MaterialProcessor = MaterialProcessor;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialProcessor.js.map

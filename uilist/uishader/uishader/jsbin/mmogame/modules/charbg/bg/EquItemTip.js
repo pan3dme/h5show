@@ -1,22 +1,16 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 /**
  * 背包内的装备
  *   */
-var EquItemTip = /** @class */ (function (_super) {
+var EquItemTip = (function (_super) {
     __extends(EquItemTip, _super);
     function EquItemTip() {
-        var _this = _super.call(this) || this;
-        _this.center = -115;
-        return _this;
+        _super.call(this);
+        this.center = -115;
     }
     EquItemTip.prototype.refreshIconName = function () {
         var _this = this;
@@ -196,5 +190,5 @@ var EquItemTip = /** @class */ (function (_super) {
         NetManager.getInstance().protocolos.storehouse_hand_in(String(this._data.pos));
     };
     return EquItemTip;
-}(EquTip));
+})(EquTip);
 //# sourceMappingURL=EquItemTip.js.map

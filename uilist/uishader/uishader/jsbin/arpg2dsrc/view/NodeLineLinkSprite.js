@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var materialui;
 (function (materialui) {
-    var NodeLineLinkShader = /** @class */ (function (_super) {
+    var NodeLineLinkShader = (function (_super) {
         __extends(NodeLineLinkShader, _super);
         function NodeLineLinkShader() {
-            return _super.call(this) || this;
+            _super.call(this);
         }
         NodeLineLinkShader.prototype.binLocation = function ($context) {
             $context.bindAttribLocation(this.program, 0, "v4Pos");
@@ -42,31 +37,29 @@ var materialui;
         };
         NodeLineLinkShader.NodeLineLinkShader = "NodeLineLinkShader";
         return NodeLineLinkShader;
-    }(Shader3D));
+    })(Shader3D);
     materialui.NodeLineLinkShader = NodeLineLinkShader;
-    var MapLineUi = /** @class */ (function (_super) {
+    var MapLineUi = (function (_super) {
         __extends(MapLineUi, _super);
         function MapLineUi() {
-            var _this = _super.call(this) || this;
-            _this.x = UIData.designWidth / 2;
-            _this.y = UIData.designHeight / 2;
-            _this.width = 20;
-            _this.height = 20;
-            return _this;
+            _super.call(this);
+            this.x = UIData.designWidth / 2;
+            this.y = UIData.designHeight / 2;
+            this.width = 20;
+            this.height = 20;
         }
         MapLineUi.prototype.applyRenderSize = function () {
         };
         return MapLineUi;
-    }(UICompenent));
+    })(UICompenent);
     materialui.MapLineUi = MapLineUi;
-    var NodeLineLinkComponent = /** @class */ (function (_super) {
+    var NodeLineLinkComponent = (function (_super) {
         __extends(NodeLineLinkComponent, _super);
         function NodeLineLinkComponent() {
-            var _this = _super.call(this) || this;
+            _super.call(this);
             ProgrmaManager.getInstance().registe(NodeLineLinkShader.NodeLineLinkShader, new NodeLineLinkShader);
-            _this.shader = ProgrmaManager.getInstance().getProgram(NodeLineLinkShader.NodeLineLinkShader);
-            _this.program = _this.shader.program;
-            return _this;
+            this.shader = ProgrmaManager.getInstance().getProgram(NodeLineLinkShader.NodeLineLinkShader);
+            this.program = this.shader.program;
         }
         NodeLineLinkComponent.prototype.makeLineUiItem = function ($arr) {
             if ($arr && $arr.length > 1) {
@@ -153,24 +146,24 @@ var materialui;
             }
         };
         return NodeLineLinkComponent;
-    }(UIRenderComponent));
+    })(UIRenderComponent);
     materialui.NodeLineLinkComponent = NodeLineLinkComponent;
-    var MaterialLineContainer = /** @class */ (function (_super) {
+    var MaterialLineContainer = (function (_super) {
         __extends(MaterialLineContainer, _super);
         function MaterialLineContainer() {
-            var _this = _super.call(this) || this;
-            _this.width = 200;
-            _this.height = 200;
-            _this._midRender = new NodeLineLinkComponent;
-            _this.addRender(_this._midRender);
+            _super.call(this);
+            this.layer = -1;
+            this.width = 200;
+            this.height = 200;
+            this._midRender = new NodeLineLinkComponent;
+            this.addRender(this._midRender);
             // this._midRender.makeLineUiItem(null)
             var $arr = new Array();
             $arr.push(new Vector2D(0, 0));
             $arr.push(new Vector2D(100, 0));
             $arr.push(new Vector2D(100, 100));
-            _this._midRender.makeLineUiItem($arr);
-            _this._lineList = new Array;
-            return _this;
+            this._midRender.makeLineUiItem($arr);
+            this._lineList = new Array;
         }
         MaterialLineContainer.prototype.startLine = function ($item) {
             this._currentLine = new materialui.MaterialNodeLineUI;
@@ -231,7 +224,7 @@ var materialui;
             }
         };
         return MaterialLineContainer;
-    }(UIPanel));
+    })(UIPanel);
     materialui.MaterialLineContainer = MaterialLineContainer;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=NodeLineLinkSprite.js.map

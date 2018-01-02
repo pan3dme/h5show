@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var MaterialTreeManager = /** @class */ (function () {
+    var MaterialTreeManager = (function () {
         function MaterialTreeManager() {
         }
         MaterialTreeManager.getInstance = function () {
@@ -21,7 +21,7 @@ var materialui;
             });
         };
         return MaterialTreeManager;
-    }());
+    })();
     materialui.MaterialTreeManager = MaterialTreeManager;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialTreeManager.js.map

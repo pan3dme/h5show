@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var leftui;
 (function (leftui) {
-    var FamilyLinPai = /** @class */ (function (_super) {
+    var FamilyLinPai = (function (_super) {
         __extends(FamilyLinPai, _super);
         function FamilyLinPai() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         FamilyLinPai.prototype.makeUi = function () {
             this.rect = new Rectangle(0, 0, 256, 70);
@@ -78,7 +73,6 @@ var leftui;
                 }
                 LabelTextFont.writeSingleLabel(this._topRender.uiAtlas, this.a_xiaoguai_label.skinName, ColorType.Yellowffe9b4 + $strInfo, 14 * 1.5, TextAlign.LEFT, ColorType.Yellowffe9b4, "#27262e", 4);
                 LabelTextFont.writeSingleLabel(this._topRender.uiAtlas, this.a_jifen_num.skinName, ColorType.Yellowffe9b4 + $tokenPointStr, 14 * 1.5, TextAlign.LEFT, ColorType.Yellowffe9b4, "#27262e", 4);
-                // console.log("身上有", GuidData.faction.getBossTokenNum(), "剩余", $residue,"   现有", GuidData.faction.getBossTokenPointscount())
             }
         };
         FamilyLinPai.prototype.mouseClik = function () {
@@ -105,7 +99,7 @@ var leftui;
             AotuSkillManager.getInstance().aotuBattle = true;
         };
         return FamilyLinPai;
-    }(leftui.FamilyLeftUiVo));
+    })(leftui.FamilyLeftUiVo);
     leftui.FamilyLinPai = FamilyLinPai;
 })(leftui || (leftui = {}));
 //# sourceMappingURL=FamilyLinPai.js.map

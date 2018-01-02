@@ -1,17 +1,12 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var DeathPanel = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var DeathPanel = (function (_super) {
     __extends(DeathPanel, _super);
     function DeathPanel() {
-        var _this = _super.call(this) || this;
+        _super.call(this);
         // public setData($str1: string, $str2: string, $str3: string, $cost: number, $time: number, $type: number, $leftFun: Function, $rightFun: Function): void {
         //     LabelTextFont.writeSingleLabel(this.uiAtlas, this._label1.skinName, $str1, 18, TextAlign.CENTER);
         //     if (!$str2 || $str2 == "") {
@@ -29,23 +24,22 @@ var DeathPanel = /** @class */ (function (_super) {
         //     this._timeNum = $time;
         //     TimeUtil.addTimeTick(1000, this._tickFun);
         // }
-        _this.showType = 0;
-        _this.showVal = 0;
-        _this.width = UIData.designWidth;
-        _this.height = UIData.designHeight;
-        _this.center = 0;
-        _this.middle = 0;
-        _this._bgRender = new UIRenderComponent;
-        _this.addRender(_this._bgRender);
-        _this._bg2Render = new UIRenderComponent;
-        _this.addRender(_this._bg2Render);
-        _this._baseRender = new UIRenderComponent;
-        _this.addRender(_this._baseRender);
-        _this.uiAtlas = new UIAtlas();
-        _this._baseRender.uiAtlas = _this.uiAtlas;
-        _this._bgRender.uiAtlas = _this.uiAtlas;
-        _this._bg2Render.uiAtlas = _this.uiAtlas;
-        return _this;
+        this.showType = 0;
+        this.showVal = 0;
+        this.width = UIData.designWidth;
+        this.height = UIData.designHeight;
+        this.center = 0;
+        this.middle = 0;
+        this._bgRender = new UIRenderComponent;
+        this.addRender(this._bgRender);
+        this._bg2Render = new UIRenderComponent;
+        this.addRender(this._bg2Render);
+        this._baseRender = new UIRenderComponent;
+        this.addRender(this._baseRender);
+        this.uiAtlas = new UIAtlas();
+        this._baseRender.uiAtlas = this.uiAtlas;
+        this._bgRender.uiAtlas = this.uiAtlas;
+        this._bg2Render.uiAtlas = this.uiAtlas;
     }
     DeathPanel.prototype.applyLoad = function () {
         var _this = this;
@@ -95,13 +89,6 @@ var DeathPanel = /** @class */ (function (_super) {
             }, function () {
                 // msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "资源不足", 99);
             });
-            // if(!hasEnoughRes([SharedDef.MONEY_TYPE_BIND_GOLD,this.showVal])){
-            //     msgtip.MsgTipManager.outStr(ColorType.colorce0a00+"元宝不足，无法复活", 99)
-            //     return;
-            // }
-            // NetManager.getInstance().protocolos.gold_respawn(1)
-            // TimeUtil.removeTimeTick(this._tickFun);
-            // UIManager.getInstance().removeUIContainer(this);
         }
         else if (e.target == this._rightBtn) {
             NetManager.getInstance().protocolos.xianfu_random_respawn();
@@ -193,5 +180,5 @@ var DeathPanel = /** @class */ (function (_super) {
         }, false);
     };
     return DeathPanel;
-}(UIConatiner));
+})(UIConatiner);
 //# sourceMappingURL=DeathPanel.js.map

@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var selectserver;
 (function (selectserver) {
-    var SelectServerModule = /** @class */ (function (_super) {
+    var SelectServerModule = (function (_super) {
         __extends(SelectServerModule, _super);
         function SelectServerModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         SelectServerModule.prototype.getModuleName = function () {
             return "SelectServerModule";
@@ -22,12 +17,12 @@ var selectserver;
             return [new SelectServerProcessor()];
         };
         return SelectServerModule;
-    }(Module));
+    })(Module);
     selectserver.SelectServerModule = SelectServerModule;
-    var SelectServerEvent = /** @class */ (function (_super) {
+    var SelectServerEvent = (function (_super) {
         __extends(SelectServerEvent, _super);
         function SelectServerEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //选中一级标签页
         SelectServerEvent.SELECT_TAB_EVENT = "SELECT_TAB_EVENT";
@@ -44,12 +39,12 @@ var selectserver;
         //隐藏公告面板
         SelectServerEvent.HIDE_GG_EVENT = "HIDE_GG_EVENT";
         return SelectServerEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     selectserver.SelectServerEvent = SelectServerEvent;
-    var SelectServerProcessor = /** @class */ (function (_super) {
+    var SelectServerProcessor = (function (_super) {
         __extends(SelectServerProcessor, _super);
         function SelectServerProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         SelectServerProcessor.prototype.getName = function () {
             return "SelectServerProcessor";
@@ -167,7 +162,7 @@ var selectserver;
             ];
         };
         return SelectServerProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     selectserver.SelectServerProcessor = SelectServerProcessor;
 })(selectserver || (selectserver = {}));
 //# sourceMappingURL=SelectServerProcessor.js.map

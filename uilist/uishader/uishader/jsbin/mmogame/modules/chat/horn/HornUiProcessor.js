@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var hornui;
 (function (hornui) {
-    var HornUiModule = /** @class */ (function (_super) {
+    var HornUiModule = (function (_super) {
         __extends(HornUiModule, _super);
         function HornUiModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         HornUiModule.prototype.getModuleName = function () {
             return "HornUiModule";
@@ -22,22 +17,22 @@ var hornui;
             return [new HornUiProcessor()];
         };
         return HornUiModule;
-    }(Module));
+    })(Module);
     hornui.HornUiModule = HornUiModule;
-    var HornUiEvent = /** @class */ (function (_super) {
+    var HornUiEvent = (function (_super) {
         __extends(HornUiEvent, _super);
         function HornUiEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         HornUiEvent.SHOW_HORN_UI_PANEL = "SHOW_HORN_UI_PANEL";
         HornUiEvent.HIDE_HORN_UI_PANEL = "HIDE_HORN_UI_PANEL";
         return HornUiEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     hornui.HornUiEvent = HornUiEvent;
-    var HornUiProcessor = /** @class */ (function (_super) {
+    var HornUiProcessor = (function (_super) {
         __extends(HornUiProcessor, _super);
         function HornUiProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         HornUiProcessor.prototype.getName = function () {
             return "HornUiProcessor";
@@ -74,7 +69,7 @@ var hornui;
             ];
         };
         return HornUiProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     hornui.HornUiProcessor = HornUiProcessor;
 })(hornui || (hornui = {}));
 //# sourceMappingURL=HornUiProcessor.js.map

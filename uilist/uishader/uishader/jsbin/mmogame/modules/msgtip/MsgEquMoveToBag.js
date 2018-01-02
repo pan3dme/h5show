@@ -1,22 +1,16 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var msgtip;
 (function (msgtip) {
-    var MoveTipUiRender = /** @class */ (function (_super) {
+    var MoveTipUiRender = (function (_super) {
         __extends(MoveTipUiRender, _super);
         function MoveTipUiRender() {
-            var _this = _super.call(this) || this;
-            _this.uiAtlas = new UIAtlas();
-            _this.uiAtlas.configData = new Array();
-            return _this;
+            _super.call(this);
+            this.uiAtlas = new UIAtlas();
+            this.uiAtlas.configData = new Array();
         }
         MoveTipUiRender.prototype.makeSamplePic = function () {
             var _this = this;
@@ -43,9 +37,9 @@ var msgtip;
             this.makeSamplePic();
         };
         return MoveTipUiRender;
-    }(AlphaUIRenderComponent));
+    })(AlphaUIRenderComponent);
     msgtip.MoveTipUiRender = MoveTipUiRender;
-    var MoveTipUi = /** @class */ (function () {
+    var MoveTipUi = (function () {
         function MoveTipUi($cs) {
             this.container = $cs;
             this.moveTipUiRender = new MoveTipUiRender();
@@ -64,19 +58,19 @@ var msgtip;
             this.moveTipUiRender.dispose();
         };
         return MoveTipUi;
-    }());
+    })();
     msgtip.MoveTipUi = MoveTipUi;
-    var MsgEquMoveToBag = /** @class */ (function (_super) {
+    var MsgEquMoveToBag = (function (_super) {
         __extends(MsgEquMoveToBag, _super);
         function MsgEquMoveToBag() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.top = 0;
-            _this.left = 0;
-            _this.frameUpFun = function (t) { _this.upData(t); };
-            TimeUtil.addFrameTick(_this.frameUpFun);
-            return _this;
+            var _this = this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.top = 0;
+            this.left = 0;
+            this.frameUpFun = function (t) { _this.upData(t); };
+            TimeUtil.addFrameTick(this.frameUpFun);
         }
         MsgEquMoveToBag.prototype.upData = function (t) {
             if (this.renderList.length <= 0) {
@@ -104,7 +98,7 @@ var msgtip;
             UIManager.getInstance().addUIContainer(this.msgEquMoveToBag);
         };
         return MsgEquMoveToBag;
-    }(UIConatiner));
+    })(UIConatiner);
     msgtip.MsgEquMoveToBag = MsgEquMoveToBag;
 })(msgtip || (msgtip = {}));
 //# sourceMappingURL=MsgEquMoveToBag.js.map

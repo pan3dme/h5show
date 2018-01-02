@@ -25,7 +25,7 @@
             this.initItem();
 
             this.resetBgSize()
-
+            this.drawTitleToFrame("纹理采样")
       
         }
         private initItem(): void {

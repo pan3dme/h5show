@@ -1,14 +1,9 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var SkillKeyVo = /** @class */ (function () {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var SkillKeyVo = (function () {
     function SkillKeyVo() {
         this.frame = 0;
     }
@@ -17,8 +12,8 @@ var SkillKeyVo = /** @class */ (function () {
         this.url = $data.url;
     };
     return SkillKeyVo;
-}());
-var SkillShockVo = /** @class */ (function () {
+})();
+var SkillShockVo = (function () {
     function SkillShockVo() {
     }
     SkillShockVo.prototype.setData = function ($data) {
@@ -27,11 +22,11 @@ var SkillShockVo = /** @class */ (function () {
         this.amp = $data.amp;
     };
     return SkillShockVo;
-}());
-var SkillFixEffectKeyVo = /** @class */ (function (_super) {
+})();
+var SkillFixEffectKeyVo = (function (_super) {
     __extends(SkillFixEffectKeyVo, _super);
     function SkillFixEffectKeyVo() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     SkillFixEffectKeyVo.prototype.setData = function ($data) {
         _super.prototype.setData.call(this, $data);
@@ -45,11 +40,11 @@ var SkillFixEffectKeyVo = /** @class */ (function (_super) {
         }
     };
     return SkillFixEffectKeyVo;
-}(SkillKeyVo));
-var SkillTrajectoryTargetKeyVo = /** @class */ (function (_super) {
+})(SkillKeyVo);
+var SkillTrajectoryTargetKeyVo = (function (_super) {
     __extends(SkillTrajectoryTargetKeyVo, _super);
     function SkillTrajectoryTargetKeyVo() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     SkillTrajectoryTargetKeyVo.prototype.setData = function ($data) {
         _super.prototype.setData.call(this, $data);
@@ -70,5 +65,5 @@ var SkillTrajectoryTargetKeyVo = /** @class */ (function (_super) {
         this.multype = $data.multype;
     };
     return SkillTrajectoryTargetKeyVo;
-}(SkillKeyVo));
+})(SkillKeyVo);
 //# sourceMappingURL=SkillKeyVo.js.map

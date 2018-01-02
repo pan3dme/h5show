@@ -1,1 +1,1 @@
-{"version":3,"file":"RoleResLow.js","sourceRoot":"","sources":["../../../../engine/utils/res/RoleResLow.ts"],"names":[],"mappings":";;;;;;;;;;AAAA;IAAyB,8BAAO;IAAhC;;IAGA,CAAC;IAAD,iBAAC;AAAD,CAAC,AAHD,CAAyB,OAAO,GAG/B"}
+{"version":3,"file":"RoleResLow.js","sourceRoot":"","sources":["../../../../engine/utils/res/RoleResLow.ts"],"names":["RoleResLow","RoleResLow.constructor"],"mappings":";;;;;AAAA;IAAyBA,8BAAOA;IAAhCA;QAAyBC,8BAAOA;IAGhCA,CAACA;IAADD,iBAACA;AAADA,CAACA,AAHD,EAAyB,OAAO,EAG/B"}

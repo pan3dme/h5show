@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var adventureinfo;
 (function (adventureinfo) {
-    var AdventureInfoModule = /** @class */ (function (_super) {
+    var AdventureInfoModule = (function (_super) {
         __extends(AdventureInfoModule, _super);
         function AdventureInfoModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         AdventureInfoModule.prototype.getModuleName = function () {
             return "AdventureInfoModule";
@@ -22,12 +17,12 @@ var adventureinfo;
             return [new AdventureInfoProcessor()];
         };
         return AdventureInfoModule;
-    }(Module));
+    })(Module);
     adventureinfo.AdventureInfoModule = AdventureInfoModule;
-    var AdventurInfoEvent = /** @class */ (function (_super) {
+    var AdventurInfoEvent = (function (_super) {
         __extends(AdventurInfoEvent, _super);
         function AdventurInfoEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         AdventurInfoEvent.SHOW_ADVENTURE_INFO_UI_PANEL = "SHOW_ADVENTURE_INFO_UI_PANEL";
         AdventurInfoEvent.HIDE_ADVENTURE_INFO_UI_PANEL = "HIDE_ADVENTURE_INFO_UI_PANEL";
@@ -36,12 +31,12 @@ var adventureinfo;
         AdventurInfoEvent.UPLEV_SHOW = "UPLEV_SHOW";
         AdventurInfoEvent.SET_AUTOFLAG = "SET_AUTOFLAG";
         return AdventurInfoEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     adventureinfo.AdventurInfoEvent = AdventurInfoEvent;
-    var AdventureInfoProcessor = /** @class */ (function (_super) {
+    var AdventureInfoProcessor = (function (_super) {
         __extends(AdventureInfoProcessor, _super);
         function AdventureInfoProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         AdventureInfoProcessor.prototype.getName = function () {
             return "AdventureInfoProcessor";
@@ -160,7 +155,7 @@ var adventureinfo;
             ];
         };
         return AdventureInfoProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     adventureinfo.AdventureInfoProcessor = AdventureInfoProcessor;
 })(adventureinfo || (adventureinfo = {}));
 //# sourceMappingURL=AdventureInfoProcessor.js.map

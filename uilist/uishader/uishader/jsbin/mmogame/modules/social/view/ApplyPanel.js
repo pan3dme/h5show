@@ -1,35 +1,29 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var social;
 (function (social) {
-    var ApplyPanel = /** @class */ (function (_super) {
+    var ApplyPanel = (function (_super) {
         __extends(ApplyPanel, _super);
         function ApplyPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.middle = 0;
-            _this.center = 0;
-            _this.setBlackBg();
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.middle = 0;
+            this.center = 0;
+            this.setBlackBg();
             //添加好友面板渲染器
-            _this._AbgRender = new UIRenderComponent;
-            _this.addRender(_this._AbgRender);
-            _this._AbottomRender = new UIRenderComponent;
-            _this.addRender(_this._AbottomRender);
-            _this._AbaseRender = new UIRenderComponent;
-            _this.addRender(_this._AbaseRender);
-            _this._AtopRender = new UIRenderComponent;
-            _this.addRender(_this._AtopRender);
-            _this._AbgRender.uiAtlas = new UIAtlas;
-            return _this;
+            this._AbgRender = new UIRenderComponent;
+            this.addRender(this._AbgRender);
+            this._AbottomRender = new UIRenderComponent;
+            this.addRender(this._AbottomRender);
+            this._AbaseRender = new UIRenderComponent;
+            this.addRender(this._AbaseRender);
+            this._AtopRender = new UIRenderComponent;
+            this.addRender(this._AtopRender);
+            this._AbgRender.uiAtlas = new UIAtlas;
         }
         ApplyPanel.prototype.dispose = function () {
             this._AbgRender.dispose();
@@ -100,7 +94,7 @@ var social;
             }
         };
         return ApplyPanel;
-    }(WindowMinUi));
+    })(WindowMinUi);
     social.ApplyPanel = ApplyPanel;
 })(social || (social = {}));
 //# sourceMappingURL=ApplyPanel.js.map

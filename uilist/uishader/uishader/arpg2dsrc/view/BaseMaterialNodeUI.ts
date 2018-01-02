@@ -49,21 +49,21 @@
 
         }
         public setData(obj: any): void {
-            this.x = obj.x;
-            this.y = obj.y;
+            this.left = obj.x+500;
+            this.top = obj.y+300;
             this.nodeTree.isDynamic = obj.isDynamic;
             this.nodeTree.paramName = obj.paramName;
         }
         public getData(): Object{
             var obj: any = new Object;
-            obj.x = this.x;
-            obj.y = this.y;
+            obj.x = this.left;
+            obj.y = this.top;
             obj.name = this.name;
             obj.isDynamic = this.nodeTree.isDynamic;
             obj.paramName = this.nodeTree.paramName;
             return obj;
         }
-        public getObj(): object {
+        public getObj(): Object {
             return this.nodeTree.getObj();
         }
    
@@ -76,7 +76,10 @@
             this.a_select_line.width = this.width;
             this.a_select_line.height = this.height+25;
         }
-        private a_select_line: UICompenent
+        private a_select_line: UICompenent;
+        private a_panel_title_frame: FrameCompenent;
+        private static titleFrameId: number=0
+
         protected loadConfigCom(): void {
 
             this.a_cell_base_bg = this._bottomRender.getComponent("a_cell_base_bg");
@@ -86,6 +89,11 @@
             this.a_select_line = this._topRender.getComponent("a_select_line");
             
            
+            this.a_panel_title_frame = <FrameCompenent> this._topRender.getComponent("a_panel_title_frame");
+            this.a_panel_title_frame.goToAndStop(BaseMaterialNodeUI.titleFrameId++);
+            this.a_panel_title_frame.x=20
+            this.addChild(this.a_panel_title_frame);
+         
 
 
             this.a_tittle_bg.x = 0;
@@ -99,9 +107,24 @@
             this.inPutItemVec = new Array;
             this.outPutItemVec = new Array;
 
-            this.resetBgSize()
+            this.resetBgSize();
+
+            this.drawTitleToFrame("材质")
     
         }
+        protected drawTitleToFrame($str:string): void
+        {
+            this.drawTextToName(this.a_panel_title_frame, $str);
+        }
+        private drawTextToName($ui: FrameCompenent, $str:string): void {
+
+            var $toRect: Rectangle = $ui.getSkinCtxRect()
+            var $ctx: CanvasRenderingContext2D = UIManager.getInstance().getContext2D($toRect.width, $toRect.height, false);
+            LabelTextFont.writeSingleLabelToCtx($ctx, $str, 20,0,0,TextAlign.LEFT)
+            $ui.drawToCtx(this._bottomRender.uiAtlas, $ctx)
+            console.log(150*1.5,14*1.5)
+        }
+
         public addItems($nodeUI: ItemMaterialUI): void{
             
             if($nodeUI.inOut) {

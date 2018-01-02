@@ -1,4 +1,4 @@
-var TexItem = /** @class */ (function () {
+var TexItem = (function () {
     function TexItem() {
     }
     TexItem.prototype.destory = function () {
@@ -35,5 +35,5 @@ var TexItem = /** @class */ (function () {
     TexItem.HEIGHTMAP = 4;
     TexItem.REFRACTIONMAP = 5;
     return TexItem;
-}());
+})();
 //# sourceMappingURL=TexItem.js.map
