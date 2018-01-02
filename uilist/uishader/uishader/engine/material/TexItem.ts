@@ -19,6 +19,7 @@
     public wrap: number;
     public filter: number;
     public mipmap: number;
+    public permul: boolean;
 
     public destory(): void {
         if (this.textureRes){

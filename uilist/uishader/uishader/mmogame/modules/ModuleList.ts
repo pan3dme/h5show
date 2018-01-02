@@ -8,7 +8,8 @@
         var $arr: Array<Module> = [
             new EngineModule(), //引擎
             new SceneLoadModule(), //加载页面
-            new materialui.MaterialModule()
+            new materialui.MaterialModule(),
+            new materialui.RightMenuModule(),
 
         ];
     

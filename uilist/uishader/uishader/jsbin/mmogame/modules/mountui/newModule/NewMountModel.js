@@ -1,24 +1,24 @@
 var mountui;
 (function (mountui) {
-    var MountSkillData = (function () {
+    var MountSkillData = /** @class */ (function () {
         function MountSkillData() {
         }
         return MountSkillData;
-    })();
+    }());
     mountui.MountSkillData = MountSkillData;
-    var MountLevAttribute = (function () {
+    var MountLevAttribute = /** @class */ (function () {
         function MountLevAttribute() {
         }
         return MountLevAttribute;
-    })();
+    }());
     mountui.MountLevAttribute = MountLevAttribute;
-    var HuanhuaVo = (function () {
+    var HuanhuaVo = /** @class */ (function () {
         function HuanhuaVo() {
         }
         return HuanhuaVo;
-    })();
+    }());
     mountui.HuanhuaVo = HuanhuaVo;
-    var NewMountModel = (function () {
+    var NewMountModel = /** @class */ (function () {
         function NewMountModel() {
         }
         NewMountModel.getInstance = function () {
@@ -185,13 +185,13 @@ var mountui;
             return 1;
         };
         return NewMountModel;
-    })();
+    }());
     mountui.NewMountModel = NewMountModel;
-    var MountUtil = (function () {
+    var MountUtil = /** @class */ (function () {
         function MountUtil() {
         }
         return MountUtil;
-    })();
+    }());
     mountui.MountUtil = MountUtil;
 })(mountui || (mountui = {}));
 //# sourceMappingURL=NewMountModel.js.map

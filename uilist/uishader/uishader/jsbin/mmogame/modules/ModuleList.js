@@ -1,4 +1,4 @@
-var ModuleList = (function () {
+var ModuleList = /** @class */ (function () {
     function ModuleList() {
     }
     ModuleList.getModuleList = function () {
@@ -6,7 +6,8 @@ var ModuleList = (function () {
         var $arr = [
             new EngineModule(),
             new SceneLoadModule(),
-            new materialui.MaterialModule()
+            new materialui.MaterialModule(),
+            new materialui.RightMenuModule(),
         ];
         return $arr;
     };
@@ -20,5 +21,5 @@ var ModuleList = (function () {
         }
     };
     return ModuleList;
-})();
+}());
 //# sourceMappingURL=ModuleList.js.map

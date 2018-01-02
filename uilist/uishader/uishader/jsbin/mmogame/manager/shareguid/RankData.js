@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var RankData = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var RankData = /** @class */ (function (_super) {
     __extends(RankData, _super);
     function RankData() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     RankData.prototype.getRankGuid = function () {
         return this.GetStr(SharedDef.RANK_LIST_CURRENT_OBJ_STR_FIELD_PLAYER_GUID);
@@ -66,5 +71,5 @@ var RankData = (function (_super) {
         return this.GetUInt32(SharedDef.RANK_LIST_CURRENT_OBJ_INT_FIELD_WING);
     };
     return RankData;
-})(GuidObject);
+}(GuidObject));
 //# sourceMappingURL=RankData.js.map

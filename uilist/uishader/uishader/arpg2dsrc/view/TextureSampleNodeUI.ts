@@ -11,6 +11,7 @@
 
         public constructor() {
             super();
+            this.name = "TextureSampleNodeUI" + random(9999999);
             this.left = 400
             this.top = 100;
 

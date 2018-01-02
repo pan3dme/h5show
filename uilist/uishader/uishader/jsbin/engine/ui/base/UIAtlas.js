@@ -1,4 +1,4 @@
-var UIAtlas = (function () {
+var UIAtlas = /** @class */ (function () {
     //public texture: WebGLTexture;
     function UIAtlas() {
         this._hasDispose = false;
@@ -297,5 +297,5 @@ var UIAtlas = (function () {
         this._hasDispose = true;
     };
     return UIAtlas;
-})();
+}());
 //# sourceMappingURL=UIAtlas.js.map

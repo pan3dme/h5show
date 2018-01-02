@@ -1,20 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var msgtip;
 (function (msgtip) {
-    var MsgEffectsMoveData = (function () {
+    var MsgEffectsMoveData = /** @class */ (function () {
         function MsgEffectsMoveData() {
         }
         return MsgEffectsMoveData;
-    })();
+    }());
     msgtip.MsgEffectsMoveData = MsgEffectsMoveData;
-    var MsgEffectsIconRender = (function (_super) {
+    var MsgEffectsIconRender = /** @class */ (function (_super) {
         __extends(MsgEffectsIconRender, _super);
         function MsgEffectsIconRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MsgEffectsIconRender.prototype.makeData = function () {
             if (this._data) {
@@ -92,9 +97,9 @@ var msgtip;
             a.y = _ny;
         };
         return MsgEffectsIconRender;
-    })(Disp2DBaseText);
+    }(Disp2DBaseText));
     msgtip.MsgEffectsIconRender = MsgEffectsIconRender;
-    var MsgEffectsManager = (function () {
+    var MsgEffectsManager = /** @class */ (function () {
         function MsgEffectsManager() {
             var _this = this;
             this._dis2DUIContianerPanel = new Dis2DUIContianerPanel(MsgEffectsIconRender, new Rectangle(0, 0, 32, 32), 15);
@@ -131,7 +136,7 @@ var msgtip;
             }
         };
         return MsgEffectsManager;
-    })();
+    }());
     msgtip.MsgEffectsManager = MsgEffectsManager;
 })(msgtip || (msgtip = {}));
 //# sourceMappingURL=MsgEffectsIcon.js.map

@@ -12,14 +12,17 @@
         protected _container: PanelContainer;
         public  nodeTree:NodeTree;
    
-        protected  gap:number = 20;
+        protected gap: number = 20;
+        public name: string
         public static baseUIAtlas: UIAtlas;
 
         public constructor() {
             super();
-
+            this.name = "BaseMaterialNodeUI" + random(9999999);
             this.width = 200;
             this.height = 200;
+
+
 
             this._bottomRender = new UIRenderComponent;
             this.addRender(this._bottomRender);
@@ -36,19 +39,54 @@
 
 
             this._container = new PanelContainer(this,this._topRender);
-    
-
             this.loadConfigCom();
         }
+        public setInItemByData(ary: Array<any>): void {
+
+        }
+
+        public setOutItemByData(ary: Array<any>): void {
+
+        }
+        public setData(obj: any): void {
+            this.x = obj.x;
+            this.y = obj.y;
+            this.nodeTree.isDynamic = obj.isDynamic;
+            this.nodeTree.paramName = obj.paramName;
+        }
+        public getData(): Object{
+            var obj: any = new Object;
+            obj.x = this.x;
+            obj.y = this.y;
+            obj.name = this.name;
+            obj.isDynamic = this.nodeTree.isDynamic;
+            obj.paramName = this.nodeTree.paramName;
+            return obj;
+        }
+        public getObj(): object {
+            return this.nodeTree.getObj();
+        }
+   
         protected resetBgSize(): void
         {
             this.a_cell_base_bg.height = this.height;
+
+            this.a_select_line.x = 0;
+            this.a_select_line.y = 0;
+            this.a_select_line.width = this.width;
+            this.a_select_line.height = this.height+25;
         }
+        private a_select_line: UICompenent
         protected loadConfigCom(): void {
 
+            this.a_cell_base_bg = this._bottomRender.getComponent("a_cell_base_bg");
+            this.addChild(this.a_cell_base_bg);
 
             this.a_tittle_bg = this.addEvntBut("a_tittle_bg", this._bottomRender)
-            this.a_cell_base_bg = this.addEvntBut("a_cell_base_bg", this._bottomRender)
+            this.a_select_line = this._topRender.getComponent("a_select_line");
+            
+           
+
 
             this.a_tittle_bg.x = 0;
             this.a_tittle_bg.y = 0;
@@ -112,7 +150,15 @@
             }
         }
 
+        public removeAllNodeLine(): void {
+            for (var i: number=0; i < this.inPutItemVec.length; i++) {
+                this. inPutItemVec[i].removeAllLine();
+            }
+            for (i = 0; i < this.outPutItemVec.length; i++) {
+                this.outPutItemVec[i].removeAllLine();
+            }
 
+        }
         protected a_tittle_bg: FrameCompenent;
         protected a_cell_base_bg: UICompenent;
         protected butClik(evt: InteractiveEvent): void {
@@ -124,7 +170,23 @@
                     this.clikUiEvent(evt)
                     break;
             }
+
+       
+            var $materialEvent: MaterialEvent = new MaterialEvent(MaterialEvent.SELECT_MATERIAL_NODE_UI)
+            $materialEvent.nodeUi = this;
+            ModuleEventManager.dispatchEvent($materialEvent);
+         
+     
         }
+
+        public getInItem($id: number): ItemMaterialUI{
+            return this.inPutItemVec[$id];
+        }
+
+        public getOutItem($id: number): ItemMaterialUI{
+            return this.outPutItemVec[$id];
+        }
+        
         public clikUiEvent($mouseEvt: InteractiveEvent): void {
 
             var $itemMaterialUI: ItemMaterialUI = this.getPointFrameTagetFoItemVec($mouseEvt.target);
@@ -189,8 +251,14 @@
             Scene_data.uiStage.removeEventListener(InteractiveEvent.Move, this.onMove, this);
             Scene_data.uiStage.removeEventListener(InteractiveEvent.Up, this.onUp, this);
         }
-
-    
+        private  _select: boolean;
+        public get select(): boolean {
+            return this._select;
+        }
+        public set select(value: boolean) {
+            this._select = value
+            this.setUiListVisibleByItem([this.a_select_line], this._select);
+        }
 
     }
 }  

@@ -1,9 +1,9 @@
-var TextRegVo = (function () {
+var TextRegVo = /** @class */ (function () {
     function TextRegVo() {
     }
     return TextRegVo;
-})();
-var TextRegExp = (function () {
+}());
+var TextRegExp = /** @class */ (function () {
     function TextRegExp() {
     }
     TextRegExp.pushStr = function ($str) {
@@ -263,6 +263,19 @@ var TextRegExp = (function () {
                     $ctx.fillText(words[n], x + tx, ty);
                 }
                 line += words[n];
+                // } else {
+                //     //绘制表情
+                //     var faceSize: number = fontsize * 1.4
+                //     var $rect: Rectangle = new Rectangle(x + metrics.width * 1.0 + 0, y + ty - faceSize / 10, faceSize, faceSize);
+                //     if (metrics.width > maxWidth) {
+                //         ty += lineHeight;
+                //         line = "";
+                //         $lineNum++
+                //         $rect = new Rectangle(x + 0, y + ty - faceSize / 10, faceSize, faceSize);
+                //     }
+                //     this.drawFaceIcon($ctx, $rect, $faceId)
+                //     n = n + 2;
+                //     line += "脸1"
             }
         }
         return $lineNum;
@@ -365,8 +378,8 @@ var TextRegExp = (function () {
     };
     TextRegExp.defaultColor = "#000000";
     return TextRegExp;
-})();
-var TextCell = (function () {
+}());
+var TextCell = /** @class */ (function () {
     function TextCell($str, $posy, $width, $color, $maxWidth) {
         this.str = $str;
         this.posy = $posy;
@@ -375,8 +388,8 @@ var TextCell = (function () {
         this.maxwidth = $maxWidth;
     }
     return TextCell;
-})();
-var LabelTextFont = (function () {
+}());
+var LabelTextFont = /** @class */ (function () {
     function LabelTextFont() {
     }
     /*
@@ -654,5 +667,5 @@ var LabelTextFont = (function () {
         $uiAtlas.updateCtx($ctx, $uiRect.pixelX, $uiRect.pixelY);
     };
     return LabelTextFont;
-})();
+}());
 //# sourceMappingURL=LabelTextFont.js.map

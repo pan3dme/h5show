@@ -1,9 +1,14 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var UIConatiner = (function () {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var UIConatiner = /** @class */ (function () {
     function UIConatiner() {
         this._x = 0;
         this._y = 0;
@@ -455,14 +460,14 @@ var UIConatiner = (function () {
         $ui.height = temp.height;
     };
     return UIConatiner;
-})();
-var Dis2DUIContianerBase = (function (_super) {
+}());
+var Dis2DUIContianerBase = /** @class */ (function (_super) {
     __extends(Dis2DUIContianerBase, _super);
     function Dis2DUIContianerBase() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     Dis2DUIContianerBase.prototype.update = function (t) {
     };
     return Dis2DUIContianerBase;
-})(UIConatiner);
+}(UIConatiner));
 //# sourceMappingURL=UIContainer.js.map

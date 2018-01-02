@@ -236,7 +236,17 @@ module materialui {
             ModuleEventManager.dispatchEvent(evt);
 
         Scene_data.uiStage.removeEventListener(InteractiveEvent.Up, this.onMouseUp, this);
-    }
+        }
+        public  addConnentLine($startItem: ItemMaterialUI, $endItem: ItemMaterialUI):void {
+            this._currentLine = new MaterialNodeLineUI;
+
+            this._currentLine.parent = this
+            this.addRender(this._currentLine.lineRender);
+            this._currentLine.setFromNode($startItem);
+            this._currentLine.setEndNode($endItem);
+            this._lineList.push(this._currentLine);
+        }
+
         public stopLine($item: ItemMaterialUI): void{
 
       

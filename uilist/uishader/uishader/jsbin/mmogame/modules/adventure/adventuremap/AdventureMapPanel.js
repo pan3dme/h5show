@@ -1,34 +1,40 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var adventuremap;
 (function (adventuremap) {
-    var AdventureMapVo = (function () {
+    var AdventureMapVo = /** @class */ (function () {
         function AdventureMapVo() {
         }
         return AdventureMapVo;
-    })();
+    }());
     adventuremap.AdventureMapVo = AdventureMapVo;
-    var AdventureMapPanel = (function (_super) {
+    var AdventureMapPanel = /** @class */ (function (_super) {
         __extends(AdventureMapPanel, _super);
         function AdventureMapPanel() {
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.passUiItem = new Array();
-            this.pageId = -1;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._midRender.uiAtlas = new UIAtlas;
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.passUiItem = new Array();
+            _this.pageId = -1;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._midRender.uiAtlas = new UIAtlas;
+            return _this;
         }
         AdventureMapPanel.prototype.dispose = function () {
             this._bottomRender.dispose();
@@ -98,6 +104,7 @@ var adventuremap;
                 $ctx.drawImage($img, 0, 0, $toRect.width, $toRect.height);
                 //  console.log("$vo.id ,$chapterId", $tb.id, $chapterId);
                 if ($tb.id > ($chapterId + 1)) {
+                    //  UIManager.getInstance().makeCtxToGray($ctx, new Rectangle(0, 0, $toRect.width, $toRect.height));
                 }
                 $vo.pic.drawToCtx(_this._topRender.uiAtlas, $ctx);
             });
@@ -144,6 +151,7 @@ var adventuremap;
             var $tb = adventure.AdventureModel.getInstance().getCurTb();
             if (this.pageId == -1) {
                 this.pageId = Math.floor(($tb.chapterId - 1) / 5);
+                // this.pageId=1
             }
             LabelTextFont.writeSingleLabel(this._topRender.uiAtlas, this.a_map_name.skinName, ColorType.Yellowffe9b4 + $tb.name, 16, TextAlign.CENTER);
             var exp = $tb.expReward[1] * 360;
@@ -205,7 +213,7 @@ var adventuremap;
             UIManager.getInstance().removeUIContainer(this);
         };
         return AdventureMapPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     adventuremap.AdventureMapPanel = AdventureMapPanel;
 })(adventuremap || (adventuremap = {}));
 //# sourceMappingURL=AdventureMapPanel.js.map

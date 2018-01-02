@@ -1,4 +1,4 @@
-var EventDispatcher = (function () {
+var EventDispatcher = /** @class */ (function () {
     function EventDispatcher() {
         this._eventsMap = null;
     }
@@ -52,5 +52,5 @@ var EventDispatcher = (function () {
         }
     };
     return EventDispatcher;
-})();
+}());
 //# sourceMappingURL=EventDispatcher.js.map

@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Display3DBallShader = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Display3DBallShader = /** @class */ (function (_super) {
     __extends(Display3DBallShader, _super);
     function Display3DBallShader() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     Display3DBallShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "vPosition");
@@ -61,10 +66,10 @@ var Display3DBallShader = (function (_super) {
         var defineParticleColor;
         defineBaseStr =
             "attribute vec4 vPosition;\n" +
-                "attribute vec3 texcoord;\n" +
-                "attribute vec4 basePos;\n" +
-                "attribute vec3 speed;\n" +
-                "uniform mat4 vcmat[" + Display3DBallShader.getVcSize() + "];\n" +
+                "attribute vec3 texcoord;\n" + //uv坐标xy
+                "attribute vec4 basePos;\n" + //基础位置xyz，发射起始时间w
+                "attribute vec3 speed;\n" + //速度xyz
+                "uniform mat4 vcmat[" + Display3DBallShader.getVcSize() + "];\n" + //所有vc值
                 //"uniform mat4 watheye;\n" +//面向视点矩阵
                 //"uniform mat4 viewMatrix3D;\n" +//模型矩阵
                 //"uniform mat4 modelMatrix;\n" +//模型矩阵
@@ -72,7 +77,7 @@ var Display3DBallShader = (function (_super) {
                 //"uniform vec4 time;\n" +//当前时间x,自身加速度y,粒子生命z,是否循环w
                 "varying vec2 v0;\n";
         defineRandomColor =
-            "attribute vec4 color;\n" +
+            "attribute vec4 color;\n" + //随机颜色
                 "varying vec4 v2;\n"; //随机颜色
         defineScaleStr = "";
         //"uniform vec4 scale;\n" +//缩放x，抖动周期y，抖动振幅z
@@ -92,7 +97,7 @@ var Display3DBallShader = (function (_super) {
         defineParticleColor =
             "varying vec2 v1;\n"; //粒子颜色坐标
         baseStr =
-            "float ctime = " + this.getVec4Str("time") + ".x - basePos.w;\n" +
+            "float ctime = " + this.getVec4Str("time") + ".x - basePos.w;\n" + //计算当前时间
                 "if (" + this.getVec4Str("time") + ".w > 0.0 && ctime >= 0.0) {\n" +
                 "    ctime = fract(ctime / " + this.getVec4Str("time") + ".z) * " + this.getVec4Str("time") + ".z;\n" +
                 "}\n" +
@@ -116,13 +121,13 @@ var Display3DBallShader = (function (_super) {
         rotationStr =
             "float angle = rotation.x + rotation.y * ctime;\n" +
                 "vec4 np = vec4(sin(angle), cos(angle), 0, 0);\n" +
-                "np.z = np.x * pos.y + np.y * pos.x;\n" +
-                "np.w = np.y * pos.y - np.x * pos.x;\n" +
+                "np.z = np.x * pos.y + np.y * pos.x;\n" + //b.x = sin_z * a.y + cos_z * a.x;
+                "np.w = np.y * pos.y - np.x * pos.x;\n" + //b.y = cos_z * a.y - sin_z * a.x;
                 "pos.xy = np.zw;\n";
         posStr =
-            "vec3 addPos = speed * ctime;\n" +
+            "vec3 addPos = speed * ctime;\n" + //运动部分
                 "vec3 uspeed = vec3(0,0,0);\n" +
-                "if (ctime < 0.0 || ctime >= " + this.getVec4Str("time") + ".z) {\n" +
+                "if (ctime < 0.0 || ctime >= " + this.getVec4Str("time") + ".z) {\n" + //根据时间控制粒子是否显示
                 "    addPos.y = addPos.y + 100000.0;\n" +
                 "}\n";
         addSpeedStr =
@@ -136,24 +141,24 @@ var Display3DBallShader = (function (_super) {
                 "}\n" +
                 "addPos.xyz = addPos.xyz + uspeed.xyz * ctime * ctime;\n";
         mulStr =
-            "uspeed = speed + uspeed * ctime * 2.0;\n" +
+            "uspeed = speed + uspeed * ctime * 2.0;\n" + //当前速度方向
                 "uspeed = normalize(uspeed);\n" +
                 "vec4 tempMul = " + this.getMat4Str("rotationMatrix") + " * vec4(uspeed,1.0);\n" +
                 "uspeed.xyz = tempMul.xyz;\n" +
                 "uspeed = normalize(uspeed);\n" +
-                "vec3 cPos = addPos;\n" +
+                "vec3 cPos = addPos;\n" + //v(视点-位置)
                 "tempMul = " + this.getMat4Str("rotationMatrix") + " * vec4(cPos,1.0);\n" +
                 "cPos.xyz = tempMul.xyz; \n" +
                 "cPos.xyz = " + this.getVec4Str("worldPos") + ".xyz + cPos.xyz;\n" +
                 "cPos.xyz = " + this.getVec4Str("camPos") + ".xyz - cPos.xyz;\n" +
                 "cPos = normalize(cPos);\n" +
-                "cPos = cross(uspeed, cPos);\n" +
+                "cPos = cross(uspeed, cPos);\n" + //法线
                 "cPos = normalize(cPos);\n" +
                 "uspeed = uspeed * pos.x;\n" +
                 "cPos = cPos * pos.y;\n" +
                 "pos.xyz = uspeed.xyz + cPos.xyz;\n";
         resultPosStr =
-            "pos = " + this.getMat4Str("watheye") + " * pos;\n" +
+            "pos = " + this.getMat4Str("watheye") + " * pos;\n" + //控制是否面向视点
                 "pos.xyz = pos.xyz + basePos.xyz + addPos.xyz;\n" +
                 "gl_Position = " + this.getMat4Str("viewMatrix3D") + " * " + this.getMat4Str("camMatrix3D") + " * " + this.getMat4Str("modelMatrix") + " * pos;\n";
         uvDefaultStr =
@@ -245,5 +250,5 @@ var Display3DBallShader = (function (_super) {
     Display3DBallShader.shader_mat4 = { viewMatrix3D: 0, camMatrix3D: 1, modelMatrix: 2, watheye: 3, rotationMatrix: 4 };
     Display3DBallShader.shader_vec4 = { time: [5, 0], scale: [5, 1], scaleCtrl: [5, 2], force: [5, 3], worldPos: [6, 0], camPos: [6, 1], animCtrl: [6, 2], uvCtrl: [6, 3] };
     return Display3DBallShader;
-})(Shader3D);
+}(Shader3D));
 //# sourceMappingURL=Display3DBallShader.js.map

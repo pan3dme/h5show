@@ -1,8 +1,9 @@
 ﻿module materialui {
     export class MaterialEvent extends BaseEvent {
-        public static INIT_MATERIA_PANEL: string = "SHOW_MAP_EVENT"; //显示面板
-        public static HIDE_MAP_EVENT: string = "HIDE_MAP_EVENT"; //显示面板
-
+        public static SHOW_MATERIA_PANEL: string = "INIT_MATERIA_PANEL"; //显示面板
+        public static SAVE_MATERIA_PANEL: string = "SAVE_MATERIA_PANEL"; //显示面板
+        public static SELECT_MATERIAL_NODE_UI: string = "SELECT_MATERIAL_NODE_UI"; //显示面板
+        public nodeUi: BaseMaterialNodeUI
 
     }
     export class MaterialModule extends Module {
@@ -18,14 +19,19 @@
         public getName(): string {
             return "MaterialProcessor";
         }
+
         protected receivedModuleEvent($event: BaseEvent): void {
             if ($event instanceof MaterialEvent) {
                 var $materialEvent: MaterialEvent = <MaterialEvent>$event;
-                if ($materialEvent.type == MaterialEvent.INIT_MATERIA_PANEL) {
+                if ($materialEvent.type == MaterialEvent.SHOW_MATERIA_PANEL) {
                     this.openMaterialPanel()
                 }
-                if ($materialEvent.type == MaterialEvent.HIDE_MAP_EVENT) {
-           
+                if ($materialEvent.type == MaterialEvent.SAVE_MATERIA_PANEL) {
+                    this.saveMateriaPanel()
+                }
+                
+                if ($materialEvent.type == MaterialEvent.SELECT_MATERIAL_NODE_UI) {
+                    this.selectNodeUi($materialEvent.nodeUi)
                 }
             }
             if ($event instanceof MEvent_Material_Connect) {
@@ -41,7 +47,8 @@
                     this.removeLine($mevent_Material_Connect.line);
                 }
                 if ($mevent_Material_Connect.type == MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_DOUBLUELINE) {
-                    //this.setConnetLine($mevent_Material_Connect.endNode);
+        
+                    this.setConnetLine($mevent_Material_Connect.startNode, $mevent_Material_Connect.endNode);
                 }
 
 
@@ -49,9 +56,28 @@
      
 
         }
-        public setConnetLine($line: MaterialNodeLineUI): void {
-           // this.lineContainer.removeLine($line);
+        public  setConnetLine($startItem: ItemMaterialUI, $endItem: ItemMaterialUI):void {
+            this.lineContainer.addConnentLine($startItem, $endItem);
+
         }
+        private  _materialTree: MaterialTree;
+        private saveMateriaPanel(): void {
+            this._materialTree = new MaterialTree()
+            this._materialTree.data= MaterialCtrl.getInstance().getObj()
+            console.log(this._materialTree.data)
+        }
+      
+        private selectNodeUi($nodeUi: BaseMaterialNodeUI): void {
+       
+            for (var i: number = 0; i < UIManager.getInstance()._containerList.length; i++) {
+                var $temp: BaseMaterialNodeUI = <BaseMaterialNodeUI>UIManager.getInstance()._containerList[i]
+                if ($temp) {
+                    $temp.select = Boolean($nodeUi == $temp);
+                }
+            
+            }
+        }
+  
         public  removeLine($line:MaterialNodeLineUI):void{
             this.lineContainer.removeLine($line);
         }
@@ -66,7 +92,9 @@
 
         protected listenModuleEvents(): Array<BaseEvent> {
             return [
-                new MaterialEvent(MaterialEvent.INIT_MATERIA_PANEL),
+                new MaterialEvent(MaterialEvent.SHOW_MATERIA_PANEL),
+                new MaterialEvent(MaterialEvent.SELECT_MATERIAL_NODE_UI),
+                new MaterialEvent(MaterialEvent.SAVE_MATERIA_PANEL),
                 
                 new MEvent_Material_Connect(MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STARTDRAG),
                 new MEvent_Material_Connect(MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STOPDRAG),
@@ -79,6 +107,7 @@
         {
             Arpg2dGameStart.stagePos = new Vector2D()
             BaseMaterialNodeUI.baseUIAtlas = new UIAtlas()
+     
             BaseMaterialNodeUI.baseUIAtlas.setInfo("pan/marmoset/uilist/baseui.xml", "pan/marmoset/uilist/baseui.png", () => { this.loadConfigCom() });
         }
         private lineContainer: MaterialLineContainer
@@ -86,9 +115,15 @@
 
             this.lineContainer = new MaterialLineContainer()
             UIManager.getInstance().addUIContainer(this.lineContainer);
-            UIManager.getInstance().addUIContainer(new TextureSampleNodeUI());
-            UIManager.getInstance().addUIContainer(new MathAddNodeUI());
-            UIManager.getInstance().addUIContainer(new ResultNodeUI());
+
+            var readtxt: boolean = true
+            if (readtxt) {
+                this.readMaterialTree()
+            } else {
+                MaterialCtrl.getInstance().addNodeUI(new ResultNodeUI())
+                MaterialCtrl.getInstance().addNodeUI(new TextureSampleNodeUI())
+            }
+
 
             document.addEventListener(MouseType.MouseWheel, ($evt: MouseWheelEvent) => { this.onMouseWheel($evt) });
             document.addEventListener(MouseType.MouseDown, ($evt: MouseEvent) => { this.onMouse($evt) });
@@ -104,22 +139,30 @@
            
             document.addEventListener("contextmenu", (event: any) => {
                 event.preventDefault();
-                console.log("右键");
+                var $rightMenuEvet: RightMenuEvent = new RightMenuEvent(RightMenuEvent.SHOW_RIGHT_MENU);
+                $rightMenuEvet.posv2d = new Vector2D(event.clientX, event.clientY)
+                ModuleEventManager.dispatchEvent($rightMenuEvet);
 
-                var menu = document.getElementById("menu");
-                menu.style.top = event.clientY + "px";
-                menu.style.left = event.clientX + "px";
-                menu.style.visibility = "visible";
             });
 
             GameMouseManager.getInstance().addMouseEvent();
+        }
+        private readMaterialTree(): void {
+            var $url: string = "pan/marmoset/uilist/baseTexturedata1.txt";
+            MaterialTreeManager.getInstance().getMaterial($url, ($materialTree: MaterialTree) => {
+                MaterialViewBuildUtils.getInstance().addFun = (ui: BaseMaterialNodeUI) => { MaterialCtrl.getInstance().addNodeUI(ui)};
+                MaterialViewBuildUtils.getInstance().setData($materialTree.data)
 
- 
-        
-           
-            
+            });
+
         }
        
+
+        private initScene(): void {
+            UIManager.getInstance().addUIContainer(new TextureSampleNodeUI());
+            UIManager.getInstance().addUIContainer(new MathAddNodeUI());
+ 
+        }
 
         public onKeyDown($evt: KeyboardEvent): void {
             Arpg2dGameStart.altKey = $evt.altKey
@@ -127,9 +170,38 @@
                 case KeyboardType.C:
                     UIManager.getInstance().addUIContainer(new MathAddNodeUI());
                     break
+                case KeyboardType.Delete:
+
+                    var $selectUi: BaseMaterialNodeUI = this.getSelUI();
+                    if ($selectUi) {
+                        this.delUI($selectUi);
+                    }
+                    break
+                case KeyboardType.S:
+                    if ($evt.altKey) {
+                        ModuleEventManager.dispatchEvent(new materialui.MaterialEvent(materialui.MaterialEvent.SAVE_MATERIA_PANEL));
+                    }
+                    break
                 default:
                     break
             }
+        }
+        private delUI($ui: BaseMaterialNodeUI): void {
+            if ($ui instanceof ResultNodeUI) {
+                return;
+            }
+
+            $ui.removeAllNodeLine();
+            UIManager.getInstance().removeUIContainer($ui)
+        }
+        private getSelUI(): BaseMaterialNodeUI {
+            for (var i: number = 0; i < UIManager.getInstance()._containerList.length; i++) {
+                var $temp: BaseMaterialNodeUI = <BaseMaterialNodeUI>UIManager.getInstance()._containerList[i]
+                if ($temp && $temp.select) {
+                    return $temp
+                }
+            }
+            return null;
         }
    
         public onKeyUp($evt: KeyboardEvent): void {

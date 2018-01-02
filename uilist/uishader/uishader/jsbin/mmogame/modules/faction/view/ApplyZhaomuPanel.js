@@ -1,33 +1,39 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var faction;
 (function (faction) {
-    var Avo = (function () {
+    var Avo = /** @class */ (function () {
         function Avo() {
         }
         return Avo;
-    })();
+    }());
     faction.Avo = Avo;
-    var ApplyZhaomuPanel = (function (_super) {
+    var ApplyZhaomuPanel = /** @class */ (function (_super) {
         __extends(ApplyZhaomuPanel, _super);
         function ApplyZhaomuPanel() {
-            _super.call(this);
-            this._num = 0;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._publicRender = new UIRenderComponent;
-            this.addRender(this._publicRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
+            var _this = _super.call(this) || this;
+            _this._num = 0;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._publicRender = new UIRenderComponent;
+            _this.addRender(_this._publicRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            return _this;
         }
         ApplyZhaomuPanel.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -216,7 +222,7 @@ var faction;
             }
         };
         return ApplyZhaomuPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     faction.ApplyZhaomuPanel = ApplyZhaomuPanel;
 })(faction || (faction = {}));
 //# sourceMappingURL=ApplyZhaomuPanel.js.map

@@ -1,7 +1,8 @@
 var materialui;
 (function (materialui) {
-    var NodeTree = (function () {
+    var NodeTree = /** @class */ (function () {
         function NodeTree() {
+            this.id = -1;
             this.inputVec = new Array;
             this.outputVec = new Array;
         }
@@ -42,7 +43,40 @@ var materialui;
             this.refreshID();
         };
         NodeTree.prototype.refreshID = function () {
+            for (var i; i < this.inputVec.length; i++) {
+                this.inputVec[i].id = i;
+            }
+            for (i = 0; i < this.outputVec.length; i++) {
+                this.outputVec[i].id = i;
+            }
         };
+        NodeTree.prototype.getObj = function () {
+            var obj = new Object;
+            obj.id = this.id;
+            obj.type = this.type;
+            obj.data = this.ui.getData();
+            var inAry = new Array;
+            for (var i; i < this.inputVec.length; i++) {
+                inAry.push(this.inputVec[i].getObj());
+            }
+            obj.inAry = inAry;
+            var outAry = new Array;
+            for (i = 0; i < this.outputVec.length; i++) {
+                outAry.push(this.outputVec[i].getObj());
+            }
+            obj.outAry = outAry;
+            return obj;
+        };
+        Object.defineProperty(NodeTree.prototype, "isDynamic", {
+            get: function () {
+                return this._isDynamic;
+            },
+            set: function (value) {
+                this._isDynamic = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
         NodeTree.TEX = "tex";
         NodeTree.OP = "op";
         NodeTree.ADD = "add";
@@ -81,7 +115,7 @@ var materialui;
         NodeTree.REFRACTION = "refraction";
         NodeTree.PANNER = "panner";
         return NodeTree;
-    })();
+    }());
     materialui.NodeTree = NodeTree;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=NodeTree.js.map

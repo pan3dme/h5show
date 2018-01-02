@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var sboss;
 (function (sboss) {
-    var SbossLeftListRender = (function (_super) {
+    var SbossLeftListRender = /** @class */ (function (_super) {
         __extends(SbossLeftListRender, _super);
         function SbossLeftListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         SbossLeftListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             var _this = this;
@@ -161,14 +166,15 @@ var sboss;
             }
         };
         return SbossLeftListRender;
-    })(SListItem);
+    }(SListItem));
     sboss.SbossLeftListRender = SbossLeftListRender;
-    var SbossLeftList = (function (_super) {
+    var SbossLeftList = /** @class */ (function (_super) {
         __extends(SbossLeftList, _super);
         function SbossLeftList() {
-            _super.call(this);
-            this.left = 325;
-            this.top = 149;
+            var _this = _super.call(this) || this;
+            _this.left = 325;
+            _this.top = 149;
+            return _this;
         }
         SbossLeftList.prototype.init = function ($uiAtlas) {
             SbossLeftListRender.baseAtlas = $uiAtlas;
@@ -195,26 +201,26 @@ var sboss;
             }
         };
         return SbossLeftList;
-    })(SList);
+    }(SList));
     sboss.SbossLeftList = SbossLeftList;
-    var SmassBossPanel = (function (_super) {
+    var SmassBossPanel = /** @class */ (function (_super) {
         __extends(SmassBossPanel, _super);
         function SmassBossPanel() {
-            var _this = this;
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._midRender.uiAtlas = new UIAtlas;
-            this._frameFun = function (t) { _this.upTime(t); };
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._midRender.uiAtlas = new UIAtlas;
+            _this._frameFun = function (t) { _this.upTime(t); };
+            return _this;
         }
         SmassBossPanel.prototype.setRender = function ($uiAtlas, $win) {
             this._bottomRender.uiAtlas = $uiAtlas;
@@ -464,7 +470,7 @@ var sboss;
             }
         };
         return SmassBossPanel;
-    })(UIConatiner);
+    }(UIConatiner));
     sboss.SmassBossPanel = SmassBossPanel;
 })(sboss || (sboss = {}));
 //# sourceMappingURL=SmassBossPanel.js.map

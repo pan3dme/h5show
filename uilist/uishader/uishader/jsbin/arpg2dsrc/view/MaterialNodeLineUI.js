@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var MaterialNodeLineUI = (function () {
+    var MaterialNodeLineUI = /** @class */ (function () {
         function MaterialNodeLineUI() {
             this.lineRender = new materialui.NodeLineLinkComponent;
         }
@@ -85,7 +85,7 @@ var materialui;
             }
         };
         return MaterialNodeLineUI;
-    })();
+    }());
     materialui.MaterialNodeLineUI = MaterialNodeLineUI;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialNodeLineUI.js.map

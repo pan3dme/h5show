@@ -1,4 +1,4 @@
-var ShadowManager = (function () {
+var ShadowManager = /** @class */ (function () {
     function ShadowManager() {
         this._displayList = new Array;
         ProgrmaManager.getInstance().registe(Display3DShadowShader.Display3DShadowShader, new Display3DShadowShader());
@@ -38,5 +38,5 @@ var ShadowManager = (function () {
         return display;
     };
     return ShadowManager;
-})();
+}());
 //# sourceMappingURL=ShadowManager.js.map

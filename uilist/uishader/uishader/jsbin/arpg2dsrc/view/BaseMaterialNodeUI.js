@@ -1,35 +1,70 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var materialui;
 (function (materialui) {
-    var BaseMaterialNodeUI = (function (_super) {
+    var BaseMaterialNodeUI = /** @class */ (function (_super) {
         __extends(BaseMaterialNodeUI, _super);
         function BaseMaterialNodeUI() {
-            _super.call(this);
-            this.gap = 20;
-            this.width = 200;
-            this.height = 200;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._bottomRender.uiAtlas = BaseMaterialNodeUI.baseUIAtlas;
-            this._midRender.uiAtlas = BaseMaterialNodeUI.baseUIAtlas;
-            this._topRender.uiAtlas = BaseMaterialNodeUI.baseUIAtlas;
-            this._container = new materialui.PanelContainer(this, this._topRender);
-            this.loadConfigCom();
+            var _this = _super.call(this) || this;
+            _this.gap = 20;
+            _this.name = "BaseMaterialNodeUI" + random(9999999);
+            _this.width = 200;
+            _this.height = 200;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._bottomRender.uiAtlas = BaseMaterialNodeUI.baseUIAtlas;
+            _this._midRender.uiAtlas = BaseMaterialNodeUI.baseUIAtlas;
+            _this._topRender.uiAtlas = BaseMaterialNodeUI.baseUIAtlas;
+            _this._container = new materialui.PanelContainer(_this, _this._topRender);
+            _this.loadConfigCom();
+            return _this;
         }
+        BaseMaterialNodeUI.prototype.setInItemByData = function (ary) {
+        };
+        BaseMaterialNodeUI.prototype.setOutItemByData = function (ary) {
+        };
+        BaseMaterialNodeUI.prototype.setData = function (obj) {
+            this.x = obj.x;
+            this.y = obj.y;
+            this.nodeTree.isDynamic = obj.isDynamic;
+            this.nodeTree.paramName = obj.paramName;
+        };
+        BaseMaterialNodeUI.prototype.getData = function () {
+            var obj = new Object;
+            obj.x = this.x;
+            obj.y = this.y;
+            obj.name = this.name;
+            obj.isDynamic = this.nodeTree.isDynamic;
+            obj.paramName = this.nodeTree.paramName;
+            return obj;
+        };
+        BaseMaterialNodeUI.prototype.getObj = function () {
+            return this.nodeTree.getObj();
+        };
         BaseMaterialNodeUI.prototype.resetBgSize = function () {
             this.a_cell_base_bg.height = this.height;
+            this.a_select_line.x = 0;
+            this.a_select_line.y = 0;
+            this.a_select_line.width = this.width;
+            this.a_select_line.height = this.height + 25;
         };
         BaseMaterialNodeUI.prototype.loadConfigCom = function () {
+            this.a_cell_base_bg = this._bottomRender.getComponent("a_cell_base_bg");
+            this.addChild(this.a_cell_base_bg);
             this.a_tittle_bg = this.addEvntBut("a_tittle_bg", this._bottomRender);
-            this.a_cell_base_bg = this.addEvntBut("a_cell_base_bg", this._bottomRender);
+            this.a_select_line = this._topRender.getComponent("a_select_line");
             this.a_tittle_bg.x = 0;
             this.a_tittle_bg.y = 0;
             this.a_tittle_bg.goToAndStop(0);
@@ -84,6 +119,14 @@ var materialui;
                 this.outPutItemVec[i].x = 130;
             }
         };
+        BaseMaterialNodeUI.prototype.removeAllNodeLine = function () {
+            for (var i = 0; i < this.inPutItemVec.length; i++) {
+                this.inPutItemVec[i].removeAllLine();
+            }
+            for (i = 0; i < this.outPutItemVec.length; i++) {
+                this.outPutItemVec[i].removeAllLine();
+            }
+        };
         BaseMaterialNodeUI.prototype.butClik = function (evt) {
             switch (evt.target) {
                 case this.a_tittle_bg:
@@ -93,6 +136,15 @@ var materialui;
                     this.clikUiEvent(evt);
                     break;
             }
+            var $materialEvent = new materialui.MaterialEvent(materialui.MaterialEvent.SELECT_MATERIAL_NODE_UI);
+            $materialEvent.nodeUi = this;
+            ModuleEventManager.dispatchEvent($materialEvent);
+        };
+        BaseMaterialNodeUI.prototype.getInItem = function ($id) {
+            return this.inPutItemVec[$id];
+        };
+        BaseMaterialNodeUI.prototype.getOutItem = function ($id) {
+            return this.outPutItemVec[$id];
         };
         BaseMaterialNodeUI.prototype.clikUiEvent = function ($mouseEvt) {
             var $itemMaterialUI = this.getPointFrameTagetFoItemVec($mouseEvt.target);
@@ -143,8 +195,19 @@ var materialui;
             Scene_data.uiStage.removeEventListener(InteractiveEvent.Move, this.onMove, this);
             Scene_data.uiStage.removeEventListener(InteractiveEvent.Up, this.onUp, this);
         };
+        Object.defineProperty(BaseMaterialNodeUI.prototype, "select", {
+            get: function () {
+                return this._select;
+            },
+            set: function (value) {
+                this._select = value;
+                this.setUiListVisibleByItem([this.a_select_line], this._select);
+            },
+            enumerable: true,
+            configurable: true
+        });
         return BaseMaterialNodeUI;
-    })(UIPanel);
+    }(UIPanel));
     materialui.BaseMaterialNodeUI = BaseMaterialNodeUI;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=BaseMaterialNodeUI.js.map

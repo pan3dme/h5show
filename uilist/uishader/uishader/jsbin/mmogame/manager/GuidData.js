@@ -1,6 +1,6 @@
-var GuidData = (function () {
+var GuidData = /** @class */ (function () {
     function GuidData() {
     }
     return GuidData;
-})();
+}());
 //# sourceMappingURL=GuidData.js.map

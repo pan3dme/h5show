@@ -1,9 +1,9 @@
-var BaoshiMeshVo = (function () {
+var BaoshiMeshVo = /** @class */ (function () {
     function BaoshiMeshVo() {
     }
     return BaoshiMeshVo;
-})();
-var EquMeshVo = (function () {
+}());
+var EquMeshVo = /** @class */ (function () {
     function EquMeshVo() {
         var num = float2int(EquMeshVo.nameArr.length * Math.random());
         this.name = EquMeshVo.nameArr[num];
@@ -24,15 +24,15 @@ var EquMeshVo = (function () {
     }
     EquMeshVo.nameArr = ["铁鞭", "石子镖", "流星锤", "金锁甲", "网羽", "绝刃"];
     return EquMeshVo;
-})();
-var ChengjiuMeshVo = (function () {
+}());
+var ChengjiuMeshVo = /** @class */ (function () {
     function ChengjiuMeshVo() {
     }
     return ChengjiuMeshVo;
-})();
-var RoleMeshVo = (function () {
+}());
+var RoleMeshVo = /** @class */ (function () {
     function RoleMeshVo() {
     }
     return RoleMeshVo;
-})();
+}());
 //# sourceMappingURL=MeshVo.js.map

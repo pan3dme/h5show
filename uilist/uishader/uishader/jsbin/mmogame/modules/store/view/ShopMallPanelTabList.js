@@ -1,25 +1,31 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var store;
 (function (store) {
-    var TabVo = (function () {
+    var TabVo = /** @class */ (function () {
         function TabVo() {
         }
         return TabVo;
-    })();
+    }());
     store.TabVo = TabVo;
     /**
      * 左侧tablist
      */
-    var ShopMallPanelTabList = (function (_super) {
+    var ShopMallPanelTabList = /** @class */ (function (_super) {
         __extends(ShopMallPanelTabList, _super);
         function ShopMallPanelTabList() {
-            _super.call(this);
-            this.left = 51;
-            this.top = 90;
+            var _this = _super.call(this) || this;
+            _this.left = 51;
+            _this.top = 90;
+            return _this;
         }
         ShopMallPanelTabList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -79,12 +85,12 @@ var store;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return ShopMallPanelTabList;
-    })(SList);
+    }(SList));
     store.ShopMallPanelTabList = ShopMallPanelTabList;
-    var ShopMallPanelTabRender = (function (_super) {
+    var ShopMallPanelTabRender = /** @class */ (function (_super) {
         __extends(ShopMallPanelTabRender, _super);
         function ShopMallPanelTabRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         // private RedPoint: UICompenent;
         ShopMallPanelTabRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
@@ -162,7 +168,7 @@ var store;
             //    this.RedPoint.preHide();
         };
         return ShopMallPanelTabRender;
-    })(SListItem);
+    }(SListItem));
     store.ShopMallPanelTabRender = ShopMallPanelTabRender;
 })(store || (store = {}));
 //# sourceMappingURL=ShopMallPanelTabList.js.map

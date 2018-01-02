@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var BagData = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var BagData = /** @class */ (function (_super) {
     __extends(BagData, _super);
     function BagData() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     BagData.prototype.onBaseCreated = function () {
         var _this = this;
@@ -542,8 +547,8 @@ var BagData = (function (_super) {
     BagData.TYPE_GEM = 3; //其他
     BagData.uipos = new Vector2D();
     return BagData;
-})(GuidObject);
-var BagItemData = (function () {
+}(GuidObject));
+var BagItemData = /** @class */ (function () {
     function BagItemData() {
     }
     Object.defineProperty(BagItemData.prototype, "guid", {
@@ -555,10 +560,10 @@ var BagItemData = (function () {
         configurable: true
     });
     return BagItemData;
-})();
-var ItemData = (function () {
+}());
+var ItemData = /** @class */ (function () {
     function ItemData() {
     }
     return ItemData;
-})();
+}());
 //# sourceMappingURL=BagData.js.map

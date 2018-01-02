@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var setingui;
 (function (setingui) {
-    var SetingUiModule = (function (_super) {
+    var SetingUiModule = /** @class */ (function (_super) {
         __extends(SetingUiModule, _super);
         function SetingUiModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         SetingUiModule.prototype.getModuleName = function () {
             return "SetingUiModule";
@@ -17,22 +22,22 @@ var setingui;
             return [new SetingUiProcessor()];
         };
         return SetingUiModule;
-    })(Module);
+    }(Module));
     setingui.SetingUiModule = SetingUiModule;
-    var SetingUiEvent = (function (_super) {
+    var SetingUiEvent = /** @class */ (function (_super) {
         __extends(SetingUiEvent, _super);
         function SetingUiEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         SetingUiEvent.SHOW_SETING_UI_PANEL = "SHOW_SETING_UI_PANEL";
         SetingUiEvent.HIDE_SETING_UI_PANEL = "HIDE_SETING_UI_PANEL";
         return SetingUiEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     setingui.SetingUiEvent = SetingUiEvent;
-    var SetingUiProcessor = (function (_super) {
+    var SetingUiProcessor = /** @class */ (function (_super) {
         __extends(SetingUiProcessor, _super);
         function SetingUiProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         SetingUiProcessor.prototype.getName = function () {
             return "SetingUiProcessor";
@@ -70,7 +75,7 @@ var setingui;
             ];
         };
         return SetingUiProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     setingui.SetingUiProcessor = SetingUiProcessor;
 })(setingui || (setingui = {}));
 //# sourceMappingURL=SetingUiProcessor.js.map

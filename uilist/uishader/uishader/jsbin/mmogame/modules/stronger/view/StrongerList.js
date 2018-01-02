@@ -1,19 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var stronger;
 (function (stronger) {
     /**
      * 变强list
      */
-    var StrongerList = (function (_super) {
+    var StrongerList = /** @class */ (function (_super) {
         __extends(StrongerList, _super);
         function StrongerList() {
-            _super.call(this);
-            this.left = 237;
-            this.top = 157;
+            var _this = _super.call(this) || this;
+            _this.left = 237;
+            _this.top = 157;
+            return _this;
         }
         StrongerList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -65,12 +71,12 @@ var stronger;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return StrongerList;
-    })(SList);
+    }(SList));
     stronger.StrongerList = StrongerList;
-    var StrongerListRender = (function (_super) {
+    var StrongerListRender = /** @class */ (function (_super) {
         __extends(StrongerListRender, _super);
         function StrongerListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         StrongerListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -178,7 +184,7 @@ var stronger;
             LabelTextFont.clearLabel(this.uiAtlas, this.Itembg.skinName);
         };
         return StrongerListRender;
-    })(SListItem);
+    }(SListItem));
     stronger.StrongerListRender = StrongerListRender;
 })(stronger || (stronger = {}));
 //# sourceMappingURL=StrongerList.js.map

@@ -1,4 +1,4 @@
-var SyncEvent = (function () {
+var SyncEvent = /** @class */ (function () {
     function SyncEvent() {
     }
     SyncEvent.init = function () {
@@ -31,6 +31,6 @@ var SyncEvent = (function () {
     SyncEvent.ATOMIC_OPT_RESULT_OK = 2; //原子操作成功
     SyncEvent.ATOMIC_OPT_RESULT_FAILED = -1; //原子操作失败
     return SyncEvent;
-})();
+}());
 SyncEvent.init();
 //# sourceMappingURL=SyncEvent.js.map

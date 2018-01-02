@@ -18,6 +18,15 @@
                 }
             }
         }
+        public getObj(): Object {
+            var obj: any = super.getObj();
+            var ary: Array<any> = new Array;
+            for (var i: number=0; i < this.sunNodeItems.length; i++) {
+                ary.push(this.sunNodeItems[i].otherNeedObj());
+            }
+            obj.sunObj = ary;
+            return obj;
+        }
     }
 
 }

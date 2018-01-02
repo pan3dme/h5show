@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var treasure;
 (function (treasure) {
-    var TreasureUiModule = (function (_super) {
+    var TreasureUiModule = /** @class */ (function (_super) {
         __extends(TreasureUiModule, _super);
         function TreasureUiModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         TreasureUiModule.prototype.getModuleName = function () {
             return "TreasureUiModule";
@@ -17,12 +22,12 @@ var treasure;
             return [new TreasureProcessor()];
         };
         return TreasureUiModule;
-    })(Module);
+    }(Module));
     treasure.TreasureUiModule = TreasureUiModule;
-    var TreasureUiEvent = (function (_super) {
+    var TreasureUiEvent = /** @class */ (function (_super) {
         __extends(TreasureUiEvent, _super);
         function TreasureUiEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         //展示法宝面板
         TreasureUiEvent.SHOW_TREASURE_EVENT = "SHOW_TREASURE_EVENT";
@@ -37,12 +42,12 @@ var treasure;
         //总战力变化
         TreasureUiEvent.CHANGE_ZHANLI_EVENT = "CHANGE_ZHANLI_EVENT";
         return TreasureUiEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     treasure.TreasureUiEvent = TreasureUiEvent;
-    var TreasureProcessor = (function (_super) {
+    var TreasureProcessor = /** @class */ (function (_super) {
         __extends(TreasureProcessor, _super);
         function TreasureProcessor() {
-            _super.apply(this, arguments);
+            var _this = _super !== null && _super.apply(this, arguments) || this;
             // private isNeedItem($chgary:Array<number>):boolean{
             //     if($chgary){
             //         for (let i = 0; i < $chgary.length; i++) {
@@ -55,7 +60,8 @@ var treasure;
             //     return false;
             // }
             // private _needItem:Array<number>
-            this._nodeInit = false;
+            _this._nodeInit = false;
+            return _this;
         }
         TreasureProcessor.prototype.getName = function () {
             return "TreasureProcessor";
@@ -100,6 +106,7 @@ var treasure;
                     // }else{
                     this.processRedPoint();
                     this.refreshCost();
+                    // }
                 }
             }
             if ($event instanceof UIPanelEvent) {
@@ -236,7 +243,7 @@ var treasure;
             ];
         };
         return TreasureProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     treasure.TreasureProcessor = TreasureProcessor;
 })(treasure || (treasure = {}));
 //# sourceMappingURL=TreasureProcessor.js.map

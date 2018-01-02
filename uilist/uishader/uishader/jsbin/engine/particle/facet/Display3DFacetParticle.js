@@ -1,16 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Display3DFacetParticle = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Display3DFacetParticle = /** @class */ (function (_super) {
     __extends(Display3DFacetParticle, _super);
     function Display3DFacetParticle() {
-        _super.call(this);
-        this._lifeVisible = true;
+        var _this = _super.call(this) || this;
+        _this._lifeVisible = true;
         //this.objData = new ParticleGpuData();
         //this.program = ProgrmaManager.getInstance().getProgram(Display3DFacetShader.Display3D_Facet_Shader);
-        this._resultUvVec = new Array(2);
+        _this._resultUvVec = new Array(2);
+        return _this;
     }
     Object.defineProperty(Display3DFacetParticle.prototype, "facetdata", {
         get: function () {
@@ -93,5 +99,5 @@ var Display3DFacetParticle = (function (_super) {
         this._resultUvVec[1] = float2int(currentFrame / this.data._animLine) / this.data._animRow + this._time / Scene_data.frameTime * this.data._vSpeed;
     };
     return Display3DFacetParticle;
-})(Display3DParticle);
+}(Display3DParticle));
 //# sourceMappingURL=Display3DFacetParticle.js.map

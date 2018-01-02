@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var stateup;
 (function (stateup) {
-    var StateUpModule = (function (_super) {
+    var StateUpModule = /** @class */ (function (_super) {
         __extends(StateUpModule, _super);
         function StateUpModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         StateUpModule.prototype.getModuleName = function () {
             return "StateUpModule";
@@ -17,12 +22,12 @@ var stateup;
             return [new StateUpProcessor()];
         };
         return StateUpModule;
-    })(Module);
+    }(Module));
     stateup.StateUpModule = StateUpModule;
-    var StateUpEvent = (function (_super) {
+    var StateUpEvent = /** @class */ (function (_super) {
         __extends(StateUpEvent, _super);
         function StateUpEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         StateUpEvent.SHOW_STATEUP_PANEL = "SHOW_STATEUP_PANEL";
         StateUpEvent.HIDE_STATEUP_PANEL = "HIDE_STATEUP_PANEL";
@@ -34,12 +39,12 @@ var stateup;
         StateUpEvent.CLICK_EVT = "CLICK_EVT";
         StateUpEvent.POP_SHOW_PANEL = "POP_SHOW_PANEL";
         return StateUpEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     stateup.StateUpEvent = StateUpEvent;
-    var StateUpProcessor = (function (_super) {
+    var StateUpProcessor = /** @class */ (function (_super) {
         __extends(StateUpProcessor, _super);
         function StateUpProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         StateUpProcessor.prototype.getName = function () {
             return "StateUpProcessor";
@@ -129,6 +134,7 @@ var stateup;
             if (this.stateUpUiPanel && this.stateUpUiPanel.hasStage) {
                 this.stateUpUiPanel.showBezierEff($vo.num);
                 this.stateUpUiPanel.showExpEff();
+                // this.stateUpUiPanel.showflyword(ColorType.Yellowedce7e+"境界经验+"+$vo.num);
             }
         };
         StateUpProcessor.prototype.refreshExp = function () {
@@ -204,7 +210,7 @@ var stateup;
             ];
         };
         return StateUpProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     stateup.StateUpProcessor = StateUpProcessor;
 })(stateup || (stateup = {}));
 //# sourceMappingURL=StateUpProcessor.js.map

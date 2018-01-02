@@ -1,4 +1,4 @@
-var Rectangle = (function () {
+var Rectangle = /** @class */ (function () {
     function Rectangle($x, $y, $width, $height) {
         if ($x === void 0) { $x = 0; }
         if ($y === void 0) { $y = 0; }
@@ -29,5 +29,5 @@ var Rectangle = (function () {
         return (tx >= this.x && ty >= this.y && tx <= this.x + this.width && ty <= this.y + this.height);
     };
     return Rectangle;
-})();
+}());
 //# sourceMappingURL=Rectangle.js.map

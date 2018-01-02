@@ -1,6 +1,6 @@
 var store;
 (function (store) {
-    var StoreModel = (function () {
+    var StoreModel = /** @class */ (function () {
         function StoreModel() {
             this.getBaseList();
         }
@@ -133,9 +133,9 @@ var store;
             return true;
         };
         return StoreModel;
-    })();
+    }());
     store.StoreModel = StoreModel;
-    var StoreItemVo = (function () {
+    var StoreItemVo = /** @class */ (function () {
         function StoreItemVo() {
             this.isnewprop = false;
         }
@@ -201,7 +201,7 @@ var store;
             return $play.getTime();
         };
         return StoreItemVo;
-    })();
+    }());
     store.StoreItemVo = StoreItemVo;
 })(store || (store = {}));
 //# sourceMappingURL=StoreModel.js.map

@@ -1,19 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Display3dShadow = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Display3dShadow = /** @class */ (function (_super) {
     __extends(Display3dShadow, _super);
     function Display3dShadow() {
-        _super.call(this);
-        this.needUpdate = false;
-        this.locationFloat32 = new Float32Array(0);
-        this.shadowList = new Array;
-        this.objData = new ObjData;
-        this.shader = ProgrmaManager.getInstance().getProgram(Display3DShadowShader.Display3DShadowShader);
-        this.program = this.shader.program;
-        this.posProLocation = Scene_data.context3D.getLocation(this.program, "pos");
+        var _this = _super.call(this) || this;
+        _this.needUpdate = false;
+        _this.locationFloat32 = new Float32Array(0);
+        _this.shadowList = new Array;
+        _this.objData = new ObjData;
+        _this.shader = ProgrmaManager.getInstance().getProgram(Display3DShadowShader.Display3DShadowShader);
+        _this.program = _this.shader.program;
+        _this.posProLocation = Scene_data.context3D.getLocation(_this.program, "pos");
+        return _this;
     }
     Display3dShadow.prototype.addShadow = function ($shdow) {
         this.shadowList.push($shdow);
@@ -103,5 +109,5 @@ var Display3dShadow = (function (_super) {
         }
     };
     return Display3dShadow;
-})(Display3D);
+}(Display3D));
 //# sourceMappingURL=Display3dShadow.js.map

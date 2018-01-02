@@ -1,13 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var SceneLoadEvent = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SceneLoadEvent = /** @class */ (function (_super) {
     __extends(SceneLoadEvent, _super);
     function SceneLoadEvent() {
-        _super.apply(this, arguments);
-        this.progress = 0;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.progress = 0;
+        return _this;
     }
     SceneLoadEvent.SHOW_LOAD_EVENT = "show_load_event";
     SceneLoadEvent.REMOVE_LOAD_EVENT = "remove_load_event";
@@ -17,11 +23,11 @@ var SceneLoadEvent = (function (_super) {
     SceneLoadEvent.SCENE_TRANSITION_EVENT = "scene_transition_event";
     SceneLoadEvent.SCENE_TRANSITION_HIDE_EVENT = "scene_transition_hide_event";
     return SceneLoadEvent;
-})(BaseEvent);
-var SceneLoadModule = (function (_super) {
+}(BaseEvent));
+var SceneLoadModule = /** @class */ (function (_super) {
     __extends(SceneLoadModule, _super);
     function SceneLoadModule() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     SceneLoadModule.prototype.getModuleName = function () {
         return "SceneLoadModule";
@@ -30,12 +36,13 @@ var SceneLoadModule = (function (_super) {
         return [new SceneLoadProcessor()];
     };
     return SceneLoadModule;
-})(Module);
-var SceneLoadProcessor = (function (_super) {
+}(Module));
+var SceneLoadProcessor = /** @class */ (function (_super) {
     __extends(SceneLoadProcessor, _super);
     function SceneLoadProcessor() {
-        _super.apply(this, arguments);
-        this._tempNum = 0;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._tempNum = 0;
+        return _this;
     }
     SceneLoadProcessor.prototype.getName = function () {
         return "SceneLoadProcessor";
@@ -162,5 +169,5 @@ var SceneLoadProcessor = (function (_super) {
         ];
     };
     return SceneLoadProcessor;
-})(BaseProcessor);
+}(BaseProcessor));
 //# sourceMappingURL=SceneLoadProcessor.js.map

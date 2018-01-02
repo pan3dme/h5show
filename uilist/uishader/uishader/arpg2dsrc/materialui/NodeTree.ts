@@ -45,7 +45,7 @@
         public outputVec: Array<NodeTreeOutoutItem>;
         public ui: BaseMaterialNodeUI;
         public type: string;
-
+        public paramName: string;
         public constructor() {
             this.inputVec = new Array
             this.outputVec = new Array
@@ -91,9 +91,40 @@
         }
 		
         public refreshID(): void {
-
+            for (var i: number; i < this.inputVec.length; i++) {
+                this. inputVec[i].id = i;
+            }
+            for (i = 0; i < this.outputVec.length; i++) {
+                this. outputVec[i].id = i;
+            }
         }
+        public id: number = -1;
+        public getObj(): Object {
+            var obj: any = new Object;
+            obj.id = this.id;
+            obj.type = this.type;
+            obj.data = this.ui.getData();
 
-		
+            var inAry: Array<any> = new Array;
+            for (var i: number; i < this.inputVec.length; i++) {
+                inAry.push(this.inputVec[i].getObj());
+            }
+            obj.inAry = inAry;
+
+            var outAry: Array<any> = new Array;
+            for (i = 0; i < this.outputVec.length; i++) {
+                outAry.push(this.outputVec[i].getObj())
+            }
+            obj.outAry = outAry;
+
+            return obj;
+        }
+        public  get isDynamic():boolean {
+            return this._isDynamic;
+        }
+        private  _isDynamic: boolean;
+        public  set isDynamic(value: boolean) {
+            this._isDynamic = value;
+        }
     }
 }

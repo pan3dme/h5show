@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var RoationUIShader = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var RoationUIShader = /** @class */ (function (_super) {
     __extends(RoationUIShader, _super);
     function RoationUIShader() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     RoationUIShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "v3Pos");
@@ -51,11 +56,11 @@ var RoationUIShader = (function (_super) {
     };
     RoationUIShader.RoationUiShader = "RoationUiShader";
     return RoationUIShader;
-})(Shader3D);
-var RoationUIRenderComponent = (function (_super) {
+}(Shader3D));
+var RoationUIRenderComponent = /** @class */ (function (_super) {
     __extends(RoationUIRenderComponent, _super);
     function RoationUIRenderComponent() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     RoationUIRenderComponent.prototype.update = function () {
         if (!this.visible || this._uiList.length == 0) {
@@ -100,12 +105,13 @@ var RoationUIRenderComponent = (function (_super) {
         return ui;
     };
     return RoationUIRenderComponent;
-})(UIRenderComponent);
-var RoationUICompenent = (function (_super) {
+}(UIRenderComponent));
+var RoationUICompenent = /** @class */ (function (_super) {
     __extends(RoationUICompenent, _super);
     function RoationUICompenent() {
-        _super.call(this);
-        this.alpha = 0.5;
+        var _this = _super.call(this) || this;
+        _this.alpha = 0.5;
+        return _this;
     }
     RoationUICompenent.prototype.setVc = function (program, index) {
         Scene_data.context3D.setVc4fv(program, "ui[" + index + "]", this.renderData);
@@ -114,5 +120,5 @@ var RoationUICompenent = (function (_super) {
         this.alpha += 0.01;
     };
     return RoationUICompenent;
-})(UICompenent);
+}(UICompenent));
 //# sourceMappingURL=RoationUiContianer.js.map
