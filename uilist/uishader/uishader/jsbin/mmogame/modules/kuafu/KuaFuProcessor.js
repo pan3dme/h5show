@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var kuafu;
 (function (kuafu) {
-    var KuafuModule = /** @class */ (function (_super) {
+    var KuafuModule = (function (_super) {
         __extends(KuafuModule, _super);
         function KuafuModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         KuafuModule.prototype.getModuleName = function () {
             return "KuafuModule";
@@ -26,12 +21,12 @@ var kuafu;
             ];
         };
         return KuafuModule;
-    }(Module));
+    })(Module);
     kuafu.KuafuModule = KuafuModule;
-    var KuaFuEvent = /** @class */ (function (_super) {
+    var KuaFuEvent = (function (_super) {
         __extends(KuaFuEvent, _super);
         function KuaFuEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         KuaFuEvent.SHOW_KUAFU_PANEL_EVENT = "SHOW_KUAFU_PANEL_EVENT";
         KuaFuEvent.INSTANCE_INT_FIELD_3V3_TIMES = "INSTANCE_INT_FIELD_3V3_TIMES";
@@ -45,12 +40,12 @@ var kuafu;
         KuaFuEvent.FIRSTREWARD_DJ_EVENT = "FIRSTREWARD_DJ_EVENT";
         KuaFuEvent.SHOW_DJT_RANK = "SHOW_DJT_RANK";
         return KuaFuEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     kuafu.KuaFuEvent = KuaFuEvent;
-    var KuaFuProcessor = /** @class */ (function (_super) {
+    var KuaFuProcessor = (function (_super) {
         __extends(KuaFuProcessor, _super);
         function KuaFuProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         KuaFuProcessor.prototype.getName = function () {
             return "KuaFuProcessor";
@@ -60,12 +55,8 @@ var kuafu;
                 var $kuaFuEvent = $event;
                 if ($kuaFuEvent.type == KuaFuEvent.SHOW_KUAFU_PANEL_EVENT) {
                     var $tabId = $kuaFuEvent.data;
-                    //this.showKuaFuPanel($tabId);
                 }
                 else if ($kuaFuEvent.type == KuaFuEvent.INSTANCE_INT_FIELD_3V3_TIMES) {
-                    // if (this._kuaFuPanel) {
-                    //     this._kuaFuPanel.refresh();
-                    // }
                 }
                 else if ($kuaFuEvent.type == KuaFuEvent.KUAFU_1V1_REFRESH) {
                     // if (this._kuaFuPanel) {
@@ -76,9 +67,6 @@ var kuafu;
                     }
                 }
                 else if ($kuaFuEvent.type == KuaFuEvent.INSTANCE_INT_FIELD_3V3_DAY_REWARD) {
-                    // if (this._kuaFuPanel) {
-                    //     this._kuaFuPanel.kuaFuRightPanel.resetRewardIcon();
-                    // }
                 }
                 else if ($kuaFuEvent.type == KuaFuEvent.KUAFU_SHOW_ARENA_PANEL_EVENT) {
                     this.showArenaPanel($kuaFuEvent.data, $kuaFuEvent.selTab);
@@ -111,26 +99,6 @@ var kuafu;
             // }
             if ($event instanceof UIPanelEvent) {
                 var panelEvent = $event;
-                // if (panelEvent.panel == this._kuaFuPanel) {
-                //     this._kuaFuPanel.dispose();
-                //     this._kuaFuPanel = null;
-                //     console.log("释放面板 _kuaFuPanel")
-                // }
-                // if (panelEvent.panel == this._xianfuMatchTimePanel) {
-                //     this._xianfuMatchTimePanel.dispose();
-                //     this._xianfuMatchTimePanel = null;
-                //     console.log("释放面板 _xianfuMatchTimePanel")
-                // }
-                // if (panelEvent.panel == this._kuaFuMatchTimePanel) {
-                //     this._kuaFuMatchTimePanel.dispose();
-                //     this._kuaFuMatchTimePanel = null;
-                //     console.log("释放面板 _kuaFuMatchTimePanel")
-                // }
-                // if (panelEvent.panel == this._kuaFuMatchListPanel) {
-                //     this._kuaFuMatchListPanel.dispose();
-                //     this._kuaFuMatchListPanel = null;
-                //     console.log("释放面板 _kuaFuMatchListPanel")
-                // }
             }
         };
         KuaFuProcessor.prototype.showRank = function ($data) {
@@ -343,7 +311,7 @@ var kuafu;
             return obj;
         };
         return KuaFuProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     kuafu.KuaFuProcessor = KuaFuProcessor;
 })(kuafu || (kuafu = {}));
 //# sourceMappingURL=KuaFuProcessor.js.map

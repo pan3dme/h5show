@@ -1,19 +1,13 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var SocialData = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var SocialData = (function (_super) {
     __extends(SocialData, _super);
     function SocialData() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.enemyredstate = false;
-        return _this;
+        _super.apply(this, arguments);
+        this.enemyredstate = false;
     }
     SocialData.prototype.onBaseCreated = function () {
         var _this = this;
@@ -117,12 +111,10 @@ var SocialData = /** @class */ (function (_super) {
                             console.log("好友：" + dat.name + "下线了");
                         }
                         this._friendList[i] = dat;
-                        // 朋友列表 第i个变化 
                     }
                     else {
                         this._friendList.splice(i, 1);
                         isRemove = true;
-                        // 朋友列表 第i个删除
                     }
                     //ModuleEventManager.dispatchEvent(new social.SocialUiEvent(social.SocialUiEvent.REFRESHFRIENDlIST_EVENT));
                     //ModuleEventManager.dispatchEvent(new giving.GivingUiEvent(giving.GivingUiEvent.REFRESHFRIENDlIST_EVENT));
@@ -134,9 +126,6 @@ var SocialData = /** @class */ (function (_super) {
                 if (data) {
                     this._friendList.push(data);
                 }
-                //朋友列表第i个增加
-                //ModuleEventManager.dispatchEvent(new social.SocialUiEvent(social.SocialUiEvent.REFRESHFRIENDlIST_EVENT));
-                //ModuleEventManager.dispatchEvent(new giving.GivingUiEvent(giving.GivingUiEvent.REFRESHFRIENDlIST_EVENT));
             }
             return 1;
         }
@@ -149,12 +138,10 @@ var SocialData = /** @class */ (function (_super) {
                     var dat = this.getData($index);
                     if (dat) {
                         this._enemyList[i] = dat;
-                        //敌人列表 第i个变化
                     }
                     else {
                         this._enemyList.splice(i, 1);
                         isRemove = true;
-                        //敌人列表 第i个删除
                     }
                     break;
                 }
@@ -179,12 +166,10 @@ var SocialData = /** @class */ (function (_super) {
                     var dat = this.getData($index);
                     if (dat) {
                         this._applyList[i] = dat;
-                        //申请列表 第i个变化
                     }
                     else {
                         this._applyList.splice(i, 1);
                         isRemove = true;
-                        //申请列表 第i个删除
                     }
                     //ModuleEventManager.dispatchEvent(new social.SocialUiEvent(social.SocialUiEvent.REFRESHAPPLYlIST_EVENT));
                     break;
@@ -195,8 +180,6 @@ var SocialData = /** @class */ (function (_super) {
                 if (aaa) {
                     this._applyList.push(aaa);
                 }
-                //申请列表 第i个增加
-                //ModuleEventManager.dispatchEvent(new social.SocialUiEvent(social.SocialUiEvent.REFRESHAPPLYlIST_EVENT));
             }
             return 3;
         }
@@ -307,10 +290,10 @@ var SocialData = /** @class */ (function (_super) {
         return this._enemyList;
     };
     return SocialData;
-}(GuidObject));
-var SocialItemData = /** @class */ (function () {
+})(GuidObject);
+var SocialItemData = (function () {
     function SocialItemData() {
     }
     return SocialItemData;
-}());
+})();
 //# sourceMappingURL=SocialData.js.map

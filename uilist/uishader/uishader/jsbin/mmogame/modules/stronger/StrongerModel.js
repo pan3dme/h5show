@@ -1,6 +1,6 @@
 var stronger;
 (function (stronger) {
-    var StrongerUitl = /** @class */ (function () {
+    var StrongerUitl = (function () {
         function StrongerUitl() {
         }
         StrongerUitl.getGrade = function ($curzhanli, $goodzhanli) {
@@ -29,9 +29,9 @@ var stronger;
         StrongerUitl.STRONGER_MOUNT = 4; //我要坐骑
         StrongerUitl.STRONGER_WINGS = 5; //我要翅膀
         return StrongerUitl;
-    }());
+    })();
     stronger.StrongerUitl = StrongerUitl;
-    var StrongerModel = /** @class */ (function () {
+    var StrongerModel = (function () {
         function StrongerModel() {
         }
         StrongerModel.getInstance = function () {
@@ -108,13 +108,13 @@ var stronger;
             return curzhanli;
         };
         return StrongerModel;
-    }());
+    })();
     stronger.StrongerModel = StrongerModel;
-    var StrongerItemVo = /** @class */ (function () {
+    var StrongerItemVo = (function () {
         function StrongerItemVo() {
         }
         return StrongerItemVo;
-    }());
+    })();
     stronger.StrongerItemVo = StrongerItemVo;
 })(stronger || (stronger = {}));
 //# sourceMappingURL=StrongerModel.js.map

@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var CompileOne = /** @class */ (function () {
+    var CompileOne = (function () {
         function CompileOne() {
         }
         CompileOne.SPACE = " ";
@@ -65,7 +65,7 @@ var materialui;
         CompileOne.KIL = "kil";
         CompileOne.M33 = "m33";
         return CompileOne;
-    }());
+    })();
     materialui.CompileOne = CompileOne;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=CompileOne.js.map

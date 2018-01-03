@@ -1,19 +1,13 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var ParticleBoneData = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var ParticleBoneData = (function (_super) {
     __extends(ParticleBoneData, _super);
     function ParticleBoneData() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.objScale = 1;
-        return _this;
+        _super.apply(this, arguments);
+        this.objScale = 1;
     }
     ParticleBoneData.prototype.getParticle = function () {
         return new Display3DBonePartilce();
@@ -114,5 +108,5 @@ var ParticleBoneData = /** @class */ (function (_super) {
         this.materialParam.program = this.materialParam.shader.program;
     };
     return ParticleBoneData;
-}(ParticleData));
+})(ParticleData);
 //# sourceMappingURL=ParticleBoneData.js.map

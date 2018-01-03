@@ -1,4 +1,4 @@
-var FightSkillModel = /** @class */ (function () {
+var FightSkillModel = (function () {
     function FightSkillModel() {
     }
     FightSkillModel.getInstance = function () {
@@ -106,8 +106,8 @@ var FightSkillModel = /** @class */ (function () {
         }
     };
     return FightSkillModel;
-}());
-var JumpModel = /** @class */ (function () {
+})();
+var JumpModel = (function () {
     function JumpModel() {
     }
     JumpModel.jumpTestIn = function () {
@@ -160,8 +160,8 @@ var JumpModel = /** @class */ (function () {
     JumpModel.jumpNow = false;
     JumpModel.nextCheckTime = 0;
     return JumpModel;
-}());
-var AotuFunModelVo = /** @class */ (function () {
+})();
+var AotuFunModelVo = (function () {
     function AotuFunModelVo($fun, $end, $name) {
         if ($end === void 0) { $end = false; }
         if ($name === void 0) { $name = null; }
@@ -170,8 +170,8 @@ var AotuFunModelVo = /** @class */ (function () {
         this.name = $name;
     }
     return AotuFunModelVo;
-}());
-var AotuSkillManager = /** @class */ (function () {
+})();
+var AotuSkillManager = (function () {
     function AotuSkillManager() {
         var _this = this;
         this._aotuBattle = false;
@@ -261,7 +261,6 @@ var AotuSkillManager = /** @class */ (function () {
             return;
         }
         if (GuidData.player.needGuididPop) {
-            // return
         }
         if (!tb.SkillData.skillList) {
             tb.SkillData.resetSkillData();
@@ -318,11 +317,9 @@ var AotuSkillManager = /** @class */ (function () {
             else {
                 // console.log("现在选用的技能====>", $selectSkill.id)
                 if ($selectSkill.tb_skill_base.is_remain && $selectSkill.tb_skill_base.can_move == 0) {
-                    //  this.nextPlaySkillTm = TimeUtil.getTimer() + 10000
                 }
             }
             if ($selectSkill.id != 10024) {
-                //  return;
             }
             var $canPlay = FightSkillModel.getInstance().canPlaySkillToAttackTarger($selectSkill.tb_skill_uplevel.distance * 10);
             if ($canPlay) {
@@ -355,5 +352,5 @@ var AotuSkillManager = /** @class */ (function () {
         NetManager.getInstance().protocolos.jump_start(gridVec2DB.x, gridVec2DB.y);
     };
     return AotuSkillManager;
-}());
+})();
 //# sourceMappingURL=AotuSkillManager.js.map

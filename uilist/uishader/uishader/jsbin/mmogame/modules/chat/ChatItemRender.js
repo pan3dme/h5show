@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var Chat;
 (function (Chat) {
-    var ChatItemRender = /** @class */ (function (_super) {
+    var ChatItemRender = (function (_super) {
         __extends(ChatItemRender, _super);
         function ChatItemRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         ChatItemRender.prototype.draw = function () {
             var $obj = this._listItemData.data;
@@ -33,7 +28,7 @@ var Chat;
             ctx.fillText($str, $xpos, $ypos);
         };
         return ChatItemRender;
-    }(ListItemRender));
+    })(ListItemRender);
     Chat.ChatItemRender = ChatItemRender;
 })(Chat || (Chat = {}));
 //# sourceMappingURL=ChatItemRender.js.map

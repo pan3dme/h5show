@@ -1,20 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Display3dBatchMovie = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Display3dBatchMovie = (function (_super) {
     __extends(Display3dBatchMovie, _super);
     function Display3dBatchMovie() {
-        var _this = _super.call(this) || this;
-        _this.batchNum = 0;
-        _this.batchPos = new Array;
-        return _this;
+        _super.call(this);
+        this.batchNum = 0;
+        this.batchPos = new Array;
     }
     Object.defineProperty(Display3dBatchMovie.prototype, "fileScale", {
         set: function (value) {
@@ -75,15 +69,14 @@ var Display3dBatchMovie = /** @class */ (function (_super) {
         }
     };
     return Display3dBatchMovie;
-}(Display3dMovie));
-var Movie3D = /** @class */ (function (_super) {
+})(Display3dMovie);
+var Movie3D = (function (_super) {
     __extends(Movie3D, _super);
     function Movie3D() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.posData = [0, 0, 0, 10];
-        _this.hasReach = false;
-        _this._fileScale = 1;
-        return _this;
+        _super.apply(this, arguments);
+        this.posData = [0, 0, 0, 10];
+        this.hasReach = false;
+        this._fileScale = 1;
     }
     Object.defineProperty(Movie3D.prototype, "shadow", {
         set: function (value) {
@@ -192,5 +185,5 @@ var Movie3D = /** @class */ (function (_super) {
         }
     };
     return Movie3D;
-}(Object3D));
+})(Object3D);
 //# sourceMappingURL=Display3dBatchMovie.js.map

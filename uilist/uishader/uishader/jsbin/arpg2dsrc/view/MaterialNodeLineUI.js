@@ -1,6 +1,32 @@
 var materialui;
 (function (materialui) {
-    var MaterialNodeLineUI = /** @class */ (function () {
+    var BezierClasszip = (function () {
+        function BezierClasszip() {
+        }
+        BezierClasszip.drawbezier = function (_array, _time) {
+            var _newarray = new Array();
+            for (var i = 0; i < _array.length; i++) {
+                _newarray.push(new Vector2D(_array[i].x, _array[i].y));
+            }
+            while (_newarray.length > 1) {
+                for (var j = 0; j < _newarray.length - 1; j++) {
+                    this.mathmidpoint(_newarray[j], _newarray[j + 1], _time);
+                }
+                _newarray.pop();
+            }
+            return _newarray[0];
+        };
+        BezierClasszip.mathmidpoint = function (a, b, t) {
+            var _nx, _ny, _nz;
+            _nx = a.x + (b.x - a.x) * t;
+            _ny = a.y + (b.y - a.y) * t;
+            a.x = _nx;
+            a.y = _ny;
+        };
+        return BezierClasszip;
+    })();
+    materialui.BezierClasszip = BezierClasszip;
+    var MaterialNodeLineUI = (function () {
         function MaterialNodeLineUI() {
             this.lineRender = new materialui.NodeLineLinkComponent;
         }
@@ -70,8 +96,14 @@ var materialui;
             }
             var $arr = new Array();
             $arr.push(this.startPoint);
+            $arr.push(new Vector2D(this.startPoint.x + 100, this.startPoint.y));
+            $arr.push(new Vector2D(this.endPoint.x - 100, this.endPoint.y));
             $arr.push(this.endPoint);
-            this.lineRender.makeLineUiItem($arr);
+            var bzitem = new Array;
+            for (var i = 0; i < 100; i++) {
+                bzitem.push(BezierClasszip.drawbezier($arr, i / 100));
+            }
+            this.lineRender.makeLineUiItem(bzitem);
         };
         MaterialNodeLineUI.prototype.remove = function () {
             this.removeStage();
@@ -85,7 +117,7 @@ var materialui;
             }
         };
         return MaterialNodeLineUI;
-    }());
+    })();
     materialui.MaterialNodeLineUI = MaterialNodeLineUI;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialNodeLineUI.js.map

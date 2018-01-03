@@ -1,4 +1,4 @@
-var UIMask = /** @class */ (function () {
+var UIMask = (function () {
     function UIMask() {
         //设定相对坐标
         this._x = 0;
@@ -126,5 +126,5 @@ var UIMask = /** @class */ (function () {
         this._hasDisposed = true;
     };
     return UIMask;
-}());
+})();
 //# sourceMappingURL=UIMask.js.map

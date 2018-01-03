@@ -1,20 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Display3DModelPartilce = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Display3DModelPartilce = (function (_super) {
     __extends(Display3DModelPartilce, _super);
     function Display3DModelPartilce() {
-        var _this = _super.call(this) || this;
+        _super.call(this);
         //this.objData = new ParticleGpuData();
-        _this._resultUvVec = new Array(2);
-        return _this;
+        this._resultUvVec = new Array(2);
     }
     Object.defineProperty(Display3DModelPartilce.prototype, "modeldata", {
         get: function () {
@@ -82,5 +76,5 @@ var Display3DModelPartilce = /** @class */ (function (_super) {
         this._resultUvVec[1] = this._time / Scene_data.frameTime * this.data._vSpeed;
     };
     return Display3DModelPartilce;
-}(Display3DParticle));
+})(Display3DParticle);
 //# sourceMappingURL=Display3DModelPartilce.js.map

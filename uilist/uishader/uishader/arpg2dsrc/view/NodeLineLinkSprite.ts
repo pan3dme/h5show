@@ -28,7 +28,7 @@ module materialui {
                 "precision mediump float;\n" +
                 "void main(void)\n" +
                 "{\n" +
-                "gl_FragColor = vec4(0.6,0.0,0.0, 1.0);\n" +
+                       "gl_FragColor = vec4(0.9,0.9,0.9, 0.9);\n" +
                 "}"
             return $str;
         }
@@ -180,16 +180,16 @@ module materialui {
             this.width = 200;
             this.height = 200;
 
+            /*
             this._midRender = new NodeLineLinkComponent;
             this.addRender(this._midRender);
-           // this._midRender.makeLineUiItem(null)
             var $arr: Array<Vector2D> = new Array();
             $arr.push(new Vector2D(0, 0));
             $arr.push(new Vector2D(100, 0));
             $arr.push(new Vector2D(100, 100));
             this._midRender.makeLineUiItem($arr)
 
-  
+  */
             this._lineList=new Array
         }
         private _currentLine: MaterialNodeLineUI

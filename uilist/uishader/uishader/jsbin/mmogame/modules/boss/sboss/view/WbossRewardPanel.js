@@ -1,28 +1,22 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var sboss;
 (function (sboss) {
-    var WbossRewardPanel = /** @class */ (function (_super) {
+    var WbossRewardPanel = (function (_super) {
         __extends(WbossRewardPanel, _super);
         function WbossRewardPanel() {
-            var _this = _super.call(this) || this;
-            _this.uiAtlasComplet = false;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.middle = 0;
-            _this.center = 0;
-            _this.setBlackBg();
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            return _this;
+            _super.call(this);
+            this.uiAtlasComplet = false;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.middle = 0;
+            this.center = 0;
+            this.setBlackBg();
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
         }
         WbossRewardPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -68,12 +62,12 @@ var sboss;
             this.rewardSList.show();
         };
         return WbossRewardPanel;
-    }(WindowCentenMin));
+    })(WindowCentenMin);
     sboss.WbossRewardPanel = WbossRewardPanel;
-    var WbossRewardSList = /** @class */ (function (_super) {
+    var WbossRewardSList = (function (_super) {
         __extends(WbossRewardSList, _super);
         function WbossRewardSList() {
-            return _super.call(this) || this;
+            _super.call(this);
         }
         WbossRewardSList.prototype.init = function ($uiAtlas) {
             WbossRewardSListRender.baseAtlas = $uiAtlas;
@@ -123,12 +117,12 @@ var sboss;
             }
         };
         return WbossRewardSList;
-    }(SList));
+    })(SList);
     sboss.WbossRewardSList = WbossRewardSList;
-    var WbossRewardSListRender = /** @class */ (function (_super) {
+    var WbossRewardSListRender = (function (_super) {
         __extends(WbossRewardSListRender, _super);
         function WbossRewardSListRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         WbossRewardSListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -163,7 +157,7 @@ var sboss;
             }
         };
         return WbossRewardSListRender;
-    }(SListItem));
+    })(SListItem);
     sboss.WbossRewardSListRender = WbossRewardSListRender;
 })(sboss || (sboss = {}));
 //# sourceMappingURL=WbossRewardPanel.js.map

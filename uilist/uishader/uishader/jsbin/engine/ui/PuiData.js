@@ -1,4 +1,4 @@
-var PuiData = /** @class */ (function () {
+var PuiData = (function () {
     function PuiData() {
     }
     /** 方形高亮64*64 */
@@ -188,5 +188,5 @@ var PuiData = /** @class */ (function () {
     PuiData.RESBG = "RESBG"; //资源获取list背景
     PuiData.STATEUP_LISTBG = "STATEUP_LISTBG"; //境界突破list背景124*53
     return PuiData;
-}());
+})();
 //# sourceMappingURL=PuiData.js.map

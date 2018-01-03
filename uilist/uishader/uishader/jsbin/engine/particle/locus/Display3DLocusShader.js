@@ -1,17 +1,12 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Display3DLocusShader = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Display3DLocusShader = (function (_super) {
     __extends(Display3DLocusShader, _super);
     function Display3DLocusShader() {
-        return _super.call(this) || this;
+        _super.call(this);
     }
     Display3DLocusShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "v3Position");
@@ -34,7 +29,7 @@ var Display3DLocusShader = /** @class */ (function (_super) {
     Display3DLocusShader.prototype.getVertexShaderString = function () {
         var defineBaseStr = "attribute vec4 v3Position;\n" +
             "attribute vec2 v2TexCoord;\n" +
-            "uniform mat4 vcmat[" + Display3DFacetShader.getVcSize() + "];\n" + //所有vc值
+            "uniform mat4 vcmat[" + Display3DFacetShader.getVcSize() + "];\n" +
             //"uniform mat4 viewMatrix3D;\n" +
             //"uniform mat4 camMatrix3D;\n" +
             //"uniform mat4 posMatrix3D;\n" +
@@ -118,5 +113,5 @@ var Display3DLocusShader = /** @class */ (function (_super) {
     Display3DLocusShader.shader_mat4 = { viewMatrix3D: 0, camMatrix3D: 1, posMatrix3D: 2 };
     Display3DLocusShader.shader_vec4 = { uvMove: [3, 0], camPos: [3, 1], isUv: [3, 2] };
     return Display3DLocusShader;
-}(Shader3D));
+})(Shader3D);
 //# sourceMappingURL=Display3DLocusShader.js.map

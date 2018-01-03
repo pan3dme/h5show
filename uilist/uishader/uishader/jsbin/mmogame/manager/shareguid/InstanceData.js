@@ -1,17 +1,12 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var InstanceData = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var InstanceData = (function (_super) {
     __extends(InstanceData, _super);
     function InstanceData() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     InstanceData.prototype.onBaseCreated = function () {
         var _this = this;
@@ -64,8 +59,6 @@ var InstanceData = /** @class */ (function (_super) {
                 ModuleEventManager.dispatchEvent(evt);
             }
             else if ($kNum >= SharedDef.INSTANCE_INT_FIELD_PRIVATE_BOSS_RECOVER_TIME_START && $kNum < SharedDef.INSTANCE_INT_FIELD_PRIVATE_BOSS_RECOVER_TIME_END) {
-                //个人boss次数回复时间戳监听
-                // ModuleEventManager.dispatchEvent(new sboss.SbossEvent(sboss.SbossEvent.PBOSS_REDPOINT_CHG));
             }
         }
     };
@@ -304,5 +297,5 @@ var InstanceData = /** @class */ (function (_super) {
         return aa;
     };
     return InstanceData;
-}(GuidObject));
+})(GuidObject);
 //# sourceMappingURL=InstanceData.js.map

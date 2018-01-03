@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var faceui;
 (function (faceui) {
-    var FaceUiModule = /** @class */ (function (_super) {
+    var FaceUiModule = (function (_super) {
         __extends(FaceUiModule, _super);
         function FaceUiModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         FaceUiModule.prototype.getModuleName = function () {
             return "FaceUiModule";
@@ -22,22 +17,22 @@ var faceui;
             return [new FaceUiProcessor()];
         };
         return FaceUiModule;
-    }(Module));
+    })(Module);
     faceui.FaceUiModule = FaceUiModule;
-    var FaceUiEvent = /** @class */ (function (_super) {
+    var FaceUiEvent = (function (_super) {
         __extends(FaceUiEvent, _super);
         function FaceUiEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         FaceUiEvent.SHOW_FACE_UI_PANEL = "SHOW_FACE_UI_PANEL";
         FaceUiEvent.HIDE_FACE_UI_PANEL = "HIDE_FACE_UI_PANEL";
         return FaceUiEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     faceui.FaceUiEvent = FaceUiEvent;
-    var FaceUiProcessor = /** @class */ (function (_super) {
+    var FaceUiProcessor = (function (_super) {
         __extends(FaceUiProcessor, _super);
         function FaceUiProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         FaceUiProcessor.prototype.getName = function () {
             return "FaceUiProcessor";
@@ -81,7 +76,7 @@ var faceui;
             ];
         };
         return FaceUiProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     faceui.FaceUiProcessor = FaceUiProcessor;
 })(faceui || (faceui = {}));
 //# sourceMappingURL=FaceUiProcessor.js.map

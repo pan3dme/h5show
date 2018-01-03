@@ -1,4 +1,4 @@
-var Matrix3D = /** @class */ (function () {
+var Matrix3D = (function () {
     function Matrix3D() {
         this.isIdentity = true;
         var mk = [
@@ -464,5 +464,5 @@ var Matrix3D = /** @class */ (function () {
     };
     Matrix3D.tempM = new Matrix3D();
     return Matrix3D;
-}());
+})();
 //# sourceMappingURL=Matrix3D.js.map

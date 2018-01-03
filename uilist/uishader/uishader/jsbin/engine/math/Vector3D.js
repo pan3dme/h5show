@@ -1,4 +1,4 @@
-var Vector3D = /** @class */ (function () {
+var Vector3D = (function () {
     function Vector3D($x, $y, $z, $w) {
         if ($x === void 0) { $x = 0; }
         if ($y === void 0) { $y = 0; }
@@ -98,5 +98,5 @@ var Vector3D = /** @class */ (function () {
     Vector3D.Y_AXIS = new Vector3D(0, 1, 0);
     Vector3D.Z_AXIS = new Vector3D(0, 0, 1);
     return Vector3D;
-}());
+})();
 //# sourceMappingURL=Vector3D.js.map

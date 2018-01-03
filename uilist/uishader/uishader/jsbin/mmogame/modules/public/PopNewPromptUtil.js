@@ -1,31 +1,26 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var PopNewPromptUtil = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var PopNewPromptUtil = (function (_super) {
     __extends(PopNewPromptUtil, _super);
     // public _topRender: UIRenderComponent;
     function PopNewPromptUtil() {
-        var _this = _super.call(this) || this;
-        _this._complete = false;
-        _this.width = UIData.designWidth;
-        _this.height = UIData.designHeight;
-        _this.center = 0;
-        _this.middle = 0;
-        _this._bottomRender = new UIRenderComponent;
-        _this.addRender(_this._bottomRender);
-        _this._baseRender = new UIRenderComponent;
-        _this.addRender(_this._baseRender);
+        var _this = this;
+        _super.call(this);
+        this._complete = false;
+        this.width = UIData.designWidth;
+        this.height = UIData.designHeight;
+        this.center = 0;
+        this.middle = 0;
+        this._bottomRender = new UIRenderComponent;
+        this.addRender(this._bottomRender);
+        this._baseRender = new UIRenderComponent;
+        this.addRender(this._baseRender);
         // this._topRender = new UIRenderComponent;
         // this.addRender(this._topRender)
-        _this._bottomRender.setInfo("ui/uidata/poptimeout/popnewprompt.xml", "ui/uidata/poptimeout/popnewprompt.png", function () { _this.loadConfigCom(); });
-        return _this;
+        this._bottomRender.setInfo("ui/uidata/poptimeout/popnewprompt.xml", "ui/uidata/poptimeout/popnewprompt.png", function () { _this.loadConfigCom(); });
     }
     // private _lastvo: any
     PopNewPromptUtil.prototype.initData = function ($vo) {
@@ -138,14 +133,12 @@ var PopNewPromptUtil = /** @class */ (function (_super) {
             var $titletab = tb.TB_title_base.get_TB_title_baseById($vo.data.title);
             if ($vo.data.reward.length > 0) {
                 $str += getResName($vo.data.reward[0][0]) + " x" + $vo.data.reward[0][1] + "   ";
-                // UiDraw.drawRewardIconAndtxt(this._aryachive[2], $vo.data.reward[0], false, TextAlign.LEFT)
             }
             $str += $titletab.name + " x1";
         }
         else {
             for (var i = 0; i < $vo.data.reward.length; i++) {
                 $str += getResName($vo.data.reward[i][0]) + " x" + $vo.data.reward[i][1] + "   ";
-                // UiDraw.drawRewardIconAndtxt(this._aryachive[i + 1], $vo.data.reward[i], false, TextAlign.LEFT)
             }
         }
         LabelTextFont.writeSingleLabel(this._baseRender.uiAtlas, this._aryachive[1].skinName, $str, 16, TextAlign.LEFT, ColorType.Whiteffffff);
@@ -198,12 +191,12 @@ var PopNewPromptUtil = /** @class */ (function (_super) {
     /** 获得新称号 */
     PopNewPromptUtil.NEW_DESIGNATION = 1;
     return PopNewPromptUtil;
-}(UIConatiner));
-var NewPromptVo = /** @class */ (function () {
+})(UIConatiner);
+var NewPromptVo = (function () {
     function NewPromptVo() {
         this.id = 1;
         this.times = 3000;
     }
     return NewPromptVo;
-}());
+})();
 //# sourceMappingURL=PopNewPromptUtil.js.map

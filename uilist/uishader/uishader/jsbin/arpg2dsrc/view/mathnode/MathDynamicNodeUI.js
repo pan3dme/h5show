@@ -1,24 +1,18 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var materialui;
 (function (materialui) {
-    var MathDynamicNodeUI = /** @class */ (function (_super) {
+    var MathDynamicNodeUI = (function (_super) {
         __extends(MathDynamicNodeUI, _super);
         function MathDynamicNodeUI() {
-            var _this = _super.call(this) || this;
-            _this.gap = 20;
-            _this.width = 162;
-            _this.height = 60;
-            _this.resetBgSize();
-            return _this;
+            _super.call(this);
+            this.gap = 20;
+            this.width = 162;
+            this.height = 60;
+            this.resetBgSize();
         }
         MathDynamicNodeUI.prototype.initItem = function () {
             this.intAItem = new materialui.ItemMaterialUI("a", materialui.MaterialItemType.UNDEFINE);
@@ -193,7 +187,7 @@ var materialui;
             }
         };
         return MathDynamicNodeUI;
-    }(materialui.BaseMaterialNodeUI));
+    })(materialui.BaseMaterialNodeUI);
     materialui.MathDynamicNodeUI = MathDynamicNodeUI;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MathDynamicNodeUI.js.map

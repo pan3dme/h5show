@@ -1,37 +1,31 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var duihuan;
 (function (duihuan) {
-    var DuiHuanPanel = /** @class */ (function (_super) {
+    var DuiHuanPanel = (function (_super) {
         __extends(DuiHuanPanel, _super);
         function DuiHuanPanel() {
-            var _this = _super.call(this) || this;
-            _this.uiAtlasComplet = false;
-            _this.selectNum = 0;
-            _this._lastMouseX = 0;
-            _this._lastMcX = 0;
-            _this._percentage = 0;
-            _this.setBlackBg();
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._bottomRender = new UIRenderComponent;
-            _this.addRender(_this._bottomRender);
-            _this._midRender = new UIRenderComponent;
-            _this.addRender(_this._midRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            _this._midRender.uiAtlas = new UIAtlas;
-            return _this;
+            _super.call(this);
+            this.uiAtlasComplet = false;
+            this.selectNum = 0;
+            this._lastMouseX = 0;
+            this._lastMcX = 0;
+            this._percentage = 0;
+            this.setBlackBg();
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._bottomRender = new UIRenderComponent;
+            this.addRender(this._bottomRender);
+            this._midRender = new UIRenderComponent;
+            this.addRender(this._midRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
+            this._midRender.uiAtlas = new UIAtlas;
         }
         DuiHuanPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -140,7 +134,6 @@ var duihuan;
                         var $aaa = new wintittle.WindowRestTittleEvent(wintittle.WindowRestTittleEvent.SHOW_WINDOW_RES_PANEL);
                         $aaa.data = this.selectEvet.UseResType;
                         ModuleEventManager.dispatchEvent($aaa);
-                        // msgtip.MsgTipManager.outStr("[ff0000]所需要资源不足", 99);
                     }
                     break;
                 case this.c_close:
@@ -175,7 +168,7 @@ var duihuan;
             UIManager.getInstance().removeUIContainer(this);
         };
         return DuiHuanPanel;
-    }(WindowCentenMin));
+    })(WindowCentenMin);
     duihuan.DuiHuanPanel = DuiHuanPanel;
 })(duihuan || (duihuan = {}));
 //# sourceMappingURL=DuiHuanPanel.js.map

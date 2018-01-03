@@ -1,29 +1,23 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var faction;
 (function (faction) {
-    var FactionTripPanel = /** @class */ (function (_super) {
+    var FactionTripPanel = (function (_super) {
         __extends(FactionTripPanel, _super);
         function FactionTripPanel() {
-            var _this = _super.call(this) || this;
-            _this.hallLev = -1; //当前大厅等级
-            _this.currentTripLev = -1; //当前层数
-            _this.allTripNum = -1; //所有通关人数
-            _this.canGetState = [-1, -1, -1, -1, -1, -1];
-            _this.maxTripObj = new Object;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            return _this;
+            _super.call(this);
+            this.hallLev = -1; //当前大厅等级
+            this.currentTripLev = -1; //当前层数
+            this.allTripNum = -1; //所有通关人数
+            this.canGetState = [-1, -1, -1, -1, -1, -1];
+            this.maxTripObj = new Object;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
         }
         FactionTripPanel.prototype.dispose = function () {
             this._bgRender.dispose();
@@ -388,7 +382,7 @@ var faction;
             }
         };
         return FactionTripPanel;
-    }(UIConatiner));
+    })(UIConatiner);
     faction.FactionTripPanel = FactionTripPanel;
 })(faction || (faction = {}));
 //# sourceMappingURL=FactionTripPanel.js.map

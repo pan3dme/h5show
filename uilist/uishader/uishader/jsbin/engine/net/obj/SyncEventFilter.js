@@ -1,13 +1,8 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 /**
      * 用于记录所有的同步事件，目前最常用于ui重绘
      * 记录时，先通过testRecorder验证是否是关心的对象，
@@ -16,10 +11,10 @@ var __extends = (this && this.__extends) || (function () {
      * 通过pop可以得到当前队列中的所有符合条件的事件消息，并调用相应的处理函数
      * @author linbc
      */
-var SyncEventFilter = /** @class */ (function (_super) {
+var SyncEventFilter = (function (_super) {
     __extends(SyncEventFilter, _super);
     function SyncEventFilter() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     SyncEventFilter.prototype.open = function () {
         if (!this._opening)
@@ -182,5 +177,5 @@ var SyncEventFilter = /** @class */ (function (_super) {
      */
     SyncEventFilter.EV_UPDATE_S = 3;
     return SyncEventFilter;
-}(SyncEvent));
+})(SyncEvent);
 //# sourceMappingURL=SyncEventFilter.js.map

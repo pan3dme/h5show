@@ -1,19 +1,13 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var MaterialBatchAnimShader = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var MaterialBatchAnimShader = (function (_super) {
     __extends(MaterialBatchAnimShader, _super);
     function MaterialBatchAnimShader() {
-        var _this = _super.call(this) || this;
-        _this.name = "Material_Batch_Anim_Shader";
-        return _this;
+        _super.call(this);
+        this.name = "Material_Batch_Anim_Shader";
     }
     MaterialBatchAnimShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "pos");
@@ -150,7 +144,6 @@ var MaterialBatchAnimShader = /** @class */ (function (_super) {
                     "vt0 += bone[int(boneID.w)] * normal * boneWeight.w;\n" +
                     "vt0 = rotationMatrix3D * vt0;\n" +
                     "vt0.xyz = normalize(vt0.xyz);\n";
-            //"vt0 = vec4(0,1,0,1);\n";
         }
         if (lightProbe) {
             $str +=
@@ -164,7 +157,6 @@ var MaterialBatchAnimShader = /** @class */ (function (_super) {
                 "float suncos = dot(vt0.xyz,sunDirect.xyz);\n" +
                     "suncos = clamp(suncos,0.0,1.0);\n" +
                     "v2 = sunColor * suncos + ambientColor;";
-            //"v2 = sunColor * suncos;"
         }
         else if (noLight) {
         }
@@ -210,5 +202,5 @@ var MaterialBatchAnimShader = /** @class */ (function (_super) {
         return $str;
     };
     return MaterialBatchAnimShader;
-}(Shader3D));
+})(Shader3D);
 //# sourceMappingURL=MaterialBatchAnimShader.js.map

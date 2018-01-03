@@ -1,4 +1,4 @@
-var TextAlign = /** @class */ (function () {
+var TextAlign = (function () {
     function TextAlign() {
     }
     TextAlign.LEFT = "left";
@@ -8,5 +8,5 @@ var TextAlign = /** @class */ (function () {
     TextAlign.MIDDLE = "middle";
     TextAlign.BOTTOM = "bottom";
     return TextAlign;
-}());
+})();
 //# sourceMappingURL=TextAlign.js.map

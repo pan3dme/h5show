@@ -1,45 +1,39 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var donation;
 (function (donation) {
-    var DonationPanel = /** @class */ (function (_super) {
+    var DonationPanel = (function (_super) {
         __extends(DonationPanel, _super);
         function DonationPanel() {
-            var _this = _super.call(this) || this;
-            _this.uiAtlasComplet = false;
+            _super.call(this);
+            this.uiAtlasComplet = false;
             //控件a_17的偏移量
-            _this._tx1 = 10;
+            this._tx1 = 10;
             //控件b_txt的偏移量
-            _this._tx2 = 4;
-            _this._lastMouseX = 0;
-            _this._lastMcX = 0;
-            _this._percentage = 0;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.middle = 0;
-            _this.center = 0;
+            this._tx2 = 4;
+            this._lastMouseX = 0;
+            this._lastMcX = 0;
+            this._percentage = 0;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.middle = 0;
+            this.center = 0;
             //添加好友面板渲染器
-            _this._AbgRender = new UIRenderComponent;
-            _this.addRender(_this._AbgRender);
-            _this._AbottomRender = new UIRenderComponent;
-            _this.addRender(_this._AbottomRender);
-            _this._AbaseRender = new UIRenderComponent;
-            _this.addRender(_this._AbaseRender);
-            _this._AtopRender1 = new UIRenderComponent;
-            _this.addRender(_this._AtopRender1);
-            _this._AtopRender2 = new UIRenderComponent;
-            _this.addRender(_this._AtopRender2);
-            _this._AtopRender3 = new UIRenderComponent;
-            _this.addRender(_this._AtopRender3);
-            return _this;
+            this._AbgRender = new UIRenderComponent;
+            this.addRender(this._AbgRender);
+            this._AbottomRender = new UIRenderComponent;
+            this.addRender(this._AbottomRender);
+            this._AbaseRender = new UIRenderComponent;
+            this.addRender(this._AbaseRender);
+            this._AtopRender1 = new UIRenderComponent;
+            this.addRender(this._AtopRender1);
+            this._AtopRender2 = new UIRenderComponent;
+            this.addRender(this._AtopRender2);
+            this._AtopRender3 = new UIRenderComponent;
+            this.addRender(this._AtopRender3);
         }
         DonationPanel.prototype.dispose = function () {
             this._AbgRender.dispose();
@@ -290,7 +284,7 @@ var donation;
             return mymoney;
         };
         return DonationPanel;
-    }(UIPanel));
+    })(UIPanel);
     donation.DonationPanel = DonationPanel;
 })(donation || (donation = {}));
 //# sourceMappingURL=DonationPanel.js.map

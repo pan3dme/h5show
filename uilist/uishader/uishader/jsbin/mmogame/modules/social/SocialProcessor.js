@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var social;
 (function (social) {
-    var SocialUiModule = /** @class */ (function (_super) {
+    var SocialUiModule = (function (_super) {
         __extends(SocialUiModule, _super);
         function SocialUiModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         SocialUiModule.prototype.getModuleName = function () {
             return "SocialUiModule";
@@ -22,12 +17,12 @@ var social;
             return [new SocialProcessor()];
         };
         return SocialUiModule;
-    }(Module));
+    })(Module);
     social.SocialUiModule = SocialUiModule;
-    var SocialUiEvent = /** @class */ (function (_super) {
+    var SocialUiEvent = (function (_super) {
         __extends(SocialUiEvent, _super);
         function SocialUiEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //展示添加好友面板
         SocialUiEvent.SHOW_ADDFRIEND_EVENT = "SHOW_ADDFRIEND_EVENT";
@@ -50,12 +45,12 @@ var social;
         //复仇面板变化
         SocialUiEvent.REVENGE_PANEL_EVENT = "REVENGE_PANEL_EVENT";
         return SocialUiEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     social.SocialUiEvent = SocialUiEvent;
-    var SocialProcessor = /** @class */ (function (_super) {
+    var SocialProcessor = (function (_super) {
         __extends(SocialProcessor, _super);
         function SocialProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         SocialProcessor.prototype.getName = function () {
             return "SocialProcessor";
@@ -275,7 +270,7 @@ var social;
             return obj;
         };
         return SocialProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     social.SocialProcessor = SocialProcessor;
 })(social || (social = {}));
 //# sourceMappingURL=SocialProcessor.js.map

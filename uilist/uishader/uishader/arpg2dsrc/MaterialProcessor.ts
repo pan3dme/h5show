@@ -243,15 +243,44 @@
             this._isMidelMouse = false
         }
         private mouseXY: Vector2D;
-
-
-
-
-
         public onMouseWheel($evt: MouseWheelEvent): void {
 
-            UIData.Scale += ($evt.wheelDelta / 1000)
+           
+
+            var aaa: number = ($evt.x - Arpg2dGameStart.stagePos.x) / UIData.Scale;
+            var bbb: number = ($evt.y - Arpg2dGameStart.stagePos.y) / UIData.Scale;
+
+
+            var $addScale: number = ($evt.wheelDelta / 1000)
+            UIData.Scale += $addScale;
             UIManager.getInstance().resize();
+        
+
+            var $txy: Vector2D = new Vector2D($evt.x - (aaa * UIData.Scale), $evt.y - (bbb * UIData.Scale))
+      
+
+            $txy.x = $txy.x - Arpg2dGameStart.stagePos.x
+            $txy.y = $txy.y - Arpg2dGameStart.stagePos.y
+
+            $txy.x = $txy.x / UIData.Scale;
+            $txy.y = $txy.y / UIData.Scale;
+
+
+
+            Arpg2dGameStart.stagePos.x += $txy.x;
+            Arpg2dGameStart.stagePos.y += $txy.y;
+
+            for (var i: number = 0; i < UIManager.getInstance()._containerList.length; i++) {
+                var $uiConatiner: UIConatiner = UIManager.getInstance()._containerList[i];
+                $uiConatiner.left += $txy.x;
+                $uiConatiner.top += $txy.y;
+
+            }
+            UIManager.getInstance().resize();
+       
+
+           
+
 
         }
     }

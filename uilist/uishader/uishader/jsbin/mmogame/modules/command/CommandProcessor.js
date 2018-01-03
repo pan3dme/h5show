@@ -1,29 +1,24 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var Camand;
 (function (Camand) {
-    var ComandEvent = /** @class */ (function (_super) {
+    var ComandEvent = (function (_super) {
         __extends(ComandEvent, _super);
         function ComandEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         ComandEvent.SHOW_COMMAND_EVENT = "show_command_event"; //显示面板
         ComandEvent.SHOW_ASTAR_LINE = "SHOW_ASTAR_LINE"; //显示面板
         return ComandEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     Camand.ComandEvent = ComandEvent;
-    var CommandModule = /** @class */ (function (_super) {
+    var CommandModule = (function (_super) {
         __extends(CommandModule, _super);
         function CommandModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         CommandModule.prototype.getModuleName = function () {
             return "CommandModule";
@@ -32,12 +27,12 @@ var Camand;
             return [new CommandProcessor()];
         };
         return CommandModule;
-    }(Module));
+    })(Module);
     Camand.CommandModule = CommandModule;
-    var CommandProcessor = /** @class */ (function (_super) {
+    var CommandProcessor = (function (_super) {
         __extends(CommandProcessor, _super);
         function CommandProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         CommandProcessor.prototype.getName = function () {
             return "CommandProcessor";
@@ -74,7 +69,7 @@ var Camand;
             ];
         };
         return CommandProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     Camand.CommandProcessor = CommandProcessor;
 })(Camand || (Camand = {}));
 //# sourceMappingURL=CommandProcessor.js.map

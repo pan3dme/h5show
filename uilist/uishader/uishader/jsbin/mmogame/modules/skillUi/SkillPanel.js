@@ -1,34 +1,28 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var skillUi;
 (function (skillUi) {
-    var SkillPanel = /** @class */ (function (_super) {
+    var SkillPanel = (function (_super) {
         __extends(SkillPanel, _super);
         function SkillPanel() {
-            var _this = _super.call(this) || this;
-            _this._canclick = true;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._skillRender = new UIRenderComponent();
-            _this.addRender(_this._skillRender);
-            _this._bgRender = new UIRenderComponent();
-            _this.addRender(_this._bgRender);
-            _this._baseRender = new UIRenderComponent();
-            _this.addRender(_this._baseRender);
-            _this._redPointRender = new RedPointRender();
-            _this.addRender(_this._redPointRender);
-            _this._baseUiAtlas = new UIAtlas();
-            return _this;
+            _super.call(this);
+            this._canclick = true;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._skillRender = new UIRenderComponent();
+            this.addRender(this._skillRender);
+            this._bgRender = new UIRenderComponent();
+            this.addRender(this._bgRender);
+            this._baseRender = new UIRenderComponent();
+            this.addRender(this._baseRender);
+            this._redPointRender = new RedPointRender();
+            this.addRender(this._redPointRender);
+            this._baseUiAtlas = new UIAtlas();
         }
         SkillPanel.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -334,7 +328,6 @@ var skillUi;
                 NetManager.getInstance().protocolos.raise_base_spell(SharedDef.RAISE_BASE_SKILL, this._selectedData.id);
             }
             else {
-                // msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "您操作太快了", 99);
             }
         };
         SkillPanel.prototype.drawSelSkill = function ($data, redPoint) {
@@ -476,9 +469,9 @@ var skillUi;
             _super.prototype.hide.call(this);
         };
         return SkillPanel;
-    }(WindowUi));
+    })(WindowUi);
     skillUi.SkillPanel = SkillPanel;
-    var SkillItemIcon = /** @class */ (function () {
+    var SkillItemIcon = (function () {
         function SkillItemIcon() {
             this._selected = false;
         }
@@ -590,13 +583,13 @@ var skillUi;
             }
         };
         return SkillItemIcon;
-    }());
+    })();
     skillUi.SkillItemIcon = SkillItemIcon;
-    var SkillItemData = /** @class */ (function () {
+    var SkillItemData = (function () {
         function SkillItemData() {
         }
         return SkillItemData;
-    }());
+    })();
     skillUi.SkillItemData = SkillItemData;
 })(skillUi || (skillUi = {}));
 //# sourceMappingURL=SkillPanel.js.map

@@ -1,31 +1,25 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var faceui;
 (function (faceui) {
-    var FaceUiPanel = /** @class */ (function (_super) {
+    var FaceUiPanel = (function (_super) {
         __extends(FaceUiPanel, _super);
         function FaceUiPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = 450;
-            _this.height = 280;
-            _this.bottom = 0;
-            _this.left = 0;
-            _this._bootomRender = new UIRenderComponent();
-            _this.addRender(_this._bootomRender);
-            _this._midRender = new UIRenderComponent();
-            _this.addRender(_this._midRender);
-            _this._faceRender = new UIRenderComponent();
-            _this.addRender(_this._faceRender);
-            _this._midRender.uiAtlas = new UIAtlas;
-            return _this;
+            _super.call(this);
+            this.width = 450;
+            this.height = 280;
+            this.bottom = 0;
+            this.left = 0;
+            this._bootomRender = new UIRenderComponent();
+            this.addRender(this._bootomRender);
+            this._midRender = new UIRenderComponent();
+            this.addRender(this._midRender);
+            this._faceRender = new UIRenderComponent();
+            this.addRender(this._faceRender);
+            this._midRender.uiAtlas = new UIAtlas;
         }
         FaceUiPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -84,7 +78,7 @@ var faceui;
             $ui.drawToCtx(this._midRender.uiAtlas, $ctx);
         };
         return FaceUiPanel;
-    }(UIConatiner));
+    })(UIConatiner);
     faceui.FaceUiPanel = FaceUiPanel;
 })(faceui || (faceui = {}));
 //# sourceMappingURL=FaceUiPanel.js.map
