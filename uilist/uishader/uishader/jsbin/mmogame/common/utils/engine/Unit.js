@@ -1,15 +1,20 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 //
-var SkillServesVo = (function () {
+var SkillServesVo = /** @class */ (function () {
     function SkillServesVo() {
     }
     return SkillServesVo;
-})();
-var BuffUnit = (function () {
+}());
+var BuffUnit = /** @class */ (function () {
     function BuffUnit($unit) {
         this.unit = $unit;
     }
@@ -88,17 +93,18 @@ var BuffUnit = (function () {
         }
     };
     return BuffUnit;
-})();
-var Unit = (function (_super) {
+}());
+var Unit = /** @class */ (function (_super) {
     __extends(Unit, _super);
     function Unit(g) {
         if (g === void 0) { g = ""; }
-        _super.call(this, g);
-        this.path = new Array;
-        this.isMain = false;
-        this.originalRotation = 0;
-        this._hasCreated = false;
-        this.tempSendPath = new Array;
+        var _this = _super.call(this, g) || this;
+        _this.path = new Array;
+        _this.isMain = false;
+        _this.originalRotation = 0;
+        _this._hasCreated = false;
+        _this.tempSendPath = new Array;
+        return _this;
     }
     Unit.prototype.ReadFromCopy = function (flags, bytes, evFilter) {
         if (evFilter === void 0) { evFilter = null; }
@@ -493,5 +499,5 @@ var Unit = (function (_super) {
         return Number(str);
     };
     return Unit;
-})(GuidObject);
+}(GuidObject));
 //# sourceMappingURL=Unit.js.map

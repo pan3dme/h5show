@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var kaifu;
 (function (kaifu) {
-    var KaiFuModule = (function (_super) {
+    var KaiFuModule = /** @class */ (function (_super) {
         __extends(KaiFuModule, _super);
         function KaiFuModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         KaiFuModule.prototype.getModuleName = function () {
             return "KaiFuModule";
@@ -17,23 +22,23 @@ var kaifu;
             return [new MailProcessor()];
         };
         return KaiFuModule;
-    })(Module);
+    }(Module));
     kaifu.KaiFuModule = KaiFuModule;
-    var KaiFuEvent = (function (_super) {
+    var KaiFuEvent = /** @class */ (function (_super) {
         __extends(KaiFuEvent, _super);
         function KaiFuEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         KaiFuEvent.SHOW_KAIFU_PANEL_EVENT = "SHOW_KAIFU_PANEL_EVENT"; //显示翅膀面板
         //public static MAIL_CHG_EVENT: string = "MAIL_CHG_EVENT";//显示翅膀面板
         KaiFuEvent.KAIFU_CHOUJING_CHG_EVENT = "KAIFU_CHOUJING_CHG_EVENT";
         return KaiFuEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     kaifu.KaiFuEvent = KaiFuEvent;
-    var MailProcessor = (function (_super) {
+    var MailProcessor = /** @class */ (function (_super) {
         __extends(MailProcessor, _super);
         function MailProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MailProcessor.prototype.getName = function () {
             return "KaiFuProcessor";
@@ -44,6 +49,9 @@ var kaifu;
                 if ($KaiFuEvent.type == KaiFuEvent.SHOW_KAIFU_PANEL_EVENT) {
                     this.showPanel();
                 }
+                // else if($KaiFuEvent.type == KaiFuEvent.MAIL_CHG_EVENT){
+                //     this.mailChg($KaiFuEvent.data);
+                // }
             }
             else if ($event instanceof ActiveEvent) {
                 if ($event.type == ActiveEvent.ACTIVE_GLOBEL_CHOUJIANG_EVENT) {
@@ -105,17 +113,17 @@ var kaifu;
             ];
         };
         return MailProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     kaifu.MailProcessor = MailProcessor;
 })(kaifu || (kaifu = {}));
 /**活动事件 */
-var ActiveEvent = (function (_super) {
+var ActiveEvent = /** @class */ (function (_super) {
     __extends(ActiveEvent, _super);
     function ActiveEvent() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     ActiveEvent.ACTIVE_PLAYER_CHANGE_EVENT = "ACTIVE_PLAYER_CHANGE_EVENT"; //角色活动数据变化
     ActiveEvent.ACTIVE_GLOBEL_CHOUJIANG_EVENT = "ACTIVE_GLOBEL_CHOUJIANG_EVENT"; //活动抽奖数据变化
     return ActiveEvent;
-})(BaseEvent);
+}(BaseEvent));
 //# sourceMappingURL=KaiFuProcessor.js.map

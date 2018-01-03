@@ -1,29 +1,35 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var materialui;
 (function (materialui) {
-    var BaseMaterialNodeUI = (function (_super) {
+    var BaseMaterialNodeUI = /** @class */ (function (_super) {
         __extends(BaseMaterialNodeUI, _super);
         function BaseMaterialNodeUI() {
-            _super.call(this);
-            this.gap = 20;
-            this.name = "BaseMaterialNodeUI" + random(9999999);
-            this.width = 200;
-            this.height = 200;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._bottomRender.uiAtlas = BaseMaterialNodeUI.baseUIAtlas;
-            this._midRender.uiAtlas = BaseMaterialNodeUI.baseUIAtlas;
-            this._topRender.uiAtlas = BaseMaterialNodeUI.baseUIAtlas;
-            this._container = new materialui.PanelContainer(this, this._topRender);
-            this.loadConfigCom();
+            var _this = _super.call(this) || this;
+            _this.gap = 20;
+            _this.name = "BaseMaterialNodeUI" + random(9999999);
+            _this.width = 200;
+            _this.height = 200;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._bottomRender.uiAtlas = BaseMaterialNodeUI.baseUIAtlas;
+            _this._midRender.uiAtlas = BaseMaterialNodeUI.baseUIAtlas;
+            _this._topRender.uiAtlas = BaseMaterialNodeUI.baseUIAtlas;
+            _this._container = new materialui.PanelContainer(_this, _this._topRender);
+            _this.loadConfigCom();
+            return _this;
         }
         BaseMaterialNodeUI.prototype.setInItemByData = function (ary) {
         };
@@ -75,13 +81,13 @@ var materialui;
         };
         BaseMaterialNodeUI.prototype.drawTitleToFrame = function ($str) {
             this.drawTextToName(this.a_panel_title_frame, $str);
+            this.resetBgSize();
         };
         BaseMaterialNodeUI.prototype.drawTextToName = function ($ui, $str) {
             var $toRect = $ui.getSkinCtxRect();
             var $ctx = UIManager.getInstance().getContext2D($toRect.width, $toRect.height, false);
             LabelTextFont.writeSingleLabelToCtx($ctx, $str, 20, 0, 0, TextAlign.LEFT);
             $ui.drawToCtx(this._bottomRender.uiAtlas, $ctx);
-            console.log(150 * 1.5, 14 * 1.5);
         };
         BaseMaterialNodeUI.prototype.addItems = function ($nodeUI) {
             if ($nodeUI.inOut) {
@@ -217,7 +223,7 @@ var materialui;
         });
         BaseMaterialNodeUI.titleFrameId = 0;
         return BaseMaterialNodeUI;
-    })(UIPanel);
+    }(UIPanel));
     materialui.BaseMaterialNodeUI = BaseMaterialNodeUI;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=BaseMaterialNodeUI.js.map

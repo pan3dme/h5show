@@ -1,26 +1,32 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var welfare;
 (function (welfare) {
-    var WelfareSevenDay = (function (_super) {
+    var WelfareSevenDay = /** @class */ (function (_super) {
         __extends(WelfareSevenDay, _super);
         function WelfareSevenDay() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._bigPic = new UIRenderOnlyPicComponent();
-            this.addRender(this._bigPic);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._bigPic = new UIRenderOnlyPicComponent();
+            _this.addRender(_this._bigPic);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            return _this;
         }
         WelfareSevenDay.prototype.dispose = function () {
             this._bigPic.dispose();
@@ -119,7 +125,7 @@ var welfare;
             }
         };
         return WelfareSevenDay;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     welfare.WelfareSevenDay = WelfareSevenDay;
 })(welfare || (welfare = {}));
 //# sourceMappingURL=WelfareSevenDay.js.map

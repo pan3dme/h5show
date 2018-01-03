@@ -20,7 +20,6 @@
         
         public addChild($ui: ItemMaterialUI): void
         {
-           
             if (!$ui.pointframe) {
                 $ui.pointframe = this.panel.addEvntBut("a_point_frame", this.uiRender);
                 $ui.labelframe = this.panel.addEvntBut("a_label_txt", this.uiRender);
@@ -29,45 +28,34 @@
             switch ($ui.titleLabeltext) {
                 case "UV":
                     $ui.labelframe.goToAndStop(7)
-                    $ui.pointframe.goToAndStop(3)
                     break
                 case "rgb":
                     $ui.labelframe.goToAndStop(1)
-                    $ui.pointframe.goToAndStop(0)
                     break
                 case "r":
                     $ui.labelframe.goToAndStop(2)
-                    $ui.pointframe.goToAndStop(2)
                     break
                 case "g":
                     $ui.labelframe.goToAndStop(3)
-                    $ui.pointframe.goToAndStop(2)
-      
                     break
                 case "b":
                     $ui.labelframe.goToAndStop(4)
-                    $ui.pointframe.goToAndStop(2)
                     break
                 case "a":
                     $ui.labelframe.goToAndStop(5)
-                    $ui.pointframe.goToAndStop(2)
                     break
                 case "xy":
                     $ui.labelframe.goToAndStop(8)
-                    $ui.pointframe.goToAndStop(2)
                     break
                 case "rgba":
                     $ui.labelframe.goToAndStop(6)
-                    $ui.pointframe.goToAndStop(1)
                     break
                 case "out":
                     $ui.labelframe.goToAndStop(0)
-                    $ui.pointframe.goToAndStop(2)
                     break
                 default:
                     $ui.labelframe.goToAndStop(14)
-                    $ui.pointframe.goToAndStop(2)
-                    this.setResultNodelUiPointColor($ui)
+                   // this.setResultNodelUiPointColor($ui)
                     break;
             }
             

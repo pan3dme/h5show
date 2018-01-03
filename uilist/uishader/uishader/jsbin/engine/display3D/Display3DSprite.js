@@ -1,15 +1,21 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Display3DSprite = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Display3DSprite = /** @class */ (function (_super) {
     __extends(Display3DSprite, _super);
     function Display3DSprite() {
-        _super.call(this);
-        this.time = 0;
-        this.dynamic = false;
-        this._rotationMatrix = new Matrix3D;
+        var _this = _super.call(this) || this;
+        _this.time = 0;
+        _this.dynamic = false;
+        _this._rotationMatrix = new Matrix3D;
+        return _this;
         //this.lightMapTexture = TextureManager.getInstance().defaultLightMap;
     }
     Object.defineProperty(Display3DSprite.prototype, "aabbVect", {
@@ -257,6 +263,11 @@ var Display3DSprite = (function (_super) {
             this.posMatrix.appendScale(this._scaleX, this._scaleY, this._scaleZ);
             if (this._isInGroup) {
                 this.posMatrix.append(this.groupMatrix);
+                //posMatrix.prependTranslation(groupPos.x, groupPos.y, groupPos.z);
+                //posMatrix.prependRotation(groupRotation.z, Vector3D.Z_AXIS);
+                //posMatrix.prependRotation(groupRotation.y, Vector3D.Y_AXIS);
+                //posMatrix.prependRotation(groupRotation.x, Vector3D.X_AXIS);
+                //posMatrix.prependScale(groupScale.x, groupScale.y, groupScale.z);
             }
             this.bindTarget.getSocket(this.bindSocket, this.bindMatrix);
             this.posMatrix.append(this.bindMatrix);
@@ -264,6 +275,9 @@ var Display3DSprite = (function (_super) {
             this._rotationMatrix.identityPostion();
             if (this._isInGroup) {
                 this._rotationMatrix.prepend(this.groupRotationMatrix);
+                //_rotationMatrix.prependRotation(groupRotation.z, Vector3D.Z_AXIS);
+                //_rotationMatrix.prependRotation(groupRotation.y, Vector3D.Y_AXIS);
+                //_rotationMatrix.prependRotation(groupRotation.x, Vector3D.X_AXIS);
             }
         }
     };
@@ -323,9 +337,11 @@ var Display3DSprite = (function (_super) {
             }
             else if (texVec[i].type == TexItem.LTUMAP && Scene_data.pubLut) {
                 Scene_data.context3D.setRenderTexture($material.shader, texVec[i].name, Scene_data.pubLut, texVec[i].id);
+                //_context.setTextureAt(texVec[i].id, Scene_data.prbLutTexture.texture);
             }
             else if (texVec[i].type == TexItem.CUBEMAP) {
                 if ($material.useDynamicIBL) {
+                    //_context.setTextureAt(texVec[i].id, _reflectionTextureVo.texture);
                 }
                 else {
                     var index = Math.floor($material.roughness * 5);
@@ -366,6 +382,7 @@ var Display3DSprite = (function (_super) {
             }
             else if (texVec[i].type == TexItem.CUBEMAP) {
                 if ($material.useDynamicIBL) {
+                    //_context.setTextureAt(texVec[i].id, _reflectionTextureVo.texture);
                 }
                 else {
                     if (!Scene_data.skyCubeMap) {
@@ -428,5 +445,5 @@ var Display3DSprite = (function (_super) {
         this.groupRotationMatrix = null;
     };
     return Display3DSprite;
-})(Display3D);
+}(Display3D));
 //# sourceMappingURL=Display3DSprite.js.map

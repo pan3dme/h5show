@@ -1,18 +1,23 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /**
  * 强化宝石模块
  *
 */
 var strengthgem;
 (function (strengthgem) {
-    var StrengthGemModule = (function (_super) {
+    var StrengthGemModule = /** @class */ (function (_super) {
         __extends(StrengthGemModule, _super);
         function StrengthGemModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         StrengthGemModule.prototype.getModuleName = function () {
             return "StrengthGemModule";
@@ -21,12 +26,12 @@ var strengthgem;
             return [new StrengthGemProcessor()];
         };
         return StrengthGemModule;
-    })(Module);
+    }(Module));
     strengthgem.StrengthGemModule = StrengthGemModule;
-    var StrengthGemEvent = (function (_super) {
+    var StrengthGemEvent = /** @class */ (function (_super) {
         __extends(StrengthGemEvent, _super);
         function StrengthGemEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         StrengthGemEvent.SHOW_STRENGTHGEM_PANEL = "show_strengthgem_panel";
         StrengthGemEvent.HIDE_STRENGTHGEM_PANEL = "hide_strengthgem_panel";
@@ -54,12 +59,12 @@ var strengthgem;
         //大师奖励弹出tip
         StrengthGemEvent.POP_TIPS_EVENT = "POP_TIPS_EVENT";
         return StrengthGemEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     strengthgem.StrengthGemEvent = StrengthGemEvent;
-    var StrengthGemProcessor = (function (_super) {
+    var StrengthGemProcessor = /** @class */ (function (_super) {
         __extends(StrengthGemProcessor, _super);
         function StrengthGemProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         StrengthGemProcessor.prototype.getName = function () {
             return "StrengthGemProcessor";
@@ -74,6 +79,16 @@ var strengthgem;
                 }
                 else if (sgEvent.type == StrengthGemEvent.HIDE_STRENGTHGEM_PANEL) {
                     this.hidePanel();
+                    // } else if (sgEvent.type == StrengthGemEvent.STRENGTHGEM_DATA_CHG) {
+                    //     this._sgPanel.strengthDataChange(sgEvent.data);
+                    // } else if (sgEvent.type == StrengthGemEvent.STRENGTHGEM_MUL_CHG) {
+                    //     this._sgPanel.strengMulChange();
+                    // } else if (sgEvent.type == StrengthGemEvent.GEM_UPLEV_CHG) {
+                    //     this._sgPanel.gemLevChange(sgEvent.data);
+                    // } else if (sgEvent.type == StrengthGemEvent.GEM_BLESS_CHG) {
+                    //     this._sgPanel.gemBlessChange(sgEvent.data);
+                    // } else if (sgEvent.type == StrengthGemEvent.GEM_MUL_CHG) {
+                    //     this._sgPanel.gemMulChange();
                 }
                 else if (sgEvent.type == StrengthGemEvent.SHOW_EFFECTS_MOVE) {
                     this.showEffectsMove(sgEvent.data);
@@ -151,6 +166,7 @@ var strengthgem;
                         this.bagChg($event.data);
                     }
                     else {
+                        // this.refreshCost();
                     }
                     //刷新红点、资源数等UI。
                     if (this._newStrengUiPanel && this._newStrengUiPanel.strengTab0 && this._newStrengUiPanel.strengTab0.hasStage) {
@@ -197,6 +213,9 @@ var strengthgem;
                         var flagarystreng = new Array;
                         for (var j = 0; j < itemtab.cost.length; j++) {
                             flagarystreng.push(hasEnoughResItem(itemtab.cost[j]));
+                            // if(this._needItem.indexOf(itemtab.cost[j][0]) == -1){
+                            //     this._needItem.push(itemtab.cost[j][0]);
+                            // }
                         }
                         strengary[i].show = true;
                         for (var flagid = 0; flagid < flagarystreng.length; flagid++) {
@@ -218,6 +237,9 @@ var strengthgem;
                         var flagaryrefining = new Array;
                         for (var j = 0; j < refiningtab.cost.length; j++) {
                             flagaryrefining.push(hasEnoughResItem(refiningtab.cost[j]));
+                            // if(this._needItem.indexOf(refiningtab.cost[j][0]) == -1){
+                            //     this._needItem.push(refiningtab.cost[j][0]);
+                            // }
                         }
                         refineary[i].show = true;
                         for (var flagid = 0; flagid < flagaryrefining.length; flagid++) {
@@ -239,6 +261,9 @@ var strengthgem;
                             var flagarygem = new Array;
                             for (var j = 0; j < gemvo.cost.length; j++) {
                                 flagarygem.push(hasEnoughResItem(gemvo.cost[j]));
+                                // if(this._needItem.indexOf(gemvo.cost[j][0]) == -1){
+                                //     this._needItem.push(gemvo.cost[j][0]);
+                                // }
                             }
                             var aaa = true;
                             for (var flagid = 0; flagid < flagarygem.length; flagid++) {
@@ -410,7 +435,7 @@ var strengthgem;
             ];
         };
         return StrengthGemProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     strengthgem.StrengthGemProcessor = StrengthGemProcessor;
 })(strengthgem || (strengthgem = {}));
 //# sourceMappingURL=StrengthGemProcessor.js.map

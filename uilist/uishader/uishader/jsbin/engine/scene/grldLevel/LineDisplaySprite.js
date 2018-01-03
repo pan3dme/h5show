@@ -1,20 +1,26 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var LineDisplaySprite = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var LineDisplaySprite = /** @class */ (function (_super) {
     __extends(LineDisplaySprite, _super);
     function LineDisplaySprite() {
-        _super.call(this);
-        this.baseColor = new Vector3D(1, 0, 0);
-        this.objData = new ObjData;
-        this.shader = ProgrmaManager.getInstance().getProgram(LineDisplayShader.LineShader);
-        this.program = this.shader.program;
-        this.makeLineMode(new Vector3D(0, 0, 0), new Vector3D(100, 0, 0), new Vector3D());
-        this.makeLineMode(new Vector3D(0, 0, 0), new Vector3D(100, 0, 100), new Vector3D());
-        this.makeLineMode(new Vector3D(100, 0, 0), new Vector3D(100, 0, 100), new Vector3D());
-        this.upToGpu();
+        var _this = _super.call(this) || this;
+        _this.baseColor = new Vector3D(1, 0, 0);
+        _this.objData = new ObjData;
+        _this.shader = ProgrmaManager.getInstance().getProgram(LineDisplayShader.LineShader);
+        _this.program = _this.shader.program;
+        _this.makeLineMode(new Vector3D(0, 0, 0), new Vector3D(100, 0, 0), new Vector3D());
+        _this.makeLineMode(new Vector3D(0, 0, 0), new Vector3D(100, 0, 100), new Vector3D());
+        _this.makeLineMode(new Vector3D(100, 0, 0), new Vector3D(100, 0, 100), new Vector3D());
+        _this.upToGpu();
+        return _this;
     }
     LineDisplaySprite.prototype.makeLineMode = function (a, b, $color) {
         if ($color === void 0) { $color = null; }
@@ -59,14 +65,15 @@ var LineDisplaySprite = (function (_super) {
         }
     };
     return LineDisplaySprite;
-})(Display3D);
-var MulLineSprite = (function (_super) {
+}(Display3D));
+var MulLineSprite = /** @class */ (function (_super) {
     __extends(MulLineSprite, _super);
     function MulLineSprite() {
-        _super.call(this);
-        if (!this.itemSprite) {
-            this.itemSprite = new Array;
+        var _this = _super.call(this) || this;
+        if (!_this.itemSprite) {
+            _this.itemSprite = new Array;
         }
+        return _this;
     }
     MulLineSprite.prototype.makeLineMode = function (a, b, $color) {
         if ($color === void 0) { $color = null; }
@@ -105,12 +112,13 @@ var MulLineSprite = (function (_super) {
         }
     };
     return MulLineSprite;
-})(LineDisplaySprite);
-var GridLineSprite = (function (_super) {
+}(LineDisplaySprite));
+var GridLineSprite = /** @class */ (function (_super) {
     __extends(GridLineSprite, _super);
     function GridLineSprite() {
-        _super.call(this);
-        this.makeGridData();
+        var _this = _super.call(this) || this;
+        _this.makeGridData();
+        return _this;
     }
     GridLineSprite.prototype.makeGridData = function () {
         var w = 100;
@@ -143,5 +151,5 @@ var GridLineSprite = (function (_super) {
         this.upToGpu();
     };
     return GridLineSprite;
-})(LineDisplaySprite);
+}(LineDisplaySprite));
 //# sourceMappingURL=LineDisplaySprite.js.map

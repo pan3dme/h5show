@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var wing;
 (function (wing) {
-    var WingModule = (function (_super) {
+    var WingModule = /** @class */ (function (_super) {
         __extends(WingModule, _super);
         function WingModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         WingModule.prototype.getModuleName = function () {
             return "WingModule";
@@ -17,12 +22,12 @@ var wing;
             return [new WingProcessor()];
         };
         return WingModule;
-    })(Module);
+    }(Module));
     wing.WingModule = WingModule;
-    var WingEvent = (function (_super) {
+    var WingEvent = /** @class */ (function (_super) {
         __extends(WingEvent, _super);
         function WingEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         WingEvent.SHOW_WING_PANEL_EVENT = "show_wing_panel_event"; //显示翅膀面板
         WingEvent.WING_ID_CHANG_EVENT = "wing_id_chang_event"; //翅膀ID变化
@@ -30,12 +35,12 @@ var wing;
         WingEvent.WING_LEV_CHANG_EVENT = "wing_lev_chang_event"; //翅膀强化等级变化
         WingEvent.EFF_EVENT = "EFF_EVENT"; //飘字
         return WingEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     wing.WingEvent = WingEvent;
-    var WingProcessor = (function (_super) {
+    var WingProcessor = /** @class */ (function (_super) {
         __extends(WingProcessor, _super);
         function WingProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         WingProcessor.prototype.getName = function () {
             return "WingProcessor";
@@ -164,7 +169,7 @@ var wing;
             ];
         };
         return WingProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     wing.WingProcessor = WingProcessor;
 })(wing || (wing = {}));
 //# sourceMappingURL=WingProcessor.js.map

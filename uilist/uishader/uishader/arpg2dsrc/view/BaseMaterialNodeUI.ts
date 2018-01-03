@@ -115,6 +115,8 @@
         protected drawTitleToFrame($str:string): void
         {
             this.drawTextToName(this.a_panel_title_frame, $str);
+
+            this.resetBgSize()
         }
         private drawTextToName($ui: FrameCompenent, $str:string): void {
 
@@ -122,7 +124,7 @@
             var $ctx: CanvasRenderingContext2D = UIManager.getInstance().getContext2D($toRect.width, $toRect.height, false);
             LabelTextFont.writeSingleLabelToCtx($ctx, $str, 20,0,0,TextAlign.LEFT)
             $ui.drawToCtx(this._bottomRender.uiAtlas, $ctx)
-            console.log(150*1.5,14*1.5)
+  
         }
 
         public addItems($nodeUI: ItemMaterialUI): void{

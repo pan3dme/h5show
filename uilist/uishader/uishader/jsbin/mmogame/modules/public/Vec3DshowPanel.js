@@ -1,30 +1,35 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Vec3DshowPanel = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Vec3DshowPanel = /** @class */ (function (_super) {
     __extends(Vec3DshowPanel, _super);
     function Vec3DshowPanel() {
-        var _this = this;
-        _super.call(this);
-        this._lastMouseX = 0;
-        this._lastRoleRotatioinY = 0;
-        this.width = UIData.designWidth;
-        this.height = UIData.designHeight;
-        this.center = 0;
-        this.middle = 0;
+        var _this = _super.call(this) || this;
+        _this._lastMouseX = 0;
+        _this._lastRoleRotatioinY = 0;
+        _this.width = UIData.designWidth;
+        _this.height = UIData.designHeight;
+        _this.center = 0;
+        _this.middle = 0;
         //公共资源纹理
-        this._wtRender = new UIRenderComponent;
-        this.addRender(this._wtRender);
-        this._midRender = new UIRenderComponent;
-        this.addRender(this._midRender);
+        _this._wtRender = new UIRenderComponent;
+        _this.addRender(_this._wtRender);
+        _this._midRender = new UIRenderComponent;
+        _this.addRender(_this._midRender);
         // this._baseRender = new UIRenderComponent;
         // this.addRender(this._baseRender)
         GameData.getPublicUiAtlas(function ($publicbgUiAtlas) {
             _this._wtRender.uiAtlas = $publicbgUiAtlas;
             _this._midRender.setInfo("ui/uidata/PopTimeout/systemtrailer.xml", "ui/uidata/PopTimeout/systemtrailer.png", function () { _this.loadConfigCom(); });
         });
+        return _this;
     }
     Vec3DshowPanel.prototype.loadConfigCom = function () {
         this._complete = true;
@@ -123,6 +128,7 @@ var Vec3DshowPanel = (function (_super) {
                             console.log("没有设置");
                             break;
                     }
+                    //  NetManager.getInstance().protocolos.divine_switch(this._vo.id);
                 }
                 else if (this._vo.state == 1) {
                     NetManager.getInstance().protocolos.ride_mount();
@@ -178,10 +184,10 @@ var Vec3DshowPanel = (function (_super) {
         }
     };
     return Vec3DshowPanel;
-})(UIConatiner);
-var vec3DshowVo = (function () {
+}(UIConatiner));
+var vec3DshowVo = /** @class */ (function () {
     function vec3DshowVo() {
     }
     return vec3DshowVo;
-})();
+}());
 //# sourceMappingURL=Vec3DshowPanel.js.map

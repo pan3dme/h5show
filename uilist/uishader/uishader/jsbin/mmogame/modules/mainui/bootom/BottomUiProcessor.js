@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var bottomui;
 (function (bottomui) {
-    var BottomUiModule = (function (_super) {
+    var BottomUiModule = /** @class */ (function (_super) {
         __extends(BottomUiModule, _super);
         function BottomUiModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         BottomUiModule.prototype.getModuleName = function () {
             return "BottomUiModule";
@@ -17,24 +22,24 @@ var bottomui;
             return [new BottomUiProcessor()];
         };
         return BottomUiModule;
-    })(Module);
+    }(Module));
     bottomui.BottomUiModule = BottomUiModule;
-    var BottomUiEvent = (function (_super) {
+    var BottomUiEvent = /** @class */ (function (_super) {
         __extends(BottomUiEvent, _super);
         function BottomUiEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         BottomUiEvent.SHOW_BOTTOM_UI_PANEL = "SHOW_BOTTOM_UI_PANEL";
         BottomUiEvent.HIDE_BOTTOM_UI_PANEL = "HIDE_BOTTOM_UI_PANEL";
         BottomUiEvent.BOTTOM_SYSTIME_HORM_INFO = "BOTTOM_SYSTIME_HORM_INFO";
         BottomUiEvent.BOTTOM_REFRESH_INFO_ICON = "BOTTOM_REFRESH_INFO_ICON";
         return BottomUiEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     bottomui.BottomUiEvent = BottomUiEvent;
-    var BottomUiProcessor = (function (_super) {
+    var BottomUiProcessor = /** @class */ (function (_super) {
         __extends(BottomUiProcessor, _super);
         function BottomUiProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         BottomUiProcessor.prototype.getName = function () {
             return "BottomUiProcessor";
@@ -111,6 +116,7 @@ var bottomui;
             Chat.ChatModel.getInstance().pushNewMes($vo);
             console.log("==聊天==", $vo);
             if ($vo.channel == SharedDef.CHAT_TYPE_HORM) {
+                //  GameInstance.mainUi.bottomCenterPanel.pushWaithornToItem($vo)
             }
             var $ChatEvent = new Chat.ChatEvent(Chat.ChatEvent.CHAT_INFO_TO_PANEL);
             ModuleEventManager.dispatchEvent($ChatEvent);
@@ -129,7 +135,7 @@ var bottomui;
             return obj;
         };
         return BottomUiProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     bottomui.BottomUiProcessor = BottomUiProcessor;
 })(bottomui || (bottomui = {}));
 //# sourceMappingURL=BottomUiProcessor.js.map

@@ -120,8 +120,8 @@
             if (readtxt) {
                 this.readMaterialTree()
             } else {
-                MaterialCtrl.getInstance().addNodeUI(new ResultNodeUI())
-                MaterialCtrl.getInstance().addNodeUI(new TextureSampleNodeUI())
+               // MaterialCtrl.getInstance().addNodeUI(new ResultNodeUI())
+               // MaterialCtrl.getInstance().addNodeUI(new TextureSampleNodeUI())
             }
 
 
@@ -147,9 +147,11 @@
 
             GameMouseManager.getInstance().addMouseEvent();
         }
+        private baseMaterialTree: MaterialTree
         private readMaterialTree(): void {
-            var $url: string = "pan/marmoset/uilist/baseTexturedata1.txt";
+            var $url: string = "pan/marmoset/uilist/baseTexturedata3.txt";
             MaterialTreeManager.getInstance().getMaterial($url, ($materialTree: MaterialTree) => {
+                this.baseMaterialTree = $materialTree
                 MaterialViewBuildUtils.getInstance().addFun = (ui: BaseMaterialNodeUI) => { MaterialCtrl.getInstance().addNodeUI(ui)};
                 MaterialViewBuildUtils.getInstance().setData($materialTree.data)
 
@@ -168,7 +170,8 @@
             Arpg2dGameStart.altKey = $evt.altKey
             switch ($evt.keyCode) {
                 case KeyboardType.C:
-                    UIManager.getInstance().addUIContainer(new MathAddNodeUI());
+
+                    MaterialCompile.getInstance().compile(MaterialCtrl.getInstance().nodeList, this.baseMaterialTree)
                     break
                 case KeyboardType.Delete:
 

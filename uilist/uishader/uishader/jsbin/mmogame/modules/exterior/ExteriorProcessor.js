@@ -1,26 +1,31 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var exterior;
 (function (exterior) {
-    var ExteriorEvent = (function (_super) {
+    var ExteriorEvent = /** @class */ (function (_super) {
         __extends(ExteriorEvent, _super);
         function ExteriorEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ExteriorEvent.SHOW_EXTERIOR_EVENT = "SHOW_EXTERIOR_EVENT"; //显示面板
         ExteriorEvent.REFRISH_EXTERIOR_PANEL = "REFRISH_EXTERIOR_PANEL"; //显示面板
         ExteriorEvent.SELECT_EXTERIOR_CELL = "SELECT_EXTERIOR_CELL"; //显示面板
         ExteriorEvent.SHOW_IDENTIFICATION_EVENT = "SHOW_IDENTIFICATION_EVENT"; //显示面板
         return ExteriorEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     exterior.ExteriorEvent = ExteriorEvent;
-    var ExteriorModule = (function (_super) {
+    var ExteriorModule = /** @class */ (function (_super) {
         __extends(ExteriorModule, _super);
         function ExteriorModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ExteriorModule.prototype.getModuleName = function () {
             return "ExteriorModule";
@@ -29,13 +34,14 @@ var exterior;
             return [new ExteriorProcessor()];
         };
         return ExteriorModule;
-    })(Module);
+    }(Module));
     exterior.ExteriorModule = ExteriorModule;
-    var ExteriorProcessor = (function (_super) {
+    var ExteriorProcessor = /** @class */ (function (_super) {
         __extends(ExteriorProcessor, _super);
         function ExteriorProcessor() {
-            _super.apply(this, arguments);
-            this._nodeInit = false;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this._nodeInit = false;
+            return _this;
         }
         ExteriorProcessor.prototype.getName = function () {
             return "ExteriorProcessor";
@@ -73,6 +79,7 @@ var exterior;
                 //     }
                 // }else{
                 this.processRedPoint();
+                // }
             }
             else if ($event instanceof UIPanelEvent) {
                 var panelEvent = $event;
@@ -178,7 +185,7 @@ var exterior;
             ];
         };
         return ExteriorProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     exterior.ExteriorProcessor = ExteriorProcessor;
 })(exterior || (exterior = {}));
 //# sourceMappingURL=ExteriorProcessor.js.map

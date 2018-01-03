@@ -19,6 +19,9 @@
             super();
 
         }
+         public  checkInput(): boolean {
+            return true;
+        }
 
     }
 }

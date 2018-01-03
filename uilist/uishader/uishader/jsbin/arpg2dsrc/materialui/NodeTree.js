@@ -1,7 +1,8 @@
 var materialui;
 (function (materialui) {
-    var NodeTree = (function () {
+    var NodeTree = /** @class */ (function () {
         function NodeTree() {
+            this.priority = -1;
             this.id = -1;
             this.inputVec = new Array;
             this.outputVec = new Array;
@@ -77,6 +78,56 @@ var materialui;
             enumerable: true,
             configurable: true
         });
+        NodeTree.prototype.checkInput = function () {
+            for (var i = 0; i < this.inputVec.length; i++) {
+                if (!this.inputVec[i].parentNodeItem) {
+                    return false;
+                }
+            }
+            return true;
+        };
+        NodeTree.prototype.getComponentID = function ($id) {
+            if ($id == 0) {
+                return materialui.CompileOne.FT + this.regResultTemp.id + ".xyz";
+            }
+            else if ($id == 1) {
+                return materialui.CompileOne.FT + this.regResultTemp.id + ".x";
+            }
+            else if ($id == 2) {
+                return materialui.CompileOne.FT + this.regResultTemp.id + ".y";
+            }
+            else if ($id == 3) {
+                return materialui.CompileOne.FT + this.regResultTemp.id + ".z";
+            }
+            else if ($id == 4) {
+                return materialui.CompileOne.FT + this.regResultTemp.id + ".w";
+            }
+            else {
+                return materialui.CompileOne.FT + this.regResultTemp.id;
+            }
+        };
+        NodeTree.prototype.releaseUse = function () {
+            var allCompilde = true;
+            for (var i = 0; i < this.outputVec.length; i++) {
+                var sunAry = this.outputVec[i].sunNodeItems;
+                var breakAble = false;
+                for (var j = 0; j < sunAry.length; j++) {
+                    if (!sunAry[j].hasCompiled) {
+                        allCompilde = false;
+                        breakAble = true;
+                        break;
+                    }
+                }
+                if (breakAble) {
+                    break;
+                }
+            }
+            if (allCompilde) {
+                if (this.regResultTemp) {
+                    this.regResultTemp.inUse = false;
+                }
+            }
+        };
         NodeTree.TEX = "tex";
         NodeTree.OP = "op";
         NodeTree.ADD = "add";
@@ -114,8 +165,9 @@ var materialui;
         NodeTree.FRESNEL = "fresnel";
         NodeTree.REFRACTION = "refraction";
         NodeTree.PANNER = "panner";
+        NodeTree.jsMode = false;
         return NodeTree;
-    })();
+    }());
     materialui.NodeTree = NodeTree;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=NodeTree.js.map

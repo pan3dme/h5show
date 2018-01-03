@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var fightui;
 (function (fightui) {
-    var FightUiModule = (function (_super) {
+    var FightUiModule = /** @class */ (function (_super) {
         __extends(FightUiModule, _super);
         function FightUiModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         FightUiModule.prototype.getModuleName = function () {
             return "FightUiModule";
@@ -17,23 +22,23 @@ var fightui;
             return [new FightUiProcessor()];
         };
         return FightUiModule;
-    })(Module);
+    }(Module));
     fightui.FightUiModule = FightUiModule;
-    var FightUiEvent = (function (_super) {
+    var FightUiEvent = /** @class */ (function (_super) {
         __extends(FightUiEvent, _super);
         function FightUiEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         FightUiEvent.SHOW_FIGHT_UI_PANEL = "SHOW_FIGHT_UI_PANEL";
         FightUiEvent.HIDE_FIGHT_UI_PANEL = "HIDE_FIGHT_UI_PANEL";
         FightUiEvent.REFRESH_SKILL_AOTUBATTLE = "REFRESH_SKILL_AOTUBATTLE";
         return FightUiEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     fightui.FightUiEvent = FightUiEvent;
-    var FightUiProcessor = (function (_super) {
+    var FightUiProcessor = /** @class */ (function (_super) {
         __extends(FightUiProcessor, _super);
         function FightUiProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         FightUiProcessor.prototype.getName = function () {
             return "FightUiProcessor";
@@ -50,6 +55,11 @@ var fightui;
                     if (evt.type == FightUiEvent.HIDE_FIGHT_UI_PANEL) {
                         this.hidePanel();
                     }
+                    // if (evt.type == FightUiEvent.REFRESH_SKILL_AOTUBATTLE) {
+                    //     if (this._fightUiPanel.fightSkillPanel) {
+                    //         this._fightUiPanel.fightSkillPanel.changeSkillAotu()
+                    //     }
+                    // }
                 }
             }
             if ($event instanceof mainUi.MainUiEvent && this._fightUiPanel && this._fightUiPanel.fightSkillPanel) {
@@ -86,7 +96,7 @@ var fightui;
             ];
         };
         return FightUiProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     fightui.FightUiProcessor = FightUiProcessor;
 })(fightui || (fightui = {}));
 //# sourceMappingURL=FightUiProcessor.js.map

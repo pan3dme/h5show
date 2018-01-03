@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var MaterialCtrl = (function () {
+    var MaterialCtrl = /** @class */ (function () {
         function MaterialCtrl() {
             this.nodeList = new Array;
             this.uiList = new Array;
@@ -38,7 +38,7 @@ var materialui;
             return ary;
         };
         return MaterialCtrl;
-    })();
+    }());
     materialui.MaterialCtrl = MaterialCtrl;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialCtrl.js.map

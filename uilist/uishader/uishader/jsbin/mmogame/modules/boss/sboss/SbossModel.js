@@ -1,13 +1,13 @@
 var sboss;
 (function (sboss) {
-    var MeshBossVo = (function () {
+    var MeshBossVo = /** @class */ (function () {
         function MeshBossVo() {
             this.targetTime = -1;
         }
         return MeshBossVo;
-    })();
+    }());
     sboss.MeshBossVo = MeshBossVo;
-    var SbossModel = (function () {
+    var SbossModel = /** @class */ (function () {
         function SbossModel() {
         }
         SbossModel.getInstance = function () {
@@ -85,9 +85,9 @@ var sboss;
             return this._pBossItemData;
         };
         return SbossModel;
-    })();
+    }());
     sboss.SbossModel = SbossModel;
-    var PersonBossVo = (function () {
+    var PersonBossVo = /** @class */ (function () {
         function PersonBossVo() {
             this._targetTime = -1;
         }
@@ -129,7 +129,7 @@ var sboss;
             }
         };
         return PersonBossVo;
-    })();
+    }());
     sboss.PersonBossVo = PersonBossVo;
 })(sboss || (sboss = {}));
 //# sourceMappingURL=SbossModel.js.map

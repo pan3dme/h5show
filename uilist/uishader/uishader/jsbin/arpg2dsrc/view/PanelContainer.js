@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var PanelContainer = (function () {
+    var PanelContainer = /** @class */ (function () {
         function PanelContainer($panel, $render) {
             this.panel = $panel;
             this.uiRender = $render;
@@ -21,44 +21,34 @@ var materialui;
             switch ($ui.titleLabeltext) {
                 case "UV":
                     $ui.labelframe.goToAndStop(7);
-                    $ui.pointframe.goToAndStop(3);
                     break;
                 case "rgb":
                     $ui.labelframe.goToAndStop(1);
-                    $ui.pointframe.goToAndStop(0);
                     break;
                 case "r":
                     $ui.labelframe.goToAndStop(2);
-                    $ui.pointframe.goToAndStop(2);
                     break;
                 case "g":
                     $ui.labelframe.goToAndStop(3);
-                    $ui.pointframe.goToAndStop(2);
                     break;
                 case "b":
                     $ui.labelframe.goToAndStop(4);
-                    $ui.pointframe.goToAndStop(2);
                     break;
                 case "a":
                     $ui.labelframe.goToAndStop(5);
-                    $ui.pointframe.goToAndStop(2);
                     break;
                 case "xy":
                     $ui.labelframe.goToAndStop(8);
-                    $ui.pointframe.goToAndStop(2);
                     break;
                 case "rgba":
                     $ui.labelframe.goToAndStop(6);
-                    $ui.pointframe.goToAndStop(1);
                     break;
                 case "out":
                     $ui.labelframe.goToAndStop(0);
-                    $ui.pointframe.goToAndStop(2);
                     break;
                 default:
                     $ui.labelframe.goToAndStop(14);
-                    $ui.pointframe.goToAndStop(2);
-                    this.setResultNodelUiPointColor($ui);
+                    // this.setResultNodelUiPointColor($ui)
                     break;
             }
             $ui.drawSp();
@@ -110,7 +100,7 @@ var materialui;
             }
         };
         return PanelContainer;
-    })();
+    }());
     materialui.PanelContainer = PanelContainer;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=PanelContainer.js.map

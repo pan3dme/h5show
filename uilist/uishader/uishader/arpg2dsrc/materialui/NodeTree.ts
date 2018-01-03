@@ -41,11 +41,19 @@
         public static PANNER:string = "panner";
 
 
-        public  inputVec:Array<NodeTreeInputItem>;
+        public inputVec:Array<NodeTreeInputItem>;
         public outputVec: Array<NodeTreeOutoutItem>;
         public ui: BaseMaterialNodeUI;
         public type: string;
         public paramName: string;
+        public canDynamic: boolean;
+        public regResultTemp: RegisterItem;
+        public regResultConst: RegisterItem;
+        public regResultTex: RegisterItem;
+        public regConstIndex: number;
+        public priority: number = -1;
+        public  shaderStr: string;
+        public static  jsMode: boolean = false;
         public constructor() {
             this.inputVec = new Array
             this.outputVec = new Array
@@ -126,5 +134,53 @@
         public  set isDynamic(value: boolean) {
             this._isDynamic = value;
         }
+        public checkInput(): Boolean {
+            for (var i: number=0; i < this.inputVec.length; i++) {
+                if (!this.inputVec[i].parentNodeItem) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public getComponentID($id: number): string{
+            if($id == 0) {
+                return CompileOne.FT + this.regResultTemp.id + ".xyz";
+            }else if($id == 1) {
+                return CompileOne.FT + this.regResultTemp.id + ".x";
+            }else if($id == 2) {
+                return CompileOne.FT + this.regResultTemp.id + ".y";
+            }else if($id == 3) {
+                return CompileOne.FT + this.regResultTemp.id + ".z";
+            }else if($id == 4) {
+                return CompileOne.FT + this.regResultTemp.id + ".w";
+            }else{
+                return CompileOne.FT + this.regResultTemp.id;
+            }
+			
+        }
+        public releaseUse(): void {
+            var allCompilde: boolean = true;
+            for (var i: number=0; i < this.outputVec.length; i++) {
+                var sunAry: Array<NodeTreeInputItem> =this. outputVec[i].sunNodeItems;
+                var breakAble: boolean = false;
+                for (var j: number = 0; j < sunAry.length; j++) {
+                    if (!sunAry[j].hasCompiled) {
+                        allCompilde = false;
+                        breakAble = true;
+                        break;
+                    }
+                }
+                if (breakAble) {
+                    break;
+                }
+            }
+            if (allCompilde) {
+                if (this.regResultTemp) {
+                    this.regResultTemp.inUse = false;
+                }
+            }
+        }
+
     }
 }

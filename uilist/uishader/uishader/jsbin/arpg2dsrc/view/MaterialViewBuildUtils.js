@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var MaterialViewBuildUtils = (function () {
+    var MaterialViewBuildUtils = /** @class */ (function () {
         function MaterialViewBuildUtils() {
         }
         MaterialViewBuildUtils.getInstance = function () {
@@ -73,8 +73,29 @@ var materialui;
                 case materialui.NodeTree.TEX:
                     ui = new materialui.TextureSampleNodeUI();
                     break;
+                case materialui.NodeTree.SUB:
+                    ui = new materialui.MathAddNodeUI;
+                    break;
                 case materialui.NodeTree.ADD:
                     ui = new materialui.MathAddNodeUI;
+                    break;
+                case materialui.NodeTree.MUL:
+                    ui = new materialui.MathMulNodeUI;
+                    break;
+                case materialui.NodeTree.DIV:
+                    ui = new materialui.MathDivNodeUI;
+                    break;
+                case materialui.NodeTree.SIN:
+                    ui = new materialui.MathSinNodeUI;
+                    break;
+                case materialui.NodeTree.VEC3:
+                    ui = new materialui.ConstVec3NodeUI;
+                    break;
+                case materialui.NodeTree.VEC2:
+                    ui = new materialui.ConstVec2NodeUI;
+                    break;
+                case materialui.NodeTree.FLOAT:
+                    ui = new materialui.ConstFloatNodeUI;
                     break;
                 default:
                     break;
@@ -82,7 +103,7 @@ var materialui;
             return ui;
         };
         return MaterialViewBuildUtils;
-    })();
+    }());
     materialui.MaterialViewBuildUtils = MaterialViewBuildUtils;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialViewBuildUtils.js.map

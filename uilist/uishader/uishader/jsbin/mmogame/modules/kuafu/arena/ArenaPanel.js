@@ -1,26 +1,32 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var kuafu;
 (function (kuafu) {
-    var ArenaPanel = (function (_super) {
+    var ArenaPanel = /** @class */ (function (_super) {
         __extends(ArenaPanel, _super);
         function ArenaPanel() {
-            _super.call(this);
-            this._selIdx = SharedDef.MODULE_ARENA_DOUJIANTAI;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._baseRender = new UIRenderComponent();
-            this.addRender(this._baseRender);
-            this._topRender = new UIRenderComponent();
-            this.addRender(this._topRender);
-            this._baseUiAtlas = new UIAtlas();
-            this._arenaQualifying = new kuafu.ArenaQualifying();
-            this._arenaDjPanel = new kuafu.ArenaDjPanel();
+            var _this = _super.call(this) || this;
+            _this._selIdx = SharedDef.MODULE_ARENA_DOUJIANTAI;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._baseRender = new UIRenderComponent();
+            _this.addRender(_this._baseRender);
+            _this._topRender = new UIRenderComponent();
+            _this.addRender(_this._topRender);
+            _this._baseUiAtlas = new UIAtlas();
+            _this._arenaQualifying = new kuafu.ArenaQualifying();
+            _this._arenaDjPanel = new kuafu.ArenaDjPanel();
+            return _this;
             //this._tripPanel = new FactionTripPanel();
         }
         ArenaPanel.prototype.dispose = function () {
@@ -179,7 +185,7 @@ var kuafu;
             }
         };
         return ArenaPanel;
-    })(WindowUi);
+    }(WindowUi));
     kuafu.ArenaPanel = ArenaPanel;
 })(kuafu || (kuafu = {}));
 //# sourceMappingURL=ArenaPanel.js.map

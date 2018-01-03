@@ -1,31 +1,36 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var fightui;
 (function (fightui) {
-    var FightUiPanel = (function (_super) {
+    var FightUiPanel = /** @class */ (function (_super) {
         __extends(FightUiPanel, _super);
         function FightUiPanel() {
-            var _this = this;
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.interfaceUI = true;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.right = 0;
-            this.bottom = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._cdUIRenderComponent = new CdRenderComponent();
-            this.addRender(this._cdUIRenderComponent);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._midRender.uiAtlas = new UIAtlas;
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.interfaceUI = true;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.right = 0;
+            _this.bottom = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._cdUIRenderComponent = new CdRenderComponent();
+            _this.addRender(_this._cdUIRenderComponent);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._midRender.uiAtlas = new UIAtlas;
             TimeUtil.addFrameTick(function (t) { _this.update(t); });
+            return _this;
         }
         FightUiPanel.prototype.update = function (t) {
             if (this.uiAtlasComplet) {
@@ -47,7 +52,7 @@ var fightui;
             this.applyLoadComplete();
         };
         return FightUiPanel;
-    })(UIPanel);
+    }(UIPanel));
     fightui.FightUiPanel = FightUiPanel;
 })(fightui || (fightui = {}));
 //# sourceMappingURL=FightUiPanel.js.map

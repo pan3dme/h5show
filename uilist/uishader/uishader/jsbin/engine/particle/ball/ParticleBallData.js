@@ -1,34 +1,40 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var ParticleBallData = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var ParticleBallData = /** @class */ (function (_super) {
     __extends(ParticleBallData, _super);
     function ParticleBallData() {
-        _super.apply(this, arguments);
-        this._totalNum = 1;
-        this._acceleration = 0.2;
-        this._toscale = 0.00;
-        this._shootAngly = new Vector3D(1, 0, 0);
-        this._shootSpeed = 0;
-        this._isRandom = false;
-        this._isSendRandom = false;
-        this._isSendAngleRandom = false;
-        this._paticleMaxScale = 1;
-        this._paticleMinScale = 1;
-        this._addforce = new Vector3D(0, 0, 0);
-        this._lixinForce = new Vector3D(0, 0, 0);
-        this._waveform = new Vector3D(0, 0, 0, 0);
-        this._round = new Vector3D();
-        this._is3Dlizi = false;
-        this._speed = 1;
-        this._isLoop = false;
-        this._basePositon = new Vector3D(0, 0, 0);
-        this._baseRandomAngle = 0;
-        this._shapeType = 0;
-        this._playSpeed = 1;
-        this._beginScale = 0;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._totalNum = 1;
+        _this._acceleration = 0.2;
+        _this._toscale = 0.00;
+        _this._shootAngly = new Vector3D(1, 0, 0);
+        _this._shootSpeed = 0;
+        _this._isRandom = false;
+        _this._isSendRandom = false;
+        _this._isSendAngleRandom = false;
+        _this._paticleMaxScale = 1;
+        _this._paticleMinScale = 1;
+        _this._addforce = new Vector3D(0, 0, 0);
+        _this._lixinForce = new Vector3D(0, 0, 0);
+        _this._waveform = new Vector3D(0, 0, 0, 0);
+        _this._round = new Vector3D();
+        _this._is3Dlizi = false;
+        _this._speed = 1;
+        _this._isLoop = false;
+        _this._basePositon = new Vector3D(0, 0, 0);
+        _this._baseRandomAngle = 0;
+        _this._shapeType = 0;
+        _this._playSpeed = 1;
+        _this._beginScale = 0;
+        return _this;
     }
     ParticleBallData.prototype.getParticle = function () {
         return new Display3DBallPartilce;
@@ -481,5 +487,5 @@ var ParticleBallData = (function (_super) {
         return shaderParameAry;
     };
     return ParticleBallData;
-})(ParticleData);
+}(ParticleData));
 //# sourceMappingURL=ParticleBallData.js.map

@@ -1,4 +1,4 @@
-var SkillKey = (function () {
+var SkillKey = /** @class */ (function () {
     function SkillKey() {
         this.time = 0;
     }
@@ -25,5 +25,5 @@ var SkillKey = (function () {
         this.removeCallFun = null;
     };
     return SkillKey;
-})();
+}());
 //# sourceMappingURL=SkillKey.js.map

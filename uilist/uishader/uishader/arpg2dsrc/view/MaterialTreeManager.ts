@@ -15,9 +15,7 @@
                 ($dtstr: string) => {
                     var $materailTree: MaterialTree = new MaterialTree;
                     $materailTree.url = $url.replace(Scene_data.fileRoot, "");
-                    var $obj: any = new Object();
-                    $obj.compileData = new Object;
-                    $obj.data = JSON.parse($dtstr)
+                    var $obj: any = JSON.parse($dtstr)
                     $materailTree.setData($obj);
                     $fun && $fun($materailTree)
                 });

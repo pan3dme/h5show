@@ -14,7 +14,7 @@
         private emissiveItem: ItemMaterialUI;
 
 
-        private _blenderMode: number=0;
+        private _blenderMode: number = 0;
         private _killNum: number = 0;
         private _backCull: boolean = true;
         private _writeZbuffer: boolean = true;
@@ -22,7 +22,7 @@
         private _normalScale: number = 0;
         private _lightProbe: boolean = false;
         private _directLight: boolean = false;
-        private _noLight: boolean=false;
+        private _noLight: boolean = false;
         private _fogMode: number = 0;
         private _scaleLightMap: boolean = false;
         private _hdr: boolean = false;
@@ -154,6 +154,42 @@
             obj.writeZbuffer = this.writeZbuffer;
             obj.hdr = this.hdr;
             return obj;
+        }
+
+        public setData(obj: any): void {
+            super.setData(obj);
+            this.blenderMode = obj.blenderMode;
+            this._killNum = obj.killNum;
+            this._backCull = obj.backCull;
+            this._useDynamicIBL = obj.useDynamicIBL;
+            this._normalScale = obj.normalScale;
+            this._lightProbe = obj.lightProbe;
+            this._directLight = obj.directLight;
+            this._noLight = obj.noLight;
+            this._fogMode = obj.fogMode;
+            this._scaleLightMap = obj.scaleLightMap;
+            this.hdr = obj.hdr;
+            if (obj.hasOwnProperty("writeZbuffer")) {
+                this._writeZbuffer = obj.writeZbuffer;
+            }
+            if (isNaN(this._killNum)) {
+                this._killNum = 0;
+            }
+            if (isNaN(this._normalScale)) {
+                this._normalScale = 1;
+            }
+            (<NodeTreeOP>this.nodeTree).blendMode = this.blenderMode;
+            (<NodeTreeOP>this.nodeTree).killNum = this._killNum;
+            (<NodeTreeOP>this.nodeTree).backCull = this._backCull;
+            (<NodeTreeOP>this.nodeTree).useDynamicIBL = this._useDynamicIBL;
+            (<NodeTreeOP>this.nodeTree).normalScale = this._normalScale;
+            (<NodeTreeOP>this.nodeTree).lightProbe = this._lightProbe;
+            (<NodeTreeOP>this.nodeTree).directLight = this._directLight;
+            (<NodeTreeOP>this.nodeTree).noLight = this._noLight;
+            (<NodeTreeOP>this.nodeTree).fogMode = this._fogMode;
+            (<NodeTreeOP>this.nodeTree).scaleLightMap = this._scaleLightMap;
+            (<NodeTreeOP>this.nodeTree).writeZbuffer = this._writeZbuffer;
+            (<NodeTreeOP>this.nodeTree).hdr = this._hdr;
         }
 
     }

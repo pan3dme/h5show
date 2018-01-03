@@ -1,4 +1,4 @@
-var SceneQuadTree = (function () {
+var SceneQuadTree = /** @class */ (function () {
     function SceneQuadTree() {
         this.needUpdata = false;
         this.panleAry = new Array;
@@ -123,5 +123,5 @@ var SceneQuadTree = (function () {
         }
     };
     return SceneQuadTree;
-})();
+}());
 //# sourceMappingURL=SceneQuadTree.js.map

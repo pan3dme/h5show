@@ -31,7 +31,7 @@
             } else {
                 this.txt = this.panel.addEvntBut("b_main_menu", $midRender);
             }
-          
+
             this.txt.goToAndStop($frameId);
             this.bottomRender = $bottomRender
             this.drawFrontToFrame(this.txt, ColorType.Black000000 + $data.label)
@@ -65,7 +65,7 @@
             this.txt.y = this._y
 
         }
-        
+
 
         private drawFrontToFrame($ui: FrameCompenent, $str: string, $align: string = TextAlign.CENTER): void {
             var $toRect: Rectangle = $ui.getSkinCtxRect()
@@ -83,7 +83,7 @@
         public _midRender: UIRenderComponent;
         public _topRender: UIRenderComponent;
 
- 
+
 
         public constructor() {
             super();
@@ -114,21 +114,21 @@
 
             this.menuTextItem = new Array();
             this.menuTextItem.push(this.getMathListData());
-            this.menuTextItem.push(new MenuListData("常数", "2"));
+            this.menuTextItem.push(this.getV2CListData());
             this.menuTextItem.push(this.getTextureListData());
 
 
             this.mainMenuUiArr = new Array()
             this.subMenuUiArr = new Array
-        
+
 
             for (var i: number = 0; i < this.menuTextItem.length; i++) {
                 var $vo: RightMenuVo = new RightMenuVo;
-                $vo.initData(this, this._bottomRender, this._midRender, this.menuTextItem[i],i);
+                $vo.initData(this, this._bottomRender, this._midRender, this.menuTextItem[i], i);
                 $vo.y = i * 21;
                 $vo.x = 0;
                 this.mainMenuUiArr.push($vo)
-                
+
             }
         }
         private getMathListData(): MenuListData {
@@ -137,16 +137,28 @@
             $vo.subMenu.push(new MenuListData("ADD", "11"));
             $vo.subMenu.push(new MenuListData("SUB", "12"));
             $vo.subMenu.push(new MenuListData("MUL", "13"));
+            $vo.subMenu.push(new MenuListData("DIV", "14"));
+            $vo.subMenu.push(new MenuListData("SIN", "15"));
+            //$vo.subMenu.push(new MenuListData("COS", "16"));
+            //$vo.subMenu.push(new MenuListData("LERP", "17"));
+            //$vo.subMenu.push(new MenuListData("MIN", "18"));
             return $vo;
 
+        }
+        private getV2CListData(): MenuListData {
+            var $vo: MenuListData = new MenuListData("常数", "2")
+            $vo.subMenu = new Array;
+            //     $vo.subMenu.push(new MenuListData("vec4", "21"));
+            $vo.subMenu.push(new MenuListData("vec3", "22"));
+            $vo.subMenu.push(new MenuListData("vec2", "23"));
+            $vo.subMenu.push(new MenuListData("float", "24"));
+            return $vo;
         }
         private getTextureListData(): MenuListData {
             var $vo: MenuListData = new MenuListData("纹理", "3")
             $vo.subMenu = new Array;
             $vo.subMenu.push(new MenuListData("纹理贴图", "31"));
-        
             return $vo;
-
         }
         public moseMoveTo($ui: FrameCompenent): void {
 
@@ -164,13 +176,13 @@
                 for (var i: number = 0; i < this.mainMenuUiArr.length; i++) {
                     if (this.mainMenuUiArr[i].bg == $ui) {
                         this.mainMenuUiArr[i].bg.goToAndStop(1);
-                        this.showSubMenu(this.mainMenuUiArr[i].data.subMenu,i);
+                        this.showSubMenu(this.mainMenuUiArr[i].data.subMenu, i);
                     } else {
                         this.mainMenuUiArr[i].bg.goToAndStop(0)
                     }
                 }
             }
-        
+
         }
         private clearSubMenu(): void {
             while (this.subMenuUiArr.length) {
@@ -190,7 +202,7 @@
                     for (var i: number = 0; i < $subMenu.length; i++) {
                         var $vo: RightMenuVo = new RightMenuVo;
                         $vo.initData(this, this._bottomRender, this._midRender, $subMenu[i], i, true);
-                        $vo.y = (ty+ i) * 21;
+                        $vo.y = (ty + i) * 21;
                         $vo.x = 102;
                         this.subMenuUiArr.push($vo);
                     }
@@ -203,7 +215,7 @@
         }
 
         protected butClik(evt: InteractiveEvent): void {
-            var $ui: FrameCompenent = <FrameCompenent> evt.target;
+            var $ui: FrameCompenent = <FrameCompenent>evt.target;
             var seleceVo: RightMenuVo;
             for (var j: number = 0; j < this.subMenuUiArr.length; j++) {
                 if (this.subMenuUiArr[j].txt == $ui) {
@@ -226,10 +238,28 @@
                     case "4":
                         break
                     case "11":
-                        this.onAddNode(evt)
+                        this.onTempNode(new MathAddNodeUI(), evt)
+                        break;
+                    case "12":
+                        this.onTempNode(new MathSubNodeUI(), evt)
+                        break;
+                    case "13":
+                        this.onTempNode(new MathMulNodeUI(), evt)
+                        break;
+                    case "14":
+                        this.onTempNode(new MathDivNodeUI(), evt)
                         break;
                     case "31":
-                        this.onAddTextureSampleNodeUI(evt)
+                        this.onTempNode(new TextureSampleNodeUI(), evt)
+                        break;
+                    case "22":
+                        this.onTempNode(new ConstVec3NodeUI(), evt)
+                        break;
+                    case "23":
+                        this.onTempNode(new ConstVec2NodeUI(), evt)
+                        break;
+                    case "24":
+                        this.onTempNode(new ConstFloatNodeUI(), evt)
                         break;
                     default:
                         break;
@@ -240,24 +270,15 @@
                 ModuleEventManager.dispatchEvent(new RightMenuEvent(RightMenuEvent.HIDE_RIGHT_MENU));
             }
 
-         
-        }
-        private onAddTextureSampleNodeUI(evt: InteractiveEvent): void {
 
-            var $ui: TextureSampleNodeUI = new TextureSampleNodeUI()
+        }
+
+        private onTempNode($ui: BaseMaterialNodeUI, evt: InteractiveEvent): void {
             $ui.left = evt.x / UIData.Scale - 200;
-            $ui.top = evt.y / UIData.Scale-30;
-
+            $ui.top = evt.y / UIData.Scale - 30;
             MaterialCtrl.getInstance().addNodeUI($ui)
         }
 
-        private onAddNode(evt: InteractiveEvent): void {
-            var $ui: MathAddNodeUI = new MathAddNodeUI()
-            $ui.left = evt.x / UIData.Scale-200;
-            $ui.top = evt.y / UIData.Scale-30;
-
-            MaterialCtrl.getInstance().addNodeUI($ui)
-        }
 
         private drawFrontToFrame($ui: FrameCompenent, $str: string, $align: string = TextAlign.CENTER): void {
             var $toRect: Rectangle = $ui.getSkinCtxRect()
@@ -265,7 +286,7 @@
             LabelTextFont.writeSingleLabelToCtx($ctx, $str, 12, 0, 0, $align);
             $ui.drawToCtx(this._topRender.uiAtlas, $ctx);
         }
-       
+
         protected loadConfigCom(): void {
 
             this.initMainMenu();

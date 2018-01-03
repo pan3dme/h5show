@@ -1,30 +1,30 @@
 var strengthgem;
 (function (strengthgem) {
-    var WashVo = (function () {
+    var WashVo = /** @class */ (function () {
         function WashVo() {
         }
         return WashVo;
-    })();
+    }());
     strengthgem.WashVo = WashVo;
-    var StrengVo = (function () {
+    var StrengVo = /** @class */ (function () {
         function StrengVo() {
         }
         return StrengVo;
-    })();
+    }());
     strengthgem.StrengVo = StrengVo;
-    var RefiningVo = (function () {
+    var RefiningVo = /** @class */ (function () {
         function RefiningVo() {
         }
         return RefiningVo;
-    })();
+    }());
     strengthgem.RefiningVo = RefiningVo;
-    var GemVo = (function () {
+    var GemVo = /** @class */ (function () {
         function GemVo() {
         }
         return GemVo;
-    })();
+    }());
     strengthgem.GemVo = GemVo;
-    var NewStrengModel = (function () {
+    var NewStrengModel = /** @class */ (function () {
         function NewStrengModel() {
         }
         NewStrengModel.getInstance = function () {
@@ -121,9 +121,9 @@ var strengthgem;
             return gemvoary;
         };
         return NewStrengModel;
-    })();
+    }());
     strengthgem.NewStrengModel = NewStrengModel;
-    var StrengUtil = (function () {
+    var StrengUtil = /** @class */ (function () {
         function StrengUtil() {
         }
         StrengUtil.setEquIcon = function ($ui, $iconUrl, $lev, $selected, $type, $que, $baselev) {
@@ -261,7 +261,7 @@ var strengthgem;
         StrengUtil.KeyNameByType = ["强化大师", "精炼大师", "镶嵌大师"];
         StrengUtil.equProp = ["武器", "衣服", "护手", "腰带", "鞋子", "头饰", "项链", "手镯", "戒指", "腰坠"];
         return StrengUtil;
-    })();
+    }());
     strengthgem.StrengUtil = StrengUtil;
 })(strengthgem || (strengthgem = {}));
 //# sourceMappingURL=NewStrengModel.js.map

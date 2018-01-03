@@ -1,37 +1,43 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var faction;
 (function (faction) {
-    var AppointmentPanel = (function (_super) {
+    var AppointmentPanel = /** @class */ (function (_super) {
         __extends(AppointmentPanel, _super);
         function AppointmentPanel() {
-            _super.call(this);
-            this.setBlackBg();
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.middle = 0;
-            this.center = 0;
+            var _this = _super.call(this) || this;
+            _this.setBlackBg();
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.middle = 0;
+            _this.center = 0;
             //添加好友面板渲染器
-            this._publicbgRender = new UIRenderComponent;
-            this.addRender(this._publicbgRender);
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this.cellMask = new UIMask();
-            this.cellMask.x = 298;
-            this.cellMask.y = 133;
-            this.cellMask.width = 365;
-            this.cellMask.height = 290;
-            this.addMask(this.cellMask);
+            _this._publicbgRender = new UIRenderComponent;
+            _this.addRender(_this._publicbgRender);
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this.cellMask = new UIMask();
+            _this.cellMask.x = 298;
+            _this.cellMask.y = 133;
+            _this.cellMask.width = 365;
+            _this.cellMask.height = 290;
+            _this.addMask(_this.cellMask);
             //this._bottomRender.mask = this.cellMask;
-            this._midRender.mask = this.cellMask;
-            this._topRender.mask = this.cellMask;
+            _this._midRender.mask = _this.cellMask;
+            _this._topRender.mask = _this.cellMask;
+            return _this;
         }
         AppointmentPanel.prototype.dispose = function () {
             if (this.cellMask) {
@@ -166,6 +172,7 @@ var faction;
                 var tabelvo = tb.Tb_faction_zhiwei.get_Tb_faction_zhiweiById(i + 1);
                 var $numstring = this.getNum(i + 1) + "/" + tabelvo.num;
                 LabelTextFont.writeSingleLabel(this._topRender.uiAtlas, ui.skinName, $numstring, 16, TextAlign.CENTER, ColorType.Orange853d07);
+                // ArtFont.getInstance().writeFontToSkinName(this._AtopRender2.uiAtlas, ui.skinName, $numstring, ArtFont.num10, TextAlign.CENTER)
             }
             this.changePostion();
         };
@@ -249,7 +256,7 @@ var faction;
             }
         };
         return AppointmentPanel;
-    })(WindowCentenMin);
+    }(WindowCentenMin));
     faction.AppointmentPanel = AppointmentPanel;
 })(faction || (faction = {}));
 //# sourceMappingURL=AppointmentPanel.js.map

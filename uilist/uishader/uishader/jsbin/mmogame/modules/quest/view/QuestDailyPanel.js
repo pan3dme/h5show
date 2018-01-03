@@ -1,27 +1,33 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var quest;
 (function (quest) {
-    var QuestDailyPanel = (function (_super) {
+    var QuestDailyPanel = /** @class */ (function (_super) {
         __extends(QuestDailyPanel, _super);
         function QuestDailyPanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._publicbgRender = new UIRenderComponent;
-            this.addRender(this._publicbgRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._topRender.uiAtlas = new UIAtlas();
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._publicbgRender = new UIRenderComponent;
+            _this.addRender(_this._publicbgRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._topRender.uiAtlas = new UIAtlas();
+            return _this;
         }
         QuestDailyPanel.prototype.dispose = function () {
             this._midRender.dispose();
@@ -300,17 +306,18 @@ var quest;
             });
         };
         return QuestDailyPanel;
-    })(WindowUi);
+    }(WindowUi));
     quest.QuestDailyPanel = QuestDailyPanel;
     /**
      * 日常任务List
      */
-    var DailyQuestList = (function (_super) {
+    var DailyQuestList = /** @class */ (function (_super) {
         __extends(DailyQuestList, _super);
         function DailyQuestList() {
-            _super.call(this);
-            this.left = 315;
-            this.top = 134;
+            var _this = _super.call(this) || this;
+            _this.left = 315;
+            _this.top = 134;
+            return _this;
             // this.setShowLevel(6);
         }
         DailyQuestList.prototype.init = function ($uiAtlas) {
@@ -378,12 +385,12 @@ var quest;
             this.hideEffect();
         };
         return DailyQuestList;
-    })(EffectSlist);
+    }(EffectSlist));
     quest.DailyQuestList = DailyQuestList;
-    var DailyQuestListRender = (function (_super) {
+    var DailyQuestListRender = /** @class */ (function (_super) {
         __extends(DailyQuestListRender, _super);
         function DailyQuestListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         DailyQuestListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -556,7 +563,7 @@ var quest;
             UiDraw.clearUI(this.Btn1);
         };
         return DailyQuestListRender;
-    })(SListItem);
+    }(SListItem));
     quest.DailyQuestListRender = DailyQuestListRender;
 })(quest || (quest = {}));
 //# sourceMappingURL=QuestDailyPanel.js.map

@@ -1,4 +1,4 @@
-var Context3D = (function () {
+var Context3D = /** @class */ (function () {
     function Context3D() {
         this.setTextureNum = 0;
         this.setProgramNum = 0;
@@ -403,15 +403,15 @@ var Context3D = (function () {
         return fbo;
     };
     return Context3D;
-})();
-var FBO = (function () {
+}());
+var FBO = /** @class */ (function () {
     function FBO() {
     }
     FBO.fw = 512;
     FBO.fh = 512;
     return FBO;
-})();
-var ContextSetTest = (function () {
+}());
+var ContextSetTest = /** @class */ (function () {
     function ContextSetTest() {
         this.enableVaAry = new Array;
         this.vaAry = new Array;
@@ -492,5 +492,5 @@ var ContextSetTest = (function () {
         }
     };
     return ContextSetTest;
-})();
+}());
 //# sourceMappingURL=Context3D.js.map

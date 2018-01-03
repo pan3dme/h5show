@@ -1,18 +1,18 @@
 var Chat;
 (function (Chat) {
-    var WhisperToVo = (function () {
+    var WhisperToVo = /** @class */ (function () {
         function WhisperToVo() {
         }
         return WhisperToVo;
-    })();
+    }());
     Chat.WhisperToVo = WhisperToVo;
-    var CharUiVo = (function () {
+    var CharUiVo = /** @class */ (function () {
         function CharUiVo() {
         }
         return CharUiVo;
-    })();
+    }());
     Chat.CharUiVo = CharUiVo;
-    var SendSeverCmd = (function () {
+    var SendSeverCmd = /** @class */ (function () {
         function SendSeverCmd() {
         }
         SendSeverCmd.talkToNpc = function ($entryId, $quid) {
@@ -82,60 +82,60 @@ var Chat;
                         NetManager.getInstance().protocolos.submit_quest_daily2();
                         console.log("send upgrade=>" + "#submitDaily");
                         break;
-                    case "#evi":
+                    case "#evi"://        #evi id
                         NetManager.getInstance().protocolos.enter_vip_instance($id, 1);
                         console.log("send enter_vip_instance=>" + $id);
                         break;
-                    case "#CL":
+                    case "#CL"://        #evi id
                         NetManager.getInstance().protocolos.change_line($id);
                         console.log("#CL lineNo>" + $id);
                         break;
-                    case "#doujiantai":
+                    case "#doujiantai"://        #evi id
                         NetManager.getInstance().protocolos.doujiantai_fight($id);
                         console.log("#doujiantai>" + $id);
                         break;
-                    case "#r":
+                    case "#r"://        #evi id
                         Scene_data.gameAngle = Number($id);
                         break;
-                    case "#200":
+                    case "#200"://        #evi id
                         NetManager.getInstance().protocolos.use_broadcast_gameobject($id);
                         console.log("#200", $id);
                         break;
-                    case "#move":
+                    case "#move"://        #evi id
                         var $arr = str.split(" ");
                         var $toPos = new Vector2D(Number($arr[1]), Number($arr[2]));
                         GameInstance.mainChar.moveToPos2D = $toPos;
                         break;
-                    case "#add":
+                    case "#add"://        #evi id
                         var $arr = str.split(" ");
                         //  NetManager.getInstance().protocolos.add_para(Number($arr[1]), Number($arr[2]));
                         console.log("12#add", Number($arr[1]), Number($arr[2]));
                         break;
-                    case "#全民boss":
+                    case "#全民boss"://           #全民boss id
                         var $arr = str.split(" ");
                         //  NetManager.getInstance().protocolos.add_para(Number($arr[1]), Number($arr[2]));
                         NetManager.getInstance().protocolos.try_mass_boss(Number($arr[1]));
                         console.log("#全民boss", Number($arr[1]));
                         break;
-                    case "#组队副本":
+                    case "#组队副本"://           #全民boss id
                         var $arr = str.split(" ");
                         //  NetManager.getInstance().protocolos.add_para(Number($arr[1]), Number($arr[2]));
                         NetManager.getInstance().protocolos.group_instance_match(Number($arr[1]));
                         console.log("#组队副本", Number($arr[1]));
                         break;
-                    case "#经脉":
+                    case "#经脉"://           #全民boss id
                         console.log("#经脉", Number($arr[1]));
                         NetManager.getInstance().protocolos.meridian_practise();
                         break;
-                    case "#经脉经验":
+                    case "#经脉经验"://           #全民boss id
                         console.log("#经脉经验", Number($arr[1]));
                         NetManager.getInstance().protocolos.add_meridian_exp(Number($arr[1]));
                         break;
-                    case "#排位赛":
+                    case "#排位赛"://           #全民boss id
                         console.log("#排位赛", Number($arr[1]));
                         NetManager.getInstance().protocolos.match_single_pvp();
                         break;
-                    case "#改名":
+                    case "#改名"://           #全民boss id
                         console.log("#改名", String($arr[1]));
                         NetManager.getInstance().protocolos.rename(String($arr[1]));
                         break;
@@ -146,15 +146,15 @@ var Chat;
             }
         };
         return SendSeverCmd;
-    })();
+    }());
     Chat.SendSeverCmd = SendSeverCmd;
-    var ChatLinkJasonVo = (function () {
+    var ChatLinkJasonVo = /** @class */ (function () {
         function ChatLinkJasonVo() {
         }
         return ChatLinkJasonVo;
-    })();
+    }());
     Chat.ChatLinkJasonVo = ChatLinkJasonVo;
-    var ChatVo = (function () {
+    var ChatVo = /** @class */ (function () {
         function ChatVo() {
         }
         ChatVo.prototype.makeJasonStr = function () {
@@ -168,20 +168,20 @@ var Chat;
             this.contentTxt = this.toJasonStr(this.s2c_send_chat.content);
             var $color = "[]";
             switch (this.s2c_send_chat.channel) {
-                case SharedDef.CHAT_TYPE_SYSTEM:
+                case SharedDef.CHAT_TYPE_SYSTEM:// 系统
                     $color = "[]";
                     break;
-                case SharedDef.CHAT_TYPE_WORLD:
+                case SharedDef.CHAT_TYPE_WORLD:// 世界
                     break;
-                case SharedDef.CHAT_TYPE_FACTION:
+                case SharedDef.CHAT_TYPE_FACTION:// 帮派
                     break;
-                case SharedDef.CHAT_TYPE_CURRENT:
+                case SharedDef.CHAT_TYPE_CURRENT:// 当前(场景)
                     break;
-                case SharedDef.CHAT_TYPE_HORM:
+                case SharedDef.CHAT_TYPE_HORM:// 喇叭
                     break;
-                case SharedDef.CHAT_TYPE_GROUP:
+                case SharedDef.CHAT_TYPE_GROUP:// 队伍
                     break;
-                case SharedDef.CHAT_TYPE_WHISPER:
+                case SharedDef.CHAT_TYPE_WHISPER:// 私聊
                     break;
                 default:
                     break;
@@ -259,6 +259,7 @@ var Chat;
                 if (isNaN($obj["M"]) || isNaN($obj["L"]) || isNaN($obj["X"]) || isNaN($obj["Y"])) {
                     return false;
                 }
+                //TODO: 判断变量都是number
             }
             else {
                 return false;
@@ -266,9 +267,9 @@ var Chat;
             return true;
         };
         return ChatVo;
-    })();
+    }());
     Chat.ChatVo = ChatVo;
-    var ChatModel = (function () {
+    var ChatModel = /** @class */ (function () {
         function ChatModel() {
             this.chatItem = new Array;
             this.chatTypeDic = new Object;
@@ -303,6 +304,7 @@ var Chat;
                 this.addBaseHositryByType(SharedDef.CHAT_TYPE_CURRENT);
                 this.addBaseHositryByType(SharedDef.CHAT_TYPE_HORM);
                 this.addBaseHositryByType(SharedDef.CHAT_TYPE_GROUP);
+                //  this.addBaseHositryByType(SharedDef.CHAT_TYPE_WHISPER)
             }
             for (var i = 0; i < 5; i++) {
                 this.addBaseHositryByType(SharedDef.CHAT_TYPE_WHISPER);
@@ -556,6 +558,7 @@ var Chat;
             //赠送礼物
             //屏蔽消息
             if (!this.getBlockByGuid($vo.guid)) {
+                //  $arr.push(6)
             }
             return $arr;
         };
@@ -683,13 +686,13 @@ var Chat;
         ChatModel._showType = 1;
         ChatModel._textWidth = 360;
         return ChatModel;
-    })();
+    }());
     Chat.ChatModel = ChatModel;
-    var BlockVo = (function () {
+    var BlockVo = /** @class */ (function () {
         function BlockVo() {
         }
         return BlockVo;
-    })();
+    }());
     Chat.BlockVo = BlockVo;
 })(Chat || (Chat = {}));
 //# sourceMappingURL=ChatModel.js.map

@@ -1,4 +1,4 @@
-var AstarUtil = (function () {
+var AstarUtil = /** @class */ (function () {
     function AstarUtil() {
     }
     AstarUtil.setData = function ($tempNavMesh) {
@@ -190,6 +190,8 @@ var AstarUtil = (function () {
             return astarPosItem;
         }
         else {
+            // alert(gridVec2DA)
+            // alert(gridVec2DB)
         }
         return null;
     };
@@ -309,6 +311,7 @@ var AstarUtil = (function () {
     AstarUtil.simplifyAstar = function ($arr) {
         var $num = 0;
         if ($arr.length > 1) {
+            //   $arr.splice(0, 1);
         }
         if ($arr.length > 2) {
             var $back = new Array;
@@ -336,6 +339,7 @@ var AstarUtil = (function () {
             $b = this.moveA2B($b, $a, 1);
             if (AstarUtil.getPosIsCanMove($b)) {
                 return $b;
+                //break
             }
         }
         return $b;
@@ -430,5 +434,5 @@ var AstarUtil = (function () {
     AstarUtil._frist = false;
     AstarUtil.canwalkItem = [];
     return AstarUtil;
-})();
+}());
 //# sourceMappingURL=AstarUtil.js.map

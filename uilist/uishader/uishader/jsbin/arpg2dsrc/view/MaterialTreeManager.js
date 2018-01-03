@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var MaterialTreeManager = (function () {
+    var MaterialTreeManager = /** @class */ (function () {
         function MaterialTreeManager() {
         }
         MaterialTreeManager.getInstance = function () {
@@ -13,15 +13,13 @@ var materialui;
             LoadManager.getInstance().load(Scene_data.fileRoot + $url, LoadManager.XML_TYPE, function ($dtstr) {
                 var $materailTree = new materialui.MaterialTree;
                 $materailTree.url = $url.replace(Scene_data.fileRoot, "");
-                var $obj = new Object();
-                $obj.compileData = new Object;
-                $obj.data = JSON.parse($dtstr);
+                var $obj = JSON.parse($dtstr);
                 $materailTree.setData($obj);
                 $fun && $fun($materailTree);
             });
         };
         return MaterialTreeManager;
-    })();
+    }());
     materialui.MaterialTreeManager = MaterialTreeManager;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialTreeManager.js.map

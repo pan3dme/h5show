@@ -1,11 +1,16 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var materialui;
 (function (materialui) {
-    var MenuListData = (function () {
+    var MenuListData = /** @class */ (function () {
         function MenuListData($label, $key) {
             if ($key === void 0) { $key = null; }
             this.label = $label;
@@ -17,12 +22,12 @@ var materialui;
             }
         }
         return MenuListData;
-    })();
+    }());
     materialui.MenuListData = MenuListData;
-    var RightMenuVo = (function (_super) {
+    var RightMenuVo = /** @class */ (function (_super) {
         __extends(RightMenuVo, _super);
         function RightMenuVo() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         RightMenuVo.prototype.initData = function ($panel, $bottomRender, $midRender, $data, $frameId, $isSub) {
             if ($isSub === void 0) { $isSub = false; }
@@ -76,29 +81,30 @@ var materialui;
             $ui.drawToCtx(this.bottomRender.uiAtlas, $ctx);
         };
         return RightMenuVo;
-    })(UICompenent);
+    }(UICompenent));
     materialui.RightMenuVo = RightMenuVo;
-    var RightMenuPanel = (function (_super) {
+    var RightMenuPanel = /** @class */ (function (_super) {
         __extends(RightMenuPanel, _super);
         function RightMenuPanel() {
-            _super.call(this);
-            this.width = 200;
-            this.height = 200;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._bottomRender.uiAtlas = materialui.BaseMaterialNodeUI.baseUIAtlas;
-            this._midRender.uiAtlas = materialui.BaseMaterialNodeUI.baseUIAtlas;
-            this._topRender.uiAtlas = materialui.BaseMaterialNodeUI.baseUIAtlas;
-            this.loadConfigCom();
+            var _this = _super.call(this) || this;
+            _this.width = 200;
+            _this.height = 200;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._bottomRender.uiAtlas = materialui.BaseMaterialNodeUI.baseUIAtlas;
+            _this._midRender.uiAtlas = materialui.BaseMaterialNodeUI.baseUIAtlas;
+            _this._topRender.uiAtlas = materialui.BaseMaterialNodeUI.baseUIAtlas;
+            _this.loadConfigCom();
+            return _this;
         }
         RightMenuPanel.prototype.initMainMenu = function () {
             this.menuTextItem = new Array();
             this.menuTextItem.push(this.getMathListData());
-            this.menuTextItem.push(new MenuListData("常数", "2"));
+            this.menuTextItem.push(this.getV2CListData());
             this.menuTextItem.push(this.getTextureListData());
             this.mainMenuUiArr = new Array();
             this.subMenuUiArr = new Array;
@@ -116,6 +122,20 @@ var materialui;
             $vo.subMenu.push(new MenuListData("ADD", "11"));
             $vo.subMenu.push(new MenuListData("SUB", "12"));
             $vo.subMenu.push(new MenuListData("MUL", "13"));
+            $vo.subMenu.push(new MenuListData("DIV", "14"));
+            $vo.subMenu.push(new MenuListData("SIN", "15"));
+            //$vo.subMenu.push(new MenuListData("COS", "16"));
+            //$vo.subMenu.push(new MenuListData("LERP", "17"));
+            //$vo.subMenu.push(new MenuListData("MIN", "18"));
+            return $vo;
+        };
+        RightMenuPanel.prototype.getV2CListData = function () {
+            var $vo = new MenuListData("常数", "2");
+            $vo.subMenu = new Array;
+            //     $vo.subMenu.push(new MenuListData("vec4", "21"));
+            $vo.subMenu.push(new MenuListData("vec3", "22"));
+            $vo.subMenu.push(new MenuListData("vec2", "23"));
+            $vo.subMenu.push(new MenuListData("float", "24"));
             return $vo;
         };
         RightMenuPanel.prototype.getTextureListData = function () {
@@ -196,10 +216,28 @@ var materialui;
                     case "4":
                         break;
                     case "11":
-                        this.onAddNode(evt);
+                        this.onTempNode(new materialui.MathAddNodeUI(), evt);
+                        break;
+                    case "12":
+                        this.onTempNode(new materialui.MathSubNodeUI(), evt);
+                        break;
+                    case "13":
+                        this.onTempNode(new materialui.MathMulNodeUI(), evt);
+                        break;
+                    case "14":
+                        this.onTempNode(new materialui.MathDivNodeUI(), evt);
                         break;
                     case "31":
-                        this.onAddTextureSampleNodeUI(evt);
+                        this.onTempNode(new materialui.TextureSampleNodeUI(), evt);
+                        break;
+                    case "22":
+                        this.onTempNode(new materialui.ConstVec3NodeUI(), evt);
+                        break;
+                    case "23":
+                        this.onTempNode(new materialui.ConstVec2NodeUI(), evt);
+                        break;
+                    case "24":
+                        this.onTempNode(new materialui.ConstFloatNodeUI(), evt);
                         break;
                     default:
                         break;
@@ -208,14 +246,7 @@ var materialui;
                 ModuleEventManager.dispatchEvent(new materialui.RightMenuEvent(materialui.RightMenuEvent.HIDE_RIGHT_MENU));
             }
         };
-        RightMenuPanel.prototype.onAddTextureSampleNodeUI = function (evt) {
-            var $ui = new materialui.TextureSampleNodeUI();
-            $ui.left = evt.x / UIData.Scale - 200;
-            $ui.top = evt.y / UIData.Scale - 30;
-            materialui.MaterialCtrl.getInstance().addNodeUI($ui);
-        };
-        RightMenuPanel.prototype.onAddNode = function (evt) {
-            var $ui = new materialui.MathAddNodeUI();
+        RightMenuPanel.prototype.onTempNode = function ($ui, evt) {
             $ui.left = evt.x / UIData.Scale - 200;
             $ui.top = evt.y / UIData.Scale - 30;
             materialui.MaterialCtrl.getInstance().addNodeUI($ui);
@@ -234,7 +265,7 @@ var materialui;
             this.clearSubMenu();
         };
         return RightMenuPanel;
-    })(UIPanel);
+    }(UIPanel));
     materialui.RightMenuPanel = RightMenuPanel;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=RightMenuPanel.js.map

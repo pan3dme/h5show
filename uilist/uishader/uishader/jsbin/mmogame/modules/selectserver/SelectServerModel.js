@@ -1,6 +1,6 @@
 var selectserver;
 (function (selectserver) {
-    var SelectServerModel = (function () {
+    var SelectServerModel = /** @class */ (function () {
         function SelectServerModel() {
             this.StateKey = ["red", "orange", "green", "gray"];
             this.RoleKey = ["道士", "枪客", "枪客", "剑客", "剑客", "道士", "道士"];
@@ -76,26 +76,26 @@ var selectserver;
             }
         };
         return SelectServerModel;
-    })();
+    }());
     selectserver.SelectServerModel = SelectServerModel;
-    var ServerAryVo = (function () {
+    var ServerAryVo = /** @class */ (function () {
         function ServerAryVo() {
             this.select = false;
         }
         return ServerAryVo;
-    })();
+    }());
     selectserver.ServerAryVo = ServerAryVo;
-    var ServerVo = (function () {
+    var ServerVo = /** @class */ (function () {
         function ServerVo() {
         }
         return ServerVo;
-    })();
+    }());
     selectserver.ServerVo = ServerVo;
-    var RoleVo = (function () {
+    var RoleVo = /** @class */ (function () {
         function RoleVo() {
         }
         return RoleVo;
-    })();
+    }());
     selectserver.RoleVo = RoleVo;
 })(selectserver || (selectserver = {}));
 //# sourceMappingURL=SelectServerModel.js.map

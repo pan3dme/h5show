@@ -49,12 +49,14 @@
                     var startNode: ItemMaterialUI = this.getUIbyID(inAry[j].parentObj.pid, inAry[j].parentObj.id, false);
                     if (endNode.typets == MaterialItemType.UNDEFINE) {
                         endNode.changeType(startNode.typets);
+       
                     }
-
+      
                     var evt: MEvent_Material_Connect = new MEvent_Material_Connect(MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_DOUBLUELINE);
                     evt.startNode = startNode;
                     evt.endNode = endNode;
                     ModuleEventManager.dispatchEvent(evt);
+            
 
                 }
             }
@@ -84,9 +86,32 @@
                 case NodeTree.TEX:
                     ui = new TextureSampleNodeUI();
                     break;
+                case NodeTree.SUB:
+                    ui = new MathAddNodeUI;
+                    break;
                 case NodeTree.ADD:
                     ui = new MathAddNodeUI;
                     break;
+                case NodeTree.MUL:
+                    ui = new MathMulNodeUI;
+                    break;
+                case NodeTree.DIV:
+                    ui = new MathDivNodeUI;
+                    break;
+                case NodeTree.SIN:
+                    ui = new MathSinNodeUI;
+                    break;
+                case NodeTree.VEC3:
+                    ui = new ConstVec3NodeUI;
+                    break;
+                case NodeTree.VEC2:
+                    ui = new ConstVec2NodeUI;
+                    break;
+                case NodeTree.FLOAT:
+                    ui = new ConstFloatNodeUI;
+                    break;
+
+                    
                 default:
                     break;
             }

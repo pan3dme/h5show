@@ -1,25 +1,30 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var materialui;
 (function (materialui) {
-    var MaterialEvent = (function (_super) {
+    var MaterialEvent = /** @class */ (function (_super) {
         __extends(MaterialEvent, _super);
         function MaterialEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MaterialEvent.SHOW_MATERIA_PANEL = "INIT_MATERIA_PANEL"; //显示面板
         MaterialEvent.SAVE_MATERIA_PANEL = "SAVE_MATERIA_PANEL"; //显示面板
         MaterialEvent.SELECT_MATERIAL_NODE_UI = "SELECT_MATERIAL_NODE_UI"; //显示面板
         return MaterialEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     materialui.MaterialEvent = MaterialEvent;
-    var MaterialModule = (function (_super) {
+    var MaterialModule = /** @class */ (function (_super) {
         __extends(MaterialModule, _super);
         function MaterialModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MaterialModule.prototype.getModuleName = function () {
             return "MaterialModule";
@@ -28,12 +33,12 @@ var materialui;
             return [new MaterialProcessor()];
         };
         return MaterialModule;
-    })(Module);
+    }(Module));
     materialui.MaterialModule = MaterialModule;
-    var MaterialProcessor = (function (_super) {
+    var MaterialProcessor = /** @class */ (function (_super) {
         __extends(MaterialProcessor, _super);
         function MaterialProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MaterialProcessor.prototype.getName = function () {
             return "MaterialProcessor";
@@ -118,8 +123,8 @@ var materialui;
                 this.readMaterialTree();
             }
             else {
-                materialui.MaterialCtrl.getInstance().addNodeUI(new materialui.ResultNodeUI());
-                materialui.MaterialCtrl.getInstance().addNodeUI(new materialui.TextureSampleNodeUI());
+                // MaterialCtrl.getInstance().addNodeUI(new ResultNodeUI())
+                // MaterialCtrl.getInstance().addNodeUI(new TextureSampleNodeUI())
             }
             document.addEventListener(MouseType.MouseWheel, function ($evt) { _this.onMouseWheel($evt); });
             document.addEventListener(MouseType.MouseDown, function ($evt) { _this.onMouse($evt); });
@@ -136,8 +141,10 @@ var materialui;
             GameMouseManager.getInstance().addMouseEvent();
         };
         MaterialProcessor.prototype.readMaterialTree = function () {
-            var $url = "pan/marmoset/uilist/baseTexturedata1.txt";
+            var _this = this;
+            var $url = "pan/marmoset/uilist/baseTexturedata3.txt";
             materialui.MaterialTreeManager.getInstance().getMaterial($url, function ($materialTree) {
+                _this.baseMaterialTree = $materialTree;
                 materialui.MaterialViewBuildUtils.getInstance().addFun = function (ui) { materialui.MaterialCtrl.getInstance().addNodeUI(ui); };
                 materialui.MaterialViewBuildUtils.getInstance().setData($materialTree.data);
             });
@@ -150,7 +157,7 @@ var materialui;
             Arpg2dGameStart.altKey = $evt.altKey;
             switch ($evt.keyCode) {
                 case KeyboardType.C:
-                    UIManager.getInstance().addUIContainer(new materialui.MathAddNodeUI());
+                    materialui.MaterialCompile.getInstance().compile(materialui.MaterialCtrl.getInstance().nodeList, this.baseMaterialTree);
                     break;
                 case KeyboardType.Delete:
                     var $selectUi = this.getSelUI();
@@ -216,7 +223,7 @@ var materialui;
             UIManager.getInstance().resize();
         };
         return MaterialProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     materialui.MaterialProcessor = MaterialProcessor;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialProcessor.js.map
