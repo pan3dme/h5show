@@ -13,15 +13,15 @@
     public absoluteHeight: number = 0;
     public enable: boolean = true
 
-    private _left: number = 0;
-    private _right: number = 0;
-    private _center: number = 0;
-    private _xType: number = -1;
+    protected _left: number = 0;
+    protected _right: number = 0;
+    protected _center: number = 0;
+    protected _xType: number = -1;
 
-    private _top: number = 0;
-    private _bottom: number = 0;
-    private _middle: number = 0;
-    private _yType: number = -1;
+    protected _top: number = 0;
+    protected _bottom: number = 0;
+    protected _middle: number = 0;
+    protected _yType: number = -1;
 
     public name: string;
      

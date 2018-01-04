@@ -1,6 +1,6 @@
 var quest;
 (function (quest) {
-    var QuestType = (function () {
+    var QuestType = /** @class */ (function () {
         function QuestType() {
         }
         QuestType.MAIN = 0; //主线;
@@ -9,15 +9,15 @@ var quest;
         QuestType.RING = 4; //环;
         QuestType.DAILY = 5; //环;
         return QuestType;
-    })();
+    }());
     quest.QuestType = QuestType;
-    var DailyQuestVo = (function () {
+    var DailyQuestVo = /** @class */ (function () {
         function DailyQuestVo() {
         }
         return DailyQuestVo;
-    })();
+    }());
     quest.DailyQuestVo = DailyQuestVo;
-    var QuestTaskVo = (function () {
+    var QuestTaskVo = /** @class */ (function () {
         function QuestTaskVo() {
             this.huanNum = 0;
             this.finishNum = 0;
@@ -76,9 +76,9 @@ var quest;
             this.finish = Boolean(this.questDataVo.taskState == SharedDef.QUEST_STATUS_COMPLETE);
         };
         return QuestTaskVo;
-    })();
+    }());
     quest.QuestTaskVo = QuestTaskVo;
-    var QuestModel = (function () {
+    var QuestModel = /** @class */ (function () {
         function QuestModel() {
             this._questDic = new Object(); //存放创建过的任务对象
             QuestModel.TrackDic = new Dictionary([]);
@@ -247,6 +247,9 @@ var quest;
                     $taskVo.textrectH.push(1);
                     $taskVo.textRectHeight++;
                     for (var j = 0; j < $taskVo.tb_quest.text.length; j++) {
+                        // $itemStrList.push("[d8d49c]"+$taskVo.tb_quest.text[j]);
+                        //  $taskVo.textrectH.push(1)
+                        //  $taskVo.textRectHeight++;
                     }
                 }
             }
@@ -373,8 +376,11 @@ var quest;
                             default:
                                 break;
                         }
+                        // GameInstance.mainUi.bottomRightSystem.changeBaskSkillIcon($collectionType);
                     }
+                    // AotuSkillManager.getInstance().aotu = true
                 }
+                // GameInstance.questMoveVo = null;
             }
         };
         QuestModel.prototype.getClikTaskItemByIndx = function ($taskVo, indx) {
@@ -407,6 +413,8 @@ var quest;
         QuestModel.prototype.clikTaskVoCell = function ($taskVo, indx) {
             if ($taskVo.finish) {
                 NetManager.getInstance().protocolos.pick_quest_reward($taskVo.questDataVo.indx);
+                // quest.QuestModel.getInstance().pick_quest_reward($taskVo)
+                //   ModulePageManager.openPanel(PanelClass.SHOW_QUEST_PANEL, $taskVo.tb_quest.type);
             }
             else {
                 if ($taskVo.tb_quest.type == QuestType.DAILY && $taskVo.tb_quest.start != 1) {
@@ -468,13 +476,13 @@ var quest;
                         var ary = [$temp[2], $temp[3]];
                         this.openPanel($temp[1], ary);
                         break;
-                    case 10:
+                    case 10://传往试练塔
                         AotuSkillManager.getInstance().aotuBattle = true;
                         if (!GuidData.map.isAdventureBaseScene()) {
                             NetManager.getInstance().protocolos.enter_trial_instance();
                         }
                         break;
-                    case 11:
+                    case 11://挑战BOSS
                         AotuSkillManager.getInstance().aotuBattle = true;
                         if (!GuidData.map.isAdventureBossScene()) {
                             NetManager.getInstance().protocolos.challange_boss();
@@ -656,7 +664,7 @@ var quest;
         };
         QuestModel.lineWidth225 = 225;
         return QuestModel;
-    })();
+    }());
     quest.QuestModel = QuestModel;
 })(quest || (quest = {}));
 //# sourceMappingURL=QuestModel.js.map

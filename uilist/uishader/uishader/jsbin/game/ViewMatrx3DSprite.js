@@ -1,13 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var ViewMatrx3DSprite = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var ViewMatrx3DSprite = /** @class */ (function (_super) {
     __extends(ViewMatrx3DSprite, _super);
     function ViewMatrx3DSprite() {
-        _super.call(this);
-        SceneManager.getInstance().addDisplay(this);
+        var _this = _super.call(this) || this;
+        SceneManager.getInstance().addDisplay(_this);
+        return _this;
     }
     ViewMatrx3DSprite.getInstance = function () {
         if (!this._instance) {
@@ -69,5 +75,5 @@ var ViewMatrx3DSprite = (function (_super) {
         return tempSprite.objData;
     };
     return ViewMatrx3DSprite;
-})(LineDisplaySprite);
+}(LineDisplaySprite));
 //# sourceMappingURL=ViewMatrx3DSprite.js.map

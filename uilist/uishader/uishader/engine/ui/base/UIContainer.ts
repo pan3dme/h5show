@@ -7,13 +7,13 @@
     protected _height: number = 0;
 
     protected _left: number = 0;
-    private _right: number = 0;
-    private _center: number = 0;
+    protected _right: number = 0;
+    protected _center: number = 0;
     protected _xType: number = 0;
 
     protected _top: number = 0;
-    private _bottom: number = 0;
-    private _middle: number = 0;
+    protected _bottom: number = 0;
+    protected _middle: number = 0;
     protected _yType: number = 0;
 
     protected _list: Array<UICompenent> = new Array;

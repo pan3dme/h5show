@@ -1,25 +1,31 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Object3D = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Object3D = /** @class */ (function (_super) {
     __extends(Object3D, _super);
     function Object3D($x, $y, $z) {
         if ($x === void 0) { $x = 0; }
         if ($y === void 0) { $y = 0; }
         if ($z === void 0) { $z = 0; }
-        _super.call(this);
-        this._x = $x;
-        this._y = $y;
-        this._z = $z;
-        this._scaleX = 1;
-        this._scaleY = 1;
-        this._scaleZ = 1;
-        this._rotationX = 0;
-        this._rotationY = 0;
-        this._rotationZ = 0;
-        this.posMatrix = new Matrix3D;
+        var _this = _super.call(this) || this;
+        _this._x = $x;
+        _this._y = $y;
+        _this._z = $z;
+        _this._scaleX = 1;
+        _this._scaleY = 1;
+        _this._scaleZ = 1;
+        _this._rotationX = 0;
+        _this._rotationY = 0;
+        _this._rotationZ = 0;
+        _this.posMatrix = new Matrix3D;
+        return _this;
     }
     Object3D.prototype.toString = function () {
         return "Object3D(" + String(this._x) + "," + String(this._y) + "," + String(this._z) + ")";
@@ -163,5 +169,5 @@ var Object3D = (function (_super) {
     Object3D.prototype.updateRotationMatrix = function () {
     };
     return Object3D;
-})(EventDispatcher);
+}(EventDispatcher));
 //# sourceMappingURL=Object3D.js.map

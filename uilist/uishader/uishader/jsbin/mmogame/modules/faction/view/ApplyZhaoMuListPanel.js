@@ -1,23 +1,29 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var faction;
 (function (faction) {
-    var ZhaoMuVo = (function () {
+    var ZhaoMuVo = /** @class */ (function () {
         function ZhaoMuVo() {
             this.isok = false;
         }
         return ZhaoMuVo;
-    })();
+    }());
     faction.ZhaoMuVo = ZhaoMuVo;
-    var ApplyZhaoMuListPanel = (function (_super) {
+    var ApplyZhaoMuListPanel = /** @class */ (function (_super) {
         __extends(ApplyZhaoMuListPanel, _super);
         function ApplyZhaoMuListPanel() {
-            _super.call(this);
-            this.left = 43;
-            this.top = 132;
+            var _this = _super.call(this) || this;
+            _this.left = 43;
+            _this.top = 132;
+            return _this;
         }
         ApplyZhaoMuListPanel.prototype.init = function ($atlas) {
             this.baseAtlas = $atlas;
@@ -98,6 +104,7 @@ var faction;
         ApplyZhaoMuListPanel.prototype.show = function () {
             if (!this.hasStage) {
                 UIManager.getInstance().addUIContainer(this);
+                // this.sendPageByNum(1);
             }
         };
         ApplyZhaoMuListPanel.prototype.hide = function () {
@@ -106,12 +113,12 @@ var faction;
             }
         };
         return ApplyZhaoMuListPanel;
-    })(SList);
+    }(SList));
     faction.ApplyZhaoMuListPanel = ApplyZhaoMuListPanel;
-    var ApplyZhaoMuListItemRender = (function (_super) {
+    var ApplyZhaoMuListItemRender = /** @class */ (function (_super) {
         __extends(ApplyZhaoMuListItemRender, _super);
         function ApplyZhaoMuListItemRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -251,7 +258,7 @@ var faction;
             });
         };
         return ApplyZhaoMuListItemRender;
-    })(SListItem);
+    }(SListItem));
     faction.ApplyZhaoMuListItemRender = ApplyZhaoMuListItemRender;
 })(faction || (faction = {}));
 //# sourceMappingURL=ApplyZhaoMuListPanel.js.map

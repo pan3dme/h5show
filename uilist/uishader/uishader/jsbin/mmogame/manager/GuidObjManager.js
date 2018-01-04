@@ -1,13 +1,18 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var GuidObjManager = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var GuidObjManager = /** @class */ (function (_super) {
     __extends(GuidObjManager, _super);
     function GuidObjManager() {
-        _super.call(this);
-        this._hashGUID = function (guid) {
+        var _this = _super.call(this) || this;
+        _this._hashGUID = function (guid) {
             if (ObjectDef.UNIT == ObjectDef.getPrefix(guid)) {
                 return ObjectDef.getGUIDIndex(guid);
             }
@@ -18,6 +23,7 @@ var GuidObjManager = (function (_super) {
                 return 0;
             }
         };
+        return _this;
     }
     GuidObjManager.getInstance = function () {
         if (!this._instance) {
@@ -91,6 +97,7 @@ var GuidObjManager = (function (_super) {
                 p = new GuidObject(k);
             }
             p.guid = k;
+            //  console.log(p);
         }
         this.AttachObject(p);
         return p;
@@ -177,5 +184,5 @@ var GuidObjManager = (function (_super) {
         }
     };
     return GuidObjManager;
-})(GuidObjectTable);
+}(GuidObjectTable));
 //# sourceMappingURL=GuidObjManager.js.map

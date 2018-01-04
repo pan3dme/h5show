@@ -1,28 +1,34 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var leftui;
 (function (leftui) {
-    var LeftUiPanel = (function (_super) {
+    var LeftUiPanel = /** @class */ (function (_super) {
         __extends(LeftUiPanel, _super);
         function LeftUiPanel() {
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.openOrClose = true;
-            this.tempLeft = 0;
-            this.interfaceUI = true;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.left = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._midRender.uiAtlas = new UIAtlas;
-            this.leftUiQuestPanel = new leftui.LeftUiQuestPanel();
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.openOrClose = true;
+            _this.tempLeft = 0;
+            _this.interfaceUI = true;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.left = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._midRender.uiAtlas = new UIAtlas;
+            _this.leftUiQuestPanel = new leftui.LeftUiQuestPanel();
+            return _this;
             // this.leftHangUpPanel = new LeftHangUpPanel();
         }
         LeftUiPanel.prototype.applyLoad = function () {
@@ -73,11 +79,13 @@ var leftui;
                 this.a_state2_tab0.selected = true;
                 this.a_state2_tab1.selected = false;
                 this.leftUiQuestPanel.refreshType(leftui.TaskListUi.showType);
+                //   this.leftHangUpPanel.hide()
             }
             else {
                 this.a_state2_tab1.selected = true;
                 this.a_state2_tab0.selected = false;
                 this.leftUiQuestPanel.refreshType(leftui.TaskListUi.showType);
+                //     this.leftHangUpPanel.show()
             }
         };
         LeftUiPanel.prototype.butClik = function (evt) {
@@ -129,7 +137,7 @@ var leftui;
             UIManager.getInstance().removeUIContainer(this);
         };
         return LeftUiPanel;
-    })(UIPanel);
+    }(UIPanel));
     leftui.LeftUiPanel = LeftUiPanel;
 })(leftui || (leftui = {}));
 //# sourceMappingURL=LeftUiPanel.js.map

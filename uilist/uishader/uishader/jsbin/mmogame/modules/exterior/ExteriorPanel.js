@@ -1,20 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var exterior;
 (function (exterior) {
-    var ExteriorCellVo = (function () {
+    var ExteriorCellVo = /** @class */ (function () {
         function ExteriorCellVo() {
         }
         return ExteriorCellVo;
-    })();
+    }());
     exterior.ExteriorCellVo = ExteriorCellVo;
-    var ExteriorListRender = (function (_super) {
+    var ExteriorListRender = /** @class */ (function (_super) {
         __extends(ExteriorListRender, _super);
         function ExteriorListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ExteriorListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -134,12 +139,12 @@ var exterior;
             }
         };
         return ExteriorListRender;
-    })(SListItem);
+    }(SListItem));
     exterior.ExteriorListRender = ExteriorListRender;
-    var ExteriorList = (function (_super) {
+    var ExteriorList = /** @class */ (function (_super) {
         __extends(ExteriorList, _super);
         function ExteriorList() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         ExteriorList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -160,30 +165,31 @@ var exterior;
             }
         };
         return ExteriorList;
-    })(SList);
+    }(SList));
     exterior.ExteriorList = ExteriorList;
-    var ExteriorPanel = (function (_super) {
+    var ExteriorPanel = /** @class */ (function (_super) {
         __extends(ExteriorPanel, _super);
         function ExteriorPanel() {
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.tabIndex = 0;
-            this.kkkb = true;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._redPointRender = new RedPointRender;
-            this.addRender(this._redPointRender);
-            this._midRender.uiAtlas = new UIAtlas;
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.tabIndex = 0;
+            _this.kkkb = true;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._redPointRender = new RedPointRender;
+            _this.addRender(_this._redPointRender);
+            _this._midRender.uiAtlas = new UIAtlas;
+            return _this;
         }
         ExteriorPanel.prototype.dispose = function () {
             this._bgRender.dispose();
@@ -406,6 +412,7 @@ var exterior;
                         var $aaa = new wintittle.WindowRestTittleEvent(wintittle.WindowRestTittleEvent.SHOW_WINDOW_RES_PANEL);
                         $aaa.data = $id;
                         ModuleEventManager.dispatchEvent($aaa);
+                        // msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "资源不足", 99)
                     }
                 }
             }
@@ -454,6 +461,7 @@ var exterior;
                 }
                 this.exteriorList.refreshData($tbDataArr);
                 this.exteriorList.setSelectIndex($selectIndex);
+                // SharedDef.PLAYER_FIELD_MAX_HEALTH
             }
         };
         ExteriorPanel.prototype.butClik = function (evt) {
@@ -480,7 +488,7 @@ var exterior;
             }
         };
         return ExteriorPanel;
-    })(WindowUi);
+    }(WindowUi));
     exterior.ExteriorPanel = ExteriorPanel;
 })(exterior || (exterior = {}));
 //# sourceMappingURL=ExteriorPanel.js.map

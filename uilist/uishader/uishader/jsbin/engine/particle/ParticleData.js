@@ -1,4 +1,4 @@
-var ParticleData = (function () {
+var ParticleData = /** @class */ (function () {
     function ParticleData() {
         this._delayedTime = 0;
         this._width = 100; //宽度
@@ -278,5 +278,5 @@ var ParticleData = (function () {
     ParticleData.prototype.setFloat32Mat = function (key, ary) {
     };
     return ParticleData;
-})();
+}());
 //# sourceMappingURL=ParticleData.js.map

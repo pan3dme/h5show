@@ -1,20 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var meridian;
 (function (meridian) {
-    var MeridianListVo = (function () {
+    var MeridianListVo = /** @class */ (function () {
         function MeridianListVo() {
         }
         return MeridianListVo;
-    })();
+    }());
     meridian.MeridianListVo = MeridianListVo;
-    var MeridianListRender = (function (_super) {
+    var MeridianListRender = /** @class */ (function (_super) {
         __extends(MeridianListRender, _super);
         function MeridianListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MeridianListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -77,12 +82,12 @@ var meridian;
             }
         };
         return MeridianListRender;
-    })(SListItem);
+    }(SListItem));
     meridian.MeridianListRender = MeridianListRender;
-    var MeridianList = (function (_super) {
+    var MeridianList = /** @class */ (function (_super) {
         __extends(MeridianList, _super);
         function MeridianList() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         MeridianList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -120,34 +125,35 @@ var meridian;
             }
         };
         return MeridianList;
-    })(SList);
+    }(SList));
     meridian.MeridianList = MeridianList;
-    var MeridianPanel = (function (_super) {
+    var MeridianPanel = /** @class */ (function (_super) {
         __extends(MeridianPanel, _super);
         function MeridianPanel() {
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.a_valueItem = new Array;
-            this.a_upItem = new Array;
-            this.canXiulian = false;
-            this.lastPicId = 0;
-            this.greedItem = new Array();
-            this._canclick = true;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._redPointRender = new RedPointRender;
-            this.addRender(this._redPointRender);
-            this._effRender = new FrameUIRender();
-            this.addRender(this._effRender);
-            this._midRender.uiAtlas = new UIAtlas;
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.a_valueItem = new Array;
+            _this.a_upItem = new Array;
+            _this.canXiulian = false;
+            _this.lastPicId = 0;
+            _this.greedItem = new Array();
+            _this._canclick = true;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._redPointRender = new RedPointRender;
+            _this.addRender(_this._redPointRender);
+            _this._effRender = new FrameUIRender();
+            _this.addRender(_this._effRender);
+            _this._midRender.uiAtlas = new UIAtlas;
+            return _this;
         }
         MeridianPanel.prototype.dispose = function () {
             this._bottomRender.dispose();
@@ -517,6 +523,7 @@ var meridian;
                         }
                     }
                     else {
+                        // msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "您操作太快了", 99);
                     }
                     break;
                 case this.a_exp_but:
@@ -528,7 +535,7 @@ var meridian;
             }
         };
         return MeridianPanel;
-    })(WindowUi);
+    }(WindowUi));
     meridian.MeridianPanel = MeridianPanel;
 })(meridian || (meridian = {}));
 //# sourceMappingURL=MeridianPanel.js.map

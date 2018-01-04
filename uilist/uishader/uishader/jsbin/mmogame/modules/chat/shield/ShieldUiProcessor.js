@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var shieldui;
 (function (shieldui) {
-    var ShieldUiModule = (function (_super) {
+    var ShieldUiModule = /** @class */ (function (_super) {
         __extends(ShieldUiModule, _super);
         function ShieldUiModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ShieldUiModule.prototype.getModuleName = function () {
             return "ShieldUiModule";
@@ -17,23 +22,23 @@ var shieldui;
             return [new ShieldUiProcessor()];
         };
         return ShieldUiModule;
-    })(Module);
+    }(Module));
     shieldui.ShieldUiModule = ShieldUiModule;
-    var ShieldUiEvent = (function (_super) {
+    var ShieldUiEvent = /** @class */ (function (_super) {
         __extends(ShieldUiEvent, _super);
         function ShieldUiEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ShieldUiEvent.SHOW_SHIELD_UI_PANEL = "SHOW_SHIELD_UI_PANEL";
         ShieldUiEvent.HIDE_SHIELD_UI_PANEL = "HIDE_SHIELD_UI_PANEL";
         ShieldUiEvent.PLAYER_STRING_FIELD_BLOCK = "PLAYER_STRING_FIELD_BLOCK";
         return ShieldUiEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     shieldui.ShieldUiEvent = ShieldUiEvent;
-    var ShieldUiProcessor = (function (_super) {
+    var ShieldUiProcessor = /** @class */ (function (_super) {
         __extends(ShieldUiProcessor, _super);
         function ShieldUiProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ShieldUiProcessor.prototype.getName = function () {
             return "ShieldUiProcessor";
@@ -78,7 +83,7 @@ var shieldui;
             ];
         };
         return ShieldUiProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     shieldui.ShieldUiProcessor = ShieldUiProcessor;
 })(shieldui || (shieldui = {}));
 //# sourceMappingURL=ShieldUiProcessor.js.map

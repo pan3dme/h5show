@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var minmap;
 (function (minmap) {
-    var MinMapModule = (function (_super) {
+    var MinMapModule = /** @class */ (function (_super) {
         __extends(MinMapModule, _super);
         function MinMapModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MinMapModule.prototype.getModuleName = function () {
             return "MinMapModule";
@@ -17,12 +22,12 @@ var minmap;
             return [new MinMapProcessor()];
         };
         return MinMapModule;
-    })(Module);
+    }(Module));
     minmap.MinMapModule = MinMapModule;
-    var MinMapProcessor = (function (_super) {
+    var MinMapProcessor = /** @class */ (function (_super) {
         __extends(MinMapProcessor, _super);
         function MinMapProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MinMapProcessor.prototype.getName = function () {
             return "MapProcessor";
@@ -67,7 +72,7 @@ var minmap;
             ];
         };
         return MinMapProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     minmap.MinMapProcessor = MinMapProcessor;
 })(minmap || (minmap = {}));
 //# sourceMappingURL=MinMapProcessor.js.map

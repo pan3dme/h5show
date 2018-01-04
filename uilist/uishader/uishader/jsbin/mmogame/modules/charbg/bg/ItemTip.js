@@ -1,19 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /**
  * 物品TIP
  */
-var ItemTip = (function (_super) {
+var ItemTip = /** @class */ (function (_super) {
     __extends(ItemTip, _super);
     function ItemTip() {
-        _super.call(this);
-        this.width = 370;
-        this.height = 266;
-        this.center = -115;
-        this.middle = 0;
+        var _this = _super.call(this) || this;
+        _this.width = 370;
+        _this.height = 266;
+        _this.center = -115;
+        _this.middle = 0;
+        return _this;
     }
     ItemTip.prototype.refresh = function () {
         _super.prototype.refresh.call(this);
@@ -125,5 +131,5 @@ var ItemTip = (function (_super) {
         return "其他";
     };
     return ItemTip;
-})(BaseTip);
+}(BaseTip));
 //# sourceMappingURL=ItemTip.js.map

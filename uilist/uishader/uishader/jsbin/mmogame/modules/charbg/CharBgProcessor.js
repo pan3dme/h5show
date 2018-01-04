@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var charbg;
 (function (charbg) {
-    var CharBgEvent = (function (_super) {
+    var CharBgEvent = /** @class */ (function (_super) {
         __extends(CharBgEvent, _super);
         function CharBgEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         CharBgEvent.SHOW_CHAR_BG_PANEL = "SHOW_CHAR_BG_PANEL"; //显示面板
         CharBgEvent.SHOW_CHAR_INFO_PANEL = "SHOW_CHAR_INFO_PANEL"; //显示面板
@@ -20,23 +25,24 @@ var charbg;
         CharBgEvent.VIP_CHG_EVENT = "VIP_CHG_EVENT";
         CharBgEvent.BAG_DATA_INIT_EVENT = "BAG_DATA_INIT_EVENT";
         return CharBgEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     charbg.CharBgEvent = CharBgEvent;
-    var ItemTipEvent = (function (_super) {
+    var ItemTipEvent = /** @class */ (function (_super) {
         __extends(ItemTipEvent, _super);
         function ItemTipEvent() {
-            _super.apply(this, arguments);
-            this.buttonType = -1; //-1纯信息 1装备栏装备 2背包物品 3背包装备 4家族仓库中物品 5上交家族装备
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.buttonType = -1; //-1纯信息 1装备栏装备 2背包物品 3背包装备 4家族仓库中物品 5上交家族装备
+            return _this;
         }
         ItemTipEvent.SHOW_TIP_ITEM_EVENT = "show_tip_item_event";
         ItemTipEvent.SHOW_TIP_ITEM_ID_EVENT = "show_tip_item_id_event";
         return ItemTipEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     charbg.ItemTipEvent = ItemTipEvent;
-    var CharBgModule = (function (_super) {
+    var CharBgModule = /** @class */ (function (_super) {
         __extends(CharBgModule, _super);
         function CharBgModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         CharBgModule.prototype.getModuleName = function () {
             return "CharBgModule";
@@ -45,13 +51,14 @@ var charbg;
             return [new CharBgProcessor()];
         };
         return CharBgModule;
-    })(Module);
+    }(Module));
     charbg.CharBgModule = CharBgModule;
-    var CharBgProcessor = (function (_super) {
+    var CharBgProcessor = /** @class */ (function (_super) {
         __extends(CharBgProcessor, _super);
         function CharBgProcessor() {
-            _super.apply(this, arguments);
-            this.baseTipItemData = new BagItemData;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.baseTipItemData = new BagItemData;
+            return _this;
         }
         CharBgProcessor.prototype.getName = function () {
             return "CharBgProcessor";
@@ -68,6 +75,15 @@ var charbg;
                         this._charBgPanel.refreshLevel();
                     }
                 }
+                // else if ($event.type == EngineEvent.MONEY_TYPE_SILVER) {
+                //     if (this._charBgPanel) {
+                //         this._charBgPanel.refreshMoney();
+                //     }
+                // } else if ($event.type == EngineEvent.MONEY_TYPE_GOLD_INGOT) {
+                //     if (this._charBgPanel) {
+                //         this._charBgPanel.refreshYuanbao();
+                //     }
+                // }
             }
             else if ($event instanceof CharBgEvent) {
                 var evt = $event;
@@ -227,14 +243,14 @@ var charbg;
             return obj;
         };
         return CharBgProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     charbg.CharBgProcessor = CharBgProcessor;
-    var PlayerOverview = (function () {
+    var PlayerOverview = /** @class */ (function () {
         function PlayerOverview() {
             this.equAry = new Array;
         }
         return PlayerOverview;
-    })();
+    }());
     charbg.PlayerOverview = PlayerOverview;
 })(charbg || (charbg = {}));
 //# sourceMappingURL=CharBgProcessor.js.map

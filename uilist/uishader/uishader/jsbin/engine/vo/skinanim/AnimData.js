@@ -1,9 +1,9 @@
-var DualQuatFloat32Array = (function () {
+var DualQuatFloat32Array = /** @class */ (function () {
     function DualQuatFloat32Array() {
     }
     return DualQuatFloat32Array;
-})();
-var AnimData = (function () {
+}());
+var AnimData = /** @class */ (function () {
     function AnimData() {
         this.inLoop = 0;
         this.inter = new Array;
@@ -57,5 +57,5 @@ var AnimData = (function () {
         }
     };
     return AnimData;
-})();
+}());
 //# sourceMappingURL=AnimData.js.map

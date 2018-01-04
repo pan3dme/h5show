@@ -1,34 +1,40 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var strengthgem;
 (function (strengthgem) {
-    var StrengTab3 = (function (_super) {
+    var StrengTab3 = /** @class */ (function (_super) {
         __extends(StrengTab3, _super);
         function StrengTab3() {
-            _super.call(this);
-            this.keyPropaa = [
+            var _this = _super.call(this) || this;
+            _this.keyPropaa = [
                 "生       命", "攻       击", "防       御", "命       中", "闪       避", "暴       击", "抗       暴", "攻       速", "移       速", "破       防", "忽视闪避", "生命值回复", "伤害加深", "伤害减免", "反弹伤害" //15个
                 ,
                 "吸       血", "回复效率", "暴暴击击", "抗       暴", "暴击伤害", "暴伤减免", "命中率", "闪避率", "眩       晕", "定       身", "沉       默", "混       乱", "魅       惑", "控制增强", "控制减免" //15个
                 ,
                 "防       御"
             ];
-            this._canclick = true;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._publicRender = new UIRenderComponent;
-            this.addRender(this._publicRender);
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
+            _this._canclick = true;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._publicRender = new UIRenderComponent;
+            _this.addRender(_this._publicRender);
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            return _this;
         }
         StrengTab3.prototype.dispose = function () {
             this._bgRender.dispose();
@@ -312,6 +318,9 @@ var strengthgem;
                         this.ProAry[i].uvScale = raio;
                         LabelTextFont.writeSingleLabel(this._baseRender.uiAtlas, this.AttrnameAry[i].skinName, ColorType.Orange7a2f21 + this.getKeyProByIdaaa(attid), 14, TextAlign.CENTER, ColorType.Brown7a2f21);
                         LabelTextFont.writeSingleLabel(this._baseRender.uiAtlas, this.Attr0Ary[i].skinName, Snum(cur) + "/" + Snum(max), 14, TextAlign.CENTER, ColorType.Brown7a2f21);
+                        // this.drawNewAttrVal(this.Attr0Ary[i], ary[i * 3], ary[i * 3 + 1], getColorQua(ary[i * 3 + 2]));
+                        // var lev: number = ary[i * 3 + 2];
+                        // this.drawLineTxt(this._t_add_attList[i].skinName, getKeyProById(ary[i * 3]), "+" + ary[i * 3 + 1], lev, lev);
                     }
                     else {
                         UiDraw.clearUI(this.Attr0Ary[i]);
@@ -411,6 +420,7 @@ var strengthgem;
                 }
             }
             else {
+                // msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "您操作太快了", 99);
             }
         };
         StrengTab3.prototype.sendwash = function ($type) {
@@ -450,7 +460,7 @@ var strengthgem;
             }
         };
         return StrengTab3;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     strengthgem.StrengTab3 = StrengTab3;
 })(strengthgem || (strengthgem = {}));
 //# sourceMappingURL=StrengTab3.js.map

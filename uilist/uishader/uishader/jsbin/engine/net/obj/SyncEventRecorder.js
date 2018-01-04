@@ -1,41 +1,47 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var SyncEventRecorder = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SyncEventRecorder = /** @class */ (function (_super) {
     __extends(SyncEventRecorder, _super);
     function SyncEventRecorder() {
-        _super.call(this);
+        var _this = _super.call(this) || this;
         /**
          * 用于监听下标变化
          */
-        this._events_value = new NetEventDispatcher();
+        _this._events_value = new NetEventDispatcher();
         /**
          * 用于监听字符下标变化
          */
-        this._events_str_values = new NetEventDispatcher();
+        _this._events_str_values = new NetEventDispatcher();
         /**
          * 用于触发多下标单回调的情况
          */
-        this._events_mask = new NetEventDispatcher(NetEventDispatcher.KEY_TYPE_INT_MASK);
+        _this._events_mask = new NetEventDispatcher(NetEventDispatcher.KEY_TYPE_INT_MASK);
         /**
          * 用于事件回调
          */
-        this._events_callback = new NetEventDispatcher();
+        _this._events_callback = new NetEventDispatcher();
         /*整形下标长度*/
-        this._uint32_values_len = 0;
+        _this._uint32_values_len = 0;
         /*字符串下标长度*/
-        this._str_values_len = 0;
+        _this._str_values_len = 0;
         //字符串下标值
-        this._str_values = new Array;
+        _this._str_values = new Array;
         //对象的唯一ID
-        this._guid = "";
+        _this._guid = "";
         //临时变量,每次读取需要使用的临时变量
-        this._tmpBinlog = new BinLogStru();
-        this._afterUpdateIntObj = new Object;
-        this._afterUpdateStrObj = new Object;
-        this._uint32_values_buffer = new DataView(new ArrayBuffer(0));
+        _this._tmpBinlog = new BinLogStru();
+        _this._afterUpdateIntObj = new Object;
+        _this._afterUpdateStrObj = new Object;
+        _this._uint32_values_buffer = new DataView(new ArrayBuffer(0));
+        return _this;
     }
     Object.defineProperty(SyncEventRecorder.prototype, "guid", {
         get: function () {
@@ -70,6 +76,7 @@ var SyncEventRecorder = (function (_super) {
             //以8的倍数扩张
             this._uint32_values_len += 8;
             flag = true;
+            //this._uint32_values.length = this._uint32_values_len;
         }
         if (flag) {
             //this._uint32_values_buffer = new DataView(new ArrayBuffer(this._uint32_values_len << 2));
@@ -391,6 +398,7 @@ var SyncEventRecorder = (function (_super) {
                     binlog.typ = SyncEvent.TYPE_UINT32;
                     binlog.index = i;
                     binlog.old_value = this.GetUInt32(i);
+                    //binlog.old_value = this._uint32_values[i];
                 }
                 this.SetUInt32(i, bytes.readUnsignedInt());
                 //this._uint32_values[i] = bytes.readUnsignedInt();
@@ -791,5 +799,5 @@ var SyncEventRecorder = (function (_super) {
     SyncEventRecorder.tmpIntMask = new UpdateMask;
     SyncEventRecorder.tmpStrMask = new UpdateMask;
     return SyncEventRecorder;
-})(SyncEvent);
+}(SyncEvent));
 //# sourceMappingURL=SyncEventRecorder.js.map

@@ -1,20 +1,26 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var WindowRankPanel = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var WindowRankPanel = /** @class */ (function (_super) {
     __extends(WindowRankPanel, _super);
     function WindowRankPanel() {
-        _super.call(this);
-        this.uiAtlasComplet = false;
-        this.width = UIData.designWidth;
-        this.height = UIData.designHeight;
-        this.middle = 0;
-        this.center = 0;
-        this.setBlackBg();
-        this._baseRender = new UIRenderComponent;
-        this.addRender(this._baseRender);
+        var _this = _super.call(this) || this;
+        _this.uiAtlasComplet = false;
+        _this.width = UIData.designWidth;
+        _this.height = UIData.designHeight;
+        _this.middle = 0;
+        _this.center = 0;
+        _this.setBlackBg();
+        _this._baseRender = new UIRenderComponent;
+        _this.addRender(_this._baseRender);
+        return _this;
     }
     WindowRankPanel.prototype.applyLoad = function () {
         var _this = this;
@@ -26,6 +32,7 @@ var WindowRankPanel = (function (_super) {
         this.labAry = new Array;
         for (var i = 0; i < 3; i++) {
             this.labAry.push(this.addChild(this._baseRender.getComponent("t_lab" + i)));
+            //LabelTextFont.writeSingleLabel(this._baseUiAtlas,ui.skinName,this._labName[i],16,TextAlign.CENTER,ColorType.color9a683f)
         }
         this.addUIList(["t_line1", "t_line2", "t_line3", "t_title"], this._baseRender);
         this.myInfo = this.addChild(this._baseRender.getComponent("t_my"));
@@ -65,11 +72,11 @@ var WindowRankPanel = (function (_super) {
         }
     };
     return WindowRankPanel;
-})(WindowCentenMin);
-var WindowRankSList = (function (_super) {
+}(WindowCentenMin));
+var WindowRankSList = /** @class */ (function (_super) {
     __extends(WindowRankSList, _super);
     function WindowRankSList() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     WindowRankSList.prototype.init = function ($uiAtlas) {
         WindowRankSListRender.baseAtlas = $uiAtlas;
@@ -107,11 +114,11 @@ var WindowRankSList = (function (_super) {
         }
     };
     return WindowRankSList;
-})(SList);
-var WindowRankSListRender = (function (_super) {
+}(SList));
+var WindowRankSListRender = /** @class */ (function (_super) {
     __extends(WindowRankSListRender, _super);
     function WindowRankSListRender() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     WindowRankSListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
         if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -151,10 +158,10 @@ var WindowRankSListRender = (function (_super) {
         UiDraw.clearUI(this.r_num);
     };
     return WindowRankSListRender;
-})(SListItem);
-var WindowRankVo = (function () {
+}(SListItem));
+var WindowRankVo = /** @class */ (function () {
     function WindowRankVo() {
     }
     return WindowRankVo;
-})();
+}());
 //# sourceMappingURL=WindowRankPanel.js.map

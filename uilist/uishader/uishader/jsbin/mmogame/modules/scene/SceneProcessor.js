@@ -1,22 +1,27 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var SceneEvent = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SceneEvent = /** @class */ (function (_super) {
     __extends(SceneEvent, _super);
     function SceneEvent() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     SceneEvent.SCENE_NEW_ACHIEVEMENT_EVENT = "SCENE_NEW_ACHIEVEMENT_EVENT";
     SceneEvent.SCENE_NEW_DESIGNATION_EVENT = "SCENE_NEW_DESIGNATION_EVENT";
     SceneEvent.SCENE_NEW_WEAPONS_EVENT = "SCENE_NEW_WEAPONS_EVENT";
     return SceneEvent;
-})(BaseEvent);
-var SceneModule = (function (_super) {
+}(BaseEvent));
+var SceneModule = /** @class */ (function (_super) {
     __extends(SceneModule, _super);
     function SceneModule() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     SceneModule.prototype.getModuleName = function () {
         return "SceneModule";
@@ -25,11 +30,11 @@ var SceneModule = (function (_super) {
         return [new SceneProcessor()];
     };
     return SceneModule;
-})(Module);
-var SceneProcessor = (function (_super) {
+}(Module));
+var SceneProcessor = /** @class */ (function (_super) {
     __extends(SceneProcessor, _super);
     function SceneProcessor() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     SceneProcessor.prototype.getName = function () {
         return "SceneProcessor";
@@ -138,6 +143,14 @@ var SceneProcessor = (function (_super) {
             var t = 1000 * Math.random();
             this.showLoot(2000 + t, sc);
             this.hideLoot(3000 + t, sc);
+            // TimeUtil.addTimeOut(2000 + t,()=>{
+            //     var obj:any = sc;
+            //     TweenLite.to(obj,1,{px:tpos.x,py:tpos.y,pz:tpos.z});
+            // })
+            // TimeUtil.addTimeOut(3000 + t,()=>{
+            //     GameInstance.removeSceneChar(sc);
+            //     sc.destory();
+            // })
         }
         // TimeUtil.addTimeOut(2000, () => {
         //     for (var i: number = 0; i < scAry.length; i++) {
@@ -229,5 +242,5 @@ var SceneProcessor = (function (_super) {
         return obj;
     };
     return SceneProcessor;
-})(BaseProcessor);
+}(BaseProcessor));
 //# sourceMappingURL=SceneProcessor.js.map

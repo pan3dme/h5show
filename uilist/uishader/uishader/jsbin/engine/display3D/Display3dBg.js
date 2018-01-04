@@ -1,16 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Display3dBg = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Display3dBg = /** @class */ (function (_super) {
     __extends(Display3dBg, _super);
     function Display3dBg() {
-        _super.call(this);
-        this._scaleData = [1, 1];
-        this.shader = ProgrmaManager.getInstance().getProgram(UIImageShader.UI_IMG_SHADER);
-        this.program = this.shader;
-        this.initData();
+        var _this = _super.call(this) || this;
+        _this._scaleData = [1, 1];
+        _this.shader = ProgrmaManager.getInstance().getProgram(UIImageShader.UI_IMG_SHADER);
+        _this.program = _this.shader;
+        _this.initData();
+        return _this;
     }
     Display3dBg.prototype.initData = function () {
         this.objData = new ObjData();
@@ -59,5 +65,5 @@ var Display3dBg = (function (_super) {
         Scene_data.context3D.drawCall(this.objData.indexBuffer, this.objData.treNum);
     };
     return Display3dBg;
-})(Display3D);
+}(Display3D));
 //# sourceMappingURL=Display3dBg.js.map

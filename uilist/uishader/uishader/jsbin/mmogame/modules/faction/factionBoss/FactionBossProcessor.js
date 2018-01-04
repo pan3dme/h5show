@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var faction;
 (function (faction) {
-    var FactionBossEvent = (function (_super) {
+    var FactionBossEvent = /** @class */ (function (_super) {
         __extends(FactionBossEvent, _super);
         function FactionBossEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         FactionBossEvent.SHOW_BOSS_EVENT = "SHOW_BOSS_EVENT";
         FactionBossEvent.HIDE_BOSS_EVENT = "HIDE_BOSS_EVENT";
@@ -20,12 +25,12 @@ var faction;
         FactionBossEvent.CHANGE_BOSS_CURRENTID = "CHANGE_BOSS_CURRENTID";
         FactionBossEvent.BOSS_NEED_REDPOINT = "BOSS_NEED_REDPOINT";
         return FactionBossEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     faction.FactionBossEvent = FactionBossEvent;
-    var FactionBossProcessor = (function (_super) {
+    var FactionBossProcessor = /** @class */ (function (_super) {
         __extends(FactionBossProcessor, _super);
         function FactionBossProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         FactionBossProcessor.prototype.getName = function () {
             return "FactionBossProcessor";
@@ -65,6 +70,9 @@ var faction;
                 var $engineEvent = $event;
                 if ($engineEvent.type == EngineEvent.MONEY_TYPE_SILVER
                     || $engineEvent.type == EngineEvent.MONEY_TYPE_GOLD_INGOT) {
+                    // if (this._factionBossUiPanel && this._factionBossUiPanel.factionTreasurePanel) {
+                    //     this._factionBossUiPanel.factionTreasurePanel.treasureTopPanel.resetMoney();
+                    // }
                 }
             }
             if ($event instanceof UIPanelEvent) {
@@ -170,7 +178,7 @@ var faction;
             ModuleEventManager.dispatchEvent(evttt);
         };
         return FactionBossProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     faction.FactionBossProcessor = FactionBossProcessor;
 })(faction || (faction = {}));
 //# sourceMappingURL=FactionBossProcessor.js.map

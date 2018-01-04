@@ -1,16 +1,16 @@
 var skillUi;
 (function (skillUi) {
     //技能的三个类型
-    var SkillBaseType = (function () {
+    var SkillBaseType = /** @class */ (function () {
         function SkillBaseType() {
         }
         SkillBaseType.ZHUDONG = 0;
         SkillBaseType.NUQI = 1;
         SkillBaseType.BEIDONG = 2;
         return SkillBaseType;
-    })();
+    }());
     skillUi.SkillBaseType = SkillBaseType;
-    var SkillUiModel = (function () {
+    var SkillUiModel = /** @class */ (function () {
         //初始技能数据
         function SkillUiModel() {
         }
@@ -71,6 +71,7 @@ var skillUi;
             else {
                 if ($vo.level < $vo.maxLev) {
                     $vo.skillLearnVo = tb.SkillDataVo.getLevelUpInof($vo.id, $vo.levelUpStat + $vo.level - 1);
+                    //  $vo.showGreenUp = tb.SkillBaseDataVo.isCanUpLevel($vo.skillLearnVo);
                 }
                 else {
                     if ($vo.typtId == SkillBaseType.NUQI) {
@@ -267,7 +268,7 @@ var skillUi;
             return $str;
         };
         return SkillUiModel;
-    })();
+    }());
     skillUi.SkillUiModel = SkillUiModel;
 })(skillUi || (skillUi = {}));
 //# sourceMappingURL=SkillModel.js.map

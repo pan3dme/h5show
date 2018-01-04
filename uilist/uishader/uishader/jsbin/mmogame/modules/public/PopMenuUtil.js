@@ -1,22 +1,27 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var PopMenuUtil = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var PopMenuUtil = /** @class */ (function (_super) {
     __extends(PopMenuUtil, _super);
     function PopMenuUtil() {
-        var _this = this;
-        _super.call(this);
-        this._canclick = true;
-        this._complete = false;
-        this.width = UIData.designWidth;
-        this.height = UIData.designHeight;
-        this._bgRender = new UIRenderComponent;
-        this.addRender(this._bgRender);
-        this._topRender = new UIRenderComponent;
-        this.addRender(this._topRender);
-        this._topRender.setInfo("ui/uidata/dropmenu/dropmenu.xml", "ui/uidata/dropmenu/dropmenu.png", function () { _this.loadConfigCom(); });
+        var _this = _super.call(this) || this;
+        _this._canclick = true;
+        _this._complete = false;
+        _this.width = UIData.designWidth;
+        _this.height = UIData.designHeight;
+        _this._bgRender = new UIRenderComponent;
+        _this.addRender(_this._bgRender);
+        _this._topRender = new UIRenderComponent;
+        _this.addRender(_this._topRender);
+        _this._topRender.setInfo("ui/uidata/dropmenu/dropmenu.xml", "ui/uidata/dropmenu/dropmenu.png", function () { _this.loadConfigCom(); });
+        return _this;
     }
     PopMenuUtil.prototype.initData = function ($data, $x, $y, $backFun) {
         if ($backFun === void 0) { $backFun = null; }
@@ -123,5 +128,5 @@ var PopMenuUtil = (function (_super) {
         return this.popMenuUtil;
     };
     return PopMenuUtil;
-})(UIConatiner);
+}(UIConatiner));
 //# sourceMappingURL=PopMenuUtil.js.map

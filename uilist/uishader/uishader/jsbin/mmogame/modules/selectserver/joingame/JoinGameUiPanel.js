@@ -1,30 +1,36 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var selectserver;
 (function (selectserver) {
-    var JoinGameUiPanel = (function (_super) {
+    var JoinGameUiPanel = /** @class */ (function (_super) {
         __extends(JoinGameUiPanel, _super);
         function JoinGameUiPanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._baImg = new UIBackImg();
-            this._baImg.setImgInfo("ui/load/goplay.png", 1024, 512);
-            this.addRender(this._baImg);
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._middleRender = new UIRenderComponent;
-            this.addRender(this._middleRender);
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._baImg = new UIBackImg();
+            _this._baImg.setImgInfo("ui/load/goplay.png", 1024, 512);
+            _this.addRender(_this._baImg);
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._middleRender = new UIRenderComponent;
+            _this.addRender(_this._middleRender);
             // this._baseRender = new UIRenderComponent;
             // this.addRender(this._baseRender)
             // this._topRender = new UIRenderComponent;
             // this.addRender(this._topRender)
-            this._bgRender.uiAtlas = new UIAtlas();
+            _this._bgRender.uiAtlas = new UIAtlas();
+            return _this;
         }
         JoinGameUiPanel.prototype.dispose = function () {
             this._baImg.dispose();
@@ -97,7 +103,7 @@ var selectserver;
             }
         };
         return JoinGameUiPanel;
-    })(UIPanel);
+    }(UIPanel));
     selectserver.JoinGameUiPanel = JoinGameUiPanel;
 })(selectserver || (selectserver = {}));
 //# sourceMappingURL=JoinGameUiPanel.js.map

@@ -10,6 +10,7 @@
             new SceneLoadModule(), //加载页面
             new materialui.MaterialModule(),
             new materialui.RightMenuModule(),
+            new left.LeftModule(),
 
         ];
     

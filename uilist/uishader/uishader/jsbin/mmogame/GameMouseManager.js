@@ -1,4 +1,4 @@
-var GameMouseManager = (function () {
+var GameMouseManager = /** @class */ (function () {
     function GameMouseManager() {
         this.ready = false;
         this.resetPos = new Vector2D(150, 380);
@@ -247,6 +247,7 @@ var GameMouseManager = (function () {
                         }
                     }
                     this.findMoveTo();
+                    //  console.log("地面寻路")
                 }
             }
         }
@@ -394,6 +395,7 @@ var GameMouseManager = (function () {
                     this.beginYaogan($e);
                     this.isFristTouchMove = true;
                 }
+                // return
             }
             else {
                 this.isFristTouchMove = false;
@@ -415,6 +417,7 @@ var GameMouseManager = (function () {
                 //此处为技能播放与寻路判断，暂时改为+400.正确情况应该是去掉该层判断，并修改技能表的self_cd值。
                 // if (TimeUtil.getTimer() > AotuSkillManager.lastPlaySkillTime+400){
                 this.changeBingPostion(new Vector2D(mousePos.x, mousePos.y));
+                // }
             }
         }
     };
@@ -483,6 +486,7 @@ var GameMouseManager = (function () {
                     this._speedDirect = null;
                 }
                 if ((a.x == b.x && a.y == b.y)) {
+                    //    this.getNearFiledRoad();
                 }
                 else {
                     GameInstance.questMoveVo = null;
@@ -662,5 +666,5 @@ var GameMouseManager = (function () {
         return false;
     };
     return GameMouseManager;
-})();
+}());
 //# sourceMappingURL=GameMouseManager.js.map
