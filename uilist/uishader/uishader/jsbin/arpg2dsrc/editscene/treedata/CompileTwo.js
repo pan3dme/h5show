@@ -63,7 +63,8 @@ var materialui;
                 }
             }
             var resultStr = this.getGLSLStr();
-            console.log(resultStr);
+            //  console.log(resultStr)
+            return resultStr;
         };
         CompileTwo.prototype.getGLSLStr = function () {
             var mainStr = "";

@@ -34,6 +34,43 @@
             this.lightSpriteList = new MaterialModelSprite();
       
         }
+        public outShaderStr($str: string): void {
+            var $material: Material = this.lightSpriteList.material
+    
+ 
+            this.lightSpriteList.material.shader.fragment=  this.lightSpriteList.material.shader.fragment.replace("gl_FragColor = ft2","gl_FragColor =vec4(1.0,1.0,0.0,1.0)")
+
+            this.lightSpriteList.material.shader.encode();
+            Scene_data.context3D._contextSetTest.clear()
+  
+        }
+      
+
+        public getMaterialProgram(key: String, shaderCls: any, $material: Material, paramAry: any = null, parmaByFragmet: boolean = false): Shader3D {
+            var keyStr: string = key + "_" + $material.url;
+            if (paramAry) {
+                for (var i: number = 0; i < paramAry.length; i++) {
+                    keyStr += "_" + paramAry[i];
+                }
+                if (parmaByFragmet) {
+                    keyStr += "true_";
+                } else {
+                    keyStr += "false_";
+                }
+            }
+            if (parmaByFragmet) {
+                paramAry = [$material.usePbr, $material.useNormal, $material.hasFresnel,
+                $material.useDynamicIBL, $material.lightProbe, $material.directLight,
+                $material.noLight, $material.fogMode];
+            }
+
+            var shader: Shader3D = new MaterialShader();
+            shader.paramAry = paramAry;
+            shader.fragment = $material.shaderStr;
+            var encodetf: boolean = shader.encode();
+            shader.useNum++;
+            return shader;
+        }
      
     }
 }

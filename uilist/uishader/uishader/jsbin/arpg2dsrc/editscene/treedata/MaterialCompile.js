@@ -38,7 +38,8 @@ var materialui;
                 }
                 this.priorityList[this.nodeList[i].priority].push(this.nodeList[i]);
             }
-            this._compileGlslServer.compile(this.priorityList, $materialGLSLTree);
+            var resultStr = this._compileGlslServer.compile(this.priorityList, $materialGLSLTree);
+            left.ModelShowModel.getInstance().outShaderStr(resultStr);
         };
         MaterialCompile.prototype.setPriority = function ($node) {
             var inputVec = $node.inputVec;

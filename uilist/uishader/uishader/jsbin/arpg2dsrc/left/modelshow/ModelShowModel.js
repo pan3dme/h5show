@@ -28,6 +28,39 @@ var left;
             this.gridLineSprite = new GridLineSprite();
             this.lightSpriteList = new left.MaterialModelSprite();
         };
+        ModelShowModel.prototype.outShaderStr = function ($str) {
+            var $material = this.lightSpriteList.material;
+            this.lightSpriteList.material.shader.fragment = this.lightSpriteList.material.shader.fragment.replace("gl_FragColor = ft2", "gl_FragColor =vec4(1.0,1.0,0.0,1.0)");
+            this.lightSpriteList.material.shader.encode();
+            Scene_data.context3D._contextSetTest.clear();
+        };
+        ModelShowModel.prototype.getMaterialProgram = function (key, shaderCls, $material, paramAry, parmaByFragmet) {
+            if (paramAry === void 0) { paramAry = null; }
+            if (parmaByFragmet === void 0) { parmaByFragmet = false; }
+            var keyStr = key + "_" + $material.url;
+            if (paramAry) {
+                for (var i = 0; i < paramAry.length; i++) {
+                    keyStr += "_" + paramAry[i];
+                }
+                if (parmaByFragmet) {
+                    keyStr += "true_";
+                }
+                else {
+                    keyStr += "false_";
+                }
+            }
+            if (parmaByFragmet) {
+                paramAry = [$material.usePbr, $material.useNormal, $material.hasFresnel,
+                    $material.useDynamicIBL, $material.lightProbe, $material.directLight,
+                    $material.noLight, $material.fogMode];
+            }
+            var shader = new MaterialShader();
+            shader.paramAry = paramAry;
+            shader.fragment = $material.shaderStr;
+            var encodetf = shader.encode();
+            shader.useNum++;
+            return shader;
+        };
         return ModelShowModel;
     }());
     left.ModelShowModel = ModelShowModel;

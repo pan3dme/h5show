@@ -20,7 +20,7 @@
 
 
         private _compileGlslServer: CompileTwo = new CompileTwo;
-        public compile($list: Array<NodeTree>,  $materialGLSLTree: MaterialTree): void {
+        public compile($list: Array<NodeTree>, $materialGLSLTree: MaterialTree): void {
            this. nodeList = $list;
             this.resetCompile($list);
             this. resetPriority();
@@ -48,7 +48,10 @@
                 this.priorityList[this.nodeList[i].priority].push(this.nodeList[i]);
             }
 
-           this._compileGlslServer.compile(this.priorityList, $materialGLSLTree);
+            var resultStr: string = this._compileGlslServer.compile(this.priorityList, $materialGLSLTree);
+
+            left.ModelShowModel.getInstance().outShaderStr(resultStr);
+
         }
         public setPriority($node: NodeTree): void {
             var inputVec: Array<NodeTreeInputItem> = $node.inputVec;

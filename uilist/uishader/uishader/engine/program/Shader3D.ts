@@ -47,7 +47,7 @@ class Shader3D extends ResCount implements IShader {
         var info: string = $context.getProgramInfoLog(this.program);
         var vInfo: string = $context.getShaderInfoLog(this.vShader);
         var fInfo: string = $context.getShaderInfoLog(this.fShader);
-
+ 
         if (info != "") {
             if(vInfo == "" && fInfo == ""){
                 return true;

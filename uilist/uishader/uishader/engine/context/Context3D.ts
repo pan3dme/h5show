@@ -1,6 +1,6 @@
 ﻿class Context3D {
     public renderContext: WebGLRenderingContext;
-    private _contextSetTest: ContextSetTest;
+    public _contextSetTest: ContextSetTest;
     public init($caves: HTMLCanvasElement): void {
         //this.renderContext = $caves.getContext("experimental-webgl");
 

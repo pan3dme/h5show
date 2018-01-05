@@ -97,11 +97,12 @@
                 $material.useDynamicIBL, $material.lightProbe, $material.directLight,
                 $material.noLight,$material.fogMode];
         }
-
+     
         var shader: Shader3D = new shaderCls();
         shader.paramAry = paramAry;
         shader.fragment = $material.shaderStr;
         var encodetf: boolean = shader.encode(); 
+   
         shader.useNum++;
 
         if (!encodetf ){ 

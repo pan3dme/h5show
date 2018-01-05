@@ -171,7 +171,7 @@
 
         }
 
-        public compile($priorityList: Array<Array<NodeTree>>, $materialTree: MaterialTree): void {
+        public compile($priorityList: Array<Array<NodeTree>>, $materialTree: MaterialTree): string {
 
             NodeTree.jsMode = true;
             this.priorityList = $priorityList;
@@ -203,7 +203,8 @@
             }
             var resultStr: string = this.getGLSLStr();
 
-            console.log(resultStr)
+          //  console.log(resultStr)
+            return resultStr
 
         }
         private getGLSLStr(): string {
