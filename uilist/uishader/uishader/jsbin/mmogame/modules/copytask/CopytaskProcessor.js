@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var copytask;
 (function (copytask) {
-    var CopytaskUiModule = /** @class */ (function (_super) {
+    var CopytaskUiModule = (function (_super) {
         __extends(CopytaskUiModule, _super);
         function CopytaskUiModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         CopytaskUiModule.prototype.getModuleName = function () {
             return "CopytaskUiModule";
@@ -22,12 +17,12 @@ var copytask;
             return [new CopytaskProcessor()];
         };
         return CopytaskUiModule;
-    }(Module));
+    })(Module);
     copytask.CopytaskUiModule = CopytaskUiModule;
-    var CopytaskUiEvent = /** @class */ (function (_super) {
+    var CopytaskUiEvent = (function (_super) {
         __extends(CopytaskUiEvent, _super);
         function CopytaskUiEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //展示法宝面板
         CopytaskUiEvent.SHOW_COPYTASK_EVENT = "SHOW_COPYTASK_EVENT";
@@ -49,14 +44,13 @@ var copytask;
         //组队副本挑战次数变化
         CopytaskUiEvent.CHG_TEAM_NUM = "CHG_TEAM_NUM";
         return CopytaskUiEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     copytask.CopytaskUiEvent = CopytaskUiEvent;
-    var CopytaskProcessor = /** @class */ (function (_super) {
+    var CopytaskProcessor = (function (_super) {
         __extends(CopytaskProcessor, _super);
         function CopytaskProcessor() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this._nodeInit = false;
-            return _this;
+            _super.apply(this, arguments);
+            this._nodeInit = false;
         }
         CopytaskProcessor.prototype.getName = function () {
             return "TreasureProcessor";
@@ -74,10 +68,8 @@ var copytask;
                     this.selectitem($uiEvent.data);
                 }
                 else if ($uiEvent.type == CopytaskUiEvent.UNLOCK_WEAPON_EVENT) {
-                    // this.unlockweapon();
                 }
                 else if ($uiEvent.type == CopytaskUiEvent.CHANGE_WEAPON_EVENT) {
-                    // this.changeweapon();
                 }
                 else if ($uiEvent.type == CopytaskUiEvent.CHANGE_FIRST_EVENT) {
                     this.changezhanli();
@@ -167,7 +159,6 @@ var copytask;
         };
         CopytaskProcessor.prototype.changezhanli = function () {
             if (this._copytaskUiPanel && this._copytaskUiPanel.hasStage) {
-                // this._copytaskUiPanel.setZhanli();
             }
         };
         CopytaskProcessor.prototype.refreshRes = function () {
@@ -278,7 +269,7 @@ var copytask;
             ];
         };
         return CopytaskProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     copytask.CopytaskProcessor = CopytaskProcessor;
 })(copytask || (copytask = {}));
 //# sourceMappingURL=CopytaskProcessor.js.map

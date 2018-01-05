@@ -1,6 +1,6 @@
 var faction;
 (function (faction) {
-    var FactionBossModel = /** @class */ (function () {
+    var FactionBossModel = (function () {
         function FactionBossModel() {
             this.isneedcountdown = false;
         }
@@ -170,20 +170,20 @@ var faction;
             return startnum;
         };
         return FactionBossModel;
-    }());
+    })();
     faction.FactionBossModel = FactionBossModel;
-    var FBossItemVo = /** @class */ (function () {
+    var FBossItemVo = (function () {
         function FBossItemVo() {
         }
         return FBossItemVo;
-    }());
+    })();
     faction.FBossItemVo = FBossItemVo;
-    var RankVo = /** @class */ (function () {
+    var RankVo = (function () {
         function RankVo() {
             this.isme = false;
         }
         return RankVo;
-    }());
+    })();
     faction.RankVo = RankVo;
 })(faction || (faction = {}));
 //# sourceMappingURL=FactionBossModel.js.map

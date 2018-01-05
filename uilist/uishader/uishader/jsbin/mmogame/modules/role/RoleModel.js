@@ -1,36 +1,36 @@
 var role;
 (function (role) {
-    var TabItemData = /** @class */ (function () {
+    var TabItemData = (function () {
         function TabItemData() {
             this.selecteds = false;
         }
         return TabItemData;
-    }());
+    })();
     role.TabItemData = TabItemData;
-    var TabKey = /** @class */ (function () {
+    var TabKey = (function () {
         function TabKey() {
         }
         TabKey.TabAction = 1;
         TabKey.Tabdesignation = 2;
         return TabKey;
-    }());
+    })();
     role.TabKey = TabKey;
-    var TitleData = /** @class */ (function () {
+    var TitleData = (function () {
         function TitleData() {
             /** 数据状态   1：未获得  2：未查看  3：未装备  4：已装备 */
             this.state = 1;
         }
         return TitleData;
-    }());
+    })();
     role.TitleData = TitleData;
-    var ObtainData = /** @class */ (function () {
+    var ObtainData = (function () {
         function ObtainData() {
             this.isObtain = false;
         }
         return ObtainData;
-    }());
+    })();
     role.ObtainData = ObtainData;
-    var RoleModel = /** @class */ (function () {
+    var RoleModel = (function () {
         function RoleModel() {
             this.getBaseList();
         }
@@ -200,7 +200,6 @@ var role;
                 }
             }
             else {
-                // console.log("当前无装备称号");
             }
             //未获得装备的排序
             noary = this.SortByQualityASC(noary);
@@ -246,7 +245,7 @@ var role;
             return obtainData;
         };
         return RoleModel;
-    }());
+    })();
     role.RoleModel = RoleModel;
 })(role || (role = {}));
 //# sourceMappingURL=RoleModel.js.map

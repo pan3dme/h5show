@@ -1,28 +1,23 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var msgtip;
 (function (msgtip) {
-    var MsgPicData = /** @class */ (function () {
+    var MsgPicData = (function () {
         function MsgPicData() {
         }
         return MsgPicData;
-    }());
+    })();
     msgtip.MsgPicData = MsgPicData;
-    var MsgPicVo = /** @class */ (function () {
+    var MsgPicVo = (function () {
         function MsgPicVo() {
         }
         return MsgPicVo;
-    }());
+    })();
     msgtip.MsgPicVo = MsgPicVo;
-    var FrameTipUi = /** @class */ (function () {
+    var FrameTipUi = (function () {
         function FrameTipUi($cs) {
             this.container = $cs;
             this.bottomRender = new MoveFrameComponent();
@@ -57,15 +52,14 @@ var msgtip;
             });
         };
         return FrameTipUi;
-    }());
+    })();
     msgtip.FrameTipUi = FrameTipUi;
-    var MovePicComponent = /** @class */ (function (_super) {
+    var MovePicComponent = (function (_super) {
         __extends(MovePicComponent, _super);
         function MovePicComponent() {
-            var _this = _super.call(this) || this;
-            _this.uiAtlas = new UIAtlas();
-            _this.uiAtlas.configData = new Array();
-            return _this;
+            _super.call(this);
+            this.uiAtlas = new UIAtlas();
+            this.uiAtlas.configData = new Array();
         }
         MovePicComponent.prototype.setTextureTo = function ($textureRes, $msgPicData) {
             this.uiAtlas.configData = new Array();
@@ -119,15 +113,14 @@ var msgtip;
             this.container.addChild(this.picUi);
         };
         return MovePicComponent;
-    }(UIRenderComponent));
+    })(UIRenderComponent);
     msgtip.MovePicComponent = MovePicComponent;
-    var MoveFrameComponent = /** @class */ (function (_super) {
+    var MoveFrameComponent = (function (_super) {
         __extends(MoveFrameComponent, _super);
         function MoveFrameComponent() {
-            var _this = _super.call(this) || this;
-            _this.uiAtlas = new UIAtlas();
-            _this.uiAtlas.configData = new Array();
-            return _this;
+            _super.call(this);
+            this.uiAtlas = new UIAtlas();
+            this.uiAtlas.configData = new Array();
         }
         MoveFrameComponent.prototype.setTextureTo = function ($img) {
             var cellx = 2;
@@ -164,21 +157,21 @@ var msgtip;
             this.moveUi = null;
         };
         return MoveFrameComponent;
-    }(UIRenderComponent));
+    })(UIRenderComponent);
     msgtip.MoveFrameComponent = MoveFrameComponent;
-    var MsgTopCenterPic = /** @class */ (function (_super) {
+    var MsgTopCenterPic = (function (_super) {
         __extends(MsgTopCenterPic, _super);
         function MsgTopCenterPic() {
-            var _this = _super.call(this) || this;
-            _this.frameItem = new Array;
-            _this._msgPicVoItem = new Array;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.middle = 0;
-            _this.center = 0;
-            _this.frameUpFun = function (t) { _this.upData(t); };
-            TimeUtil.addFrameTick(_this.frameUpFun);
-            return _this;
+            var _this = this;
+            _super.call(this);
+            this.frameItem = new Array;
+            this._msgPicVoItem = new Array;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.middle = 0;
+            this.center = 0;
+            this.frameUpFun = function (t) { _this.upData(t); };
+            TimeUtil.addFrameTick(this.frameUpFun);
         }
         MsgTopCenterPic.prototype.upData = function (t) {
             if (this.renderList.length <= 0) {
@@ -207,7 +200,7 @@ var msgtip;
             UIManager.getInstance().addUIContainer(this._msgTopCenterPic);
         };
         return MsgTopCenterPic;
-    }(UIConatiner));
+    })(UIConatiner);
     msgtip.MsgTopCenterPic = MsgTopCenterPic;
 })(msgtip || (msgtip = {}));
 //# sourceMappingURL=MsgTopCenterPic.js.map

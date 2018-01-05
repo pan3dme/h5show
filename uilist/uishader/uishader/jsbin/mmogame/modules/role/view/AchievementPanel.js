@@ -1,30 +1,24 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var role;
 (function (role) {
-    var AchievementPanel = /** @class */ (function (_super) {
+    var AchievementPanel = (function (_super) {
         __extends(AchievementPanel, _super);
         function AchievementPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._publicRender = new UIRenderComponent;
-            _this.addRender(_this._publicRender);
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            return _this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._publicRender = new UIRenderComponent;
+            this.addRender(this._publicRender);
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
         }
         AchievementPanel.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -88,19 +82,18 @@ var role;
             }
         };
         return AchievementPanel;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     role.AchievementPanel = AchievementPanel;
     /**
      * TabList
      */
-    var AchievementTabList = /** @class */ (function (_super) {
+    var AchievementTabList = (function (_super) {
         __extends(AchievementTabList, _super);
         function AchievementTabList() {
-            var _this = _super.call(this) || this;
-            _this._type = -1;
-            _this.left = 45;
-            _this.top = 82;
-            return _this;
+            _super.call(this);
+            this._type = -1;
+            this.left = 45;
+            this.top = 82;
         }
         AchievementTabList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -149,12 +142,12 @@ var role;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return AchievementTabList;
-    }(SList));
+    })(SList);
     role.AchievementTabList = AchievementTabList;
-    var AchievementTabRender = /** @class */ (function (_super) {
+    var AchievementTabRender = (function (_super) {
         __extends(AchievementTabRender, _super);
         function AchievementTabRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -256,18 +249,17 @@ var role;
             UiDraw.clearUI(this.Tab);
         };
         return AchievementTabRender;
-    }(SListItem));
+    })(SListItem);
     role.AchievementTabRender = AchievementTabRender;
     /**
      * RightList
      */
-    var AchievementList = /** @class */ (function (_super) {
+    var AchievementList = (function (_super) {
         __extends(AchievementList, _super);
         function AchievementList() {
-            var _this = _super.call(this) || this;
-            _this.left = 229;
-            _this.top = 87;
-            return _this;
+            _super.call(this);
+            this.left = 229;
+            this.top = 87;
         }
         AchievementList.prototype.init = function ($uiAtlas) {
             AchievementRender.baseAtlas = $uiAtlas;
@@ -300,12 +292,12 @@ var role;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return AchievementList;
-    }(SList));
+    })(SList);
     role.AchievementList = AchievementList;
-    var AchievementRender = /** @class */ (function (_super) {
+    var AchievementRender = (function (_super) {
         __extends(AchievementRender, _super);
         function AchievementRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -500,7 +492,7 @@ var role;
             UiDraw.clearUI(this.Btn);
         };
         return AchievementRender;
-    }(SListItem));
+    })(SListItem);
     role.AchievementRender = AchievementRender;
 })(role || (role = {}));
 //# sourceMappingURL=AchievementPanel.js.map

@@ -1,4 +1,4 @@
-var CharAction = /** @class */ (function () {
+var CharAction = (function () {
     function CharAction() {
     }
     CharAction.STANAD = "stand";
@@ -18,5 +18,5 @@ var CharAction = /** @class */ (function () {
     CharAction.WALK_MOUNT = "walk_mount_01";
     CharAction.s_attack_01 = "s_attack_01"; //移动中行走的特殊技能
     return CharAction;
-}());
+})();
 //# sourceMappingURL=CharAction.js.map

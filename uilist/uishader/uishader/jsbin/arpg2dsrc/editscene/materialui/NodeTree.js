@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var NodeTree = /** @class */ (function () {
+    var NodeTree = (function () {
         function NodeTree() {
             this.priority = -1;
             this.id = -1;
@@ -167,7 +167,7 @@ var materialui;
         NodeTree.PANNER = "panner";
         NodeTree.jsMode = false;
         return NodeTree;
-    }());
+    })();
     materialui.NodeTree = NodeTree;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=NodeTree.js.map

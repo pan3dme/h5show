@@ -48,13 +48,12 @@ module left {
 
         constructor() {
             super();
-
-            GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/cartoontree05.txt", (groupRes: GroupRes) => {
+            //model/cartoontree05.txt
+            //model/cartoontree05.txt
+            GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/ccav1.txt", (groupRes: GroupRes) => {
                 this.loadPartRes(groupRes)
             })
             this.setLightMapUrl("ui/load/blood.png")
-
-
         }
         private buildShader: Shader3D
         public setCamPos($material: Material): void {
@@ -65,44 +64,37 @@ module left {
             for (var i: number = 0; i < groupRes.dataAry.length; i++) {
                 var item: GroupItem = groupRes.dataAry[i];
                 if (item.types == BaseRes.PREFAB_TYPE) {
-                    this.scaleX = this.scaleY = this.scaleZ = 0.2
+                    this.scaleX = this.scaleY = this.scaleZ = 5.2
                     this.setObjUrl(item.objUrl);
                     this.setMaterialUrl(item.materialUrl, item.materialInfoArr);
                     return
                 }
             }
-          
+     
         }
-        public setMaterialUrl(value: string, $paramData: Array<any> = null): void {
-            value = value.replace("_byte.txt", ".txt")
-            value = value.replace(".txt", "_byte.txt")
-            this.materialUrl = Scene_data.fileRoot + value;
-            MaterialManager.getInstance().getMaterialByte(this.materialUrl, ($material: Material) => {
-                this.material = $material;
-                if ($paramData) {
-                    this.materialParam = new MaterialBaseParam();
-                    this.materialParam.setData(this.material, $paramData);
-                }
-            }, null, true, MaterialShader.MATERIAL_SHADER, MaterialShader);
-        }
-
-        public updateMaterial(): void {
-            if (!this.material || !this.objData) {
+        public setMaterialVc($material: Material, $mp: MaterialBaseParam = null): void {
+            if ($material.fcNum <= 0) {
                 return;
             }
-            var $tempShader: Shader3D = this.material.shader;
-    
-            Scene_data.context3D._contextSetTest.clear()
 
-            Scene_data.context3D.setProgram($tempShader.program);
-            Scene_data.context3D.setVcMatrix4fv($tempShader, "posMatrix3D", this.posMatrix.m);
-            Scene_data.context3D.setVcMatrix4fv($tempShader, "vpMatrix3D", Scene_data.vpMatrix.m);
-            Scene_data.context3D.setRenderTexture($tempShader, "fs0", this.lightMapTextureRes.texture,0);
-            Scene_data.context3D.pushVa(this.objData.vertexBuffer);
-            Scene_data.context3D.setVaOffset(0, 3, this.objData.stride, 0);
-            Scene_data.context3D.setVaOffset(1, 2, this.objData.stride, this.objData.uvsOffsets);
-            Scene_data.context3D.drawCall(this.objData.indexBuffer, this.objData.treNum);
+            var t: number = 0;
+            if ($material.hasTime) {
+                t = (TimeUtil.getTimer() - this.time) % 100000 * 0.001;
+            }
+
+            $material.update(t);
+
+            this.setCamPos($material);
+
+            if ($mp) {
+                $mp.update();
+            }
+
+
+            Scene_data.context3D.setVc4fv($material.shader, "fc", $material.fcData);
+            console.log($material.fcData)
         }
+
     
     }
 }

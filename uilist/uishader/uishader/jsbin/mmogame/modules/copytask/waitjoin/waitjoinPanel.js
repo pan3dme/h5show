@@ -1,34 +1,29 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var copytask;
 (function (copytask) {
-    var waitjoinPanel = /** @class */ (function (_super) {
+    var waitjoinPanel = (function (_super) {
         __extends(waitjoinPanel, _super);
         function waitjoinPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._bgRender = new UIRenderComponent;
-            _this.addRender(_this._bgRender);
-            _this._bottomRender = new UIRenderComponent;
-            _this.addRender(_this._bottomRender);
-            _this._publicbgRender = new UIRenderComponent;
-            _this.addRender(_this._publicbgRender);
-            _this._midRender = new UIRenderComponent;
-            _this.addRender(_this._midRender);
-            _this._bgRender.uiAtlas = new UIAtlas();
-            _this._frameFun = function (t) { _this.upTime(t); };
-            return _this;
+            var _this = this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._bgRender = new UIRenderComponent;
+            this.addRender(this._bgRender);
+            this._bottomRender = new UIRenderComponent;
+            this.addRender(this._bottomRender);
+            this._publicbgRender = new UIRenderComponent;
+            this.addRender(this._publicbgRender);
+            this._midRender = new UIRenderComponent;
+            this.addRender(this._midRender);
+            this._bgRender.uiAtlas = new UIAtlas();
+            this._frameFun = function (t) { _this.upTime(t); };
         }
         waitjoinPanel.prototype.dispose = function () {
             this._midRender.dispose();
@@ -116,7 +111,7 @@ var copytask;
             }
         };
         return waitjoinPanel;
-    }(UIPanel));
+    })(UIPanel);
     copytask.waitjoinPanel = waitjoinPanel;
 })(copytask || (copytask = {}));
 //# sourceMappingURL=waitjoinPanel.js.map

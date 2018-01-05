@@ -1,9 +1,8 @@
 var materialui;
 (function (materialui) {
-    var MaterialCompile = /** @class */ (function () {
+    var MaterialCompile = (function () {
         function MaterialCompile() {
             this.maxPriority = 0;
-            this._compileGlslServer = new materialui.CompileTwo;
         }
         MaterialCompile.getInstance = function () {
             if (!this._instance) {
@@ -12,6 +11,7 @@ var materialui;
             return this._instance;
         };
         MaterialCompile.prototype.compile = function ($list, $materialGLSLTree) {
+            this._compileGlslServer = new materialui.CompileTwo;
             this.nodeList = $list;
             this.resetCompile($list);
             this.resetPriority();
@@ -82,7 +82,7 @@ var materialui;
             }
         };
         return MaterialCompile;
-    }());
+    })();
     materialui.MaterialCompile = MaterialCompile;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialCompile.js.map

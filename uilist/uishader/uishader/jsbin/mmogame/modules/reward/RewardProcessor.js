@@ -1,28 +1,23 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var reward;
 (function (reward) {
-    var RewardEvent = /** @class */ (function (_super) {
+    var RewardEvent = (function (_super) {
         __extends(RewardEvent, _super);
         function RewardEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         RewardEvent.SHOW_FUBEN_EVENT = "SHOW_FUBEN_EVENT"; //显示面板
         return RewardEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     reward.RewardEvent = RewardEvent;
-    var RewardModule = /** @class */ (function (_super) {
+    var RewardModule = (function (_super) {
         __extends(RewardModule, _super);
         function RewardModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         RewardModule.prototype.getModuleName = function () {
             return "RewardModule";
@@ -31,12 +26,12 @@ var reward;
             return [new RewardProcessor()];
         };
         return RewardModule;
-    }(Module));
+    })(Module);
     reward.RewardModule = RewardModule;
-    var RewardProcessor = /** @class */ (function (_super) {
+    var RewardProcessor = (function (_super) {
         __extends(RewardProcessor, _super);
         function RewardProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         RewardProcessor.prototype.getName = function () {
             return "RewardProcessor";
@@ -103,7 +98,7 @@ var reward;
             ];
         };
         return RewardProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     reward.RewardProcessor = RewardProcessor;
 })(reward || (reward = {}));
 //# sourceMappingURL=RewardProcessor.js.map

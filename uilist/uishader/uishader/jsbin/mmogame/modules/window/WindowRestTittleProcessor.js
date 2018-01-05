@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var wintittle;
 (function (wintittle) {
-    var WindowRestTittleModule = /** @class */ (function (_super) {
+    var WindowRestTittleModule = (function (_super) {
         __extends(WindowRestTittleModule, _super);
         function WindowRestTittleModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         WindowRestTittleModule.prototype.getModuleName = function () {
             return "WindowRestTittleModule";
@@ -22,24 +17,24 @@ var wintittle;
             return [new WindowRestTittleProcessor()];
         };
         return WindowRestTittleModule;
-    }(Module));
+    })(Module);
     wintittle.WindowRestTittleModule = WindowRestTittleModule;
-    var WindowRestTittleEvent = /** @class */ (function (_super) {
+    var WindowRestTittleEvent = (function (_super) {
         __extends(WindowRestTittleEvent, _super);
         function WindowRestTittleEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         WindowRestTittleEvent.SHOW_WINDOW_RES_TITTLE_PANEL = "SHOW_WINDOW_RES_TITTLE_PANEL";
         WindowRestTittleEvent.HIDE_WINDOW_RES_TITTLE_PANEL = "HIDE_WINDOW_RES_TITTLE_PANEL";
         WindowRestTittleEvent.SHOW_WINDOW_RES_PANEL = "SHOW_WINDOW_RES_PANEL";
         WindowRestTittleEvent.HIDE_WINDOW_RES_PANEL = "HIDE_WINDOW_RES_PANEL";
         return WindowRestTittleEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     wintittle.WindowRestTittleEvent = WindowRestTittleEvent;
-    var WindowRestTittleProcessor = /** @class */ (function (_super) {
+    var WindowRestTittleProcessor = (function (_super) {
         __extends(WindowRestTittleProcessor, _super);
         function WindowRestTittleProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         WindowRestTittleProcessor.prototype.getName = function () {
             return "WindowRestTittleProcessor";
@@ -57,9 +52,6 @@ var wintittle;
                             this.hidePanel();
                         }
                     }
-                    // if (evt.type == WindowRestTittleEvent.REFRISH_RES_DATA) {
-                    //     this.donationPanel.refresh()
-                    // }
                 }
                 if (evt.type == WindowRestTittleEvent.SHOW_WINDOW_RES_PANEL) {
                     this.showResPanel(evt.data);
@@ -114,7 +106,7 @@ var wintittle;
             ];
         };
         return WindowRestTittleProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     wintittle.WindowRestTittleProcessor = WindowRestTittleProcessor;
 })(wintittle || (wintittle = {}));
 //# sourceMappingURL=WindowRestTittleProcessor.js.map

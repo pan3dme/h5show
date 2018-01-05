@@ -1,36 +1,30 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var newbieguide;
 (function (newbieguide) {
-    var UseItemVo = /** @class */ (function () {
+    var UseItemVo = (function () {
         function UseItemVo() {
         }
         return UseItemVo;
-    }());
+    })();
     newbieguide.UseItemVo = UseItemVo;
-    var UseItemPanel = /** @class */ (function (_super) {
+    var UseItemPanel = (function (_super) {
         __extends(UseItemPanel, _super);
         function UseItemPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._bottomRender = new UIRenderComponent;
-            _this.addRender(_this._bottomRender);
-            _this._baseRender = new AlphaUIRenderComponent;
-            _this.addRender(_this._baseRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            return _this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._bottomRender = new UIRenderComponent;
+            this.addRender(this._bottomRender);
+            this._baseRender = new AlphaUIRenderComponent;
+            this.addRender(this._baseRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
         }
         UseItemPanel.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -72,14 +66,6 @@ var newbieguide;
                     var $vo = tb.TB_item_template.get_TB_item_template(this._curvo.itemId);
                     if ($vo.type == SharedDef.ITEM_TYPE_EQUIP && $vo.Auto == 1) {
                         NetManager.getInstance().protocolos.bag_exchange_pos(SharedDef.BAG_TYPE_EQUIP_BAG, this._curvo.equPos, SharedDef.BAG_TYPE_EQUIP, Number($vo.pos));
-                        // } else {
-                        //保留，以防日后自动开宝箱
-                        //     var $dagItemData: BagItemData = GuidData.bag.getItemByEntryCopy($vo.id)
-                        //     if ($dagItemData) {
-                        //         NetManager.getInstance().protocolos.bag_item_user($dagItemData.guid, this._num);
-                        //     } else {
-                        //         alert("背包里没有物品")
-                        //     }
                     }
                     this.nextprompt();
                 }
@@ -203,12 +189,6 @@ var newbieguide;
                         else {
                             alert("背包里没有物品");
                         }
-                        //     console.log("背包的物品")
-                        // }
-                        // if ($vo.out_bag == 1) {  //不在背包
-                        //     NetManager.getInstance().protocolos.use_virtual_item($vo.id);
-                        //     console.log("不在背包")
-                        // }
                     }
                     this.nextprompt();
                     break;
@@ -217,7 +197,7 @@ var newbieguide;
             }
         };
         return UseItemPanel;
-    }(UIPanel));
+    })(UIPanel);
     newbieguide.UseItemPanel = UseItemPanel;
 })(newbieguide || (newbieguide = {}));
 //# sourceMappingURL=UseItemPanel.js.map

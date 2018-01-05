@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var stateup;
 (function (stateup) {
-    var stateupUIRenderComponent = /** @class */ (function (_super) {
+    var stateupUIRenderComponent = (function (_super) {
         __extends(stateupUIRenderComponent, _super);
         function stateupUIRenderComponent() {
-            return _super.call(this) || this;
+            _super.call(this);
         }
         stateupUIRenderComponent.prototype.creatBaseComponent = function ($skinName) {
             var ui = new StateUpUIcompenent();
@@ -26,12 +21,12 @@ var stateup;
             return ui;
         };
         return stateupUIRenderComponent;
-    }(UIRenderComponent));
+    })(UIRenderComponent);
     stateup.stateupUIRenderComponent = stateupUIRenderComponent;
-    var StateUpUIcompenent = /** @class */ (function (_super) {
+    var StateUpUIcompenent = (function (_super) {
         __extends(StateUpUIcompenent, _super);
         function StateUpUIcompenent() {
-            return _super.call(this) || this;
+            _super.call(this);
         }
         StateUpUIcompenent.prototype.applyRenderSize = function () {
             if (!this.parent) {
@@ -68,30 +63,29 @@ var stateup;
             // 
         };
         return StateUpUIcompenent;
-    }(UICompenent));
+    })(UICompenent);
     stateup.StateUpUIcompenent = StateUpUIcompenent;
-    var StateUpUiPanel = /** @class */ (function (_super) {
+    var StateUpUiPanel = (function (_super) {
         __extends(StateUpUiPanel, _super);
         function StateUpUiPanel() {
-            var _this = _super.call(this) || this;
-            _this._maxlevflag = false;
-            _this._isopen = false;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._bgRender = new UIRenderComponent;
-            _this.addRender(_this._bgRender);
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            _this._testRender = new stateupUIRenderComponent;
-            _this.addRender(_this._testRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
+            _super.call(this);
+            this._maxlevflag = false;
+            this._isopen = false;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._bgRender = new UIRenderComponent;
+            this.addRender(this._bgRender);
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
+            this._testRender = new stateupUIRenderComponent;
+            this.addRender(this._testRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
             // this._redPointRender = new RedPointRender;
             // this.addRender(this._redPointRender);
-            _this._bgRender.uiAtlas = new UIAtlas;
-            return _this;
+            this._bgRender.uiAtlas = new UIAtlas;
         }
         // private _redPointRender: RedPointRender;
         StateUpUiPanel.prototype.dispose = function () {
@@ -331,15 +325,15 @@ var stateup;
             }
         };
         return StateUpUiPanel;
-    }(WindowUi));
+    })(WindowUi);
     stateup.StateUpUiPanel = StateUpUiPanel;
     /**
      * RightList
      */
-    var AchievementList = /** @class */ (function (_super) {
+    var AchievementList = (function (_super) {
         __extends(AchievementList, _super);
         function AchievementList() {
-            return _super.call(this) || this;
+            _super.call(this);
         }
         AchievementList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -374,12 +368,12 @@ var stateup;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return AchievementList;
-    }(SList));
+    })(SList);
     stateup.AchievementList = AchievementList;
-    var AchievementRender = /** @class */ (function (_super) {
+    var AchievementRender = (function (_super) {
         __extends(AchievementRender, _super);
         function AchievementRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -508,7 +502,7 @@ var stateup;
             UiDraw.clearUI(this.As_btn);
         };
         return AchievementRender;
-    }(SListItem));
+    })(SListItem);
     stateup.AchievementRender = AchievementRender;
 })(stateup || (stateup = {}));
 //# sourceMappingURL=StateUpUiPanel.js.map

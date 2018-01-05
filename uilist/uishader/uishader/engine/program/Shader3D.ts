@@ -24,9 +24,12 @@ class Shader3D extends ResCount implements IShader {
 
         var $context: WebGLRenderingContext = Scene_data.context3D.renderContext;
 
-        this.program = $context.createProgram();
-        this.vShader = $context.createShader($context.VERTEX_SHADER);
-        this.fShader = $context.createShader($context.FRAGMENT_SHADER);
+     
+            this.program = $context.createProgram();
+            this.vShader = $context.createShader($context.VERTEX_SHADER);
+            this.fShader = $context.createShader($context.FRAGMENT_SHADER);
+    
+
 
         $context.shaderSource(this.vShader, this.vertex);
         $context.shaderSource(this.fShader, this.fragment);

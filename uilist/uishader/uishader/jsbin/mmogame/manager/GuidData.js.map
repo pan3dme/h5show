@@ -1,1 +1,1 @@
-{"version":3,"file":"GuidData.js","sourceRoot":"","sources":["../../../mmogame/manager/GuidData.ts"],"names":[],"mappings":"AAAA;IAAA;IAYA,CAAC;IAAD,eAAC;AAAD,CAAC,AAZD,IAYC"}
+{"version":3,"file":"GuidData.js","sourceRoot":"","sources":["../../../mmogame/manager/GuidData.ts"],"names":["GuidData","GuidData.constructor"],"mappings":"AAAA;IAAAA;IAYAC,CAACA;IAADD,eAACA;AAADA,CAACA,AAZD,IAYC"}

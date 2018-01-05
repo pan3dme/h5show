@@ -1,45 +1,39 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var materialui;
 (function (materialui) {
-    var ResultNodeUI = /** @class */ (function (_super) {
+    var ResultNodeUI = (function (_super) {
         __extends(ResultNodeUI, _super);
         function ResultNodeUI() {
-            var _this = _super.call(this) || this;
-            _this._blenderMode = 0;
-            _this._killNum = 0;
-            _this._backCull = true;
-            _this._writeZbuffer = true;
-            _this._useDynamicIBL = false;
-            _this._normalScale = 0;
-            _this._lightProbe = false;
-            _this._directLight = false;
-            _this._noLight = false;
-            _this._fogMode = 0;
-            _this._scaleLightMap = false;
-            _this._hdr = false;
-            _this.name = "ResultNodeUI" + random(9999999);
-            _this.left = 900;
-            _this.top = 300;
-            _this.gap = 30;
-            _this.width = 162;
-            _this.height = 310;
-            _this.nodeTree = new materialui.NodeTreeOP;
-            _this.nodeTree.ui = _this;
-            _this.nodeTree.type = materialui.NodeTree.OP;
-            _this.initItem();
-            var $a_resultNodeUItxt = _this.addChild(_this._midRender.getComponent("a_resultNodeUItxt"));
+            _super.call(this);
+            this._blenderMode = 0;
+            this._killNum = 0;
+            this._backCull = true;
+            this._writeZbuffer = true;
+            this._useDynamicIBL = false;
+            this._normalScale = 0;
+            this._lightProbe = false;
+            this._directLight = false;
+            this._noLight = false;
+            this._fogMode = 0;
+            this._scaleLightMap = false;
+            this._hdr = false;
+            this.name = "ResultNodeUI" + random(9999999);
+            this.left = 900;
+            this.top = 300;
+            this.gap = 30;
+            this.width = 162;
+            this.height = 310;
+            this.nodeTree = new materialui.NodeTreeOP;
+            this.nodeTree.ui = this;
+            this.nodeTree.type = materialui.NodeTree.OP;
+            this.initItem();
+            var $a_resultNodeUItxt = this.addChild(this._midRender.getComponent("a_resultNodeUItxt"));
             $a_resultNodeUItxt.x = 30;
-            _this.resetBgSize();
-            return _this;
+            this.resetBgSize();
         }
         ResultNodeUI.prototype.initItem = function () {
             this.diffuseItem = new materialui.ItemMaterialUI("漫反射(Diffuse)", materialui.MaterialItemType.VEC3);
@@ -214,7 +208,7 @@ var materialui;
             this.nodeTree.hdr = this._hdr;
         };
         return ResultNodeUI;
-    }(materialui.BaseMaterialNodeUI));
+    })(materialui.BaseMaterialNodeUI);
     materialui.ResultNodeUI = ResultNodeUI;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=ResultNodeUI.js.map

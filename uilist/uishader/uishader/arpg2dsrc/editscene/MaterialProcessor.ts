@@ -156,7 +156,7 @@
         }
         private baseMaterialTree: MaterialTree
         private readMaterialTree(): void {
-            var $url: string = "pan/marmoset/uilist/baseTexturedata4.txt";
+            var $url: string = "pan/marmoset/uilist/baseTexturedata5.txt";
             MaterialTreeManager.getInstance().getMaterial($url, ($materialTree: MaterialTree) => {
                 this.baseMaterialTree = $materialTree
                 MaterialViewBuildUtils.getInstance().addFun = (ui: BaseMaterialNodeUI) => { MaterialCtrl.getInstance().addNodeUI(ui)};

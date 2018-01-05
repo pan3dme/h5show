@@ -1,4 +1,4 @@
-var DynamicBaseTexItem = /** @class */ (function () {
+var DynamicBaseTexItem = (function () {
     function DynamicBaseTexItem() {
     }
     DynamicBaseTexItem.prototype.destory = function () {
@@ -18,5 +18,5 @@ var DynamicBaseTexItem = /** @class */ (function () {
         configurable: true
     });
     return DynamicBaseTexItem;
-}());
+})();
 //# sourceMappingURL=DynamicBaseTexItem.js.map

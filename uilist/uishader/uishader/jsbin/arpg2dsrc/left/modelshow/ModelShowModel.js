@@ -1,6 +1,6 @@
 var left;
 (function (left) {
-    var ModelShowModel = /** @class */ (function () {
+    var ModelShowModel = (function () {
         function ModelShowModel() {
         }
         ModelShowModel.getInstance = function () {
@@ -30,9 +30,12 @@ var left;
         };
         ModelShowModel.prototype.outShaderStr = function ($str) {
             var $material = this.lightSpriteList.material;
-            this.lightSpriteList.material.shader.fragment = this.lightSpriteList.material.shader.fragment.replace("gl_FragColor = ft2", "gl_FragColor =vec4(1.0,1.0,0.0,1.0)");
+            console.log($str);
+            console.log("--------------");
+            console.log($material.shader.fragment);
+            $material.shader.fragment = $str;
             this.lightSpriteList.material.shader.encode();
-            Scene_data.context3D._contextSetTest.clear();
+            $material.program = $material.shader.program;
         };
         ModelShowModel.prototype.getMaterialProgram = function (key, shaderCls, $material, paramAry, parmaByFragmet) {
             if (paramAry === void 0) { paramAry = null; }
@@ -62,7 +65,7 @@ var left;
             return shader;
         };
         return ModelShowModel;
-    }());
+    })();
     left.ModelShowModel = ModelShowModel;
 })(left || (left = {}));
 //# sourceMappingURL=ModelShowModel.js.map

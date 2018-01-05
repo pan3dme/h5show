@@ -1,16 +1,11 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var map;
 (function (map) {
-    var MapClikVo = /** @class */ (function () {
+    var MapClikVo = (function () {
         function MapClikVo() {
         }
         MapClikVo.prototype.draw = function ($uiAtlas) {
@@ -26,9 +21,9 @@ var map;
             });
         };
         return MapClikVo;
-    }());
+    })();
     map.MapClikVo = MapClikVo;
-    var NpcNameAndIcon = /** @class */ (function () {
+    var NpcNameAndIcon = (function () {
         function NpcNameAndIcon() {
         }
         NpcNameAndIcon.prototype.draw = function ($vo, $uiAtlas) {
@@ -43,19 +38,18 @@ var map;
             this.txtUI.drawToCtx($uiAtlas, $ctx);
         };
         return NpcNameAndIcon;
-    }());
+    })();
     map.NpcNameAndIcon = NpcNameAndIcon;
-    var MapCetentPanel = /** @class */ (function (_super) {
+    var MapCetentPanel = (function (_super) {
         __extends(MapCetentPanel, _super);
         function MapCetentPanel() {
-            var _this = _super.call(this) || this;
-            _this.severList = new Array;
-            _this.npcSpriteList = new Array;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            return _this;
+            _super.call(this);
+            this.severList = new Array;
+            this.npcSpriteList = new Array;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
         }
         MapCetentPanel.prototype.setRender = function ($bottom, $mid, $top, $point) {
             this._bottomRender = $bottom;
@@ -314,7 +308,7 @@ var map;
             LabelTextFont.writeSingleLabel(this._pointRender.uiAtlas, this.a_map_name.skinName, "[ff0000]" + vo.name, 18);
         };
         return MapCetentPanel;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     map.MapCetentPanel = MapCetentPanel;
 })(map || (map = {}));
 //# sourceMappingURL=MapCetentPanel.js.map

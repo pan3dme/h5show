@@ -19,8 +19,9 @@
         private fragmentConstList: Array<RegisterItem>;
 
 
-        private _compileGlslServer: CompileTwo = new CompileTwo;
+        private _compileGlslServer: CompileTwo 
         public compile($list: Array<NodeTree>, $materialGLSLTree: MaterialTree): void {
+            this._compileGlslServer=new CompileTwo
            this. nodeList = $list;
             this.resetCompile($list);
             this. resetPriority();

@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var RegisterItem = /** @class */ (function () {
+    var RegisterItem = (function () {
         function RegisterItem($id) {
             this.id = $id;
         }
@@ -68,7 +68,7 @@ var materialui;
             return false;
         };
         return RegisterItem;
-    }());
+    })();
     materialui.RegisterItem = RegisterItem;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=RegisterItem.js.map

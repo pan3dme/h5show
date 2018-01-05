@@ -1,41 +1,35 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var selectserver;
 (function (selectserver) {
-    var Ssgonggao = /** @class */ (function (_super) {
+    var Ssgonggao = (function (_super) {
         __extends(Ssgonggao, _super);
         function Ssgonggao() {
-            var _this = _super.call(this) || this;
-            _this._mouseY = 0;
-            _this.curY = 0;
-            _this.scrollLock = true;
-            _this._txtHight = 0;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
+            _super.call(this);
+            this._mouseY = 0;
+            this.curY = 0;
+            this.scrollLock = true;
+            this._txtHight = 0;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
             // this._bottomRender = new UIRenderComponent;
             // this.addRender(this._bottomRender)
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            _this._bgMask = new UIMask();
-            _this._bgMask.x = 146;
-            _this._bgMask.y = 110;
-            _this._bgMask.width = 695;
-            _this._bgMask.height = 355;
-            _this.addMask(_this._bgMask);
-            _this._topRender.mask = _this._bgMask;
-            return _this;
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
+            this._bgMask = new UIMask();
+            this._bgMask.x = 146;
+            this._bgMask.y = 110;
+            this._bgMask.width = 695;
+            this._bgMask.height = 355;
+            this.addMask(this._bgMask);
+            this._topRender.mask = this._bgMask;
         }
         Ssgonggao.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -120,7 +114,7 @@ var selectserver;
             this.resize();
         };
         return Ssgonggao;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     selectserver.Ssgonggao = Ssgonggao;
 })(selectserver || (selectserver = {}));
 //# sourceMappingURL=Ssgonggao.js.map

@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var moneytree;
 (function (moneytree) {
-    var MoneyTreeModule = /** @class */ (function (_super) {
+    var MoneyTreeModule = (function (_super) {
         __extends(MoneyTreeModule, _super);
         function MoneyTreeModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MoneyTreeModule.prototype.getModuleName = function () {
             return "MoneyTreeModule";
@@ -23,12 +18,12 @@ var moneytree;
             return [new MoneyTreeProcessor()];
         };
         return MoneyTreeModule;
-    }(Module));
+    })(Module);
     moneytree.MoneyTreeModule = MoneyTreeModule;
-    var MoneyTreeEvent = /** @class */ (function (_super) {
+    var MoneyTreeEvent = (function (_super) {
         __extends(MoneyTreeEvent, _super);
         function MoneyTreeEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MoneyTreeEvent.HIDE_MoneyTree_EVENT = "HIDE_MoneyTree_EVENT";
         MoneyTreeEvent.SHOW_MoneyTree_EVENT = "SHOW_MoneyTree_EVENT";
@@ -36,12 +31,12 @@ var moneytree;
         MoneyTreeEvent.SHOW_EFF_MoneyTree_EVENT = "SHOW_EFF_MoneyTree_EVENT";
         MoneyTreeEvent.EFF_EVENT = "EFF_EVENT";
         return MoneyTreeEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     moneytree.MoneyTreeEvent = MoneyTreeEvent;
-    var MoneyTreeProcessor = /** @class */ (function (_super) {
+    var MoneyTreeProcessor = (function (_super) {
         __extends(MoneyTreeProcessor, _super);
         function MoneyTreeProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MoneyTreeProcessor.prototype.getName = function () {
             return "MoneyTreeProcessor";
@@ -119,7 +114,7 @@ var moneytree;
             ];
         };
         return MoneyTreeProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     moneytree.MoneyTreeProcessor = MoneyTreeProcessor;
 })(moneytree || (moneytree = {}));
 //# sourceMappingURL=MoneyTreeProcessor.js.map

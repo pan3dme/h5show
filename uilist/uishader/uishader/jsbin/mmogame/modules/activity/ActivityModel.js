@@ -1,14 +1,14 @@
 var activity;
 (function (activity) {
     //活动类型
-    var ActivityType = /** @class */ (function () {
+    var ActivityType = (function () {
         function ActivityType() {
         }
         ActivityType.ALL = 0;
         return ActivityType;
-    }());
+    })();
     activity.ActivityType = ActivityType;
-    var ActivityModel = /** @class */ (function () {
+    var ActivityModel = (function () {
         function ActivityModel() {
             this.getBaseList();
         }
@@ -163,9 +163,9 @@ var activity;
             return aryproceed.concat(aryallday, arydontstart, arydontactivate, arycomplete, arydontcomplete);
         };
         return ActivityModel;
-    }());
+    })();
     activity.ActivityModel = ActivityModel;
-    var ActivityItemVo = /** @class */ (function () {
+    var ActivityItemVo = (function () {
         function ActivityItemVo() {
             this.isallday = false; //是否为全天活动
             this.canreceive = false; //是否可领取奖励
@@ -338,7 +338,7 @@ var activity;
             return total;
         };
         return ActivityItemVo;
-    }());
+    })();
     activity.ActivityItemVo = ActivityItemVo;
 })(activity || (activity = {}));
 //# sourceMappingURL=ActivityModel.js.map

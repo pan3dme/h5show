@@ -1,16 +1,11 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var divinesword;
 (function (divinesword) {
-    var TaskCell = /** @class */ (function () {
+    var TaskCell = (function () {
         function TaskCell() {
         }
         TaskCell.prototype.setVo = function ($vo, $indx) {
@@ -118,23 +113,22 @@ var divinesword;
             this.parent.setUiListVisibleByItem(this.rewardary, false);
         };
         return TaskCell;
-    }());
+    })();
     divinesword.TaskCell = TaskCell;
-    var DivineswordTask = /** @class */ (function (_super) {
+    var DivineswordTask = (function (_super) {
         __extends(DivineswordTask, _super);
         function DivineswordTask() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._bgRender = new UIRenderComponent;
-            _this.addRender(_this._bgRender);
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            return _this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._bgRender = new UIRenderComponent;
+            this.addRender(this._bgRender);
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
             // this._redPointRender = new RedPointRender;
             // this.addRender(this._redPointRender);
         }
@@ -268,7 +262,7 @@ var divinesword;
             }
         };
         return DivineswordTask;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     divinesword.DivineswordTask = DivineswordTask;
 })(divinesword || (divinesword = {}));
 //# sourceMappingURL=DivineswordTask.js.map

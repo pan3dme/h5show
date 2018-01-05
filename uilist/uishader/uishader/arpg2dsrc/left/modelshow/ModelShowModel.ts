@@ -36,13 +36,22 @@
         }
         public outShaderStr($str: string): void {
             var $material: Material = this.lightSpriteList.material
-    
- 
-            this.lightSpriteList.material.shader.fragment=  this.lightSpriteList.material.shader.fragment.replace("gl_FragColor = ft2","gl_FragColor =vec4(1.0,1.0,0.0,1.0)")
+
+            console.log($str)
+            console.log("--------------")
+            console.log($material.shader.fragment)
+
+
+            $material.shader.fragment = $str
 
             this.lightSpriteList.material.shader.encode();
-            Scene_data.context3D._contextSetTest.clear()
+
+
+            $material.program = $material.shader.program;
+   
   
+        
+
         }
       
 

@@ -1,29 +1,23 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var WindowResPanel = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var WindowResPanel = (function (_super) {
     __extends(WindowResPanel, _super);
     function WindowResPanel() {
-        var _this = _super.call(this) || this;
-        _this.width = UIData.designWidth;
-        _this.height = UIData.designHeight;
-        _this.middle = 0;
-        _this.center = 0;
-        _this._basebgRender = new UIRenderComponent;
-        _this.addRender(_this._basebgRender);
-        _this._bgRender = new UIRenderComponent;
-        _this.addRender(_this._bgRender);
-        _this._baseRender = new UIRenderComponent;
-        _this.addRender(_this._baseRender);
-        _this.layer = 310;
-        return _this;
+        _super.call(this);
+        this.width = UIData.designWidth;
+        this.height = UIData.designHeight;
+        this.middle = 0;
+        this.center = 0;
+        this._basebgRender = new UIRenderComponent;
+        this.addRender(this._basebgRender);
+        this._bgRender = new UIRenderComponent;
+        this.addRender(this._bgRender);
+        this._baseRender = new UIRenderComponent;
+        this.addRender(this._baseRender);
+        this.layer = 310;
     }
     WindowResPanel.prototype.applyLoad = function () {
         var _this = this;
@@ -80,16 +74,15 @@ var WindowResPanel = /** @class */ (function (_super) {
         }
     };
     return WindowResPanel;
-}(UIPanel));
-var WindowResSList = /** @class */ (function (_super) {
+})(UIPanel);
+var WindowResSList = (function (_super) {
     __extends(WindowResSList, _super);
     function WindowResSList() {
-        var _this = _super.call(this) || this;
+        _super.call(this);
         // this.left = 315;
         // this.top = 255;
         // this.setShowLevel(8);
-        _this.layer = 320;
-        return _this;
+        this.layer = 320;
     }
     WindowResSList.prototype.init = function ($uiAtlas) {
         this.baseAtlas = $uiAtlas;
@@ -124,11 +117,11 @@ var WindowResSList = /** @class */ (function (_super) {
         UIManager.getInstance().removeUIContainer(this);
     };
     return WindowResSList;
-}(SList));
-var WindowResSListRender = /** @class */ (function (_super) {
+})(SList);
+var WindowResSListRender = (function (_super) {
     __extends(WindowResSListRender, _super);
     function WindowResSListRender() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     WindowResSListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
         if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -174,5 +167,5 @@ var WindowResSListRender = /** @class */ (function (_super) {
         UiDraw.clearUI(this.Resinfo);
     };
     return WindowResSListRender;
-}(SListItem));
+})(SListItem);
 //# sourceMappingURL=WindowResPanel.js.map

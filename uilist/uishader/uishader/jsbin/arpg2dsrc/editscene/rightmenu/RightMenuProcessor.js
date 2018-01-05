@@ -1,29 +1,24 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var materialui;
 (function (materialui) {
-    var RightMenuEvent = /** @class */ (function (_super) {
+    var RightMenuEvent = (function (_super) {
         __extends(RightMenuEvent, _super);
         function RightMenuEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         RightMenuEvent.SHOW_RIGHT_MENU = "SHOW_RIGHT_MENU"; //显示面板
         RightMenuEvent.HIDE_RIGHT_MENU = "HIDE_RIGHT_MENU"; //显示面板
         return RightMenuEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     materialui.RightMenuEvent = RightMenuEvent;
-    var RightMenuModule = /** @class */ (function (_super) {
+    var RightMenuModule = (function (_super) {
         __extends(RightMenuModule, _super);
         function RightMenuModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         RightMenuModule.prototype.getModuleName = function () {
             return "RightMenuModule";
@@ -32,12 +27,12 @@ var materialui;
             return [new RightMenuProcessor()];
         };
         return RightMenuModule;
-    }(Module));
+    })(Module);
     materialui.RightMenuModule = RightMenuModule;
-    var RightMenuProcessor = /** @class */ (function (_super) {
+    var RightMenuProcessor = (function (_super) {
         __extends(RightMenuProcessor, _super);
         function RightMenuProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         RightMenuProcessor.prototype.getName = function () {
             return "RightMenuProcessor";
@@ -76,7 +71,7 @@ var materialui;
             ];
         };
         return RightMenuProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     materialui.RightMenuProcessor = RightMenuProcessor;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=RightMenuProcessor.js.map

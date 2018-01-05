@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var topui;
 (function (topui) {
-    var TopUiModule = /** @class */ (function (_super) {
+    var TopUiModule = (function (_super) {
         __extends(TopUiModule, _super);
         function TopUiModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         TopUiModule.prototype.getModuleName = function () {
             return "TopUiModule";
@@ -22,12 +17,12 @@ var topui;
             return [new TopUiProcessor()];
         };
         return TopUiModule;
-    }(Module));
+    })(Module);
     topui.TopUiModule = TopUiModule;
-    var TopUiEvent = /** @class */ (function (_super) {
+    var TopUiEvent = (function (_super) {
         __extends(TopUiEvent, _super);
         function TopUiEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         TopUiEvent.SHOW_TOP_UI_PANEL = "SHOW_TOP_UI_PANEL";
         TopUiEvent.HIDE_TOP_UI_PANEL = "HIDE_TOP_UI_PANEL";
@@ -38,12 +33,12 @@ var topui;
         TopUiEvent.UNIT_FIELD_NOTORIETY = "UNIT_FIELD_NOTORIETY"; // 战斗模式换
         TopUiEvent.SHOW_TOP_PANDA_LIST = "SHOW_TOP_PANDA_LIST";
         return TopUiEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     topui.TopUiEvent = TopUiEvent;
-    var TopUiProcessor = /** @class */ (function (_super) {
+    var TopUiProcessor = (function (_super) {
         __extends(TopUiProcessor, _super);
         function TopUiProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         TopUiProcessor.prototype.getName = function () {
             return "TopUiProcessor";
@@ -130,7 +125,7 @@ var topui;
             ];
         };
         return TopUiProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     topui.TopUiProcessor = TopUiProcessor;
 })(topui || (topui = {}));
 //# sourceMappingURL=TopUiProcessor.js.map

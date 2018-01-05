@@ -1,22 +1,17 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var charbg;
 (function (charbg) {
-    var CharBgPanel = /** @class */ (function (_super) {
+    var CharBgPanel = (function (_super) {
         __extends(CharBgPanel, _super);
         function CharBgPanel() {
-            var _this = _super.call(this) || this;
-            _this._lastMouseX = 0;
-            _this._lastRoleRotatioinY = 0;
-            _this.uiAtlasComplet = false;
+            _super.call(this);
+            this._lastMouseX = 0;
+            this._lastRoleRotatioinY = 0;
+            this.uiAtlasComplet = false;
             // public refreshShenBing(): void {
             //     var divID: number = GuidData.player.getDivineID();
             //     if (divID) {
@@ -71,23 +66,22 @@ var charbg;
             //             this._baseUiAtlas.updateCtx(ctx, rec.pixelX, rec.pixelY);
             //         });
             // }
-            _this.partNameAry = ["武器", "衣服", "护手", "腰带", "鞋子", "头饰", "项链", "手镯", "戒指", "腰坠"];
-            _this._defaultIdx = 1; //1表示默认 0 表示显示熔炼
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._bgRender = new UIRenderComponent();
-            _this.addRender(_this._bgRender);
-            _this._baseRender = new UIRenderComponent();
-            _this.addRender(_this._baseRender);
-            _this._redPointRender = new RedPointRender();
-            _this.addRender(_this._redPointRender);
-            _this._baseUiAtlas = new UIAtlas();
-            _this._bagPanel = new charbg.BagPanel();
-            _this._smeltPanel = new charbg.SmeltEquPanel();
-            _this.addPersonChar();
-            return _this;
+            this.partNameAry = ["武器", "衣服", "护手", "腰带", "鞋子", "头饰", "项链", "手镯", "戒指", "腰坠"];
+            this._defaultIdx = 1; //1表示默认 0 表示显示熔炼
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._bgRender = new UIRenderComponent();
+            this.addRender(this._bgRender);
+            this._baseRender = new UIRenderComponent();
+            this.addRender(this._baseRender);
+            this._redPointRender = new RedPointRender();
+            this.addRender(this._redPointRender);
+            this._baseUiAtlas = new UIAtlas();
+            this._bagPanel = new charbg.BagPanel();
+            this._smeltPanel = new charbg.SmeltEquPanel();
+            this.addPersonChar();
         }
         CharBgPanel.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -383,82 +377,10 @@ var charbg;
             ModulePageManager.showResTittle([1, 2, 3]);
         };
         return CharBgPanel;
-    }(WindowUi));
+    })(WindowUi);
     charbg.CharBgPanel = CharBgPanel;
-    // export class CharBagRightPanel extends UIVirtualContainer {
-    //     private _bgRender: UIRenderComponent;
-    //     private _baseRender: UIRenderComponent;
-    //     private _clickFun: Function;
-    //     private _closeFun: Function;
-    //     public constructor() {
-    //         super();
-    //         this.width = 960;
-    //         this.height = 540;
-    //         this.center = 0;
-    //         this.middle = 0;
-    //     }
-    //     private a_menu_0: SelectButton;
-    //     private a_menu_1: SelectButton;
-    //     private a_menu_2: SelectButton;
-    //     private selcetTabId: number = 0;
-    //     public selectTabIndex(tabId: number): void {
-    //         if (tabId == 0) {
-    //             this.a_menu_0.selected = true;
-    //             this.a_menu_1.selected = false;
-    //             this.a_menu_2.selected = false;
-    //         } else if (tabId == 1) {
-    //             this.a_menu_0.selected = false;
-    //             this.a_menu_1.selected = true;
-    //             this.a_menu_2.selected = false;
-    //         } else if (tabId == 2) {
-    //             this.a_menu_0.selected = false;
-    //             this.a_menu_1.selected = false;
-    //             this.a_menu_2.selected = true;
-    //         }
-    //         this.selcetTabId = tabId;
-    //         this._clickFun(this.selcetTabId);
-    //     }
-    //     public setRender($bg: UIRenderComponent, $base: UIRenderComponent): void {
-    //         this._bgRender = $bg;
-    //         this._baseRender = $base;
-    //         this.a_menu_0 = <SelectButton>this._baseRender.getComponent("a_menu_0");
-    //         this.addChild(this.a_menu_0)
-    //         this.a_menu_0.addEventListener(InteractiveEvent.Down, this.butClik, this);
-    //         this.a_menu_1 = <SelectButton>this._baseRender.getComponent("a_menu_1");
-    //         this.addChild(this.a_menu_1)
-    //         this.a_menu_1.addEventListener(InteractiveEvent.Down, this.butClik, this);
-    //         this.a_menu_2 = <SelectButton>this._baseRender.getComponent("a_menu_2");
-    //         this.addChild(this.a_menu_2)
-    //         this.a_menu_2.addEventListener(InteractiveEvent.Down, this.butClik, this);
-    //         this.selectTabIndex(1);
-    //     }
-    //     public setClickeFun($fun: Function, $close: Function): void {
-    //         this._clickFun = $fun;
-    //         this._closeFun = $close;
-    //     }
-    //     protected butClik(evt: InteractiveEvent): void {
-    //         switch (evt.target.name) {
-    //             case "a_menu_0":
-    //                 this.selectTabIndex(0)
-    //                 break
-    //             case "a_menu_1":
-    //                 this.selectTabIndex(1)
-    //                 break
-    //             case "a_menu_2":
-    //                 this.selectTabIndex(2)
-    //                 break
-    //             case "a_char_bg":
-    //                 break
-    //             case "a_close_an":
-    //                 this._closeFun();
-    //                 break
-    //             default:
-    //                 break;
-    //         }
-    //     }
-    // }
 })(charbg || (charbg = {}));
-var ItemGoodQuality = /** @class */ (function () {
+var ItemGoodQuality = (function () {
     function ItemGoodQuality() {
     }
     ItemGoodQuality.getQuaStr = function ($qu) {
@@ -480,5 +402,5 @@ var ItemGoodQuality = /** @class */ (function () {
         }
     };
     return ItemGoodQuality;
-}());
+})();
 //# sourceMappingURL=CharBgPanel.js.map

@@ -1,12 +1,12 @@
 var gift;
 (function (gift) {
-    var GiftSendVo = /** @class */ (function () {
+    var GiftSendVo = (function () {
         function GiftSendVo() {
         }
         return GiftSendVo;
-    }());
+    })();
     gift.GiftSendVo = GiftSendVo;
-    var GiftModel = /** @class */ (function () {
+    var GiftModel = (function () {
         //初始技能数据
         function GiftModel() {
             this.dataResouce = new Array();
@@ -148,7 +148,7 @@ var gift;
             }
         };
         return GiftModel;
-    }());
+    })();
     gift.GiftModel = GiftModel;
 })(gift || (gift = {}));
 //# sourceMappingURL=GiftModel.js.map

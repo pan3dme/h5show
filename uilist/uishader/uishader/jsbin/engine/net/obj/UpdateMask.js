@@ -1,4 +1,4 @@
-var UpdateMask = /** @class */ (function () {
+var UpdateMask = (function () {
     function UpdateMask() {
         this._bytes = new ByteArray();
         this._bytes.endian = Endian.LITTLE_ENDIAN;
@@ -141,5 +141,5 @@ var UpdateMask = /** @class */ (function () {
         return o;
     };
     return UpdateMask;
-}());
+})();
 //# sourceMappingURL=UpdateMask.js.map

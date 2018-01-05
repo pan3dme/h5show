@@ -1,30 +1,24 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var welfare;
 (function (welfare) {
-    var WelfareLevel = /** @class */ (function (_super) {
+    var WelfareLevel = (function (_super) {
         __extends(WelfareLevel, _super);
         function WelfareLevel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
             // this._bottomRender = new UIRenderComponent;
             // this.addRender(this._bottomRender)
-            _this._bigPic = new UIRenderOnlyPicComponent();
-            _this.addRender(_this._bigPic);
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            return _this;
+            this._bigPic = new UIRenderOnlyPicComponent();
+            this.addRender(this._bigPic);
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
             // this._topRender = new UIRenderComponent;
             // this.addRender(this._topRender)
         }
@@ -91,18 +85,17 @@ var welfare;
             this.resize();
         };
         return WelfareLevel;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     welfare.WelfareLevel = WelfareLevel;
     /**
      * 升级奖励list
      */
-    var WelfareLevelList = /** @class */ (function (_super) {
+    var WelfareLevelList = (function (_super) {
         __extends(WelfareLevelList, _super);
         function WelfareLevelList() {
-            var _this = _super.call(this) || this;
-            _this.left = 222;
-            _this.top = 192;
-            return _this;
+            _super.call(this);
+            this.left = 222;
+            this.top = 192;
         }
         WelfareLevelList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -163,12 +156,12 @@ var welfare;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return WelfareLevelList;
-    }(SList));
+    })(SList);
     welfare.WelfareLevelList = WelfareLevelList;
-    var WelfareLevelListRender = /** @class */ (function (_super) {
+    var WelfareLevelListRender = (function (_super) {
         __extends(WelfareLevelListRender, _super);
         function WelfareLevelListRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -323,7 +316,7 @@ var welfare;
             UiDraw.clearUI(this.I2tembg);
         };
         return WelfareLevelListRender;
-    }(SListItem));
+    })(SListItem);
     welfare.WelfareLevelListRender = WelfareLevelListRender;
 })(welfare || (welfare = {}));
 //# sourceMappingURL=WelfareLevel.js.map

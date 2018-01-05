@@ -1,4 +1,4 @@
-var ModuleEventManager = /** @class */ (function () {
+var ModuleEventManager = (function () {
     function ModuleEventManager() {
     }
     ModuleEventManager.addEvents = function (ary, $fun, $thisObj) {
@@ -11,5 +11,5 @@ var ModuleEventManager = /** @class */ (function () {
     };
     ModuleEventManager._instance = new EventDispatcher();
     return ModuleEventManager;
-}());
+})();
 //# sourceMappingURL=ModuleEventManager.js.map
