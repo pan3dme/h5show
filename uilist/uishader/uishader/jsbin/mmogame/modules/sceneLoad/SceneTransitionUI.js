@@ -1,20 +1,26 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var SceneTransitionUI = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SceneTransitionUI = /** @class */ (function (_super) {
     __extends(SceneTransitionUI, _super);
     function SceneTransitionUI() {
-        _super.call(this);
-        this.width = 400;
-        this.height = 80;
-        this.center = 0;
-        this.bottom = 50;
-        this._baImg = new SceneTransitionImg();
-        this.addRender(this._baImg);
-        this._baImg.setImgInfo("ui/load/transition.jpg", 1024, 512);
-        this._baImg.sortnum = -1;
+        var _this = _super.call(this) || this;
+        _this.width = 400;
+        _this.height = 80;
+        _this.center = 0;
+        _this.bottom = 50;
+        _this._baImg = new SceneTransitionImg();
+        _this.addRender(_this._baImg);
+        _this._baImg.setImgInfo("ui/load/transition.jpg", 1024, 512);
+        _this._baImg.sortnum = -1;
+        return _this;
     }
     SceneTransitionUI.prototype.show = function () {
         UIManager.getInstance().addUIContainer(this);
@@ -29,15 +35,16 @@ var SceneTransitionUI = (function (_super) {
         this._baImg.resize();
     };
     return SceneTransitionUI;
-})(UIConatiner);
-var SceneTransitionImg = (function (_super) {
+}(UIConatiner));
+var SceneTransitionImg = /** @class */ (function (_super) {
     __extends(SceneTransitionImg, _super);
     function SceneTransitionImg() {
-        _super.call(this);
-        this._scaleData = [1, 1];
+        var _this = _super.call(this) || this;
+        _this._scaleData = [1, 1];
         //private _isFBO: boolean = false;
-        this.alpha = 1.0;
-        this.vOffset = 0;
+        _this.alpha = 1.0;
+        _this.vOffset = 0;
+        return _this;
     }
     SceneTransitionImg.prototype.initData = function () {
         this.objData = new ObjData();
@@ -90,11 +97,11 @@ var SceneTransitionImg = (function (_super) {
         return true;
     };
     return SceneTransitionImg;
-})(UIRenderComponent);
-var SceneTransitionShader = (function (_super) {
+}(UIRenderComponent));
+var SceneTransitionShader = /** @class */ (function (_super) {
     __extends(SceneTransitionShader, _super);
     function SceneTransitionShader() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     SceneTransitionShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "v3Pos");
@@ -131,5 +138,5 @@ var SceneTransitionShader = (function (_super) {
     };
     SceneTransitionShader.SCENE_TRANSITION_SHADER = "Scene_Transition_Shader";
     return SceneTransitionShader;
-})(Shader3D);
+}(Shader3D));
 //# sourceMappingURL=SceneTransitionUI.js.map

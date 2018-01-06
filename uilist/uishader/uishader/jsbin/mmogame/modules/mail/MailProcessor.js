@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var email;
 (function (email) {
-    var MailModule = (function (_super) {
+    var MailModule = /** @class */ (function (_super) {
         __extends(MailModule, _super);
         function MailModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MailModule.prototype.getModuleName = function () {
             return "MailModule";
@@ -17,22 +22,22 @@ var email;
             return [new MailProcessor()];
         };
         return MailModule;
-    })(Module);
+    }(Module));
     email.MailModule = MailModule;
-    var MailEvent = (function (_super) {
+    var MailEvent = /** @class */ (function (_super) {
         __extends(MailEvent, _super);
         function MailEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MailEvent.SHOW_MAIL_PANEL_EVENT = "SHOW_MAIL_PANEL_EVENT"; //显示翅膀面板
         MailEvent.MAIL_CHG_EVENT = "MAIL_CHG_EVENT"; //显示翅膀面板
         return MailEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     email.MailEvent = MailEvent;
-    var MailProcessor = (function (_super) {
+    var MailProcessor = /** @class */ (function (_super) {
         __extends(MailProcessor, _super);
         function MailProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MailProcessor.prototype.getName = function () {
             return "MailProcessor";
@@ -108,7 +113,7 @@ var email;
             ];
         };
         return MailProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     email.MailProcessor = MailProcessor;
 })(email || (email = {}));
 //# sourceMappingURL=MailProcessor.js.map

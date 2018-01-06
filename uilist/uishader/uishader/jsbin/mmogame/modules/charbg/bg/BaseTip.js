@@ -1,23 +1,29 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var BaseTip = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var BaseTip = /** @class */ (function (_super) {
     __extends(BaseTip, _super);
     function BaseTip() {
-        _super.call(this);
-        this._needBtn = true;
-        this.quaNameAry = ["凡品", "良品", "上品", "精品", "极品", "圣品"];
-        this.colorNameAry = ["白色", "绿色", "蓝色", "紫色", "橙色", "红色"];
-        this.quaColorAry = ["#ffffff", "#56da35", "#4392ff", "#b759ff", "#ff7200", "#ce0a00"];
-        this.dynamicPosList = new Array;
-        this._baseRender = new UIRenderComponent();
-        this._bgRender = new UIRenderComponent();
-        this._nextRender = new UIRenderComponent();
-        this.addRender(this._bgRender);
-        this.addRender(this._baseRender);
-        this.addRender(this._nextRender);
+        var _this = _super.call(this) || this;
+        _this._needBtn = true;
+        _this.quaNameAry = ["凡品", "良品", "上品", "精品", "极品", "圣品"];
+        _this.colorNameAry = ["白色", "绿色", "蓝色", "紫色", "橙色", "红色"];
+        _this.quaColorAry = ["#ffffff", "#56da35", "#4392ff", "#b759ff", "#ff7200", "#ce0a00"];
+        _this.dynamicPosList = new Array;
+        _this._baseRender = new UIRenderComponent();
+        _this._bgRender = new UIRenderComponent();
+        _this._nextRender = new UIRenderComponent();
+        _this.addRender(_this._bgRender);
+        _this.addRender(_this._baseRender);
+        _this.addRender(_this._nextRender);
+        return _this;
     }
     BaseTip.prototype.setUIAtlas = function ($us) {
         this._uiAtlas = $us;
@@ -199,5 +205,5 @@ var BaseTip = (function (_super) {
         this.hide();
     };
     return BaseTip;
-})(UIConatiner);
+}(UIConatiner));
 //# sourceMappingURL=BaseTip.js.map

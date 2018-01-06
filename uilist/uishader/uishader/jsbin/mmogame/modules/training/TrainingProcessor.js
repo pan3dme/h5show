@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var training;
 (function (training) {
-    var TrainingModule = (function (_super) {
+    var TrainingModule = /** @class */ (function (_super) {
         __extends(TrainingModule, _super);
         function TrainingModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         TrainingModule.prototype.getModuleName = function () {
             return "TrainingModule";
@@ -17,23 +22,23 @@ var training;
             return [new TrainingProcessor()];
         };
         return TrainingModule;
-    })(Module);
+    }(Module));
     training.TrainingModule = TrainingModule;
-    var TrainingEvent = (function (_super) {
+    var TrainingEvent = /** @class */ (function (_super) {
         __extends(TrainingEvent, _super);
         function TrainingEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         TrainingEvent.SHOW_TRAINING_PANEL = "SHOW_TRAINING_PANEL";
         TrainingEvent.HIDE_TRAINING_PANEL = "HIDE_TRAINING_PANEL";
         TrainingEvent.REFRESH_TRAINING_PANEL = "REFRESH_TRAINING_PANEL";
         return TrainingEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     training.TrainingEvent = TrainingEvent;
-    var TrainingProcessor = (function (_super) {
+    var TrainingProcessor = /** @class */ (function (_super) {
         __extends(TrainingProcessor, _super);
         function TrainingProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         TrainingProcessor.prototype.getName = function () {
             return "TrainingProcessor";
@@ -50,6 +55,11 @@ var training;
                 if (evt.type == TrainingEvent.REFRESH_TRAINING_PANEL) {
                     this.refreshtask();
                 }
+                // if (evt.type == TrainingEvent.REFRESH_SKILL_PANEL) {
+                //     if (this.trainingUiPanel && this.trainingUiPanel.trainingSkill && this.trainingUiPanel.hasStage) {
+                //         this.trainingUiPanel.trainingSkill.refreshLev();
+                //     }
+                // }
             }
             if ($event instanceof EngineEvent) {
                 var $engineEvent = $event;
@@ -63,6 +73,9 @@ var training;
                     if (this.trainingUiPanel && this.trainingUiPanel.trainingTask && this.trainingUiPanel.trainingTask.hasStage) {
                         this.trainingUiPanel.trainingTask.refreshCurCardNum();
                     }
+                    // if (this.trainingUiPanel && this.trainingUiPanel.trainingSkill && this.trainingUiPanel.trainingSkill.hasStage) {
+                    //     this.trainingUiPanel.trainingSkill.updataRes();
+                    // }
                 }
                 else if ($engineEvent.type == EngineEvent.PLAYER_FIELD_LEVEL) {
                     if (this.trainingUiPanel) {
@@ -194,7 +207,7 @@ var training;
             ];
         };
         return TrainingProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     training.TrainingProcessor = TrainingProcessor;
 })(training || (training = {}));
 //# sourceMappingURL=TrainingProcessor.js.map

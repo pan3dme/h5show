@@ -1,15 +1,21 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var map;
 (function (map) {
-    var MapNpcListItemRender = (function (_super) {
+    var MapNpcListItemRender = /** @class */ (function (_super) {
         __extends(MapNpcListItemRender, _super);
         function MapNpcListItemRender() {
-            _super.apply(this, arguments);
-            this.hasLight = false;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.hasLight = false;
+            return _this;
         }
         MapNpcListItemRender.prototype.draw = function () {
             var $vo = this.listItemData.data;
@@ -55,17 +61,18 @@ var map;
             configurable: true
         });
         return MapNpcListItemRender;
-    })(ListItemRender);
+    }(ListItemRender));
     map.MapNpcListItemRender = MapNpcListItemRender;
-    var MapRightPanel = (function (_super) {
+    var MapRightPanel = /** @class */ (function (_super) {
         __extends(MapRightPanel, _super);
         function MapRightPanel() {
-            _super.call(this);
-            this._listItemArr = new Array;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
+            var _this = _super.call(this) || this;
+            _this._listItemArr = new Array;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            return _this;
         }
         MapRightPanel.prototype.setRender = function ($bottom, $top, $list) {
             this._bottomRender = $bottom;
@@ -191,7 +198,7 @@ var map;
             }
         };
         return MapRightPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     map.MapRightPanel = MapRightPanel;
 })(map || (map = {}));
 //# sourceMappingURL=MapRightPanel.js.map

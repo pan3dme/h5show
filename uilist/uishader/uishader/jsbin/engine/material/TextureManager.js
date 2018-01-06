@@ -1,15 +1,21 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var TextureManager = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var TextureManager = /** @class */ (function (_super) {
     __extends(TextureManager, _super);
     function TextureManager() {
-        _super.call(this);
-        this._loadDic = new Object();
-        this._resDic = new Object();
-        this.initDefaultLightMapTexture();
+        var _this = _super.call(this) || this;
+        _this._loadDic = new Object();
+        _this._resDic = new Object();
+        _this.initDefaultLightMapTexture();
+        return _this;
     }
     TextureManager.getInstance = function () {
         if (!this._instance) {
@@ -128,8 +134,8 @@ var TextureManager = (function (_super) {
         _super.prototype.gc.call(this);
     };
     return TextureManager;
-})(ResGC);
-var TextureLoad = (function () {
+}(ResGC));
+var TextureLoad = /** @class */ (function () {
     function TextureLoad($fun, $info, $url, $wrap, $filter, $mipmap) {
         this.fun = $fun;
         this.info = $info;
@@ -139,8 +145,8 @@ var TextureLoad = (function () {
         this.mipmap = $mipmap;
     }
     return TextureLoad;
-})();
-var CubemapLoad = (function () {
+}());
+var CubemapLoad = /** @class */ (function () {
     function CubemapLoad() {
         this.ary = new Array(6);
         this.flagNum = 0;
@@ -193,5 +199,5 @@ var CubemapLoad = (function () {
         }
     };
     return CubemapLoad;
-})();
+}());
 //# sourceMappingURL=TextureManager.js.map

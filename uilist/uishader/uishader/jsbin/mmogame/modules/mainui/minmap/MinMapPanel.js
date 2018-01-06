@@ -1,33 +1,38 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var minmap;
 (function (minmap) {
-    var MinMapPanel = (function (_super) {
+    var MinMapPanel = /** @class */ (function (_super) {
         __extends(MinMapPanel, _super);
         function MinMapPanel() {
-            var _this = this;
-            _super.call(this);
-            this.nextDrawGMtime = 0;
-            this.interfaceUI = true;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.right = 0;
-            this.top = 0;
-            this._bottomRender = new UIRenderComponent();
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent();
-            this.addRender(this._midRender);
-            this._effRender = new FrameUIRender();
-            this.addRender(this._effRender);
-            this._topRender = new UIRenderComponent();
-            this.addRender(this._topRender);
-            this._effGuaRender = new FrameUIRender();
-            this.addRender(this._effGuaRender);
-            this._effGuaRender.blenderMode = 1;
-            this._midRender.setInfo("ui/uidata/minmap/minmap.xml", "ui/uidata/minmap/minmap.png", function () { _this.loadConfigCom(); });
+            var _this = _super.call(this) || this;
+            _this.nextDrawGMtime = 0;
+            _this.interfaceUI = true;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.right = 0;
+            _this.top = 0;
+            _this._bottomRender = new UIRenderComponent();
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent();
+            _this.addRender(_this._midRender);
+            _this._effRender = new FrameUIRender();
+            _this.addRender(_this._effRender);
+            _this._topRender = new UIRenderComponent();
+            _this.addRender(_this._topRender);
+            _this._effGuaRender = new FrameUIRender();
+            _this.addRender(_this._effGuaRender);
+            _this._effGuaRender.blenderMode = 1;
+            _this._midRender.setInfo("ui/uidata/minmap/minmap.xml", "ui/uidata/minmap/minmap.png", function () { _this.loadConfigCom(); });
+            return _this;
         }
         MinMapPanel.prototype.loadConfigCom = function () {
             var _this = this;
@@ -122,7 +127,7 @@ var minmap;
             _super.prototype.resize.call(this);
         };
         return MinMapPanel;
-    })(UIConatiner);
+    }(UIConatiner));
     minmap.MinMapPanel = MinMapPanel;
 })(minmap || (minmap = {}));
 //# sourceMappingURL=MinMapPanel.js.map

@@ -1,11 +1,16 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Chat;
 (function (Chat) {
-    var CellClikBox = (function () {
+    var CellClikBox = /** @class */ (function () {
         function CellClikBox() {
         }
         CellClikBox.prototype.testPoint = function ($x, $y, $rect) {
@@ -28,23 +33,24 @@ var Chat;
             return 0;
         };
         return CellClikBox;
-    })();
+    }());
     Chat.CellClikBox = CellClikBox;
-    var ChatListContextComponent = (function (_super) {
+    var ChatListContextComponent = /** @class */ (function (_super) {
         __extends(ChatListContextComponent, _super);
         function ChatListContextComponent() {
-            _super.call(this);
-            this.pageBasePos = new Vector2D(0, 0);
-            this._textureRect = new Rectangle(0, 0, 512, 1024);
-            this._textScale = 1.40;
-            this.textHeight = 220;
-            this.baseFontsize = 12;
-            this.textFontStr = "bolder 22px Georgia";
-            this.lastMcY = 0;
-            this.tempH = 0;
+            var _this = _super.call(this) || this;
+            _this.pageBasePos = new Vector2D(0, 0);
+            _this._textureRect = new Rectangle(0, 0, 512, 1024);
+            _this._textScale = 1.40;
+            _this.textHeight = 220;
+            _this.baseFontsize = 12;
+            _this.textFontStr = "bolder 22px Georgia";
+            _this.lastMcY = 0;
+            _this.tempH = 0;
             //计算所有记录所对应的位置;
-            this.totalH = 0;
-            this.textTotalHeight1024 = 0;
+            _this.totalH = 0;
+            _this.textTotalHeight1024 = 0;
+            return _this;
         }
         ChatListContextComponent.prototype.makeChatData = function (value) {
             this.refresh();
@@ -384,7 +390,7 @@ var Chat;
             }
         };
         return ChatListContextComponent;
-    })(UIRenderComponent);
+    }(UIRenderComponent));
     Chat.ChatListContextComponent = ChatListContextComponent;
 })(Chat || (Chat = {}));
 //# sourceMappingURL=ChatListContextComponent.js.map

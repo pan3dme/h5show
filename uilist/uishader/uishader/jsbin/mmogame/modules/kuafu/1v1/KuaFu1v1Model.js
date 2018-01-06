@@ -1,18 +1,18 @@
 var kuafu;
 (function (kuafu) {
-    var KuaFu1v1BangData = (function () {
+    var KuaFu1v1BangData = /** @class */ (function () {
         function KuaFu1v1BangData() {
         }
         return KuaFu1v1BangData;
-    })();
+    }());
     kuafu.KuaFu1v1BangData = KuaFu1v1BangData;
-    var Scene1v1Data = (function () {
+    var Scene1v1Data = /** @class */ (function () {
         function Scene1v1Data() {
         }
         return Scene1v1Data;
-    })();
+    }());
     kuafu.Scene1v1Data = Scene1v1Data;
-    var KuaFu1v1Model = (function () {
+    var KuaFu1v1Model = /** @class */ (function () {
         function KuaFu1v1Model() {
             this.tb_doujiantai_base = tb.TB_doujiantai_base.get_TB_doujiantai_baseById(1);
         }
@@ -47,7 +47,7 @@ var kuafu;
             }
         };
         return KuaFu1v1Model;
-    })();
+    }());
     kuafu.KuaFu1v1Model = KuaFu1v1Model;
 })(kuafu || (kuafu = {}));
 //# sourceMappingURL=KuaFu1v1Model.js.map

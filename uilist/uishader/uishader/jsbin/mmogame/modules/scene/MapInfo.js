@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var MapInfo = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var MapInfo = /** @class */ (function (_super) {
     __extends(MapInfo, _super);
     function MapInfo() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     MapInfo.prototype.onBaseCreated = function () {
         var _this = this;
@@ -55,10 +60,14 @@ var MapInfo = (function (_super) {
     };
     MapInfo.prototype.mapIntFieldEndTmChange = function () {
         if (this.is3V3()) {
+            //ModuleEventManager.dispatchEvent(new kuafu.KuaFu3v3PkEvent(kuafu.KuaFu3v3PkEvent.KUAFU_3V3_FINISH_EVENT));
         }
         if (this.is1V1()) {
+            //ModuleEventManager.dispatchEvent(new kuafu.KuaFu1v1Event(kuafu.KuaFu1v1Event.SHOW_1V1_END_PANEL));
         }
         if (this.isXianfu()) {
+            //ModuleEventManager.dispatchEvent(new kuafu.XianFuEvent(kuafu.XianFuEvent.XIANFU_ENDPANEL_EVENT));
+            // this.getXianFuBangData();
         }
         if (this.isFuBen()) {
             //ModuleEventManager.dispatchEvent(new  adventuresettlement.AdventureSettlementEvent(adventuresettlement.AdventureSettlementEvent.SHOW_ADVENTURE_SETTLEMENT_UI_PANEL))
@@ -472,8 +481,8 @@ var MapInfo = (function (_super) {
     MapInfo.STATE_250 = 250; //成功
     MapInfo.STATE_251 = 251; //副本未通关
     return MapInfo;
-})(GuidObject);
-var Kuafu3V3dataVo = (function () {
+}(GuidObject));
+var Kuafu3V3dataVo = /** @class */ (function () {
     function Kuafu3V3dataVo() {
         this.name = "1,2,没有极杰";
         this.group = 1;
@@ -501,15 +510,15 @@ var Kuafu3V3dataVo = (function () {
         //public static KUAFU_3V3_PLAYER_HONOR: number = 4;	//  荣誉及全场最佳, 4bytes(0:获得荣誉, 1:全场最佳,2:保留,3:保留)
     };
     return Kuafu3V3dataVo;
-})();
-var EndVo = (function () {
+}());
+var EndVo = /** @class */ (function () {
     function EndVo() {
     }
     return EndVo;
-})();
-var FirstvictoryVo = (function () {
+}());
+var FirstvictoryVo = /** @class */ (function () {
     function FirstvictoryVo() {
     }
     return FirstvictoryVo;
-})();
+}());
 //# sourceMappingURL=MapInfo.js.map

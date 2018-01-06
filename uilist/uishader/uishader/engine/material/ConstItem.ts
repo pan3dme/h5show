@@ -46,7 +46,12 @@ class ConstItem {
         this.vecNum[2 + this.offset] = this.value.z;
         this.vecNum[3 + this.offset] = this.value.w;
     }
-
+    //public creatvecNum(): void {
+    //    this.vecNum[0 + this.offset] = this.value.x;
+    //    this.vecNum[1 + this.offset] = this.value.y;
+    //    this.vecNum[2 + this.offset] = this.value.z;
+    //    this.vecNum[3 + this.offset] = this.value.w;
+    //}
 
 
     public setData(obj: any): void {
@@ -72,6 +77,7 @@ class ConstItem {
 
 
     }
+
 
     public setDynamicOffset($dynamic: DynamicBaseConstItem): void {
         if (this.paramName0 == $dynamic.paramName) {

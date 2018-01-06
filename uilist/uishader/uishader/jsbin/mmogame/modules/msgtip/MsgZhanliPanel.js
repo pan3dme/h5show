@@ -1,26 +1,31 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var msgtip;
 (function (msgtip) {
-    var MsgZhanliPanel = (function (_super) {
+    var MsgZhanliPanel = /** @class */ (function (_super) {
         __extends(MsgZhanliPanel, _super);
         function MsgZhanliPanel() {
-            var _this = this;
-            _super.call(this);
-            this.waitTime2000 = 2000;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent();
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent();
-            this.addRender(this._midRender);
-            this._midRender.uiAtlas = new UIAtlas;
-            this.frameUpFun = function (t) { _this.upData(t); };
+            var _this = _super.call(this) || this;
+            _this.waitTime2000 = 2000;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent();
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent();
+            _this.addRender(_this._midRender);
+            _this._midRender.uiAtlas = new UIAtlas;
+            _this.frameUpFun = function (t) { _this.upData(t); };
+            return _this;
         }
         MsgZhanliPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -66,7 +71,7 @@ var msgtip;
             TimeUtil.addFrameTick(this.frameUpFun);
         };
         return MsgZhanliPanel;
-    })(UIConatiner);
+    }(UIConatiner));
     msgtip.MsgZhanliPanel = MsgZhanliPanel;
 })(msgtip || (msgtip = {}));
 //# sourceMappingURL=MsgZhanliPanel.js.map

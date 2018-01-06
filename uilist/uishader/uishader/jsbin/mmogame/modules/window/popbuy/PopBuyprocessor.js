@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var popbuy;
 (function (popbuy) {
-    var PopBuyModule = (function (_super) {
+    var PopBuyModule = /** @class */ (function (_super) {
         __extends(PopBuyModule, _super);
         function PopBuyModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         PopBuyModule.prototype.getModuleName = function () {
             return "PopBuyModule";
@@ -17,24 +22,25 @@ var popbuy;
             return [new PopBuyProcessor()];
         };
         return PopBuyModule;
-    })(Module);
+    }(Module));
     popbuy.PopBuyModule = PopBuyModule;
-    var PopBuyEvent = (function (_super) {
+    var PopBuyEvent = /** @class */ (function (_super) {
         __extends(PopBuyEvent, _super);
         function PopBuyEvent() {
-            _super.apply(this, arguments);
-            this.Info1 = "次数剩余";
-            this.Info2 = "";
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.Info1 = "次数剩余";
+            _this.Info2 = "";
+            return _this;
         }
         PopBuyEvent.SHOW_POPBUY_PANEL = "SHOW_POPBUY_PANEL";
         PopBuyEvent.HIDE_POPBUY_PANEL = "HIDE_POPBUY_PANEL";
         return PopBuyEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     popbuy.PopBuyEvent = PopBuyEvent;
-    var PopBuyProcessor = (function (_super) {
+    var PopBuyProcessor = /** @class */ (function (_super) {
         __extends(PopBuyProcessor, _super);
         function PopBuyProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         PopBuyProcessor.prototype.getName = function () {
             return "PopBuyProcessor";
@@ -77,7 +83,7 @@ var popbuy;
             ];
         };
         return PopBuyProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     popbuy.PopBuyProcessor = PopBuyProcessor;
 })(popbuy || (popbuy = {}));
 //# sourceMappingURL=PopBuyprocessor.js.map

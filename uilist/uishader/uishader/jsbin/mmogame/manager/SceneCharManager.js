@@ -1,4 +1,4 @@
-var SceneCharManager = (function () {
+var SceneCharManager = /** @class */ (function () {
     function SceneCharManager() {
     }
     SceneCharManager.getInstance = function () {
@@ -83,6 +83,7 @@ var SceneCharManager = (function () {
         if (GuidData.player && GameData.initGMbg) {
             // NetManager.getInstance().protocolos.chat_world(GuidData.player.getGuid(), 0, GuidData.player.getName(), "@CUSTOM");
             if (GameStart.outNet) {
+                // GameControlManager.sendGmCom("@CUSTOM")
             }
             GameData.initGMbg = false;
         }
@@ -146,5 +147,5 @@ var SceneCharManager = (function () {
         return null;
     };
     return SceneCharManager;
-})();
+}());
 //# sourceMappingURL=SceneCharManager.js.map

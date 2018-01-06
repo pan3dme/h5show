@@ -15,3 +15,4 @@ F:\slefSvn\trunk\h5show\uilist\uishader\uishader\obj\Debug\uishader.csproj.CoreC
 F:\slefSvn\trunk\h5show\uilist\uishader\uishader\obj\Debug\uishader.dll
 F:\slefSvn\trunk\h5show\uilist\uishader\uishader\obj\Debug\uishader.pdb
 C:\wamp\www\h5show\uilist\uishader\uishader\obj\Debug\uishader.csprojResolveAssemblyReference.cache
+F:\slefSvn\trunk\h5show\uilist\uishader\uishader\obj\Debug\uishader.csprojResolveAssemblyReference.cache

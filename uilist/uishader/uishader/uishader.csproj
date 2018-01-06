@@ -88,6 +88,7 @@
     <TypeScriptCompile Include="arpg2dsrc\editscene\view\PanelContainer.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\view\ResultNodeUI.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\view\TextureSampleNodeUI.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\modelshow\BuildMaterialShader.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\modelshow\MaterialModelSprite.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\modelshow\ModelShowModel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\modelshow\SceneRenderToTextrue.ts" />

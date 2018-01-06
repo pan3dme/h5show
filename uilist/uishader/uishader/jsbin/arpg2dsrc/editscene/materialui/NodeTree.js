@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var NodeTree = (function () {
+    var NodeTree = /** @class */ (function () {
         function NodeTree() {
             this.priority = -1;
             this.id = -1;
@@ -42,6 +42,14 @@ var materialui;
                 }
             }
             this.refreshID();
+        };
+        NodeTree.getID = function ($constID) {
+            if (NodeTree.jsMode) {
+                return "[" + $constID + "]";
+            }
+            else {
+                return String($constID);
+            }
         };
         NodeTree.prototype.refreshID = function () {
             for (var i; i < this.inputVec.length; i++) {
@@ -167,7 +175,7 @@ var materialui;
         NodeTree.PANNER = "panner";
         NodeTree.jsMode = false;
         return NodeTree;
-    })();
+    }());
     materialui.NodeTree = NodeTree;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=NodeTree.js.map

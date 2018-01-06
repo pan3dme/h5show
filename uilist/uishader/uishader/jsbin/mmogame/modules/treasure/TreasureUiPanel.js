@@ -1,25 +1,31 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var treasure;
 (function (treasure) {
-    var TreasureUiPanel = (function (_super) {
+    var TreasureUiPanel = /** @class */ (function (_super) {
         __extends(TreasureUiPanel, _super);
         function TreasureUiPanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._publicbguiRender = new UIRenderComponent;
-            this.addRender(this._publicbguiRender);
-            this._roleRender = new UIRenderComponent;
-            this.addRender(this._roleRender);
-            this._roleRender.uiAtlas = new UIAtlas;
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._publicbguiRender = new UIRenderComponent;
+            _this.addRender(_this._publicbguiRender);
+            _this._roleRender = new UIRenderComponent;
+            _this.addRender(_this._roleRender);
+            _this._roleRender.uiAtlas = new UIAtlas;
+            return _this;
         }
         TreasureUiPanel.prototype.dispose = function () {
             this._bgRender.dispose();
@@ -124,7 +130,7 @@ var treasure;
             }
         };
         return TreasureUiPanel;
-    })(WindowUi);
+    }(WindowUi));
     treasure.TreasureUiPanel = TreasureUiPanel;
 })(treasure || (treasure = {}));
 //# sourceMappingURL=TreasureUiPanel.js.map

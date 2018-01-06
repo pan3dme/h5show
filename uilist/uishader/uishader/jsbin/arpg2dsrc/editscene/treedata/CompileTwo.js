@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var CompileTwo = (function () {
+    var CompileTwo = /** @class */ (function () {
         function CompileTwo() {
             this.timeSpeed = 0;
             this.killNum = 0;
@@ -63,8 +63,21 @@ var materialui;
                 }
             }
             var resultStr = this.getGLSLStr();
-            //  console.log(resultStr)
+            $materialTree.shaderStr = resultStr;
+            $materialTree.constList = this.constVec;
+            $materialTree.texList = this.texVec;
+            var $materialBaseParam = new MaterialBaseParam();
+            $materialBaseParam.setData($materialTree, []);
+            $materialTree.fcData = this.makeFc();
+            // this.materialParam = new MaterialBaseParam();
             return resultStr;
+        };
+        CompileTwo.prototype.makeFc = function () {
+            var $fo = new Float32Array(this.constVec.length * 4);
+            for (var i = 0; i < this.constVec.length; i++) {
+                this.constVec[i].creat($fo);
+            }
+            return $fo;
         };
         CompileTwo.prototype.getGLSLStr = function () {
             var mainStr = "";
@@ -271,7 +284,7 @@ var materialui;
                 case materialui.NodeTree.VEC3:
                 case materialui.NodeTree.FLOAT:
                 case materialui.NodeTree.VEC2:
-                    //processVec3Node($node);
+                    this.processVec3Node($node);
                     break;
                 case materialui.NodeTree.TEX:
                     this.processTexNode($node);
@@ -375,6 +388,112 @@ var materialui;
             enumerable: true,
             configurable: true
         });
+        CompileTwo.prototype.processVec3Node = function ($node) {
+            var str = "";
+            this.setFragmentConst($node);
+            this.addConstItem($node);
+        };
+        CompileTwo.prototype.addConstItem = function ($node) {
+            if ($node.isDynamic) {
+                console.log($node.paramName);
+            }
+            var constItem;
+            var id = $node.regResultConst.id;
+            for (var i = 0; i < this.constVec.length; i++) {
+                if (this.constVec[i].id == id) {
+                    constItem = this.constVec[i];
+                }
+            }
+            if (!constItem) {
+                constItem = new ConstItem;
+                constItem.id = $node.regResultConst.id;
+                this.constVec.push(constItem);
+            }
+            if ($node.type == materialui.NodeTree.VEC3) {
+                if ($node.regConstIndex == 0) {
+                    var v3d = $node.constVec3;
+                    constItem.value.setTo(v3d.x, v3d.y, v3d.z);
+                    if ($node.isDynamic) {
+                        constItem.paramName0 = $node.paramName;
+                        constItem.param0Type = 4;
+                        constItem.param0Index = 0;
+                    }
+                }
+            }
+            else if ($node.type == materialui.NodeTree.FLOAT) {
+                var num = $node.constValue;
+                if ($node.regConstIndex == 0) {
+                    constItem.value.x = num;
+                    if ($node.isDynamic) {
+                        constItem.paramName0 = $node.paramName;
+                        constItem.param0Type = 1;
+                        constItem.param0Index = 0;
+                    }
+                }
+                else if ($node.regConstIndex == 1) {
+                    constItem.value.y = num;
+                    if ($node.isDynamic) {
+                        constItem.paramName1 = $node.paramName;
+                        constItem.param1Type = 1;
+                        constItem.param1Index = 1;
+                    }
+                }
+                else if ($node.regConstIndex == 2) {
+                    constItem.value.z = num;
+                    if ($node.isDynamic) {
+                        constItem.paramName2 = $node.paramName;
+                        constItem.param2Type = 1;
+                        constItem.param2Index = 2;
+                    }
+                }
+                else if ($node.regConstIndex == 3) {
+                    constItem.value.w = num;
+                    if ($node.isDynamic) {
+                        constItem.paramName3 = $node.paramName;
+                        constItem.param3Type = 1;
+                        constItem.param3Index = 3;
+                    }
+                }
+            }
+            else if ($node.type == materialui.NodeTree.VEC2) {
+                var vec2 = $node.constValue;
+                if ($node.regConstIndex == 0) {
+                    constItem.value.x = vec2.x;
+                    constItem.value.y = vec2.y;
+                    if ($node.isDynamic) {
+                        constItem.paramName0 = $node.paramName;
+                        constItem.param0Type = 2;
+                        constItem.param0Index = 0;
+                    }
+                }
+                else if ($node.regConstIndex == 1) {
+                    constItem.value.y = vec2.x;
+                    constItem.value.z = vec2.y;
+                    if ($node.isDynamic) {
+                        constItem.paramName1 = $node.paramName;
+                        constItem.param1Type = 2;
+                        constItem.param1Index = 1;
+                    }
+                }
+                else if ($node.regConstIndex == 2) {
+                    constItem.value.z = vec2.x;
+                    constItem.value.w = vec2.y;
+                    if ($node.isDynamic) {
+                        constItem.paramName2 = $node.paramName;
+                        constItem.param2Type = 2;
+                        constItem.param2Index = 2;
+                    }
+                }
+            }
+        };
+        CompileTwo.prototype.setFragmentConst = function ($nodeTree) {
+            for (var i = this._fcBeginID; i < this.fragmentConstList.length; i++) {
+                var tf = this.fragmentConstList[i].getUse($nodeTree);
+                if (tf) {
+                    break;
+                }
+            }
+        };
         CompileTwo.prototype.processOpNode = function ($node) {
             //diffuse
             this.lightProbe = $node.lightProbe;
@@ -542,15 +661,18 @@ var materialui;
                     }
                     else {
                         str += "0.04" + CompileTwo.COMMA;
+                        //str = MUL +CompileTwo. SPACE +CompileTwo. FT+ regtempMetallic.id +CompileTwo. X+CompileTwo. COMMA+CompileTwo. FT+ regtempMetallic.id +CompileTwo. X+CompileTwo. COMMA+ FC + ONE + Y;
                     }
                     str += CompileTwo.FT + regtempLightMap.id + CompileTwo.XYZ + CompileTwo.COMMA;
                     var pNodeMetallic;
                     if (inputMetallic.parentNodeItem) {
                         pNodeMetallic = inputMetallic.parentNodeItem.node;
                         str += pNodeMetallic.getComponentID(inputMetallic.parentNodeItem.id) + CompileTwo.RIGHT_PARENTH + CompileTwo.END;
+                        //str = MUL +CompileTwo. SPACE +CompileTwo. FT+ regtempPbr.id +CompileTwo. XYZ+CompileTwo. COMMA+ pNodeDiffuse.getComponentID(inputDiffuse.parentNodeItem.id) +CompileTwo. COMMA+ pNodeMetallic.getComponentID(inputMetallic.parentNodeItem.id);
                     }
                     else {
                         str += "0.5" + CompileTwo.RIGHT_PARENTH + CompileTwo.END;
+                        //str = MUL +CompileTwo. SPACE +CompileTwo. FT+ regtempPbr.id +CompileTwo. XYZ+CompileTwo. COMMA+ pNodeDiffuse.getComponentID(inputDiffuse.parentNodeItem.id) +CompileTwo. XYZ+CompileTwo. COMMA+ FC + ONE + Y;
                     }
                     this.strVec.push(str);
                     this.traceFt();
@@ -591,6 +713,7 @@ var materialui;
                     else {
                         this.roughness = 0.5;
                         str += CompileTwo.FT + regtempEnvBRDF.id + CompileTwo.X + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE + "0.5" + CompileTwo.END + CompileTwo.LN;
+                        //str += MOV +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. X+CompileTwo. COMMA+ FC + TWO + W +CompileTwo. LN;
                     }
                     // tex envBrdf
                     var regtexEnvBRDF = this.getFragmentTex();
@@ -616,6 +739,7 @@ var materialui;
                     }
                     else {
                         str += CompileTwo.FT + regtempPbr.id + CompileTwo.XYZ + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE + CompileTwo.FT + regtempPbr.id + CompileTwo.XYZ + CompileTwo.SPACE + CompileTwo.MUL_MATH + CompileTwo.SPACE + "0.5" + CompileTwo.END + CompileTwo.LN;
+                        //str += MUL +CompileTwo. SPACE +CompileTwo. FT+ regtempPbr.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. FT+ regtempPbr.id +CompileTwo. XYZ+CompileTwo. COMMA+ FC + ONE + Y;
                     }
                     //trace(str);
                     this.strVec.push(str);
@@ -636,6 +760,19 @@ var materialui;
                         this.strVec.push(str);
                     }
                     if (this.useDynamicIBL) {
+                        /**
+                        str = MOV +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. COMMA+CompileTwo. VI+ defaultLutReg.id +CompileTwo. LN;
+                        str += DIV +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id + XY +CompileTwo. COMMA+CompileTwo. FT+ regtempEnvBRDF.id + XY +CompileTwo. COMMA+CompileTwo. FT+ regtempEnvBRDF.id + Z +CompileTwo. LN;
+                        str += ADD +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id + XY +CompileTwo. COMMA+CompileTwo. FT+ regtempEnvBRDF.id + XY +CompileTwo. COMMA+ FC + FOUR + XY +CompileTwo. LN;
+                        str += DIV +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id + XY +CompileTwo. COMMA+CompileTwo. FT+ regtempEnvBRDF.id + XY +CompileTwo. COMMA+ FC + FOUR + ZW +CompileTwo. LN;
+                        
+                        str += MUL +CompileTwo. SPACE +CompileTwo. FT+ regtempIBL.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. FT+ regtempNormal.id +CompileTwo. XYZ+CompileTwo. COMMA+ FC + ONE + W +CompileTwo. LN;
+                        
+                        str += ADD +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. X+CompileTwo. COMMA+CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. X+CompileTwo. COMMA+CompileTwo. FT+ regtempIBL.id +CompileTwo. X+CompileTwo. LN;
+                        str += ADD +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. Y+CompileTwo. COMMA+CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. Y+CompileTwo. COMMA+CompileTwo. FT+ regtempIBL.id + Z +CompileTwo. LN;
+                        
+                        str += TEX +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. COMMA+CompileTwo. FT+ regtempEnvBRDF.id + XY +CompileTwo. COMMA+ FS + regtexIBL.id +CompileTwo. SPACE + getTexType(1,0);
+                        */
                     }
                     else {
                         //
@@ -644,6 +781,13 @@ var materialui;
                         str += CompileTwo.FT + regtempIBL.id + CompileTwo.XYZ + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE + CompileTwo.NRM + CompileTwo.LEFT_PARENTH + CompileTwo.FT + regtempIBL.id + CompileTwo.XYZ + CompileTwo.RIGHT_PARENTH + CompileTwo.END + CompileTwo.LN;
                         str += CompileTwo.FT + regtempIBL.id + CompileTwo.XYZ + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE + CompileTwo.REFLECT + CompileTwo.LEFT_PARENTH + CompileTwo.FT + regtempIBL.id + CompileTwo.XYZ + CompileTwo.COMMA + CompileTwo.FT + regtempNormal.id + CompileTwo.XYZ + CompileTwo.RIGHT_PARENTH + CompileTwo.END + CompileTwo.LN;
                         str += CompileTwo.FT + regtempIBL.id + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE + CompileTwo.textureCube + CompileTwo.LEFT_PARENTH + CompileTwo.FS + regtexIBL.id + CompileTwo.COMMA + CompileTwo.FT + regtempIBL.id + CompileTwo.XYZ + CompileTwo.RIGHT_PARENTH + CompileTwo.END;
+                        //str = SUB +CompileTwo. SPACE +CompileTwo. FT+ regtempIBL.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. VI+ defaultPtReg.id +CompileTwo. XYZ+CompileTwo. COMMA+ FC + TWO +CompileTwo. XYZ+CompileTwo. LN;
+                        //str += NRM +CompileTwo. SPACE +CompileTwo. FT+ regtempIBL.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. FT+ regtempIBL.id +CompileTwo. XYZ+CompileTwo. LN;
+                        //str += DP3 +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. X+CompileTwo. COMMA+CompileTwo. FT+ regtempIBL.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. FT+ regtempNormal.id + XYZ  +CompileTwo. LN;
+                        //str += MUL +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. FT+ regtempNormal.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. X+CompileTwo. LN;
+                        //str += MUL +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. XYZ+CompileTwo. COMMA+ FC + ZERO +CompileTwo. Y+CompileTwo. LN;
+                        //str += SUB +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. FT+ regtempIBL.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. XYZ+CompileTwo. LN;
+                        //str += TEX +CompileTwo. SPACE +CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. COMMA+CompileTwo. FT+ regtempEnvBRDF.id +CompileTwo. XYZ+CompileTwo. COMMA+ FS + regtexIBL.id +CompileTwo. SPACE + texCubeType;
                     }
                     //trace(str);
                     //trace(str);
@@ -660,6 +804,7 @@ var materialui;
                     this.strVec.push(str);
                     regtempIBL.inUse = false;
                     console.log(str);
+                    //regtempEnvBRDF.inUse = false;
                 }
                 regOp = this.getFragmentTemp(); //输出用临时寄存器
                 if (!regOp.hasInit) {
@@ -682,8 +827,13 @@ var materialui;
                     }
                     else {
                         str = CompileTwo.FT + regOp.id + CompileTwo.XYZ + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE + CompileTwo.FT + regtempLightMap.id + CompileTwo.XYZ + CompileTwo.SPACE + CompileTwo.MUL_MATH + CompileTwo.SPACE + "0.5" + CompileTwo.END + CompileTwo.LN;
+                        //str += SUB +CompileTwo. SPACE +CompileTwo. FT+ regtempMetallic.id +CompileTwo. X+CompileTwo. COMMA+CompileTwo. FT+ regtempMetallic.id +CompileTwo. X+CompileTwo. COMMA+ FC + ONE + Y;
                     }
                     str += CompileTwo.FT + regOp.id + CompileTwo.XYZ + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE + CompileTwo.FT + regOp.id + CompileTwo.XYZ + CompileTwo.SPACE + CompileTwo.ADD_MATH + CompileTwo.SPACE + CompileTwo.FT + regtempPbr.id + CompileTwo.XYZ + CompileTwo.END;
+                    //str = MUL +CompileTwo. SPACE +CompileTwo. FT+ regOp.id +CompileTwo. XYZ+CompileTwo. COMMA+ pNodeDiffuse.getComponentID(inputDiffuse.parentNodeItem.id) +CompileTwo. COMMA+CompileTwo. FT+ regtempMetallic.id +CompileTwo. X+CompileTwo. LN;
+                    //str += MUL +CompileTwo. SPACE +CompileTwo. FT+ regOp.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. FT+ regOp.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. FT+ regtempLightMap.id + XYZ  +CompileTwo. LN;
+                    //str += ADD +CompileTwo. SPACE +CompileTwo. FT+ regOp.id +CompileTwo. XYZ+CompileTwo. COMMA+CompileTwo. FT+ regOp.id +CompileTwo. XYZ+CompileTwo. COMMA+  FT + regtempPbr.id + XYZ;
+                    //regtempMetallic.inUse = false;
                 }
                 else {
                     //ft2.xyz = ft0.xyz * ft1.xyz
@@ -929,7 +1079,7 @@ var materialui;
         CompileTwo.DISCARD = "{discard;}";
         CompileTwo.scalelight = "scalelight";
         return CompileTwo;
-    })();
+    }());
     materialui.CompileTwo = CompileTwo;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=CompileTwo.js.map

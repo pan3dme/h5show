@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var MaterialCompile = (function () {
+    var MaterialCompile = /** @class */ (function () {
         function MaterialCompile() {
             this.maxPriority = 0;
         }
@@ -10,7 +10,7 @@ var materialui;
             }
             return this._instance;
         };
-        MaterialCompile.prototype.compile = function ($list, $materialGLSLTree) {
+        MaterialCompile.prototype.compile = function ($list, $materialTree) {
             this._compileGlslServer = new materialui.CompileTwo;
             this.nodeList = $list;
             this.resetCompile($list);
@@ -38,8 +38,9 @@ var materialui;
                 }
                 this.priorityList[this.nodeList[i].priority].push(this.nodeList[i]);
             }
-            var resultStr = this._compileGlslServer.compile(this.priorityList, $materialGLSLTree);
-            left.ModelShowModel.getInstance().outShaderStr(resultStr);
+            var resultStr = this._compileGlslServer.compile(this.priorityList, $materialTree);
+            console.log(resultStr);
+            left.ModelShowModel.getInstance().outShaderStr($materialTree);
         };
         MaterialCompile.prototype.setPriority = function ($node) {
             var inputVec = $node.inputVec;
@@ -82,7 +83,7 @@ var materialui;
             }
         };
         return MaterialCompile;
-    })();
+    }());
     materialui.MaterialCompile = MaterialCompile;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialCompile.js.map

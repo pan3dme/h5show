@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var duihuan;
 (function (duihuan) {
-    var DuiHuanModule = (function (_super) {
+    var DuiHuanModule = /** @class */ (function (_super) {
         __extends(DuiHuanModule, _super);
         function DuiHuanModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         DuiHuanModule.prototype.getModuleName = function () {
             return "DuiHuanModule";
@@ -17,22 +22,22 @@ var duihuan;
             return [new DuiHuanProcessor()];
         };
         return DuiHuanModule;
-    })(Module);
+    }(Module));
     duihuan.DuiHuanModule = DuiHuanModule;
-    var DuiHuanEvent = (function (_super) {
+    var DuiHuanEvent = /** @class */ (function (_super) {
         __extends(DuiHuanEvent, _super);
         function DuiHuanEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         DuiHuanEvent.SHOW_DUIHUAN_PANEL = "SHOW_DUIHUAN_PANEL";
         DuiHuanEvent.HIDE_DUIHUAN_PANEL = "HIDE_DUIHUAN_PANEL";
         return DuiHuanEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     duihuan.DuiHuanEvent = DuiHuanEvent;
-    var DuiHuanProcessor = (function (_super) {
+    var DuiHuanProcessor = /** @class */ (function (_super) {
         __extends(DuiHuanProcessor, _super);
         function DuiHuanProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         DuiHuanProcessor.prototype.getName = function () {
             return "DuiHuanProcessor";
@@ -84,7 +89,7 @@ var duihuan;
             ];
         };
         return DuiHuanProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     duihuan.DuiHuanProcessor = DuiHuanProcessor;
 })(duihuan || (duihuan = {}));
 //# sourceMappingURL=DuiHuanprocessor.js.map

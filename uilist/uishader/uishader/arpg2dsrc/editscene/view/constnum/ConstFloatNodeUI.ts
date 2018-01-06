@@ -22,13 +22,30 @@
 
             this.outItem = new ItemMaterialUI("out", MaterialItemType.FLOAT, false);
             this.addItems(this.outItem);
-
-  
-
             this.drawTitleToFrame("float")
 
         }
- 
+        public setData(obj: any): void {
+            super.setData(obj);
+            this.constValue = obj.constValue;
+            (<NodeTreeFloat>this.nodeTree).constValue = this.constValue;
+           this. showDynamic();
+        }
+        public get constValue(): number {
+            return this._constValue;
+        }
 
+        public set constValue(value: number) {
+            this._constValue = value;
+            (<NodeTreeFloat>this.nodeTree).constValue = value;
+           this. showDynamic();
+        }
+         public  showDynamic(): void {
+            if (this.nodeTree.isDynamic) {
+                this.drawTitleToFrame("float<" + this.nodeTree.paramName + ">(" + this._constValue + ")");
+            } else {
+                this.drawTitleToFrame("float(" + this._constValue + ")");
+            }
+        }
     }
 }

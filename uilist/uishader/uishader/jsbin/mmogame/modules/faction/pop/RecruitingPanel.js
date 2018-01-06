@@ -1,33 +1,39 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var faction;
 (function (faction) {
-    var RecruitingPanel = (function (_super) {
+    var RecruitingPanel = /** @class */ (function (_super) {
         __extends(RecruitingPanel, _super);
         function RecruitingPanel() {
-            _super.call(this);
-            this.setBlackBg();
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.middle = 0;
-            this.center = 0;
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._publicbgRender = new UIRenderComponent;
-            this.addRender(this._publicbgRender);
-            this._AtopRender1 = new UIRenderComponent;
-            this._BtopRender1 = new UIRenderComponent;
-            this._BtopRender2 = new UIRenderComponent;
-            this._BtopRender3 = new UIRenderComponent;
-            this.ARenderList = new Array;
-            this.ARenderList.push(this._AtopRender1);
-            this.BRenderList = new Array;
-            this.BRenderList.push(this._BtopRender1);
-            this.BRenderList.push(this._BtopRender2);
-            this.BRenderList.push(this._BtopRender3);
+            var _this = _super.call(this) || this;
+            _this.setBlackBg();
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.middle = 0;
+            _this.center = 0;
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._publicbgRender = new UIRenderComponent;
+            _this.addRender(_this._publicbgRender);
+            _this._AtopRender1 = new UIRenderComponent;
+            _this._BtopRender1 = new UIRenderComponent;
+            _this._BtopRender2 = new UIRenderComponent;
+            _this._BtopRender3 = new UIRenderComponent;
+            _this.ARenderList = new Array;
+            _this.ARenderList.push(_this._AtopRender1);
+            _this.BRenderList = new Array;
+            _this.BRenderList.push(_this._BtopRender1);
+            _this.BRenderList.push(_this._BtopRender2);
+            _this.BRenderList.push(_this._BtopRender3);
+            return _this;
         }
         RecruitingPanel.prototype.dispose = function () {
             this._bgRender.dispose();
@@ -150,16 +156,17 @@ var faction;
         //服务端限制等级
         RecruitingPanel.ServerMaxLev = 60;
         return RecruitingPanel;
-    })(WindowCentenMin);
+    }(WindowCentenMin));
     faction.RecruitingPanel = RecruitingPanel;
-    var ShenpiPanel = (function (_super) {
+    var ShenpiPanel = /** @class */ (function (_super) {
         __extends(ShenpiPanel, _super);
         function ShenpiPanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.middle = 0;
-            this.center = 0;
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.middle = 0;
+            _this.center = 0;
+            return _this;
         }
         ShenpiPanel.prototype.dispose = function () {
             this._bgRender.dispose();
@@ -198,25 +205,26 @@ var faction;
             }
         };
         return ShenpiPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     faction.ShenpiPanel = ShenpiPanel;
-    var ZhaomuSettingPanel = (function (_super) {
+    var ZhaomuSettingPanel = /** @class */ (function (_super) {
         __extends(ZhaomuSettingPanel, _super);
         function ZhaomuSettingPanel() {
-            _super.call(this);
+            var _this = _super.call(this) || this;
             //控件a_17的偏移量
-            this._tx1 = 3;
+            _this._tx1 = 3;
             //控件b_txt的偏移量
-            this._tx2 = 0;
-            this._lastMouseX = 0;
-            this._lastMcX = 0;
-            this._percentage = 0;
-            this._msgTxt = "在此输入文字（50）";
-            this._type = false;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.middle = 0;
-            this.center = 0;
+            _this._tx2 = 0;
+            _this._lastMouseX = 0;
+            _this._lastMcX = 0;
+            _this._percentage = 0;
+            _this._msgTxt = "在此输入文字（50）";
+            _this._type = false;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.middle = 0;
+            _this.center = 0;
+            return _this;
         }
         ZhaomuSettingPanel.prototype.dispose = function () {
             this._bgRender.dispose();
@@ -412,7 +420,7 @@ var faction;
             LabelTextFont.writeText(this._bgRender.uiAtlas, this.a_37.skinName, 10, 5, $str, 16, $type ? "#853d07" : "#853d07", 320, true);
         };
         return ZhaomuSettingPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     faction.ZhaomuSettingPanel = ZhaomuSettingPanel;
 })(faction || (faction = {}));
 //# sourceMappingURL=RecruitingPanel.js.map

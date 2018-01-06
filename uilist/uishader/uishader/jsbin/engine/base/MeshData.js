@@ -1,16 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var MeshData = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var MeshData = /** @class */ (function (_super) {
     __extends(MeshData, _super);
     function MeshData() {
-        _super.apply(this, arguments);
-        this.boneIDAry = new Array;
-        this.boneWeightAry = new Array;
-        this.boneNewIDAry = new Array;
-        this.particleAry = new Array;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.boneIDAry = new Array;
+        _this.boneWeightAry = new Array;
+        _this.boneNewIDAry = new Array;
+        _this.particleAry = new Array;
+        return _this;
     }
     MeshData.prototype.destory = function () {
         _super.prototype.destory.call(this);
@@ -42,13 +48,13 @@ var MeshData = (function (_super) {
         //}
     };
     return MeshData;
-})(ObjData);
-var BindParticle = (function () {
+}(ObjData));
+var BindParticle = /** @class */ (function () {
     //public particle: CombineParticle;
     function BindParticle($url, $socketName) {
         this.url = $url;
         this.socketName = $socketName;
     }
     return BindParticle;
-})();
+}());
 //# sourceMappingURL=MeshData.js.map

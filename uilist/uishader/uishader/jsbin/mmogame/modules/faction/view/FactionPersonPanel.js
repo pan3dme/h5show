@@ -1,34 +1,40 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var faction;
 (function (faction) {
-    var BtnVo = (function () {
+    var BtnVo = /** @class */ (function () {
         function BtnVo() {
         }
         return BtnVo;
-    })();
+    }());
     faction.BtnVo = BtnVo;
-    var FactionPersonPanel = (function (_super) {
+    var FactionPersonPanel = /** @class */ (function (_super) {
         __extends(FactionPersonPanel, _super);
         function FactionPersonPanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._redPointRender = new RedPointRender;
-            this.addRender(this._redPointRender);
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._redPointRender = new RedPointRender;
+            _this.addRender(_this._redPointRender);
+            return _this;
         }
         FactionPersonPanel.prototype.dispose = function () {
             this._bgRender.dispose();
@@ -168,16 +174,17 @@ var faction;
             }
         };
         return FactionPersonPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     faction.FactionPersonPanel = FactionPersonPanel;
-    var BottomLeftPanel = (function (_super) {
+    var BottomLeftPanel = /** @class */ (function (_super) {
         __extends(BottomLeftPanel, _super);
         function BottomLeftPanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            return _this;
         }
         BottomLeftPanel.prototype.setRender = function ($bgRender, $bottomRender, $base, $topRender) {
             this._bgRender = $bgRender;
@@ -217,16 +224,17 @@ var faction;
             }
         };
         return BottomLeftPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     faction.BottomLeftPanel = BottomLeftPanel;
-    var RightPanel = (function (_super) {
+    var RightPanel = /** @class */ (function (_super) {
         __extends(RightPanel, _super);
         function RightPanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            return _this;
         }
         RightPanel.prototype.setRender = function ($bgRender, $bottomRender, $base, $topRender, $redRender) {
             this._bgRender = $bgRender;
@@ -391,7 +399,7 @@ var faction;
             }
         };
         return RightPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     faction.RightPanel = RightPanel;
 })(faction || (faction = {}));
 //# sourceMappingURL=FactionPersonPanel.js.map

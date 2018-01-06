@@ -1,4 +1,4 @@
-var Curve = (function () {
+var Curve = /** @class */ (function () {
     function Curve() {
         this.valueV3d = [1, 1, 1, 1];
     }
@@ -69,5 +69,5 @@ var Curve = (function () {
         this.valueVec = ary;
     };
     return Curve;
-})();
+}());
 //# sourceMappingURL=Curve.js.map

@@ -97,7 +97,14 @@
 
             this. refreshID();
         }
-		
+        public static  getID($constID: number): string{
+            if(NodeTree.jsMode) {
+                return "[" + $constID + "]";
+            }else{
+                return String($constID);
+            }
+
+        }
         public refreshID(): void {
             for (var i: number; i < this.inputVec.length; i++) {
                 this. inputVec[i].id = i;

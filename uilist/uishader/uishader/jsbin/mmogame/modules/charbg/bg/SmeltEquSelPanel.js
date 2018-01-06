@@ -1,21 +1,27 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var charbg;
 (function (charbg) {
-    var SmeltEquSelPanel = (function (_super) {
+    var SmeltEquSelPanel = /** @class */ (function (_super) {
         __extends(SmeltEquSelPanel, _super);
         function SmeltEquSelPanel() {
-            _super.call(this);
-            this.setBlackBg();
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._baseRender = new UIRenderComponent();
-            this.addRender(this._baseRender);
+            var _this = _super.call(this) || this;
+            _this.setBlackBg();
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._baseRender = new UIRenderComponent();
+            _this.addRender(_this._baseRender);
+            return _this;
         }
         SmeltEquSelPanel.prototype.applyLoad = function () {
             this.applyLoadComplete();
@@ -110,12 +116,12 @@ var charbg;
             LabelTextFont.writeSingleLabel(this._baseRender.uiAtlas, this._selLab.skinName, "已选中:" + this.baseAry.length + "/" + 9, 16, TextAlign.CENTER, ColorType.Brown7a2f21);
         };
         return SmeltEquSelPanel;
-    })(WindowMinUi);
+    }(WindowMinUi));
     charbg.SmeltEquSelPanel = SmeltEquSelPanel;
-    var SmeltEquSelList = (function (_super) {
+    var SmeltEquSelList = /** @class */ (function (_super) {
         __extends(SmeltEquSelList, _super);
         function SmeltEquSelList() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         SmeltEquSelList.prototype.init = function ($atlas, $selPanel) {
             SmeltEquSelListItemRender.baseAtlas = $atlas;
@@ -139,12 +145,12 @@ var charbg;
             UIManager.getInstance().removeUIContainer(this);
         };
         return SmeltEquSelList;
-    })(SList);
+    }(SList));
     charbg.SmeltEquSelList = SmeltEquSelList;
-    var SmeltEquSelListItemRender = (function (_super) {
+    var SmeltEquSelListItemRender = /** @class */ (function (_super) {
         __extends(SmeltEquSelListItemRender, _super);
         function SmeltEquSelListItemRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ;
         SmeltEquSelListItemRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
@@ -211,7 +217,7 @@ var charbg;
             $ui.uiRender.uiAtlas.updateCtx(ctx, $rec.pixelX, $rec.pixelY);
         };
         return SmeltEquSelListItemRender;
-    })(SListItem);
+    }(SListItem));
     charbg.SmeltEquSelListItemRender = SmeltEquSelListItemRender;
 })(charbg || (charbg = {}));
 //# sourceMappingURL=SmeltEquSelPanel.js.map

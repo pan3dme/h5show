@@ -3,7 +3,7 @@
 *
 * pramaType 0 表示无类型 1表示 float 2表示 vec2 3表示vec3
 */
-var ConstItem = (function () {
+var ConstItem = /** @class */ (function () {
     function ConstItem() {
         this.value = new Vector3D;
         this.offset = 0;
@@ -27,6 +27,12 @@ var ConstItem = (function () {
         this.vecNum[2 + this.offset] = this.value.z;
         this.vecNum[3 + this.offset] = this.value.w;
     };
+    //public creatvecNum(): void {
+    //    this.vecNum[0 + this.offset] = this.value.x;
+    //    this.vecNum[1 + this.offset] = this.value.y;
+    //    this.vecNum[2 + this.offset] = this.value.z;
+    //    this.vecNum[3 + this.offset] = this.value.w;
+    //}
     ConstItem.prototype.setData = function (obj) {
         this.id = obj.id;
         this.value = new Vector3D(obj.value.x, obj.value.y, obj.value.z, obj.value.w);
@@ -137,5 +143,5 @@ var ConstItem = (function () {
          */
     };
     return ConstItem;
-})();
+}());
 //# sourceMappingURL=ConstItem.js.map

@@ -202,10 +202,27 @@
                 }
             }
             var resultStr: string = this.getGLSLStr();
+            $materialTree.shaderStr = resultStr;
+            $materialTree.constList = this.constVec;
+            $materialTree.texList = this.texVec;
+            var $materialBaseParam: MaterialBaseParam = new MaterialBaseParam()
+            $materialBaseParam.setData($materialTree, []);
+            $materialTree.fcData = this.makeFc();
+           
 
-          //  console.log(resultStr)
+           // this.materialParam = new MaterialBaseParam();
+
+
             return resultStr
 
+        }
+        private makeFc(): Float32Array {
+            var $fo: Float32Array = new Float32Array(this.constVec.length*4)
+            for (var i: number = 0; i < this.constVec.length; i++) {
+                this.constVec[i].creat($fo);
+            }
+            return $fo
+         
         }
         private getGLSLStr(): string {
 
@@ -218,7 +235,7 @@
             var perStr: string = "precision mediump float;\n";
             //"uniform sampler2D s_texture;\n" +
             var hasParticleColor: boolean = false;
-            var texStr: string ="";
+            var texStr: string = "";
             for (i = 0; i < this.texVec.length; i++) {
                 if (this.texVec[i].type == 3) {
                     texStr += "uniform samplerCube fs" + this.texVec[i].id + ";\n";
@@ -382,7 +399,7 @@
             }
 
         }
-        public  processDynamicNode($node: NodeTree, opCode: string):void {
+        public processDynamicNode($node: NodeTree, opCode: string): void {
             var str: string = ""
             var input0: NodeTreeInputItem = $node.inputVec[0];
             var input1: NodeTreeInputItem = $node.inputVec[1];
@@ -396,37 +413,37 @@
 
             var regtemp: RegisterItem = this.getFragmentTemp();
 
-            var resultStr: string ="";
+            var resultStr: string = "";
 
             //"vec4 ft0 = vec4(0,0,0,0);
-            if(!regtemp.hasInit && !(input0.type == MaterialItemType.VEC4 || input1.type == MaterialItemType.VEC4)) {//vec4(0,0,0,0)
-                resultStr = CompileTwo.VEC4 + CompileTwo.SPACE + CompileTwo.FT + regtemp.id + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE + CompileTwo.DEFAULT_VEC4 + CompileTwo.END + CompileTwo. LN;
+            if (!regtemp.hasInit && !(input0.type == MaterialItemType.VEC4 || input1.type == MaterialItemType.VEC4)) {//vec4(0,0,0,0)
+                resultStr = CompileTwo.VEC4 + CompileTwo.SPACE + CompileTwo.FT + regtemp.id + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE + CompileTwo.DEFAULT_VEC4 + CompileTwo.END + CompileTwo.LN;
                 regtemp.hasInit = true;
             }
 
-			//"vec4 info = infoUv * infoLight;\n" +
-			
-			if(input0.type == MaterialItemType.VEC4 || input1.type == MaterialItemType.VEC4) {
+            //"vec4 info = infoUv * infoLight;\n" +
+
+            if (input0.type == MaterialItemType.VEC4 || input1.type == MaterialItemType.VEC4) {
                 //str = opCode + SPACE + FT + regtemp.id + COMMA;
                 if (!regtemp.hasInit) {
-                    resultStr = CompileTwo.VEC4 + CompileTwo. SPACE;
+                    resultStr = CompileTwo.VEC4 + CompileTwo.SPACE;
                     regtemp.hasInit = true;
                 }
-                str = CompileTwo.FT + regtemp.id + CompileTwo.SPACE + CompileTwo. EQU + CompileTwo.SPACE;
-            }else if(output.type == MaterialItemType.FLOAT) {
+                str = CompileTwo.FT + regtemp.id + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE;
+            } else if (output.type == MaterialItemType.FLOAT) {
                 //str = opCode + SPACE + FT + regtemp.id + X + COMMA;
-                str = CompileTwo.FT + regtemp.id + CompileTwo. X + CompileTwo. SPACE + CompileTwo. EQU + CompileTwo.SPACE;
-            }else if(output.type == MaterialItemType.VEC2) {
+                str = CompileTwo.FT + regtemp.id + CompileTwo.X + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE;
+            } else if (output.type == MaterialItemType.VEC2) {
                 //str = opCode + SPACE + FT + regtemp.id + XY + COMMA;
-                str = CompileTwo. FT + regtemp.id + CompileTwo.XY + CompileTwo.SPACE + CompileTwo. EQU + CompileTwo. SPACE;
-            }else if(output.type == MaterialItemType.VEC3) {
+                str = CompileTwo.FT + regtemp.id + CompileTwo.XY + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE;
+            } else if (output.type == MaterialItemType.VEC3) {
                 //str = opCode + SPACE + FT + regtemp.id + XYZ + COMMA;
-                str = CompileTwo. FT + regtemp.id + CompileTwo.XYZ + CompileTwo.SPACE + CompileTwo. EQU + CompileTwo.SPACE;
+                str = CompileTwo.FT + regtemp.id + CompileTwo.XYZ + CompileTwo.SPACE + CompileTwo.EQU + CompileTwo.SPACE;
             }
-			
-			str += pNode0.getComponentID(input0.parentNodeItem.id);
 
-            str += CompileTwo.SPACE + opCode + CompileTwo. SPACE;
+            str += pNode0.getComponentID(input0.parentNodeItem.id);
+
+            str += CompileTwo.SPACE + opCode + CompileTwo.SPACE;
 
             str += pNode1.getComponentID(input1.parentNodeItem.id);
 
@@ -440,7 +457,7 @@
 
             $node.regResultTemp = regtemp;
             $node.shaderStr = str;
-            this. strVec.push(str);
+            this.strVec.push(str);
         }
 
         public processNode($node: NodeTree): void {
@@ -448,7 +465,7 @@
                 case NodeTree.VEC3:
                 case NodeTree.FLOAT:
                 case NodeTree.VEC2:
-                    //processVec3Node($node);
+                    this.processVec3Node($node);
                     break;
                 case NodeTree.TEX:
                     this.processTexNode($node);
@@ -457,10 +474,10 @@
                     this.processDynamicNode($node, "*");
                     break;
                 case NodeTree.ADD:
-                     this.processDynamicNode($node, "+");
+                    this.processDynamicNode($node, "+");
                     break;
                 case NodeTree.SUB:
-                     this.processDynamicNode($node, "-");
+                    this.processDynamicNode($node, "-");
                     break;
                 case NodeTree.DIV:
                     this.processDynamicNode($node, "/");
@@ -529,6 +546,113 @@
         }
         private get scalelightmapStr(): string {
             return "fc[" + this._scalelightmapID + "].x";
+        }
+        public processVec3Node($node: NodeTree): void {
+            var str: string = "";
+            this.setFragmentConst($node);
+            this.addConstItem($node);
+        }
+        public addConstItem($node: NodeTree): void {
+            if ($node.isDynamic) {
+                console.log($node.paramName);
+            }
+            var constItem: ConstItem;
+
+            var id: number = $node.regResultConst.id;
+
+            for (var i: number = 0; i < this.constVec.length; i++) {
+                if (this.constVec[i].id == id) {
+                    constItem = this.constVec[i];
+                }
+            }
+
+            if (!constItem) {
+                constItem = new ConstItem;
+                constItem.id = $node.regResultConst.id;
+                this.constVec.push(constItem);
+            }
+
+
+            if ($node.type == NodeTree.VEC3) {
+                if ($node.regConstIndex == 0) {
+                    var v3d: Vector3D = (<NodeTreeVec3>$node).constVec3;
+                    constItem.value.setTo(v3d.x, v3d.y, v3d.z);
+                    if ($node.isDynamic) {
+                        constItem.paramName0 = $node.paramName;
+                        constItem.param0Type = 4;
+                        constItem.param0Index = 0;
+                    }
+                }
+            } else if ($node.type == NodeTree.FLOAT) {
+                var num: number = (<NodeTreeFloat>$node).constValue;
+                if ($node.regConstIndex == 0) {
+                    constItem.value.x = num;
+                    if ($node.isDynamic) {
+                        constItem.paramName0 = $node.paramName;
+                        constItem.param0Type = 1;
+                        constItem.param0Index = 0;
+                    }
+                } else if ($node.regConstIndex == 1) {
+                    constItem.value.y = num;
+                    if ($node.isDynamic) {
+                        constItem.paramName1 = $node.paramName;
+                        constItem.param1Type = 1;
+                        constItem.param1Index = 1;
+                    }
+                } else if ($node.regConstIndex == 2) {
+                    constItem.value.z = num;
+                    if ($node.isDynamic) {
+                        constItem.paramName2 = $node.paramName;
+                        constItem.param2Type = 1;
+                        constItem.param2Index = 2;
+                    }
+                } else if ($node.regConstIndex == 3) {
+                    constItem.value.w = num;
+                    if ($node.isDynamic) {
+                        constItem.paramName3 = $node.paramName;
+                        constItem.param3Type = 1;
+                        constItem.param3Index = 3;
+                    }
+                }
+            } else if ($node.type == NodeTree.VEC2) {
+                var vec2: Vector2D = (<NodeTreeVec2>$node).constValue;
+                if ($node.regConstIndex == 0) {
+                    constItem.value.x = vec2.x;
+                    constItem.value.y = vec2.y;
+                    if ($node.isDynamic) {
+                        constItem.paramName0 = $node.paramName;
+                        constItem.param0Type = 2;
+                        constItem.param0Index = 0;
+                    }
+                } else if ($node.regConstIndex == 1) {
+                    constItem.value.y = vec2.x;
+                    constItem.value.z = vec2.y;
+                    if ($node.isDynamic) {
+                        constItem.paramName1 = $node.paramName;
+                        constItem.param1Type = 2;
+                        constItem.param1Index = 1;
+                    }
+                } else if ($node.regConstIndex == 2) {
+                    constItem.value.z = vec2.x;
+                    constItem.value.w = vec2.y;
+                    if ($node.isDynamic) {
+                        constItem.paramName2 = $node.paramName;
+                        constItem.param2Type = 2;
+                        constItem.param2Index = 2;
+                    }
+                }
+            }
+
+
+
+        }
+        public setFragmentConst($nodeTree: NodeTree): void {
+            for (var i: number = this._fcBeginID; i < this.fragmentConstList.length; i++) {
+                var tf: boolean = this.fragmentConstList[i].getUse($nodeTree);
+                if (tf) {
+                    break;
+                }
+            }
         }
 
         public processOpNode($node: NodeTree): void {

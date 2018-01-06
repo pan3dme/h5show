@@ -1,6 +1,6 @@
 var left;
 (function (left) {
-    var ModelShowModel = (function () {
+    var ModelShowModel = /** @class */ (function () {
         function ModelShowModel() {
         }
         ModelShowModel.getInstance = function () {
@@ -28,14 +28,25 @@ var left;
             this.gridLineSprite = new GridLineSprite();
             this.lightSpriteList = new left.MaterialModelSprite();
         };
-        ModelShowModel.prototype.outShaderStr = function ($str) {
+        ModelShowModel.prototype.outShaderStr = function ($materialTree) {
+            var $str = $materialTree.shaderStr;
+            //  console.log($materialTree.constList)
+            //  console.log($materialTree.texList)
             var $material = this.lightSpriteList.material;
-            console.log($str);
-            console.log("--------------");
-            console.log($material.shader.fragment);
+            console.log($material.shader.paramAry);
+            var $buildMaterialShader = new left.BuildMaterialShader();
+            $buildMaterialShader.buildParamAry($materialTree);
+            console.log($buildMaterialShader.paramAry);
+            $buildMaterialShader.vertex = $buildMaterialShader.getVertexShaderString();
+            $buildMaterialShader.fragment = $str;
+            $buildMaterialShader.encode();
+            this.lightSpriteList.material.shader = $buildMaterialShader;
+            $material.program = $material.shader.program;
+            /*
             $material.shader.fragment = $str;
             this.lightSpriteList.material.shader.encode();
             $material.program = $material.shader.program;
+   */
         };
         ModelShowModel.prototype.getMaterialProgram = function (key, shaderCls, $material, paramAry, parmaByFragmet) {
             if (paramAry === void 0) { paramAry = null; }
@@ -65,7 +76,7 @@ var left;
             return shader;
         };
         return ModelShowModel;
-    })();
+    }());
     left.ModelShowModel = ModelShowModel;
 })(left || (left = {}));
 //# sourceMappingURL=ModelShowModel.js.map

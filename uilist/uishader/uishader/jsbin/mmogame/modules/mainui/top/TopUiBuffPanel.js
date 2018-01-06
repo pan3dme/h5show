@@ -1,11 +1,16 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var topui;
 (function (topui) {
-    var BuffCdUi = (function () {
+    var BuffCdUi = /** @class */ (function () {
         function BuffCdUi() {
             this.endTM = 0;
             this.len = 20; //秒
@@ -18,9 +23,9 @@ var topui;
             }
         };
         return BuffCdUi;
-    })();
+    }());
     topui.BuffCdUi = BuffCdUi;
-    var TopBuffUiList = (function () {
+    var TopBuffUiList = /** @class */ (function () {
         function TopBuffUiList($perent, $render, $cd) {
             var _this = this;
             this._showListArr = [148, 151, 152];
@@ -63,6 +68,7 @@ var topui;
                     this.ctxIconPic($buffCdUi.ui, keynum);
                     $buffCdUi.endTM = $buff.item[keynum];
                     this.buffuiItem.push($buffCdUi);
+                    //  console.log("显示", keynum);
                 }
             }
         };
@@ -97,16 +103,17 @@ var topui;
         };
         TopBuffUiList.cdKeyLen = new Object;
         return TopBuffUiList;
-    })();
+    }());
     topui.TopBuffUiList = TopBuffUiList;
-    var TopUiBuffPanel = (function (_super) {
+    var TopUiBuffPanel = /** @class */ (function (_super) {
         __extends(TopUiBuffPanel, _super);
         function TopUiBuffPanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.top = 0;
-            this.left = 0;
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.top = 0;
+            _this.left = 0;
+            return _this;
         }
         TopUiBuffPanel.prototype.setRender = function ($top, $cd) {
             this._topRender = $top;
@@ -127,7 +134,7 @@ var topui;
             */
         };
         return TopUiBuffPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     topui.TopUiBuffPanel = TopUiBuffPanel;
 })(topui || (topui = {}));
 //# sourceMappingURL=TopUiBuffPanel.js.map

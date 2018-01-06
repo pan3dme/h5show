@@ -7,7 +7,13 @@
         private  gItem:ItemMaterialUI;
         private  bItem:ItemMaterialUI;
         private  aItem:ItemMaterialUI;
-        private  rgbaItem:ItemMaterialUI;
+        private rgbaItem: ItemMaterialUI;
+
+
+        private _wrap: number//0 reapte,1 clamp
+        private _mipmap: number;// 0=disable、1=nearest、2=linear
+        private _filter: number;// 0=linear1=nearest、
+        private  _permul: boolean;
 
         public constructor() {
             super();
@@ -47,6 +53,64 @@
             this.addItems(this.rgbaItem);
         }
         
-   
+        public setData(obj: any): void {
+            super.setData(obj);
+            obj.url = String(obj.url).replace(Scene_data.fileRoot, "");//兼容原来相对路径
+            //addBitmpUrl(obj.url);
+            (<NodeTreeTex>this.nodeTree).url = obj.url;
+            this.isMain = obj.isMain;
+            this.wrap = obj.wrap;
+            this.mipmap = obj.mipmap;
+            this.filter = obj.filter;
+            this.permul = obj.permul;
+           this. showDynamic();
+        }
+        public get wrap(): number {
+            return this._wrap;
+        }
+        public get mipmap(): number {
+            return this._mipmap;
+        }
+
+        public get filter(): number {
+            return this._filter;
+        }
+        public  get permul(): boolean {
+            return this._permul;
+        }
+
+        public set permul(value: boolean) {
+            this._permul = value;
+            (<NodeTreeTex>this.nodeTree).permul = value;
+        }
+        public set filter(value: number) {
+            this._filter = value;
+            (<NodeTreeTex>this.nodeTree).filter = value;
+        }
+
+        public set mipmap(value: number) {
+            this._mipmap = value;
+            (<NodeTreeTex>this.nodeTree).mipmap = value;
+        }
+
+        public set wrap(value: number) {
+            this._wrap = value;
+            (<NodeTreeTex>this.nodeTree).wrap = value;
+        }
+        public  set isMain(value: boolean) {
+            (<NodeTreeTex>this.nodeTree).isMain = value;
+            if (value) {
+              //  _mainTxt.text = "M";
+            } else {
+              //  _mainTxt.text = "";
+            }
+        }
+         public  showDynamic(): void {
+            if (this.nodeTree.isDynamic) {
+                this.drawTitleToFrame("纹理采样<" + this.nodeTree.paramName + ">");
+            } else {
+                this.drawTitleToFrame("纹理采样");
+            }
+        }
     }
 } 

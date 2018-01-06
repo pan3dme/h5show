@@ -1,25 +1,30 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var kuafu;
 (function (kuafu) {
-    var KuaFu1v1Event = (function (_super) {
+    var KuaFu1v1Event = /** @class */ (function (_super) {
         __extends(KuaFu1v1Event, _super);
         function KuaFu1v1Event() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         KuaFu1v1Event.SHOW_1V1_LOG_PANEL = "SHOW_1V1_LOG_PANEL";
         KuaFu1v1Event.SHOW_1V1_SCENE_PANEL = "SHOW_1V1_SCENE_PANEL";
         KuaFu1v1Event.SHOW_1V1_END_PANEL = "SHOW_1V1_END_PANEL";
         return KuaFu1v1Event;
-    })(BaseEvent);
+    }(BaseEvent));
     kuafu.KuaFu1v1Event = KuaFu1v1Event;
-    var KuaFu1v1Processor = (function (_super) {
+    var KuaFu1v1Processor = /** @class */ (function (_super) {
         __extends(KuaFu1v1Processor, _super);
         function KuaFu1v1Processor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         KuaFu1v1Processor.prototype.getName = function () {
             return "KuaFu1v1Processor";
@@ -28,11 +33,13 @@ var kuafu;
             if ($event instanceof KuaFu1v1Event) {
                 var $kuaFu1v1Event = $event;
                 if ($kuaFu1v1Event.type == KuaFu1v1Event.SHOW_1V1_LOG_PANEL) {
+                    //this.showKuafu1v1LogPanel();
                 }
                 if ($kuaFu1v1Event.type == KuaFu1v1Event.SHOW_1V1_SCENE_PANEL) {
                     this.showKuafu1v1SceneTopPanel();
                 }
                 if ($kuaFu1v1Event.type == KuaFu1v1Event.SHOW_1V1_END_PANEL) {
+                    //     this.showKuafu1V1EndPanel();
                 }
             }
             if ($event instanceof UIPanelEvent) {
@@ -72,7 +79,7 @@ var kuafu;
             ];
         };
         return KuaFu1v1Processor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     kuafu.KuaFu1v1Processor = KuaFu1v1Processor;
 })(kuafu || (kuafu = {}));
 //# sourceMappingURL=KuaFu1v1Processor.js.map

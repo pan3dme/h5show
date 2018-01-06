@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var fb;
 (function (fb) {
-    var FubenEvent = (function (_super) {
+    var FubenEvent = /** @class */ (function (_super) {
         __extends(FubenEvent, _super);
         function FubenEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         FubenEvent.SHOW_FUBEN_EVENT = "SHOW_FUBEN_EVENT"; //显示面板
         //public static FUBEN_REFRESH: string = "FUBEN_REFRESH";
@@ -20,12 +25,12 @@ var fb;
         FubenEvent.REFRESH_FUBEN_SCENE_LEFT_QUEST = "REFRESH_FUBEN_SCENE_LEFT_QUEST";
         FubenEvent.FUBEN_TRIAL_RANK_LIST_QUERY_RESULT = "FUBEN_TRIAL_RANK_LIST_QUERY_RESULT"; // 更新到试练塔排行数据
         return FubenEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     fb.FubenEvent = FubenEvent;
-    var FubenModule = (function (_super) {
+    var FubenModule = /** @class */ (function (_super) {
         __extends(FubenModule, _super);
         function FubenModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         FubenModule.prototype.getModuleName = function () {
             return "FubenModule";
@@ -34,12 +39,12 @@ var fb;
             return [new FubenProcessor()];
         };
         return FubenModule;
-    })(Module);
+    }(Module));
     fb.FubenModule = FubenModule;
-    var FubenProcessor = (function (_super) {
+    var FubenProcessor = /** @class */ (function (_super) {
         __extends(FubenProcessor, _super);
         function FubenProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         FubenProcessor.prototype.getName = function () {
             return "FubenProcessor";
@@ -107,7 +112,7 @@ var fb;
             return obj;
         };
         return FubenProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     fb.FubenProcessor = FubenProcessor;
 })(fb || (fb = {}));
 //# sourceMappingURL=FubenProcessor.js.map

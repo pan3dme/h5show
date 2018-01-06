@@ -1,26 +1,32 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var quest;
 (function (quest) {
-    var QuestEvent = (function (_super) {
+    var QuestEvent = /** @class */ (function (_super) {
         __extends(QuestEvent, _super);
         function QuestEvent() {
-            _super.apply(this, arguments);
-            this.tabType = 0;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.tabType = 0;
+            return _this;
         }
         QuestEvent.SHOW_DAILY_QUEST_EVENT = "SHOW_DAILY_QUEST_EVENT"; //显示日常任务面板
         QuestEvent.HIDE_DAILY_QUEST_EVENT = "HIDE_DAILY_QUEST_EVENT"; //隐藏日常任务面板
         QuestEvent.REFRESH_DAILY_QUEST_EVENT = "REFRESH_DAILY_QUEST_EVENT"; //更新日常任务面板
         return QuestEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     quest.QuestEvent = QuestEvent;
-    var QuestModule = (function (_super) {
+    var QuestModule = /** @class */ (function (_super) {
         __extends(QuestModule, _super);
         function QuestModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         QuestModule.prototype.getModuleName = function () {
             return "QuestModule";
@@ -29,12 +35,12 @@ var quest;
             return [new QuestProcessor()];
         };
         return QuestModule;
-    })(Module);
+    }(Module));
     quest.QuestModule = QuestModule;
-    var QuestProcessor = (function (_super) {
+    var QuestProcessor = /** @class */ (function (_super) {
         __extends(QuestProcessor, _super);
         function QuestProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         QuestProcessor.prototype.getName = function () {
             return "QuestProcessor";
@@ -86,7 +92,7 @@ var quest;
             ];
         };
         return QuestProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     quest.QuestProcessor = QuestProcessor;
 })(quest || (quest = {}));
 //# sourceMappingURL=QuestProcessor.js.map

@@ -1,26 +1,31 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var materialui;
 (function (materialui) {
-    var MaterialEvent = (function (_super) {
+    var MaterialEvent = /** @class */ (function (_super) {
         __extends(MaterialEvent, _super);
         function MaterialEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MaterialEvent.SHOW_MATERIA_PANEL = "INIT_MATERIA_PANEL"; //
         MaterialEvent.SAVE_MATERIA_PANEL = "SAVE_MATERIA_PANEL"; //
         MaterialEvent.SELECT_MATERIAL_NODE_UI = "SELECT_MATERIAL_NODE_UI"; //
         MaterialEvent.COMPILE_MATERIAL = "COMPILE_MATERIAL"; //
         return MaterialEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     materialui.MaterialEvent = MaterialEvent;
-    var MaterialModule = (function (_super) {
+    var MaterialModule = /** @class */ (function (_super) {
         __extends(MaterialModule, _super);
         function MaterialModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MaterialModule.prototype.getModuleName = function () {
             return "MaterialModule";
@@ -29,12 +34,12 @@ var materialui;
             return [new MaterialProcessor()];
         };
         return MaterialModule;
-    })(Module);
+    }(Module));
     materialui.MaterialModule = MaterialModule;
-    var MaterialProcessor = (function (_super) {
+    var MaterialProcessor = /** @class */ (function (_super) {
         __extends(MaterialProcessor, _super);
         function MaterialProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MaterialProcessor.prototype.getName = function () {
             return "MaterialProcessor";
@@ -123,6 +128,8 @@ var materialui;
                 this.readMaterialTree();
             }
             else {
+                // MaterialCtrl.getInstance().addNodeUI(new ResultNodeUI())
+                // MaterialCtrl.getInstance().addNodeUI(new TextureSampleNodeUI())
             }
             document.addEventListener(MouseType.MouseWheel, function ($evt) { _this.onMouseWheel($evt); });
             document.addEventListener(MouseType.MouseDown, function ($evt) { _this.onMouse($evt); });
@@ -237,7 +244,7 @@ var materialui;
             UIManager.getInstance().resize();
         };
         return MaterialProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     materialui.MaterialProcessor = MaterialProcessor;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialProcessor.js.map

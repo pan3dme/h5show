@@ -34,23 +34,32 @@
             this.lightSpriteList = new MaterialModelSprite();
       
         }
-        public outShaderStr($str: string): void {
+        public outShaderStr($materialTree: materialui.MaterialTree): void {
+
+            var $str: string = $materialTree.shaderStr;
+          //  console.log($materialTree.constList)
+          //  console.log($materialTree.texList)
+
             var $material: Material = this.lightSpriteList.material
 
-            console.log($str)
-            console.log("--------------")
-            console.log($material.shader.fragment)
+            console.log($material.shader.paramAry)
+
+            var $buildMaterialShader: BuildMaterialShader = new BuildMaterialShader()
+            $buildMaterialShader.buildParamAry($materialTree);
+            console.log($buildMaterialShader.paramAry)
+            $buildMaterialShader.vertex = $buildMaterialShader.getVertexShaderString()
+            $buildMaterialShader.fragment = $str;
+            $buildMaterialShader.encode();
 
 
-            $material.shader.fragment = $str
-
-            this.lightSpriteList.material.shader.encode();
-
-
+            this.lightSpriteList.material.shader = $buildMaterialShader;
             $material.program = $material.shader.program;
-   
-  
-        
+
+            /*
+            $material.shader.fragment = $str;
+            this.lightSpriteList.material.shader.encode();
+            $material.program = $material.shader.program;
+   */
 
         }
       

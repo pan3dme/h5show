@@ -1,6 +1,6 @@
 var bottomui;
 (function (bottomui) {
-    var Progress_line = (function () {
+    var Progress_line = /** @class */ (function () {
         function Progress_line($perent, $bottom, $mid) {
             var _this = this;
             this.perent = $perent;
@@ -63,7 +63,7 @@ var bottomui;
             return this._instance;
         };
         return Progress_line;
-    })();
+    }());
     bottomui.Progress_line = Progress_line;
 })(bottomui || (bottomui = {}));
 //# sourceMappingURL=BottomProgressBar.js.map

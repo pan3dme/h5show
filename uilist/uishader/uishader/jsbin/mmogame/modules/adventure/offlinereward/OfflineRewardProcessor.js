@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var offlinereward;
 (function (offlinereward) {
-    var OfflineRewardModule = (function (_super) {
+    var OfflineRewardModule = /** @class */ (function (_super) {
         __extends(OfflineRewardModule, _super);
         function OfflineRewardModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         OfflineRewardModule.prototype.getModuleName = function () {
             return "OfflineRewardModule";
@@ -17,22 +22,22 @@ var offlinereward;
             return [new OfflineRewardProcessor()];
         };
         return OfflineRewardModule;
-    })(Module);
+    }(Module));
     offlinereward.OfflineRewardModule = OfflineRewardModule;
-    var OfflineRewardEvent = (function (_super) {
+    var OfflineRewardEvent = /** @class */ (function (_super) {
         __extends(OfflineRewardEvent, _super);
         function OfflineRewardEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         OfflineRewardEvent.SHOW_OFFLINE_REWARD_PANEL = "SHOW_OFFLINE_REWARD_PANEL";
         OfflineRewardEvent.HIDE_OFFLINE_REWARD_PANEL = "HIDE_OFFLINE_REWARD_PANEL";
         return OfflineRewardEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     offlinereward.OfflineRewardEvent = OfflineRewardEvent;
-    var OfflineRewardProcessor = (function (_super) {
+    var OfflineRewardProcessor = /** @class */ (function (_super) {
         __extends(OfflineRewardProcessor, _super);
         function OfflineRewardProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         OfflineRewardProcessor.prototype.getName = function () {
             return "OfflineRewardProcessor";
@@ -72,7 +77,7 @@ var offlinereward;
             ];
         };
         return OfflineRewardProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     offlinereward.OfflineRewardProcessor = OfflineRewardProcessor;
 })(offlinereward || (offlinereward = {}));
 //# sourceMappingURL=OfflineRewardProcessor.js.map

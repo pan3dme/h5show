@@ -1,4 +1,4 @@
-var Dictionary = (function () {
+var Dictionary = /** @class */ (function () {
     function Dictionary(init) {
         this._keys = new Array;
         this._values = new Array;
@@ -43,8 +43,8 @@ var Dictionary = (function () {
         return this;
     };
     return Dictionary;
-})();
-var WeakSet = (function () {
+}());
+var WeakSet = /** @class */ (function () {
     function WeakSet() {
         this._item = new Array;
     }
@@ -60,5 +60,5 @@ var WeakSet = (function () {
         return false;
     };
     return WeakSet;
-})();
+}());
 //# sourceMappingURL=Dictionary.js.map

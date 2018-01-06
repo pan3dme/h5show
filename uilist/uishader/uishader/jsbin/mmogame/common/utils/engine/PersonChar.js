@@ -1,20 +1,26 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var PersonChar = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var PersonChar = /** @class */ (function (_super) {
     __extends(PersonChar, _super);
     function PersonChar() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     return PersonChar;
-})(SceneChar);
-var Display3DSprite2DBind = (function (_super) {
+}(SceneChar));
+var Display3DSprite2DBind = /** @class */ (function (_super) {
     __extends(Display3DSprite2DBind, _super);
     function Display3DSprite2DBind() {
-        _super.call(this);
-        this.vpMatrix = new Matrix3D;
+        var _this = _super.call(this) || this;
+        _this.vpMatrix = new Matrix3D;
+        return _this;
     }
     Display3DSprite2DBind.prototype.setCam = function () {
         //Scene_data.context3D.setVcMatrix4fv(this.material.shader, "viewMatrix3D", this.uiViewMatrix.m);
@@ -50,8 +56,8 @@ var Display3DSprite2DBind = (function (_super) {
         }
     };
     return Display3DSprite2DBind;
-})(Display3DSprite);
-var TestModel = (function () {
+}(Display3DSprite));
+var TestModel = /** @class */ (function () {
     function TestModel() {
         this.objData = new ObjData();
         var vertices = [];
@@ -100,28 +106,29 @@ var TestModel = (function () {
         $objData.indexBuffer = Scene_data.context3D.uploadIndexBuff3D($objData.indexs);
     };
     return TestModel;
-})();
-var Person2DChar = (function (_super) {
+}());
+var Person2DChar = /** @class */ (function (_super) {
     __extends(Person2DChar, _super);
     function Person2DChar() {
-        _super.call(this);
-        this.vpMatrix = new Matrix3D;
-        this._camRx = 0;
-        this._camRy = 0;
-        this.needUIUrl = true;
-        this.bindZero = false;
-        this.showAvatarVisibel = true; //是否显示角色模型， 区别于显示唯一武器时
-        this.deltTime = 0;
-        this.uiMatrix = new Matrix3D;
-        this.uiMatrix.prependTranslation(0, 0, 600);
-        this.uiMatrix.prependRotation(-10, Vector3D.X_AXIS);
-        this.uiMatrix.prependRotation(180, Vector3D.Y_AXIS);
-        var $m = this.uiMatrix.clone();
+        var _this = _super.call(this) || this;
+        _this.vpMatrix = new Matrix3D;
+        _this._camRx = 0;
+        _this._camRy = 0;
+        _this.needUIUrl = true;
+        _this.bindZero = false;
+        _this.showAvatarVisibel = true; //是否显示角色模型， 区别于显示唯一武器时
+        _this.deltTime = 0;
+        _this.uiMatrix = new Matrix3D;
+        _this.uiMatrix.prependTranslation(0, 0, 600);
+        _this.uiMatrix.prependRotation(-10, Vector3D.X_AXIS);
+        _this.uiMatrix.prependRotation(180, Vector3D.Y_AXIS);
+        var $m = _this.uiMatrix.clone();
         $m.invert();
-        this.uiCamPos = $m.position;
-        this.uiViewMatrix = new Matrix3D;
-        this.resize();
-        this.addStage();
+        _this.uiCamPos = $m.position;
+        _this.uiViewMatrix = new Matrix3D;
+        _this.resize();
+        _this.addStage();
+        return _this;
     }
     Person2DChar.prototype.setCamData = function (rx, ry, distance) {
         this.uiMatrix = new Matrix3D;
@@ -380,11 +387,11 @@ var Person2DChar = (function (_super) {
         this.deltTime = TimeUtil.getTimer();
     };
     return Person2DChar;
-})(SceneChar);
-var MonsterUIChar = (function (_super) {
+}(SceneChar));
+var MonsterUIChar = /** @class */ (function (_super) {
     __extends(MonsterUIChar, _super);
     function MonsterUIChar() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     MonsterUIChar.prototype.getSceneCharAvatarUrl = function (num) {
         return getRoleUrl(String(num));
@@ -393,14 +400,15 @@ var MonsterUIChar = (function (_super) {
         return getModelUrl(String(num));
     };
     return MonsterUIChar;
-})(Person2DChar);
-var DialogueUIChar = (function (_super) {
+}(Person2DChar));
+var DialogueUIChar = /** @class */ (function (_super) {
     __extends(DialogueUIChar, _super);
     function DialogueUIChar() {
-        _super.apply(this, arguments);
-        this.uiRoleScale = 1;
-        this.num1000 = 960; //UIData.designWidth==960
-        this.uiRole = false;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.uiRoleScale = 1;
+        _this.num1000 = 960; //UIData.designWidth==960
+        _this.uiRole = false;
+        return _this;
     }
     DialogueUIChar.prototype.onMeshLoaded = function () {
         _super.prototype.onMeshLoaded.call(this);
@@ -443,5 +451,5 @@ var DialogueUIChar = (function (_super) {
         _super.prototype.setAvatar.call(this, num);
     };
     return DialogueUIChar;
-})(MonsterUIChar);
+}(MonsterUIChar));
 //# sourceMappingURL=PersonChar.js.map

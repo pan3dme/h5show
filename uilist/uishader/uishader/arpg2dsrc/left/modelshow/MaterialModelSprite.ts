@@ -1,4 +1,5 @@
-﻿class MaterialModelShader extends Shader3D {
+﻿/*
+class MaterialModelShader extends Shader3D {
     static MaterialModelShader: string = "MaterialModelShader";
     constructor() {
         super();
@@ -41,7 +42,7 @@
     }
 
 }
-
+*/
 module left {
 
     export class MaterialModelSprite extends Display3DSprite {
@@ -50,7 +51,7 @@ module left {
             super();
             //model/cartoontree05.txt
             //model/cartoontree05.txt
-            GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/ccav1.txt", (groupRes: GroupRes) => {
+            GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/pan3dme.txt", (groupRes: GroupRes) => {
                 this.loadPartRes(groupRes)
             })
             this.setLightMapUrl("ui/load/blood.png")
@@ -64,7 +65,7 @@ module left {
             for (var i: number = 0; i < groupRes.dataAry.length; i++) {
                 var item: GroupItem = groupRes.dataAry[i];
                 if (item.types == BaseRes.PREFAB_TYPE) {
-                    this.scaleX = this.scaleY = this.scaleZ = 5.2
+                    this.scaleX = this.scaleY = this.scaleZ =0.2
                     this.setObjUrl(item.objUrl);
                     this.setMaterialUrl(item.materialUrl, item.materialInfoArr);
                     return
@@ -76,23 +77,17 @@ module left {
             if ($material.fcNum <= 0) {
                 return;
             }
-
             var t: number = 0;
             if ($material.hasTime) {
                 t = (TimeUtil.getTimer() - this.time) % 100000 * 0.001;
             }
-
             $material.update(t);
-
             this.setCamPos($material);
-
             if ($mp) {
                 $mp.update();
             }
-
-
             Scene_data.context3D.setVc4fv($material.shader, "fc", $material.fcData);
-            console.log($material.fcData)
+
         }
 
     

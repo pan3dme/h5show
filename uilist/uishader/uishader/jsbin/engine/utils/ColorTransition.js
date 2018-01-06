@@ -1,4 +1,4 @@
-var ColorTransition = (function () {
+var ColorTransition = /** @class */ (function () {
     function ColorTransition() {
         this._canvas = document.createElement("canvas");
         this._cxt = this._canvas.getContext("2d");
@@ -41,5 +41,5 @@ var ColorTransition = (function () {
     ColorTransition.prototype.setData = function () {
     };
     return ColorTransition;
-})();
+}());
 //# sourceMappingURL=ColorTransition.js.map
