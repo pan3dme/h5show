@@ -22,15 +22,15 @@
                     this.metaDataView = new Vec3PropMeshPanel();
                 } else if ($ui instanceof materialui.ConstFloatNodeUI) {
                     this.metaDataView = new FloatPropMeshPanel();
+                } else if ($ui instanceof materialui.TextureSampleNodeUI) {
+                    this.metaDataView = new TexturePropMeshPanel();
                 } else {
                     return;
                 }
                 this.lastNodel = $ui;
                 this.metaDataView.data = $ui;
+
             }
-
-
-
         }
     }
 }

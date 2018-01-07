@@ -93,12 +93,16 @@
     <TypeScriptCompile Include="arpg2dsrc\left\modelshow\MaterialModelSprite.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\modelshow\ModelShowModel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\modelshow\SceneRenderToTextrue.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\base\ComBoBoxCtrl2D.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\base\Texturue2DUI.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\ComboBoxUi.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\InputTextUi.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\ReflectionEvet.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\TextLabelUI.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\base\ReflectionData.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\base\TextCtrlInput.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\base\MetaDataView.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\TexturePicUi.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\PropModel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\view\FloatPropMeshPanel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\view\TexturePropMeshPanel.ts" />

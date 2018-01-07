@@ -22,6 +22,9 @@ var prop;
                 else if ($ui instanceof materialui.ConstFloatNodeUI) {
                     this.metaDataView = new prop.FloatPropMeshPanel();
                 }
+                else if ($ui instanceof materialui.TextureSampleNodeUI) {
+                    this.metaDataView = new prop.TexturePropMeshPanel();
+                }
                 else {
                     return;
                 }

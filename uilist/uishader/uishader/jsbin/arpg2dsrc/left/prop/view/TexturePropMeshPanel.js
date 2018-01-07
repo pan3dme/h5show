@@ -12,10 +12,36 @@ var prop;
         }
         TexturePropMeshPanel.prototype.getView = function () {
             var ary = [
-                { Type: prop.ReflectionData.NumberInput, Label: "贴图:", GetFun: this.getValue, SetFun: this.setValue, target: this, Category: "属性" },
+                { Type: prop.ReflectionData.Texturue2DUI, Label: "纹理:", FunKey: "picurl", target: this, Category: "属性" },
+                { Type: prop.ReflectionData.ComboBox, Label: "warp:", FunKey: "constValue", target: this, Category: "属性" },
+                { Type: prop.ReflectionData.ComboBox, Label: "mipmin:", FunKey: "constValue", target: this, Category: "属性" },
+                { Type: prop.ReflectionData.ComboBox, Label: "filter:", FunKey: "constValue", target: this, Category: "属性" },
+                { Type: prop.ReflectionData.ComboBox, Label: "预乘:", FunKey: "constValue", target: this, Category: "属性" },
             ];
             return ary;
         };
+        Object.defineProperty(TexturePropMeshPanel.prototype, "data", {
+            get: function () {
+                return this._data;
+            },
+            set: function (value) {
+                this._data = value;
+                this.textureSampleNodeUI = this._data;
+                this.refreshViewValue();
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(TexturePropMeshPanel.prototype, "picurl", {
+            get: function () {
+                return this.textureSampleNodeUI.nodeTree.url;
+            },
+            set: function (value) {
+                this.textureSampleNodeUI.nodeTree.url = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
         return TexturePropMeshPanel;
     })(prop.MetaDataView);
     prop.TexturePropMeshPanel = TexturePropMeshPanel;

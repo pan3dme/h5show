@@ -19,6 +19,8 @@
 
             this._ve3d=this.constVec3NodeUI.constValue
             this.refreshViewValue()
+
+
         }
         public get data(): any {
             return this._data

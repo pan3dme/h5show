@@ -5,9 +5,7 @@ var prop;
             this.creat(this.getView());
         }
         MetaDataView.prototype.getView = function () {
-            var ary = [
-                { Type: prop.ReflectionData.NumberInput, Label: "环境光强:", GetFun: this.getValue, SetFun: this.setValue, target: this, Category: "属性" },
-            ];
+            var ary = [];
             return ary;
         };
         Object.defineProperty(MetaDataView.prototype, "data", {
@@ -41,12 +39,27 @@ var prop;
             if (type == prop.ReflectionData.NumberInput) {
                 return this.getNumComponent(obj);
             }
+            if (type == prop.ReflectionData.Texturue2DUI) {
+                return this.getTexturue2DUI(obj);
+            }
+            if (type == prop.ReflectionData.ComboBox) {
+                return this.getComboBox(obj);
+            }
             return null;
         };
-        MetaDataView.prototype.getValue = function () {
-            return 123;
+        MetaDataView.prototype.getComboBox = function ($obj) {
+            var $ComBoBoxCtrl2D = new prop.ComBoBoxCtrl2D();
+            $ComBoBoxCtrl2D.label = $obj[prop.ReflectionData.Key_Label];
+            $ComBoBoxCtrl2D.FunKey = $obj[prop.ReflectionData.FunKey];
+            $ComBoBoxCtrl2D.target = this;
+            return $ComBoBoxCtrl2D;
         };
-        MetaDataView.prototype.setValue = function (value) {
+        MetaDataView.prototype.getTexturue2DUI = function ($obj) {
+            var $texturue2DUI = new prop.Texturue2DUI();
+            $texturue2DUI.label = $obj[prop.ReflectionData.Key_Label];
+            $texturue2DUI.FunKey = $obj[prop.ReflectionData.FunKey];
+            $texturue2DUI.target = this;
+            return $texturue2DUI;
         };
         MetaDataView.prototype.getNumComponent = function ($obj) {
             var $textCtrlInput = new prop.TextCtrlInput();
