@@ -1,25 +1,19 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var kaifu;
 (function (kaifu) {
-    var KaifuDayTargetPanel = /** @class */ (function (_super) {
+    var KaifuDayTargetPanel = (function (_super) {
         __extends(KaifuDayTargetPanel, _super);
         function KaifuDayTargetPanel() {
-            var _this = _super.call(this) || this;
-            _this.canGet = false;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            return _this;
+            _super.call(this);
+            this.canGet = false;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
         }
         KaifuDayTargetPanel.prototype.setUIAtlas = function ($uiatlas, $winMidRender) {
             this._baseUiAtlas = $uiatlas;
@@ -208,18 +202,18 @@ var kaifu;
             TimeUtil.removeTimeTick(this._drawTimeFun);
         };
         return KaifuDayTargetPanel;
-    }(kaifu.KaifuBaseContainer));
+    })(kaifu.KaifuBaseContainer);
     kaifu.KaifuDayTargetPanel = KaifuDayTargetPanel;
-    var KaiFuDayTargetItemVo = /** @class */ (function () {
+    var KaiFuDayTargetItemVo = (function () {
         function KaiFuDayTargetItemVo() {
         }
         return KaiFuDayTargetItemVo;
-    }());
+    })();
     kaifu.KaiFuDayTargetItemVo = KaiFuDayTargetItemVo;
-    var KaiFuDayTargetList = /** @class */ (function (_super) {
+    var KaiFuDayTargetList = (function (_super) {
         __extends(KaiFuDayTargetList, _super);
         function KaiFuDayTargetList() {
-            return _super.call(this) || this;
+            _super.call(this);
         }
         KaiFuDayTargetList.prototype.init = function ($atlas, $activeID) {
             this._activeID = $activeID;
@@ -258,14 +252,13 @@ var kaifu;
             UIManager.getInstance().removeUIContainer(this);
         };
         return KaiFuDayTargetList;
-    }(SList));
+    })(SList);
     kaifu.KaiFuDayTargetList = KaiFuDayTargetList;
-    var KaiFuDayTargetListItemRender = /** @class */ (function (_super) {
+    var KaiFuDayTargetListItemRender = (function (_super) {
         __extends(KaiFuDayTargetListItemRender, _super);
         function KaiFuDayTargetListItemRender() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this._iconAry = new Array;
-            return _this;
+            _super.apply(this, arguments);
+            this._iconAry = new Array;
         }
         KaiFuDayTargetListItemRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -306,7 +299,7 @@ var kaifu;
             }
         };
         return KaiFuDayTargetListItemRender;
-    }(SListItem));
+    })(SListItem);
     kaifu.KaiFuDayTargetListItemRender = KaiFuDayTargetListItemRender;
 })(kaifu || (kaifu = {}));
 //# sourceMappingURL=KaifuDayTargetPanel.js.map

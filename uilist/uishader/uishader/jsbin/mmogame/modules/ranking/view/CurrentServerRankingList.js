@@ -1,22 +1,17 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var ranking;
 (function (ranking) {
-    var ApplyFactionListVo = /** @class */ (function () {
+    var ApplyFactionListVo = (function () {
         function ApplyFactionListVo() {
         }
         return ApplyFactionListVo;
-    }());
+    })();
     ranking.ApplyFactionListVo = ApplyFactionListVo;
-    var RankingType = /** @class */ (function () {
+    var RankingType = (function () {
         function RankingType() {
         }
         RankingType.RANK_TYPE_POWER = 0;
@@ -26,13 +21,13 @@ var ranking;
         RankingType.RANK_TYPE_MOUNT = 4;
         RankingType.RANK_TYPE_SINGLE_PVP = 5;
         return RankingType;
-    }());
+    })();
     ranking.RankingType = RankingType;
-    var CurrentServerRankingList = /** @class */ (function (_super) {
+    var CurrentServerRankingList = (function (_super) {
         __extends(CurrentServerRankingList, _super);
         function CurrentServerRankingList() {
-            var _this = _super.call(this) || this;
-            _this.KeyShareDefType = [
+            _super.call(this);
+            this.KeyShareDefType = [
                 SharedDef.RANK_TYPE_POWER,
                 SharedDef.RANK_TYPE_LEVEL,
                 SharedDef.RANK_TYPE_FACTION,
@@ -40,9 +35,8 @@ var ranking;
                 SharedDef.RANK_TYPE_MOUNT,
                 SharedDef.RANK_TYPE_SINGLE_PVP // 单人PVP排行
             ];
-            _this.left = 221;
-            _this.top = 131;
-            return _this;
+            this.left = 221;
+            this.top = 131;
         }
         CurrentServerRankingList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -175,14 +169,13 @@ var ranking;
             NetManager.getInstance().unReg(Protocols.SMSG_RANK_LIST_QUERY_RESULT);
         };
         return CurrentServerRankingList;
-    }(DataSlist));
+    })(DataSlist);
     ranking.CurrentServerRankingList = CurrentServerRankingList;
-    var CurrentRankingRender = /** @class */ (function (_super) {
+    var CurrentRankingRender = (function (_super) {
         __extends(CurrentRankingRender, _super);
         function CurrentRankingRender() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this._num = 1;
-            return _this;
+            _super.apply(this, arguments);
+            this._num = 1;
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -401,7 +394,7 @@ var ranking;
             }
         };
         return CurrentRankingRender;
-    }(SListItem));
+    })(SListItem);
     ranking.CurrentRankingRender = CurrentRankingRender;
 })(ranking || (ranking = {}));
 //# sourceMappingURL=CurrentServerRankingList.js.map

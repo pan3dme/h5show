@@ -1,6 +1,6 @@
 var faction;
 (function (faction) {
-    var FactionUitl = /** @class */ (function () {
+    var FactionUitl = (function () {
         function FactionUitl() {
         }
         FactionUitl.getNameByGuid = function ($guid) {
@@ -42,9 +42,9 @@ var faction;
             return timestr;
         };
         return FactionUitl;
-    }());
+    })();
     faction.FactionUitl = FactionUitl;
-    var FactionModel = /** @class */ (function () {
+    var FactionModel = (function () {
         function FactionModel() {
         }
         FactionModel.getInstance = function () {
@@ -95,7 +95,7 @@ var faction;
             }
         };
         return FactionModel;
-    }());
+    })();
     faction.FactionModel = FactionModel;
 })(faction || (faction = {}));
 //# sourceMappingURL=FactionModel.js.map

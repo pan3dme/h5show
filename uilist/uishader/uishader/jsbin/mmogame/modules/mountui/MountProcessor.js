@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var mountui;
 (function (mountui) {
-    var MountUiModule = /** @class */ (function (_super) {
+    var MountUiModule = (function (_super) {
         __extends(MountUiModule, _super);
         function MountUiModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MountUiModule.prototype.getModuleName = function () {
             return "MountUiModule";
@@ -22,12 +17,12 @@ var mountui;
             return [new MountUiProcessor()];
         };
         return MountUiModule;
-    }(Module));
+    })(Module);
     mountui.MountUiModule = MountUiModule;
-    var MountUiEvent = /** @class */ (function (_super) {
+    var MountUiEvent = (function (_super) {
         __extends(MountUiEvent, _super);
         function MountUiEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //展示坐骑面板
         MountUiEvent.SHOW_MOUNT_EVENT = "SHOW_MOUNT_EVENT";
@@ -48,12 +43,12 @@ var mountui;
         //坐骑战力变化
         MountUiEvent.CHG_MOUNT_FORCE = "CHG_MOUNT_FORCE";
         return MountUiEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     mountui.MountUiEvent = MountUiEvent;
-    var MountUiProcessor = /** @class */ (function (_super) {
+    var MountUiProcessor = (function (_super) {
         __extends(MountUiProcessor, _super);
         function MountUiProcessor() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
             // private isNeedItem($chgary:Array<number>):boolean{
             //     if($chgary){
             //         for (let i = 0; i < $chgary.length; i++) {
@@ -66,8 +61,7 @@ var mountui;
             //     return false;
             // }
             // private _needItem:Array<number>
-            _this._nodeInit = false;
-            return _this;
+            this._nodeInit = false;
         }
         MountUiProcessor.prototype.getName = function () {
             return "MountUiProcessor";
@@ -128,7 +122,6 @@ var mountui;
                     // }else{
                     this.processRedPoint();
                     this.refreshCost();
-                    // }
                 }
             }
             if ($event instanceof UIPanelEvent) {
@@ -200,9 +193,6 @@ var mountui;
                     var flagary29 = new Array;
                     for (var i = 0; i < costary.length; i++) {
                         flagary29.push(hasEnoughResItem(costary[i]));
-                        // if(this._needItem.indexOf(costary[i][0]) == -1){
-                        //     this._needItem.push(costary[i][0]);
-                        // }
                     }
                     node29.show = true;
                     for (var flagid = 0; flagid < flagary29.length; flagid++) {
@@ -223,9 +213,6 @@ var mountui;
                     var flagary31 = new Array;
                     for (var i = 0; i < tablevary[mountlev - 1].cost.length; i++) {
                         flagary31.push(hasEnoughResItem(tablevary[mountlev - 1].cost[i]));
-                        // if(this._needItem.indexOf(tablevary[mountlev - 1].cost[i][0]) == -1){
-                        //     this._needItem.push(tablevary[mountlev - 1].cost[i][0]);
-                        // }
                     }
                     node31.show = true;
                     for (var flagid = 0; flagid < flagary31.length; flagid++) {
@@ -246,9 +233,6 @@ var mountui;
                             var flagaryskill = new Array;
                             for (var j = 0; j < obj.tabskill_uplev.uplevel_cost.length; j++) {
                                 flagaryskill.push(hasEnoughResItem(obj.tabskill_uplev.uplevel_cost[j]));
-                                // if(this._needItem.indexOf(obj.tabskill_uplev.uplevel_cost[j][0]) == -1){
-                                //     this._needItem.push(obj.tabskill_uplev.uplevel_cost[j][0]);
-                                // }
                             }
                             aryskill[i].show = true;
                             for (var flagid = 0; flagid < flagaryskill.length; flagid++) {
@@ -270,9 +254,6 @@ var mountui;
                         var flagaryhuanhua = new Array;
                         for (var j = 0; j < nodedata.tab.costItem.length; j++) {
                             flagaryhuanhua.push(hasEnoughResItem(nodedata.tab.costItem[j]));
-                            // if(this._needItem.indexOf(nodedata.tab.costItem[j][0]) == -1){
-                            //     this._needItem.push(nodedata.tab.costItem[j][0]);
-                            // }
                         }
                         aryhuanhua[i].show = true;
                         for (var flagid = 0; flagid < flagaryhuanhua.length; flagid++) {
@@ -324,7 +305,6 @@ var mountui;
                 this._newmountUiPanel.mountSkill.mountSkillList.refreshDataByNewData();
             }
             if (this._newmountUiPanel && this._newmountUiPanel.hasStage) {
-                // this._newmountUiPanel.setForce();
             }
         };
         MountUiProcessor.prototype.actionHuanhua = function ($data) {
@@ -342,8 +322,6 @@ var mountui;
         MountUiProcessor.prototype.mountlevchange = function () {
             if (this._newmountUiPanel && this._newmountUiPanel.mountUpLev && this._newmountUiPanel.mountUpLev.hasStage) {
                 this._newmountUiPanel.mountUpLev.resetData();
-                // this._newmountUiPanel.setForce();
-                // this._newmountUiPanel.showLevelUp(5);
             }
         };
         MountUiProcessor.prototype.skillchangeevent = function () {
@@ -400,7 +378,7 @@ var mountui;
             ];
         };
         return MountUiProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     mountui.MountUiProcessor = MountUiProcessor;
 })(mountui || (mountui = {}));
 //# sourceMappingURL=MountProcessor.js.map

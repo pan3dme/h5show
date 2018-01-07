@@ -1,32 +1,26 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var mountui;
 (function (mountui) {
-    var MountHuanhua = /** @class */ (function (_super) {
+    var MountHuanhua = (function (_super) {
         __extends(MountHuanhua, _super);
         function MountHuanhua() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._publicRender = new UIRenderComponent;
-            _this.addRender(_this._publicRender);
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            _this._redPointRender = new RedPointRender;
-            _this.addRender(_this._redPointRender);
-            return _this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._publicRender = new UIRenderComponent;
+            this.addRender(this._publicRender);
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
+            this._redPointRender = new RedPointRender;
+            this.addRender(this._redPointRender);
         }
         MountHuanhua.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -191,15 +185,14 @@ var mountui;
             }
         };
         return MountHuanhua;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     mountui.MountHuanhua = MountHuanhua;
-    var HuanhuaList = /** @class */ (function (_super) {
+    var HuanhuaList = (function (_super) {
         __extends(HuanhuaList, _super);
         function HuanhuaList() {
-            var _this = _super.call(this) || this;
-            _this.left = 147;
-            _this.top = 425;
-            return _this;
+            _super.call(this);
+            this.left = 147;
+            this.top = 425;
         }
         HuanhuaList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -270,12 +263,12 @@ var mountui;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return HuanhuaList;
-    }(TransverseSList));
+    })(TransverseSList);
     mountui.HuanhuaList = HuanhuaList;
-    var HuanhuaListRender = /** @class */ (function (_super) {
+    var HuanhuaListRender = (function (_super) {
         __extends(HuanhuaListRender, _super);
         function HuanhuaListRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -406,7 +399,7 @@ var mountui;
             this.Sredpoint.preHide();
         };
         return HuanhuaListRender;
-    }(SListItem));
+    })(SListItem);
     mountui.HuanhuaListRender = HuanhuaListRender;
 })(mountui || (mountui = {}));
 //# sourceMappingURL=MountHuanhua.js.map

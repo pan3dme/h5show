@@ -1,13 +1,8 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 /*
 class MaterialModelShader extends Shader3D {
     static MaterialModelShader: string = "MaterialModelShader";
@@ -55,17 +50,17 @@ class MaterialModelShader extends Shader3D {
 */
 var left;
 (function (left) {
-    var MaterialModelSprite = /** @class */ (function (_super) {
+    var MaterialModelSprite = (function (_super) {
         __extends(MaterialModelSprite, _super);
         function MaterialModelSprite() {
-            var _this = _super.call(this) || this;
+            var _this = this;
+            _super.call(this);
             //model/cartoontree05.txt
             //model/cartoontree05.txt
             GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/pan3dme.txt", function (groupRes) {
                 _this.loadPartRes(groupRes);
             });
-            _this.setLightMapUrl("ui/load/blood.png");
-            return _this;
+            this.setLightMapUrl("ui/load/blood.png");
         }
         MaterialModelSprite.prototype.setCamPos = function ($material) {
             var $scale = 1;
@@ -99,7 +94,7 @@ var left;
             Scene_data.context3D.setVc4fv($material.shader, "fc", $material.fcData);
         };
         return MaterialModelSprite;
-    }(Display3DSprite));
+    })(Display3DSprite);
     left.MaterialModelSprite = MaterialModelSprite;
 })(left || (left = {}));
 //# sourceMappingURL=MaterialModelSprite.js.map

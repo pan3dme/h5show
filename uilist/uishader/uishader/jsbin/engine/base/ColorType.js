@@ -1,4 +1,4 @@
-var ColorType = /** @class */ (function () {
+var ColorType = (function () {
     function ColorType() {
     }
     ColorType.Orange7a2f21 = "[7a2f21]"; //桔
@@ -63,5 +63,5 @@ var ColorType = /** @class */ (function () {
     ColorType.colorffe9b4 = "[ffe9b4]";
     ColorType.color9c9b9b = "[9c9b9b]";
     return ColorType;
-}());
+})();
 //# sourceMappingURL=ColorType.js.map

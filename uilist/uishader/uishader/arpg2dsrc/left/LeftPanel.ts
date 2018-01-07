@@ -86,6 +86,7 @@
             this.a_panel_bg.left = 0;
             this.a_panel_bg.top = 0;
 
+
             this.initView()
             this.resize();
         }

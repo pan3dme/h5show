@@ -1,29 +1,24 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var left;
 (function (left) {
-    var LeftEvent = /** @class */ (function (_super) {
+    var LeftEvent = (function (_super) {
         __extends(LeftEvent, _super);
         function LeftEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         LeftEvent.SHOW_LEFT_PANEL = "SHOW_LEFT_PANEL"; //显示面板
         LeftEvent.HIDE_LEFT_PANEL = "HIDE_LEFT_PANEL"; //显示面板
         return LeftEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     left.LeftEvent = LeftEvent;
-    var LeftModule = /** @class */ (function (_super) {
+    var LeftModule = (function (_super) {
         __extends(LeftModule, _super);
         function LeftModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         LeftModule.prototype.getModuleName = function () {
             return "LeftModule";
@@ -32,12 +27,12 @@ var left;
             return [new LeftProcessor()];
         };
         return LeftModule;
-    }(Module));
+    })(Module);
     left.LeftModule = LeftModule;
-    var LeftProcessor = /** @class */ (function (_super) {
+    var LeftProcessor = (function (_super) {
         __extends(LeftProcessor, _super);
         function LeftProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         LeftProcessor.prototype.getName = function () {
             return "LeftProcessor";
@@ -46,22 +41,31 @@ var left;
             if ($event instanceof LeftEvent) {
                 var $leftEvent = $event;
                 if ($leftEvent.type == LeftEvent.SHOW_LEFT_PANEL) {
-                    if (!this.leftPanel) {
-                        this.leftPanel = new left.LeftPanel;
-                    }
-                    if (!this.leftPanel.hasStage) {
-                        UIManager.getInstance().addUIContainer(this.leftPanel);
-                        left.ModelShowModel.getInstance().addBaseModel();
-                    }
-                    else {
-                        ModuleEventManager.dispatchEvent(new LeftEvent(LeftEvent.HIDE_LEFT_PANEL));
-                    }
+                    this.showLeftPanel();
+                    this.showReflactionView();
                 }
                 if ($leftEvent.type == LeftEvent.HIDE_LEFT_PANEL) {
-                    if (this.leftPanel) {
-                        UIManager.getInstance().removeUIContainer(this.leftPanel);
-                    }
+                    this.hideLeftPanel();
                 }
+            }
+        };
+        LeftProcessor.prototype.showReflactionView = function () {
+        };
+        LeftProcessor.prototype.hideLeftPanel = function () {
+            if (this.leftPanel) {
+                UIManager.getInstance().removeUIContainer(this.leftPanel);
+            }
+        };
+        LeftProcessor.prototype.showLeftPanel = function () {
+            if (!this.leftPanel) {
+                this.leftPanel = new left.LeftPanel;
+            }
+            if (!this.leftPanel.hasStage) {
+                UIManager.getInstance().addUIContainer(this.leftPanel);
+                left.ModelShowModel.getInstance().addBaseModel();
+            }
+            else {
+                ModuleEventManager.dispatchEvent(new LeftEvent(LeftEvent.HIDE_LEFT_PANEL));
             }
         };
         LeftProcessor.prototype.listenModuleEvents = function () {
@@ -71,7 +75,7 @@ var left;
             ];
         };
         return LeftProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     left.LeftProcessor = LeftProcessor;
 })(left || (left = {}));
 //# sourceMappingURL=LeftProcessor.js.map

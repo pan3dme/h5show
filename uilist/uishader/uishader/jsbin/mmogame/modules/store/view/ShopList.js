@@ -1,22 +1,16 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var store;
 (function (store) {
-    var ShopList = /** @class */ (function (_super) {
+    var ShopList = (function (_super) {
         __extends(ShopList, _super);
         function ShopList() {
-            var _this = _super.call(this) || this;
-            _this.left = 216;
-            _this.top = 89;
-            return _this;
+            _super.call(this);
+            this.left = 216;
+            this.top = 89;
         }
         ShopList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -57,12 +51,12 @@ var store;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return ShopList;
-    }(SList));
+    })(SList);
     store.ShopList = ShopList;
-    var ShopListRender = /** @class */ (function (_super) {
+    var ShopListRender = (function (_super) {
         __extends(ShopListRender, _super);
         function ShopListRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         ShopListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -146,7 +140,6 @@ var store;
                     if ($data.data1.num == $data.data2.num) {
                         var imgUseRect = _this.parentTarget.baseAtlas.getRec("SoldOut");
                         ctx.drawImage(_this.parentTarget.baseAtlas.useImg, imgUseRect.pixelX, imgUseRect.pixelY, imgUseRect.pixelWitdh, imgUseRect.pixelHeight, 30, 28, imgUseRect.pixelWitdh, imgUseRect.pixelHeight);
-                        // } else {
                     }
                     LabelTextFont.writeSingleLabelToCtxSetAnchor(ctx, String($tabelvo.itemNum), 16, 75, 54, TextAlign.RIGHT, ColorType.Whitefff4d6, ColorType.colord27262e);
                 }
@@ -172,7 +165,6 @@ var store;
                             //售罄
                             var imgUseRect = _this.parentTarget.baseAtlas.getRec("SoldOut");
                             ctx.drawImage(_this.parentTarget.baseAtlas.useImg, imgUseRect.pixelX, imgUseRect.pixelY, imgUseRect.pixelWitdh, imgUseRect.pixelHeight, 30, 28, imgUseRect.pixelWitdh, imgUseRect.pixelHeight);
-                            // } else {
                         }
                     }
                     LabelTextFont.writeSingleLabelToCtxSetAnchor(ctx, String($data.data.count), 16, 75, 54, TextAlign.RIGHT, ColorType.Whitefff4d6, ColorType.colord27262e);
@@ -251,7 +243,7 @@ var store;
             UiDraw.clearUI(this.I_bg);
         };
         return ShopListRender;
-    }(SListItem));
+    })(SListItem);
     store.ShopListRender = ShopListRender;
 })(store || (store = {}));
 //# sourceMappingURL=ShopList.js.map

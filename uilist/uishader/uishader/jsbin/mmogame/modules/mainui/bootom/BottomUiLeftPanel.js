@@ -1,25 +1,19 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var bottomui;
 (function (bottomui) {
-    var BottomUiLeftPanel = /** @class */ (function (_super) {
+    var BottomUiLeftPanel = (function (_super) {
         __extends(BottomUiLeftPanel, _super);
         function BottomUiLeftPanel() {
-            var _this = _super.call(this) || this;
-            _this.interfaceUI = true;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.left = 0;
-            _this.bottom = 0;
-            return _this;
+            _super.call(this);
+            this.interfaceUI = true;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.left = 0;
+            this.bottom = 0;
         }
         BottomUiLeftPanel.prototype.setRender = function ($bottom, $mid, $top) {
             this._bottomRender = $bottom;
@@ -53,7 +47,7 @@ var bottomui;
             this.setUiListVisibleByItem([this.b_qichen], GuidData.grow.getMountLevel() > 0);
         };
         return BottomUiLeftPanel;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     bottomui.BottomUiLeftPanel = BottomUiLeftPanel;
 })(bottomui || (bottomui = {}));
 //# sourceMappingURL=BottomUiLeftPanel.js.map

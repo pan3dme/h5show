@@ -1,23 +1,17 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Display2DSprite = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Display2DSprite = (function (_super) {
     __extends(Display2DSprite, _super);
     function Display2DSprite() {
-        var _this = _super.call(this) || this;
-        _this.batchPos = new Array;
-        _this.objData = new ObjData();
-        _this.watchCaramMatrix = new Matrix3D;
-        _this.shader = ProgrmaManager.getInstance().getProgram(Sprite2DShader.SPRITE2D_SHADER);
-        _this.program = _this.shader.program;
-        return _this;
+        _super.call(this);
+        this.batchPos = new Array;
+        this.objData = new ObjData();
+        this.watchCaramMatrix = new Matrix3D;
+        this.shader = ProgrmaManager.getInstance().getProgram(Sprite2DShader.SPRITE2D_SHADER);
+        this.program = this.shader.program;
     }
     Display2DSprite.prototype.setInfo = function ($configurl, $imgurl, $fun) {
         if (!this._imgAtlas) {
@@ -33,7 +27,7 @@ var Display2DSprite = /** @class */ (function (_super) {
     Display2DSprite.prototype.addSprite = function () {
         var spriteAry = [];
         for (var _i = 0; _i < arguments.length; _i++) {
-            spriteAry[_i] = arguments[_i];
+            spriteAry[_i - 0] = arguments[_i];
         }
         for (var i = 0; i < spriteAry.length; i++) {
             this.batchPos.push(spriteAry[i]);
@@ -83,13 +77,12 @@ var Display2DSprite = /** @class */ (function (_super) {
         Scene_data.context3D.drawCall(this.objData.indexBuffer, this.objData.treNum);
     };
     return Display2DSprite;
-}(Display3D));
-var Sprite = /** @class */ (function (_super) {
+})(Display3D);
+var Sprite = (function (_super) {
     __extends(Sprite, _super);
     function Sprite() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.posData = [0, 0, 0, 100];
-        return _this;
+        _super.apply(this, arguments);
+        this.posData = [0, 0, 0, 100];
     }
     Sprite.prototype.setPos = function (xpos, ypos, zpos) {
         this.x = xpos;
@@ -132,5 +125,5 @@ var Sprite = /** @class */ (function (_super) {
         configurable: true
     });
     return Sprite;
-}(Object3D));
+})(Object3D);
 //# sourceMappingURL=Display2DSprite.js.map

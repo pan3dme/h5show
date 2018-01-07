@@ -1,5 +1,5 @@
 //带表情的文字
-var FaceFontLabel = /** @class */ (function () {
+var FaceFontLabel = (function () {
     function FaceFontLabel() {
     }
     FaceFontLabel.writeMultiFaceLineToCtx = function ($ctx, $str, fontsize, $tx, $ty, _textWidth, _thh, baseColor) {
@@ -115,5 +115,5 @@ var FaceFontLabel = /** @class */ (function () {
         UiDraw.cxtDrawImg(ctx, "F_FACE_" + $faceId, $rect, UIData.publicUi);
     };
     return FaceFontLabel;
-}());
+})();
 //# sourceMappingURL=FaceFontLabel.js.map

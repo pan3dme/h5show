@@ -1,21 +1,15 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var ParticleManager = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var ParticleManager = (function (_super) {
     __extends(ParticleManager, _super);
     function ParticleManager() {
-        var _this = _super.call(this) || this;
-        _this._time = 0;
-        _this.renderDic = new Object;
-        _this._particleList = new Array;
-        return _this;
+        _super.call(this);
+        this._time = 0;
+        this.renderDic = new Object;
+        this._particleList = new Array;
     }
     ParticleManager.getInstance = function () {
         if (!this._instance) {
@@ -81,7 +75,6 @@ var ParticleManager = /** @class */ (function (_super) {
     ParticleManager.prototype.setHide = function () {
         for (var i = 0; i < this._particleList.length; i++) {
             if (!this._particleList[i].dynamic) {
-                //  this._particleList[i].sceneVisible = false;
             }
         }
     };
@@ -156,5 +149,5 @@ var ParticleManager = /** @class */ (function (_super) {
         _super.prototype.gc.call(this);
     };
     return ParticleManager;
-}(ResGC));
+})(ResGC);
 //# sourceMappingURL=ParticleManager.js.map

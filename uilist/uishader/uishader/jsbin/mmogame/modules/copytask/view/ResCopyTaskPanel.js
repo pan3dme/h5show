@@ -1,25 +1,19 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var copytask;
 (function (copytask) {
-    var ResCopyTaskPanel = /** @class */ (function (_super) {
+    var ResCopyTaskPanel = (function (_super) {
         __extends(ResCopyTaskPanel, _super);
         function ResCopyTaskPanel() {
-            var _this = _super.call(this) || this;
-            _this._curDataID = -1;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            return _this;
+            _super.call(this);
+            this._curDataID = -1;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
         }
         ResCopyTaskPanel.prototype.setUIAtlas = function ($uiatlas, $winMidRender) {
             this._baseUiAtlas = $uiatlas;
@@ -180,13 +174,13 @@ var copytask;
             this._slist.hide();
         };
         return ResCopyTaskPanel;
-    }(UIConatiner));
+    })(UIConatiner);
     copytask.ResCopyTaskPanel = ResCopyTaskPanel;
     /**list */
-    var ResCopyList = /** @class */ (function (_super) {
+    var ResCopyList = (function (_super) {
         __extends(ResCopyList, _super);
         function ResCopyList() {
-            return _super.call(this) || this;
+            _super.call(this);
         }
         ResCopyList.prototype.init = function ($atlas, $panel) {
             this._panel = $panel;
@@ -236,15 +230,14 @@ var copytask;
             UIManager.getInstance().removeUIContainer(this);
         };
         return ResCopyList;
-    }(SList));
+    })(SList);
     copytask.ResCopyList = ResCopyList;
-    var ResCopyListItemRender = /** @class */ (function (_super) {
+    var ResCopyListItemRender = (function (_super) {
         __extends(ResCopyListItemRender, _super);
         function ResCopyListItemRender() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this._curDataID = -1;
-            _this._vipTime = -1;
-            return _this;
+            _super.apply(this, arguments);
+            this._curDataID = -1;
+            this._vipTime = -1;
         }
         ResCopyListItemRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -344,8 +337,7 @@ var copytask;
             this._curDataID = bd.data.id;
         };
         return ResCopyListItemRender;
-    }(SListItem));
+    })(SListItem);
     copytask.ResCopyListItemRender = ResCopyListItemRender;
-    /**end list */
 })(copytask || (copytask = {}));
 //# sourceMappingURL=ResCopyTaskPanel.js.map

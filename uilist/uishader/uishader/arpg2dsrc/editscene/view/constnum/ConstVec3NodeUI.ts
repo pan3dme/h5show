@@ -59,9 +59,9 @@
         }
           public  showDynamic(): void {
             if (this.nodeTree.isDynamic) {
-                this.drawTitleToFrame("<" + this.nodeTree.paramName + ">(" + this.getNumStr(this.constValue.x) + "," + this.getNumStr(this.constValue.y) + "," + this.getNumStr(this.constValue.z) + "," + this.getNumStr(this.constValue.w) + ")")
+                this.drawTitleToFrame("vec3<" + this.nodeTree.paramName + ">(" + this.getNumStr(this.constValue.x) + "," + this.getNumStr(this.constValue.y) + "," + this.getNumStr(this.constValue.z) + "," + this.getNumStr(this.constValue.w) + ")")
             } else {
-                this.drawTitleToFrame("(" + this.getNumStr(this.constValue.x) + "," + this.getNumStr(this.constValue.y) + "," + this.getNumStr(this.constValue.z) + "," + this.getNumStr(this.constValue.w) + ")")
+                this.drawTitleToFrame("vec3(" + this.getNumStr(this.constValue.x) + "," + this.getNumStr(this.constValue.y) + "," + this.getNumStr(this.constValue.z) + "," + this.getNumStr(this.constValue.w) + ")")
             }
         }
         public getNumStr(num: number): string{

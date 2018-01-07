@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var map;
 (function (map) {
-    var MapWalkLineShader = /** @class */ (function (_super) {
+    var MapWalkLineShader = (function (_super) {
         __extends(MapWalkLineShader, _super);
         function MapWalkLineShader() {
-            return _super.call(this) || this;
+            _super.call(this);
         }
         MapWalkLineShader.prototype.binLocation = function ($context) {
             $context.bindAttribLocation(this.program, 0, "v4Pos");
@@ -37,32 +32,30 @@ var map;
         };
         MapWalkLineShader.MapWalkLineShader = "MapWalkLineShader";
         return MapWalkLineShader;
-    }(Shader3D));
+    })(Shader3D);
     map.MapWalkLineShader = MapWalkLineShader;
-    var MapLineUi = /** @class */ (function (_super) {
+    var MapLineUi = (function (_super) {
         __extends(MapLineUi, _super);
         function MapLineUi() {
-            var _this = _super.call(this) || this;
-            _this.x = UIData.designWidth / 2;
-            _this.y = UIData.designHeight / 2;
-            _this.width = 20;
-            _this.height = 20;
-            return _this;
+            _super.call(this);
+            this.x = UIData.designWidth / 2;
+            this.y = UIData.designHeight / 2;
+            this.width = 20;
+            this.height = 20;
         }
         MapLineUi.prototype.applyRenderSize = function () {
         };
         return MapLineUi;
-    }(UICompenent));
+    })(UICompenent);
     map.MapLineUi = MapLineUi;
-    var MapWalkLineComponent = /** @class */ (function (_super) {
+    var MapWalkLineComponent = (function (_super) {
         __extends(MapWalkLineComponent, _super);
         function MapWalkLineComponent() {
-            var _this = _super.call(this) || this;
-            _this.anglyNum = 0;
+            _super.call(this);
+            this.anglyNum = 0;
             ProgrmaManager.getInstance().registe(MapWalkLineShader.MapWalkLineShader, new MapWalkLineShader);
-            _this.shader = ProgrmaManager.getInstance().getProgram(MapWalkLineShader.MapWalkLineShader);
-            _this.program = _this.shader.program;
-            return _this;
+            this.shader = ProgrmaManager.getInstance().getProgram(MapWalkLineShader.MapWalkLineShader);
+            this.program = this.shader.program;
         }
         MapWalkLineComponent.prototype.makeLineUiItem = function ($arr) {
             if ($arr && $arr.length > 1) {
@@ -160,7 +153,7 @@ var map;
             }
         };
         return MapWalkLineComponent;
-    }(UIRenderComponent));
+    })(UIRenderComponent);
     map.MapWalkLineComponent = MapWalkLineComponent;
 })(map || (map = {}));
 /*

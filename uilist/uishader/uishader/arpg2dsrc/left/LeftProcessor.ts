@@ -21,27 +21,39 @@
                 var $leftEvent: LeftEvent = <LeftEvent>$event;
 
                 if ($leftEvent.type == LeftEvent.SHOW_LEFT_PANEL) {
-                    if (!this.leftPanel) {
-                        this.leftPanel = new LeftPanel
-                    }
-                    if (!this.leftPanel.hasStage) {
-                        UIManager.getInstance().addUIContainer(this.leftPanel)
-
-                        ModelShowModel.getInstance().addBaseModel()
-                    } else {
-                        ModuleEventManager.dispatchEvent(new LeftEvent(LeftEvent.HIDE_LEFT_PANEL));
-                    }
-     
-              
+                    this.showLeftPanel();
+                    this.showReflactionView()
                 }
                 if ($leftEvent.type == LeftEvent.HIDE_LEFT_PANEL) {
-                    if (this.leftPanel) {
-                        UIManager.getInstance().removeUIContainer(this.leftPanel)
-                    }
+                    this.hideLeftPanel();
                 }
-
-
             }
+        }
+        private showReflactionView(): void
+        {
+          
+
+
+        }
+        private hideLeftPanel(): void {
+            if (this.leftPanel) {
+                UIManager.getInstance().removeUIContainer(this.leftPanel)
+            }
+        }
+        private showLeftPanel(): void
+        {
+            if (!this.leftPanel) {
+                this.leftPanel = new LeftPanel
+            }
+            if (!this.leftPanel.hasStage) {
+                UIManager.getInstance().addUIContainer(this.leftPanel)
+
+                ModelShowModel.getInstance().addBaseModel()
+            } else {
+                ModuleEventManager.dispatchEvent(new LeftEvent(LeftEvent.HIDE_LEFT_PANEL));
+            }
+     
+
         }
         private leftPanel: LeftPanel
         protected listenModuleEvents(): Array<BaseEvent> {

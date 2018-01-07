@@ -1,19 +1,13 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var ParticleFacetData = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var ParticleFacetData = (function (_super) {
     __extends(ParticleFacetData, _super);
     function ParticleFacetData() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this._isCycle = false; //是否循环
-        return _this;
+        _super.apply(this, arguments);
+        this._isCycle = false; //是否循环
     }
     ParticleFacetData.prototype.setAllByteInfo = function ($byte) {
         this._maxAnimTime = $byte.readFloat();
@@ -96,5 +90,5 @@ var ParticleFacetData = /** @class */ (function (_super) {
         this.materialParam.program = this.materialParam.shader.program;
     };
     return ParticleFacetData;
-}(ParticleData));
+})(ParticleData);
 //# sourceMappingURL=ParticleFacetData.js.map

@@ -1,19 +1,13 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var ScaleAnim = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var ScaleAnim = (function (_super) {
     __extends(ScaleAnim, _super);
     function ScaleAnim() {
-        var _this = _super.call(this) || this;
-        _this.num = 1;
-        return _this;
+        _super.call(this);
+        this.num = 1;
     }
     ScaleAnim.prototype.update = function (t) {
         if (this._isDeath) {
@@ -179,5 +173,5 @@ var ScaleAnim = /** @class */ (function (_super) {
         this.baseNum = (this._currentTarget.value - this.beginScale) / this._currentTarget.this.time * (allTime - this.beginTime) + this.beginScale;
     };
     return ScaleAnim;
-}(BaseAnim));
+})(BaseAnim);
 //# sourceMappingURL=ScaleAnim.js.map

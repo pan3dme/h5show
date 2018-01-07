@@ -1,17 +1,12 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var UIStage = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var UIStage = (function (_super) {
     __extends(UIStage, _super);
     function UIStage() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     UIStage.prototype.interactiveEvent = function (e) {
         var evtType = e.type;
@@ -38,5 +33,5 @@ var UIStage = /** @class */ (function (_super) {
         return true;
     };
     return UIStage;
-}(EventDispatcher));
+})(EventDispatcher);
 //# sourceMappingURL=UIStage.js.map

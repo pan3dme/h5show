@@ -1,22 +1,16 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var SkillTrajectory = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var SkillTrajectory = (function (_super) {
     __extends(SkillTrajectory, _super);
     function SkillTrajectory() {
-        var _this = _super.call(this) || this;
-        _this._currentPos = new Vector3D;
-        _this.rotationMatrix = new Matrix3D;
-        _this._socketMaxrix = new Matrix3D;
-        _this._currentTargetPos = new Vector3D;
-        return _this;
+        _super.call(this);
+        this._currentPos = new Vector3D;
+        this.rotationMatrix = new Matrix3D;
+        this._socketMaxrix = new Matrix3D;
+        this._currentTargetPos = new Vector3D;
         //this.path = new SkillSinPath();
         //this.path.setData(this, () => { this.applyArrive() } ,this._currentPos, this.rotationMatrix, this._currentTargetPos);
     }
@@ -129,5 +123,5 @@ var SkillTrajectory = /** @class */ (function (_super) {
         this.path = null;
     };
     return SkillTrajectory;
-}(SkillKey));
+})(SkillKey);
 //# sourceMappingURL=SkillTrajectory.js.map

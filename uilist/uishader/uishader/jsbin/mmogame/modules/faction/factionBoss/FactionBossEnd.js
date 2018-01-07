@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var faction;
 (function (faction) {
-    var FactionBossEndRender = /** @class */ (function (_super) {
+    var FactionBossEndRender = (function (_super) {
         __extends(FactionBossEndRender, _super);
         function FactionBossEndRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         FactionBossEndRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -111,15 +106,14 @@ var faction;
             this.uiAtlas.clearCtxTextureBySkilname(this.Bg.skinName);
         };
         return FactionBossEndRender;
-    }(SListItem));
+    })(SListItem);
     faction.FactionBossEndRender = FactionBossEndRender;
-    var FactionBossEndList = /** @class */ (function (_super) {
+    var FactionBossEndList = (function (_super) {
         __extends(FactionBossEndList, _super);
         function FactionBossEndList() {
-            var _this = _super.call(this) || this;
-            _this.left = 324;
-            _this.top = 153;
-            return _this;
+            _super.call(this);
+            this.left = 324;
+            this.top = 153;
         }
         FactionBossEndList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -163,27 +157,27 @@ var faction;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return FactionBossEndList;
-    }(SList));
+    })(SList);
     faction.FactionBossEndList = FactionBossEndList;
-    var FactionBossEnd = /** @class */ (function (_super) {
+    var FactionBossEnd = (function (_super) {
         __extends(FactionBossEnd, _super);
         function FactionBossEnd() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._publicRender = new UIRenderComponent;
-            _this.addRender(_this._publicRender);
-            _this._bottomRender = new UIRenderComponent;
-            _this.addRender(_this._bottomRender);
-            _this._midRender = new UIRenderComponent;
-            _this.addRender(_this._midRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            _this._topRender.uiAtlas = new UIAtlas();
-            _this._frameFun = function (t) { _this.upTime(t); };
-            return _this;
+            var _this = this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._publicRender = new UIRenderComponent;
+            this.addRender(this._publicRender);
+            this._bottomRender = new UIRenderComponent;
+            this.addRender(this._bottomRender);
+            this._midRender = new UIRenderComponent;
+            this.addRender(this._midRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
+            this._topRender.uiAtlas = new UIAtlas();
+            this._frameFun = function (t) { _this.upTime(t); };
         }
         FactionBossEnd.prototype.dispose = function () {
             this._midRender.dispose();
@@ -288,7 +282,6 @@ var faction;
                     this.close();
                 }
                 else {
-                    // ArtFont.getInstance().writeFontToSkinNameCenter(this._midRender.uiAtlas, this.b_out_time_txt.skinName, String($time), ArtFont.num1, 5);
                 }
             }
             if (!this.hasStage) {
@@ -296,7 +289,7 @@ var faction;
             }
         };
         return FactionBossEnd;
-    }(WindowMinUi));
+    })(WindowMinUi);
     faction.FactionBossEnd = FactionBossEnd;
 })(faction || (faction = {}));
 //# sourceMappingURL=FactionBossEnd.js.map

@@ -1,1 +1,1 @@
-{"version":3,"file":"BaseProcessor.js","sourceRoot":"","sources":["../../../../mmogame/common/base/BaseProcessor.ts"],"names":[],"mappings":";;;;;;;;;;AAAA;IAA4B,iCAAS;IAArC;;IAEA,CAAC;IAAD,oBAAC;AAAD,CAAC,AAFD,CAA4B,SAAS,GAEpC"}
+{"version":3,"file":"BaseProcessor.js","sourceRoot":"","sources":["../../../../mmogame/common/base/BaseProcessor.ts"],"names":["BaseProcessor","BaseProcessor.constructor"],"mappings":";;;;;AAAA;IAA4BA,iCAASA;IAArCA;QAA4BC,8BAASA;IAErCA,CAACA;IAADD,oBAACA;AAADA,CAACA,AAFD,EAA4B,SAAS,EAEpC"}

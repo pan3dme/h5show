@@ -1,4 +1,4 @@
-var LoadManager = /** @class */ (function () {
+var LoadManager = (function () {
     function LoadManager() {
         this._loadThreadList = new Array;
         this._waitLoadList = new Array;
@@ -47,8 +47,8 @@ var LoadManager = /** @class */ (function () {
     LoadManager.IMG_TYPE = "IMG_TYPE";
     LoadManager.XML_TYPE = "XML_TYPE";
     return LoadManager;
-}());
-var LoaderThread = /** @class */ (function () {
+})();
+var LoaderThread = (function () {
     function LoaderThread() {
         var _this = this;
         this._xhr = new XMLHttpRequest();
@@ -133,8 +133,8 @@ var LoaderThread = /** @class */ (function () {
         LoadManager.getInstance().loadWaitList();
     };
     return LoaderThread;
-}());
-var LoadInfo = /** @class */ (function () {
+})();
+var LoadInfo = (function () {
     function LoadInfo($url, $type, $fun, $info, $progressFun) {
         if ($info === void 0) { $info = null; }
         if ($progressFun === void 0) { $progressFun = null; }
@@ -145,5 +145,5 @@ var LoadInfo = /** @class */ (function () {
         this.progressFun = $progressFun;
     }
     return LoadInfo;
-}());
+})();
 //# sourceMappingURL=LoadManager.js.map

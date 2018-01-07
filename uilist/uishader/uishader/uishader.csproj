@@ -55,6 +55,7 @@
     <TypeScriptCompile Include="arpg2dsrc\editscene\ui\MtUiPanel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\ui\MtUIRenderComponent.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\ui\MtFrameCompenent.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\base\BaseReflComponent.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\view\BaseMaterialNodeUI.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\materialui\ItemMaterialUI.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\materialui\NodeTree.ts" />
@@ -92,6 +93,16 @@
     <TypeScriptCompile Include="arpg2dsrc\left\modelshow\MaterialModelSprite.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\modelshow\ModelShowModel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\modelshow\SceneRenderToTextrue.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\InputTextUi.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\ReflectionEvet.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\TextLabelUI.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\base\ReflectionData.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\base\TextCtrlInput.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\base\MetaDataView.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\PropModel.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\view\FloatPropMeshPanel.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\view\TexturePropMeshPanel.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\view\Vec3PropMeshPanel.ts" />
     <TypeScriptCompile Include="engine\base\BitMapData.ts" />
     <TypeScriptCompile Include="engine\base\Camera3D.ts" />
     <TypeScriptCompile Include="engine\base\ColorType.ts" />

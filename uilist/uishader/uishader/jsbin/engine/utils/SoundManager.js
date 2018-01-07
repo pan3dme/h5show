@@ -1,4 +1,4 @@
-var SoundManager = /** @class */ (function () {
+var SoundManager = (function () {
     function SoundManager() {
         this.init = false;
         this._volume = 1.0;
@@ -65,5 +65,5 @@ var SoundManager = /** @class */ (function () {
         }
     };
     return SoundManager;
-}());
+})();
 //# sourceMappingURL=SoundManager.js.map

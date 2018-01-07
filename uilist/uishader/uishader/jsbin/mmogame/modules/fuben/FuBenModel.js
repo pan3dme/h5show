@@ -1,12 +1,12 @@
 var fb;
 (function (fb) {
-    var FuBenResVo = /** @class */ (function () {
+    var FuBenResVo = (function () {
         function FuBenResVo() {
         }
         return FuBenResVo;
-    }());
+    })();
     fb.FuBenResVo = FuBenResVo;
-    var FuBenModel = /** @class */ (function () {
+    var FuBenModel = (function () {
         function FuBenModel() {
             this.initData();
         }
@@ -182,7 +182,7 @@ var fb;
             }
         };
         return FuBenModel;
-    }());
+    })();
     fb.FuBenModel = FuBenModel;
 })(fb || (fb = {}));
 //# sourceMappingURL=FuBenModel.js.map

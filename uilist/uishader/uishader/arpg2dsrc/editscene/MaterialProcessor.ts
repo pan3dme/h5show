@@ -112,7 +112,6 @@
         {
             Arpg2dGameStart.stagePos = new Vector2D()
             BaseMaterialNodeUI.baseUIAtlas = new UIAtlas()
-     
             BaseMaterialNodeUI.baseUIAtlas.setInfo("pan/marmoset/uilist/baseui.xml", "pan/marmoset/uilist/baseui.png", () => { this.loadConfigCom() });
         }
         private lineContainer: MaterialLineContainer

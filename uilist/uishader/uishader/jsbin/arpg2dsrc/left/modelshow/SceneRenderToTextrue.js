@@ -1,6 +1,6 @@
 var left;
 (function (left) {
-    var SceneRenderToTextrue = /** @class */ (function () {
+    var SceneRenderToTextrue = (function () {
         function SceneRenderToTextrue() {
         }
         SceneRenderToTextrue.getInstance = function () {
@@ -59,7 +59,7 @@ var left;
             Engine.resetSize();
         };
         return SceneRenderToTextrue;
-    }());
+    })();
     left.SceneRenderToTextrue = SceneRenderToTextrue;
 })(left || (left = {}));
 //# sourceMappingURL=SceneRenderToTextrue.js.map

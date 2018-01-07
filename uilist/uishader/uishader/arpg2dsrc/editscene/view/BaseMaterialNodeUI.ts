@@ -283,6 +283,11 @@
         public set select(value: boolean) {
             this._select = value
             this.setUiListVisibleByItem([this.a_select_line], this._select);
+
+            if (this._select) {
+                prop.PropModel.getInstance().showPanel(this)
+            }
+         
         }
 
     }

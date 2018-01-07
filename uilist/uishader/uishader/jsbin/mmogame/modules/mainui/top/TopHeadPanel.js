@@ -1,25 +1,19 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var topui;
 (function (topui) {
-    var TopTargetHeadPanel = /** @class */ (function (_super) {
+    var TopTargetHeadPanel = (function (_super) {
         __extends(TopTargetHeadPanel, _super);
         function TopTargetHeadPanel() {
-            var _this = _super.call(this) || this;
-            _this.lastVisble = true;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.top = 0;
-            _this.left = 0;
-            return _this;
+            _super.call(this);
+            this.lastVisble = true;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.top = 0;
+            this.left = 0;
         }
         TopTargetHeadPanel.prototype.setRender = function ($bottom, $mid, $top, $centerRender) {
             this._bottomRender = $bottom;
@@ -113,17 +107,16 @@ var topui;
             }
         };
         return TopTargetHeadPanel;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     topui.TopTargetHeadPanel = TopTargetHeadPanel;
-    var TopHeadPanel = /** @class */ (function (_super) {
+    var TopHeadPanel = (function (_super) {
         __extends(TopHeadPanel, _super);
         function TopHeadPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.top = 0;
-            _this.left = 0;
-            return _this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.top = 0;
+            this.left = 0;
         }
         TopHeadPanel.prototype.setRender = function ($bottom, $mid, $top, $fra, $red) {
             this._bottomRender = $bottom;
@@ -242,7 +235,7 @@ var topui;
             }
         };
         return TopHeadPanel;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     topui.TopHeadPanel = TopHeadPanel;
 })(topui || (topui = {}));
 //# sourceMappingURL=TopHeadPanel.js.map
