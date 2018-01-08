@@ -53,18 +53,19 @@
 
         }
 
-        private lastCameRotation: number;
+        private lastCameRotation: Vector2D;
         private mouseXY: Vector2D;
         private addStageMoveEvets($e: InteractiveEvent): void {
-            this.lastCameRotation = Scene_data.focus3D.rotationY;
+            this.lastCameRotation = new Vector2D(Scene_data.focus3D.rotationX, Scene_data.focus3D.rotationY);
             this.mouseXY = new Vector2D($e.x, $e.y)
             Scene_data.uiStage.addEventListener(InteractiveEvent.Move, this.onMove, this);
             Scene_data.uiStage.addEventListener(InteractiveEvent.Up, this.onUp, this);
 
         }
         private onMove($e: InteractiveEvent): void {
-            var $n: number = ($e.x - this.mouseXY.x);
-            Scene_data.focus3D.rotationY = this.lastCameRotation - $n;
+            var $n: Vector2D = new Vector2D($e.x - this.mouseXY.x, $e.y - this.mouseXY.y);
+            Scene_data.focus3D.rotationX = this.lastCameRotation.x - $n.y;
+            Scene_data.focus3D.rotationY = this.lastCameRotation.y - $n.x ;
         }
         private onUp($e: InteractiveEvent): void {
             Scene_data.uiStage.removeEventListener(InteractiveEvent.Move, this.onMove, this);
