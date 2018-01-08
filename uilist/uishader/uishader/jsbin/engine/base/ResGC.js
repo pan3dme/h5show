@@ -1,4 +1,4 @@
-var ResGC = (function () {
+var ResGC = /** @class */ (function () {
     function ResGC() {
         var _this = this;
         this._dic = new Object();
@@ -19,5 +19,5 @@ var ResGC = (function () {
         }
     };
     return ResGC;
-})();
+}());
 //# sourceMappingURL=ResGC.js.map

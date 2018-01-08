@@ -1,18 +1,23 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var prop;
 (function (prop) {
-    var FloatPropMeshPanel = (function (_super) {
+    var FloatPropMeshPanel = /** @class */ (function (_super) {
         __extends(FloatPropMeshPanel, _super);
         function FloatPropMeshPanel() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         FloatPropMeshPanel.prototype.getView = function () {
             var ary = [
-                { Type: prop.ReflectionData.NumberInput, Label: "x:", FunKey: "constValue", target: this, Category: "属性" },
+                { Type: prop.ReflectionData.NumberInput, Label: "x:", FunKey: "constValue", target: this, Step: 0.1 },
             ];
             return ary;
             // ReflectionData.FunKey
@@ -31,7 +36,6 @@ var prop;
         });
         Object.defineProperty(FloatPropMeshPanel.prototype, "constValue", {
             get: function () {
-                console.log(this.constFloatNodeUI.constValue);
                 return this.constFloatNodeUI.constValue;
             },
             set: function (value) {
@@ -41,7 +45,7 @@ var prop;
             configurable: true
         });
         return FloatPropMeshPanel;
-    })(prop.MetaDataView);
+    }(prop.MetaDataView));
     prop.FloatPropMeshPanel = FloatPropMeshPanel;
 })(prop || (prop = {}));
 //# sourceMappingURL=FloatPropMeshPanel.js.map

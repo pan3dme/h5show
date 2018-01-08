@@ -1,67 +1,73 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var login;
 (function (login) {
-    var LoginChar = (function (_super) {
+    var LoginChar = /** @class */ (function (_super) {
         __extends(LoginChar, _super);
         function LoginChar() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         return LoginChar;
-    })(Person2DChar);
-    var LoginNewPanel = (function (_super) {
+    }(Person2DChar));
+    var LoginNewPanel = /** @class */ (function (_super) {
         __extends(LoginNewPanel, _super);
         function LoginNewPanel() {
-            _super.call(this);
-            this._mainType = 1;
-            this._raceBgPos = [[18, 89], [30, 229], [55, 357]];
-            this._raceBgSelPos = [-15, -13];
-            this._roYNum = 0;
-            this._raceType = 0;
-            this._genderType = 0;
-            this.genderUint = 1;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._baImg = new UIBackImg();
-            this._baImg.setImgInfo("ui/load/charbg.jpg", 1024, 512);
-            this.addRender(this._baImg);
-            this._baseBgRender = new UIRenderComponent();
-            this.addRender(this._baseBgRender);
-            this._bgRender = new UIRenderComponent();
-            this.addRender(this._bgRender);
-            this._baseRender = new UIRenderComponent();
-            this.addRender(this._baseRender);
-            this._baseUiAtlas = new UIAtlas();
-            this._leftTop = new UIVirtualContainer();
-            this._leftTop.width = this.width;
-            this._leftTop.height = this.height;
-            this._leftTop.left = 0;
-            this._leftTop.top = 0;
-            this.addVirtualContainer(this._leftTop);
-            this._rightTop = new UIVirtualContainer();
-            this._rightTop.width = this.width;
-            this._rightTop.height = this.height;
-            this._rightTop.right = 0;
-            this._rightTop.top = 0;
-            this.addVirtualContainer(this._rightTop);
-            this._leftBottom = new UIVirtualContainer();
-            this._leftBottom.width = this.width;
-            this._leftBottom.height = this.height;
-            this._leftBottom.left = 0;
-            this._leftBottom.bottom = 0;
-            this.addVirtualContainer(this._leftBottom);
-            this._rightBottom = new UIVirtualContainer();
-            this._rightBottom.width = this.width;
-            this._rightBottom.height = this.height;
-            this._rightBottom.right = 0;
-            this._rightBottom.bottom = 0;
-            this.addVirtualContainer(this._rightBottom);
+            var _this = _super.call(this) || this;
+            _this._mainType = 1;
+            _this._raceBgPos = [[18, 89], [30, 229], [55, 357]];
+            _this._raceBgSelPos = [-15, -13];
+            _this._roYNum = 0;
+            _this._raceType = 0;
+            _this._genderType = 0;
+            _this.genderUint = 1;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._baImg = new UIBackImg();
+            _this._baImg.setImgInfo("ui/load/charbg.jpg", 1024, 512);
+            _this.addRender(_this._baImg);
+            _this._baseBgRender = new UIRenderComponent();
+            _this.addRender(_this._baseBgRender);
+            _this._bgRender = new UIRenderComponent();
+            _this.addRender(_this._bgRender);
+            _this._baseRender = new UIRenderComponent();
+            _this.addRender(_this._baseRender);
+            _this._baseUiAtlas = new UIAtlas();
+            _this._leftTop = new UIVirtualContainer();
+            _this._leftTop.width = _this.width;
+            _this._leftTop.height = _this.height;
+            _this._leftTop.left = 0;
+            _this._leftTop.top = 0;
+            _this.addVirtualContainer(_this._leftTop);
+            _this._rightTop = new UIVirtualContainer();
+            _this._rightTop.width = _this.width;
+            _this._rightTop.height = _this.height;
+            _this._rightTop.right = 0;
+            _this._rightTop.top = 0;
+            _this.addVirtualContainer(_this._rightTop);
+            _this._leftBottom = new UIVirtualContainer();
+            _this._leftBottom.width = _this.width;
+            _this._leftBottom.height = _this.height;
+            _this._leftBottom.left = 0;
+            _this._leftBottom.bottom = 0;
+            _this.addVirtualContainer(_this._leftBottom);
+            _this._rightBottom = new UIVirtualContainer();
+            _this._rightBottom.width = _this.width;
+            _this._rightBottom.height = _this.height;
+            _this._rightBottom.right = 0;
+            _this._rightBottom.bottom = 0;
+            _this.addVirtualContainer(_this._rightBottom);
             Engine.resReady();
+            return _this;
         }
         LoginNewPanel.prototype.dispose = function () {
             this._baImg.dispose();
@@ -418,7 +424,7 @@ var login;
             UIManager.getInstance().removeUIContainer(this);
         };
         return LoginNewPanel;
-    })(UIPanel);
+    }(UIPanel));
     login.LoginNewPanel = LoginNewPanel;
 })(login || (login = {}));
 //# sourceMappingURL=LoginNewPanel.js.map

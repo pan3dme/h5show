@@ -35,6 +35,7 @@
         }
 
         public refreshViewValue(): void {
+
             var $url: string = String(this.target[this.FunKey]);
             this.texturePicUi.url = $url
 

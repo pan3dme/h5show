@@ -1,20 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var boss;
 (function (boss) {
-    var BossRankCellVo = (function () {
+    var BossRankCellVo = /** @class */ (function () {
         function BossRankCellVo() {
         }
         return BossRankCellVo;
-    })();
+    }());
     boss.BossRankCellVo = BossRankCellVo;
-    var BossRankRender = (function (_super) {
+    var BossRankRender = /** @class */ (function (_super) {
         __extends(BossRankRender, _super);
         function BossRankRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         BossRankRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -81,14 +86,15 @@ var boss;
             this.uiAtlas.clearCtxTextureBySkilname(this.RankCell_txt.skinName);
         };
         return BossRankRender;
-    })(SListItem);
+    }(SListItem));
     boss.BossRankRender = BossRankRender;
-    var BossRankList = (function (_super) {
+    var BossRankList = /** @class */ (function (_super) {
         __extends(BossRankList, _super);
         function BossRankList() {
-            _super.call(this);
-            this.center = 220;
-            this.top = 80;
+            var _this = _super.call(this) || this;
+            _this.center = 220;
+            _this.top = 80;
+            return _this;
         }
         BossRankList.prototype.init = function ($uiAtlas) {
             BossRankRender.baseAtlas = $uiAtlas;
@@ -150,26 +156,26 @@ var boss;
             }
         };
         return BossRankList;
-    })(SList);
+    }(SList));
     boss.BossRankList = BossRankList;
-    var BossRankPanel = (function (_super) {
+    var BossRankPanel = /** @class */ (function (_super) {
         __extends(BossRankPanel, _super);
         function BossRankPanel() {
-            var _this = this;
-            _super.call(this);
-            this.mineNum = -1;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.top = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._topRender.uiAtlas = new UIAtlas();
-            this._frameFun = function (t) { _this.upTime(t); };
+            var _this = _super.call(this) || this;
+            _this.mineNum = -1;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.top = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._topRender.uiAtlas = new UIAtlas();
+            _this._frameFun = function (t) { _this.upTime(t); };
+            return _this;
         }
         BossRankPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -265,7 +271,7 @@ var boss;
             }
         };
         return BossRankPanel;
-    })(UIConatiner);
+    }(UIConatiner));
     boss.BossRankPanel = BossRankPanel;
 })(boss || (boss = {}));
 //# sourceMappingURL=BossRankPanel.js.map

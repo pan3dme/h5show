@@ -1,6 +1,6 @@
 var boss;
 (function (boss) {
-    var BossModel = (function () {
+    var BossModel = /** @class */ (function () {
         function BossModel() {
         }
         BossModel.frameUpData = function () {
@@ -78,7 +78,7 @@ var boss;
         };
         BossModel.nextCatchTime = 0;
         return BossModel;
-    })();
+    }());
     boss.BossModel = BossModel;
 })(boss || (boss = {}));
 //# sourceMappingURL=BossModel.js.map

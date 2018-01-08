@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var CombineParticleData = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var CombineParticleData = /** @class */ (function (_super) {
     __extends(CombineParticleData, _super);
     function CombineParticleData() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     CombineParticleData.prototype.destory = function () {
         for (var i = 0; i < this.dataAry.length; i++) {
@@ -99,5 +104,5 @@ var CombineParticleData = (function (_super) {
         return pdata;
     };
     return CombineParticleData;
-})(ResCount);
+}(ResCount));
 //# sourceMappingURL=CombineParticleData.js.map

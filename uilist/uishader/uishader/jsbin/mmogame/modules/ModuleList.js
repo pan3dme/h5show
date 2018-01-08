@@ -1,4 +1,4 @@
-var ModuleList = (function () {
+var ModuleList = /** @class */ (function () {
     function ModuleList() {
     }
     ModuleList.getModuleList = function () {
@@ -22,5 +22,5 @@ var ModuleList = (function () {
         }
     };
     return ModuleList;
-})();
+}());
 //# sourceMappingURL=ModuleList.js.map

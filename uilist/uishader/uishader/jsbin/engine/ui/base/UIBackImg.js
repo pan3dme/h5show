@@ -1,15 +1,21 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var UIBackImg = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var UIBackImg = /** @class */ (function (_super) {
     __extends(UIBackImg, _super);
     function UIBackImg() {
-        _super.call(this);
-        this._scaleData = [1, 1];
-        this._isFBO = false;
-        this.alpha = 1.0;
+        var _this = _super.call(this) || this;
+        _this._scaleData = [1, 1];
+        _this._isFBO = false;
+        _this.alpha = 1.0;
+        return _this;
     }
     UIBackImg.prototype.initData = function () {
         this.objData = new ObjData();
@@ -81,11 +87,11 @@ var UIBackImg = (function (_super) {
         return true;
     };
     return UIBackImg;
-})(UIRenderComponent);
-var UIRenderOnlyPicComponent = (function (_super) {
+}(UIRenderComponent));
+var UIRenderOnlyPicComponent = /** @class */ (function (_super) {
     __extends(UIRenderOnlyPicComponent, _super);
     function UIRenderOnlyPicComponent() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     UIRenderOnlyPicComponent.prototype.makeRenderDataVc = function ($vcId) {
         _super.prototype.makeRenderDataVc.call(this, $vcId);
@@ -119,5 +125,5 @@ var UIRenderOnlyPicComponent = (function (_super) {
         }
     };
     return UIRenderOnlyPicComponent;
-})(UIRenderComponent);
+}(UIRenderComponent));
 //# sourceMappingURL=UIBackImg.js.map

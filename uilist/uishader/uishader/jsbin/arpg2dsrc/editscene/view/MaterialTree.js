@@ -1,19 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var materialui;
 (function (materialui) {
-    var MaterialTree = (function (_super) {
+    var MaterialTree = /** @class */ (function (_super) {
         __extends(MaterialTree, _super);
         function MaterialTree() {
-            _super.apply(this, arguments);
-            this.texList = new Array;
-            this.constList = new Array;
-            this.killNum = 0;
-            this.writeZbuffer = true;
-            this.fcIDAry = new Array; //[]
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.texList = new Array;
+            _this.constList = new Array;
+            _this.killNum = 0;
+            _this.writeZbuffer = true;
+            _this.fcIDAry = new Array; //[]
+            return _this;
         }
         Object.defineProperty(MaterialTree.prototype, "data", {
             get: function () {
@@ -94,7 +100,7 @@ var materialui;
             configurable: true
         });
         return MaterialTree;
-    })(Material);
+    }(Material));
     materialui.MaterialTree = MaterialTree;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialTree.js.map

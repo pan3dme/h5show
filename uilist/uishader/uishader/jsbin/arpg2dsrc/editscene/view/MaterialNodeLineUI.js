@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var BezierClasszip = (function () {
+    var BezierClasszip = /** @class */ (function () {
         function BezierClasszip() {
         }
         BezierClasszip.drawbezier = function (_array, _time) {
@@ -24,9 +24,9 @@ var materialui;
             a.y = _ny;
         };
         return BezierClasszip;
-    })();
+    }());
     materialui.BezierClasszip = BezierClasszip;
-    var MaterialNodeLineUI = (function () {
+    var MaterialNodeLineUI = /** @class */ (function () {
         function MaterialNodeLineUI() {
             this.lineRender = new materialui.NodeLineLinkComponent;
         }
@@ -117,7 +117,7 @@ var materialui;
             }
         };
         return MaterialNodeLineUI;
-    })();
+    }());
     materialui.MaterialNodeLineUI = MaterialNodeLineUI;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialNodeLineUI.js.map

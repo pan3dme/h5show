@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var gift;
 (function (gift) {
-    var GiftModule = (function (_super) {
+    var GiftModule = /** @class */ (function (_super) {
         __extends(GiftModule, _super);
         function GiftModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         GiftModule.prototype.getModuleName = function () {
             return "GiftModule";
@@ -17,23 +22,23 @@ var gift;
             return [new GiftProcessor()];
         };
         return GiftModule;
-    })(Module);
+    }(Module));
     gift.GiftModule = GiftModule;
-    var GiftEvent = (function (_super) {
+    var GiftEvent = /** @class */ (function (_super) {
         __extends(GiftEvent, _super);
         function GiftEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         GiftEvent.SHOW_GIFT_PANEL = "SHOW_GIFT_PANEL";
         GiftEvent.HIDE_GIFT_PANEL = "HIDE_GIFT_PANEL";
         GiftEvent.REFRISH_CHANGE_CELL_DATA = "REFRISH_CHANGE_CELL_DATA";
         return GiftEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     gift.GiftEvent = GiftEvent;
-    var GiftProcessor = (function (_super) {
+    var GiftProcessor = /** @class */ (function (_super) {
         __extends(GiftProcessor, _super);
         function GiftProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         GiftProcessor.prototype.getName = function () {
             return "GiftProcessor";
@@ -55,6 +60,7 @@ var gift;
             }
             else if ($event instanceof charbg.CharBgEvent) {
                 if (this.giftPanel && this.giftPanel.hasStage) {
+                    //   this.giftPanel.refresh();
                 }
             }
         };
@@ -83,7 +89,7 @@ var gift;
             ];
         };
         return GiftProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     gift.GiftProcessor = GiftProcessor;
 })(gift || (gift = {}));
 //# sourceMappingURL=GiftProcessor.js.map

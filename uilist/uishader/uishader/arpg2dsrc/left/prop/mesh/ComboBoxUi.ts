@@ -23,7 +23,10 @@
             this.textLabelUIMeshVo.name = value;
         }
         protected butClik(evt: InteractiveEvent): void {
-            console.log("ComboBoxUi")
+
+
+            this.dispatchEvent(evt);
+          
         }
 
        

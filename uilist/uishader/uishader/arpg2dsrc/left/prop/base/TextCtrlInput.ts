@@ -26,8 +26,8 @@
         }
         private onChangeInput($evt: ReflectionEvet): void {
            
- 
-            this.target[this.FunKey] = this.target[this.FunKey] + Number($evt.data)
+
+            this.target[this.FunKey] = this.target[this.FunKey] + this.KeyStep * Number($evt.data);
 
             this.refreshViewValue();
                
@@ -36,8 +36,12 @@
         }
         public refreshViewValue(): void {
   
-            this.inputTextUi.text = String(this.target[this.FunKey])
+            this.inputTextUi.text = this.getNumStr(this.target[this.FunKey])
 
+        }
+        public getNumStr(num: number): string {
+            var n: number = Math.floor(num * 100) / 100;
+            return n.toString();
         }
         public set x(value: number) {
             this._x = value;

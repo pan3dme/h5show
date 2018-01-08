@@ -1,16 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var social;
 (function (social) {
-    var SocialListPanel = (function (_super) {
+    var SocialListPanel = /** @class */ (function (_super) {
         __extends(SocialListPanel, _super);
         function SocialListPanel($lastcompenent) {
-            _super.call(this);
-            this.left = 56;
-            this.top = 123;
+            var _this = _super.call(this) || this;
+            _this.left = 56;
+            _this.top = 123;
+            return _this;
         }
         SocialListPanel.prototype.init = function ($atlas) {
             this.baseAtlas = $atlas;
@@ -89,12 +95,12 @@ var social;
             UIManager.getInstance().removeUIContainer(this);
         };
         return SocialListPanel;
-    })(SList);
+    }(SList));
     social.SocialListPanel = SocialListPanel;
-    var SocialItemRender = (function (_super) {
+    var SocialItemRender = /** @class */ (function (_super) {
         __extends(SocialItemRender, _super);
         function SocialItemRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -251,7 +257,7 @@ var social;
             }
         };
         return SocialItemRender;
-    })(SListItem);
+    }(SListItem));
     social.SocialItemRender = SocialItemRender;
 })(social || (social = {}));
 //# sourceMappingURL=SocialListPanel.js.map

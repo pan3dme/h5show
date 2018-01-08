@@ -6,7 +6,7 @@
         public getView(): Array<any> {
             var ary: Array<any> =
                 [
-                    { Type: ReflectionData.NumberInput, Label: "x:", FunKey:"constValue", target :this, Category: "属性" },
+                    { Type: ReflectionData.NumberInput, Label: "x:", FunKey: "constValue", target: this,  Step: 0.1 },
 
                 ];
             return ary;
@@ -22,7 +22,6 @@
         }
 
         public get constValue(): number {
-            console.log(this.constFloatNodeUI.constValue)
             return this.constFloatNodeUI.constValue
         }
         public set constValue(value: number) {

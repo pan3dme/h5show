@@ -1,19 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var kuafu;
 (function (kuafu) {
-    var ArenaDjPanel = (function (_super) {
+    var ArenaDjPanel = /** @class */ (function (_super) {
         __extends(ArenaDjPanel, _super);
         function ArenaDjPanel() {
-            _super.call(this);
-            this._lastTime = 0;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
+            var _this = _super.call(this) || this;
+            _this._lastTime = 0;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            return _this;
         }
         ArenaDjPanel.prototype.setUIAtlas = function ($uiatlas, $winMidRender) {
             this._baseUiAtlas = $uiatlas;
@@ -239,9 +245,9 @@ var kuafu;
             TimeUtil.removeTimeTick(this._upFun);
         };
         return ArenaDjPanel;
-    })(UIConatiner);
+    }(UIConatiner));
     kuafu.ArenaDjPanel = ArenaDjPanel;
-    var ItemDjRole = (function () {
+    var ItemDjRole = /** @class */ (function () {
         function ItemDjRole() {
             this.id = 0;
             this.role = new Person2DChar();
@@ -280,7 +286,7 @@ var kuafu;
             NetManager.getInstance().protocolos.doujiantai_fight(this.data.postion - 1);
         };
         return ItemDjRole;
-    })();
+    }());
     kuafu.ItemDjRole = ItemDjRole;
 })(kuafu || (kuafu = {}));
 //# sourceMappingURL=ArenaDjPanel.js.map

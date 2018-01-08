@@ -1,28 +1,34 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var strengthgem;
 (function (strengthgem) {
-    var masterLevtipsPanel = (function (_super) {
+    var masterLevtipsPanel = /** @class */ (function (_super) {
         __extends(masterLevtipsPanel, _super);
         function masterLevtipsPanel() {
-            _super.call(this);
-            this.KeyByType = ["全身强化:  ", "全身精炼:  ", "全身镶嵌总和:  "];
-            this.KeyLevNameByType = ["级", "段", "级"];
-            this.setBlackBg();
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
+            var _this = _super.call(this) || this;
+            _this.KeyByType = ["全身强化:  ", "全身精炼:  ", "全身镶嵌总和:  "];
+            _this.KeyLevNameByType = ["级", "段", "级"];
+            _this.setBlackBg();
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
             // this._publicbgRender = new UIRenderComponent;
             // this.addRender(this._publicbgRender)
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._bgRender.uiAtlas = new UIAtlas();
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._bgRender.uiAtlas = new UIAtlas();
+            return _this;
         }
         masterLevtipsPanel.prototype.dispose = function () {
             this._midRender.dispose();
@@ -171,7 +177,7 @@ var strengthgem;
             LabelTextFont.writeSingleLabel($ui.uiRender.uiAtlas, $ui.skinName, ColorType.color802626 + getKeyProById($att) + ":    " + ColorType.color9a683f + "+" + Snum(num), 14, TextAlign.LEFT);
         };
         return masterLevtipsPanel;
-    })(WindowMinUi);
+    }(WindowMinUi));
     strengthgem.masterLevtipsPanel = masterLevtipsPanel;
 })(strengthgem || (strengthgem = {}));
 //# sourceMappingURL=masterLevtipsPanel.js.map

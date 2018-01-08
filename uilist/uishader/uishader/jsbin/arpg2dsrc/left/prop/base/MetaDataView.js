@@ -1,6 +1,6 @@
 var prop;
 (function (prop) {
-    var MetaDataView = (function () {
+    var MetaDataView = /** @class */ (function () {
         function MetaDataView() {
             this.creat(this.getView());
         }
@@ -51,6 +51,7 @@ var prop;
             var $ComBoBoxCtrl2D = new prop.ComBoBoxCtrl2D();
             $ComBoBoxCtrl2D.label = $obj[prop.ReflectionData.Key_Label];
             $ComBoBoxCtrl2D.FunKey = $obj[prop.ReflectionData.FunKey];
+            $ComBoBoxCtrl2D.data = $obj[prop.ReflectionData.Key_Data];
             $ComBoBoxCtrl2D.target = this;
             return $ComBoBoxCtrl2D;
         };
@@ -65,6 +66,7 @@ var prop;
             var $textCtrlInput = new prop.TextCtrlInput();
             $textCtrlInput.label = $obj[prop.ReflectionData.Key_Label];
             $textCtrlInput.FunKey = $obj[prop.ReflectionData.FunKey];
+            $textCtrlInput.KeyStep = $obj[prop.ReflectionData.Key_Step];
             $textCtrlInput.target = this;
             return $textCtrlInput;
         };
@@ -80,7 +82,7 @@ var prop;
             }
         };
         return MetaDataView;
-    })();
+    }());
     prop.MetaDataView = MetaDataView;
 })(prop || (prop = {}));
 //# sourceMappingURL=MetaDataView.js.map

@@ -1,1 +1,1 @@
-{"version":3,"file":"SkillData.js","sourceRoot":"","sources":["../../../engine/skill/SkillData.ts"],"names":["SkillData","SkillData.constructor"],"mappings":";;;;;AAAA;IAAwBA,6BAAQA;IAAhCA;QAAwBC,8BAAQA;IAGhCA,CAACA;IAADD,gBAACA;AAADA,CAACA,AAHD,EAAwB,QAAQ,EAG/B"}
+{"version":3,"file":"SkillData.js","sourceRoot":"","sources":["../../../engine/skill/SkillData.ts"],"names":[],"mappings":";;;;;;;;;;AAAA;IAAwB,6BAAQ;IAAhC;;IAGA,CAAC;IAAD,gBAAC;AAAD,CAAC,AAHD,CAAwB,QAAQ,GAG/B"}

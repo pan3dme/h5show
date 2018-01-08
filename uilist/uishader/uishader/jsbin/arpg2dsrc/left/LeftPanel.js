@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var left;
 (function (left) {
-    var modelShowRender = (function (_super) {
+    var modelShowRender = /** @class */ (function (_super) {
         __extends(modelShowRender, _super);
         function modelShowRender() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         modelShowRender.prototype.makeRenderDataVc = function ($vcId) {
             _super.prototype.makeRenderDataVc.call(this, $vcId);
@@ -20,26 +25,26 @@ var left;
             }
         };
         return modelShowRender;
-    })(UIRenderOnlyPicComponent);
+    }(UIRenderOnlyPicComponent));
     left.modelShowRender = modelShowRender;
-    var LeftPanel = (function (_super) {
+    var LeftPanel = /** @class */ (function (_super) {
         __extends(LeftPanel, _super);
         function LeftPanel() {
-            var _this = this;
-            _super.call(this);
-            this.layer = 100;
-            this.left = 0;
-            this.top = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this.modelPic = new modelShowRender();
-            this.addRender(this.modelPic);
-            this._topRender.uiAtlas = new UIAtlas();
-            this._topRender.uiAtlas.setInfo("pan/marmoset/uilist/left/left.xml", "pan/marmoset/uilist/left/left.png", function () { _this.loadConfigCom(); });
+            var _this = _super.call(this) || this;
+            _this.layer = 100;
+            _this.left = 0;
+            _this.top = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this.modelPic = new modelShowRender();
+            _this.addRender(_this.modelPic);
+            _this._topRender.uiAtlas = new UIAtlas();
+            _this._topRender.uiAtlas.setInfo("pan/marmoset/uilist/left/left.xml", "pan/marmoset/uilist/left/left.png", function () { _this.loadConfigCom(); });
+            return _this;
         }
         LeftPanel.prototype.initView = function () {
             var $ui = this.addChild(this.modelPic.getComponent("a_model_show"));
@@ -94,7 +99,7 @@ var left;
             }
         };
         return LeftPanel;
-    })(UIPanel);
+    }(UIPanel));
     left.LeftPanel = LeftPanel;
 })(left || (left = {}));
 //# sourceMappingURL=LeftPanel.js.map

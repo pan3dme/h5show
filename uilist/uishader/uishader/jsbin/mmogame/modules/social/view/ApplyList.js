@@ -1,17 +1,23 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var social;
 (function (social) {
-    var ApplyList = (function (_super) {
+    var ApplyList = /** @class */ (function (_super) {
         __extends(ApplyList, _super);
         function ApplyList() {
-            _super.call(this);
-            this.left = 184;
-            this.top = 140;
-            this.setShowLevel(4);
+            var _this = _super.call(this) || this;
+            _this.left = 184;
+            _this.top = 140;
+            _this.setShowLevel(4);
+            return _this;
         }
         ApplyList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -65,13 +71,14 @@ var social;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return ApplyList;
-    })(SList);
+    }(SList));
     social.ApplyList = ApplyList;
-    var ApplyItemRender = (function (_super) {
+    var ApplyItemRender = /** @class */ (function (_super) {
         __extends(ApplyItemRender, _super);
         function ApplyItemRender() {
-            _super.apply(this, arguments);
-            this._num = 1;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this._num = 1;
+            return _this;
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -164,7 +171,7 @@ var social;
             }
         };
         return ApplyItemRender;
-    })(SListItem);
+    }(SListItem));
     social.ApplyItemRender = ApplyItemRender;
 })(social || (social = {}));
 //# sourceMappingURL=ApplyList.js.map

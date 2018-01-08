@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var rightui;
 (function (rightui) {
-    var RightUiModule = (function (_super) {
+    var RightUiModule = /** @class */ (function (_super) {
         __extends(RightUiModule, _super);
         function RightUiModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         RightUiModule.prototype.getModuleName = function () {
             return "RightUiModule";
@@ -17,22 +22,22 @@ var rightui;
             return [new RightUiProcessor()];
         };
         return RightUiModule;
-    })(Module);
+    }(Module));
     rightui.RightUiModule = RightUiModule;
-    var RightUiEvent = (function (_super) {
+    var RightUiEvent = /** @class */ (function (_super) {
         __extends(RightUiEvent, _super);
         function RightUiEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         RightUiEvent.SHOW_RIGHT_UI_PANEL = "SHOW_RIGHT_UI_PANEL";
         RightUiEvent.HIDE_RIGHT_UI_PANEL = "HIDE_RIGHT_UI_PANEL";
         return RightUiEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     rightui.RightUiEvent = RightUiEvent;
-    var RightUiProcessor = (function (_super) {
+    var RightUiProcessor = /** @class */ (function (_super) {
         __extends(RightUiProcessor, _super);
         function RightUiProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         RightUiProcessor.prototype.getName = function () {
             return "RightUiProcessor";
@@ -94,7 +99,7 @@ var rightui;
             ];
         };
         return RightUiProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     rightui.RightUiProcessor = RightUiProcessor;
 })(rightui || (rightui = {}));
 //# sourceMappingURL=RightUiProcessor.js.map

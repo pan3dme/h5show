@@ -1,17 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var fightui;
 (function (fightui) {
-    var SkillUIVo = (function () {
+    var SkillUIVo = /** @class */ (function () {
         function SkillUIVo() {
         }
         return SkillUIVo;
-    })();
+    }());
     fightui.SkillUIVo = SkillUIVo;
-    var JumpAndEatCompenent = (function () {
+    var JumpAndEatCompenent = /** @class */ (function () {
         function JumpAndEatCompenent() {
         }
         JumpAndEatCompenent.prototype.update = function () {
@@ -54,20 +59,21 @@ var fightui;
             }
         };
         return JumpAndEatCompenent;
-    })();
+    }());
     fightui.JumpAndEatCompenent = JumpAndEatCompenent;
-    var FightSkillPanel = (function (_super) {
+    var FightSkillPanel = /** @class */ (function (_super) {
         __extends(FightSkillPanel, _super);
         function FightSkillPanel() {
-            _super.call(this);
-            this.skilImgKey = new Object;
-            this.skillList = new Array;
-            this.nextThreeButTime = 0;
-            this.interfaceUI = true;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.right = 0;
-            this.bottom = 0;
+            var _this = _super.call(this) || this;
+            _this.skilImgKey = new Object;
+            _this.skillList = new Array;
+            _this.nextThreeButTime = 0;
+            _this.interfaceUI = true;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.right = 0;
+            _this.bottom = 0;
+            return _this;
         }
         FightSkillPanel.prototype.setRender = function ($bottom, $mid, $top, $cd) {
             this._bottomRender = $bottom;
@@ -406,7 +412,7 @@ var fightui;
             }
         };
         return FightSkillPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     fightui.FightSkillPanel = FightSkillPanel;
 })(fightui || (fightui = {}));
 //# sourceMappingURL=FightSkillPanel.js.map

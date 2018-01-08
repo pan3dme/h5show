@@ -1,6 +1,6 @@
 var left;
 (function (left) {
-    var ModelShowModel = (function () {
+    var ModelShowModel = /** @class */ (function () {
         function ModelShowModel() {
         }
         ModelShowModel.getInstance = function () {
@@ -76,7 +76,7 @@ var left;
             return shader;
         };
         return ModelShowModel;
-    })();
+    }());
     left.ModelShowModel = ModelShowModel;
 })(left || (left = {}));
 //# sourceMappingURL=ModelShowModel.js.map

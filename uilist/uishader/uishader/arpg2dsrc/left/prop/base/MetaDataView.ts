@@ -58,6 +58,7 @@
             var $ComBoBoxCtrl2D: ComBoBoxCtrl2D = new ComBoBoxCtrl2D()
             $ComBoBoxCtrl2D.label = $obj[ReflectionData.Key_Label];
             $ComBoBoxCtrl2D.FunKey = $obj[ReflectionData.FunKey];
+            $ComBoBoxCtrl2D.data = $obj[ReflectionData.Key_Data];
             $ComBoBoxCtrl2D.target = this
             return $ComBoBoxCtrl2D;
         }
@@ -72,6 +73,7 @@
             var $textCtrlInput: TextCtrlInput = new TextCtrlInput()
             $textCtrlInput.label = $obj[ReflectionData.Key_Label];
             $textCtrlInput.FunKey = $obj[ReflectionData.FunKey];
+            $textCtrlInput.KeyStep = $obj[ReflectionData.Key_Step];
             $textCtrlInput.target = this
             return $textCtrlInput;
         }

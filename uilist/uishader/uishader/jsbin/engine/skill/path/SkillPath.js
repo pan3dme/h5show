@@ -1,4 +1,4 @@
-var SkillPath = (function () {
+var SkillPath = /** @class */ (function () {
     function SkillPath() {
         /**
         * 当前方向
@@ -73,5 +73,5 @@ var SkillPath = (function () {
         this.bloodFun = $bloodFun;
     };
     return SkillPath;
-})();
+}());
 //# sourceMappingURL=SkillPath.js.map

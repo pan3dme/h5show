@@ -1,22 +1,28 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /**
  * 角色身上装备TIP
  */
-var EquTip = (function (_super) {
+var EquTip = /** @class */ (function (_super) {
     __extends(EquTip, _super);
     function EquTip() {
-        _super.call(this);
-        this.partNameAry = ["武器", "衣服", "护手", "腰带", "鞋子", "头饰", "项链", "手镯", "戒指", "腰坠"];
-        this.gemTypeAry = ["绿翡翠", "红宝石", "蓝宝石", "黑曜石", "白珊瑚", "紫水晶", "黄玛瑙", "宝石8", "宝石9", "宝石10"];
-        this._hasInitBtn = false;
-        this.width = 354;
-        this.height = 456;
-        this.center = -150;
-        this.middle = 0;
+        var _this = _super.call(this) || this;
+        _this.partNameAry = ["武器", "衣服", "护手", "腰带", "鞋子", "头饰", "项链", "手镯", "戒指", "腰坠"];
+        _this.gemTypeAry = ["绿翡翠", "红宝石", "蓝宝石", "黑曜石", "白珊瑚", "紫水晶", "黄玛瑙", "宝石8", "宝石9", "宝石10"];
+        _this._hasInitBtn = false;
+        _this.width = 354;
+        _this.height = 456;
+        _this.center = -150;
+        _this.middle = 0;
+        return _this;
     }
     EquTip.prototype.refresh = function () {
         _super.prototype.refresh.call(this);
@@ -485,5 +491,5 @@ var EquTip = (function (_super) {
         }
     };
     return EquTip;
-})(BaseTip);
+}(BaseTip));
 //# sourceMappingURL=EquTip.js.map

@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var prop;
 (function (prop) {
-    var TextCtrlInput = (function (_super) {
+    var TextCtrlInput = /** @class */ (function (_super) {
         __extends(TextCtrlInput, _super);
         function TextCtrlInput() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         TextCtrlInput.prototype.initView = function () {
             this.textLabelUI = new prop.TextLabelUI();
@@ -31,11 +36,15 @@ var prop;
             configurable: true
         });
         TextCtrlInput.prototype.onChangeInput = function ($evt) {
-            this.target[this.FunKey] = this.target[this.FunKey] + Number($evt.data);
+            this.target[this.FunKey] = this.target[this.FunKey] + this.KeyStep * Number($evt.data);
             this.refreshViewValue();
         };
         TextCtrlInput.prototype.refreshViewValue = function () {
-            this.inputTextUi.text = String(this.target[this.FunKey]);
+            this.inputTextUi.text = this.getNumStr(this.target[this.FunKey]);
+        };
+        TextCtrlInput.prototype.getNumStr = function (num) {
+            var n = Math.floor(num * 100) / 100;
+            return n.toString();
         };
         Object.defineProperty(TextCtrlInput.prototype, "x", {
             get: function () {
@@ -73,7 +82,7 @@ var prop;
             configurable: true
         });
         return TextCtrlInput;
-    })(prop.BaseReflComponent);
+    }(prop.BaseReflComponent));
     prop.TextCtrlInput = TextCtrlInput;
 })(prop || (prop = {}));
 //# sourceMappingURL=TextCtrlInput.js.map

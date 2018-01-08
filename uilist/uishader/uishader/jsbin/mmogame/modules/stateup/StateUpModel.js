@@ -1,12 +1,12 @@
 var stateup;
 (function (stateup) {
-    var TaskCell = (function () {
+    var TaskCell = /** @class */ (function () {
         function TaskCell() {
         }
         return TaskCell;
-    })();
+    }());
     stateup.TaskCell = TaskCell;
-    var StateUpModel = (function () {
+    var StateUpModel = /** @class */ (function () {
         function StateUpModel() {
         }
         StateUpModel.getInstance = function () {
@@ -50,7 +50,7 @@ var stateup;
             return null;
         };
         return StateUpModel;
-    })();
+    }());
     stateup.StateUpModel = StateUpModel;
 })(stateup || (stateup = {}));
 //# sourceMappingURL=StateUpModel.js.map

@@ -34,7 +34,7 @@
         public get constValue(): number {
             return this._constValue;
         }
-
+  
         public set constValue(value: number) {
             this._constValue = value;
             (<NodeTreeFloat>this.nodeTree).constValue = value;
@@ -42,10 +42,14 @@
         }
          public  showDynamic(): void {
             if (this.nodeTree.isDynamic) {
-                this.drawTitleToFrame("float<" + this.nodeTree.paramName + ">(" + this._constValue + ")");
+                this.drawTitleToFrame("float<" + this.nodeTree.paramName + ">(" +this.getNumStr(this._constValue) + ")");
             } else {
-                this.drawTitleToFrame("float(" + this._constValue + ")");
+                this.drawTitleToFrame("float(" + this.getNumStr(this._constValue )+ ")");
             }
+        }
+        public getNumStr(num: number): string {
+            var n: number = Math.floor(num * 100) / 100;
+            return n.toString();
         }
     }
 }

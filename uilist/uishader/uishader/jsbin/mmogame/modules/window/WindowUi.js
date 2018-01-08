@@ -1,15 +1,21 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var WindowUi = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var WindowUi = /** @class */ (function (_super) {
     __extends(WindowUi, _super);
     function WindowUi(titlenum) {
         if (titlenum === void 0) { titlenum = 0; }
-        _super.call(this);
-        this._titlenum = titlenum;
-        this.addWinUiPanel();
+        var _this = _super.call(this) || this;
+        _this._titlenum = titlenum;
+        _this.addWinUiPanel();
+        return _this;
     }
     WindowUi.prototype.addWinUiPanel = function () {
         this._baImg = new UIBackImg();
@@ -118,5 +124,5 @@ var WindowUi = (function (_super) {
         }
     };
     return WindowUi;
-})(UIPanel);
+}(UIPanel));
 //# sourceMappingURL=WindowUi.js.map

@@ -1,22 +1,28 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var GuidObjectTable = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var GuidObjectTable = /** @class */ (function (_super) {
     __extends(GuidObjectTable, _super);
     function GuidObjectTable() {
-        _super.call(this);
-        this._objs = new Object;
+        var _this = _super.call(this) || this;
+        _this._objs = new Object;
         //std::function<uint32_t(const string&)> 从字符串转换出整形用于节约 
-        this._hashGUID = null;
+        _this._hashGUID = null;
         //以对象ID的hash希，整型作为key的对象表
-        this._u_2_guid = new Object();
+        _this._u_2_guid = new Object();
         //用于每次发包的缓存 		 
-        this._packet_pool = new Array;
-        this._newEvent = new NetEventDispatcher(NetEventDispatcher.KEY_TYPE_STRING);
-        this._delEvent = new NetEventDispatcher(NetEventDispatcher.KEY_TYPE_STRING);
-        this._indexer = new StringIndexer();
+        _this._packet_pool = new Array;
+        _this._newEvent = new NetEventDispatcher(NetEventDispatcher.KEY_TYPE_STRING);
+        _this._delEvent = new NetEventDispatcher(NetEventDispatcher.KEY_TYPE_STRING);
+        _this._indexer = new StringIndexer();
+        return _this;
     }
     GuidObjectTable.prototype.Get = function (k) {
         return (this._objs[k]);
@@ -108,6 +114,7 @@ var GuidObjectTable = (function (_super) {
             cur_obj.buffUnit.resetAllBufData(); // (<Unit>cur_obj)
         }
         else {
+            //throw new Error("msgClientsubscription");
         }
     };
     /**
@@ -154,6 +161,7 @@ var GuidObjectTable = (function (_super) {
             if (!cur_obj) {
                 if (flags & SyncEvent.OBJ_OPT_NEW) {
                     cur_obj = this.CreateObject(guid);
+                    //console.log("创建GUID:" + cur_obj.guid);
                 }
                 else {
                     cur_obj = GuidObjectTable.applyBlock_tmp_obj;
@@ -274,5 +282,5 @@ var GuidObjectTable = (function (_super) {
     };
     GuidObjectTable.applyBlock_tmp_obj = new GuidObject;
     return GuidObjectTable;
-})(SyncEvent);
+}(SyncEvent));
 //# sourceMappingURL=GuidObjectTable.js.map

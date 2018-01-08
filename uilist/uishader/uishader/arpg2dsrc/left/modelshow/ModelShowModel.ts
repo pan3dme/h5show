@@ -29,10 +29,7 @@
         private addGridLineSprite(): void {
             ProgrmaManager.getInstance().registe(LineDisplayShader.LineShader, new LineDisplayShader);
             this.gridLineSprite = new GridLineSprite();
-
-
             this.lightSpriteList = new MaterialModelSprite();
-      
         }
         public outShaderStr($materialTree: materialui.MaterialTree): void {
 

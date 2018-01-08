@@ -10,7 +10,7 @@
         protected initView(): void {
             this.textLabelUI = new TextLabelUI();
             this.comboBoxUi = new ComboBoxUi();
-            this.comboBoxUi.addEventListener(ReflectionEvet.CHANGE_DATA, this.onChangeInput, this)
+            this.comboBoxUi.addEventListener(InteractiveEvent.Down, this.comboBoxUiDown, this)
             this.height = 20
         }
         public destory(): void {
@@ -19,24 +19,40 @@
         }
         public set data(value: any) {
             this._data = value;
+            this.comboxListTxt = this._data
 
         }
         public get data(): any {
             return this._data
         }
-        private onChangeInput($evt: ReflectionEvet): void {
+        private comboxListTxt: Array<any>;
+        private comboBoxUiDown($evt: InteractiveEvent): void {
+            var $rightMenuEvet: materialui.RightMenuEvent = new materialui.RightMenuEvent(materialui.RightMenuEvent.SHOW_COMBOX_MENU);
+            $rightMenuEvet.posv2d = new Vector2D(this.comboBoxUi.x, this.comboBoxUi.y+20);
+            $rightMenuEvet.comboxData = this.data;
+            $rightMenuEvet.comboxFun = (value: number) => { this.selectFun(value)}
+            ModuleEventManager.dispatchEvent($rightMenuEvet);
 
-
-            this.target[this.FunKey] = this.target[this.FunKey] + Number($evt.data)
-
+            console.log(this.data);
+          
+          //  this.target[this.FunKey] = this.target[this.FunKey] + Number($evt.data)
+            //this.refreshViewValue();
+        }
+        private selectFun(value: number): void {
+            console.log("selectFun", value)
+            this.target[this.FunKey] = value;
             this.refreshViewValue();
-
-
-
         }
         public refreshViewValue(): void {
 
-           // this.inputTextUi.text = String(this.target[this.FunKey])
+            if (this.FunKey) {
+                var $i: number = this.target[this.FunKey]
+                console.log(this.comboxListTxt[$i].name);
+
+                this.comboBoxUi.text = this.comboxListTxt[$i].name
+            }
+          
+            
 
         }
         public set x(value: number) {

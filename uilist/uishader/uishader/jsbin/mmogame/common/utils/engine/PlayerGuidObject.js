@@ -1,30 +1,36 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var SystemOpenData = (function () {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SystemOpenData = /** @class */ (function () {
     function SystemOpenData() {
     }
     return SystemOpenData;
-})();
-var factionShopNumData = (function () {
+}());
+var factionShopNumData = /** @class */ (function () {
     function factionShopNumData() {
     }
     return factionShopNumData;
-})();
+}());
 // "id": id, "lev": lev, "slot": slot
-var SkillUintVo = (function () {
+var SkillUintVo = /** @class */ (function () {
     function SkillUintVo() {
     }
     return SkillUintVo;
-})();
-var PlayerGuidObject = (function (_super) {
+}());
+var PlayerGuidObject = /** @class */ (function (_super) {
     __extends(PlayerGuidObject, _super);
     function PlayerGuidObject() {
-        _super.apply(this, arguments);
-        this.nextCanJumpTM = 0; //下次可跳的时间
-        this.lastLevel = 1;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.nextCanJumpTM = 0; //下次可跳的时间
+        _this.lastLevel = 1;
+        return _this;
     }
     PlayerGuidObject.prototype.onBaseCreated = function () {
         var _this = this;
@@ -373,6 +379,7 @@ var PlayerGuidObject = (function (_super) {
                     return;
                 }
                 if (changid == SharedDef.FACTION_DATA_INT_GIFT_FLAG_THANK) {
+                    //数据变化。
                 }
             }
             else if (kNum >= SharedDef.PLAYER_INT_FIELD_FACTION_SKILL_LV_START && kNum < SharedDef.PLAYER_INT_FIELD_FACTION_SKILL_LV_END) {
@@ -385,6 +392,7 @@ var PlayerGuidObject = (function (_super) {
                 //系统开启有变化
                 ModuleEventManager.dispatchEvent(new EngineEvent(EngineEvent.SYSTEM_OPEN_EVENT));
             }
+            //  for (var i: number = SharedDef.PLAYER_INT_FIELD_OPTIONAL_GUIDE_START; i < SharedDef.PLAYER_INT_FIELD_OPTIONAL_GUIDE_END; i += 2) {
         }
         //被动技能变化
         var $passiveChangeBoole = false;
@@ -406,6 +414,10 @@ var PlayerGuidObject = (function (_super) {
         }
         for (var k in $strMask) {
             var kNum1 = Number(k);
+            // if (kNum1 >= SharedDef.PLAYER_STRING_INT_FIELD_CULTIVATION_PLUNDER_RECORD_START && kNum1 < SharedDef.PLAYER_STRING_INT_FIELD_CULTIVATION_PLUNDER_RECORD_END) {
+            //     //修炼场战斗记录变化
+            //     ModuleEventManager.dispatchEvent(new training.TrainingEvent(training.TrainingEvent.RECORD_Training_EVENT));
+            // }
         }
         if ($skillChange) {
             this.sendChangeSkillEvent();
@@ -1170,5 +1182,5 @@ var PlayerGuidObject = (function (_super) {
         return this.GetUInt16(SharedDef.PLAYER_INT_FIELD_REALMBREAK_DAILYQUEST_STATE, 1);
     };
     return PlayerGuidObject;
-})(GuidObject);
+}(GuidObject));
 //# sourceMappingURL=PlayerGuidObject.js.map

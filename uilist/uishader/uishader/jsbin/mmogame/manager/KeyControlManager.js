@@ -1,4 +1,4 @@
-var FocusRect = (function () {
+var FocusRect = /** @class */ (function () {
     function FocusRect($centX, $centZ, $minx, $minz, $maxx, $maxz, $mindis, $maxdis) {
         this.centX = $centX;
         this.centZ = $centZ;
@@ -10,8 +10,8 @@ var FocusRect = (function () {
         this.maxdis = $maxdis;
     }
     return FocusRect;
-})();
-var KeyControlManager = (function () {
+}());
+var KeyControlManager = /** @class */ (function () {
     function KeyControlManager() {
         this.focusRect = new FocusRect(0, 0, -200, -200, 200, 200, 500, 1500);
         this.lastFopcus3DPos = new Vector3D;
@@ -93,5 +93,5 @@ var KeyControlManager = (function () {
         this._isMouseDown = false;
     };
     return KeyControlManager;
-})();
+}());
 //# sourceMappingURL=KeyControlManager.js.map

@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var logall;
 (function (logall) {
-    var WarehouseTreasureLogListRender = (function (_super) {
+    var WarehouseTreasureLogListRender = /** @class */ (function (_super) {
         __extends(WarehouseTreasureLogListRender, _super);
         function WarehouseTreasureLogListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         WarehouseTreasureLogListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -36,18 +41,19 @@ var logall;
             this.uiAtlas.clearCtxTextureBySkilname(this.F_log_bg.skinName);
         };
         return WarehouseTreasureLogListRender;
-    })(SListItem);
+    }(SListItem));
     logall.WarehouseTreasureLogListRender = WarehouseTreasureLogListRender;
-    var WarehouseTreasureLogList = (function (_super) {
+    var WarehouseTreasureLogList = /** @class */ (function (_super) {
         __extends(WarehouseTreasureLogList, _super);
         function WarehouseTreasureLogList() {
-            _super.call(this);
-            this.left = 45;
-            this.top = 120;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
+            var _this = _super.call(this) || this;
+            _this.left = 45;
+            _this.top = 120;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            return _this;
         }
         WarehouseTreasureLogList.prototype.init = function ($uiAtlas) {
             this._bottomRender.uiAtlas = $uiAtlas;
@@ -83,7 +89,7 @@ var logall;
             }
         };
         return WarehouseTreasureLogList;
-    })(SList);
+    }(SList));
     logall.WarehouseTreasureLogList = WarehouseTreasureLogList;
 })(logall || (logall = {}));
 //# sourceMappingURL=WarehouseTreasureLogList.js.map

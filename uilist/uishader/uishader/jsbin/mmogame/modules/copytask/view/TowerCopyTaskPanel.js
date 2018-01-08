@@ -1,20 +1,26 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var copytask;
 (function (copytask) {
-    var TowerCopyTaskPanel = (function (_super) {
+    var TowerCopyTaskPanel = /** @class */ (function (_super) {
         __extends(TowerCopyTaskPanel, _super);
         function TowerCopyTaskPanel() {
-            _super.call(this);
-            this._uvScaleAry = [0.1, 0.3, 0.5, 0.7, 0.9, 1.0];
-            this._drawPage = -1;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
+            var _this = _super.call(this) || this;
+            _this._uvScaleAry = [0.1, 0.3, 0.5, 0.7, 0.9, 1.0];
+            _this._drawPage = -1;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            return _this;
         }
         TowerCopyTaskPanel.prototype.setUIAtlas = function ($uiatlas, $winMidRender) {
             this._baseUiAtlas = $uiatlas;
@@ -313,7 +319,7 @@ var copytask;
             this.removeWinmid();
         };
         return TowerCopyTaskPanel;
-    })(UIConatiner);
+    }(UIConatiner));
     copytask.TowerCopyTaskPanel = TowerCopyTaskPanel;
 })(copytask || (copytask = {}));
 //# sourceMappingURL=TowerCopyTaskPanel.js.map

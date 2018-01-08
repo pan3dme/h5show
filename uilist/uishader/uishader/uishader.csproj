@@ -44,6 +44,7 @@
     <TypeScriptCompile Include="arpg2dsrc\editscene\nodetype\NodeTreeTex.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\nodetype\NodeTreeVec2.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\nodetype\NodeTreeVec3.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\editscene\rightmenu\ComboBoxMenuPanel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\rightmenu\RightMenuPanel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\rightmenu\RightMenuProcessor.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\treedata\CompileOne.ts" />
