@@ -1,4 +1,4 @@
-var TimeUtil = /** @class */ (function () {
+var TimeUtil = (function () {
     function TimeUtil() {
     }
     TimeUtil.getTimer = function () {
@@ -142,7 +142,6 @@ var TimeUtil = /** @class */ (function () {
                 }
             }
             else {
-                // throw Error("有重复移除嫌疑");	
             }
         }
     };
@@ -189,7 +188,6 @@ var TimeUtil = /** @class */ (function () {
         var index = TimeUtil.funAry.indexOf($fun);
         if (index != -1) {
             TimeUtil.funAry[index] = null;
-            //TimeUtil.funAry.splice(index, 1);
         }
     };
     TimeUtil.update = function () {
@@ -235,8 +233,8 @@ var TimeUtil = /** @class */ (function () {
     TimeUtil.HourTime = 60 * 60;
     TimeUtil.MinuteTime = 60;
     return TimeUtil;
-}());
-var TimeFunTick = /** @class */ (function () {
+})();
+var TimeFunTick = (function () {
     function TimeFunTick() {
         this.alltime = 0;
         this.time = 0;
@@ -249,8 +247,8 @@ var TimeFunTick = /** @class */ (function () {
         }
     };
     return TimeFunTick;
-}());
-var TimeFunOut = /** @class */ (function () {
+})();
+var TimeFunOut = (function () {
     function TimeFunOut() {
         this.alltime = 0;
         this.time = 0;
@@ -264,5 +262,5 @@ var TimeFunOut = /** @class */ (function () {
         return false;
     };
     return TimeFunOut;
-}());
+})();
 //# sourceMappingURL=TimeUtil.js.map

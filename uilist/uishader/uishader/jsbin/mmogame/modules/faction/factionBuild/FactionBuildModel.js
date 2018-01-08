@@ -1,6 +1,6 @@
 var faction;
 (function (faction) {
-    var FactionBuildModel = /** @class */ (function () {
+    var FactionBuildModel = (function () {
         function FactionBuildModel() {
         }
         FactionBuildModel.getInstance = function () {
@@ -89,16 +89,16 @@ var faction;
             return null;
         };
         return FactionBuildModel;
-    }());
+    })();
     faction.FactionBuildModel = FactionBuildModel;
-    var FBuildItemVo = /** @class */ (function () {
+    var FBuildItemVo = (function () {
         function FBuildItemVo() {
         }
         FBuildItemVo.prototype.getType = function () {
             return (this.data.id - this.data.level) / 100;
         };
         return FBuildItemVo;
-    }());
+    })();
     faction.FBuildItemVo = FBuildItemVo;
 })(faction || (faction = {}));
 //# sourceMappingURL=FactionBuildModel.js.map

@@ -1,32 +1,26 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var whisper;
 (function (whisper) {
-    var whisperUiPanel = /** @class */ (function (_super) {
+    var whisperUiPanel = (function (_super) {
         __extends(whisperUiPanel, _super);
         function whisperUiPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.middle = 0;
-            _this.center = 0;
-            _this.setBlackBg();
-            _this._bootomRender = new UIRenderComponent();
-            _this.addRender(_this._bootomRender);
-            _this._midRender = new UIRenderComponent();
-            _this.addRender(_this._midRender);
-            _this._faceRender = new UIRenderComponent();
-            _this.addRender(_this._faceRender);
-            _this._midRender.uiAtlas = new UIAtlas;
-            return _this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.middle = 0;
+            this.center = 0;
+            this.setBlackBg();
+            this._bootomRender = new UIRenderComponent();
+            this.addRender(this._bootomRender);
+            this._midRender = new UIRenderComponent();
+            this.addRender(this._midRender);
+            this._faceRender = new UIRenderComponent();
+            this.addRender(this._faceRender);
+            this._midRender.uiAtlas = new UIAtlas;
         }
         whisperUiPanel.prototype.dispose = function () {
             this._faceRender.dispose();
@@ -198,18 +192,17 @@ var whisper;
             }
         };
         return whisperUiPanel;
-    }(WindowMinUi));
+    })(WindowMinUi);
     whisper.whisperUiPanel = whisperUiPanel;
     /**
      * 好友列表
      */
-    var WhisperFriendList = /** @class */ (function (_super) {
+    var WhisperFriendList = (function (_super) {
         __extends(WhisperFriendList, _super);
         function WhisperFriendList() {
-            var _this = _super.call(this) || this;
-            _this.left = 182;
-            _this.top = 97;
-            return _this;
+            _super.call(this);
+            this.left = 182;
+            this.top = 97;
         }
         WhisperFriendList.prototype.init = function ($atlas) {
             this.baseAtlas = $atlas;
@@ -283,12 +276,12 @@ var whisper;
             UIManager.getInstance().removeUIContainer(this);
         };
         return WhisperFriendList;
-    }(SList));
+    })(SList);
     whisper.WhisperFriendList = WhisperFriendList;
-    var WhisperFriendRender = /** @class */ (function (_super) {
+    var WhisperFriendRender = (function (_super) {
         __extends(WhisperFriendRender, _super);
         function WhisperFriendRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -398,7 +391,7 @@ var whisper;
             }
         };
         return WhisperFriendRender;
-    }(SListItem));
+    })(SListItem);
     whisper.WhisperFriendRender = WhisperFriendRender;
 })(whisper || (whisper = {}));
 //# sourceMappingURL=whisperUiPanel.js.map

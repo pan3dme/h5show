@@ -1,4 +1,4 @@
-var Module = /** @class */ (function () {
+var Module = (function () {
     function Module() {
         /**
              * processor字典
@@ -61,5 +61,5 @@ var Module = /** @class */ (function () {
     */
     Module.moduleMap = new Object();
     return Module;
-}());
+})();
 //# sourceMappingURL=Module.js.map

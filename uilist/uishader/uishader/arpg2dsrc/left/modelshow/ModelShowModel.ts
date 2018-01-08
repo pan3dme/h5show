@@ -37,6 +37,7 @@
           //  console.log($materialTree.constList)
           //  console.log($materialTree.texList)
 
+            /*
             var $material: Material = this.lightSpriteList.material
             var $buildMaterialShader: BuildMaterialShader = new BuildMaterialShader()
             $buildMaterialShader.buildParamAry($materialTree);
@@ -47,6 +48,9 @@
 
             this.lightSpriteList.material.shader = $buildMaterialShader;
             $material.program = $material.shader.program;
+            */
+            console.log(this.lightSpriteList.material.fcData);
+            console.log($materialTree.fcData)
             this.lightSpriteList.material.fcData = $materialTree.fcData
 
             /*

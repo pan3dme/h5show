@@ -1,19 +1,13 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var BaseRes = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var BaseRes = (function (_super) {
     __extends(BaseRes, _super);
     function BaseRes() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.allImgBytes = 10000000;
-        return _this;
+        _super.apply(this, arguments);
+        this.allImgBytes = 10000000;
     }
     //constructor() {
     //this.useNum = 0;
@@ -185,7 +179,6 @@ var BaseRes = /** @class */ (function (_super) {
             dataByte.length = size;
             this._byte.readBytes(dataByte, 0, size);
             MaterialManager.getInstance().addResByte(url, dataByte);
-            //this.materialAry.push(url);
         }
         //console.log("material time", (TimeUtil.getTimer() - time));
         //this.read();
@@ -201,8 +194,6 @@ var BaseRes = /** @class */ (function (_super) {
             dataByte.length = size;
             this._byte.readBytes(dataByte, 0, size);
             ParticleManager.getInstance().addResByte(url, dataByte);
-            //this.particleAry.push(url);
-            //SceneRes.particleDic[url] = str;
         }
         //console.log("particle time", (TimeUtil.getTimer() - time));
         //this.read();
@@ -353,5 +344,5 @@ var BaseRes = /** @class */ (function (_super) {
     BaseRes.PREFAB_TYPE = 1;
     BaseRes.SCENE_PARTICLE_TYPE = 11;
     return BaseRes;
-}(ResCount));
+})(ResCount);
 //# sourceMappingURL=BaseRes.js.map

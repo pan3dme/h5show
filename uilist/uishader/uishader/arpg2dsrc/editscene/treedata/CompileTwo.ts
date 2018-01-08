@@ -207,6 +207,8 @@
             $materialTree.texList = this.texVec;
             var $materialBaseParam: MaterialBaseParam = new MaterialBaseParam()
             $materialBaseParam.setData($materialTree, []);
+
+
             $materialTree.fcData = this.makeFc();
            
 
@@ -216,12 +218,50 @@
             return resultStr
 
         }
-        private makeFc(): Float32Array {
-            var $fo: Float32Array = new Float32Array(this.constVec.length*4)
-            for (var i: number = 0; i < this.constVec.length; i++) {
-                this.constVec[i].creat($fo);
+        private getMaxFc():number
+        {
+            var maxID: number = 0;
+            if (this.constVec.length) {
+                maxID = this.constVec[this.constVec.length - 1].id + 1;
+            } else {
+                if (this._fcBeginID > 0) {
+                    maxID = this._fcBeginID;
+                }
             }
-            return $fo
+            return maxID
+        }
+        private makeFc(): Float32Array {
+
+            var fcIDAry:Array<number> = [this._camposID, this._fogcolorID, this._scalelightmapID];
+            var fcNum:number= this.getMaxFc();     
+            var fcData: Float32Array = new Float32Array(fcNum * 4);
+
+            if (this.hasTime || this.useKill || this.fogMode != 0) {//fc0
+                if (this.useKill) {
+                    fcData[0] = this.killNum;
+                }
+                if (this.fogMode != 0) {
+                    fcData[2] = Scene_data.fogData[0];
+                    fcData[3] = Scene_data.fogData[1];
+                }
+            }
+            if (this.usePbr || this.fogMode == 1) {
+                var idx: number = fcIDAry[0] * 4;
+                fcData[0 + idx] = Scene_data.cam3D.x ;
+                fcData[1 + idx] = Scene_data.cam3D.y ;
+                fcData[2 + idx] = Scene_data.cam3D.z;
+            }
+
+            if (this.fogMode != 0) {
+                var idx: number = fcIDAry[1] * 4;
+                fcData[0 + idx] = Scene_data.fogColor[0];
+                fcData[1 + idx] = Scene_data.fogColor[1];
+                fcData[2 + idx] = Scene_data.fogColor[2];
+            }
+            for (var i: number = 0; i < this.constVec.length; i++) {
+                this.constVec[i].creat(fcData);
+            }
+            return fcData
          
         }
         private getGLSLStr(): string {

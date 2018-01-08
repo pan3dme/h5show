@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var materialui;
 (function (materialui) {
-    var MtGrid9Compenent = /** @class */ (function (_super) {
+    var MtGrid9Compenent = (function (_super) {
         __extends(MtGrid9Compenent, _super);
         function MtGrid9Compenent() {
-            return _super.call(this) || this;
+            _super.call(this);
         }
         MtGrid9Compenent.prototype.applyAbsolutePoint = function () {
             if (this.parent) {
@@ -49,7 +44,7 @@ var materialui;
             }
         };
         return MtGrid9Compenent;
-    }(Grid9Compenent));
+    })(Grid9Compenent);
     materialui.MtGrid9Compenent = MtGrid9Compenent;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MtGrid9Compenent.js.map

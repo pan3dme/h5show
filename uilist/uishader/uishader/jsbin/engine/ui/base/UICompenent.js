@@ -1,52 +1,46 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var UICompenent = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var UICompenent = (function (_super) {
     __extends(UICompenent, _super);
     function UICompenent() {
-        var _this = _super.call(this) || this;
+        _super.call(this);
         //设定相对坐标
-        _this._x = 0;
-        _this._y = 0;
-        _this._width = 0;
-        _this._height = 0;
-        _this.z = 0;
+        this._x = 0;
+        this._y = 0;
+        this._width = 0;
+        this._height = 0;
+        this.z = 0;
         //设定绝对坐标
-        _this.absoluteX = 0;
-        _this.absoluteY = 0;
-        _this.absoluteWidth = 0;
-        _this.absoluteHeight = 0;
-        _this.enable = true;
-        _this._left = 0;
-        _this._right = 0;
-        _this._center = 0;
-        _this._xType = -1;
-        _this._top = 0;
-        _this._bottom = 0;
-        _this._middle = 0;
-        _this._yType = -1;
+        this.absoluteX = 0;
+        this.absoluteY = 0;
+        this.absoluteWidth = 0;
+        this.absoluteHeight = 0;
+        this.enable = true;
+        this._left = 0;
+        this._right = 0;
+        this._center = 0;
+        this._xType = -1;
+        this._top = 0;
+        this._bottom = 0;
+        this._middle = 0;
+        this._yType = -1;
         //实际渲染坐标
-        _this.renderX = 0;
-        _this.renderY = 0;
-        _this.renderWidth = 0;
-        _this.renderHeight = 0;
-        _this.scale = 1;
-        _this.isVirtual = false;
-        _this.vcId = 0;
-        _this._uvScale = 1; // UV显示比例
-        _this._rendering = false;
-        _this.isU = false;
-        _this.isV = false;
-        _this.tr = new Rectangle;
-        _this.mouseEnable = true;
-        return _this;
+        this.renderX = 0;
+        this.renderY = 0;
+        this.renderWidth = 0;
+        this.renderHeight = 0;
+        this.scale = 1;
+        this.isVirtual = false;
+        this.vcId = 0;
+        this._uvScale = 1; // UV显示比例
+        this._rendering = false;
+        this.isU = false;
+        this.isV = false;
+        this.tr = new Rectangle;
+        this.mouseEnable = true;
     }
     Object.defineProperty(UICompenent.prototype, "rendering", {
         get: function () {
@@ -335,5 +329,5 @@ var UICompenent = /** @class */ (function (_super) {
         }
     };
     return UICompenent;
-}(EventDispatcher));
+})(EventDispatcher);
 //# sourceMappingURL=UICompenent.js.map

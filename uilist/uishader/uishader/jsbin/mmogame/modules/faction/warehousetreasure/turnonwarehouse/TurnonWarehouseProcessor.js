@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var turnonwarehouse;
 (function (turnonwarehouse) {
-    var TurnonWarehouseModule = /** @class */ (function (_super) {
+    var TurnonWarehouseModule = (function (_super) {
         __extends(TurnonWarehouseModule, _super);
         function TurnonWarehouseModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         TurnonWarehouseModule.prototype.getModuleName = function () {
             return "TurnonWarehouseModule";
@@ -22,23 +17,23 @@ var turnonwarehouse;
             return [new TurnonWarehouseProcessor()];
         };
         return TurnonWarehouseModule;
-    }(Module));
+    })(Module);
     turnonwarehouse.TurnonWarehouseModule = TurnonWarehouseModule;
-    var TurnonWarehouseEvent = /** @class */ (function (_super) {
+    var TurnonWarehouseEvent = (function (_super) {
         __extends(TurnonWarehouseEvent, _super);
         function TurnonWarehouseEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         TurnonWarehouseEvent.SHOW_TURNON_WAREHOUSE_PANEL = "SHOW_TURNON_WAREHOUSE_PANEL";
         TurnonWarehouseEvent.HIDE_TURNON_WAREHOUSE_PANEL = "HIDE_TURNON_WAREHOUSE_PANEL";
         TurnonWarehouseEvent.FERISH_TURNON_WARHOUSE_DATA = "FERISH_TURNON_WARHOUSE_DATA";
         return TurnonWarehouseEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     turnonwarehouse.TurnonWarehouseEvent = TurnonWarehouseEvent;
-    var TurnonWarehouseProcessor = /** @class */ (function (_super) {
+    var TurnonWarehouseProcessor = (function (_super) {
         __extends(TurnonWarehouseProcessor, _super);
         function TurnonWarehouseProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         TurnonWarehouseProcessor.prototype.getName = function () {
             return "TurnonWarehouseProcessor";
@@ -95,7 +90,7 @@ var turnonwarehouse;
             ];
         };
         return TurnonWarehouseProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     turnonwarehouse.TurnonWarehouseProcessor = TurnonWarehouseProcessor;
 })(turnonwarehouse || (turnonwarehouse = {}));
 //# sourceMappingURL=TurnonWarehouseProcessor.js.map

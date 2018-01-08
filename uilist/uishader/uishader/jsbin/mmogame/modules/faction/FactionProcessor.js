@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var faction;
 (function (faction_1) {
-    var FactionModule = /** @class */ (function (_super) {
+    var FactionModule = (function (_super) {
         __extends(FactionModule, _super);
         function FactionModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         FactionModule.prototype.getModuleName = function () {
             return "FactionModule";
@@ -26,12 +21,12 @@ var faction;
             ];
         };
         return FactionModule;
-    }(Module));
+    })(Module);
     faction_1.FactionModule = FactionModule;
-    var FactionEvent = /** @class */ (function (_super) {
+    var FactionEvent = (function (_super) {
         __extends(FactionEvent, _super);
         function FactionEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         FactionEvent.SHOW_FACTIONUI_EVENT = "SHOW_FACTIONUI_EVENT";
         FactionEvent.HIDE_APPLYFACTIONUI_EVENT = "HIDE_APPLYFACTIONUI_EVENT";
@@ -83,12 +78,12 @@ var faction;
         //家族建筑变化了
         FactionEvent.FUNBUILD_CHG_EVENT = "FUNBUILD_CHG_EVENT";
         return FactionEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     faction_1.FactionEvent = FactionEvent;
-    var FactionProcessor = /** @class */ (function (_super) {
+    var FactionProcessor = (function (_super) {
         __extends(FactionProcessor, _super);
         function FactionProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         FactionProcessor.prototype.getName = function () {
             return "FactionProcessor";
@@ -157,13 +152,6 @@ var faction;
                 }
                 else if (evt.type == FactionEvent.SHOW_FACTIONNOTICE_EVENT) {
                     this.showFactionNotice();
-                    // } else if (evt.type == FactionEvent.SELECT_INFOMATION_REPLY) {
-                    //     console.log("--数据---", evt.data);
-                    //     this.selectinfomationreply(evt.data);
-                    // } else if (evt.type == FactionEvent.WEEK_RANK_CHANGE_EVENT) {
-                    //     this.weekrankchang();
-                    // } else if (evt.type == FactionEvent.SHOW_QUEEN_RANK_PANEL_EVENT) {
-                    //     this.showQueenRankPanel();
                 }
                 else if (evt.type == FactionEvent.SHOW_FACTIONACTIVE_PANEL_EVENT) {
                     this.showActivePanel();
@@ -540,7 +528,7 @@ var faction;
             return obj;
         };
         return FactionProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     faction_1.FactionProcessor = FactionProcessor;
 })(faction || (faction = {}));
 //# sourceMappingURL=FactionProcessor.js.map

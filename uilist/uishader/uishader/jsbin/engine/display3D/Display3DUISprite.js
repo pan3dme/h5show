@@ -1,23 +1,17 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Display3DUISprite = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Display3DUISprite = (function (_super) {
     __extends(Display3DUISprite, _super);
     function Display3DUISprite() {
-        var _this = _super.call(this) || this;
-        _this.uiMatrix = new Matrix3D;
-        _this.uiMatrix.prependTranslation(0, 0, 600);
-        _this.uiMatrix.prependRotation(-15, Vector3D.X_AXIS);
-        _this.uiMatrix.prependRotation(0, Vector3D.Y_AXIS);
-        _this.uiViewMatrix = new Matrix3D;
-        return _this;
+        _super.call(this);
+        this.uiMatrix = new Matrix3D;
+        this.uiMatrix.prependTranslation(0, 0, 600);
+        this.uiMatrix.prependRotation(-15, Vector3D.X_AXIS);
+        this.uiMatrix.prependRotation(0, Vector3D.Y_AXIS);
+        this.uiViewMatrix = new Matrix3D;
     }
     Display3DUISprite.prototype.loadRes = function ($name) {
         var _this = this;
@@ -65,5 +59,5 @@ var Display3DUISprite = /** @class */ (function (_super) {
         //console.log(this.posMatrix.m)
     };
     return Display3DUISprite;
-}(Display3DSprite));
+})(Display3DSprite);
 //# sourceMappingURL=Display3DUISprite.js.map

@@ -1,6 +1,6 @@
 var leftui;
 (function (leftui) {
-    var LeftHangUpBaseVo = /** @class */ (function () {
+    var LeftHangUpBaseVo = (function () {
         function LeftHangUpBaseVo($perent, $mid, $top, $top1) {
             this.startTM = 0;
             this.moneyTm = 0;
@@ -56,7 +56,6 @@ var leftui;
             var equipnum = Math.ceil($tb.suitScore * 360 / $tb.suitScoreChange);
             LabelTextFont.writeSingleLabel(this._topRender.uiAtlas, this.a_equ_txt.skinName, "装备  " + equipnum + "件/小时", 16 * 1.5, TextAlign.LEFT, ColorType.Green56da35, ColorType.colord27262e);
             for (var i = 0; i < random(10); i++) {
-                //  ModuleEventManager.dispatchEvent(new leftui.LeftUiEvent(leftui.LeftUiEvent.LEFT_HANGUP_BASE_REFRESH));
             }
             console.log("--刷新----");
             var qv = quest.QuestModel.getInstance().getMainTaskVo();
@@ -85,7 +84,7 @@ var leftui;
             this.perent.setUiListVisibleByItem([this.a_hasquest], false);
         };
         return LeftHangUpBaseVo;
-    }());
+    })();
     leftui.LeftHangUpBaseVo = LeftHangUpBaseVo;
 })(leftui || (leftui = {}));
 //# sourceMappingURL=LeftHangUpBaseVo.js.map

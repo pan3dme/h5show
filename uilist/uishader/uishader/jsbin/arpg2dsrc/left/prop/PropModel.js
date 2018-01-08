@@ -1,6 +1,6 @@
 var prop;
 (function (prop) {
-    var PropModel = /** @class */ (function () {
+    var PropModel = (function () {
         function PropModel() {
         }
         PropModel.getInstance = function () {
@@ -33,7 +33,7 @@ var prop;
             }
         };
         return PropModel;
-    }());
+    })();
     prop.PropModel = PropModel;
 })(prop || (prop = {}));
 //# sourceMappingURL=PropModel.js.map

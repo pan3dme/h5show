@@ -1,22 +1,16 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var stronger;
 (function (stronger) {
-    var StrongerTabList = /** @class */ (function (_super) {
+    var StrongerTabList = (function (_super) {
         __extends(StrongerTabList, _super);
         function StrongerTabList() {
-            var _this = _super.call(this) || this;
-            _this.left = 56;
-            _this.top = 164;
-            return _this;
+            _super.call(this);
+            this.left = 56;
+            this.top = 164;
         }
         StrongerTabList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -59,12 +53,12 @@ var stronger;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return StrongerTabList;
-    }(SList));
+    })(SList);
     stronger.StrongerTabList = StrongerTabList;
-    var StrongerTabRender = /** @class */ (function (_super) {
+    var StrongerTabRender = (function (_super) {
         __extends(StrongerTabRender, _super);
         function StrongerTabRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         StrongerTabRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -128,7 +122,7 @@ var stronger;
             LabelTextFont.clearLabel(this.uiAtlas, this.Tab.skinName);
         };
         return StrongerTabRender;
-    }(SListItem));
+    })(SListItem);
     stronger.StrongerTabRender = StrongerTabRender;
 })(stronger || (stronger = {}));
 //# sourceMappingURL=StrongerTabList.js.map

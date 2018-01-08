@@ -1,17 +1,12 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Display3DFollowLocusShader = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Display3DFollowLocusShader = (function (_super) {
     __extends(Display3DFollowLocusShader, _super);
     function Display3DFollowLocusShader() {
-        return _super.call(this) || this;
+        _super.call(this);
     }
     Display3DFollowLocusShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "v3Position");
@@ -31,7 +26,7 @@ var Display3DFollowLocusShader = /** @class */ (function (_super) {
     Display3DFollowLocusShader.prototype.getVertexShaderString = function () {
         var defineBaseStr = "attribute vec3 v3Position;\n" +
             "attribute vec2 v2TexCoord;\n" +
-            "uniform mat4 vcmat[" + Display3DFacetShader.getVcSize() + "];\n" + //所有vc值
+            "uniform mat4 vcmat[" + Display3DFacetShader.getVcSize() + "];\n" +
             // "uniform mat4 viewMatrix3D;\n" +
             // "uniform mat4 camMatrix3D;\n" +
             // "uniform vec3 camPos;\n" +
@@ -64,5 +59,5 @@ var Display3DFollowLocusShader = /** @class */ (function (_super) {
     Display3DFollowLocusShader.shader_mat4 = { viewMatrix3D: 0, camMatrix3D: 1 };
     Display3DFollowLocusShader.shader_vec4 = { camPos: [2, 0] };
     return Display3DFollowLocusShader;
-}(Shader3D));
+})(Shader3D);
 //# sourceMappingURL=Display3DFollowLocusShader.js.map

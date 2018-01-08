@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var role;
 (function (role) {
-    var RoleUiModule = /** @class */ (function (_super) {
+    var RoleUiModule = (function (_super) {
         __extends(RoleUiModule, _super);
         function RoleUiModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         RoleUiModule.prototype.getModuleName = function () {
             return "RoleUiModule";
@@ -22,12 +17,12 @@ var role;
             return [new RoleProcessor()];
         };
         return RoleUiModule;
-    }(Module));
+    })(Module);
     role.RoleUiModule = RoleUiModule;
-    var RoleUiEvent = /** @class */ (function (_super) {
+    var RoleUiEvent = (function (_super) {
         __extends(RoleUiEvent, _super);
         function RoleUiEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //展示角色面板
         RoleUiEvent.SHOW_ROLE_EVENT = "SHOW_ROLE_EVENT";
@@ -62,16 +57,15 @@ var role;
         //新称号初始化
         RoleUiEvent.INIT_Designation_EVENT = "INIT_Designation_EVENT";
         return RoleUiEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     role.RoleUiEvent = RoleUiEvent;
-    var RoleProcessor = /** @class */ (function (_super) {
+    var RoleProcessor = (function (_super) {
         __extends(RoleProcessor, _super);
         function RoleProcessor() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this._nodeInit = false;
-            _this._type = -2;
-            _this._stype = -2;
-            return _this;
+            _super.apply(this, arguments);
+            this._nodeInit = false;
+            this._type = -2;
+            this._stype = -2;
         }
         RoleProcessor.prototype.getName = function () {
             return "TreasureProcessor";
@@ -133,7 +127,6 @@ var role;
                 //     }
                 // } else {
                 this.processRedPoint();
-                // }
             }
             if ($event instanceof UIPanelEvent) {
                 var panelEvent = $event;
@@ -366,7 +359,7 @@ var role;
             ];
         };
         return RoleProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     role.RoleProcessor = RoleProcessor;
 })(role || (role = {}));
 //# sourceMappingURL=RoleProcessor.js.map

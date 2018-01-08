@@ -1,31 +1,25 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var kuafu;
 (function (kuafu) {
-    var ArenaDjRewardPanel = /** @class */ (function (_super) {
+    var ArenaDjRewardPanel = (function (_super) {
         __extends(ArenaDjRewardPanel, _super);
         function ArenaDjRewardPanel() {
-            var _this = _super.call(this) || this;
-            _this._idx = -1;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this.setBlackBg();
-            _this._bgRender = new UIRenderComponent();
-            _this.addRender(_this._bgRender);
-            _this._baseRender = new UIRenderComponent();
-            _this.addRender(_this._baseRender);
-            _this._baseUiAtlas = new UIAtlas();
-            return _this;
+            _super.call(this);
+            this._idx = -1;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this.setBlackBg();
+            this._bgRender = new UIRenderComponent();
+            this.addRender(this._bgRender);
+            this._baseRender = new UIRenderComponent();
+            this.addRender(this._baseRender);
+            this._baseUiAtlas = new UIAtlas();
         }
         ArenaDjRewardPanel.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -203,13 +197,13 @@ var kuafu;
             this._idx = -1;
         };
         return ArenaDjRewardPanel;
-    }(WindowMinUi));
+    })(WindowMinUi);
     kuafu.ArenaDjRewardPanel = ArenaDjRewardPanel;
     /**rewardlist */
-    var ArenaDjRewardList = /** @class */ (function (_super) {
+    var ArenaDjRewardList = (function (_super) {
         __extends(ArenaDjRewardList, _super);
         function ArenaDjRewardList() {
-            return _super.call(this) || this;
+            _super.call(this);
         }
         ArenaDjRewardList.prototype.init = function ($atlas) {
             this.baseAtlas = $atlas;
@@ -248,12 +242,12 @@ var kuafu;
             UIManager.getInstance().removeUIContainer(this);
         };
         return ArenaDjRewardList;
-    }(SList));
+    })(SList);
     kuafu.ArenaDjRewardList = ArenaDjRewardList;
-    var ArenaDjRewardListItemRender = /** @class */ (function (_super) {
+    var ArenaDjRewardListItemRender = (function (_super) {
         __extends(ArenaDjRewardListItemRender, _super);
         function ArenaDjRewardListItemRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         ArenaDjRewardListItemRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -311,14 +305,14 @@ var kuafu;
             $ui.uiRender.uiAtlas.updateCtx(ctx, $rec.pixelX, $rec.pixelY);
         };
         return ArenaDjRewardListItemRender;
-    }(SListItem));
+    })(SListItem);
     kuafu.ArenaDjRewardListItemRender = ArenaDjRewardListItemRender;
     /**end rewardlist */
     /**连胜list***/
-    var ArenaDjInfoList = /** @class */ (function (_super) {
+    var ArenaDjInfoList = (function (_super) {
         __extends(ArenaDjInfoList, _super);
         function ArenaDjInfoList() {
-            return _super.call(this) || this;
+            _super.call(this);
         }
         ArenaDjInfoList.prototype.init = function ($atlas) {
             ArenaDjInfoListItemRender.baseAtlas = $atlas;
@@ -390,12 +384,12 @@ var kuafu;
             UIManager.getInstance().removeUIContainer(this);
         };
         return ArenaDjInfoList;
-    }(SList));
+    })(SList);
     kuafu.ArenaDjInfoList = ArenaDjInfoList;
-    var ArenaDjInfoListItemRender = /** @class */ (function (_super) {
+    var ArenaDjInfoListItemRender = (function (_super) {
         __extends(ArenaDjInfoListItemRender, _super);
         function ArenaDjInfoListItemRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         ArenaDjInfoListItemRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -433,8 +427,7 @@ var kuafu;
             LabelTextFont.writeSingleLabel(this.uiAtlas, this._val.skinName, bd.val, 16, TextAlign.CENTER, ColorType.Brown7a2f21);
         };
         return ArenaDjInfoListItemRender;
-    }(SListItem));
+    })(SListItem);
     kuafu.ArenaDjInfoListItemRender = ArenaDjInfoListItemRender;
-    /**end 连胜list***/
 })(kuafu || (kuafu = {}));
 //# sourceMappingURL=ArenaDjRewardPanel.js.map

@@ -1,4 +1,4 @@
-var Scene_data = /** @class */ (function () {
+var Scene_data = (function () {
     function Scene_data() {
     }
     Object.defineProperty(Scene_data, "viewMatrx3D", {
@@ -27,5 +27,5 @@ var Scene_data = /** @class */ (function () {
     Scene_data.sceneNumId = 0;
     Scene_data.supportBlob = false;
     return Scene_data;
-}());
+})();
 //# sourceMappingURL=Scene_data.js.map

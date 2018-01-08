@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var activity;
 (function (activity) {
-    var ActivityModule = /** @class */ (function (_super) {
+    var ActivityModule = (function (_super) {
         __extends(ActivityModule, _super);
         function ActivityModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         ActivityModule.prototype.getModuleName = function () {
             return "ActivityModule";
@@ -22,12 +17,12 @@ var activity;
             return [new ActivityProcessor()];
         };
         return ActivityModule;
-    }(Module));
+    })(Module);
     activity.ActivityModule = ActivityModule;
-    var ActivityEvent = /** @class */ (function (_super) {
+    var ActivityEvent = (function (_super) {
         __extends(ActivityEvent, _super);
         function ActivityEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //展示面板
         ActivityEvent.SHOW_ACTIVITY_EVENT = "SHOW_ACTIVITY_EVENT";
@@ -39,12 +34,12 @@ var activity;
         ActivityEvent.ACTIVITY_REWARD_EVENT = "ACTIVITY_REWARD_EVENT";
         ActivityEvent.ACTIVITY_TABREDPOINT_EVENT = "ACTIVITY_TABREDPOINT_EVENT";
         return ActivityEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     activity.ActivityEvent = ActivityEvent;
-    var ActivityProcessor = /** @class */ (function (_super) {
+    var ActivityProcessor = (function (_super) {
         __extends(ActivityProcessor, _super);
         function ActivityProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         ActivityProcessor.prototype.getName = function () {
             return "ActivityProcessor";
@@ -62,10 +57,8 @@ var activity;
                 else if ($givingUiEvent.type == ActivityEvent.ACTIVITY_ITEM_CHANGE_EVENT) {
                     var idx = $givingUiEvent.data;
                     var id = idx - SharedDef.INSTANCE_INT_FIELD_ACTIVE_START + 1;
-                    // console.log("活动数据变化 id:" + id + " 次数：" + GuidData.instanceData.getActivityNum(idx));
                 }
                 else if ($givingUiEvent.type == ActivityEvent.ACTIVITY_CHANGE_EVENT) {
-                    // console.log("活跃度数值：" + GuidData.instanceData.getActivity());
                 }
                 else if ($givingUiEvent.type == ActivityEvent.ACTIVITY_REWARD_EVENT) {
                     // console.log("奖励状态",GuidData.instanceData.getActivityRewardState())
@@ -157,7 +150,7 @@ var activity;
             ];
         };
         return ActivityProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     activity.ActivityProcessor = ActivityProcessor;
 })(activity || (activity = {}));
 //# sourceMappingURL=ActivityProcessor.js.map

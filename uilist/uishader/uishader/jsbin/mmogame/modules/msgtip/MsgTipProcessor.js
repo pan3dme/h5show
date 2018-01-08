@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var msgtip;
 (function (msgtip) {
-    var MsgTipEvent = /** @class */ (function (_super) {
+    var MsgTipEvent = (function (_super) {
         __extends(MsgTipEvent, _super);
         function MsgTipEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MsgTipEvent.SHOW_MSG_PIC_DATA = "SHOW_MSG_PIC_DATA";
         MsgTipEvent.SHOW_EFFECTS_DATA = "SHOW_EFFECTS_DATA";
@@ -24,12 +19,12 @@ var msgtip;
         MsgTipEvent.SHOW_GUIDE_POP_VIEW = "SHOW_GUIDE_POP_VIEW";
         MsgTipEvent.SHOW_PAGE_POP_VIEW = "SHOW_PAGE_POP_VIEW";
         return MsgTipEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     msgtip.MsgTipEvent = MsgTipEvent;
-    var MsgTipModule = /** @class */ (function (_super) {
+    var MsgTipModule = (function (_super) {
         __extends(MsgTipModule, _super);
         function MsgTipModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MsgTipModule.prototype.getModuleName = function () {
             return "MsgTipModule";
@@ -38,15 +33,14 @@ var msgtip;
             return [new MsgTipProcessor()];
         };
         return MsgTipModule;
-    }(Module));
+    })(Module);
     msgtip.MsgTipModule = MsgTipModule;
-    var MsgTipProcessor = /** @class */ (function (_super) {
+    var MsgTipProcessor = (function (_super) {
         __extends(MsgTipProcessor, _super);
         function MsgTipProcessor() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.nextCanShowOpenSysTM = 0;
-            _this.zhanliNearTime = 0;
-            return _this;
+            _super.apply(this, arguments);
+            this.nextCanShowOpenSysTM = 0;
+            this.zhanliNearTime = 0;
         }
         MsgTipProcessor.prototype.getName = function () {
             return "MsgTipProcessor";
@@ -54,7 +48,6 @@ var msgtip;
         MsgTipProcessor.prototype.receivedModuleEvent = function ($event) {
             if (GuidData.map) {
                 if (Scene_data.isPanGm) {
-                    //   return
                 }
                 if ($event instanceof MsgTipEvent) {
                     var $MsgTipEvent = $event;
@@ -344,7 +337,7 @@ var msgtip;
             return obj;
         };
         return MsgTipProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     msgtip.MsgTipProcessor = MsgTipProcessor;
 })(msgtip || (msgtip = {}));
 //# sourceMappingURL=MsgTipProcessor.js.map

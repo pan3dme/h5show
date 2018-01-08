@@ -1,32 +1,26 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var faction;
 (function (faction) {
-    var NoticePanel = /** @class */ (function (_super) {
+    var NoticePanel = (function (_super) {
         __extends(NoticePanel, _super);
         function NoticePanel() {
-            var _this = _super.call(this) || this;
-            _this.setBlackBg();
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.middle = 0;
-            _this.center = 0;
+            _super.call(this);
+            this.setBlackBg();
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.middle = 0;
+            this.center = 0;
             //添加好友面板渲染器
-            _this._midRender = new UIRenderComponent;
-            _this.addRender(_this._midRender);
-            _this._publicbgRender = new UIRenderComponent;
-            _this.addRender(_this._publicbgRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            return _this;
+            this._midRender = new UIRenderComponent;
+            this.addRender(this._midRender);
+            this._publicbgRender = new UIRenderComponent;
+            this.addRender(this._publicbgRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
         }
         NoticePanel.prototype.dispose = function () {
             this._midRender.dispose();
@@ -179,7 +173,7 @@ var faction;
             // ArtFont.getInstance().writeFontToSkinName(this._bottomRender.uiAtlas, this.h_label_num_txt.skinName,"99",ArtFont.num1)
         };
         return NoticePanel;
-    }(WindowCentenMin));
+    })(WindowCentenMin);
     faction.NoticePanel = NoticePanel;
 })(faction || (faction = {}));
 //# sourceMappingURL=NoticePanel.js.map

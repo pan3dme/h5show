@@ -1,4 +1,4 @@
-var KeyboardType = /** @class */ (function () {
+var KeyboardType = (function () {
     function KeyboardType() {
     }
     KeyboardType.A = 65;
@@ -35,5 +35,5 @@ var KeyboardType = /** @class */ (function () {
     KeyboardType.F1 = 112;
     KeyboardType.F2 = 113;
     return KeyboardType;
-}());
+})();
 //# sourceMappingURL=KeyboardType.js.map

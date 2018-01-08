@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var warehousetreasure;
 (function (warehousetreasure) {
-    var WarehouseTreasureModule = /** @class */ (function (_super) {
+    var WarehouseTreasureModule = (function (_super) {
         __extends(WarehouseTreasureModule, _super);
         function WarehouseTreasureModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         WarehouseTreasureModule.prototype.getModuleName = function () {
             return "WarehouseTreasureModule";
@@ -22,12 +17,12 @@ var warehousetreasure;
             return [new WarehouseTreasureProcessor()];
         };
         return WarehouseTreasureModule;
-    }(Module));
+    })(Module);
     warehousetreasure.WarehouseTreasureModule = WarehouseTreasureModule;
-    var WarehouseEvent = /** @class */ (function (_super) {
+    var WarehouseEvent = (function (_super) {
         __extends(WarehouseEvent, _super);
         function WarehouseEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         WarehouseEvent.SHOW_WAREHOUSE_PANEL = "SHOW_WAREHOUSE_PANEL";
         WarehouseEvent.HIDE_WAREHOUSE_PANEL = "HIDE_WAREHOUSE_PANEL";
@@ -36,12 +31,12 @@ var warehousetreasure;
         WarehouseEvent.TREASURE_LOG_REFRESH = "TREASURE_LOG_REFRESH";
         WarehouseEvent.TREASURE_NUM_REFRESH = "TREASURE_NUM_REFRESH";
         return WarehouseEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     warehousetreasure.WarehouseEvent = WarehouseEvent;
-    var WarehouseTreasureProcessor = /** @class */ (function (_super) {
+    var WarehouseTreasureProcessor = (function (_super) {
         __extends(WarehouseTreasureProcessor, _super);
         function WarehouseTreasureProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         WarehouseTreasureProcessor.prototype.getName = function () {
             return "WarehouseTreasureProcessor";
@@ -123,7 +118,7 @@ var warehousetreasure;
             ];
         };
         return WarehouseTreasureProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     warehousetreasure.WarehouseTreasureProcessor = WarehouseTreasureProcessor;
 })(warehousetreasure || (warehousetreasure = {}));
 //# sourceMappingURL=WarehouseTreasureProcessor.js.map

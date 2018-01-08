@@ -1,33 +1,27 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var whisper;
 (function (whisper) {
-    var WhisperChatVo = /** @class */ (function () {
+    var WhisperChatVo = (function () {
         function WhisperChatVo() {
         }
         return WhisperChatVo;
-    }());
+    })();
     whisper.WhisperChatVo = WhisperChatVo;
-    var whisperChatListPanel = /** @class */ (function (_super) {
+    var whisperChatListPanel = (function (_super) {
         __extends(whisperChatListPanel, _super);
         function whisperChatListPanel() {
-            var _this = _super.call(this) || this;
+            _super.call(this);
             /**
              * refreshData
              */
-            _this.guid = "";
-            _this.left = 428;
-            _this.top = 100;
-            _this.setShowLevel(6);
-            return _this;
+            this.guid = "";
+            this.left = 428;
+            this.top = 100;
+            this.setShowLevel(6);
         }
         whisperChatListPanel.prototype.init = function ($atlas) {
             this.baseAtlas = $atlas;
@@ -67,12 +61,12 @@ var whisper;
             UIManager.getInstance().removeUIContainer(this);
         };
         return whisperChatListPanel;
-    }(SList));
+    })(SList);
     whisper.whisperChatListPanel = whisperChatListPanel;
-    var WhisperChatRender = /** @class */ (function (_super) {
+    var WhisperChatRender = (function (_super) {
         __extends(WhisperChatRender, _super);
         function WhisperChatRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -156,7 +150,7 @@ var whisper;
             }
         };
         return WhisperChatRender;
-    }(SListItem));
+    })(SListItem);
     whisper.WhisperChatRender = WhisperChatRender;
 })(whisper || (whisper = {}));
 //# sourceMappingURL=whisperChatListPanel.js.map

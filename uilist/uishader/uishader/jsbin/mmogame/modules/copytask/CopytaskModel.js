@@ -1,12 +1,12 @@
 var copytask;
 (function (copytask) {
-    var TeamCopyItemVo = /** @class */ (function () {
+    var TeamCopyItemVo = (function () {
         function TeamCopyItemVo() {
         }
         return TeamCopyItemVo;
-    }());
+    })();
     copytask.TeamCopyItemVo = TeamCopyItemVo;
-    var CopytaskModel = /** @class */ (function () {
+    var CopytaskModel = (function () {
         function CopytaskModel() {
         }
         CopytaskModel.getInstance = function () {
@@ -51,7 +51,7 @@ var copytask;
             return $finalary;
         };
         return CopytaskModel;
-    }());
+    })();
     copytask.CopytaskModel = CopytaskModel;
 })(copytask || (copytask = {}));
 //# sourceMappingURL=CopytaskModel.js.map

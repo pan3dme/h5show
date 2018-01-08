@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var exterior;
 (function (exterior) {
-    var IdentificationListRender = /** @class */ (function (_super) {
+    var IdentificationListRender = (function (_super) {
         __extends(IdentificationListRender, _super);
         function IdentificationListRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         IdentificationListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -88,14 +83,13 @@ var exterior;
             }
         };
         return IdentificationListRender;
-    }(SListItem));
+    })(SListItem);
     exterior.IdentificationListRender = IdentificationListRender;
-    var IdentificationList = /** @class */ (function (_super) {
+    var IdentificationList = (function (_super) {
         __extends(IdentificationList, _super);
         function IdentificationList() {
-            var _this = _super.call(this) || this;
-            _this.setShowLevel(12);
-            return _this;
+            _super.call(this);
+            this.setShowLevel(12);
         }
         IdentificationList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -125,25 +119,24 @@ var exterior;
             }
         };
         return IdentificationList;
-    }(SList));
+    })(SList);
     exterior.IdentificationList = IdentificationList;
-    var IdentificationPanel = /** @class */ (function (_super) {
+    var IdentificationPanel = (function (_super) {
         __extends(IdentificationPanel, _super);
         function IdentificationPanel() {
-            var _this = _super.call(this) || this;
-            _this.uiAtlasComplet = false;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._bottomRender = new UIRenderComponent;
-            _this.addRender(_this._bottomRender);
-            _this._midRender = new UIRenderComponent;
-            _this.addRender(_this._midRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            _this._midRender.uiAtlas = new UIAtlas;
-            return _this;
+            _super.call(this);
+            this.uiAtlasComplet = false;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._bottomRender = new UIRenderComponent;
+            this.addRender(this._bottomRender);
+            this._midRender = new UIRenderComponent;
+            this.addRender(this._midRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
+            this._midRender.uiAtlas = new UIAtlas;
         }
         IdentificationPanel.prototype.dispose = function () {
             this._bottomRender.dispose();
@@ -238,7 +231,7 @@ var exterior;
             }
         };
         return IdentificationPanel;
-    }(WindowMinUi));
+    })(WindowMinUi);
     exterior.IdentificationPanel = IdentificationPanel;
 })(exterior || (exterior = {}));
 //# sourceMappingURL=IdentificationPanel.js.map

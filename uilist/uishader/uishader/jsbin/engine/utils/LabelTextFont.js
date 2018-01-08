@@ -1,9 +1,9 @@
-var TextRegVo = /** @class */ (function () {
+var TextRegVo = (function () {
     function TextRegVo() {
     }
     return TextRegVo;
-}());
-var TextRegExp = /** @class */ (function () {
+})();
+var TextRegExp = (function () {
     function TextRegExp() {
     }
     TextRegExp.pushStr = function ($str) {
@@ -263,19 +263,6 @@ var TextRegExp = /** @class */ (function () {
                     $ctx.fillText(words[n], x + tx, ty);
                 }
                 line += words[n];
-                // } else {
-                //     //绘制表情
-                //     var faceSize: number = fontsize * 1.4
-                //     var $rect: Rectangle = new Rectangle(x + metrics.width * 1.0 + 0, y + ty - faceSize / 10, faceSize, faceSize);
-                //     if (metrics.width > maxWidth) {
-                //         ty += lineHeight;
-                //         line = "";
-                //         $lineNum++
-                //         $rect = new Rectangle(x + 0, y + ty - faceSize / 10, faceSize, faceSize);
-                //     }
-                //     this.drawFaceIcon($ctx, $rect, $faceId)
-                //     n = n + 2;
-                //     line += "脸1"
             }
         }
         return $lineNum;
@@ -378,8 +365,8 @@ var TextRegExp = /** @class */ (function () {
     };
     TextRegExp.defaultColor = "#000000";
     return TextRegExp;
-}());
-var TextCell = /** @class */ (function () {
+})();
+var TextCell = (function () {
     function TextCell($str, $posy, $width, $color, $maxWidth) {
         this.str = $str;
         this.posy = $posy;
@@ -388,8 +375,8 @@ var TextCell = /** @class */ (function () {
         this.maxwidth = $maxWidth;
     }
     return TextCell;
-}());
-var LabelTextFont = /** @class */ (function () {
+})();
+var LabelTextFont = (function () {
     function LabelTextFont() {
     }
     /*
@@ -667,5 +654,5 @@ var LabelTextFont = /** @class */ (function () {
         $uiAtlas.updateCtx($ctx, $uiRect.pixelX, $uiRect.pixelY);
     };
     return LabelTextFont;
-}());
+})();
 //# sourceMappingURL=LabelTextFont.js.map

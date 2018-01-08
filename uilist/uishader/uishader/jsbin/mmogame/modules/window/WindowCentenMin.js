@@ -1,23 +1,17 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var WindowCentenMin = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var WindowCentenMin = (function (_super) {
     __extends(WindowCentenMin, _super);
     function WindowCentenMin(titlenum) {
         if (titlenum === void 0) { titlenum = 0; }
-        var _this = _super.call(this) || this;
-        _this._needBlackBg = false;
-        _this._hasInit = false;
-        _this._titlenum = titlenum;
-        _this.addWinUiPanel();
-        return _this;
+        _super.call(this);
+        this._needBlackBg = false;
+        this._hasInit = false;
+        this._titlenum = titlenum;
+        this.addWinUiPanel();
     }
     WindowCentenMin.prototype.dispose = function () {
         if (this.winbgRender) {
@@ -119,5 +113,5 @@ var WindowCentenMin = /** @class */ (function (_super) {
         // ModuleEventManager.dispatchEvent(new wintittle.WindowRestTittleEvent(wintittle.WindowRestTittleEvent.HIDE_WINDOW_RES_TITTLE_PANEL))
     };
     return WindowCentenMin;
-}(UIPanel));
+})(UIPanel);
 //# sourceMappingURL=WindowCentenMin.js.map

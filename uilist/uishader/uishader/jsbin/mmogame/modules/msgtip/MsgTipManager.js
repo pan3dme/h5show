@@ -1,16 +1,11 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var msgtip;
 (function (msgtip) {
-    var PopMsgVo = /** @class */ (function () {
+    var PopMsgVo = (function () {
         function PopMsgVo() {
         }
         //全服广播1
@@ -35,14 +30,13 @@ var msgtip;
         PopMsgVo.type8 = 8; // 固定位置
         PopMsgVo.HH = 35;
         return PopMsgVo;
-    }());
+    })();
     msgtip.PopMsgVo = PopMsgVo;
-    var MsgTipItemRender = /** @class */ (function (_super) {
+    var MsgTipItemRender = (function (_super) {
         __extends(MsgTipItemRender, _super);
         function MsgTipItemRender() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.waitTime2000 = 3000; //2秒
-            return _this;
+            _super.apply(this, arguments);
+            this.waitTime2000 = 3000; //2秒
         }
         MsgTipItemRender.prototype.makeData = function () {
             this.ui.width = 1024 * 0.75;
@@ -120,8 +114,6 @@ var msgtip;
                     $toV2d.y = this._msgTipVo.v2d.y / UIData.Scale - $ty;
                 }
                 if (this._msgTipVo.v3d) {
-                    //v2d.x = this._msgTipVo.v3d.x
-                    //v2d.y = this._msgTipVo.v3d.y
                 }
                 this.ui.x = $toV2d.x - this.ui.width / 2;
                 this.ui.y = $toV2d.y;
@@ -133,12 +125,12 @@ var msgtip;
         };
         MsgTipItemRender.textureSize1024 = 1024;
         return MsgTipItemRender;
-    }(Disp2DBaseText));
+    })(Disp2DBaseText);
     msgtip.MsgTipItemRender = MsgTipItemRender;
-    var MsTip2DUIContianerPanel = /** @class */ (function (_super) {
+    var MsTip2DUIContianerPanel = (function (_super) {
         __extends(MsTip2DUIContianerPanel, _super);
         function MsTip2DUIContianerPanel($classVo, $rect, $num) {
-            return _super.call(this, $classVo, $rect, $num) || this;
+            _super.call(this, $classVo, $rect, $num);
         }
         MsTip2DUIContianerPanel.prototype.update = function (t) {
             var $num1 = 0;
@@ -204,16 +196,15 @@ var msgtip;
             }
         };
         return MsTip2DUIContianerPanel;
-    }(AlphaUiContianer));
+    })(AlphaUiContianer);
     msgtip.MsTip2DUIContianerPanel = MsTip2DUIContianerPanel;
-    var MsgTipManager = /** @class */ (function (_super) {
+    var MsgTipManager = (function (_super) {
         __extends(MsgTipManager, _super);
         function MsgTipManager() {
-            var _this = _super.call(this) || this;
-            _this._totalNum = 20;
-            _this._jumpTxtContianerPanel = new MsTip2DUIContianerPanel(MsgTipItemRender, new Rectangle(0, 0, MsgTipItemRender.textureSize1024, PopMsgVo.HH), _this._totalNum);
-            SceneManager.getInstance().addDisplay2DList(_this);
-            return _this;
+            _super.call(this);
+            this._totalNum = 20;
+            this._jumpTxtContianerPanel = new MsTip2DUIContianerPanel(MsgTipItemRender, new Rectangle(0, 0, MsgTipItemRender.textureSize1024, PopMsgVo.HH), this._totalNum);
+            SceneManager.getInstance().addDisplay2DList(this);
         }
         MsgTipManager.getInstance = function () {
             if (!this._instance) {
@@ -314,10 +305,8 @@ var msgtip;
                 else if ($tb_msg.msgtype != 13) {
                     this.outStr($newStr, this.getPopTypeByTB($tb_msg.msgtype));
                 }
-                //console.log("提示信息：type:" + $msgVo.type + " reason:" + $msgVo.reason + " " + $msgVo.data,$newStr);
             }
             else {
-                // console.log("操作失败：type:" + $msgVo.type + " reason:" + $msgVo.reason + " " + $msgVo.data);
             }
         };
         MsgTipManager.outStrById = function (a, b, $replItem) {
@@ -388,7 +377,7 @@ var msgtip;
         };
         MsgTipManager.id = 0;
         return MsgTipManager;
-    }(Display3D));
+    })(Display3D);
     msgtip.MsgTipManager = MsgTipManager;
 })(msgtip || (msgtip = {}));
 //# sourceMappingURL=MsgTipManager.js.map

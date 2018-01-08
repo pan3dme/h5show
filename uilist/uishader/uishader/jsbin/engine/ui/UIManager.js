@@ -1,4 +1,4 @@
-var UiTweenVo = /** @class */ (function () {
+var UiTweenVo = (function () {
     function UiTweenVo() {
         this._scale = 1;
     }
@@ -58,8 +58,8 @@ var UiTweenVo = /** @class */ (function () {
         return $toPos;
     };
     return UiTweenVo;
-}());
-var UiTweenScale = /** @class */ (function () {
+})();
+var UiTweenScale = (function () {
     function UiTweenScale() {
     }
     UiTweenScale.getInstance = function () {
@@ -88,8 +88,8 @@ var UiTweenScale = /** @class */ (function () {
         this._uiTweenVo = null;
     };
     return UiTweenScale;
-}());
-var UIManager = /** @class */ (function () {
+})();
+var UIManager = (function () {
     function UIManager() {
         this._eventItem = new Array;
         this.lastTime = 0;
@@ -436,5 +436,5 @@ var UIManager = /** @class */ (function () {
     };
     UIManager.cando = true; //  标记只会选择一次。此循环结束
     return UIManager;
-}());
+})();
 //# sourceMappingURL=UIManager.js.map

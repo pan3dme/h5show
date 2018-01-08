@@ -1,4 +1,4 @@
-var RelationManager = /** @class */ (function () {
+var RelationManager = (function () {
     function RelationManager() {
         this.attackItem = new Array;
         this.jumpItem = new Array;
@@ -134,12 +134,12 @@ var RelationManager = /** @class */ (function () {
                 else {
                     if ($tempChar.unit.isPlayer()) {
                         switch ($fieldNotoriety) {
-                            case SharedDef.FAMILY_MODE:// 家族模式
+                            case SharedDef.FAMILY_MODE:
                                 if (!$selfFaction || $selfFaction != $tempChar.unit.getUnitStringFieldFactionGuid()) {
                                     this.attackItem.push($tempChar);
                                 }
                                 break;
-                            case SharedDef.GROUP_MODE:// 组队
+                            case SharedDef.GROUP_MODE:
                                 if ($selfGroup != $tempChar.unit.getUnitStringFieldGroupPeaceId()) {
                                     this.attackItem.push($tempChar);
                                     $tempChar.showBlood(2);
@@ -188,5 +188,5 @@ var RelationManager = /** @class */ (function () {
         return false;
     };
     return RelationManager;
-}());
+})();
 //# sourceMappingURL=RelationManager.js.map

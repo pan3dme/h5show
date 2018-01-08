@@ -1,6 +1,6 @@
 var prop;
 (function (prop) {
-    var ReflectionData = /** @class */ (function () {
+    var ReflectionData = (function () {
         function ReflectionData() {
         }
         ReflectionData.Key_Type = "Type";
@@ -34,7 +34,7 @@ var prop;
         ReflectionData.FunKey = "FunKey";
         ReflectionData.Number = "Number";
         return ReflectionData;
-    }());
+    })();
     prop.ReflectionData = ReflectionData;
 })(prop || (prop = {}));
 //# sourceMappingURL=ReflectionData.js.map

@@ -1,4 +1,4 @@
-var Shadow = /** @class */ (function () {
+var Shadow = (function () {
     function Shadow() {
         this._visible = false;
         this.data = [0, 0, 0, 5];
@@ -55,5 +55,5 @@ var Shadow = /** @class */ (function () {
         configurable: true
     });
     return Shadow;
-}());
+})();
 //# sourceMappingURL=Shadow.js.map

@@ -1,16 +1,11 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var mapnew;
 (function (mapnew) {
-    var MapClikVo = /** @class */ (function () {
+    var MapClikVo = (function () {
         function MapClikVo() {
         }
         MapClikVo.prototype.draw = function ($uiAtlas) {
@@ -34,23 +29,22 @@ var mapnew;
             this.txt.drawToCtx($uiAtlas, $ctx);
         };
         return MapClikVo;
-    }());
+    })();
     mapnew.MapClikVo = MapClikVo;
-    var MapNewWorldPanel = /** @class */ (function (_super) {
+    var MapNewWorldPanel = (function (_super) {
         __extends(MapNewWorldPanel, _super);
         function MapNewWorldPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._bottomRender = new UIRenderComponent;
-            _this.addRender(_this._bottomRender);
-            _this._midRender = new UIRenderComponent;
-            _this.addRender(_this._midRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            return _this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._bottomRender = new UIRenderComponent;
+            this.addRender(this._bottomRender);
+            this._midRender = new UIRenderComponent;
+            this.addRender(this._midRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
         }
         MapNewWorldPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -125,7 +119,7 @@ var mapnew;
             UIManager.getInstance().addUIContainer(this);
         };
         return MapNewWorldPanel;
-    }(WindowMinUi));
+    })(WindowMinUi);
     mapnew.MapNewWorldPanel = MapNewWorldPanel;
 })(mapnew || (mapnew = {}));
 //# sourceMappingURL=MapNewWorldPanel.js.map

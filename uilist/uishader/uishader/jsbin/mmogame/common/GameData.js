@@ -1,4 +1,4 @@
-var AreaType = /** @class */ (function () {
+var AreaType = (function () {
     function AreaType() {
     }
     AreaType.restAreaPanel = function () {
@@ -6,7 +6,6 @@ var AreaType = /** @class */ (function () {
             ModuleEventManager.dispatchEvent(new fb.FubenEvent(fb.FubenEvent.FUBEN_SHOW_LEFT_PANEL_EVENT)); //显示副本左边任务
         }
         if (GuidData.map.showAreaById(AreaType.worldboos_22)) {
-            //   ModuleEventManager.dispatchEvent(new worldboss.WorldBossEvent(worldboss.WorldBossEvent.SHOW_LEFT_WORLD_BOSS_PANEL));//世界BOSS
         }
         if (GuidData.map.showAreaById(AreaType.kuafu1V1top_23)) {
             ModuleEventManager.dispatchEvent(new kuafu.KuaFu1v1Event(kuafu.KuaFu1v1Event.SHOW_1V1_SCENE_PANEL)); //跨服1v1
@@ -37,8 +36,8 @@ var AreaType = /** @class */ (function () {
     AreaType.xiuliantop_26 = 26;
     AreaType.sceneExit_27 = 27;
     return AreaType;
-}());
-var Play_Skill_Vo = /** @class */ (function () {
+})();
+var Play_Skill_Vo = (function () {
     function Play_Skill_Vo() {
     }
     Play_Skill_Vo.get_Play_Skill_Vo = function ($id) {
@@ -50,11 +49,11 @@ var Play_Skill_Vo = /** @class */ (function () {
         this.skill = null;
     };
     return Play_Skill_Vo;
-}());
+})();
 var tb;
 (function (tb) {
     //自己技能相关
-    var SkillData = /** @class */ (function () {
+    var SkillData = (function () {
         function SkillData() {
             var $obj = TableData.getInstance().getData(TableData.tb_skill_show, GuidData.player.getCharType());
             this.parse($obj);
@@ -188,9 +187,9 @@ var tb;
             return null;
         };
         return SkillData;
-    }());
+    })();
     tb.SkillData = SkillData;
-    var SkillDataVo = /** @class */ (function () {
+    var SkillDataVo = (function () {
         function SkillDataVo($obj) {
             if (!$obj) {
                 console.log("技能表无");
@@ -391,10 +390,10 @@ var tb;
             return desc;
         };
         return SkillDataVo;
-    }());
+    })();
     tb.SkillDataVo = SkillDataVo;
 })(tb || (tb = {}));
-var MergeServerMsgVo = /** @class */ (function () {
+var MergeServerMsgVo = (function () {
     function MergeServerMsgVo() {
         var $portId = 443;
         var $hostId = localStorage.getItem("ipurl");
@@ -479,8 +478,8 @@ var MergeServerMsgVo = /** @class */ (function () {
         this.reserve2 = $byte.readUint32();
     };
     return MergeServerMsgVo;
-}());
-var GameConfigData = /** @class */ (function () {
+})();
+var GameConfigData = (function () {
     function GameConfigData() {
         this._open_prompting_pboss = ""; //个人boss提醒设置
         this._open_prompting_sboss = ""; //全民boss提醒设置
@@ -635,8 +634,8 @@ var GameConfigData = /** @class */ (function () {
         return Number(ary[id]) == 1;
     };
     return GameConfigData;
-}());
-var GameData = /** @class */ (function () {
+})();
+var GameData = (function () {
     function GameData() {
     }
     /*
@@ -710,5 +709,5 @@ var GameData = /** @class */ (function () {
     GameData.collectionType = 0; //基础攻击0, 采集1,对话2
     GameData.configData = new GameConfigData;
     return GameData;
-}());
+})();
 //# sourceMappingURL=GameData.js.map

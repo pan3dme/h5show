@@ -1,16 +1,11 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var materialui;
 (function (materialui) {
-    var MenuListData = /** @class */ (function () {
+    var MenuListData = (function () {
         function MenuListData($label, $key) {
             if ($key === void 0) { $key = null; }
             this.label = $label;
@@ -22,12 +17,12 @@ var materialui;
             }
         }
         return MenuListData;
-    }());
+    })();
     materialui.MenuListData = MenuListData;
-    var RightMenuVo = /** @class */ (function (_super) {
+    var RightMenuVo = (function (_super) {
         __extends(RightMenuVo, _super);
         function RightMenuVo() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         RightMenuVo.prototype.initData = function ($panel, $bottomRender, $midRender, $data, $frameId, $isSub) {
             if ($isSub === void 0) { $isSub = false; }
@@ -81,25 +76,24 @@ var materialui;
             $ui.drawToCtx(this.bottomRender.uiAtlas, $ctx);
         };
         return RightMenuVo;
-    }(UICompenent));
+    })(UICompenent);
     materialui.RightMenuVo = RightMenuVo;
-    var RightMenuPanel = /** @class */ (function (_super) {
+    var RightMenuPanel = (function (_super) {
         __extends(RightMenuPanel, _super);
         function RightMenuPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = 200;
-            _this.height = 200;
-            _this._bottomRender = new UIRenderComponent;
-            _this.addRender(_this._bottomRender);
-            _this._midRender = new UIRenderComponent;
-            _this.addRender(_this._midRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            _this._bottomRender.uiAtlas = materialui.BaseMaterialNodeUI.baseUIAtlas;
-            _this._midRender.uiAtlas = materialui.BaseMaterialNodeUI.baseUIAtlas;
-            _this._topRender.uiAtlas = materialui.BaseMaterialNodeUI.baseUIAtlas;
-            _this.loadConfigCom();
-            return _this;
+            _super.call(this);
+            this.width = 200;
+            this.height = 200;
+            this._bottomRender = new UIRenderComponent;
+            this.addRender(this._bottomRender);
+            this._midRender = new UIRenderComponent;
+            this.addRender(this._midRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
+            this._bottomRender.uiAtlas = materialui.BaseMaterialNodeUI.baseUIAtlas;
+            this._midRender.uiAtlas = materialui.BaseMaterialNodeUI.baseUIAtlas;
+            this._topRender.uiAtlas = materialui.BaseMaterialNodeUI.baseUIAtlas;
+            this.loadConfigCom();
         }
         RightMenuPanel.prototype.initMainMenu = function () {
             this.menuTextItem = new Array();
@@ -265,7 +259,7 @@ var materialui;
             this.clearSubMenu();
         };
         return RightMenuPanel;
-    }(UIPanel));
+    })(UIPanel);
     materialui.RightMenuPanel = RightMenuPanel;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=RightMenuPanel.js.map

@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var MaterialItemType = /** @class */ (function () {
+    var MaterialItemType = (function () {
         function MaterialItemType() {
         }
         MaterialItemType.FLOAT = "float";
@@ -9,7 +9,7 @@ var materialui;
         MaterialItemType.VEC4 = "vec4";
         MaterialItemType.UNDEFINE = "undefine";
         return MaterialItemType;
-    }());
+    })();
     materialui.MaterialItemType = MaterialItemType;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialItemType.js.map
