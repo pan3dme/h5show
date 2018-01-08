@@ -31,6 +31,10 @@ var materialui;
         }
         ComboBoxMenuPanel.prototype.loadConfigCom = function () {
             this.d_empty_bg = this.addEvntBut("d_empty_bg", this._bottomRender);
+            this.d_empty_bg.top = 0;
+            this.d_empty_bg.left = 0;
+            this.d_empty_bg.width = Scene_data.stageWidth;
+            this.d_empty_bg.height = Scene_data.stageHeight;
         };
         ComboBoxMenuPanel.prototype.butClik = function (evt) {
             switch (evt.target) {

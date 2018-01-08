@@ -14,6 +14,7 @@
             this.width = 200;
             this.height = 200;
             this.layer = 1000;
+   
 
             this._bottomRender = new UIRenderComponent;
             this.addRender(this._bottomRender);
@@ -34,6 +35,11 @@
         private comboboxItem: Array<FrameCompenent>
         private loadConfigCom(): void {
             this.d_empty_bg = this.addEvntBut("d_empty_bg", this._bottomRender)
+            this.d_empty_bg.top = 0;
+            this.d_empty_bg.left = 0;
+            this.d_empty_bg.width = Scene_data.stageWidth;
+            this.d_empty_bg.height = Scene_data.stageHeight;
+
 
         }
         private d_empty_bg: UICompenent
