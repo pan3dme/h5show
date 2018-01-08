@@ -25,14 +25,13 @@
         public get data(): any {
             return this._data
         }
-
-
         public get constXValue(): number {
             return this._ve3d.x
         }
         public set constXValue(value: number) {
             this._ve3d.x = value
             this.constVec3NodeUI.constValue = this._ve3d
+            this.changeData()
         }
 
         public get constYValue(): number {
@@ -42,6 +41,7 @@
         public set constYValue(value: number) {
             this._ve3d.y = value
             this.constVec3NodeUI.constValue = this._ve3d
+            this.changeData()
         }
 
         public get constZValue(): number {
@@ -51,6 +51,10 @@
             this._ve3d.z = value
 
             this.constVec3NodeUI.constValue = this._ve3d
+            this.changeData()
+        }
+        private changeData(): void {
+            ModuleEventManager.dispatchEvent(new materialui.MaterialEvent(materialui.MaterialEvent.COMPILE_MATERIAL));
         }
     }
 }

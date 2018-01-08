@@ -20,7 +20,6 @@ var prop;
                 { Type: prop.ReflectionData.NumberInput, Label: "x:", FunKey: "constValue", target: this, Step: 0.1 },
             ];
             return ary;
-            // ReflectionData.FunKey
         };
         Object.defineProperty(FloatPropMeshPanel.prototype, "data", {
             get: function () {
@@ -40,10 +39,14 @@ var prop;
             },
             set: function (value) {
                 this.constFloatNodeUI.constValue = value;
+                this.changeData();
             },
             enumerable: true,
             configurable: true
         });
+        FloatPropMeshPanel.prototype.changeData = function () {
+            ModuleEventManager.dispatchEvent(new materialui.MaterialEvent(materialui.MaterialEvent.COMPILE_MATERIAL));
+        };
         return FloatPropMeshPanel;
     }(prop.MetaDataView));
     prop.FloatPropMeshPanel = FloatPropMeshPanel;

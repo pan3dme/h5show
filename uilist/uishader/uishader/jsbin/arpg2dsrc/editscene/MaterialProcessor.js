@@ -153,7 +153,7 @@ var materialui;
                 materialui.MaterialViewBuildUtils.getInstance().addFun = function (ui) { materialui.MaterialCtrl.getInstance().addNodeUI(ui); };
                 materialui.MaterialViewBuildUtils.getInstance().setData($materialTree.data);
                 ModuleEventManager.dispatchEvent(new left.LeftEvent(left.LeftEvent.SHOW_LEFT_PANEL));
-                //  this.stageMoveTx(new Vector2D(1000, 0));
+                //  this.stageMoveTx(new Vector2D(-1000, 0));
             });
         };
         MaterialProcessor.prototype.onKeyDown = function ($evt) {

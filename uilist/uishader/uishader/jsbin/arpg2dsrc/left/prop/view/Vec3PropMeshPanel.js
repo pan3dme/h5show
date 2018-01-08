@@ -43,6 +43,7 @@ var prop;
             set: function (value) {
                 this._ve3d.x = value;
                 this.constVec3NodeUI.constValue = this._ve3d;
+                this.changeData();
             },
             enumerable: true,
             configurable: true
@@ -54,6 +55,7 @@ var prop;
             set: function (value) {
                 this._ve3d.y = value;
                 this.constVec3NodeUI.constValue = this._ve3d;
+                this.changeData();
             },
             enumerable: true,
             configurable: true
@@ -65,10 +67,14 @@ var prop;
             set: function (value) {
                 this._ve3d.z = value;
                 this.constVec3NodeUI.constValue = this._ve3d;
+                this.changeData();
             },
             enumerable: true,
             configurable: true
         });
+        Vec3PropMeshPanel.prototype.changeData = function () {
+            ModuleEventManager.dispatchEvent(new materialui.MaterialEvent(materialui.MaterialEvent.COMPILE_MATERIAL));
+        };
         return Vec3PropMeshPanel;
     }(prop.MetaDataView));
     prop.Vec3PropMeshPanel = Vec3PropMeshPanel;

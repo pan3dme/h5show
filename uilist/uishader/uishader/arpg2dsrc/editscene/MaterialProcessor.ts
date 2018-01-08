@@ -166,7 +166,7 @@
 
                 ModuleEventManager.dispatchEvent(new left.LeftEvent(left.LeftEvent.SHOW_LEFT_PANEL));
 
-              //  this.stageMoveTx(new Vector2D(1000, 0));
+            //  this.stageMoveTx(new Vector2D(-1000, 0));
 
             });
 

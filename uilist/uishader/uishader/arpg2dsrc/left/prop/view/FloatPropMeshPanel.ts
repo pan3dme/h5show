@@ -10,7 +10,6 @@
 
                 ];
             return ary;
-            // ReflectionData.FunKey
         }
         public set data(value: any) {
             this._data = value;
@@ -26,8 +25,11 @@
         }
         public set constValue(value: number) {
             this.constFloatNodeUI.constValue = value;
+            this.changeData();
 
-
+        }
+        private changeData(): void {
+            ModuleEventManager.dispatchEvent(new materialui.MaterialEvent(materialui.MaterialEvent.COMPILE_MATERIAL));
         }
     }
 }

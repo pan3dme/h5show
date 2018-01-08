@@ -61,7 +61,7 @@ var left;
             var _this = _super.call(this) || this;
             //model/cartoontree05.txt
             //model/cartoontree05.txt
-            GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/pan3dme.txt", function (groupRes) {
+            GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/22222.txt", function (groupRes) {
                 _this.loadPartRes(groupRes);
             });
             _this.setLightMapUrl("ui/load/blood.png");
@@ -75,28 +75,15 @@ var left;
             for (var i = 0; i < groupRes.dataAry.length; i++) {
                 var item = groupRes.dataAry[i];
                 if (item.types == BaseRes.PREFAB_TYPE) {
-                    this.scaleX = this.scaleY = this.scaleZ = 0.2;
+                    this.scaleX = this.scaleY = this.scaleZ = 4;
                     this.setObjUrl(item.objUrl);
                     this.setMaterialUrl(item.materialUrl, item.materialInfoArr);
                     return;
                 }
             }
         };
-        MaterialModelSprite.prototype.setMaterialVc = function ($material, $mp) {
-            if ($mp === void 0) { $mp = null; }
-            if ($material.fcNum <= 0) {
-                return;
-            }
-            var t = 0;
-            if ($material.hasTime) {
-                t = (TimeUtil.getTimer() - this.time) % 100000 * 0.001;
-            }
-            $material.update(t);
-            this.setCamPos($material);
-            if ($mp) {
-                $mp.update();
-            }
-            Scene_data.context3D.setVc4fv($material.shader, "fc", $material.fcData);
+        MaterialModelSprite.prototype.update = function () {
+            _super.prototype.update.call(this);
         };
         return MaterialModelSprite;
     }(Display3DSprite));

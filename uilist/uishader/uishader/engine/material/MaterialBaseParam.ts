@@ -75,8 +75,9 @@
 
                 }
                 var constItem: DynamicBaseConstItem = new DynamicBaseConstItem();
-                constItem.setTargetInfo(target,targetName,obj.type);
 
+                    constItem.setTargetInfo(target, targetName, obj.type);
+            
                 if (obj.type == 1) {
                     constItem.setCurrentVal(obj.x);
                 } else if (obj.type == 2) {

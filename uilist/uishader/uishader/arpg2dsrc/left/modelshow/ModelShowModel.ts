@@ -38,19 +38,16 @@
           //  console.log($materialTree.texList)
 
             var $material: Material = this.lightSpriteList.material
-
-            console.log($material.shader.paramAry)
-
             var $buildMaterialShader: BuildMaterialShader = new BuildMaterialShader()
             $buildMaterialShader.buildParamAry($materialTree);
-            console.log($buildMaterialShader.paramAry)
+ 
             $buildMaterialShader.vertex = $buildMaterialShader.getVertexShaderString()
             $buildMaterialShader.fragment = $str;
             $buildMaterialShader.encode();
 
-
             this.lightSpriteList.material.shader = $buildMaterialShader;
             $material.program = $material.shader.program;
+            this.lightSpriteList.material.fcData = $materialTree.fcData
 
             /*
             $material.shader.fragment = $str;

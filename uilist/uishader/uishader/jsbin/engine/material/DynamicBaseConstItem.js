@@ -21,7 +21,9 @@ var DynamicBaseConstItem = /** @class */ (function () {
         this.target = $target;
         this.paramName = $paramName;
         this.type = $type;
-        this.target.setDynamicOffset(this);
+        if (this.target) {
+            this.target.setDynamicOffset(this);
+        }
         this.currentValue = new Array($type);
     };
     DynamicBaseConstItem.prototype.setCurrentVal = function () {

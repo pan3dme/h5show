@@ -51,7 +51,7 @@ module left {
             super();
             //model/cartoontree05.txt
             //model/cartoontree05.txt
-            GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/pan3dme.txt", (groupRes: GroupRes) => {
+            GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/22222.txt", (groupRes: GroupRes) => {
                 this.loadPartRes(groupRes)
             })
             this.setLightMapUrl("ui/load/blood.png")
@@ -65,14 +65,18 @@ module left {
             for (var i: number = 0; i < groupRes.dataAry.length; i++) {
                 var item: GroupItem = groupRes.dataAry[i];
                 if (item.types == BaseRes.PREFAB_TYPE) {
-                    this.scaleX = this.scaleY = this.scaleZ =0.2
+                    this.scaleX = this.scaleY = this.scaleZ =4
                     this.setObjUrl(item.objUrl);
                     this.setMaterialUrl(item.materialUrl, item.materialInfoArr);
                     return
                 }
             }
-     
+      
         }
+        public update(): void {
+            super.update();
+        }
+        /*
         public setMaterialVc($material: Material, $mp: MaterialBaseParam = null): void {
             if ($material.fcNum <= 0) {
                 return;
@@ -87,8 +91,8 @@ module left {
                 $mp.update();
             }
             Scene_data.context3D.setVc4fv($material.shader, "fc", $material.fcData);
-
         }
+        */
 
     
     }
