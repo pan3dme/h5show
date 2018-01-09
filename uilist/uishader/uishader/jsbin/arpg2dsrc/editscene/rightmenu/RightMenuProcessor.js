@@ -1,25 +1,30 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var materialui;
 (function (materialui) {
-    var RightMenuEvent = (function (_super) {
+    var RightMenuEvent = /** @class */ (function (_super) {
         __extends(RightMenuEvent, _super);
         function RightMenuEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         RightMenuEvent.SHOW_RIGHT_MENU = "SHOW_RIGHT_MENU";
         RightMenuEvent.HIDE_RIGHT_MENU = "HIDE_RIGHT_MENU";
         RightMenuEvent.SHOW_COMBOX_MENU = "SHOW_COMBOX_MENU";
         return RightMenuEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     materialui.RightMenuEvent = RightMenuEvent;
-    var RightMenuModule = (function (_super) {
+    var RightMenuModule = /** @class */ (function (_super) {
         __extends(RightMenuModule, _super);
         function RightMenuModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         RightMenuModule.prototype.getModuleName = function () {
             return "RightMenuModule";
@@ -28,12 +33,12 @@ var materialui;
             return [new RightMenuProcessor()];
         };
         return RightMenuModule;
-    })(Module);
+    }(Module));
     materialui.RightMenuModule = RightMenuModule;
-    var RightMenuProcessor = (function (_super) {
+    var RightMenuProcessor = /** @class */ (function (_super) {
         __extends(RightMenuProcessor, _super);
         function RightMenuProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         RightMenuProcessor.prototype.getName = function () {
             return "RightMenuProcessor";
@@ -86,7 +91,7 @@ var materialui;
             ];
         };
         return RightMenuProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     materialui.RightMenuProcessor = RightMenuProcessor;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=RightMenuProcessor.js.map

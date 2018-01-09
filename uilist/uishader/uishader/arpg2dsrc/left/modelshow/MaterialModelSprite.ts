@@ -51,7 +51,7 @@ module left {
             super();
             //model/cartoontree05.txt
             //model/cartoontree05.txt
-            GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/22222.txt", (groupRes: GroupRes) => {
+            GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/pan3dme.txt", (groupRes: GroupRes) => {
                 this.loadPartRes(groupRes)
             })
             this.setLightMapUrl("ui/load/blood.png")
@@ -65,7 +65,7 @@ module left {
             for (var i: number = 0; i < groupRes.dataAry.length; i++) {
                 var item: GroupItem = groupRes.dataAry[i];
                 if (item.types == BaseRes.PREFAB_TYPE) {
-                    this.scaleX = this.scaleY = this.scaleZ =4
+                    this.scaleX = this.scaleY = this.scaleZ =10
                     this.setObjUrl(item.objUrl);
                     this.setMaterialUrl(item.materialUrl, item.materialInfoArr);
                     return

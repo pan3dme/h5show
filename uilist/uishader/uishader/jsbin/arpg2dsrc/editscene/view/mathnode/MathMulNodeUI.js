@@ -1,24 +1,30 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var materialui;
 (function (materialui) {
-    var MathMulNodeUI = (function (_super) {
+    var MathMulNodeUI = /** @class */ (function (_super) {
         __extends(MathMulNodeUI, _super);
         function MathMulNodeUI() {
-            _super.call(this);
-            this.left = 600;
-            this.top = 300;
-            this.nodeTree = new materialui.NodeTreeMul;
-            this.nodeTree.ui = this;
-            this.nodeTree.type = materialui.NodeTree.MUL;
-            this.initItem();
-            this.drawTitleToFrame("乘法(Mul*)");
+            var _this = _super.call(this) || this;
+            _this.left = 600;
+            _this.top = 300;
+            _this.nodeTree = new materialui.NodeTreeMul;
+            _this.nodeTree.ui = _this;
+            _this.nodeTree.type = materialui.NodeTree.MUL;
+            _this.initItem();
+            _this.drawTitleToFrame("乘法(Mul*)");
+            return _this;
         }
         return MathMulNodeUI;
-    })(materialui.MathDynamicNodeUI);
+    }(materialui.MathDynamicNodeUI));
     materialui.MathMulNodeUI = MathMulNodeUI;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MathMulNodeUI.js.map

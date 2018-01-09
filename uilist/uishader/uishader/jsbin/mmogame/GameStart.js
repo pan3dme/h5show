@@ -1,4 +1,4 @@
-var GameStart = (function () {
+var GameStart = /** @class */ (function () {
     function GameStart() {
         this.dataReady = false;
         this.uiReadyNum = 0;
@@ -45,6 +45,7 @@ var GameStart = (function () {
     };
     GameStart.prototype.loadDataComplet = function () {
         if (GameStart.outNet) {
+            //GameStart.GM = false;
         }
         ModuleList.startup(); //启动所有模块
         this.initUi();
@@ -58,5 +59,5 @@ var GameStart = (function () {
     GameStart.ready = false;
     GameStart.appVersion = 0;
     return GameStart;
-})();
+}());
 //# sourceMappingURL=GameStart.js.map

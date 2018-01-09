@@ -1,6 +1,6 @@
 var left;
 (function (left) {
-    var ModelShowModel = (function () {
+    var ModelShowModel = /** @class */ (function () {
         function ModelShowModel() {
         }
         ModelShowModel.getInstance = function () {
@@ -17,7 +17,7 @@ var left;
         };
         ModelShowModel.prototype.update = function (t) {
             if (this._bigPic && this._bigPic.textureRes) {
-                left.SceneRenderToTextrue.getInstance().renderToTexture([this.gridLineSprite, this.lightSpriteList]);
+                left.SceneRenderToTextrue.getInstance().renderToTexture([this.lightSpriteList]);
                 if (left.SceneRenderToTextrue.getInstance().fbo) {
                     this._bigPic.textureRes.texture = left.SceneRenderToTextrue.getInstance().fbo.texture;
                 }
@@ -32,20 +32,18 @@ var left;
             var $str = $materialTree.shaderStr;
             //  console.log($materialTree.constList)
             //  console.log($materialTree.texList)
-            /*
-            var $material: Material = this.lightSpriteList.material
-            var $buildMaterialShader: BuildMaterialShader = new BuildMaterialShader()
+            var $material = this.lightSpriteList.material;
+            var $buildMaterialShader = new left.BuildMaterialShader();
+            console.log(this.lightSpriteList.material.shader.fragment);
+            console.log("-----------");
+            console.log($str);
+            console.log("+++++++++++++");
             $buildMaterialShader.buildParamAry($materialTree);
- 
-            $buildMaterialShader.vertex = $buildMaterialShader.getVertexShaderString()
+            $buildMaterialShader.vertex = $buildMaterialShader.getVertexShaderString();
             $buildMaterialShader.fragment = $str;
             $buildMaterialShader.encode();
-
             this.lightSpriteList.material.shader = $buildMaterialShader;
             $material.program = $material.shader.program;
-            */
-            console.log(this.lightSpriteList.material.fcData);
-            console.log($materialTree.fcData);
             this.lightSpriteList.material.fcData = $materialTree.fcData;
             /*
             $material.shader.fragment = $str;
@@ -81,7 +79,7 @@ var left;
             return shader;
         };
         return ModelShowModel;
-    })();
+    }());
     left.ModelShowModel = ModelShowModel;
 })(left || (left = {}));
 //# sourceMappingURL=ModelShowModel.js.map

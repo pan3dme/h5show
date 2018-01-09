@@ -1,6 +1,6 @@
 var prop;
 (function (prop) {
-    var BaseReflComponent = (function () {
+    var BaseReflComponent = /** @class */ (function () {
         function BaseReflComponent() {
             this._width = 1;
             this._height = 1;
@@ -72,7 +72,7 @@ var prop;
         BaseReflComponent.prototype.destory = function () {
         };
         return BaseReflComponent;
-    })();
+    }());
     prop.BaseReflComponent = BaseReflComponent;
 })(prop || (prop = {}));
 //# sourceMappingURL=BaseReflComponent.js.map

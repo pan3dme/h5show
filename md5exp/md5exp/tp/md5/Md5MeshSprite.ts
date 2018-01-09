@@ -19,8 +19,8 @@ module md5list {
                 "attribute vec4 boneID;" +
                 "attribute vec4 boneWeight;" +
                 "varying vec2 v0;" +
-                "uniform vec4 boneQ[54];" +
-                "uniform vec3 boneD[54];" +
+                "uniform vec4 boneQ[70];" +
+                "uniform vec3 boneD[70];" +
                 "uniform mat4 vpMatrix3D;" +
                 "uniform mat4 posMatrix3D;" +
                 "vec4 qdv(vec4 q, vec3 d, vec3 v ){" +

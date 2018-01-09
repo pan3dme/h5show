@@ -156,7 +156,9 @@ var md5list;
         Md5animAnalysis.prototype._pushfamers = function () {
             var i = 0;
             for (i = 0; i < this._frame.length; i++) {
-                this.allFrames.push(this._getsamplefamer(this._frame[i]));
+                if (this._frame[i]) {
+                    this.allFrames.push(this._getsamplefamer(this._frame[i]));
+                }
             }
             this.framesok = true;
         };

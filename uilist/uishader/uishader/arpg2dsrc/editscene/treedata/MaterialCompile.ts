@@ -50,7 +50,7 @@
             }
 
             var resultStr: string = this._compileGlslServer.compile(this.priorityList, $materialTree);
-            console.log(resultStr)
+     
             left.ModelShowModel.getInstance().outShaderStr($materialTree);
 
         }

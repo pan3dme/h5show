@@ -18,7 +18,7 @@
         public update(t): void {
 
             if (this._bigPic && this._bigPic.textureRes) {
-                SceneRenderToTextrue.getInstance().renderToTexture([this.gridLineSprite, this.lightSpriteList]);
+                SceneRenderToTextrue.getInstance().renderToTexture([ this.lightSpriteList]);
                 if (SceneRenderToTextrue.getInstance().fbo) {
                     this._bigPic.textureRes.texture = SceneRenderToTextrue.getInstance().fbo.texture;
                 }
@@ -37,20 +37,26 @@
           //  console.log($materialTree.constList)
           //  console.log($materialTree.texList)
 
-            /*
+
             var $material: Material = this.lightSpriteList.material
             var $buildMaterialShader: BuildMaterialShader = new BuildMaterialShader()
+
+            console.log(this.lightSpriteList.material.shader.fragment);
+            console.log("-----------")
+            console.log($str);
+            console.log("+++++++++++++")
+
             $buildMaterialShader.buildParamAry($materialTree);
  
             $buildMaterialShader.vertex = $buildMaterialShader.getVertexShaderString()
             $buildMaterialShader.fragment = $str;
+
+   
+
             $buildMaterialShader.encode();
 
             this.lightSpriteList.material.shader = $buildMaterialShader;
             $material.program = $material.shader.program;
-            */
-            console.log(this.lightSpriteList.material.fcData);
-            console.log($materialTree.fcData)
             this.lightSpriteList.material.fcData = $materialTree.fcData
 
             /*
