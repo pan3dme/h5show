@@ -28,28 +28,35 @@ var left;
             this.gridLineSprite = new GridLineSprite();
             this.lightSpriteList = new left.MaterialModelSprite();
         };
-        ModelShowModel.prototype.outShaderStr = function ($materialTree) {
-            var $str = $materialTree.shaderStr;
-            //  console.log($materialTree.constList)
-            //  console.log($materialTree.texList)
+        ModelShowModel.prototype.outShaderStr = function ($treeMater) {
+            var $str = $treeMater.shaderStr;
             var $material = this.lightSpriteList.material;
             var $buildMaterialShader = new left.BuildMaterialShader();
-            console.log(this.lightSpriteList.material.shader.fragment);
-            console.log("-----------");
-            console.log($str);
-            console.log("+++++++++++++");
-            $buildMaterialShader.buildParamAry($materialTree);
+            $buildMaterialShader.buildParamAry($treeMater);
             $buildMaterialShader.vertex = $buildMaterialShader.getVertexShaderString();
             $buildMaterialShader.fragment = $str;
+            console.log($buildMaterialShader.vertex);
+            console.log("-----------");
+            console.log($buildMaterialShader.fragment);
+            console.log("+++++++++++++");
             $buildMaterialShader.encode();
             this.lightSpriteList.material.shader = $buildMaterialShader;
             $material.program = $material.shader.program;
-            this.lightSpriteList.material.fcData = $materialTree.fcData;
-            /*
-            $material.shader.fragment = $str;
-            this.lightSpriteList.material.shader.encode();
-            $material.program = $material.shader.program;
-   */
+            this.lightSpriteList.material.fcData = $treeMater.fcData;
+            this.lightSpriteList.material.usePbr = $treeMater.usePbr;
+            this.lightSpriteList.material.hasTime = $treeMater.hasTime;
+            this.lightSpriteList.material.hasVertexColor = $treeMater.hasVertexColor;
+            this.lightSpriteList.material.usePbr = $treeMater.usePbr;
+            this.lightSpriteList.material.useNormal = $treeMater.useNormal;
+            this.lightSpriteList.material.roughness = $treeMater.roughness;
+            this.lightSpriteList.material.hasFresnel = $treeMater.hasFresnel;
+            this.lightSpriteList.material.useDynamicIBL = $treeMater.useDynamicIBL;
+            this.lightSpriteList.material.lightProbe = $treeMater.lightProbe;
+            this.lightSpriteList.material.useKill = $treeMater.useKill;
+            this.lightSpriteList.material.directLight = $treeMater.directLight;
+            this.lightSpriteList.material.noLight = $treeMater.noLight;
+            this.lightSpriteList.material.fogMode = $treeMater.fogMode;
+            this.lightSpriteList.material.scaleLightMap = $treeMater.scaleLightMap;
         };
         ModelShowModel.prototype.getMaterialProgram = function (key, shaderCls, $material, paramAry, parmaByFragmet) {
             if (paramAry === void 0) { paramAry = null; }

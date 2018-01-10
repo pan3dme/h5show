@@ -31,39 +31,45 @@
             this.gridLineSprite = new GridLineSprite();
             this.lightSpriteList = new MaterialModelSprite();
         }
-        public outShaderStr($materialTree: materialui.MaterialTree): void {
+        public outShaderStr($treeMater: materialui.MaterialTree): void {
 
-            var $str: string = $materialTree.shaderStr;
-          //  console.log($materialTree.constList)
-          //  console.log($materialTree.texList)
-
+            var $str: string = $treeMater.shaderStr;
 
             var $material: Material = this.lightSpriteList.material
             var $buildMaterialShader: BuildMaterialShader = new BuildMaterialShader()
-
-            console.log(this.lightSpriteList.material.shader.fragment);
-            console.log("-----------")
-            console.log($str);
-            console.log("+++++++++++++")
-
-            $buildMaterialShader.buildParamAry($materialTree);
+            $buildMaterialShader.buildParamAry($treeMater);
  
             $buildMaterialShader.vertex = $buildMaterialShader.getVertexShaderString()
             $buildMaterialShader.fragment = $str;
 
-   
+            console.log($buildMaterialShader.vertex );
+            console.log("-----------")
+            console.log($buildMaterialShader.fragment );
+            console.log("+++++++++++++")
 
             $buildMaterialShader.encode();
 
             this.lightSpriteList.material.shader = $buildMaterialShader;
             $material.program = $material.shader.program;
-            this.lightSpriteList.material.fcData = $materialTree.fcData
+            this.lightSpriteList.material.fcData = $treeMater.fcData;
 
-            /*
-            $material.shader.fragment = $str;
-            this.lightSpriteList.material.shader.encode();
-            $material.program = $material.shader.program;
-   */
+
+            this.lightSpriteList.material.usePbr = $treeMater.usePbr;
+            this.lightSpriteList.material.hasTime = $treeMater. hasTime;
+            this.lightSpriteList.material.hasVertexColor = $treeMater. hasVertexColor;
+            this.lightSpriteList.material.usePbr = $treeMater.usePbr;
+            this.lightSpriteList.material.useNormal = $treeMater.useNormal;
+            this.lightSpriteList.material.roughness = $treeMater. roughness;
+            this.lightSpriteList.material.hasFresnel = $treeMater.hasFresnel;
+            this.lightSpriteList.material.useDynamicIBL = $treeMater. useDynamicIBL;
+            this.lightSpriteList.material.lightProbe = $treeMater. lightProbe;
+            this.lightSpriteList.material.useKill = $treeMater. useKill;
+            this.lightSpriteList.material.directLight = $treeMater.directLight;
+            this.lightSpriteList.material.noLight = $treeMater.noLight;
+            this.lightSpriteList.material.fogMode = $treeMater.fogMode;
+            this.lightSpriteList.material.scaleLightMap = $treeMater.scaleLightMap;
+      
+
 
         }
       

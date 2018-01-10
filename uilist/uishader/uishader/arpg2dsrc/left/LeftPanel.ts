@@ -23,6 +23,7 @@
             this.layer = 100
             this.left = 0;
             this.top = 0;
+            this.width=250
             this._bottomRender = new UIRenderComponent;
             this.addRender(this._bottomRender);
 
@@ -41,6 +42,7 @@
             this._topRender.uiAtlas.setInfo("pan/marmoset/uilist/left/left.xml", "pan/marmoset/uilist/left/left.png", () => { this.loadConfigCom() });
 
         }
+        private showModelPic: UICompenent
         private initView(): void {
             var $ui: UICompenent = this.addChild(this.modelPic.getComponent("a_model_show"));
             this.modelPic.setImgUrl("ui/load/map/bigworld.jpg");
@@ -48,11 +50,54 @@
             $ui.left = 10;
             ModelShowModel.getInstance()._bigPic = this.modelPic;
             $ui.name = "modelPic"
-            this.addEvntBut
             $ui.addEventListener(InteractiveEvent.Down, this.addStageMoveEvets, this);
 
-        }
+            this.showModelPic = $ui
 
+
+        }
+        public resize(): void {
+            super.resize()
+            this.height = Scene_data.stageHeight
+            if (this.a_panel_bg) {
+                this.a_panel_bg.width = this.width;
+                this.a_panel_bg.height = this.height;
+                this.a_left_line.x = this.width - 10;
+                this.a_left_line.y = 0;
+                this.a_left_line.height = this.height;
+
+                this.showModelPic.width = this.width - 20;
+                this.showModelPic.height = this.width - 20;
+
+                this.a_compile_but.y = this.showModelPic.height + 20;
+            }
+
+        }
+        private a_left_line: UICompenent;
+        private lastWidth: number
+        private a_left_lineDown($e: InteractiveEvent): void {
+            this.a_left_line.data = new Vector2D($e.x, $e.y)
+            this.lastWidth = this.width
+            Scene_data.uiStage.addEventListener(InteractiveEvent.Up, this.a_left_lineUp, this);
+        }
+        private a_left_lineUp($e: InteractiveEvent): void {
+            this.a_left_line.data = null
+            Scene_data.uiStage.removeEventListener(InteractiveEvent.Up, this.a_left_lineUp, this);
+        }
+        private onMoveLine($e: InteractiveEvent): void {
+            var $select: UICompenent = UIManager.getInstance().getObjectsUnderPoint(new Vector2D($e.x, $e.y))
+            if ($select == this.a_left_line) {
+                Scene_data.canvas3D.style.cursor = "e-resize"
+            } else {
+                Scene_data.canvas3D.style.cursor = "auto"
+            }
+            if (this.a_left_line.data) {
+                var $lastV2d: Vector2D = <Vector2D>this.a_left_line.data;
+                this.width = this.lastWidth + ($e.x - $lastV2d.x);
+                this.resize();
+                prop.PropModel.getInstance().moveTop(this.width+60)
+            }
+        }
         private lastCameRotation: Vector2D;
         private mouseXY: Vector2D;
         private addStageMoveEvets($e: InteractiveEvent): void {
@@ -77,15 +122,16 @@
             this._bottomRender.uiAtlas = this._topRender.uiAtlas
             this._midRender.uiAtlas = this._topRender.uiAtlas;
             this.modelPic.uiAtlas = this._topRender.uiAtlas;
-       //     this.addChild(this._topRender.getComponent("a_base"));
 
             this.a_compile_but = this.addEvntBut("a_compile_but", this._topRender)
-
-            
 
             this.a_panel_bg = this.addChild(this._bottomRender.getComponent("a_panel_bg"));
             this.a_panel_bg.left = 0;
             this.a_panel_bg.top = 0;
+
+            this.a_left_line = this.addChild(this._topRender.getComponent("a_left_line"));
+            this.a_left_line.addEventListener(InteractiveEvent.Down, this.a_left_lineDown, this);
+            Scene_data.uiStage.addEventListener(InteractiveEvent.Move, this.onMoveLine, this);
 
 
             this.initView()
@@ -100,13 +146,6 @@
                     break
             }
         }
-        public resize(): void {
-            super.resize()
-            if (this.a_panel_bg) {
-                this.a_panel_bg.width = 250;
-                this.a_panel_bg.height = Scene_data.stageHeight;
-            }
-
-        }
+    
     }
 }

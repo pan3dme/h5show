@@ -208,12 +208,23 @@
             var $materialBaseParam: MaterialBaseParam = new MaterialBaseParam()
             $materialBaseParam.setData($materialTree, []);
 
+            $materialTree.fcNum = this.getMaxFc();
+            $materialTree.fcData = this.makeFc($materialTree.fcNum);
 
-            $materialTree.fcData = this.makeFc();
-           
 
-           // this.materialParam = new MaterialBaseParam();
-
+            $materialTree.hasTime = this.hasTime;;
+            $materialTree.hasVertexColor = this.hasVertexColor;;
+            $materialTree.usePbr = this.usePbr;;
+            $materialTree.useNormal = this.useNormal;;
+            $materialTree.roughness = 0;
+            $materialTree.hasFresnel = this.hasFresnel;;
+            $materialTree.useDynamicIBL = this.useDynamicIBL;;
+            $materialTree.lightProbe = this.lightProbe;;
+            $materialTree.useKill = this.useKill;;
+            $materialTree.directLight = this.directLight;;
+            $materialTree.noLight = this.noLight;;
+            $materialTree.fogMode = this.fogMode;;
+            $materialTree.scaleLightMap = this.scaleLightMap;;
 
             return resultStr
 
@@ -230,10 +241,9 @@
             }
             return maxID
         }
-        private makeFc(): Float32Array {
+        private makeFc(fcNum: number): Float32Array {
 
             var fcIDAry:Array<number> = [this._camposID, this._fogcolorID, this._scalelightmapID];
-            var fcNum:number= this.getMaxFc();     
             var fcData: Float32Array = new Float32Array(fcNum * 4);
 
             if (this.hasTime || this.useKill || this.fogMode != 0) {//fc0

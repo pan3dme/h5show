@@ -29,7 +29,15 @@
                 }
                 this.lastNodel = $ui;
                 this.metaDataView.data = $ui;
+                this.metaDataView.top = this._top
 
+            }
+        }
+        private _top: number=350
+        public moveTop($ty: number): void {
+            this._top = $ty
+            if (this.metaDataView) {
+                this.metaDataView.top = this._top
             }
         }
     }

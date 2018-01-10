@@ -25,8 +25,25 @@ var materialui;
             _this.initItem();
             _this.resetBgSize();
             _this.drawTitleToFrame("纹理采样");
+            _this.a_texture_pic_frame = _this.getTexturePicUi();
+            _this.a_texture_pic_frame.x = 20;
+            _this.a_texture_pic_frame.y = 55;
             return _this;
         }
+        TextureSampleNodeUI.prototype.drawFrontToFrame = function ($ui, $url) {
+            var _this = this;
+            LoadManager.getInstance().load(Scene_data.fileRoot + $url, LoadManager.IMG_TYPE, function ($img) {
+                var $toRect = $ui.getSkinCtxRect();
+                var $ctx = UIManager.getInstance().getContext2D($toRect.width, $toRect.height, false);
+                $ctx.drawImage($img, 0, 0, $img.width, $img.height);
+                $ui.drawToCtx(_this._topRender.uiAtlas, $ctx);
+            });
+        };
+        TextureSampleNodeUI.prototype.getTexturePicUi = function () {
+            var $ui = this.addEvntBut("a_texture_pic_frame", this._topRender);
+            $ui.goToAndStop(TextureSampleNodeUI.texture_pic_frame_ID++);
+            return $ui;
+        };
         TextureSampleNodeUI.prototype.initItem = function () {
             this.uvItem = new materialui.ItemMaterialUI("UV", materialui.MaterialItemType.VEC2);
             this.rgbItem = new materialui.ItemMaterialUI("rgb", materialui.MaterialItemType.VEC3, false);
@@ -53,6 +70,7 @@ var materialui;
             this.mipmap = obj.mipmap;
             this.filter = obj.filter;
             this.permul = obj.permul;
+            this.drawFrontToFrame(this.a_texture_pic_frame, this.nodeTree.url);
             this.showDynamic();
         };
         Object.defineProperty(TextureSampleNodeUI.prototype, "wrap", {
@@ -120,6 +138,7 @@ var materialui;
                 this.drawTitleToFrame("纹理采样");
             }
         };
+        TextureSampleNodeUI.texture_pic_frame_ID = 0;
         return TextureSampleNodeUI;
     }(materialui.BaseMaterialNodeUI));
     materialui.TextureSampleNodeUI = TextureSampleNodeUI;

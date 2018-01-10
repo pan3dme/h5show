@@ -2,8 +2,20 @@ var prop;
 (function (prop) {
     var MetaDataView = /** @class */ (function () {
         function MetaDataView() {
+            this._top = 350;
             this.creat(this.getView());
         }
+        Object.defineProperty(MetaDataView.prototype, "top", {
+            get: function () {
+                return this._top;
+            },
+            set: function (value) {
+                this._top = value;
+                this.resize();
+            },
+            enumerable: true,
+            configurable: true
+        });
         MetaDataView.prototype.getView = function () {
             var ary = [];
             return ary;
@@ -27,8 +39,11 @@ var prop;
             this.addComponentView();
         };
         MetaDataView.prototype.addComponentView = function () {
-            var ty = 350;
-            for (var i = 0; i < this.ui.length; i++) {
+            this.resize();
+        };
+        MetaDataView.prototype.resize = function () {
+            var ty = this._top;
+            for (var i = 0; this.ui && i < this.ui.length; i++) {
                 this.ui[i].y = ty;
                 this.ui[i].x = 20;
                 ty += this.ui[i].height;

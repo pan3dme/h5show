@@ -2,7 +2,17 @@
 
     export class MetaDataView {
 
-        protected _data:any
+        protected _data: any;
+        protected _top: number=350
+        public set top(value: number) {
+            this._top = value;
+            this.resize()
+   
+        }
+        public get top(): number {
+            return this._top
+        }
+
         public constructor() {
             this.creat(this.getView());
         }
@@ -31,13 +41,17 @@
             this.addComponentView();
         }
         private addComponentView(): void {
-            var ty: number = 350
-            for (var i: number = 0; i < this.ui.length; i++) {
+
+            this.resize();
+
+        }
+        private resize(): void {
+            var ty: number = this._top
+            for (var i: number = 0; this.ui&& i < this.ui.length; i++) {
                 this.ui[i].y = ty;
                 this.ui[i].x = 20;
                 ty += this.ui[i].height;
             }
-
         }
         public creatComponent(obj: any): BaseReflComponent {
             var type: String = obj[ReflectionData.Key_Type];

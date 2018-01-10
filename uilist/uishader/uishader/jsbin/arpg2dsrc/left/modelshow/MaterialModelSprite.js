@@ -85,6 +85,41 @@ var left;
         MaterialModelSprite.prototype.update = function () {
             _super.prototype.update.call(this);
         };
+        MaterialModelSprite.prototype.setMaterialVaCompress = function () {
+            var tf = Scene_data.context3D.pushVa(this.objData.vertexBuffer);
+            if (tf) {
+                return;
+            }
+            Scene_data.context3D.setVaOffset(0, 3, this.objData.stride, 0);
+            Scene_data.context3D.setVaOffset(1, 2, this.objData.stride, this.objData.uvsOffsets);
+            if (!(this.material.directLight || this.material.noLight)) {
+                Scene_data.context3D.setVaOffset(2, 2, this.objData.stride, this.objData.lightuvsOffsets);
+            }
+            if (this.material.usePbr || this.material.directLight) {
+                Scene_data.context3D.setVaOffset(3, 3, this.objData.stride, this.objData.normalsOffsets);
+                Scene_data.context3D.setVcMatrix3fv(this.material.shader, "rotationMatrix3D", this._rotationData);
+            }
+            if (this.material.useNormal) {
+                Scene_data.context3D.setVaOffset(4, 3, this.objData.stride, this.objData.tangentsOffsets);
+                Scene_data.context3D.setVaOffset(5, 3, this.objData.stride, this.objData.bitangentsOffsets);
+            }
+        };
+        MaterialModelSprite.prototype.setMaterialVc = function ($material, $mp) {
+            if ($mp === void 0) { $mp = null; }
+            if ($material.fcNum <= 0) {
+                return;
+            }
+            var t = 0;
+            if ($material.hasTime) {
+                t = (TimeUtil.getTimer() - this.time) % 100000 * 0.001;
+            }
+            $material.update(t);
+            this.setCamPos($material);
+            if ($mp) {
+                $mp.update();
+            }
+            Scene_data.context3D.setVc4fv($material.shader, "fc", $material.fcData);
+        };
         return MaterialModelSprite;
     }(Display3DSprite));
     left.MaterialModelSprite = MaterialModelSprite;

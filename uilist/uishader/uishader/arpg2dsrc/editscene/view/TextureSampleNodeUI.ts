@@ -13,7 +13,9 @@
         private _wrap: number//0 reapte,1 clamp
         private _mipmap: number;// 0=disable、1=nearest、2=linear
         private _filter: number;// 0=linear1=nearest、
-        private  _permul: boolean;
+        private _permul: boolean;
+
+        private a_texture_pic_frame: FrameCompenent
 
         public constructor() {
             super();
@@ -32,7 +34,31 @@
 
             this.resetBgSize()
             this.drawTitleToFrame("纹理采样")
+
+            this.a_texture_pic_frame = this.getTexturePicUi();
+            this.a_texture_pic_frame.x = 20;
+            this.a_texture_pic_frame.y = 55;
+
       
+        }
+        private drawFrontToFrame($ui: FrameCompenent, $url: string): void {
+
+
+            LoadManager.getInstance().load(Scene_data.fileRoot + $url, LoadManager.IMG_TYPE,
+                ($img: any) => {
+                    var $toRect: Rectangle = $ui.getSkinCtxRect()
+                    var $ctx: CanvasRenderingContext2D = UIManager.getInstance().getContext2D($toRect.width, $toRect.height, false);
+                    $ctx.drawImage($img, 0, 0, $img.width, $img.height);
+                    $ui.drawToCtx(this._topRender.uiAtlas, $ctx)
+                });
+
+
+        }
+        private static texture_pic_frame_ID=0
+        private getTexturePicUi(): FrameCompenent {
+            var $ui: FrameCompenent = <FrameCompenent>this.addEvntBut("a_texture_pic_frame", this._topRender);
+            $ui.goToAndStop(TextureSampleNodeUI.texture_pic_frame_ID++);
+            return $ui;
         }
         private initItem(): void {
 
@@ -63,7 +89,9 @@
             this.mipmap = obj.mipmap;
             this.filter = obj.filter;
             this.permul = obj.permul;
-           this. showDynamic();
+
+            this.drawFrontToFrame(this.a_texture_pic_frame, (<NodeTreeTex>this.nodeTree).url)
+            this. showDynamic();
         }
         public get wrap(): number {
             return this._wrap;

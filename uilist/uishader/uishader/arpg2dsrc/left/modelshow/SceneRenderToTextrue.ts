@@ -41,6 +41,12 @@ module left {
 
 
         }
+        public  resetViewMatrx3D(): void {
+            
+            Scene_data.viewMatrx3D.identity()
+            Scene_data.viewMatrx3D.perspectiveFieldOfViewLH(Engine.sceneCamScale, 1, 50, Scene_data.camFar);
+
+        }
         public fbo: FBO
         public renderToTexture($item: Array<Display3D>): void {
             if (!this.fbo) {
@@ -57,16 +63,14 @@ module left {
             this.renderContext.frontFace(this.renderContext.CW);
             this.renderContext.clear(this.renderContext.COLOR_BUFFER_BIT | this.renderContext.DEPTH_BUFFER_BIT | this.renderContext.STENCIL_BUFFER_BIT);
 
+            this.resetViewMatrx3D()
             MathClass.getCamView(Scene_data.cam3D, Scene_data.focus3D); //一定要角色帧渲染后再重置镜头矩阵
 
-           // Scene_data.viewMatrx3D.appendScale(1, -1, 1);
-           // Scene_data.vpMatrix.appendScale(1, -1, 1);
+         
 
             for (var i: number = 0; i < $item.length; i++) {
                 $item[i].update()
             }
-
-        
 
             var gl: WebGLRenderingContext = Scene_data.context3D.renderContext
             gl.bindFramebuffer(gl.FRAMEBUFFER, null);

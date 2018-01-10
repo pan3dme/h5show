@@ -32,6 +32,10 @@ var left;
             gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, fbo.texture, 0);
             gl.framebufferRenderbuffer(gl.FRAMEBUFFER, gl.DEPTH_ATTACHMENT, gl.RENDERBUFFER, fbo.depthBuffer);
         };
+        SceneRenderToTextrue.prototype.resetViewMatrx3D = function () {
+            Scene_data.viewMatrx3D.identity();
+            Scene_data.viewMatrx3D.perspectiveFieldOfViewLH(Engine.sceneCamScale, 1, 50, Scene_data.camFar);
+        };
         SceneRenderToTextrue.prototype.renderToTexture = function ($item) {
             if (!this.fbo) {
                 this.fbo = this.getFBO(); //512*512
@@ -46,9 +50,8 @@ var left;
             this.renderContext.enable(this.renderContext.BLEND);
             this.renderContext.frontFace(this.renderContext.CW);
             this.renderContext.clear(this.renderContext.COLOR_BUFFER_BIT | this.renderContext.DEPTH_BUFFER_BIT | this.renderContext.STENCIL_BUFFER_BIT);
+            this.resetViewMatrx3D();
             MathClass.getCamView(Scene_data.cam3D, Scene_data.focus3D); //一定要角色帧渲染后再重置镜头矩阵
-            // Scene_data.viewMatrx3D.appendScale(1, -1, 1);
-            // Scene_data.vpMatrix.appendScale(1, -1, 1);
             for (var i = 0; i < $item.length; i++) {
                 $item[i].update();
             }

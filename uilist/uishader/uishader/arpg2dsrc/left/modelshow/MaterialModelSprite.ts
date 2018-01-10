@@ -76,7 +76,27 @@ module left {
         public update(): void {
             super.update();
         }
-        /*
+        public setMaterialVaCompress(): void {
+            var tf: boolean = Scene_data.context3D.pushVa(this.objData.vertexBuffer);
+            if (tf) {
+                return;
+            }
+            Scene_data.context3D.setVaOffset(0, 3, this.objData.stride, 0);
+            Scene_data.context3D.setVaOffset(1, 2, this.objData.stride, this.objData.uvsOffsets);
+            if (!(this.material.directLight || this.material.noLight)) {
+                Scene_data.context3D.setVaOffset(2, 2, this.objData.stride, this.objData.lightuvsOffsets);
+            }
+            if (this.material.usePbr || this.material.directLight) {
+                Scene_data.context3D.setVaOffset(3, 3, this.objData.stride, this.objData.normalsOffsets);
+                Scene_data.context3D.setVcMatrix3fv(this.material.shader, "rotationMatrix3D", this._rotationData);
+            }
+            if (this.material.useNormal) {
+                Scene_data.context3D.setVaOffset(4, 3, this.objData.stride, this.objData.tangentsOffsets);
+                Scene_data.context3D.setVaOffset(5, 3, this.objData.stride, this.objData.bitangentsOffsets);
+            }
+
+        }
+
         public setMaterialVc($material: Material, $mp: MaterialBaseParam = null): void {
             if ($material.fcNum <= 0) {
                 return;
@@ -91,9 +111,9 @@ module left {
                 $mp.update();
             }
             Scene_data.context3D.setVc4fv($material.shader, "fc", $material.fcData);
-        }
-        */
 
+
+        }
     
     }
 }

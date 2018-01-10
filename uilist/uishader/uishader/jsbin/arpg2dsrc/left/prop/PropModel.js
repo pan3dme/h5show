@@ -2,6 +2,7 @@ var prop;
 (function (prop) {
     var PropModel = /** @class */ (function () {
         function PropModel() {
+            this._top = 350;
         }
         PropModel.getInstance = function () {
             if (!this._instance) {
@@ -30,6 +31,13 @@ var prop;
                 }
                 this.lastNodel = $ui;
                 this.metaDataView.data = $ui;
+                this.metaDataView.top = this._top;
+            }
+        };
+        PropModel.prototype.moveTop = function ($ty) {
+            this._top = $ty;
+            if (this.metaDataView) {
+                this.metaDataView.top = this._top;
             }
         };
         return PropModel;

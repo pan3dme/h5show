@@ -68,8 +68,33 @@ var materialui;
             $materialTree.texList = this.texVec;
             var $materialBaseParam = new MaterialBaseParam();
             $materialBaseParam.setData($materialTree, []);
-            $materialTree.fcData = this.makeFc();
-            // this.materialParam = new MaterialBaseParam();
+            $materialTree.fcNum = this.getMaxFc();
+            $materialTree.fcData = this.makeFc($materialTree.fcNum);
+            $materialTree.hasTime = this.hasTime;
+            ;
+            $materialTree.hasVertexColor = this.hasVertexColor;
+            ;
+            $materialTree.usePbr = this.usePbr;
+            ;
+            $materialTree.useNormal = this.useNormal;
+            ;
+            $materialTree.roughness = 0;
+            $materialTree.hasFresnel = this.hasFresnel;
+            ;
+            $materialTree.useDynamicIBL = this.useDynamicIBL;
+            ;
+            $materialTree.lightProbe = this.lightProbe;
+            ;
+            $materialTree.useKill = this.useKill;
+            ;
+            $materialTree.directLight = this.directLight;
+            ;
+            $materialTree.noLight = this.noLight;
+            ;
+            $materialTree.fogMode = this.fogMode;
+            ;
+            $materialTree.scaleLightMap = this.scaleLightMap;
+            ;
             return resultStr;
         };
         CompileTwo.prototype.getMaxFc = function () {
@@ -84,9 +109,8 @@ var materialui;
             }
             return maxID;
         };
-        CompileTwo.prototype.makeFc = function () {
+        CompileTwo.prototype.makeFc = function (fcNum) {
             var fcIDAry = [this._camposID, this._fogcolorID, this._scalelightmapID];
-            var fcNum = this.getMaxFc();
             var fcData = new Float32Array(fcNum * 4);
             if (this.hasTime || this.useKill || this.fogMode != 0) {
                 if (this.useKill) {

@@ -147,7 +147,7 @@ var materialui;
         };
         MaterialProcessor.prototype.readMaterialTree = function () {
             var _this = this;
-            var $url = "pan/marmoset/uilist/baseTexturedata0.txt";
+            var $url = "pan/marmoset/uilist/baseTexturedata1.txt";
             materialui.MaterialTreeManager.getInstance().getMaterial($url, function ($materialTree) {
                 _this.baseMaterialTree = $materialTree;
                 materialui.MaterialViewBuildUtils.getInstance().addFun = function (ui) { materialui.MaterialCtrl.getInstance().addNodeUI(ui); };

@@ -34,6 +34,7 @@ var left;
             _this.layer = 100;
             _this.left = 0;
             _this.top = 0;
+            _this.width = 250;
             _this._bottomRender = new UIRenderComponent;
             _this.addRender(_this._bottomRender);
             _this._midRender = new UIRenderComponent;
@@ -53,8 +54,46 @@ var left;
             $ui.left = 10;
             left.ModelShowModel.getInstance()._bigPic = this.modelPic;
             $ui.name = "modelPic";
-            this.addEvntBut;
             $ui.addEventListener(InteractiveEvent.Down, this.addStageMoveEvets, this);
+            this.showModelPic = $ui;
+        };
+        LeftPanel.prototype.resize = function () {
+            _super.prototype.resize.call(this);
+            this.height = Scene_data.stageHeight;
+            if (this.a_panel_bg) {
+                this.a_panel_bg.width = this.width;
+                this.a_panel_bg.height = this.height;
+                this.a_left_line.x = this.width - 10;
+                this.a_left_line.y = 0;
+                this.a_left_line.height = this.height;
+                this.showModelPic.width = this.width - 20;
+                this.showModelPic.height = this.width - 20;
+                this.a_compile_but.y = this.showModelPic.height + 20;
+            }
+        };
+        LeftPanel.prototype.a_left_lineDown = function ($e) {
+            this.a_left_line.data = new Vector2D($e.x, $e.y);
+            this.lastWidth = this.width;
+            Scene_data.uiStage.addEventListener(InteractiveEvent.Up, this.a_left_lineUp, this);
+        };
+        LeftPanel.prototype.a_left_lineUp = function ($e) {
+            this.a_left_line.data = null;
+            Scene_data.uiStage.removeEventListener(InteractiveEvent.Up, this.a_left_lineUp, this);
+        };
+        LeftPanel.prototype.onMoveLine = function ($e) {
+            var $select = UIManager.getInstance().getObjectsUnderPoint(new Vector2D($e.x, $e.y));
+            if ($select == this.a_left_line) {
+                Scene_data.canvas3D.style.cursor = "e-resize";
+            }
+            else {
+                Scene_data.canvas3D.style.cursor = "auto";
+            }
+            if (this.a_left_line.data) {
+                var $lastV2d = this.a_left_line.data;
+                this.width = this.lastWidth + ($e.x - $lastV2d.x);
+                this.resize();
+                prop.PropModel.getInstance().moveTop(this.width + 60);
+            }
         };
         LeftPanel.prototype.addStageMoveEvets = function ($e) {
             this.lastCameRotation = new Vector2D(Scene_data.focus3D.rotationX, Scene_data.focus3D.rotationY);
@@ -75,11 +114,13 @@ var left;
             this._bottomRender.uiAtlas = this._topRender.uiAtlas;
             this._midRender.uiAtlas = this._topRender.uiAtlas;
             this.modelPic.uiAtlas = this._topRender.uiAtlas;
-            //     this.addChild(this._topRender.getComponent("a_base"));
             this.a_compile_but = this.addEvntBut("a_compile_but", this._topRender);
             this.a_panel_bg = this.addChild(this._bottomRender.getComponent("a_panel_bg"));
             this.a_panel_bg.left = 0;
             this.a_panel_bg.top = 0;
+            this.a_left_line = this.addChild(this._topRender.getComponent("a_left_line"));
+            this.a_left_line.addEventListener(InteractiveEvent.Down, this.a_left_lineDown, this);
+            Scene_data.uiStage.addEventListener(InteractiveEvent.Move, this.onMoveLine, this);
             this.initView();
             this.resize();
         };
@@ -90,13 +131,6 @@ var left;
                     break;
                 default:
                     break;
-            }
-        };
-        LeftPanel.prototype.resize = function () {
-            _super.prototype.resize.call(this);
-            if (this.a_panel_bg) {
-                this.a_panel_bg.width = 250;
-                this.a_panel_bg.height = Scene_data.stageHeight;
             }
         };
         return LeftPanel;
