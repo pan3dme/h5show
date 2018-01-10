@@ -1,6 +1,6 @@
 /***********************************************************************/
 /***************��������Э�鹤���Զ����ɣ������ֶ��޸�****************/
-/************************ Э���汾��:#�������ƣ�ע�� ******************************/
+/************************ Э��汾��:#�������ƣ�ע�� ******************************/
 /***********************************************************************/
 //package cow.net.structs
 //{	
@@ -326,7 +326,7 @@ var Protocols = /** @class */ (function () {
         this._stream.writeUint16(3);
         //
         this._stream.writeString(sessionkey);
-        //����id
+        //���id
         this._stream.writeString(account);
         //�汾
         this._stream.writeString(version);
@@ -362,7 +362,7 @@ var Protocols = /** @class */ (function () {
         this._stream.writeUint32(mstime_now);
         //��Ȼʱ��
         this._stream.writeUint32(time_now);
-        //��Ȼʱ���ķ���������ʱ��
+        //��Ȼʱ��ķ��������ʱ��
         this._stream.writeUint32(open_time);
         this._send_func(this._stream);
     };
@@ -398,7 +398,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 21;
         this._stream.writeUint16(21);
-        //����ID
+        //���ID
         this._stream.writeUint32(id);
         this._send_func(this._stream);
     };
@@ -406,7 +406,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 23;
         this._stream.writeUint16(23);
-        //����ID
+        //���ID
         this._stream.writeString(guid);
         this._send_func(this._stream);
     };
@@ -456,7 +456,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 29;
         this._stream.writeUint16(29);
-        //����GUID
+        //���GUID
         this._stream.writeUint32(guid);
         //
         this._stream.writeUint16(pos_x);
@@ -497,7 +497,7 @@ var Protocols = /** @class */ (function () {
         this._stream.writeUint32(src_bag);
         //Դλ��
         this._stream.writeUint32(src_pos);
-        //Ŀ������
+        //Ŀ�����
         this._stream.writeUint32(dst_bag);
         //Ŀ��λ��
         this._stream.writeUint32(dst_pos);
@@ -509,7 +509,7 @@ var Protocols = /** @class */ (function () {
         this._stream.writeUint16(33);
         //��Ʒguid
         this._stream.writeString(item_guid);
-        //������Ԥ����
+        //������Ԥ���
         this._stream.writeUint32(num);
         //����ID
         this._stream.writeUint32(bag_id);
@@ -523,7 +523,7 @@ var Protocols = /** @class */ (function () {
         this._stream.writeUint8(bag_id);
         //�и��ĸ�λ����Ʒ
         this._stream.writeUint16(src_pos);
-        //�и����ٳ�ȥ
+        //�и���ٳ�ȥ
         this._stream.writeUint32(count);
         //�иʲôλ��
         this._stream.writeUint16(dst_pos);
@@ -706,7 +706,7 @@ var Protocols = /** @class */ (function () {
         this._stream.writeUint32(guid);
         //����ID
         this._stream.writeUint32(quest_id);
-        //ѡ��������
+        //ѡ������
         this._stream.writeUint8(reward);
         this._send_func(this._stream);
     };
@@ -836,7 +836,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 82;
         this._stream.writeUint16(82);
-        //�������׵���guid
+        //�����׵���guid
         this._stream.writeString(guid);
         //0:�ܾ�1:����
         this._stream.writeUint8(reply);
@@ -883,7 +883,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 90;
         this._stream.writeUint16(90);
-        //����id
+        //���id
         this._stream.writeString(guid);
         //˵������
         this._stream.writeString(content);
@@ -893,13 +893,13 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 91;
         this._stream.writeUint16(91);
-        //����id
+        //���id
         this._stream.writeString(guid);
-        //��������
+        //�������
         this._stream.writeString(name);
         //˵������
         this._stream.writeString(content);
-        //������Ӫ
+        //�����Ӫ
         this._stream.writeUint8(faction);
         this._send_func(this._stream);
     };
@@ -907,11 +907,11 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 92;
         this._stream.writeUint16(92);
-        //����guid
+        //���guid
         this._stream.writeString(guid);
-        //������Ӫ
+        //�����Ӫ
         this._stream.writeUint8(faction);
-        //��������
+        //�������
         this._stream.writeString(name);
         //˵������
         this._stream.writeString(content);
@@ -921,11 +921,11 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 93;
         this._stream.writeUint16(93);
-        //����guid
+        //���guid
         this._stream.writeString(guid);
-        //������Ӫ
+        //�����Ӫ
         this._stream.writeUint8(faction);
-        //��������
+        //�������
         this._stream.writeString(name);
         //˵������
         this._stream.writeString(content);
@@ -939,7 +939,7 @@ var Protocols = /** @class */ (function () {
         this._stream.writeUint32(id);
         //��������
         this._stream.writeString(content);
-        //Ԥ������
+        //Ԥ�����
         this._stream.writeString(data);
         this._send_func(this._stream);
     };
@@ -947,9 +947,9 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 95;
         this._stream.writeUint16(95);
-        //����guid
+        //���guid
         this._stream.writeString(guid);
-        //ÿһλ��ʾ���Ҹ�����Ϣ
+        //ÿһλ��ʾ��Ҹ�����Ϣ
         this._stream.writeUint32(flag);
         //�ص�ID
         this._stream.writeUint32(callback_id);
@@ -973,9 +973,9 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 102;
         this._stream.writeUint16(102);
-        //�����ؿ�
+        //����ؿ�
         this._stream.writeUint16(level);
-        //Ԥ������
+        //Ԥ�����
         this._stream.writeUint32(param);
         this._send_func(this._stream);
     };
@@ -1047,7 +1047,7 @@ var Protocols = /** @class */ (function () {
         this._stream.writeUint32(mstime_now);
         //��Ȼʱ��
         this._stream.writeUint32(time_now);
-        //��Ȼʱ���ķ���������ʱ��
+        //��Ȼʱ��ķ��������ʱ��
         this._stream.writeUint32(open_time);
         this._send_func(this._stream);
     };
@@ -1063,7 +1063,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 115;
         this._stream.writeUint16(115);
-        //����ID
+        //���ID
         this._stream.writeString(player_id);
         //����ʱ��
         this._stream.writeUint32(end_time);
@@ -1075,7 +1075,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 116;
         this._stream.writeUint16(116);
-        //����ID
+        //���ID
         this._stream.writeString(player_id);
         this._send_func(this._stream);
     };
@@ -1131,7 +1131,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 127;
         this._stream.writeUint16(127);
-        //����guid
+        //���guid
         this._stream.writeUint32(guid);
         this._send_func(this._stream);
     };
@@ -1149,7 +1149,7 @@ var Protocols = /** @class */ (function () {
         this._stream.writeUint16(131);
         //��������
         this._stream.writeUint8(opt);
-        //�޸Ķ�������
+        //�޸Ķ�����
         this._stream.writeUint32(cid);
         //����key
         this._stream.writeString(key);
@@ -1163,7 +1163,7 @@ var Protocols = /** @class */ (function () {
         this._stream.writeString(str_data);
         //�۲���guid
         this._stream.writeString(watcher_guid);
-        //Ԥ������
+        //Ԥ�����
         this._stream.writeUint32(reserve);
         this._send_func(this._stream);
     };
@@ -1323,7 +1323,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 157;
         this._stream.writeUint16(157);
-        //����ID
+        //���ID
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -1331,7 +1331,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 158;
         this._stream.writeUint16(158);
-        //����ID
+        //���ID
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -1339,7 +1339,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 159;
         this._stream.writeUint16(159);
-        //����ID
+        //���ID
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -1357,7 +1357,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 161;
         this._stream.writeUint16(161);
-        //vip��������id
+        //vip�������id
         this._stream.writeUint16(id);
         //vip�����Ѷ�
         this._stream.writeUint8(hard);
@@ -1367,7 +1367,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 162;
         this._stream.writeUint16(162);
-        //vip��������id
+        //vip�������id
         this._stream.writeUint16(id);
         this._send_func(this._stream);
     };
@@ -1698,7 +1698,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 218;
         this._stream.writeUint16(218);
-        //��������
+        //������
         this._stream.writeUint8(id);
         //vip����
         this._stream.writeUint8(vip);
@@ -1708,7 +1708,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 220;
         this._stream.writeUint16(220);
-        //�ɾ�����
+        //�ɾ����
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -1722,7 +1722,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 222;
         this._stream.writeUint16(222);
-        //�ƺ�����
+        //�ƺ����
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -1730,7 +1730,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 223;
         this._stream.writeUint16(223);
-        //�ƺ�����
+        //�ƺ����
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -1750,7 +1750,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 226;
         this._stream.writeUint16(226);
-        //ǩ������
+        //ǩ�����
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -1758,7 +1758,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 227;
         this._stream.writeUint16(227);
-        //ǩ������
+        //ǩ�����
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -1766,7 +1766,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 228;
         this._stream.writeUint16(228);
-        //�ȼ�����
+        //�ȼ����
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -1786,7 +1786,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 230;
         this._stream.writeUint16(230);
-        //��������
+        //�������
         this._stream.writeUint8(indx);
         this._send_func(this._stream);
     };
@@ -1826,7 +1826,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 236;
         this._stream.writeUint16(236);
-        //��������
+        //�������
         this._stream.writeUint8(num);
         this._send_func(this._stream);
     };
@@ -1834,7 +1834,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 237;
         this._stream.writeUint16(237);
-        //��������
+        //�������
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -1870,7 +1870,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 252;
         this._stream.writeUint16(252);
-        //ȡ��ƥ����������
+        //ȡ��ƥ��������
         this._stream.writeUint32(type);
         this._send_func(this._stream);
     };
@@ -1934,7 +1934,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 263;
         this._stream.writeUint16(263);
-        //����
+        //���
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -2002,7 +2002,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 284;
         this._stream.writeUint16(284);
-        //��������
+        //�������
         this._stream.writeUint8(indx);
         this._send_func(this._stream);
     };
@@ -2040,7 +2040,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 292;
         this._stream.writeUint16(292);
-        //��������
+        //�������
         this._stream.writeUint32(index);
         this._send_func(this._stream);
     };
@@ -2048,7 +2048,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 293;
         this._stream.writeUint16(293);
-        //�Ӷ���¼����
+        //�Ӷ��¼���
         this._stream.writeUint32(index);
         this._send_func(this._stream);
     };
@@ -2082,7 +2082,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 302;
         this._stream.writeUint16(302);
-        //���������±�
+        //��������±�
         this._stream.writeUint16(indx);
         this._send_func(this._stream);
     };
@@ -2108,7 +2108,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 327;
         this._stream.writeUint16(327);
-        //װ��pos �����߸���
+        //װ��pos �����߸��
         this._stream.writeString(pos_str);
         this._send_func(this._stream);
     };
@@ -2116,7 +2116,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 328;
         this._stream.writeUint16(328);
-        //װ��pos �����߸���
+        //װ��pos �����߸��
         this._stream.writeString(pos_str);
         this._send_func(this._stream);
     };
@@ -2124,7 +2124,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 329;
         this._stream.writeUint16(329);
-        //������pos
+        //�����pos
         this._stream.writeUint32(pos);
         this._send_func(this._stream);
     };
@@ -2132,7 +2132,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 330;
         this._stream.writeUint16(330);
-        //������pos
+        //�����pos
         this._stream.writeUint32(pos);
         this._send_func(this._stream);
     };
@@ -2155,7 +2155,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 332;
         this._stream.writeUint16(332);
-        //������count_id
+        //�����count_id
         this._stream.writeUint32(count_id);
         this._send_func(this._stream);
     };
@@ -2177,7 +2177,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 342;
         this._stream.writeUint16(342);
-        //����id
+        //���id
         this._stream.writeUint32(id);
         //����
         this._stream.writeUint32(count);
@@ -2187,7 +2187,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 343;
         this._stream.writeUint16(343);
-        //����id
+        //���id
         this._stream.writeUint32(id);
         this._send_func(this._stream);
     };
@@ -2195,7 +2195,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 344;
         this._stream.writeUint16(344);
-        //����id
+        //���id
         this._stream.writeUint32(id);
         //ʧ�ܱ���
         this._stream.writeUint32(protect);
@@ -2207,7 +2207,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 352;
         this._stream.writeUint16(352);
-        //ȫ��boss����
+        //ȫ��boss���
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -2215,7 +2215,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 354;
         this._stream.writeUint16(354);
-        //ȫ��boss����
+        //ȫ��boss���
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -2223,7 +2223,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 356;
         this._stream.writeUint16(356);
-        //ȫ��boss����
+        //ȫ��boss���
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -2231,7 +2231,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 357;
         this._stream.writeUint16(357);
-        //��������
+        //�������
         this._stream.writeUint8(cnt);
         this._send_func(this._stream);
     };
@@ -2239,7 +2239,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 358;
         this._stream.writeUint16(358);
-        //���Ӹ�������
+        //��Ӹ�������
         this._stream.writeUint8(indx);
         this._send_func(this._stream);
     };
@@ -2301,7 +2301,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 367;
         this._stream.writeUint16(367);
-        //�������ߵ������б�
+        //�������ߵ�����б�
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -2327,7 +2327,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 377;
         this._stream.writeUint16(377);
-        //��������
+        //�������
         this._stream.writeUint8(cnt);
         this._send_func(this._stream);
     };
@@ -2335,7 +2335,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 378;
         this._stream.writeUint16(378);
-        //��ȡ����
+        //��ȡ���
         this._stream.writeUint8(id);
         this._send_func(this._stream);
     };
@@ -2359,7 +2359,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 381;
         this._stream.writeUint16(381);
-        //����id
+        //���id
         this._stream.writeUint16(id);
         this._send_func(this._stream);
     };
@@ -2367,7 +2367,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 382;
         this._stream.writeUint16(382);
-        //����id
+        //���id
         this._stream.writeUint16(id);
         this._send_func(this._stream);
     };
@@ -2375,7 +2375,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 383;
         this._stream.writeUint16(383);
-        //��������
+        //�������
         this._stream.writeUint8(type);
         this._send_func(this._stream);
     };
@@ -2421,7 +2421,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 389;
         this._stream.writeUint16(389);
-        //����id
+        //���id
         this._stream.writeString(guid);
         this._send_func(this._stream);
     };
@@ -2429,7 +2429,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 391;
         this._stream.writeUint16(391);
-        //����id
+        //���id
         this._stream.writeString(guid);
         this._send_func(this._stream);
     };
@@ -2437,7 +2437,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 393;
         this._stream.writeUint16(393);
-        //����id
+        //���id
         this._stream.writeUint32(id);
         this._send_func(this._stream);
     };
@@ -2447,7 +2447,7 @@ var Protocols = /** @class */ (function () {
         this._stream.writeUint16(394);
         //�id
         this._stream.writeUint32(act_id);
-        //�����±�
+        //����±�
         this._stream.writeUint32(index);
         this._send_func(this._stream);
     };
@@ -2485,7 +2485,7 @@ var Protocols = /** @class */ (function () {
         this._stream.writeUint16(399);
         //�id
         this._stream.writeUint32(act_id);
-        //�����±�
+        //����±�
         this._stream.writeUint32(index);
         this._send_func(this._stream);
     };
@@ -2537,7 +2537,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 408;
         this._stream.writeUint16(408);
-        //����id
+        //���id
         this._stream.writeUint32(id);
         this._send_func(this._stream);
     };
@@ -2621,7 +2621,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 420;
         this._stream.writeUint16(420);
-        //����guid
+        //���guid
         this._stream.writeString(guid);
         this._send_func(this._stream);
     };
@@ -2635,7 +2635,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 422;
         this._stream.writeUint16(422);
-        //����guid
+        //���guid
         this._stream.writeString(guid);
         this._send_func(this._stream);
     };
@@ -2643,7 +2643,7 @@ var Protocols = /** @class */ (function () {
         this._stream.reset();
         this._stream.optcode = 423;
         this._stream.writeUint16(423);
-        //����guid
+        //���guid
         this._stream.writeString(guid);
         this._send_func(this._stream);
     };
@@ -2667,7 +2667,7 @@ var Protocols = /** @class */ (function () {
     Protocols.MSG_PING_PONG = 1; //ping_pong
     /*�ߵ����ߵ�׼��ǿ�Ƶ�½*/
     Protocols.CMSG_FORCED_INTO = 2; //forced_into
-    /*����Session����*/
+    /*���Session����*/
     Protocols.CMSG_GET_SESSION = 3; //get_session
     /*���ط����ݰ�·�ɲ���*/
     Protocols.MSG_ROUTE_TRACE = 4; //route_trace
@@ -2677,15 +2677,15 @@ var Protocols = /** @class */ (function () {
     Protocols.SMSG_OPERATION_FAILED = 6; //operation_failed
     /*ͬ��ʱ��*/
     Protocols.MSG_SYNC_MSTIME = 7; //sync_mstime
-    /*��������*/
+    /*�������*/
     Protocols.SMSG_UD_OBJECT = 8; //ud_object
-    /*�������¿���Э��*/
+    /*������¿���Э��*/
     Protocols.CMSG_UD_CONTROL = 9; //ud_control
-    /*�������¿���Э������*/
+    /*������¿���Э����*/
     Protocols.SMSG_UD_CONTROL_RESULT = 10; //ud_control_result
-    /*GRID�Ķ�������*/
+    /*GRID�Ķ������*/
     Protocols.SMSG_GRID_UD_OBJECT = 11; //grid_ud_object
-    /*GRID�Ķ�������*/
+    /*GRID�Ķ������*/
     Protocols.SMSG_GRID_UD_OBJECT_2 = 12; //grid_ud_object_2
     /*���߿ͻ��ˣ�Ŀǰ�Լ����ڵ�¼���еĵڼ�λ*/
     Protocols.SMSG_LOGIN_QUEUE_INDEX = 13; //login_queue_index
@@ -2695,21 +2695,21 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_GET_CHARS_LIST = 15; //get_chars_list
     /*��ɫ�б�*/
     Protocols.SMSG_CHARS_LIST = 16; //chars_list
-    /*���������Ƿ�����ʹ��*/
+    /*��������Ƿ����ʹ��*/
     Protocols.CMSG_CHECK_NAME = 17; //check_name
-    /*�������ֽ���*/
+    /*������ֽ��*/
     Protocols.SMSG_CHECK_NAME_RESULT = 18; //check_name_result
     /*������ɫ*/
     Protocols.CMSG_CHAR_CREATE = 19; //char_create
-    /*��ɫ��������*/
+    /*��ɫ�������*/
     Protocols.SMSG_CHAR_CREATE_RESULT = 20; //char_create_result
     /*ɾ����ɫ*/
     Protocols.CMSG_DELETE_CHAR = 21; //delete_char
-    /*��ɫɾ������*/
+    /*��ɫɾ�����*/
     Protocols.SMSG_DELETE_CHAR_RESULT = 22; //delete_char_result
-    /*���ҵ�¼*/
+    /*��ҵ�¼*/
     Protocols.CMSG_PLAYER_LOGIN = 23; //player_login
-    /*�����˳�*/
+    /*����˳�*/
     Protocols.CMSG_PLAYER_LOGOUT = 24; //player_logout
     /*��ʱ�˺�ת����*/
     Protocols.CMSG_REGULARISE_ACCOUNT = 25; //regularise_account
@@ -2717,7 +2717,7 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_CHAR_REMOTESTORE = 26; //char_remotestore
     /*��ɫ������Ϣ*/
     Protocols.CMSG_CHAR_REMOTESTORE_STR = 27; //char_remotestore_str
-    /*���ͣ�������C->S��mapid���������ɴ��͵�ID*/
+    /*���ͣ������C->S��mapid��������ɴ��͵�ID*/
     Protocols.CMSG_TELEPORT = 28; //teleport
     /*ֹͣ�ƶ�*/
     Protocols.MSG_MOVE_STOP = 29; //move_stop
@@ -2735,9 +2735,9 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_BAG_ITEM_USER = 35; //bag_item_user
     /*�·���Ʒ��ȴ*/
     Protocols.SMSG_BAG_ITEM_COOLDOWN = 36; //bag_item_cooldown
-    /*grid�е�unit�ƶ���������*/
+    /*grid�е�unit�ƶ�������*/
     Protocols.SMSG_GRID_UNIT_MOVE = 37; //grid_unit_move
-    /*grid�е�unit�ƶ���������2*/
+    /*grid�е�unit�ƶ�������2*/
     Protocols.SMSG_GRID_UNIT_MOVE_2 = 38; //grid_unit_move_2
     /*�һ���Ʒ*/
     Protocols.CMSG_EXCHANGE_ITEM = 39; //exchange_item
@@ -2755,13 +2755,13 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_NPC_REPURCHASE = 45; //npc_repurchase
     /*ʱװ�Ƿ�����*/
     Protocols.CMSG_AVATAR_FASHION_ENABLE = 46; //avatar_fashion_enable
-    /*�����Ի�ѡ��*/
+    /*����Ի�ѡ��*/
     Protocols.CMSG_QUESTHELP_TALK_OPTION = 47; //questhelp_talk_option
-    /*��NPC�Ի����ô��͵��б�*/
+    /*��NPC�Ի���ô��͵��б�*/
     Protocols.CMSG_TAXI_HELLO = 48; //taxi_hello
     /*���ʹ��͵��б�*/
     Protocols.SMSG_TAXI_STATIONS_LIST = 49; //taxi_stations_list
-    /*ѡ�����͵�*/
+    /*ѡ���͵�*/
     Protocols.CMSG_TAXI_SELECT_STATION = 50; //taxi_select_station
     /*��NPC����ѡ��ѡ��*/
     Protocols.CMSG_GOSSIP_SELECT_OPTION = 51; //gossip_select_option
@@ -2781,21 +2781,21 @@ var Protocols = /** @class */ (function () {
     Protocols.SMSG_QUESTHELP_CANACCEPT_LIST = 58; //questhelp_canaccept_list
     /*����ʧ��*/
     Protocols.SMSG_QUESTUPDATE_FAILD = 59; //questupdate_faild
-    /*������������*/
+    /*�����������*/
     Protocols.SMSG_QUESTUPDATE_COMPLETE = 60; //questupdate_complete
     /*��������*/
     Protocols.CMSG_QUESTLOG_REMOVE_QUEST = 61; //questlog_remove_quest
-    /*��������*/
+    /*�������*/
     Protocols.CMSG_QUESTGIVER_COMPLETE_QUEST = 62; //questgiver_complete_quest
-    /*����������֪ͨ���������¸�����*/
+    /*��������֪ͨ���������¸�����*/
     Protocols.SMSG_QUESTHELP_NEXT = 63; //questhelp_next
-    /*����ϵͳǿ����������*/
+    /*����ϵͳǿ���������*/
     Protocols.CMSG_QUESTHELP_COMPLETE = 64; //questhelp_complete
-    /*���������ɹ�*/
+    /*��������ɹ�*/
     Protocols.SMSG_QUESTUPDATE_ACCEPT = 65; //questupdate_accept
-    /*������������_�±�����*/
+    /*�����������_�±�����*/
     Protocols.CMSG_QUESTHELP_UPDATE_STATUS = 66; //questhelp_update_status
-    /*����������*/
+    /*���������*/
     Protocols.SMSG_QUESTGETTER_COMPLETE = 67; //questgetter_complete
     /*������*/
     Protocols.CMSG_QUESTGIVER_ACCEPT_QUEST = 68; //questgiver_accept_quest
@@ -2805,7 +2805,7 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_QUESTHELP_QUERY_BOOK = 70; //questhelp_query_book
     /*�·��ɽ���������*/
     Protocols.SMSG_QUESTHELP_BOOK_QUEST = 71; //questhelp_book_quest
-    /*����ʹ����Ϸ�����Ժ��Ķ���*/
+    /*���ʹ����Ϸ�����Ժ�Ķ���*/
     Protocols.SMSG_USE_GAMEOBJECT_ACTION = 72; //use_gameobject_action
     /*���ù���ģʽ*/
     Protocols.CMSG_SET_ATTACK_MODE = 73; //set_attack_mode
@@ -2813,7 +2813,7 @@ var Protocols = /** @class */ (function () {
     Protocols.MSG_SELECT_TARGET = 74; //select_target
     /*����ս��*/
     Protocols.SMSG_COMBAT_STATE_UPDATE = 75; //combat_state_update
-    /*��������*/
+    /*�������*/
     Protocols.SMSG_EXP_UPDATE = 76; //exp_update
     /*�ͻ����ͷż���*/
     Protocols.MSG_SPELL_START = 77; //spell_start
@@ -2825,13 +2825,13 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_RESURRECTION = 80; //resurrection
     /*���׷�������*/
     Protocols.MSG_TRADE_REQUEST = 81; //trade_request
-    /*������������*/
+    /*���������*/
     Protocols.MSG_TRADE_REPLY = 82; //trade_reply
     /*���׿�ʼ*/
     Protocols.SMSG_TRADE_START = 83; //trade_start
     /*����ȷ����Ʒ*/
     Protocols.MSG_TRADE_DECIDE_ITEMS = 84; //trade_decide_items
-    /*��������*/
+    /*�������*/
     Protocols.SMSG_TRADE_FINISH = 85; //trade_finish
     /*����ȡ��*/
     Protocols.MSG_TRADE_CANCEL = 86; //trade_cancel
@@ -2851,13 +2851,13 @@ var Protocols = /** @class */ (function () {
     Protocols.MSG_CHAT_HORN = 93; //chat_horn
     /*����*/
     Protocols.MSG_CHAT_NOTICE = 94; //chat_notice
-    /*��ѯ������Ϣ*/
+    /*��ѯ�����Ϣ*/
     Protocols.CMSG_QUERY_PLAYER_INFO = 95; //query_player_info
-    /*��ѯ��Ϣ��������*/
+    /*��ѯ��Ϣ�������*/
     Protocols.SMSG_QUERY_RESULT_UPDATE_OBJECT = 96; //query_result_update_object
-    /*��ȡ����*/
+    /*��ȡ���*/
     Protocols.CMSG_RECEIVE_GIFT_PACKS = 97; //receive_gift_packs
-    /*��ͼ��������*/
+    /*��ͼ�������*/
     Protocols.SMSG_MAP_UPDATE_OBJECT = 98; //map_update_object
     /*ս����Ϣbinlog*/
     Protocols.SMSG_FIGHTING_INFO_UPDATE_OBJECT = 99; //fighting_info_update_object
@@ -2865,7 +2865,7 @@ var Protocols = /** @class */ (function () {
     Protocols.SMSG_FIGHTING_INFO_UPDATE_OBJECT_2 = 100; //fighting_info_update_object_2
     /*���븱��*/
     Protocols.CMSG_INSTANCE_ENTER = 101; //instance_enter
-    /*�������˷��͸���������һ�׶�ָ��*/
+    /*�����˷��͸���������һ�׶�ָ��*/
     Protocols.CMSG_INSTANCE_NEXT_STATE = 102; //instance_next_state
     /*�����˳�*/
     Protocols.CMSG_INSTANCE_EXIT = 103; //instance_exit
@@ -2873,9 +2873,9 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_LIMIT_ACTIVITY_RECEIVE = 104; //limit_activity_receive
     /*ɱ����~~��������*/
     Protocols.SMSG_KILL_MAN = 105; //kill_man
-    /*��������*/
+    /*�������*/
     Protocols.SMSG_PLAYER_UPGRADE = 106; //player_upgrade
-    /*�ֿ���Ǯ*/
+    /*�ֿ��Ǯ*/
     Protocols.CMSG_WAREHOUSE_SAVE_MONEY = 107; //warehouse_save_money
     /*�ֿ�ȡǮ*/
     Protocols.CMSG_WAREHOUSE_TAKE_MONEY = 108; //warehouse_take_money
@@ -2889,7 +2889,7 @@ var Protocols = /** @class */ (function () {
     Protocols.SMSG_DEL_GM_RIGHTFLOAT = 112; //del_gm_rightfloat
     /*Ӧ�÷�ͬ��ʱ��*/
     Protocols.MSG_SYNC_MSTIME_APP = 113; //sync_mstime_app
-    /*���Ҵ���ĳ������*/
+    /*��Ҵ�ĳ������*/
     Protocols.CMSG_OPEN_WINDOW = 114; //open_window
     /*���Բ���*/
     Protocols.CMSG_PLAYER_GAG = 115; //player_gag
@@ -2899,25 +2899,25 @@ var Protocols = /** @class */ (function () {
     Protocols.SMSG_MERGE_SERVER_MSG = 117; //merge_server_msg
     /*��ȡ������Ϣ*/
     Protocols.CMSG_RANK_LIST_QUERY = 118; //rank_list_query
-    /*�ͻ��˻�ȡ���а񷵻ؽ���*/
+    /*�ͻ��˻�ȡ���а񷵻ؽ��*/
     Protocols.SMSG_RANK_LIST_QUERY_RESULT = 119; //rank_list_query_result
-    /*�ͻ����ȸ�����ģ������ȡuint*/
+    /*�ͻ����ȸ�����ģ����ȡuint*/
     Protocols.CMSG_CLIENT_UPDATE_SCENED = 120; //client_update_scened
     /*��ֵ��*/
     Protocols.SMSG_NUM_LUA = 121; //num_lua
     /*ս��Ʒʰȡ*/
     Protocols.CMSG_LOOT_SELECT = 122; //loot_select
-    /*֪ͨ��¼�������Ҵ�����Ϸ��*/
+    /*֪ͨ��¼������Ҵ�����Ϸ��*/
     Protocols.CMSG_GOBACK_TO_GAME_SERVER = 123; //goback_to_game_server
     /*�ͻ��˰ѱ�����Ա���ݴ���������*/
     Protocols.CMSG_WORLD_WAR_CS_PLAYER_INFO = 124; //world_war_CS_player_info
-    /*���Ҽ��������뿪ĳ������*/
+    /*��Ҽ�������뿪ĳ������*/
     Protocols.SMSG_JOIN_OR_LEAVE_SERVER = 125; //join_or_leave_server
-    /*�ͻ�������������Ա����*/
+    /*�ͻ�����������Ա����*/
     Protocols.MSG_WORLD_WAR_SC_PLAYER_INFO = 126; //world_war_SC_player_info
     /*�ͻ��˶�����Ϣ*/
     Protocols.MSG_CLIENTSUBSCRIPTION = 127; //clientSubscription
-    /*�������·�lua�ű�*/
+    /*������·�lua�ű�*/
     Protocols.SMSG_LUA_SCRIPT = 128; //lua_script
     /*��ɫ������Ϣ*/
     Protocols.CMSG_CHAR_UPDATE_INFO = 129; //char_update_info
@@ -2925,7 +2925,7 @@ var Protocols = /** @class */ (function () {
     Protocols.SMSG_NOTICE_WATCHER_MAP_INFO = 130; //notice_watcher_map_info
     /*�ͻ��˶��Ķ�����Ϣ*/
     Protocols.CMSG_MODIFY_WATCH = 131; //modify_watch
-    /*��������*/
+    /*�������*/
     Protocols.CMSG_KUAFU_CHUANSONG = 132; //kuafu_chuansong
     /*��ʾ��ǰװ��*/
     Protocols.CMSG_SHOW_SUIT = 133; //show_suit
@@ -2947,7 +2947,7 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_CREATE_FACTION = 142; //create_faction
     /*��������*/
     Protocols.CMSG_FACTION_UPGRADE = 143; //faction_upgrade
-    /*������������*/
+    /*����������*/
     Protocols.CMSG_FACTION_JOIN = 144; //faction_join
     /*������������*/
     Protocols.CMSG_RAISE_BASE_SPELL = 145; //raise_base_spell
@@ -2959,11 +2959,11 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_UPGRADE_MOUNT = 148; //upgrade_mount
     /*����һ����������*/
     Protocols.CMSG_UPGRADE_MOUNT_ONE_STEP = 149; //upgrade_mount_one_step
-    /*���������û�����*/
+    /*��������û�����*/
     Protocols.CMSG_ILLUSION_MOUNT_ACTIVE = 150; //illusion_mount_active
-    /*�����û�����*/
+    /*����û�����*/
     Protocols.CMSG_ILLUSION_MOUNT = 151; //illusion_mount
-    /*��������*/
+    /*�������*/
     Protocols.CMSG_RIDE_MOUNT = 152; //ride_mount
     /*grid�е�unit��Ծ*/
     Protocols.SMSG_GRID_UNIT_JUMP = 153; //grid_unit_jump
@@ -2973,15 +2973,15 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_CHANGE_BATTLE_MODE = 155; //change_battle_mode
     /*��ƽģʽCD*/
     Protocols.SMSG_PEACE_MODE_CD = 156; //peace_mode_cd
-    /*��������*/
+    /*�������*/
     Protocols.CMSG_DIVINE_ACTIVE = 157; //divine_active
-    /*��������*/
+    /*�������*/
     Protocols.CMSG_DIVINE_UPLEV = 158; //divine_uplev
-    /*�л�����*/
+    /*�л����*/
     Protocols.CMSG_DIVINE_SWITCH = 159; //divine_switch
     /*������Ծ*/
     Protocols.CMSG_JUMP_START = 160; //jump_start
-    /*��������vip����*/
+    /*�������vip����*/
     Protocols.CMSG_ENTER_VIP_INSTANCE = 161; //enter_vip_instance
     /*����ɨ��vip����*/
     Protocols.CMSG_SWEEP_VIP_INSTANCE = 162; //sweep_vip_instance
@@ -2989,7 +2989,7 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_HANG_UP = 163; //hang_up
     /*���йһ�����*/
     Protocols.CMSG_HANG_UP_SETTING = 164; //hang_up_setting
-    /*������������������*/
+    /*�����������������*/
     Protocols.CMSG_ENTER_TRIAL_INSTANCE = 165; //enter_trial_instance
     /*ɨ������������*/
     Protocols.CMSG_SWEEP_TRIAL_INSTANCE = 166; //sweep_trial_instance
@@ -2999,11 +2999,11 @@ var Protocols = /** @class */ (function () {
     Protocols.SMSG_SWEEP_INSTANCE_REWARD = 168; //sweep_instance_reward
     /*�ؽ�����*/
     Protocols.CMSG_REENTER_INSTANCE = 169; //reenter_instance
-    /*��������Ϣ*/
+    /*�������Ϣ*/
     Protocols.SMSG_MERRY_GO_ROUND = 170; //merry_go_round
-    /*���Ӻ���*/
+    /*��Ӻ���*/
     Protocols.CMSG_SOCIAL_ADD_FRIEND = 171; //social_add_friend
-    /*ͬ�����Ӻ���*/
+    /*ͬ����Ӻ���*/
     Protocols.CMSG_SOCIAL_SUREADD_FRIEND = 172; //social_sureadd_friend
     /*��������*/
     Protocols.CMSG_SOCIAL_GIFT_FRIEND = 173; //social_gift_friend
@@ -3021,7 +3021,7 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_CHAT_BY_CHANNEL = 179; //chat_by_channel
     /*��������*/
     Protocols.SMSG_SEND_CHAT = 180; //send_chat
-    /*���������б�*/
+    /*��������б�*/
     Protocols.CMSG_SOCIAL_CLEAR_APPLY = 181; //social_clear_apply
     /*���þܾ�������Ϣ*/
     Protocols.CMSG_MSG_DECLINE = 182; //msg_decline
@@ -3033,9 +3033,9 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_FACTION_MANAGER = 185; //faction_manager
     /*���ɳ�Ա����*/
     Protocols.CMSG_FACTION_MEMBER_OPERATE = 186; //faction_member_operate
-    /*���ټ�������*/
+    /*���ټ������*/
     Protocols.CMSG_FACTION_FAST_JOIN = 187; //faction_fast_join
-    /*ͨ���������Ӻ���*/
+    /*ͨ��������Ӻ���*/
     Protocols.CMSG_SOCIAL_ADD_FRIEND_BYNAME = 188; //social_add_friend_byname
     /*���ʼ�*/
     Protocols.CMSG_READ_MAIL = 190; //read_mail
@@ -3061,13 +3061,13 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_CHANGE_LINE = 203; //change_line
     /*roll����BOSS����*/
     Protocols.CMSG_ROLL_WORLD_BOSS_TREASURE = 204; //roll_world_boss_treasure
-    /*roll������*/
+    /*roll����*/
     Protocols.SMSG_ROLL_RESULT = 205; //roll_result
     /*��ǰBOSS�˺�����*/
     Protocols.SMSG_BOSS_RANK = 206; //boss_rank
-    /*���а�����*/
+    /*���а����*/
     Protocols.CMSG_RANK_ADD_LIKE = 207; //rank_add_like
-    /*���а����޽���*/
+    /*���а���޽��*/
     Protocols.SMSG_RANK_ADD_LIKE_RESULT = 208; //rank_add_like_result
     /*������Դ����*/
     Protocols.CMSG_RES_INSTANCE_ENTER = 210; //res_instance_enter
@@ -3077,9 +3077,9 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_SHOW_MAP_LINE = 212; //show_map_line
     /*���ر���ͼ�ķ��ߺ���Ϣ*/
     Protocols.SMSG_SEND_MAP_LINE = 213; //send_map_line
-    /*���ý�����ʾ*/
+    /*��ý�����ʾ*/
     Protocols.SMSG_ITEM_NOTICE = 214; //item_notice
-    /*���͵�ĳ��������ͼ*/
+    /*���͵�ĳ�������ͼ*/
     Protocols.CMSG_TELEPORT_MAP = 216; //teleport_map
     /*���͵�Ұ��boss�Ա�*/
     Protocols.CMSG_TELEPORT_FIELD_BOSS = 217; //teleport_field_boss
@@ -3105,7 +3105,7 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_WELFARE_LEVEL = 228; //welfare_level
     /*��һؽ���*/
     Protocols.CMSG_WELFARE_ACTIVE_GETBACK = 229; //welfare_active_getback
-    /*��ȡ��������*/
+    /*��ȡ������*/
     Protocols.CMSG_PICK_QUEST_REWARD = 230; //pick_quest_reward
     /*��npc�Ի�*/
     Protocols.CMSG_TALK_WITH_NPC = 231; //talk_with_npc
@@ -3113,17 +3113,17 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_USE_VIRTUAL_ITEM = 232; //use_virtual_item
     /*��ȡ�����½ڽ���*/
     Protocols.CMSG_PICK_QUEST_CHAPTER_REWARD = 233; //pick_quest_chapter_reward
-    /*3v3����ƥ��*/
+    /*3v3���ƥ��*/
     Protocols.CMSG_KUAFU_3V3_MATCH = 234; //kuafu_3v3_match
-    /*������ʼƥ��*/
+    /*�����ʼƥ��*/
     Protocols.SMSG_KUAFU_MATCH_START = 235; //kuafu_match_start
-    /*3v3��������*/
+    /*3v3�������*/
     Protocols.CMSG_KUAFU_3V3_BUYTIMES = 236; //kuafu_3v3_buytimes
     /*3v3ÿ�ջ�Ծ����*/
     Protocols.CMSG_KUAFU_3V3_DAYREWARD = 237; //kuafu_3v3_dayreward
     /*����3v3���а�*/
     Protocols.CMSG_KUAFU_3V3_GETRANLIST = 238; //kuafu_3v3_getranlist
-    /*3v3���а������б�*/
+    /*3v3���а����б�*/
     Protocols.SMSG_KUAFU_3V3_RANLIST = 239; //kuafu_3v3_ranlist
     /*�������н����б�*/
     Protocols.CMSG_WELFARE_GETALLLIST_GETBACK = 240; //welfare_getalllist_getback
@@ -3133,11 +3133,11 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_WELFARE_GETALL_GETBACK = 242; //welfare_getall_getback
     /*����3v3���а��Լ�������*/
     Protocols.CMSG_KUAFU_3V3_GETMYRANK = 248; //kuafu_3v3_getmyrank
-    /*3v3���а��Լ������ν���*/
+    /*3v3���а��Լ������ν��*/
     Protocols.SMSG_KUAFU_3V3_MYRANK = 249; //kuafu_3v3_myrank
     /*��ɱ����*/
     Protocols.SMSG_KUAFU_3V3_KILL_DETAIL = 250; //kuafu_3v3_kill_detail
-    /*����ƥ���ȴ�����*/
+    /*���ƥ��ȴ�����*/
     Protocols.SMSG_KUAFU_3V3_WAIT_INFO = 251; //kuafu_3v3_wait_info
     /*ȡ��ƥ��*/
     Protocols.MSG_KUAFU_3V3_CANCEL_MATCH = 252; //kuafu_3v3_cancel_match
@@ -3145,19 +3145,19 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_KUAFU_3V3_MATCH_OPER = 253; //kuafu_3v3_match_oper
     /*�ܾ�����*/
     Protocols.SMSG_KUAFU_3V3_DECLINE_MATCH = 254; //kuafu_3v3_decline_match
-    /*�ɸ��ᱦ����ƥ��*/
+    /*�ɸ��ᱦ���ƥ��*/
     Protocols.CMSG_KUAFU_XIANFU_MATCH = 255; //kuafu_xianfu_match
-    /*��������ƥ���ȴ�*/
+    /*�������ƥ��ȴ�*/
     Protocols.SMSG_KUAFU_MATCH_WAIT = 256; //kuafu_match_wait
     /*�ɸ��ᱦС��ͼ��Ϣ*/
     Protocols.SMSG_KUAFU_XIANFU_MINIMAP_INFO = 257; //kuafu_xianfu_minimap_info
     /*�����ɸ�����ȯ*/
     Protocols.CMSG_BUY_XIANFU_ITEM = 258; //buy_xianfu_item
-    /*��������*/
+    /*�������*/
     Protocols.CMSG_XIANFU_RANDOM_RESPAWN = 259; //xianfu_random_respawn
     /*����̨��ս*/
     Protocols.CMSG_DOUJIANTAI_FIGHT = 260; //doujiantai_fight
-    /*����̨��������*/
+    /*����̨�������*/
     Protocols.CMSG_DOUJIANTAI_BUYTIME = 261; //doujiantai_buytime
     /*����̨����CD*/
     Protocols.CMSG_DOUJIANTAI_CLEARCD = 262; //doujiantai_clearcd
@@ -3183,11 +3183,11 @@ var Protocols = /** @class */ (function () {
     Protocols.SMSG_ATTRIBUTE_CHANGED = 281; //attribute_changed
     /*�����и�ǿװ��*/
     Protocols.SMSG_BAG_FIND_EQUIP_BETTER = 282; //bag_find_equip_better
-    /*ģ������*/
+    /*ģ�����*/
     Protocols.SMSG_MODULE_ACTIVE = 283; //module_active
-    /*��ȡ�ճ���������*/
+    /*��ȡ�ճ�������*/
     Protocols.CMSG_PICK_DAILY2_QUEST_REWARD = 284; //pick_daily2_quest_reward
-    /*���ɵ�ǰ����*/
+    /*��ɵ�ǰ����*/
     Protocols.CMSG_FINISH_NOW_GUIDE = 285; //finish_now_guide
     /*ȡ����������Ϣ*/
     Protocols.CMSG_GET_CULTIVATION_INFO = 286; //get_cultivation_info
@@ -3207,27 +3207,27 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_REVENGE_CULTIVATION_RIVAL = 293; //revenge_cultivation_rival
     /*����������ʣ����ս����*/
     Protocols.CMSG_BUY_CULTIVATION_LEFT_PLUNDER_COUNT = 294; //buy_cultivation_left_plunder_count
-    /*����������ս������*/
+    /*����������ս�����*/
     Protocols.SMSG_SHOW_CULTIVATION_RESULT_LIST = 295; //show_cultivation_result_list
-    /*��ȡ��¼��������*/
+    /*��ȡ��¼������*/
     Protocols.CMSG_GET_LOGIN_ACTIVITY_REWARD = 296; //get_login_activity_reward
     /*֪ͨ�ͻ����ͷ���������*/
     Protocols.SMSG_CAST_SPELL_START = 300; //cast_spell_start
-    /*���ɷ�ǿ�������Ĳ���*/
+    /*��ɷ�ǿ�������Ĳ���*/
     Protocols.CMSG_FINISH_OPTIONAL_GUIDE_STEP = 301; //finish_optional_guide_step
-    /*ִ�нӵ������Ժ�������*/
+    /*ִ�нӵ������Ժ������*/
     Protocols.CMSG_EXECUTE_QUEST_CMD_AFTER_ACCEPTED = 302; //execute_quest_cmd_after_accepted
     /*֪ͨ�ͻ�����ʾ����*/
     Protocols.SMSG_SHOW_UNIT_ATTRIBUTE = 310; //show_unit_attribute
     /*���ؼ���*/
     Protocols.CMSG_BACK_TO_FAMITY = 320; //back_to_famity
-    /*���ؼ���boss����*/
+    /*���ؼ���boss���*/
     Protocols.SMSG_FACTION_BOSS_SEND_RESULT = 321; //faction_boss_send_result
     /*��սboss*/
     Protocols.CMSG_CHALLANGE_BOSS = 322; //challange_boss
     /*��ȡ���߽���*/
     Protocols.CMSG_PICK_OFFLINE_REWARD = 325; //pick_offline_reward
-    /*���߽�������*/
+    /*���߽������*/
     Protocols.SMSG_OFFLINE_REWARD_RESULT = 326; //offline_reward_result
     /*����װ��*/
     Protocols.CMSG_SMELTING_EQUIP = 327; //smelting_equip
@@ -3251,7 +3251,7 @@ var Protocols = /** @class */ (function () {
     Protocols.SMSG_SHOW_FACTION_GIFT_UNTHANK_PAGE = 336; //show_faction_gift_unthank_page
     /*����Ů����ʷ��¼*/
     Protocols.SMSG_SHOW_FACTION_GIFT_HISTORY_PAGE = 337; //show_faction_gift_history_page
-    /*����������������*/
+    /*���������������*/
     Protocols.CMSG_GET_FACTION_GIFT_RANK_PAGE = 338; //get_faction_gift_rank_page
     /*���ؼ�����������*/
     Protocols.SMSG_SHOW_FACTION_GIFT_RANK_RESULT_LIST = 339; //show_faction_gift_rank_result_list
@@ -3259,27 +3259,27 @@ var Protocols = /** @class */ (function () {
     Protocols.SMSG_SHOW_FACTION_GIFT_RANK_CHANGE = 340; //show_faction_gift_rank_change
     /*���ر�������������*/
     Protocols.SMSG_SHOW_FACTION_GIFT_RANK_INFO = 341; //show_faction_gift_rank_info
-    /*����ǿ��*/
+    /*���ǿ��*/
     Protocols.CMSG_DIVINE_FORGE = 342; //divine_forge
-    /*��������*/
+    /*�������*/
     Protocols.CMSG_DIVINE_ADVANCE = 343; //divine_advance
-    /*��������*/
+    /*�������*/
     Protocols.CMSG_DIVINE_SPIRIT = 344; //divine_spirit
     /*��ѯȫ��boss��Ϣ*/
     Protocols.CMSG_QUERY_MASS_BOSS_INFO = 352; //query_mass_boss_info
-    /*ȫ��boss��Ϣ����*/
+    /*ȫ��boss��Ϣ���*/
     Protocols.SMSG_MASS_BOSS_INFO_RET = 353; //mass_boss_info_ret
     /*��ѯȫ��boss���а�*/
     Protocols.CMSG_QUERY_MASS_BOSS_RANK = 354; //query_mass_boss_rank
-    /*ȫ��boss���н���*/
+    /*ȫ��boss���н��*/
     Protocols.SMSG_MASS_BOSS_RANK_RESULT = 355; //mass_boss_rank_result
     /*��սȫ��boss*/
     Protocols.CMSG_TRY_MASS_BOSS = 356; //try_mass_boss
     /*������սȫ��boss����*/
     Protocols.CMSG_BUY_MASS_BOSS_TIMES = 357; //buy_mass_boss_times
-    /*���Ӹ�������ƥ��*/
+    /*��Ӹ������ƥ��*/
     Protocols.CMSG_GROUP_INSTANCE_MATCH = 358; //group_instance_match
-    /*���Ӹ���������������*/
+    /*��Ӹ��������������*/
     Protocols.CMSG_BUY_GROUP_INSTANCE_TIMES = 359; //buy_group_instance_times
     /*��������*/
     Protocols.CMSG_TALISMAN_ACTIVE = 360; //talisman_active
@@ -3297,51 +3297,51 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_MERIDIAN_PRACTISE = 366; //meridian_practise
     /*�Ӿ�����������ֵ*/
     Protocols.CMSG_ADD_MERIDIAN_EXP = 367; //add_meridian_exp
-    /*���������ȼ�*/
+    /*��������ȼ�*/
     Protocols.CMSG_RAISE_MOUNT_LEVEL_BASE = 368; //raise_mount_level_base
     /*��������*/
     Protocols.CMSG_ACTIVE_MOUNT = 369; //active_mount
-    /*����������ս��������*/
+    /*����������ս�������*/
     Protocols.SMSG_SHOW_FACTION_BOSSDEFENSE_DAMAGE_LIST = 370; //show_faction_bossdefense_damage_list
-    /*�����޾�Զ��ɨ������*/
+    /*�����޾�Զ��ɨ�����*/
     Protocols.SMSG_SHOW_FACTION_TOWER_SWEEP_LIST = 371; //show_faction_tower_sweep_list
-    /*��������*/
+    /*�������*/
     Protocols.SMSG_SEND_INSTANCE_RESULT = 375; //send_instance_result
     /*ƥ�䵥��pvp*/
     Protocols.CMSG_MATCH_SINGLE_PVP = 376; //match_single_pvp
-    /*��������pvp����*/
+    /*������pvp����*/
     Protocols.CMSG_BUY_MATCH_SINGLE_PVP_TIMES = 377; //buy_match_single_pvp_times
     /*��ȡ����pvp���⽱��*/
     Protocols.CMSG_PICK_MATCH_SINGLE_PVP_EXTRA_REWARD = 378; //pick_match_single_pvp_extra_reward
     /*װ�����ɲ���*/
     Protocols.CMSG_EQUIPDEVELOP_OPERATE = 380; //equipdevelop_operate
-    /*��������*/
+    /*�������*/
     Protocols.CMSG_ACTIVE_APPEARANCE = 381; //active_appearance
-    /*װ������*/
+    /*װ�����*/
     Protocols.CMSG_EQUIP_APPEARANCE = 382; //equip_appearance
-    /*ȡ��װ������*/
+    /*ȡ��װ�����*/
     Protocols.CMSG_CANCEL_EQUIP_APPEARANCE = 383; //cancel_equip_appearance
     /*����*/
     Protocols.CMSG_RENAME = 384; //rename
     /*���߽����ƺ�*/
     Protocols.CMSG_UNLOCK_TITLE = 385; //unlock_title
-    /*���򸴳�����*/
+    /*���򸴳����*/
     Protocols.CMSG_SOCIAL_BUY_REVENGE_TIMES = 386; //social_buy_revenge_times
-    /*������������ð�ո���*/
+    /*�����������ð�ո���*/
     Protocols.CMSG_ENTER_RISK_INSTANCE = 387; //enter_risk_instance
     /*ɾ������*/
     Protocols.CMSG_SOCIAL_REMOVE_ENEMY = 388; //social_remove_enemy
-    /*�鿴��������*/
+    /*�鿴�������*/
     Protocols.CMSG_GET_PLAYER_OVERVIEW = 389; //get_player_overview
-    /*������������*/
+    /*�����������*/
     Protocols.SMSG_SHOW_PLAYER_OVERVIEW = 390; //show_player_overview
-    /*������������*/
+    /*����������*/
     Protocols.CMSG_SEND_FACTION_INVITE = 391; //send_faction_invite
     /*��ʾ����*/
     Protocols.SMSG_SHOW_FACTION_INVITE = 392; //show_faction_invite
-    /*����vip����*/
+    /*����vip���*/
     Protocols.CMSG_BUY_VIPGIFT = 393; //buy_vipgift
-    /*�����ÿ������*/
+    /*����ÿ�����*/
     Protocols.CMSG_ACTIVITY_OPT_BUY_DAILYGIFT = 394; //activity_opt_buy_dailygift
     /*�齱*/
     Protocols.CMSG_DRAW_LOTTERY = 395; //draw_lottery
@@ -3351,13 +3351,13 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_ACTIVITY_OPT_GET_RANK_LIST = 397; //activity_opt_get_rank_list
     /*���ػ�������а�*/
     Protocols.SMSG_ACTIVITY_OPT_SHOW_RANK_LIST = 398; //activity_opt_show_rank_list
-    /*������޶�����*/
+    /*�����޶����*/
     Protocols.CMSG_ACTIVITY_OPT_BUY_LIMITGIFT = 399; //activity_opt_buy_limitgift
     /*��ȡ�ۼƳ�ֵ����*/
     Protocols.CMSG_WELFARE_GET_RECHARGE_REWARD = 400; //welfare_get_recharge_reward
     /*��ȡ�ۼ����ѽ���*/
     Protocols.CMSG_WELFARE_GET_CONSUME_REWARD = 401; //welfare_get_consume_reward
-    /*��ȡ���մ�������*/
+    /*��ȡ���մ�����*/
     Protocols.CMSG_WELFARE_GET_SEVENDAY_REWARD = 402; //welfare_get_sevenday_reward
     /*����������ʱ��*/
     Protocols.SMSG_SEND_SERVER_OPEN_TIME = 403; //send_server_open_time
@@ -3369,11 +3369,11 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_SET_ORIENT = 406; //set_orient
     /*ҡ��ҡǮ��*/
     Protocols.CMSG_USE_MONEYTREE = 407; //use_moneytree
-    /*��ȡҡǮ������*/
+    /*��ȡҡǮ�����*/
     Protocols.CMSG_GET_MONEYTREE_GIFT = 408; //get_moneytree_gift
-    /*�޸Ļþ���������id*/
+    /*�޸Ļþ�������id*/
     Protocols.CMSG_SET_WORLD_RISK_LAST_ID = 409; //set_world_risk_last_id
-    /*��������Boss*/
+    /*�������Boss*/
     Protocols.CMSG_ENTER_PRIVATE_BOSS = 410; //enter_private_boss
     /*��������ȫ������*/
     Protocols.CMSG_RAISE_BASE_SPELL_ALL = 411; //raise_base_spell_all
@@ -3383,19 +3383,19 @@ var Protocols = /** @class */ (function () {
     Protocols.CMSG_PICK_QUEST_ADVENTURE = 414; //pick_quest_adventure
     /*����ð�ռ���*/
     Protocols.CMSG_RAISE_ADVENTURESPELL = 415; //raise_adventurespell
-    /*��ȡ������������*/
+    /*��ȡ����������*/
     Protocols.CMSG_PICK_QUEST_REALMBREAK = 416; //pick_quest_realmbreak
     /*��ȡ����ÿ�ս���*/
     Protocols.CMSG_PICK_REALMBREAK_DAILY_REWARD = 417; //pick_realmbreak_daily_reward
     /*��������*/
     Protocols.CMSG_GROUP_CREATE = 418; //group_create
-    /*������������*/
+    /*����������*/
     Protocols.CMSG_GROUP_JOIN_REQUEST = 419; //group_join_request
-    /*ͬ����������*/
+    /*ͬ��������*/
     Protocols.CMSG_GROUP_JOIN_ACCEPT = 420; //group_join_accept
     /*�˳�����*/
     Protocols.CMSG_GROUP_QUIT = 421; //group_quit
-    /*�ƽ������ӳ�*/
+    /*�ƽ�����ӳ�*/
     Protocols.CMSG_GROUP_GIVE_CAPTAIN = 422; //group_give_captain
     /*�߶�Ա*/
     Protocols.CMSG_GROUP_KICK = 423; //group_kick

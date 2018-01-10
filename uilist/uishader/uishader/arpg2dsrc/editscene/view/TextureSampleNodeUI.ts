@@ -23,9 +23,20 @@
             this.left = 400
             this.top = 100;
 
+            this._wrap = 0;
+            this._mipmap = 0;
+            this._filter = 0;
+            this._permul = false;
+
+
             this.nodeTree = new NodeTreeTex;
             this.nodeTree.ui = this;
             this.nodeTree.type = NodeTree.TEX;
+
+
+
+
+
 
             this.width = 162;
             this.height = 140;
@@ -78,7 +89,15 @@
             this.addItems(this.aItem);
             this.addItems(this.rgbaItem);
         }
-        
+        public creatBase($url: string): void {
+            var vo: NodeTreeTex = <NodeTreeTex>this.nodeTree
+            vo.url = $url;
+            vo.wrap = this._wrap;
+            vo.mipmap = this._mipmap;
+            vo.filter = this._filter;
+            vo.permul = this._permul;
+            this.drawFrontToFrame(this.a_texture_pic_frame, (<NodeTreeTex>this.nodeTree).url)
+        }
         public setData(obj: any): void {
             super.setData(obj);
             obj.url = String(obj.url).replace(Scene_data.fileRoot, "");//兼容原来相对路径

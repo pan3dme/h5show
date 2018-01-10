@@ -19,6 +19,7 @@ var materialui;
         MaterialEvent.SAVE_MATERIA_PANEL = "SAVE_MATERIA_PANEL"; //
         MaterialEvent.SELECT_MATERIAL_NODE_UI = "SELECT_MATERIAL_NODE_UI"; //
         MaterialEvent.COMPILE_MATERIAL = "COMPILE_MATERIAL"; //
+        MaterialEvent.SCENE_UI_TRUE_MOVE = "SCENE_UI_TRUE_MOVE"; //
         return MaterialEvent;
     }(BaseEvent));
     materialui.MaterialEvent = MaterialEvent;
@@ -58,6 +59,9 @@ var materialui;
                 }
                 if ($materialEvent.type == MaterialEvent.COMPILE_MATERIAL) {
                     materialui.MaterialCompile.getInstance().compile(materialui.MaterialCtrl.getInstance().nodeList, this.baseMaterialTree);
+                }
+                if ($materialEvent.type == MaterialEvent.SCENE_UI_TRUE_MOVE) {
+                    this.stageMoveTx($materialEvent.v2d);
                 }
             }
             if ($event instanceof materialui.MEvent_Material_Connect) {
@@ -107,6 +111,7 @@ var materialui;
                 new MaterialEvent(MaterialEvent.SELECT_MATERIAL_NODE_UI),
                 new MaterialEvent(MaterialEvent.SAVE_MATERIA_PANEL),
                 new MaterialEvent(MaterialEvent.COMPILE_MATERIAL),
+                new MaterialEvent(MaterialEvent.SCENE_UI_TRUE_MOVE),
                 new materialui.MEvent_Material_Connect(materialui.MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STARTDRAG),
                 new materialui.MEvent_Material_Connect(materialui.MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STOPDRAG),
                 new materialui.MEvent_Material_Connect(materialui.MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_REMOVELINE),

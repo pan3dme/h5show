@@ -75,45 +75,46 @@ module left {
         }
         public update(): void {
             super.update();
-        }
-        public setMaterialVaCompress(): void {
-            var tf: boolean = Scene_data.context3D.pushVa(this.objData.vertexBuffer);
-            if (tf) {
-                return;
-            }
-            Scene_data.context3D.setVaOffset(0, 3, this.objData.stride, 0);
-            Scene_data.context3D.setVaOffset(1, 2, this.objData.stride, this.objData.uvsOffsets);
-            if (!(this.material.directLight || this.material.noLight)) {
-                Scene_data.context3D.setVaOffset(2, 2, this.objData.stride, this.objData.lightuvsOffsets);
-            }
-            if (this.material.usePbr || this.material.directLight) {
-                Scene_data.context3D.setVaOffset(3, 3, this.objData.stride, this.objData.normalsOffsets);
-                Scene_data.context3D.setVcMatrix3fv(this.material.shader, "rotationMatrix3D", this._rotationData);
-            }
-            if (this.material.useNormal) {
-                Scene_data.context3D.setVaOffset(4, 3, this.objData.stride, this.objData.tangentsOffsets);
-                Scene_data.context3D.setVaOffset(5, 3, this.objData.stride, this.objData.bitangentsOffsets);
-            }
+
 
         }
-
-        public setMaterialVc($material: Material, $mp: MaterialBaseParam = null): void {
-            if ($material.fcNum <= 0) {
-                return;
+        public setMaterialTexture($material: Material, $mp: MaterialBaseParam = null): void {
+            var texVec: Array<TexItem> = $material.texList;
+            for (var i: number = 0; i < texVec.length; i++) {
+                if (texVec[i].type == TexItem.LIGHTMAP) {
+                    Scene_data.context3D.setRenderTexture($material.shader, texVec[i].name, this.lightMapTexture, texVec[i].id);
+                }
+                else if (texVec[i].type == TexItem.LTUMAP && Scene_data.pubLut) {
+                    Scene_data.context3D.setRenderTexture($material.shader, texVec[i].name, Scene_data.pubLut, texVec[i].id);
+                }
+                else if (texVec[i].type == TexItem.CUBEMAP) {
+                    if ($material.useDynamicIBL) {// && _reflectionTextureVo) {
+                    } else {
+                        var index: number = Math.floor($material.roughness * 5);
+                        if (Scene_data.skyCubeMap) {
+                            var cubeTexture: WebGLTexture = Scene_data.skyCubeMap[index];
+                            Scene_data.context3D.setRenderTextureCube($material.program, texVec[i].name, cubeTexture, texVec[i].id);
+                        }
+                    }
+                }
+                else {
+                    if (texVec[i].texture) {
+                        Scene_data.context3D.setRenderTexture($material.shader, texVec[i].name, texVec[i].texture, texVec[i].id);
+                    }
+                }
             }
-            var t: number = 0;
-            if ($material.hasTime) {
-                t = (TimeUtil.getTimer() - this.time) % 100000 * 0.001;
-            }
-            $material.update(t);
-            this.setCamPos($material);
             if ($mp) {
-                $mp.update();
+                for (i = 0; i < $mp.dynamicTexList.length; i++) {
+                    if ($mp.dynamicTexList[i].target) {
+                        Scene_data.context3D.setRenderTexture($material.shader, $mp.dynamicTexList[i].target.name,
+                            $mp.dynamicTexList[i].texture, $mp.dynamicTexList[i].target.id);
+                    }
+                }
             }
-            Scene_data.context3D.setVc4fv($material.shader, "fc", $material.fcData);
 
 
         }
+  
     
     }
 }

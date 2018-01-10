@@ -9,7 +9,7 @@
             return this._instance;
         }
         public addBaseModel(): void {
-            Scene_data.cam3D.distance=150
+            Scene_data.cam3D.distance = 150
             this.addGridLineSprite();
             TimeUtil.addFrameTick((t: number) => { this.update(t) });
 
@@ -18,7 +18,7 @@
         public update(t): void {
 
             if (this._bigPic && this._bigPic.textureRes) {
-                SceneRenderToTextrue.getInstance().renderToTexture([ this.lightSpriteList]);
+                SceneRenderToTextrue.getInstance().renderToTexture([this.lightSpriteList]);
                 if (SceneRenderToTextrue.getInstance().fbo) {
                     this._bigPic.textureRes.texture = SceneRenderToTextrue.getInstance().fbo.texture;
                 }
@@ -35,44 +35,44 @@
 
             var $str: string = $treeMater.shaderStr;
 
-            var $material: Material = this.lightSpriteList.material
-            var $buildMaterialShader: BuildMaterialShader = new BuildMaterialShader()
+            var $material: Material = this.lightSpriteList.material;
+            var $buildMaterialShader: BuildMaterialShader = new BuildMaterialShader();
             $buildMaterialShader.buildParamAry($treeMater);
- 
-            $buildMaterialShader.vertex = $buildMaterialShader.getVertexShaderString()
+
+            $buildMaterialShader.vertex = $buildMaterialShader.getVertexShaderString();
             $buildMaterialShader.fragment = $str;
 
-            console.log($buildMaterialShader.vertex );
+            console.log($buildMaterialShader.vertex);
             console.log("-----------")
-            console.log($buildMaterialShader.fragment );
+            console.log($buildMaterialShader.fragment);
             console.log("+++++++++++++")
 
             $buildMaterialShader.encode();
 
             this.lightSpriteList.material.shader = $buildMaterialShader;
-            $material.program = $material.shader.program;
+            this.lightSpriteList.material.program = $buildMaterialShader.program;
             this.lightSpriteList.material.fcData = $treeMater.fcData;
 
-
+            this.lightSpriteList.material.texList = $treeMater.texList;
             this.lightSpriteList.material.usePbr = $treeMater.usePbr;
-            this.lightSpriteList.material.hasTime = $treeMater. hasTime;
-            this.lightSpriteList.material.hasVertexColor = $treeMater. hasVertexColor;
+            this.lightSpriteList.material.hasTime = $treeMater.hasTime;
+            this.lightSpriteList.material.hasVertexColor = $treeMater.hasVertexColor;
             this.lightSpriteList.material.usePbr = $treeMater.usePbr;
             this.lightSpriteList.material.useNormal = $treeMater.useNormal;
-            this.lightSpriteList.material.roughness = $treeMater. roughness;
+            this.lightSpriteList.material.roughness = $treeMater.roughness;
             this.lightSpriteList.material.hasFresnel = $treeMater.hasFresnel;
-            this.lightSpriteList.material.useDynamicIBL = $treeMater. useDynamicIBL;
-            this.lightSpriteList.material.lightProbe = $treeMater. lightProbe;
-            this.lightSpriteList.material.useKill = $treeMater. useKill;
+            this.lightSpriteList.material.useDynamicIBL = $treeMater.useDynamicIBL;
+            this.lightSpriteList.material.lightProbe = $treeMater.lightProbe;
+            this.lightSpriteList.material.useKill = $treeMater.useKill;
             this.lightSpriteList.material.directLight = $treeMater.directLight;
             this.lightSpriteList.material.noLight = $treeMater.noLight;
             this.lightSpriteList.material.fogMode = $treeMater.fogMode;
             this.lightSpriteList.material.scaleLightMap = $treeMater.scaleLightMap;
-      
+
 
 
         }
-      
+
 
         public getMaterialProgram(key: String, shaderCls: any, $material: Material, paramAry: any = null, parmaByFragmet: boolean = false): Shader3D {
             var keyStr: string = key + "_" + $material.url;
@@ -99,6 +99,6 @@
             shader.useNum++;
             return shader;
         }
-     
+
     }
 }

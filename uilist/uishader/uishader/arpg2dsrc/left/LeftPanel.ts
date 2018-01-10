@@ -45,7 +45,7 @@
         private showModelPic: UICompenent
         private initView(): void {
             var $ui: UICompenent = this.addChild(this.modelPic.getComponent("a_model_show"));
-            this.modelPic.setImgUrl("ui/load/map/bigworld.jpg");
+            this.modelPic.setImgUrl("pan/marmoset/uilist/1024.jpg");
             $ui.top = 10;
             $ui.left = 10;
             ModelShowModel.getInstance()._bigPic = this.modelPic;
@@ -93,11 +93,22 @@
             }
             if (this.a_left_line.data) {
                 var $lastV2d: Vector2D = <Vector2D>this.a_left_line.data;
-                this.width = this.lastWidth + ($e.x - $lastV2d.x);
+                var Tx: number = ($e.x - $lastV2d.x);
+
+                var $lastW: number = this.width
+
+                this.width = this.lastWidth + Tx;
                 this.resize();
-                prop.PropModel.getInstance().moveTop(this.width+60)
+                prop.PropModel.getInstance().moveTop(this.width + 60)
+
+                var $materialEvent: materialui.MaterialEvent = new materialui.MaterialEvent(materialui.MaterialEvent.SCENE_UI_TRUE_MOVE)
+                $materialEvent.v2d = new Vector2D((this.width - $lastW) / materialui.MtlUiData.Scale, 0);
+                ModuleEventManager.dispatchEvent($materialEvent);
+
             }
         }
+
+     
         private lastCameRotation: Vector2D;
         private mouseXY: Vector2D;
         private addStageMoveEvets($e: InteractiveEvent): void {
