@@ -27,7 +27,7 @@
             
             (<materialui.NodeTreeTex>this.textureSampleNodeUI.nodeTree).url = value
             this.textureSampleNodeUI.drawPicBmp();
-            //this.changeData();
+            this.changeData();
         }
         public get picurl(): string {
             return (<materialui.NodeTreeTex>this.textureSampleNodeUI.nodeTree).url

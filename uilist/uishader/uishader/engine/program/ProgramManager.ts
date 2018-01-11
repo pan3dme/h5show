@@ -110,12 +110,12 @@
             console.log(shader.vertex);
             console.log(shader.fragment);
         }
-        //if (keyStr.search("staticstandtrans") != -1 && true) {
+        if (keyStr.search("staticstandtrans") != -1 && true) {
 
             //this.outShader(shader.vertex)
-            //console.log(shader.vertex);
-            //console.log(shader.fragment);
-        //}
+            console.log(shader.vertex);
+            console.log(shader.fragment);
+        }
 
         this._dic[keyStr] = shader;
         

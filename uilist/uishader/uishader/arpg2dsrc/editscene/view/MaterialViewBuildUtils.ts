@@ -110,6 +110,9 @@
                 case NodeTree.FLOAT:
                     ui = new ConstFloatNodeUI;
                     break;
+                case NodeTree.FRESNEL:
+                    ui = new FresnelNodeUI;
+                    break;
 
                     
                 default:

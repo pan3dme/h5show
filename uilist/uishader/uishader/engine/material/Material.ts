@@ -55,8 +55,8 @@
         }
     }
 
-    public updateCam(x:number,y:number,z:number):void{
-        if (this.usePbr || this.fogMode == 1) {
+    public updateCam(x: number, y: number, z: number): void{
+        if (this.usePbr || this.hasFresnel|| this.fogMode == 1) {
             var idx: number = this.fcIDAry[0] * 4;
             this.fcData[0 + idx] = x;
             this.fcData[1 + idx] = y;
@@ -109,7 +109,7 @@
 
         }
 
-        if (this.usePbr || this.fogMode == 1) {
+        if (this.usePbr  || this.fogMode == 1) {
             var idx: number = this.fcIDAry[0] * 4;
             this.fcData[0 + idx] = Scene_data.cam3D.x / 100;
             this.fcData[1 + idx] = Scene_data.cam3D.y / 100;

@@ -229,7 +229,7 @@ var materialui;
         MaterialProcessor.prototype.onMouseWheel = function ($evt) {
             var $slectUi = UIManager.getInstance().getObjectsUnderPoint(new Vector2D($evt.x, $evt.y));
             if ($slectUi && $slectUi.name == "modelPic") {
-                Scene_data.cam3D.distance += $evt.wheelDelta;
+                Scene_data.cam3D.distance += ($evt.wheelDelta * Scene_data.cam3D.distance) / 1000;
             }
             else {
                 materialui.MtlUiData.Scale = Math.max(0.15, materialui.MtlUiData.Scale);

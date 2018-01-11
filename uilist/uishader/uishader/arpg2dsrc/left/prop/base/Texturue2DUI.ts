@@ -20,6 +20,7 @@
 
         private onChangePicurl($evt: ReflectionEvet): void {
             this.makeNewTextureByFile($evt.data);
+
         }
         private makeNewTextureByFile(simpleFile: File): void {
             var reader = new FileReader();

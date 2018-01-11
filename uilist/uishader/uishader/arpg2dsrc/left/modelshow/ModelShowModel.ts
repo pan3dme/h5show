@@ -34,7 +34,7 @@
         public outShaderStr($treeMater: materialui.MaterialTree): void {
 
             var $str: string = $treeMater.shaderStr;
-
+       
             var $material: Material = this.lightSpriteList.material;
             var $buildMaterialShader: BuildMaterialShader = new BuildMaterialShader();
             $buildMaterialShader.buildParamAry($treeMater);
@@ -48,7 +48,7 @@
             console.log("+++++++++++++")
 
             $buildMaterialShader.encode();
-
+ 
             this.lightSpriteList.material.shader = $buildMaterialShader;
             this.lightSpriteList.material.program = $buildMaterialShader.program;
             this.lightSpriteList.material.fcData = $treeMater.fcData;
@@ -69,6 +69,7 @@
             this.lightSpriteList.material.fogMode = $treeMater.fogMode;
             this.lightSpriteList.material.scaleLightMap = $treeMater.scaleLightMap;
 
+            console.log($treeMater.fcData)
 
 
         }

@@ -44,7 +44,7 @@ var prop;
             set: function (value) {
                 this.textureSampleNodeUI.nodeTree.url = value;
                 this.textureSampleNodeUI.drawPicBmp();
-                //this.changeData();
+                this.changeData();
             },
             enumerable: true,
             configurable: true

@@ -97,6 +97,9 @@ var materialui;
                 case materialui.NodeTree.FLOAT:
                     ui = new materialui.ConstFloatNodeUI;
                     break;
+                case materialui.NodeTree.FRESNEL:
+                    ui = new materialui.FresnelNodeUI;
+                    break;
                 default:
                     break;
             }

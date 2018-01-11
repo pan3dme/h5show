@@ -58,6 +58,7 @@ var left;
             this.lightSpriteList.material.noLight = $treeMater.noLight;
             this.lightSpriteList.material.fogMode = $treeMater.fogMode;
             this.lightSpriteList.material.scaleLightMap = $treeMater.scaleLightMap;
+            console.log($treeMater.fcData);
         };
         ModelShowModel.prototype.getMaterialProgram = function (key, shaderCls, $material, paramAry, parmaByFragmet) {
             if (paramAry === void 0) { paramAry = null; }

@@ -74,6 +74,7 @@ module left {
       
         }
         public update(): void {
+
             super.update();
 
 

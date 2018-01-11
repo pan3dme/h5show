@@ -270,7 +270,7 @@
 
             var $slectUi: UICompenent = UIManager.getInstance().getObjectsUnderPoint(new Vector2D($evt.x, $evt.y))
             if ($slectUi && $slectUi.name == "modelPic") {
-                Scene_data.cam3D.distance += $evt.wheelDelta;
+                Scene_data.cam3D.distance += ($evt.wheelDelta * Scene_data.cam3D.distance)/1000;
             } else {
                 MtlUiData.Scale = Math.max(0.15, MtlUiData.Scale);
                 var $addScale: number = $evt.wheelDelta > 0 ? +0.1 : -0.1;
