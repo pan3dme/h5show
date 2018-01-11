@@ -11,6 +11,7 @@
             new materialui.MaterialModule(),
             new materialui.RightMenuModule(),
             new left.LeftModule(),
+            new colorview.ColorModule(),
 
         ];
     

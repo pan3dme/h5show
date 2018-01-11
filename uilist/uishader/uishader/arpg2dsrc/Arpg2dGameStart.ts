@@ -11,6 +11,7 @@
         materialui.MtlUiData.Scale = 1;
         Engine.initPbr();
         ModuleEventManager.dispatchEvent(new materialui.MaterialEvent(materialui.MaterialEvent.SHOW_MATERIA_PANEL));
+      //  ModuleEventManager.dispatchEvent(new colorview.ColorEvent(colorview.ColorEvent.SHOW_COLOR_PANEL));
     }
 
   
