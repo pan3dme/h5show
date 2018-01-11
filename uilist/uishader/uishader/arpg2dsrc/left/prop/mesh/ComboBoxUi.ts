@@ -23,10 +23,7 @@
             this.textLabelUIMeshVo.name = value;
         }
         protected butClik(evt: InteractiveEvent): void {
-
-
             this.dispatchEvent(evt);
-          
         }
 
        

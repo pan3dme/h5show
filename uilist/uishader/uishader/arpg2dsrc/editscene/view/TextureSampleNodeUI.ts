@@ -1,12 +1,12 @@
 ﻿module materialui {
 
     export class TextureSampleNodeUI extends BaseMaterialNodeUI {
-        private  uvItem:ItemMaterialUI;
-        private  rgbItem:ItemMaterialUI;
-        private  rItem:ItemMaterialUI;
-        private  gItem:ItemMaterialUI;
-        private  bItem:ItemMaterialUI;
-        private  aItem:ItemMaterialUI;
+        private uvItem: ItemMaterialUI;
+        private rgbItem: ItemMaterialUI;
+        private rItem: ItemMaterialUI;
+        private gItem: ItemMaterialUI;
+        private bItem: ItemMaterialUI;
+        private aItem: ItemMaterialUI;
         private rgbaItem: ItemMaterialUI;
 
 
@@ -50,22 +50,17 @@
             this.a_texture_pic_frame.x = 20;
             this.a_texture_pic_frame.y = 55;
 
-      
-        }
-        private drawFrontToFrame($ui: FrameCompenent, $url: string): void {
-
-
-            LoadManager.getInstance().load(Scene_data.fileRoot + $url, LoadManager.IMG_TYPE,
-                ($img: any) => {
-                    var $toRect: Rectangle = $ui.getSkinCtxRect()
-                    var $ctx: CanvasRenderingContext2D = UIManager.getInstance().getContext2D($toRect.width, $toRect.height, false);
-                    $ctx.drawImage($img, 0, 0, $img.width, $img.height);
-                    $ui.drawToCtx(this._topRender.uiAtlas, $ctx)
-                });
-
 
         }
-        private static texture_pic_frame_ID=0
+        private drawTextureUrlToFrame($ui: FrameCompenent, $img): void {
+
+            var $toRect: Rectangle = $ui.getSkinCtxRect()
+            var $ctx: CanvasRenderingContext2D = UIManager.getInstance().getContext2D($toRect.width, $toRect.height, false);
+            $ctx.drawImage($img, 0, 0, $toRect.width, $toRect.height);
+            $ui.drawToCtx(this._topRender.uiAtlas, $ctx)
+        }
+
+        private static texture_pic_frame_ID = 0
         private getTexturePicUi(): FrameCompenent {
             var $ui: FrameCompenent = <FrameCompenent>this.addEvntBut("a_texture_pic_frame", this._topRender);
             $ui.goToAndStop(TextureSampleNodeUI.texture_pic_frame_ID++);
@@ -96,21 +91,32 @@
             vo.mipmap = this._mipmap;
             vo.filter = this._filter;
             vo.permul = this._permul;
-            this.drawFrontToFrame(this.a_texture_pic_frame, (<NodeTreeTex>this.nodeTree).url)
+            this.drawPicBmp()
+
+        }
+        public drawPicBmp(): void {
+            var $url: string = (<NodeTreeTex>this.nodeTree).url
+            var $img: any = TextureManager.getInstance().getImgResByurl(Scene_data.fileRoot + $url)
+            if ($img) {
+                this.drawTextureUrlToFrame(this.a_texture_pic_frame, $img)
+            } else {
+                LoadManager.getInstance().load(Scene_data.fileRoot + $url, LoadManager.IMG_TYPE,
+                    ($img: any) => {
+                        this.drawTextureUrlToFrame(this.a_texture_pic_frame, $img)
+                    });
+            }
         }
         public setData(obj: any): void {
             super.setData(obj);
             obj.url = String(obj.url).replace(Scene_data.fileRoot, "");//兼容原来相对路径
-            //addBitmpUrl(obj.url);
             (<NodeTreeTex>this.nodeTree).url = obj.url;
             this.isMain = obj.isMain;
             this.wrap = obj.wrap;
             this.mipmap = obj.mipmap;
             this.filter = obj.filter;
             this.permul = obj.permul;
-
-            this.drawFrontToFrame(this.a_texture_pic_frame, (<NodeTreeTex>this.nodeTree).url)
-            this. showDynamic();
+            this.drawPicBmp()
+            this.showDynamic();
         }
         public get wrap(): number {
             return this._wrap;
@@ -122,7 +128,7 @@
         public get filter(): number {
             return this._filter;
         }
-        public  get permul(): boolean {
+        public get permul(): boolean {
             return this._permul;
         }
 
@@ -144,15 +150,15 @@
             this._wrap = value;
             (<NodeTreeTex>this.nodeTree).wrap = value;
         }
-        public  set isMain(value: boolean) {
+        public set isMain(value: boolean) {
             (<NodeTreeTex>this.nodeTree).isMain = value;
             if (value) {
-              //  _mainTxt.text = "M";
+                //  _mainTxt.text = "M";
             } else {
-              //  _mainTxt.text = "";
+                //  _mainTxt.text = "";
             }
         }
-         public  showDynamic(): void {
+        public showDynamic(): void {
             if (this.nodeTree.isDynamic) {
                 this.drawTitleToFrame("纹理采样<" + this.nodeTree.paramName + ">");
             } else {

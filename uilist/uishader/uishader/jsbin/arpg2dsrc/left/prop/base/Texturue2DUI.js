@@ -23,7 +23,21 @@ var prop;
             this.height = 100;
         };
         Texturue2DUI.prototype.onChangePicurl = function ($evt) {
-            console.log($evt.data);
+            this.makeNewTextureByFile($evt.data);
+        };
+        Texturue2DUI.prototype.makeNewTextureByFile = function (simpleFile) {
+            var _this = this;
+            var reader = new FileReader();
+            reader.readAsDataURL(simpleFile);
+            reader.onload = function () {
+                var img = new Image();
+                img.onload = function () {
+                    TextureManager.getInstance().addImgRes(Scene_data.fileRoot + simpleFile.name, img);
+                    _this.target[_this.FunKey] = simpleFile.name;
+                    _this.refreshViewValue();
+                };
+                img.src = reader.result;
+            };
         };
         Texturue2DUI.prototype.destory = function () {
             this.textLabelUI.destory();

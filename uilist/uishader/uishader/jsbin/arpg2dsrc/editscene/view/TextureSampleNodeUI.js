@@ -34,14 +34,11 @@ var materialui;
             _this.a_texture_pic_frame.y = 55;
             return _this;
         }
-        TextureSampleNodeUI.prototype.drawFrontToFrame = function ($ui, $url) {
-            var _this = this;
-            LoadManager.getInstance().load(Scene_data.fileRoot + $url, LoadManager.IMG_TYPE, function ($img) {
-                var $toRect = $ui.getSkinCtxRect();
-                var $ctx = UIManager.getInstance().getContext2D($toRect.width, $toRect.height, false);
-                $ctx.drawImage($img, 0, 0, $img.width, $img.height);
-                $ui.drawToCtx(_this._topRender.uiAtlas, $ctx);
-            });
+        TextureSampleNodeUI.prototype.drawTextureUrlToFrame = function ($ui, $img) {
+            var $toRect = $ui.getSkinCtxRect();
+            var $ctx = UIManager.getInstance().getContext2D($toRect.width, $toRect.height, false);
+            $ctx.drawImage($img, 0, 0, $toRect.width, $toRect.height);
+            $ui.drawToCtx(this._topRender.uiAtlas, $ctx);
         };
         TextureSampleNodeUI.prototype.getTexturePicUi = function () {
             var $ui = this.addEvntBut("a_texture_pic_frame", this._topRender);
@@ -71,19 +68,31 @@ var materialui;
             vo.mipmap = this._mipmap;
             vo.filter = this._filter;
             vo.permul = this._permul;
-            this.drawFrontToFrame(this.a_texture_pic_frame, this.nodeTree.url);
+            this.drawPicBmp();
+        };
+        TextureSampleNodeUI.prototype.drawPicBmp = function () {
+            var _this = this;
+            var $url = this.nodeTree.url;
+            var $img = TextureManager.getInstance().getImgResByurl(Scene_data.fileRoot + $url);
+            if ($img) {
+                this.drawTextureUrlToFrame(this.a_texture_pic_frame, $img);
+            }
+            else {
+                LoadManager.getInstance().load(Scene_data.fileRoot + $url, LoadManager.IMG_TYPE, function ($img) {
+                    _this.drawTextureUrlToFrame(_this.a_texture_pic_frame, $img);
+                });
+            }
         };
         TextureSampleNodeUI.prototype.setData = function (obj) {
             _super.prototype.setData.call(this, obj);
             obj.url = String(obj.url).replace(Scene_data.fileRoot, ""); //兼容原来相对路径
-            //addBitmpUrl(obj.url);
             this.nodeTree.url = obj.url;
             this.isMain = obj.isMain;
             this.wrap = obj.wrap;
             this.mipmap = obj.mipmap;
             this.filter = obj.filter;
             this.permul = obj.permul;
-            this.drawFrontToFrame(this.a_texture_pic_frame, this.nodeTree.url);
+            this.drawPicBmp();
             this.showDynamic();
         };
         Object.defineProperty(TextureSampleNodeUI.prototype, "wrap", {

@@ -29,6 +29,19 @@ var TextureManager = /** @class */ (function (_super) {
         }
         return false;
     };
+    TextureManager.prototype.getImgResByurl = function ($url) {
+        return this._resDic[$url];
+    };
+    TextureManager.prototype.addImgRes = function ($url, $img) {
+        this._resDic[$url] = $img;
+        var texture = Scene_data.context3D.getTexture($img);
+        var textres = new TextureRes();
+        textres.texture = texture;
+        textres.width = $img.width;
+        textres.height = $img.height;
+        textres.useNum++;
+        this._dic[$url] = textres;
+    };
     TextureManager.prototype.getTexture = function ($url, $fun, $wrapType, $info, $filteType, $mipmapType) {
         // if ($url.indexOf("zc_deng_00.png") != -1) {
         //    console.log("22222");

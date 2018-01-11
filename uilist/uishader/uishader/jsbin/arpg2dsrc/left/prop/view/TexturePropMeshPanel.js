@@ -43,6 +43,8 @@ var prop;
             },
             set: function (value) {
                 this.textureSampleNodeUI.nodeTree.url = value;
+                this.textureSampleNodeUI.drawPicBmp();
+                //this.changeData();
             },
             enumerable: true,
             configurable: true
@@ -101,6 +103,9 @@ var prop;
             enumerable: true,
             configurable: true
         });
+        TexturePropMeshPanel.prototype.changeData = function () {
+            ModuleEventManager.dispatchEvent(new materialui.MaterialEvent(materialui.MaterialEvent.COMPILE_MATERIAL));
+        };
         return TexturePropMeshPanel;
     }(prop.MetaDataView));
     prop.TexturePropMeshPanel = TexturePropMeshPanel;
