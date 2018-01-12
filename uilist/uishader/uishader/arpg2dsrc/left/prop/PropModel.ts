@@ -33,6 +33,16 @@
 
             }
         }
+        public showSciencePropPanel(): void {
+            if (this.metaDataView) {
+                this.metaDataView.destory()
+                this.metaDataView = null;
+                this.lastNodel = null;
+            }
+            this.metaDataView = new SciencePropMeshPanel();
+            this.metaDataView.data = new SceneChar;
+
+        }
         private _top: number=350
         public moveTop($ty: number): void {
             this._top = $ty

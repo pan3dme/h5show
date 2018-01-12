@@ -60,7 +60,17 @@ var prop;
             if (type == prop.ReflectionData.ComboBox) {
                 return this.getComboBox(obj);
             }
+            if (type == prop.ReflectionData.Vec3Color) {
+                return this.getVec3Color(obj);
+            }
             return null;
+        };
+        MetaDataView.prototype.getVec3Color = function ($obj) {
+            var $textCtrlInput = new prop.Vec3ColorCtrlUI();
+            $textCtrlInput.label = $obj[prop.ReflectionData.Key_Label];
+            $textCtrlInput.FunKey = $obj[prop.ReflectionData.FunKey];
+            $textCtrlInput.target = this;
+            return $textCtrlInput;
         };
         MetaDataView.prototype.getComboBox = function ($obj) {
             var $ComBoBoxCtrl2D = new prop.ComBoBoxCtrl2D();

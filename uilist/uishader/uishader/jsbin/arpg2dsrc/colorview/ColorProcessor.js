@@ -44,11 +44,11 @@ var colorview;
         };
         ColorProcessor.prototype.receivedModuleEvent = function ($event) {
             if ($event instanceof ColorEvent) {
-                var $leftEvent = $event;
-                if ($leftEvent.type == ColorEvent.SHOW_COLOR_PANEL) {
-                    this.showColorPanel();
+                var $colorEvent = $event;
+                if ($colorEvent.type == ColorEvent.SHOW_COLOR_PANEL) {
+                    this.showColorPanel($colorEvent.v3dColor, $colorEvent.bfun);
                 }
-                if ($leftEvent.type == ColorEvent.HIDE_COLOR_PANEL) {
+                if ($colorEvent.type == ColorEvent.HIDE_COLOR_PANEL) {
                     this.hideColorPanel();
                 }
             }
@@ -58,16 +58,15 @@ var colorview;
                 UIManager.getInstance().removeUIContainer(this.colorPanel);
             }
         };
-        ColorProcessor.prototype.showColorPanel = function () {
+        ColorProcessor.prototype.showColorPanel = function ($v3d, $bfun) {
+            var _this = this;
             if (!this.colorPanel) {
                 this.colorPanel = new colorview.ColorPanel;
             }
-            if (!this.colorPanel.hasStage) {
-                UIManager.getInstance().addUIContainer(this.colorPanel);
-            }
-            else {
-                ModuleEventManager.dispatchEvent(new ColorEvent(ColorEvent.HIDE_COLOR_PANEL));
-            }
+            this.colorPanel.load(function () {
+                UIManager.getInstance().addUIContainer(_this.colorPanel);
+                _this.colorPanel.initColor($v3d, $bfun);
+            });
         };
         ColorProcessor.prototype.listenModuleEvents = function () {
             return [

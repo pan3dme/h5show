@@ -64,9 +64,19 @@
             if (type == ReflectionData.ComboBox) {
                 return this.getComboBox(obj);
             }
+            if (type == ReflectionData.Vec3Color) {
+                return this.getVec3Color(obj);
+            }
 
             
             return null;
+        }
+        public getVec3Color($obj: Object): Vec3ColorCtrlUI {
+            var $textCtrlInput: Vec3ColorCtrlUI = new Vec3ColorCtrlUI()
+            $textCtrlInput.label = $obj[ReflectionData.Key_Label];
+            $textCtrlInput.FunKey = $obj[ReflectionData.FunKey];
+            $textCtrlInput.target = this
+            return $textCtrlInput;
         }
         public getComboBox($obj: Object): ComBoBoxCtrl2D {
             var $ComBoBoxCtrl2D: ComBoBoxCtrl2D = new ComBoBoxCtrl2D()

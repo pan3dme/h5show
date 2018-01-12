@@ -34,7 +34,7 @@ var left;
             _this.layer = 100;
             _this.left = 0;
             _this.top = 0;
-            _this.width = 250;
+            _this.width = 300;
             _this._bottomRender = new UIRenderComponent;
             _this.addRender(_this._bottomRender);
             _this._midRender = new UIRenderComponent;
@@ -128,6 +128,7 @@ var left;
             Scene_data.uiStage.addEventListener(InteractiveEvent.Move, this.onMoveLine, this);
             this.initView();
             this.resize();
+            prop.PropModel.getInstance().showSciencePropPanel();
         };
         LeftPanel.prototype.butClik = function (evt) {
             switch (evt.target) {

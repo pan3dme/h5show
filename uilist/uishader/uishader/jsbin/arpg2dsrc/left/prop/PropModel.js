@@ -34,6 +34,15 @@ var prop;
                 this.metaDataView.top = this._top;
             }
         };
+        PropModel.prototype.showSciencePropPanel = function () {
+            if (this.metaDataView) {
+                this.metaDataView.destory();
+                this.metaDataView = null;
+                this.lastNodel = null;
+            }
+            this.metaDataView = new prop.SciencePropMeshPanel();
+            this.metaDataView.data = new SceneChar;
+        };
         PropModel.prototype.moveTop = function ($ty) {
             this._top = $ty;
             if (this.metaDataView) {

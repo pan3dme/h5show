@@ -23,7 +23,7 @@
             this.layer = 100
             this.left = 0;
             this.top = 0;
-            this.width=250
+            this.width=300
             this._bottomRender = new UIRenderComponent;
             this.addRender(this._bottomRender);
 
@@ -147,6 +147,9 @@
 
             this.initView()
             this.resize();
+
+
+            prop.PropModel.getInstance().showSciencePropPanel();
         }
         protected butClik(evt: InteractiveEvent): void {
             switch (evt.target) {

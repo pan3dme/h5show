@@ -160,7 +160,7 @@
 
             });
 
-            GameMouseManager.getInstance().addMouseEvent();
+          
         }
         private baseMaterialTree: MaterialTree
         private readMaterialTree(): void {

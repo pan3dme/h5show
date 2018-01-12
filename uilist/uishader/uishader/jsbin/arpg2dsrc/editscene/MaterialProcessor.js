@@ -148,7 +148,6 @@ var materialui;
                 $rightMenuEvet.posv2d = new Vector2D(event.clientX, event.clientY);
                 ModuleEventManager.dispatchEvent($rightMenuEvet);
             });
-            GameMouseManager.getInstance().addMouseEvent();
         };
         MaterialProcessor.prototype.readMaterialTree = function () {
             var _this = this;
