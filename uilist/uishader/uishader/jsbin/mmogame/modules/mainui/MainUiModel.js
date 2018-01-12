@@ -1,6 +1,6 @@
 var mainUi;
 (function (mainUi) {
-    var MainUiModel = (function () {
+    var MainUiModel = /** @class */ (function () {
         function MainUiModel() {
         }
         /*
@@ -26,6 +26,9 @@ var mainUi;
                 if (GuidData.faction.getApplyList().length && GuidData.faction.playerIdentity < 4) {
                     $arr.push(2);
                 }
+                // if (GuidData.faction.queenGiftUncheckNum > 0) {
+                //     $arr.push(3);
+                // }
             }
             else {
                 if (faction.FactionModel.getInstance().getInvitationList().length) {
@@ -176,7 +179,7 @@ var mainUi;
         MainUiModel.skillTabIndex = 0; //0技能，1为系统
         MainUiModel.systemTab = 1; //true第一组，false第二组
         return MainUiModel;
-    })();
+    }());
     mainUi.MainUiModel = MainUiModel;
 })(mainUi || (mainUi = {}));
 //# sourceMappingURL=MainUiModel.js.map

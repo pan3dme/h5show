@@ -1,17 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var topui;
 (function (topui) {
-    var TopIconVo = (function () {
+    var TopIconVo = /** @class */ (function () {
         function TopIconVo() {
         }
         return TopIconVo;
-    })();
+    }());
     topui.TopIconVo = TopIconVo;
-    var ActivityManager = (function () {
+    var ActivityManager = /** @class */ (function () {
         function ActivityManager() {
             /*
             private getSysList(): void {
@@ -93,6 +98,20 @@ var topui;
                     this.b_text.x = this.b_bg.x + 12;
                     this.b_text.y = this.b_bg.y + 11;
                 }
+                // for (var i = 0; i < this._itemUi.length; i++) {
+                //     var tb: tb.TB_system_icon = this._itemUi[i].ui.data
+                //     if (tb.id == SharedDef.MODULE_BOSS) {
+                //         this._container.setUiListVisibleByItem(this.aryUI, true);
+                //         var $txtWidth: number = LabelTextFont.writeSingleLabel(this._bottomRender.uiAtlas, this.b_text.skinName, $data, 16, TextAlign.LEFT);
+                //         this.b_arrow.x = this._itemUi[i].ui.x + 20
+                //         this.b_arrow.y = this._itemUi[i].ui.y + this._itemUi[i].ui.height - 5
+                //         this.b_bg.x = this.b_arrow.x - ($txtWidth - 69)
+                //         this.b_bg.y = this.b_arrow.y + 12
+                //         this.b_bg.width = $txtWidth + 20;
+                //         this.b_text.x = this.b_bg.x + 12
+                //         this.b_text.y = this.b_bg.y + 11
+                //     }
+                // }
             }
         };
         ActivityManager.prototype.getIconByID = function ($id) {
@@ -148,17 +167,18 @@ var topui;
             }
         };
         return ActivityManager;
-    })();
+    }());
     topui.ActivityManager = ActivityManager;
-    var TopPandaPanel = (function (_super) {
+    var TopPandaPanel = /** @class */ (function (_super) {
         __extends(TopPandaPanel, _super);
         function TopPandaPanel() {
-            _super.call(this);
-            this.canAotuOpen = false;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.top = 0;
-            this.right = 0;
+            var _this = _super.call(this) || this;
+            _this.canAotuOpen = false;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.top = 0;
+            _this.right = 0;
+            return _this;
         }
         TopPandaPanel.prototype.setRender = function ($bottom, $mid, $top, $redpointRender) {
             this._bottomRender = $bottom;
@@ -215,7 +235,7 @@ var topui;
             }
         };
         return TopPandaPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     topui.TopPandaPanel = TopPandaPanel;
 })(topui || (topui = {}));
 //# sourceMappingURL=TopPandaPanel.js.map

@@ -1,23 +1,28 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var MenuKeyUtil = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var MenuKeyUtil = /** @class */ (function (_super) {
     __extends(MenuKeyUtil, _super);
     function MenuKeyUtil() {
-        var _this = this;
-        _super.call(this);
-        this._complete = false;
-        this.width = UIData.designWidth;
-        this.height = UIData.designHeight;
-        this._bottomRender = new UIRenderComponent;
-        this.addRender(this._bottomRender);
-        this._baseRender = new UIRenderComponent;
-        this.addRender(this._baseRender);
-        this._topRender = new UIRenderComponent;
-        this.addRender(this._topRender);
-        this._topRender.setInfo("ui/uidata/dropmenu/dropmenu.xml", "ui/uidata/dropmenu/dropmenu.png", function () { _this.loadConfigCom(); });
+        var _this = _super.call(this) || this;
+        _this._complete = false;
+        _this.width = UIData.designWidth;
+        _this.height = UIData.designHeight;
+        _this._bottomRender = new UIRenderComponent;
+        _this.addRender(_this._bottomRender);
+        _this._baseRender = new UIRenderComponent;
+        _this.addRender(_this._baseRender);
+        _this._topRender = new UIRenderComponent;
+        _this.addRender(_this._topRender);
+        _this._topRender.setInfo("ui/uidata/dropmenu/dropmenu.xml", "ui/uidata/dropmenu/dropmenu.png", function () { _this.loadConfigCom(); });
+        return _this;
     }
     MenuKeyUtil.prototype.initData = function ($x, $y, $backFun) {
         if ($backFun === void 0) { $backFun = null; }
@@ -119,5 +124,5 @@ var MenuKeyUtil = (function (_super) {
         return this.menuKeyUtil;
     };
     return MenuKeyUtil;
-})(UIConatiner);
+}(UIConatiner));
 //# sourceMappingURL=MenuKeyUtil.js.map

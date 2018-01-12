@@ -1,36 +1,42 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var ranking;
 (function (ranking) {
-    var Avo = (function () {
+    var Avo = /** @class */ (function () {
         function Avo() {
         }
         return Avo;
-    })();
+    }());
     ranking.Avo = Avo;
-    var CurrentServerRanking = (function (_super) {
+    var CurrentServerRanking = /** @class */ (function (_super) {
         __extends(CurrentServerRanking, _super);
         function CurrentServerRanking() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._winmidelRender = new UIRenderComponent;
-            this.addRender(this._winmidelRender);
-            this._roleRender = new UIRenderComponent;
-            this.addRender(this._roleRender);
-            this._publicRender = new UIRenderComponent;
-            this.addRender(this._publicRender);
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._winmidelRender = new UIRenderComponent;
+            _this.addRender(_this._winmidelRender);
+            _this._roleRender = new UIRenderComponent;
+            _this.addRender(_this._roleRender);
+            _this._publicRender = new UIRenderComponent;
+            _this.addRender(_this._publicRender);
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            return _this;
         }
         CurrentServerRanking.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -134,16 +140,17 @@ var ranking;
             this.currentRankingCenterPanel.currentServerRankingList.sendrequest($uicomponent.data);
         };
         return CurrentServerRanking;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     ranking.CurrentServerRanking = CurrentServerRanking;
-    var CurrentRankingCenterPanel = (function (_super) {
+    var CurrentRankingCenterPanel = /** @class */ (function (_super) {
         __extends(CurrentRankingCenterPanel, _super);
         function CurrentRankingCenterPanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            return _this;
         }
         CurrentRankingCenterPanel.prototype.dispose = function () {
             if (this.currentServerRankingList) {
@@ -266,10 +273,12 @@ var ranking;
             if ($rank == -1 || $rank == 0) {
                 //未上榜
                 UiDraw.SharedDrawImg(this._topRender.uiAtlas, this._topRender.uiAtlas, this.RankNum.skinName, "NoRank", 0, 9, false);
+                // CurrentRankingCenterPanel.SharedDraw(this._topRender.uiAtlas, this.RankNum.skinName, "NoRank", 0, 6);
             }
             else if ($rank < 4) {
                 //前三名
                 UiDraw.SharedDrawImg(this._topRender.uiAtlas, this._topRender.uiAtlas, this.RankNum.skinName, String($rank), 10, 0, false);
+                // CurrentRankingCenterPanel.SharedDraw(this._topRender.uiAtlas, this.RankNum.skinName, String($rank), 10, 0);
             }
             else {
                 LabelTextFont.writeSingleLabel(this._topRender.uiAtlas, this.RankNum.skinName, String($rank), 16, TextAlign.CENTER, ColorType.Brown7a2f21, "", 7);
@@ -390,18 +399,19 @@ var ranking;
             this.currentServerRankingList.left = this.slistIndex.parent.x / UIData.Scale + this.slistIndex.x;
         };
         return CurrentRankingCenterPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     ranking.CurrentRankingCenterPanel = CurrentRankingCenterPanel;
-    var CurrentRankingRightPanel = (function (_super) {
+    var CurrentRankingRightPanel = /** @class */ (function (_super) {
         __extends(CurrentRankingRightPanel, _super);
         function CurrentRankingRightPanel() {
-            _super.call(this);
-            this._lastMouseX = 0;
-            this._lastRoleRotatioinY = 0;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
+            var _this = _super.call(this) || this;
+            _this._lastMouseX = 0;
+            _this._lastRoleRotatioinY = 0;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            return _this;
         }
         CurrentRankingRightPanel.prototype.dispose = function () {
             if (this.mountRoleSprite) {
@@ -620,7 +630,7 @@ var ranking;
             NetManager.getInstance().protocolos.rank_add_like(this._data.data.typeShareDef, this._data.data.data.guid);
         };
         return CurrentRankingRightPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     ranking.CurrentRankingRightPanel = CurrentRankingRightPanel;
 })(ranking || (ranking = {}));
 //# sourceMappingURL=CurrentServerRanking.js.map

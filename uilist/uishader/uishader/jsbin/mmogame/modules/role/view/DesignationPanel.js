@@ -1,26 +1,32 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var role;
 (function (role) {
-    var DesignationPanel = (function (_super) {
+    var DesignationPanel = /** @class */ (function (_super) {
         __extends(DesignationPanel, _super);
         function DesignationPanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._publicRender = new UIRenderComponent;
-            this.addRender(this._publicRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._redPointRender = new RedPointRender;
-            this.addRender(this._redPointRender);
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._publicRender = new UIRenderComponent;
+            _this.addRender(_this._publicRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._redPointRender = new RedPointRender;
+            _this.addRender(_this._redPointRender);
+            return _this;
         }
         DesignationPanel.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -96,11 +102,13 @@ var role;
                 this.c_tab0.selected = true;
                 this.c_tab1.selected = false;
                 this.gdesignationList.show(role.TabKey.TabAction);
+                // this.rechargePanel.hide();
             }
             else if ($value == 1) {
                 this.c_tab1.selected = true;
                 this.c_tab0.selected = false;
                 this.gdesignationList.show(role.TabKey.Tabdesignation);
+                // this.rechargePanel.hide();
             }
             this.resize();
         };
@@ -276,17 +284,18 @@ var role;
             }
         };
         return DesignationPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     role.DesignationPanel = DesignationPanel;
     /**
      * DesignationList
      */
-    var GDesignationList = (function (_super) {
+    var GDesignationList = /** @class */ (function (_super) {
         __extends(GDesignationList, _super);
         function GDesignationList() {
-            _super.call(this);
-            this.left = 222;
-            this.top = 83;
+            var _this = _super.call(this) || this;
+            _this.left = 222;
+            _this.top = 83;
+            return _this;
         }
         GDesignationList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -335,12 +344,12 @@ var role;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return GDesignationList;
-    })(SList);
+    }(SList));
     role.GDesignationList = GDesignationList;
-    var GDesignationListRender = (function (_super) {
+    var GDesignationListRender = /** @class */ (function (_super) {
         __extends(GDesignationListRender, _super);
         function GDesignationListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         GDesignationListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -431,7 +440,7 @@ var role;
             this.RedPoint.preHide();
         };
         return GDesignationListRender;
-    })(SListItem);
+    }(SListItem));
     role.GDesignationListRender = GDesignationListRender;
 })(role || (role = {}));
 //# sourceMappingURL=DesignationPanel.js.map

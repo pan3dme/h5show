@@ -1,19 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var WindowMinUi = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var WindowMinUi = /** @class */ (function (_super) {
     __extends(WindowMinUi, _super);
     function WindowMinUi() {
-        _super.call(this);
-        this._needBlackBg = false;
-        this._hasInit = false;
-        this.width = UIData.designWidth;
-        this.height = UIData.designHeight;
-        this.right = 0;
-        this.middle = 0;
-        this.addWinUiPanel();
+        var _this = _super.call(this) || this;
+        _this._needBlackBg = false;
+        _this._hasInit = false;
+        _this.width = UIData.designWidth;
+        _this.height = UIData.designHeight;
+        _this.right = 0;
+        _this.middle = 0;
+        _this.addWinUiPanel();
+        return _this;
     }
     WindowMinUi.prototype.dispose = function () {
         if (this.winbgRender) {
@@ -123,5 +129,5 @@ var WindowMinUi = (function (_super) {
         // ModuleEventManager.dispatchEvent(new wintittle.WindowRestTittleEvent(wintittle.WindowRestTittleEvent.HIDE_WINDOW_RES_TITTLE_PANEL))
     };
     return WindowMinUi;
-})(UIPanel);
+}(UIPanel));
 //# sourceMappingURL=WindowMinUi.js.map

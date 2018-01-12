@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var newbieguide;
 (function (newbieguide) {
-    var NewbieguideModule = (function (_super) {
+    var NewbieguideModule = /** @class */ (function (_super) {
         __extends(NewbieguideModule, _super);
         function NewbieguideModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         NewbieguideModule.prototype.getModuleName = function () {
             return "NewbieguideModule";
@@ -17,12 +22,12 @@ var newbieguide;
             return [new NewbieguideProcessor()];
         };
         return NewbieguideModule;
-    })(Module);
+    }(Module));
     newbieguide.NewbieguideModule = NewbieguideModule;
-    var NewbieguideEvent = (function (_super) {
+    var NewbieguideEvent = /** @class */ (function (_super) {
         __extends(NewbieguideEvent, _super);
         function NewbieguideEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         NewbieguideEvent.SHOW_BIEGUIDE_EVENT = "SHOW_BIEGUIDE_EVENT";
         NewbieguideEvent.HIDE_BIEGUIDE_EVENT = "HIDE_BIEGUIDE_EVENT";
@@ -33,12 +38,12 @@ var newbieguide;
         NewbieguideEvent.SHOW_USEITEM_EVENT = "SHOW_USEITEM_EVENT";
         NewbieguideEvent.HIDE_USEITEM_EVENT = "HIDE_USEITEM_EVENT";
         return NewbieguideEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     newbieguide.NewbieguideEvent = NewbieguideEvent;
-    var NewbieguideProcessor = (function (_super) {
+    var NewbieguideProcessor = /** @class */ (function (_super) {
         __extends(NewbieguideProcessor, _super);
         function NewbieguideProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         NewbieguideProcessor.prototype.getName = function () {
             return "NewbieguideProcessor";
@@ -183,7 +188,7 @@ var newbieguide;
             ];
         };
         return NewbieguideProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     newbieguide.NewbieguideProcessor = NewbieguideProcessor;
 })(newbieguide || (newbieguide = {}));
 //# sourceMappingURL=NewbieguideProcessor.js.map

@@ -1,18 +1,18 @@
 var moneytree;
 (function (moneytree) {
-    var MoneyTreeGiftVo = (function () {
+    var MoneyTreeGiftVo = /** @class */ (function () {
         function MoneyTreeGiftVo() {
         }
         return MoneyTreeGiftVo;
-    })();
+    }());
     moneytree.MoneyTreeGiftVo = MoneyTreeGiftVo;
-    var MoneyTreeBaseVo = (function () {
+    var MoneyTreeBaseVo = /** @class */ (function () {
         function MoneyTreeBaseVo() {
         }
         return MoneyTreeBaseVo;
-    })();
+    }());
     moneytree.MoneyTreeBaseVo = MoneyTreeBaseVo;
-    var MoneyTreeModel = (function () {
+    var MoneyTreeModel = /** @class */ (function () {
         function MoneyTreeModel() {
         }
         MoneyTreeModel.getInstance = function () {
@@ -51,7 +51,7 @@ var moneytree;
             return basevo;
         };
         return MoneyTreeModel;
-    })();
+    }());
     moneytree.MoneyTreeModel = MoneyTreeModel;
 })(moneytree || (moneytree = {}));
 //# sourceMappingURL=MoneyTreeModel.js.map

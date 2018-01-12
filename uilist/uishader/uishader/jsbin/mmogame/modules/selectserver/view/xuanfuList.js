@@ -1,16 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var selectserver;
 (function (selectserver) {
-    var xuanfuList = (function (_super) {
+    var xuanfuList = /** @class */ (function (_super) {
         __extends(xuanfuList, _super);
         function xuanfuList() {
-            _super.call(this);
-            this.left = 295;
-            this.top = 98;
+            var _this = _super.call(this) || this;
+            _this.left = 295;
+            _this.top = 98;
+            return _this;
         }
         xuanfuList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -42,12 +48,12 @@ var selectserver;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return xuanfuList;
-    })(SList);
+    }(SList));
     selectserver.xuanfuList = xuanfuList;
-    var xuanfuListRender = (function (_super) {
+    var xuanfuListRender = /** @class */ (function (_super) {
         __extends(xuanfuListRender, _super);
         function xuanfuListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         xuanfuListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -123,7 +129,7 @@ var selectserver;
             UiDraw.clearUI(this.roleinfomation);
         };
         return xuanfuListRender;
-    })(SListItem);
+    }(SListItem));
     selectserver.xuanfuListRender = xuanfuListRender;
 })(selectserver || (selectserver = {}));
 //# sourceMappingURL=xuanfuList.js.map
