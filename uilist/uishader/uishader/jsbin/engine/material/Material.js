@@ -41,7 +41,7 @@ var Material = /** @class */ (function (_super) {
         }
     };
     Material.prototype.updateCam = function (x, y, z) {
-        if (this.usePbr || this.fogMode == 1) {
+        if (this.usePbr || this.hasFresnel || this.fogMode == 1) {
             var idx = this.fcIDAry[0] * 4;
             this.fcData[0 + idx] = x;
             this.fcData[1 + idx] = y;

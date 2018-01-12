@@ -26,6 +26,17 @@ var prop;
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(TexturePicIMeshVo.prototype, "imagepic", {
+            set: function (img) {
+                var rec = this.textLabelUIDisp2D.parent.uiAtlas.getRec(this.textLabelUIDisp2D.ui.skinName);
+                var $ctx = UIManager.getInstance().getContext2D(rec.pixelWitdh, rec.pixelHeight, false);
+                $ctx.clearRect(0, 0, rec.pixelWitdh, rec.pixelHeight);
+                $ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, rec.pixelWitdh, rec.pixelHeight);
+                TextureManager.getInstance().updateTexture(this.textLabelUIDisp2D.parent.uiAtlas.texture, rec.pixelX, rec.pixelY, $ctx);
+            },
+            enumerable: true,
+            configurable: true
+        });
         TexturePicIMeshVo.prototype.destory = function () {
             this.pos = null;
             this._url = null;
@@ -48,10 +59,18 @@ var prop;
                 this.ui.height = 64;
                 this.lastKey = this.labelNameMeshVo.url;
                 if (this.labelNameMeshVo.url) {
-                    this.parent.uiAtlas.upDataPicToTexture(this.labelNameMeshVo.url, this.textureStr);
+                    var $img = TextureManager.getInstance().getImgResByurl(Scene_data.fileRoot + this.labelNameMeshVo.url);
+                    if ($img) {
+                        var rec = this.parent.uiAtlas.getRec(this.textureStr);
+                        this.parent.uiAtlas.ctx = UIManager.getInstance().getContext2D(rec.pixelWitdh, rec.pixelHeight, false);
+                        this.parent.uiAtlas.ctx.drawImage($img, 0, 0, rec.pixelWitdh, rec.pixelHeight);
+                        TextureManager.getInstance().updateTexture(this.parent.uiAtlas.texture, rec.pixelX, rec.pixelY, this.parent.uiAtlas.ctx);
+                    }
+                    else {
+                        this.parent.uiAtlas.upDataPicToTexture(this.labelNameMeshVo.url, this.textureStr);
+                    }
                 }
                 else {
-                    // this.parent.uiAtlas.upDataPicToTexture("assets/base.jpg", this.textureStr);
                     this.parent.uiAtlas.clearCtxTextureBySkilname(this.textureStr);
                 }
                 this.labelNameMeshVo.needDraw = false;
@@ -117,10 +136,29 @@ var prop;
             $ui.addEventListener(InteractiveEvent.Down, this.butClik, this);
         };
         TexturePicUi.prototype.butClik = function (evt) {
+            var _this = this;
             if (TimeUtil.getTimer() < this.$dulbelClikTm) {
-                console.log("打开图片地址");
+                this._inputHtmlSprite = document.createElement('input');
+                this._inputHtmlSprite.setAttribute('id', '_ef');
+                this._inputHtmlSprite.setAttribute('type', 'file');
+                this._inputHtmlSprite.setAttribute("style", 'visibility:hidden');
+                this._inputHtmlSprite.click();
+                this._inputHtmlSprite.value;
+                this._inputHtmlSprite.addEventListener("change", function (cevt) { _this.changeFile(cevt); });
             }
             this.$dulbelClikTm = TimeUtil.getTimer() + 1000;
+        };
+        TexturePicUi.prototype.changeFile = function (evt) {
+            for (var i = 0; i < this._inputHtmlSprite.files.length && i < 1; i++) {
+                var simpleFile = this._inputHtmlSprite.files[i];
+                if (!/image\/\w+/.test(simpleFile.type)) {
+                    alert("请确保文件类型为图像类型");
+                }
+                var $reflectionEvet = new prop.ReflectionEvet(prop.ReflectionEvet.CHANGE_DATA);
+                $reflectionEvet.data = simpleFile;
+                this.dispatchEvent($reflectionEvet);
+            }
+            this._inputHtmlSprite = null;
         };
         TexturePicUi.prototype.resize = function () {
             this.textLabelUIMeshVo.pos.x = this._x;
@@ -131,11 +169,10 @@ var prop;
         };
         Object.defineProperty(TexturePicUi.prototype, "url", {
             get: function () {
-                return "";
+                return this.textLabelUIMeshVo.url;
             },
             set: function (value) {
                 this.textLabelUIMeshVo.url = value;
-                console.log(value);
             },
             enumerable: true,
             configurable: true

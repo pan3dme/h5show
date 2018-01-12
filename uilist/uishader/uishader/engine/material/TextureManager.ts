@@ -26,6 +26,20 @@
         }
         return false;
     }
+    public getImgResByurl($url: string): any {
+        return this._resDic[$url]
+    }
+    public addImgRes($url: string, $img: any): void {
+        this._resDic[$url] = $img
+        var texture: WebGLTexture = Scene_data.context3D.getTexture($img);
+        var textres: TextureRes = new TextureRes();
+        textres.texture = texture;
+        textres.width = $img.width;
+        textres.height = $img.height;
+        textres.useNum++;
+        this._dic[$url] = textres;
+
+    }
 
     public getTexture($url: string, $fun: Function, $wrapType: number = 0, $info: any = null, $filteType: number = 0, $mipmapType: number = 0): void {
         // if ($url.indexOf("zc_deng_00.png") != -1) {

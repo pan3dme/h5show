@@ -17,8 +17,23 @@
             this.texturePicUi.addEventListener(ReflectionEvet.CHANGE_DATA, this.onChangePicurl, this)
             this.height = 100
         }
+
         private onChangePicurl($evt: ReflectionEvet): void {
-            console.log($evt.data)
+            this.makeNewTextureByFile($evt.data);
+
+        }
+        private makeNewTextureByFile(simpleFile: File): void {
+            var reader = new FileReader();
+            reader.readAsDataURL(simpleFile);
+            reader.onload = () => {
+                var img: any = new Image();
+                img.onload = () => {
+                    TextureManager.getInstance().addImgRes(Scene_data.fileRoot + simpleFile.name, img);
+                    this.target[this.FunKey] = simpleFile.name
+                    this.refreshViewValue()
+                }
+                img.src = reader.result;
+            }
         }
         public destory(): void {
             this.textLabelUI.destory()

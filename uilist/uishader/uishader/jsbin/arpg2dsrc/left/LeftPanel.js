@@ -49,7 +49,7 @@ var left;
         }
         LeftPanel.prototype.initView = function () {
             var $ui = this.addChild(this.modelPic.getComponent("a_model_show"));
-            this.modelPic.setImgUrl("ui/load/map/bigworld.jpg");
+            this.modelPic.setImgUrl("pan/marmoset/uilist/1024.jpg");
             $ui.top = 10;
             $ui.left = 10;
             left.ModelShowModel.getInstance()._bigPic = this.modelPic;
@@ -90,9 +90,14 @@ var left;
             }
             if (this.a_left_line.data) {
                 var $lastV2d = this.a_left_line.data;
-                this.width = this.lastWidth + ($e.x - $lastV2d.x);
+                var Tx = ($e.x - $lastV2d.x);
+                var $lastW = this.width;
+                this.width = this.lastWidth + Tx;
                 this.resize();
                 prop.PropModel.getInstance().moveTop(this.width + 60);
+                var $materialEvent = new materialui.MaterialEvent(materialui.MaterialEvent.SCENE_UI_TRUE_MOVE);
+                $materialEvent.v2d = new Vector2D((this.width - $lastW) / materialui.MtlUiData.Scale, 0);
+                ModuleEventManager.dispatchEvent($materialEvent);
             }
         };
         LeftPanel.prototype.addStageMoveEvets = function ($e) {

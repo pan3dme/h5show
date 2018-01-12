@@ -37,6 +37,7 @@
     <TypeScriptCompile Include="arpg2dsrc\editscene\nodetype\NodeTreeAdd.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\nodetype\NodeTreeDiv.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\nodetype\NodeTreeFloat.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\editscene\nodetype\NodeTreeFresnel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\nodetype\NodeTreeMul.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\nodetype\NodeTreeOP.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\nodetype\NodeTreeSin.ts" />
@@ -56,6 +57,9 @@
     <TypeScriptCompile Include="arpg2dsrc\editscene\ui\MtUiPanel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\ui\MtUIRenderComponent.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\ui\MtFrameCompenent.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\editscene\view\constnum\FresnelNodeUI.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\colorview\ColorPanel.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\colorview\ColorProcessor.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\base\BaseReflComponent.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\view\BaseMaterialNodeUI.ts" />
     <TypeScriptCompile Include="arpg2dsrc\editscene\materialui\ItemMaterialUI.ts" />

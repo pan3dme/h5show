@@ -106,6 +106,7 @@ var materialui;
             this.menuTextItem.push(this.getMathListData());
             this.menuTextItem.push(this.getV2CListData());
             this.menuTextItem.push(this.getTextureListData());
+            this.menuTextItem.push(this.getOtherListData());
             this.mainMenuUiArr = new Array();
             this.subMenuUiArr = new Array;
             for (var i = 0; i < this.menuTextItem.length; i++) {
@@ -142,6 +143,12 @@ var materialui;
             var $vo = new MenuListData("纹理", "3");
             $vo.subMenu = new Array;
             $vo.subMenu.push(new MenuListData("纹理贴图", "31"));
+            return $vo;
+        };
+        RightMenuPanel.prototype.getOtherListData = function () {
+            var $vo = new MenuListData("其它", "4");
+            $vo.subMenu = new Array;
+            $vo.subMenu.push(new MenuListData("菲捏尔", "41"));
             return $vo;
         };
         RightMenuPanel.prototype.moseMoveTo = function ($ui) {
@@ -227,9 +234,6 @@ var materialui;
                     case "14":
                         this.onTempNode(new materialui.MathDivNodeUI(), evt);
                         break;
-                    case "31":
-                        this.onTempNode(new materialui.TextureSampleNodeUI(), evt);
-                        break;
                     case "22":
                         this.onTempNode(new materialui.ConstVec3NodeUI(), evt);
                         break;
@@ -238,6 +242,14 @@ var materialui;
                         break;
                     case "24":
                         this.onTempNode(new materialui.ConstFloatNodeUI(), evt);
+                        break;
+                    case "31":
+                        var textui = new materialui.TextureSampleNodeUI();
+                        this.onTempNode(textui, evt);
+                        textui.creatBase("assets/white.jpg");
+                        break;
+                    case "41":
+                        this.onTempNode(new materialui.FresnelNodeUI(), evt);
                         break;
                     default:
                         break;

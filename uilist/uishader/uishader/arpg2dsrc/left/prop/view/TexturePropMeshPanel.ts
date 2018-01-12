@@ -24,7 +24,10 @@
         }
   
         public set picurl(value: string) {
+            
             (<materialui.NodeTreeTex>this.textureSampleNodeUI.nodeTree).url = value
+            this.textureSampleNodeUI.drawPicBmp();
+            this.changeData();
         }
         public get picurl(): string {
             return (<materialui.NodeTreeTex>this.textureSampleNodeUI.nodeTree).url
@@ -66,6 +69,10 @@
             } else {
                 return 0;
             }
+        }
+
+        private changeData(): void {
+            ModuleEventManager.dispatchEvent(new materialui.MaterialEvent(materialui.MaterialEvent.COMPILE_MATERIAL));
         }
     }
 }

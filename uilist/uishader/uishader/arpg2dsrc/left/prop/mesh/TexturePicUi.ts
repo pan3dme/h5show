@@ -9,6 +9,13 @@
         public get url(): string {
             return this._url;
         }
+        public set imagepic(img: any) {
+            var rec: UIRectangle = this.textLabelUIDisp2D.parent.uiAtlas.getRec(this.textLabelUIDisp2D.ui.skinName);
+            var $ctx = UIManager.getInstance().getContext2D(rec.pixelWitdh, rec.pixelHeight, false);
+            $ctx.clearRect(0, 0, rec.pixelWitdh, rec.pixelHeight)
+            $ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, rec.pixelWitdh, rec.pixelHeight)
+            TextureManager.getInstance().updateTexture(this.textLabelUIDisp2D.parent.uiAtlas.texture, rec.pixelX, rec.pixelY, $ctx);
+        }
         public destory(): void {
             this.pos = null;
             this._url = null;
@@ -26,9 +33,16 @@
                 this.ui.height = 64
                 this.lastKey = this.labelNameMeshVo.url
                 if (this.labelNameMeshVo.url) {
-                    this.parent.uiAtlas.upDataPicToTexture(this.labelNameMeshVo.url, this.textureStr);
+                    var $img: any = TextureManager.getInstance().getImgResByurl(Scene_data.fileRoot + this.labelNameMeshVo.url)
+                    if ($img) {
+                        var rec: UIRectangle = this.parent.uiAtlas.getRec(this.textureStr);
+                        this.parent.uiAtlas.ctx = UIManager.getInstance().getContext2D(rec.pixelWitdh, rec.pixelHeight, false);
+                        this.parent.uiAtlas.ctx.drawImage($img, 0, 0, rec.pixelWitdh, rec.pixelHeight);
+                        TextureManager.getInstance().updateTexture(this.parent.uiAtlas.texture, rec.pixelX, rec.pixelY, this.parent.uiAtlas.ctx);
+                    } else {
+                        this.parent.uiAtlas.upDataPicToTexture(this.labelNameMeshVo.url, this.textureStr);
+                    }
                 } else {
-                   // this.parent.uiAtlas.upDataPicToTexture("assets/base.jpg", this.textureStr);
                     this.parent.uiAtlas.clearCtxTextureBySkilname(this.textureStr)
                 }
                 this.labelNameMeshVo.needDraw = false;
@@ -93,13 +107,33 @@
             var $ui: UICompenent = this.textLabelUIMeshVo.textLabelUIDisp2D.ui;
             $ui.addEventListener(InteractiveEvent.Down, this.butClik, this);
         }
-        private $dulbelClikTm:number=0
+        private $dulbelClikTm: number = 0;
+        private _inputHtmlSprite: HTMLInputElement
         protected butClik(evt: InteractiveEvent): void {
-            if (TimeUtil.getTimer() < this.$dulbelClikTm) {
-                console.log("打开图片地址")
-            }
-            this.$dulbelClikTm=TimeUtil.getTimer()+1000
 
+            if (TimeUtil.getTimer() < this.$dulbelClikTm) {
+                this._inputHtmlSprite = <HTMLInputElement>document.createElement('input');
+                this._inputHtmlSprite.setAttribute('id', '_ef');
+                this._inputHtmlSprite.setAttribute('type', 'file');
+                this._inputHtmlSprite.setAttribute("style", 'visibility:hidden');
+                this._inputHtmlSprite.click();
+                this._inputHtmlSprite.value;
+                this._inputHtmlSprite.addEventListener("change", (cevt: any) => { this.changeFile(cevt) });
+            }
+            this.$dulbelClikTm = TimeUtil.getTimer() + 1000
+         
+        }
+        private changeFile(evt: any): void {
+            for (var i: number = 0; i < this._inputHtmlSprite.files.length&&i<1; i++) {
+                var simpleFile = this._inputHtmlSprite.files[i]
+                if (!/image\/\w+/.test(simpleFile.type)) {
+                    alert("请确保文件类型为图像类型");
+                }
+                var $reflectionEvet: ReflectionEvet = new ReflectionEvet(ReflectionEvet.CHANGE_DATA)
+                $reflectionEvet.data = simpleFile
+                this.dispatchEvent($reflectionEvet);
+            }
+            this._inputHtmlSprite = null;
         }
         private resize(): void {
             this.textLabelUIMeshVo.pos.x = this._x;
@@ -108,17 +142,12 @@
         private upFrame(t: number): void {
             TexturePicUi._dis2DUIContianer.update(t);
         }
-
         public get url(): string {
-            return "";
+            return this.textLabelUIMeshVo.url;
         }
         public set url(value: string) {
-   
             this.textLabelUIMeshVo.url = value;
-            console.log(value)
         }
-      
-
         protected textLabelUIMeshVo: TexturePicIMeshVo
         public getCharNameMeshVo(value: string = "测试名"): TexturePicIMeshVo {
             var $vo: TexturePicIMeshVo = new TexturePicIMeshVo;

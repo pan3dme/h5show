@@ -116,6 +116,7 @@
             this.menuTextItem.push(this.getMathListData());
             this.menuTextItem.push(this.getV2CListData());
             this.menuTextItem.push(this.getTextureListData());
+            this.menuTextItem.push(this.getOtherListData());
 
 
             this.mainMenuUiArr = new Array()
@@ -158,6 +159,12 @@
             var $vo: MenuListData = new MenuListData("纹理", "3")
             $vo.subMenu = new Array;
             $vo.subMenu.push(new MenuListData("纹理贴图", "31"));
+            return $vo;
+        }
+        private getOtherListData(): MenuListData {
+            var $vo: MenuListData = new MenuListData("其它", "4")
+            $vo.subMenu = new Array;
+            $vo.subMenu.push(new MenuListData("菲捏尔", "41"));
             return $vo;
         }
         public moseMoveTo($ui: FrameCompenent): void {
@@ -249,9 +256,7 @@
                     case "14":
                         this.onTempNode(new MathDivNodeUI(), evt)
                         break;
-                    case "31":
-                        this.onTempNode(new TextureSampleNodeUI(), evt)
-                        break;
+             
                     case "22":
                         this.onTempNode(new ConstVec3NodeUI(), evt)
                         break;
@@ -260,6 +265,14 @@
                         break;
                     case "24":
                         this.onTempNode(new ConstFloatNodeUI(), evt)
+                        break;
+                    case "31":
+                        var textui: TextureSampleNodeUI = new TextureSampleNodeUI()
+                        this.onTempNode(textui, evt)
+                        textui.creatBase("assets/white.jpg");
+                        break;
+                    case "41":
+                        this.onTempNode(new FresnelNodeUI(), evt)
                         break;
                     default:
                         break;

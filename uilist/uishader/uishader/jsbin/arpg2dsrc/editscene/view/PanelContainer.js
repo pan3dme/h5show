@@ -40,6 +40,9 @@ var materialui;
                 case "xy":
                     $ui.labelframe.goToAndStop(8);
                     break;
+                case "alpha":
+                    $ui.labelframe.goToAndStop(9);
+                    break;
                 case "rgba":
                     $ui.labelframe.goToAndStop(6);
                     break;
