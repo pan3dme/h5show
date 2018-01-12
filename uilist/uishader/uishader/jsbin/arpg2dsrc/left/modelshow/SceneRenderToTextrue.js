@@ -2,8 +2,6 @@ var left;
 (function (left) {
     var SceneRenderToTextrue = /** @class */ (function () {
         function SceneRenderToTextrue() {
-            this.fw = 1024;
-            this.fh = 1024;
         }
         SceneRenderToTextrue.getInstance = function () {
             if (!this._instance) {
@@ -12,20 +10,20 @@ var left;
             return this._instance;
         };
         SceneRenderToTextrue.prototype.getFBO = function () {
-            this.fw = 1024;
-            this.fh = 1024;
+            FBO.fw = 512;
+            FBO.fh = 512;
             this.renderContext = Scene_data.context3D.renderContext;
             var gl = Scene_data.context3D.renderContext;
             var fbo = new FBO();
             fbo.texture = gl.createTexture();
             gl.bindTexture(gl.TEXTURE_2D, fbo.texture);
-            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, this.fw, this.fh, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, FBO.fw, FBO.fh, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
             fbo.frameBuffer = gl.createFramebuffer();
             fbo.depthBuffer = gl.createRenderbuffer();
             gl.bindRenderbuffer(gl.RENDERBUFFER, fbo.depthBuffer);
-            gl.renderbufferStorage(gl.RENDERBUFFER, gl.DEPTH_COMPONENT16, this.fw, this.fh);
+            gl.renderbufferStorage(gl.RENDERBUFFER, gl.DEPTH_COMPONENT16, FBO.fw, FBO.fh);
             return fbo;
         };
         SceneRenderToTextrue.prototype.updateDepthTexture = function (fbo) {
@@ -36,14 +34,14 @@ var left;
         };
         SceneRenderToTextrue.prototype.resetViewMatrx3D = function () {
             Scene_data.viewMatrx3D.identity();
-            Scene_data.viewMatrx3D.perspectiveFieldOfViewLH(Engine.sceneCamScale, 1, 1, 500);
+            Scene_data.viewMatrx3D.perspectiveFieldOfViewLH(Engine.sceneCamScale, 1, 50, Scene_data.camFar);
         };
         SceneRenderToTextrue.prototype.renderToTexture = function ($item) {
             if (!this.fbo) {
                 this.fbo = this.getFBO(); //512*512
             }
             this.updateDepthTexture(this.fbo);
-            this.renderContext.viewport(0, 0, this.fw, this.fh);
+            this.renderContext.viewport(0, 0, FBO.fw, FBO.fh);
             this.renderContext.clearColor(20 / 255, 20 / 255, 20 / 255, 1.0);
             this.renderContext.clearDepth(1.0);
             this.renderContext.clearStencil(0.0);

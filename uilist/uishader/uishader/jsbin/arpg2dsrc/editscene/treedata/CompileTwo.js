@@ -283,9 +283,6 @@ var materialui;
             texItem.filter = $node.filter;
             texItem.mipmap = $node.mipmap;
             texItem.permul = $node.permul;
-            TextureManager.getInstance().getTexture(Scene_data.fileRoot + texItem.url, function ($texture) {
-                texItem.textureRes = $texture;
-            });
             this.texVec.push(texItem);
             input.hasCompiled = true;
             if (pNode) {

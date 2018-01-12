@@ -250,9 +250,7 @@
                         this.onTempNode(new MathDivNodeUI(), evt)
                         break;
                     case "31":
-                        var textui: TextureSampleNodeUI = new TextureSampleNodeUI()
-                        this.onTempNode(textui, evt)
-                        textui.creatBase("assets/white.jpg");
+                        this.onTempNode(new TextureSampleNodeUI(), evt)
                         break;
                     case "22":
                         this.onTempNode(new ConstVec3NodeUI(), evt)

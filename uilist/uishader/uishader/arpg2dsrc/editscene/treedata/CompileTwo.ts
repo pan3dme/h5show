@@ -441,10 +441,6 @@
             texItem.filter = (<NodeTreeTex>$node).filter;
             texItem.mipmap = (<NodeTreeTex>$node).mipmap;
             texItem.permul = (<NodeTreeTex>$node).permul;
-
-            TextureManager.getInstance().getTexture(Scene_data.fileRoot + texItem.url, ($texture: TextureRes) => {
-                texItem.textureRes = $texture;
-            });
             this.texVec.push(texItem);
 
             input.hasCompiled = true;

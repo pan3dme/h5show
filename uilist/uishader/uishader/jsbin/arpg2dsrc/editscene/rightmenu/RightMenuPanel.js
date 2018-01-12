@@ -228,9 +228,7 @@ var materialui;
                         this.onTempNode(new materialui.MathDivNodeUI(), evt);
                         break;
                     case "31":
-                        var textui = new materialui.TextureSampleNodeUI();
-                        this.onTempNode(textui, evt);
-                        textui.creatBase("assets/white.jpg");
+                        this.onTempNode(new materialui.TextureSampleNodeUI(), evt);
                         break;
                     case "22":
                         this.onTempNode(new materialui.ConstVec3NodeUI(), evt);

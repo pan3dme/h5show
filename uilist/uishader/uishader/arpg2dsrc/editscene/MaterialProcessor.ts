@@ -4,9 +4,7 @@
         public static SAVE_MATERIA_PANEL: string = "SAVE_MATERIA_PANEL"; //
         public static SELECT_MATERIAL_NODE_UI: string = "SELECT_MATERIAL_NODE_UI"; //
         public static COMPILE_MATERIAL: string = "COMPILE_MATERIAL"; //
-        public static SCENE_UI_TRUE_MOVE: string = "SCENE_UI_TRUE_MOVE"; //
         public nodeUi: BaseMaterialNodeUI
-        public v2d: Vector2D
 
     }
     export class MaterialModule extends Module {
@@ -38,10 +36,6 @@
                 }
                 if ($materialEvent.type == MaterialEvent.COMPILE_MATERIAL) {
                     MaterialCompile.getInstance().compile(MaterialCtrl.getInstance().nodeList, this.baseMaterialTree)
-                }
-                if ($materialEvent.type == MaterialEvent.SCENE_UI_TRUE_MOVE) {
-                    this.stageMoveTx($materialEvent.v2d)
-     
                 }
             }
             if ($event instanceof MEvent_Material_Connect) {
@@ -106,7 +100,6 @@
                 new MaterialEvent(MaterialEvent.SELECT_MATERIAL_NODE_UI),
                 new MaterialEvent(MaterialEvent.SAVE_MATERIA_PANEL),
                 new MaterialEvent(MaterialEvent.COMPILE_MATERIAL),
-                new MaterialEvent(MaterialEvent.SCENE_UI_TRUE_MOVE),
                 
                 new MEvent_Material_Connect(MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STARTDRAG),
                 new MEvent_Material_Connect(MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STOPDRAG),
@@ -281,7 +274,6 @@
         private stageMoveTx($txy: Vector2D): void {
             Arpg2dGameStart.stagePos.x += $txy.x;
             Arpg2dGameStart.stagePos.y += $txy.y;
-   
             for (var i: number = 0; i < UIManager.getInstance()._containerList.length; i++) {
                 var $uiConatiner: UIConatiner = UIManager.getInstance()._containerList[i];
                 if ($uiConatiner instanceof MtUiPanel) {

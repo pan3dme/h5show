@@ -17,10 +17,6 @@ var materialui;
             _this.name = "TextureSampleNodeUI" + random(9999999);
             _this.left = 400;
             _this.top = 100;
-            _this._wrap = 0;
-            _this._mipmap = 0;
-            _this._filter = 0;
-            _this._permul = false;
             _this.nodeTree = new materialui.NodeTreeTex;
             _this.nodeTree.ui = _this;
             _this.nodeTree.type = materialui.NodeTree.TEX;
@@ -63,15 +59,6 @@ var materialui;
             this.addItems(this.bItem);
             this.addItems(this.aItem);
             this.addItems(this.rgbaItem);
-        };
-        TextureSampleNodeUI.prototype.creatBase = function ($url) {
-            var vo = this.nodeTree;
-            vo.url = $url;
-            vo.wrap = this._wrap;
-            vo.mipmap = this._mipmap;
-            vo.filter = this._filter;
-            vo.permul = this._permul;
-            this.drawFrontToFrame(this.a_texture_pic_frame, this.nodeTree.url);
         };
         TextureSampleNodeUI.prototype.setData = function (obj) {
             _super.prototype.setData.call(this, obj);

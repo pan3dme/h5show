@@ -9,19 +9,17 @@ module left {
             }
             return this._instance;
         }
-        private renderContext: WebGLRenderingContext;
-        private fw: number = 1024
-        private fh: number = 1024
+        private renderContext: WebGLRenderingContext
         private getFBO(): FBO {
 
-            this.fw = 1024
-            this.fh = 1024
+            FBO.fw = 512
+            FBO.fh = 512
             this.renderContext = Scene_data.context3D.renderContext
             var gl: WebGLRenderingContext = Scene_data.context3D.renderContext
             var fbo: FBO = new FBO();
             fbo.texture = gl.createTexture();
             gl.bindTexture(gl.TEXTURE_2D, fbo.texture);
-            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, this.fw, this.fh, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, FBO.fw, FBO.fh, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
 
@@ -29,7 +27,7 @@ module left {
             fbo.depthBuffer = gl.createRenderbuffer();
 
             gl.bindRenderbuffer(gl.RENDERBUFFER, fbo.depthBuffer);
-            gl.renderbufferStorage(gl.RENDERBUFFER, gl.DEPTH_COMPONENT16, this.fw, this.fh);
+            gl.renderbufferStorage(gl.RENDERBUFFER, gl.DEPTH_COMPONENT16, FBO.fw, FBO.fh);
 
             return fbo;
         }
@@ -46,7 +44,7 @@ module left {
         public  resetViewMatrx3D(): void {
             
             Scene_data.viewMatrx3D.identity()
-            Scene_data.viewMatrx3D.perspectiveFieldOfViewLH(Engine.sceneCamScale, 1, 1, 500);
+            Scene_data.viewMatrx3D.perspectiveFieldOfViewLH(Engine.sceneCamScale, 1, 50, Scene_data.camFar);
 
         }
         public fbo: FBO
@@ -55,7 +53,7 @@ module left {
                 this.fbo = this.getFBO();  //512*512
             }
             this.updateDepthTexture(this.fbo);
-            this.renderContext.viewport(0, 0, this.fw, this.fh);
+            this.renderContext.viewport(0, 0, FBO.fw, FBO.fh);
             this.renderContext.clearColor(20 / 255, 20 / 255, 20 / 255, 1.0);
             this.renderContext.clearDepth(1.0);
             this.renderContext.clearStencil(0.0);
