@@ -1,16 +1,11 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var leftui;
 (function (leftui) {
-    var TaskListUi = /** @class */ (function () {
+    var TaskListUi = (function () {
         function TaskListUi($perent, $uiAtlas) {
             this.totalH = 0;
             this.lastTotalH = 0;
@@ -188,9 +183,9 @@ var leftui;
         TaskListUi.showType = 0;
         TaskListUi.taskUiScale15 = 1.5;
         return TaskListUi;
-    }());
+    })();
     leftui.TaskListUi = TaskListUi;
-    var QuestMainCell = /** @class */ (function () {
+    var QuestMainCell = (function () {
         function QuestMainCell($ui, $uiAtlas) {
             this.nextTy = 0;
             this.ui = $ui;
@@ -263,26 +258,25 @@ var leftui;
             this.ui.height = $bgRect.height / $uiScale;
         };
         return QuestMainCell;
-    }());
+    })();
     leftui.QuestMainCell = QuestMainCell;
-    var LeftUiQuestPanel = /** @class */ (function (_super) {
+    var LeftUiQuestPanel = (function (_super) {
         __extends(LeftUiQuestPanel, _super);
         function LeftUiQuestPanel() {
-            var _this = _super.call(this) || this;
-            _this._lastMouseY = 0;
-            _this._lastFriendTy = 0;
-            _this._isMoveBar = false;
-            _this.interfaceUI = true;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.middle = 0;
-            _this.left = 0;
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            _this._topRender.uiAtlas = new UIAtlas();
-            _this._effRender = new FrameUIRender;
-            _this.addRender(_this._effRender);
-            return _this;
+            _super.call(this);
+            this._lastMouseY = 0;
+            this._lastFriendTy = 0;
+            this._isMoveBar = false;
+            this.interfaceUI = true;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.middle = 0;
+            this.left = 0;
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
+            this._topRender.uiAtlas = new UIAtlas();
+            this._effRender = new FrameUIRender;
+            this.addRender(this._effRender);
         }
         LeftUiQuestPanel.prototype.loadAtlas = function ($bfun) {
             var _this = this;
@@ -412,7 +406,7 @@ var leftui;
             UIManager.getInstance().removeUIContainer(this);
         };
         return LeftUiQuestPanel;
-    }(UIPanel));
+    })(UIPanel);
     leftui.LeftUiQuestPanel = LeftUiQuestPanel;
 })(leftui || (leftui = {}));
 //# sourceMappingURL=LeftUiQuestPanel.js.map

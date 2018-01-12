@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var logingift;
 (function (logingift) {
-    var LogingiftModule = /** @class */ (function (_super) {
+    var LogingiftModule = (function (_super) {
         __extends(LogingiftModule, _super);
         function LogingiftModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         LogingiftModule.prototype.getModuleName = function () {
             return "LogingiftModule";
@@ -22,12 +17,12 @@ var logingift;
             return [new LogingiftProcessor()];
         };
         return LogingiftModule;
-    }(Module));
+    })(Module);
     logingift.LogingiftModule = LogingiftModule;
-    var LogingiftEvent = /** @class */ (function (_super) {
+    var LogingiftEvent = (function (_super) {
         __extends(LogingiftEvent, _super);
         function LogingiftEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //展示面板
         LogingiftEvent.SHOW_Logingift_EVENT = "SHOW_Logingift_EVENT";
@@ -36,12 +31,12 @@ var logingift;
         //领取状态变化
         LogingiftEvent.REFRESH_Logingift_EVENT = "REFRESH_Logingift_EVENT";
         return LogingiftEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     logingift.LogingiftEvent = LogingiftEvent;
-    var LogingiftProcessor = /** @class */ (function (_super) {
+    var LogingiftProcessor = (function (_super) {
         __extends(LogingiftProcessor, _super);
         function LogingiftProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         LogingiftProcessor.prototype.getName = function () {
             return "LogingiftProcessor";
@@ -107,7 +102,7 @@ var logingift;
             ];
         };
         return LogingiftProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     logingift.LogingiftProcessor = LogingiftProcessor;
 })(logingift || (logingift = {}));
 //# sourceMappingURL=LogingiftProcessor.js.map

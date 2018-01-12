@@ -1,12 +1,12 @@
 var treasure;
 (function (treasure) {
-    var TreasureItemVo = /** @class */ (function () {
+    var TreasureItemVo = (function () {
         function TreasureItemVo() {
         }
         return TreasureItemVo;
-    }());
+    })();
     treasure.TreasureItemVo = TreasureItemVo;
-    var TreasureModel = /** @class */ (function () {
+    var TreasureModel = (function () {
         function TreasureModel() {
         }
         TreasureModel.getInstance = function () {
@@ -55,7 +55,7 @@ var treasure;
             return null;
         };
         return TreasureModel;
-    }());
+    })();
     treasure.TreasureModel = TreasureModel;
 })(treasure || (treasure = {}));
 //# sourceMappingURL=TreasureModel.js.map

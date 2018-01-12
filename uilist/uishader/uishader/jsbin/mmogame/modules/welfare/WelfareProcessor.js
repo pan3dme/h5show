@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var welfare;
 (function (welfare) {
-    var WelfareModule = /** @class */ (function (_super) {
+    var WelfareModule = (function (_super) {
         __extends(WelfareModule, _super);
         function WelfareModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         WelfareModule.prototype.getModuleName = function () {
             return "WelfareModule";
@@ -22,12 +17,12 @@ var welfare;
             return [new WelfareProcessor()];
         };
         return WelfareModule;
-    }(Module));
+    })(Module);
     welfare.WelfareModule = WelfareModule;
-    var WelfareEvent = /** @class */ (function (_super) {
+    var WelfareEvent = (function (_super) {
         __extends(WelfareEvent, _super);
         function WelfareEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //展示面板
         WelfareEvent.SHOW_Welfare_EVENT = "SHOW_Welfare_EVENT";
@@ -60,14 +55,13 @@ var welfare;
         //红点变化
         WelfareEvent.CHG_REDPOINT = "CHG_REDPOINT";
         return WelfareEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     welfare.WelfareEvent = WelfareEvent;
-    var WelfareProcessor = /** @class */ (function (_super) {
+    var WelfareProcessor = (function (_super) {
         __extends(WelfareProcessor, _super);
         function WelfareProcessor() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this._nodeInit = false;
-            return _this;
+            _super.apply(this, arguments);
+            this._nodeInit = false;
         }
         WelfareProcessor.prototype.getName = function () {
             return "WelfareProcessor";
@@ -124,8 +118,6 @@ var welfare;
             else if ($event.type == EngineEvent.CORE_DATA_COMPLETE_EVENT) {
                 //红点初始化
                 this.initRedNode();
-                // } else if ($event.type == EngineEvent.SYSTEM_OPEN_EVENT) {
-                //     this.processRedPoint();
             }
             if ($event instanceof UIPanelEvent) {
                 var panelEvent = $event;
@@ -351,13 +343,13 @@ var welfare;
             ];
         };
         return WelfareProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     welfare.WelfareProcessor = WelfareProcessor;
-    var rewardList_getback = /** @class */ (function () {
+    var rewardList_getback = (function () {
         function rewardList_getback() {
         }
         return rewardList_getback;
-    }());
+    })();
     welfare.rewardList_getback = rewardList_getback;
 })(welfare || (welfare = {}));
 //# sourceMappingURL=WelfareProcessor.js.map
