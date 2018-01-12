@@ -25,6 +25,7 @@
                 } else if ($ui instanceof materialui.TextureSampleNodeUI) {
                     this.metaDataView = new TexturePropMeshPanel();
                 } else {
+                    this.showSciencePropPanel();
                     return;
                 }
                 this.lastNodel = $ui;

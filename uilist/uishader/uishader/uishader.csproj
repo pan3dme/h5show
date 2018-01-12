@@ -101,6 +101,7 @@
     <TypeScriptCompile Include="arpg2dsrc\left\prop\base\ComBoBoxCtrl2D.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\base\Texturue2DUI.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\base\Vec3ColorCtrlUI.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\ColorPickUI.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\ComboBoxUi.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\InputTextUi.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\ReflectionEvet.ts" />

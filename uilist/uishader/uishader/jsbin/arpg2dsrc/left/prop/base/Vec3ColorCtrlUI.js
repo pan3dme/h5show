@@ -37,6 +37,12 @@ var prop;
         Vec3ColorCtrlUI.prototype.destory = function () {
             this.textLabelUI.destory();
             this.inputTextUiX.destory();
+            this.inputTextUiY.destory();
+            this.inputTextUiZ.destory();
+            this.textX.destory();
+            this.textY.destory();
+            this.textZ.destory();
+            this.colorPickUI.destory();
         };
         Object.defineProperty(Vec3ColorCtrlUI.prototype, "data", {
             get: function () {

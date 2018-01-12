@@ -27,6 +27,7 @@ var prop;
                     this.metaDataView = new prop.TexturePropMeshPanel();
                 }
                 else {
+                    this.showSciencePropPanel();
                     return;
                 }
                 this.lastNodel = $ui;

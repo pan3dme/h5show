@@ -41,8 +41,14 @@
             this.height = 50
         }
         public destory(): void {
-            this.textLabelUI.destory()
-            this.inputTextUiX.destory()
+            this.textLabelUI.destory();
+            this.inputTextUiX.destory();
+            this.inputTextUiY.destory();
+            this.inputTextUiZ.destory();
+            this.textX.destory();
+            this.textY.destory();
+            this.textZ.destory();
+            this.colorPickUI.destory();
         }
         public set data(value: any) {
             this._data = value;
