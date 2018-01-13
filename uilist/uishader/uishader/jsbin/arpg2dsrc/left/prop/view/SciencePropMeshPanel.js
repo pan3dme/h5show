@@ -17,8 +17,9 @@ var prop;
         }
         SciencePropMeshPanel.prototype.getView = function () {
             var ary = [
-                { Type: prop.ReflectionData.Vec3Color, Label: "环境光:", FunKey: "constXValue", target: this, Step: 0.1 },
-                { Type: prop.ReflectionData.Vec3Color, Label: "光法线:", FunKey: "constXValue", target: this, Step: 0.1 },
+                { Type: prop.ReflectionData.Vec3Color, Label: "环境颜色:", FunKey: "sunDirect", target: this, Step: 0.1 },
+                { Type: prop.ReflectionData.Vec3Color, Label: "sun颜色:", FunKey: "sunColor", target: this, Step: 0.1 },
+                { Type: prop.ReflectionData.Vec3Color, Label: "基本颜色:", FunKey: "ambientColor", target: this, Step: 0.1 },
             ];
             return ary;
         };
@@ -28,18 +29,43 @@ var prop;
             },
             set: function (value) {
                 this._data = value;
-                this._colorAbc = new Vector3D(1, 0.5, 1);
                 this.refreshViewValue();
             },
             enumerable: true,
             configurable: true
         });
-        Object.defineProperty(SciencePropMeshPanel.prototype, "constXValue", {
+        Object.defineProperty(SciencePropMeshPanel.prototype, "sunDirect", {
             get: function () {
-                return this._colorAbc;
+                return new Vector3D(Scene_data.light.sunDirect[0], Scene_data.light.sunDirect[1], Scene_data.light.sunDirect[2]);
             },
             set: function (value) {
-                this._colorAbc = value;
+                Scene_data.light.sunDirect[0] = value.x;
+                Scene_data.light.sunDirect[1] = value.y;
+                Scene_data.light.sunDirect[2] = value.z;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(SciencePropMeshPanel.prototype, "sunColor", {
+            get: function () {
+                return new Vector3D(Scene_data.light.sunColor[0], Scene_data.light.sunColor[1], Scene_data.light.sunColor[2]);
+            },
+            set: function (value) {
+                Scene_data.light.sunColor[0] = value.x;
+                Scene_data.light.sunColor[1] = value.y;
+                Scene_data.light.sunColor[2] = value.z;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(SciencePropMeshPanel.prototype, "ambientColor", {
+            get: function () {
+                return new Vector3D(Scene_data.light.ambientColor[0], Scene_data.light.ambientColor[1], Scene_data.light.ambientColor[2]);
+            },
+            set: function (value) {
+                Scene_data.light.ambientColor[0] = value.x;
+                Scene_data.light.ambientColor[1] = value.y;
+                Scene_data.light.ambientColor[2] = value.z;
             },
             enumerable: true,
             configurable: true

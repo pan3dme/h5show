@@ -56,15 +56,12 @@ var prop;
             configurable: true
         });
         Vec3ColorCtrlUI.prototype.inputTextUiXchange = function ($evt) {
-            console.log(Number($evt.data));
             this.target[this.FunKey] = this._v3d;
             this.refreshViewValue();
         };
         Vec3ColorCtrlUI.prototype.colorPickUIchange = function ($evt) {
             var $vec = ($evt.data);
-            this._v3d.x = $vec.x;
-            this._v3d.y = $vec.y;
-            this._v3d.z = $vec.z;
+            this.target[this.FunKey] = $vec;
             this.refreshViewValue();
         };
         Vec3ColorCtrlUI.prototype.refreshViewValue = function () {
@@ -84,13 +81,13 @@ var prop;
             },
             set: function (value) {
                 this._x = value;
-                this.textLabelUI.x = this._x + 0;
-                this.textX.x = this._x + 50;
-                this.textY.x = this._x + 120;
-                this.textZ.x = this._x + 190;
-                this.inputTextUiX.x = this._x + 80;
-                this.inputTextUiY.x = this._x + 150;
-                this.inputTextUiZ.x = this._x + 220;
+                this.textLabelUI.x = this._x - 15;
+                this.textX.x = this._x + 55;
+                this.textY.x = this._x + 125;
+                this.textZ.x = this._x + 195;
+                this.inputTextUiX.x = this._x + 85;
+                this.inputTextUiY.x = this._x + 155;
+                this.inputTextUiZ.x = this._x + 225;
                 this.colorPickUI.x = this._x + 50;
             },
             enumerable: true,
