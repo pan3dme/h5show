@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var skillUi;
 (function (skillUi) {
-    var SkillUiModule = /** @class */ (function (_super) {
+    var SkillUiModule = (function (_super) {
         __extends(SkillUiModule, _super);
         function SkillUiModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         SkillUiModule.prototype.getModuleName = function () {
             return "SkillUiModule";
@@ -22,12 +17,12 @@ var skillUi;
             return [new SkillUiProcessor()];
         };
         return SkillUiModule;
-    }(Module));
+    })(Module);
     skillUi.SkillUiModule = SkillUiModule;
-    var SkillUiEvent = /** @class */ (function (_super) {
+    var SkillUiEvent = (function (_super) {
         __extends(SkillUiEvent, _super);
         function SkillUiEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //展示技能面板
         SkillUiEvent.SHOW_SKILLUI_EVENT = "SHOW_SKILLUI_EVENT";
@@ -45,12 +40,12 @@ var skillUi;
         SkillUiEvent.RESET_SKILL_UI_DATA = "RESET_SKILL_UI_DATA";
         SkillUiEvent.SKILL_UP_EVENT = "SKILL_UP_EVENT";
         return SkillUiEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     skillUi.SkillUiEvent = SkillUiEvent;
-    var SkillUiProcessor = /** @class */ (function (_super) {
+    var SkillUiProcessor = (function (_super) {
         __extends(SkillUiProcessor, _super);
         function SkillUiProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //private _skillUiPanel: SkillUiPanel
         SkillUiProcessor.prototype.getName = function () {
@@ -61,10 +56,8 @@ var skillUi;
                 var $skillUIEvent = $event;
                 if ($skillUIEvent.type == SkillUiEvent.SHOW_SKILLUI_EVENT) {
                     this.showNewUI();
-                    //this.showUi();
                 }
                 else if ($skillUIEvent.type == SkillUiEvent.HIDE_SKILLUI_EVENT) {
-                    //this.hideUi()
                 }
                 else if ($skillUIEvent.type == SkillUiEvent.SKILL_UP_EVENT) {
                     this.showSkillUpEff();
@@ -189,7 +182,7 @@ var skillUi;
             ];
         };
         return SkillUiProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     skillUi.SkillUiProcessor = SkillUiProcessor;
 })(skillUi || (skillUi = {}));
 //# sourceMappingURL=SkillProcessor.js.map

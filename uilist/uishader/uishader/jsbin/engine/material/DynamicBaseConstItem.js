@@ -1,4 +1,4 @@
-var DynamicBaseConstItem = /** @class */ (function () {
+var DynamicBaseConstItem = (function () {
     function DynamicBaseConstItem() {
     }
     DynamicBaseConstItem.prototype.update = function (t) {
@@ -29,19 +29,12 @@ var DynamicBaseConstItem = /** @class */ (function () {
     DynamicBaseConstItem.prototype.setCurrentVal = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
+            args[_i - 0] = arguments[_i];
         }
         for (var i = 0; i < args.length; i++) {
             this.currentValue[i] = args[i];
-            // if (i == 0) {
-            //     this.currentValue.x = args[i];
-            // } else if (i == 1) {
-            //     this.currentValue.y = args[i];
-            // } else if (i == 2) {
-            //     this.currentValue.z = args[i];
-            // }
         }
     };
     return DynamicBaseConstItem;
-}());
+})();
 //# sourceMappingURL=DynamicBaseConstItem.js.map

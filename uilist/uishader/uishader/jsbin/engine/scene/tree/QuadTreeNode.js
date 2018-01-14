@@ -1,4 +1,4 @@
-var QuadTreeNode = /** @class */ (function () {
+var QuadTreeNode = (function () {
     //public pointList: Array<Vector2D>;
     function QuadTreeNode($x, $y, $z, $width, $height, $depth) {
         this.x = $x;
@@ -47,7 +47,6 @@ var QuadTreeNode = /** @class */ (function () {
             // var _vcMin: Vector3D = new Vector3D();
             if (face[j].x > 0) {
                 _vcMax.x = vcMax.x;
-                //_vcMin.x = vcMin.x;
             }
             else {
                 //_vcMin.x = vcMax.x;
@@ -55,7 +54,6 @@ var QuadTreeNode = /** @class */ (function () {
             }
             if (face[j].y > 0) {
                 _vcMax.y = vcMax.y;
-                //_vcMin.y = vcMin.y;
             }
             else {
                 //_vcMin.y = vcMax.y;
@@ -63,7 +61,6 @@ var QuadTreeNode = /** @class */ (function () {
             }
             if (face[j].z > 0) {
                 _vcMax.z = vcMax.z;
-                //_vcMin.z = vcMin.z;
             }
             else {
                 //_vcMin.z = vcMax.z;
@@ -151,8 +148,8 @@ var QuadTreeNode = /** @class */ (function () {
             return false;
     };
     return QuadTreeNode;
-}());
-var Ray = /** @class */ (function () {
+})();
+var Ray = (function () {
     function Ray() {
         this.o = new Vector3D;
         this.d = new Vector3D;
@@ -170,5 +167,5 @@ var Ray = /** @class */ (function () {
         this.d.normalize();
     };
     return Ray;
-}());
+})();
 //# sourceMappingURL=QuadTreeNode.js.map

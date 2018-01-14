@@ -20,7 +20,7 @@
         private modelPic: modelShowRender;
         public constructor() {
             super();
-            this.layer = 100
+   
             this.left = 0;
             this.top = 0;
             this.width=300
@@ -149,7 +149,7 @@
             this.resize();
 
 
-            prop.PropModel.getInstance().showSciencePropPanel();
+          
         }
         protected butClik(evt: InteractiveEvent): void {
             switch (evt.target) {

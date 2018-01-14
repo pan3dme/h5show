@@ -1,26 +1,20 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var bottomui;
 (function (bottomui) {
-    var BottomAotuScaleText = /** @class */ (function (_super) {
+    var BottomAotuScaleText = (function (_super) {
         __extends(BottomAotuScaleText, _super);
         function BottomAotuScaleText() {
-            var _this = _super.call(this) || this;
-            _this.lastAotuTextVisible = false;
-            _this.interfaceUI = true;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.bottom = 0;
-            _this.center = 0;
-            return _this;
+            _super.call(this);
+            this.lastAotuTextVisible = false;
+            this.interfaceUI = true;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.bottom = 0;
+            this.center = 0;
         }
         BottomAotuScaleText.prototype.setRender = function ($bottom, $mid, $top) {
             this._bottomRender = $bottom;
@@ -63,7 +57,7 @@ var bottomui;
             }
         };
         return BottomAotuScaleText;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     bottomui.BottomAotuScaleText = BottomAotuScaleText;
 })(bottomui || (bottomui = {}));
 //# sourceMappingURL=BottomAotuScaleText.js.map

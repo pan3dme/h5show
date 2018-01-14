@@ -1,4 +1,4 @@
-var BaseAnim = /** @class */ (function () {
+var BaseAnim = (function () {
     function BaseAnim() {
         this.baseNum = 0;
         this.num = 0;
@@ -80,5 +80,5 @@ var BaseAnim = /** @class */ (function () {
         this.baseNum += num;
     };
     return BaseAnim;
-}());
+})();
 //# sourceMappingURL=BaseAnim.js.map

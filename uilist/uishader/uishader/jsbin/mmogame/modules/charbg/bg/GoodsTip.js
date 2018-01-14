@@ -1,4 +1,4 @@
-var GoodsTip = /** @class */ (function () {
+var GoodsTip = (function () {
     function GoodsTip() {
         var _this = this;
         //private _showType:boolean;
@@ -88,8 +88,8 @@ var GoodsTip = /** @class */ (function () {
         return GuidData.bag.getEquByPart(pos);
     };
     return GoodsTip;
-}());
-var TipAtlasUtil = /** @class */ (function () {
+})();
+var TipAtlasUtil = (function () {
     function TipAtlasUtil() {
     }
     TipAtlasUtil.prototype.setInfo = function (configUrl, imgUrl, $fun, useImgUrl, $ary) {
@@ -137,5 +137,5 @@ var TipAtlasUtil = /** @class */ (function () {
         this._completeFun();
     };
     return TipAtlasUtil;
-}());
+})();
 //# sourceMappingURL=GoodsTip.js.map

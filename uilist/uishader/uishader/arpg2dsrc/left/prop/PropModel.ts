@@ -24,9 +24,11 @@
                     this.metaDataView = new FloatPropMeshPanel();
                 } else if ($ui instanceof materialui.TextureSampleNodeUI) {
                     this.metaDataView = new TexturePropMeshPanel();
+                } else if ($ui instanceof materialui.ResultNodeUI) {
+                    this.metaDataView = new OpPropMeshPanel();
                 } else {
                     this.showSciencePropPanel();
-                    return;
+  
                 }
                 this.lastNodel = $ui;
                 this.metaDataView.data = $ui;
@@ -34,14 +36,15 @@
 
             }
         }
-        public showSciencePropPanel(): void {
+        private showSciencePropPanel(): void {
             if (this.metaDataView) {
                 this.metaDataView.destory()
                 this.metaDataView = null;
                 this.lastNodel = null;
             }
             this.metaDataView = new SciencePropMeshPanel();
-            this.metaDataView.data = new SceneChar;
+         
+
 
         }
         private _top: number=350

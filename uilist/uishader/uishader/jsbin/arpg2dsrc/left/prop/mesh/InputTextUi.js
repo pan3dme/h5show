@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var prop;
 (function (prop) {
-    var InputTextUi = /** @class */ (function (_super) {
+    var InputTextUi = (function (_super) {
         __extends(InputTextUi, _super);
         function InputTextUi() {
-            return _super.call(this) || this;
+            _super.call(this);
         }
         InputTextUi.prototype.initView = function () {
             this.textLabelUIMeshVo.name = "3.599";
@@ -55,7 +50,7 @@ var prop;
             Scene_data.uiStage.removeEventListener(InteractiveEvent.Up, this.onUp, this);
         };
         return InputTextUi;
-    }(prop.TextLabelUI));
+    })(prop.TextLabelUI);
     prop.InputTextUi = InputTextUi;
 })(prop || (prop = {}));
 //# sourceMappingURL=InputTextUi.js.map

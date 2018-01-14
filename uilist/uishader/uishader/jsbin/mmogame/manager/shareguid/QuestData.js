@@ -1,27 +1,22 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var QuestDataVo = /** @class */ (function () {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var QuestDataVo = (function () {
     function QuestDataVo() {
     }
     return QuestDataVo;
-}());
-var QuestDataMeshVo = /** @class */ (function () {
+})();
+var QuestDataMeshVo = (function () {
     function QuestDataMeshVo() {
     }
     return QuestDataMeshVo;
-}());
-var QuestData = /** @class */ (function (_super) {
+})();
+var QuestData = (function (_super) {
     __extends(QuestData, _super);
     function QuestData() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     QuestData.prototype.onBaseCreated = function () {
         var _this = this;
@@ -88,8 +83,6 @@ var QuestData = /** @class */ (function (_super) {
                 }
             }
             else if ($kNum == SharedDef.QUEST_FIELD_ACHIEVE_REWARD) {
-                //成就点奖励ID
-                // console.log("成就点奖励ID");
             }
             else if ($kNum >= SharedDef.QUEST_FIELD_WELFARE_BACK_START && $kNum < SharedDef.QUEST_FIELD_WELFARE_BACK_END) {
                 //福利找回成员列表变化
@@ -207,7 +200,6 @@ var QuestData = /** @class */ (function (_super) {
                 var $temp = this.changeQuestDataByKey(SharedDef.QUEST_FIELD_QUEST_START, i);
                 if ($temp) {
                     this._questDataItem.push($temp);
-                    //  console.log(this._questDataItem.length, $temp.id)
                 }
             }
             var $escortQuestVo = this.changeQuestDataByKey(SharedDef.QUEST_FIELD_ESCORT_QUEST_START, 0);
@@ -217,7 +209,6 @@ var QuestData = /** @class */ (function (_super) {
             this._questDataItem.sort(function (a, b) {
                 return a.taskState - b.taskState;
             });
-            //    console.log(this._questDataItem)
         }
         return this._questDataItem;
     };
@@ -658,57 +649,57 @@ var QuestData = /** @class */ (function (_super) {
         return this.GetUInt32(SharedDef.QUEST_FIELD_DAILY2_SUBMIT) > 0;
     };
     return QuestData;
-}(GuidObject));
-var AchieveItemData = /** @class */ (function () {
+})(GuidObject);
+var AchieveItemData = (function () {
     function AchieveItemData() {
     }
     return AchieveItemData;
-}());
-var TitleItemData = /** @class */ (function () {
+})();
+var TitleItemData = (function () {
     function TitleItemData() {
     }
     return TitleItemData;
-}());
+})();
 /** 累计签到vo */
-var SigninWeekItemData = /** @class */ (function () {
+var SigninWeekItemData = (function () {
     function SigninWeekItemData() {
     }
     return SigninWeekItemData;
-}());
+})();
 /** 每日签到vo */
-var SigninEveryDayItemData = /** @class */ (function () {
+var SigninEveryDayItemData = (function () {
     function SigninEveryDayItemData() {
     }
     return SigninEveryDayItemData;
-}());
+})();
 /** 升级奖励vo */
-var LevelUpRewardItemData = /** @class */ (function () {
+var LevelUpRewardItemData = (function () {
     function LevelUpRewardItemData() {
     }
     return LevelUpRewardItemData;
-}());
+})();
 /** 消耗奖励vo */
-var CostRewardItemData = /** @class */ (function () {
+var CostRewardItemData = (function () {
     function CostRewardItemData() {
     }
     return CostRewardItemData;
-}());
+})();
 /** 充值返利vo */
-var RechargeRewardItemData = /** @class */ (function () {
+var RechargeRewardItemData = (function () {
     function RechargeRewardItemData() {
     }
     return RechargeRewardItemData;
-}());
+})();
 /** 七日礼物vo */
-var SevenDayaItemData = /** @class */ (function () {
+var SevenDayaItemData = (function () {
     function SevenDayaItemData() {
     }
     return SevenDayaItemData;
-}());
+})();
 /** 活动找回vo */
-var RewardBackItemData = /** @class */ (function () {
+var RewardBackItemData = (function () {
     function RewardBackItemData() {
     }
     return RewardBackItemData;
-}());
+})();
 //# sourceMappingURL=QuestData.js.map

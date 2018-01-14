@@ -1,11 +1,11 @@
-var FightDataVo = /** @class */ (function () {
+var FightDataVo = (function () {
     function FightDataVo() {
         //用于二级重影
         this.typeUp = -1;
     }
     return FightDataVo;
-}());
-var AttackEffectsManager = /** @class */ (function () {
+})();
+var AttackEffectsManager = (function () {
     function AttackEffectsManager() {
     }
     AttackEffectsManager.playLyf = function ($url, $taget, $offset) {
@@ -62,8 +62,8 @@ var AttackEffectsManager = /** @class */ (function () {
         ParticleManager.getInstance().removeParticle($particle);
     };
     return AttackEffectsManager;
-}());
-var FightManager = /** @class */ (function () {
+})();
+var FightManager = (function () {
     function FightManager() {
     }
     FightManager.getInstance = function () {
@@ -101,10 +101,8 @@ var FightManager = /** @class */ (function () {
             targetSc = SceneCharManager.getInstance().getSceneCharByUID(sdAry[0].target);
         }
         if (targetSc && targetSc.unit.isMain) {
-            //   console.log("自己的消息")
         }
         else {
-            // console.log("其它的消息")
         }
         this.showSkill(caster, skillid, sdAry, new Vector2D($tx, $ty), targetSc, function () { _this.showFightDataByItem($fightDataArr); });
         //console.log("延迟掉血：",bloodTime);
@@ -157,7 +155,6 @@ var FightManager = /** @class */ (function () {
                 //飘字初始化位置均为玩家头顶
                 $textJumpUiVo.pos = new Vector3D(bsc.x, bsc.y + bsc.tittleHeight - 5, bsc.z);
                 BloodManager.getInstance().setJumpNum($textJumpUiVo);
-                // }
             }
             //目标死亡，播放完飘字后，设置血量。并移除攻击对象
             if ($FightDataVo.isKilled) {
@@ -427,10 +424,10 @@ var FightManager = /** @class */ (function () {
         TweenLite.to(obj, 0.3, { px: targetpos.x, py: targetpos.y, pz: targetpos.z, onUpdate: fun });
     };
     return FightManager;
-}());
-var SkillBeAttackData = /** @class */ (function () {
+})();
+var SkillBeAttackData = (function () {
     function SkillBeAttackData() {
     }
     return SkillBeAttackData;
-}());
+})();
 //# sourceMappingURL=FightManager.js.map

@@ -1,29 +1,23 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var welfare;
 (function (welfare) {
-    var WelfareUiPanel = /** @class */ (function (_super) {
+    var WelfareUiPanel = (function (_super) {
         __extends(WelfareUiPanel, _super);
         function WelfareUiPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            _this._publicbgRender = new UIRenderComponent;
-            _this.addRender(_this._publicbgRender);
-            _this._baseRender.uiAtlas = new UIAtlas();
-            return _this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
+            this._publicbgRender = new UIRenderComponent;
+            this.addRender(this._publicbgRender);
+            this._baseRender.uiAtlas = new UIAtlas();
         }
         WelfareUiPanel.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -246,18 +240,17 @@ var welfare;
             }
         };
         return WelfareUiPanel;
-    }(WindowUi));
+    })(WindowUi);
     welfare.WelfareUiPanel = WelfareUiPanel;
     /**
      * 左侧tablist
      */
-    var WelfareTabList = /** @class */ (function (_super) {
+    var WelfareTabList = (function (_super) {
         __extends(WelfareTabList, _super);
         function WelfareTabList() {
-            var _this = _super.call(this) || this;
-            _this.left = 52;
-            _this.top = 88;
-            return _this;
+            _super.call(this);
+            this.left = 52;
+            this.top = 88;
         }
         WelfareTabList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -301,12 +294,12 @@ var welfare;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return WelfareTabList;
-    }(SList));
+    })(SList);
     welfare.WelfareTabList = WelfareTabList;
-    var WelfareTabRender = /** @class */ (function (_super) {
+    var WelfareTabRender = (function (_super) {
         __extends(WelfareTabRender, _super);
         function WelfareTabRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         WelfareTabRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -377,7 +370,7 @@ var welfare;
             this.RedPoint.preHide();
         };
         return WelfareTabRender;
-    }(SListItem));
+    })(SListItem);
     welfare.WelfareTabRender = WelfareTabRender;
 })(welfare || (welfare = {}));
 //# sourceMappingURL=WelfareUiPanel.js.map

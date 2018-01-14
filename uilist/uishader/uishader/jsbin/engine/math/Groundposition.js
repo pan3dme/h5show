@@ -1,4 +1,4 @@
-var Groundposition = /** @class */ (function () {
+var Groundposition = (function () {
     function Groundposition() {
     }
     Groundposition.getGroundPos = function ($x, $y) {
@@ -19,5 +19,5 @@ var Groundposition = /** @class */ (function () {
         return crossPoint;
     };
     return Groundposition;
-}());
+})();
 //# sourceMappingURL=Groundposition.js.map

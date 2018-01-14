@@ -1,29 +1,24 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var map;
 (function (map) {
-    var MapEvent = /** @class */ (function (_super) {
+    var MapEvent = (function (_super) {
         __extends(MapEvent, _super);
         function MapEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MapEvent.SHOW_MAP_EVENT = "SHOW_MAP_EVENT"; //显示面板
         MapEvent.HIDE_MAP_EVENT = "HIDE_MAP_EVENT"; //显示面板
         return MapEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     map.MapEvent = MapEvent;
-    var MapModule = /** @class */ (function (_super) {
+    var MapModule = (function (_super) {
         __extends(MapModule, _super);
         function MapModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MapModule.prototype.getModuleName = function () {
             return "MapModule";
@@ -32,12 +27,12 @@ var map;
             return [new MapProcessor()];
         };
         return MapModule;
-    }(Module));
+    })(Module);
     map.MapModule = MapModule;
-    var MapProcessor = /** @class */ (function (_super) {
+    var MapProcessor = (function (_super) {
         __extends(MapProcessor, _super);
         function MapProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MapProcessor.prototype.getName = function () {
             return "MapProcessor";
@@ -110,7 +105,6 @@ var map;
                     $arr.push($vo);
                 }
                 else {
-                    //console.log($vo.name, GuidData.player.getGuid())
                 }
             }
             var len = $byte.readUint16();
@@ -158,7 +152,7 @@ var map;
             ];
         };
         return MapProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     map.MapProcessor = MapProcessor;
 })(map || (map = {}));
 //# sourceMappingURL=MapProcessor.js.map

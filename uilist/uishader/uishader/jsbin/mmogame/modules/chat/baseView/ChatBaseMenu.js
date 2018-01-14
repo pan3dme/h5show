@@ -1,26 +1,20 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var Chat;
 (function (Chat) {
-    var ChatBaseMenu = /** @class */ (function (_super) {
+    var ChatBaseMenu = (function (_super) {
         __extends(ChatBaseMenu, _super);
         function ChatBaseMenu() {
-            var _this = _super.call(this) || this;
-            _this.gmId = 0;
-            _this.chatHtmlText = "";
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.bottom = 0;
-            _this.left = 0;
-            return _this;
+            _super.call(this);
+            this.gmId = 0;
+            this.chatHtmlText = "";
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.bottom = 0;
+            this.left = 0;
         }
         ChatBaseMenu.prototype.setRender = function ($bg, $mid, $top) {
             this._bottomRender = $bg;
@@ -131,14 +125,13 @@ var Chat;
             if (!str.length) {
                 msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "无法发送空字符", 99);
                 return;
-                // str = "横版本文字.."
             }
             console.log("频道", Chat.ChatModel.showType);
             Chat.ChatModel.getInstance().sendCharInfo(str);
         };
         ChatBaseMenu.testNum = 0;
         return ChatBaseMenu;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     Chat.ChatBaseMenu = ChatBaseMenu;
 })(Chat || (Chat = {}));
 //# sourceMappingURL=ChatBaseMenu.js.map

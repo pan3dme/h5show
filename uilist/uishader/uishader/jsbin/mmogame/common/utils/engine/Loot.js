@@ -1,22 +1,16 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Loot = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Loot = (function (_super) {
     __extends(Loot, _super);
     function Loot(g) {
         if (g === void 0) { g = ""; }
-        var _this = _super.call(this, g) || this;
-        _this.gridWidth = 0;
-        _this.lootCount = 0;
-        _this.sceneLootDic = new Object;
-        return _this;
+        _super.call(this, g);
+        this.gridWidth = 0;
+        this.lootCount = 0;
+        this.sceneLootDic = new Object;
     }
     Loot.prototype.ReadFrom = function (flags, bytes, evFilter) {
         if (evFilter === void 0) { evFilter = null; }
@@ -76,7 +70,6 @@ var Loot = /** @class */ (function (_super) {
                         sc.moveToPos2D = new Vector2D(x, y);
                         GameInstance.addSceneChar(sc);
                         this.sceneLootDic[index] = sc;
-                        //console.log("刷掉落物8888888888888888888")
                     }
                 }
                 else {
@@ -144,5 +137,5 @@ var Loot = /** @class */ (function (_super) {
         }
     };
     return Loot;
-}(Unit));
+})(Unit);
 //# sourceMappingURL=Loot.js.map

@@ -18,11 +18,11 @@
 
         public constructor() {
             super();
+            this.layer = 0;
+
             this.name = "BaseMaterialNodeUI" + random(9999999);
             this.width = 200;
             this.height = 200;
-
-
 
             this._bottomRender = new MtUIRenderComponent;
             this.addRender(this._bottomRender);

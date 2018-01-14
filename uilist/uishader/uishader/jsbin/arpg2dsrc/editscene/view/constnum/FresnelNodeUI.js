@@ -1,36 +1,30 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var materialui;
 (function (materialui) {
-    var FresnelNodeUI = /** @class */ (function (_super) {
+    var FresnelNodeUI = (function (_super) {
         __extends(FresnelNodeUI, _super);
         function FresnelNodeUI() {
-            var _this = _super.call(this) || this;
-            _this.gap = 20;
-            _this.width = 162;
-            _this.height = 65;
-            _this.nodeTree = new materialui.NodeTreeFresnel;
-            _this.nodeTree.ui = _this;
-            _this.nodeTree.type = materialui.NodeTree.FRESNEL;
-            _this.outItem = new materialui.ItemMaterialUI("out", materialui.MaterialItemType.FLOAT, false);
-            _this.addItems(_this.outItem);
-            _this.inAItem = new materialui.ItemMaterialUI("scale", materialui.MaterialItemType.FLOAT, true);
-            _this.addItems(_this.inAItem);
-            _this.inBItem = new materialui.ItemMaterialUI("add", materialui.MaterialItemType.FLOAT, true);
-            _this.addItems(_this.inBItem);
-            _this.drawTitleToFrame("Fresnel");
-            return _this;
+            _super.call(this);
+            this.gap = 20;
+            this.width = 162;
+            this.height = 65;
+            this.nodeTree = new materialui.NodeTreeFresnel;
+            this.nodeTree.ui = this;
+            this.nodeTree.type = materialui.NodeTree.FRESNEL;
+            this.outItem = new materialui.ItemMaterialUI("out", materialui.MaterialItemType.FLOAT, false);
+            this.addItems(this.outItem);
+            this.inAItem = new materialui.ItemMaterialUI("scale", materialui.MaterialItemType.FLOAT, true);
+            this.addItems(this.inAItem);
+            this.inBItem = new materialui.ItemMaterialUI("add", materialui.MaterialItemType.FLOAT, true);
+            this.addItems(this.inBItem);
+            this.drawTitleToFrame("Fresnel");
         }
         return FresnelNodeUI;
-    }(materialui.BaseMaterialNodeUI));
+    })(materialui.BaseMaterialNodeUI);
     materialui.FresnelNodeUI = FresnelNodeUI;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=FresnelNodeUI.js.map

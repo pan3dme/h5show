@@ -1,9 +1,9 @@
-var QuestMoveVo = /** @class */ (function () {
+var QuestMoveVo = (function () {
     function QuestMoveVo() {
     }
     return QuestMoveVo;
-}());
-var GameInstance = /** @class */ (function () {
+})();
+var GameInstance = (function () {
     function GameInstance() {
     }
     GameInstance.getGameEndMillisecond = function ($endT) {
@@ -203,5 +203,5 @@ var GameInstance = /** @class */ (function () {
     GameInstance.sceneResEqu = false;
     GameInstance.first = false;
     return GameInstance;
-}());
+})();
 //# sourceMappingURL=GameInstance.js.map

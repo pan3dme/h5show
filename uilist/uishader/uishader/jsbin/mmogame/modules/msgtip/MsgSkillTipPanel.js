@@ -1,22 +1,16 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var msgtip;
 (function (msgtip) {
-    var SkillTipPicRender = /** @class */ (function (_super) {
+    var SkillTipPicRender = (function (_super) {
         __extends(SkillTipPicRender, _super);
         function SkillTipPicRender() {
-            var _this = _super.call(this) || this;
-            _this.uiAtlas = new UIAtlas();
-            _this.uiAtlas.configData = new Array();
-            return _this;
+            _super.call(this);
+            this.uiAtlas = new UIAtlas();
+            this.uiAtlas.configData = new Array();
         }
         SkillTipPicRender.prototype.makeSamplePic = function () {
             var _this = this;
@@ -49,9 +43,9 @@ var msgtip;
             this.makeSamplePic();
         };
         return SkillTipPicRender;
-    }(AlphaUIRenderComponent));
+    })(AlphaUIRenderComponent);
     msgtip.SkillTipPicRender = SkillTipPicRender;
-    var SkillTipUi = /** @class */ (function () {
+    var SkillTipUi = (function () {
         function SkillTipUi($cs) {
             this.container = $cs;
             this.picRender = new SkillTipPicRender();
@@ -74,19 +68,19 @@ var msgtip;
             this.picRender.dispose();
         };
         return SkillTipUi;
-    }());
+    })();
     msgtip.SkillTipUi = SkillTipUi;
-    var MsgSkillTipPanel = /** @class */ (function (_super) {
+    var MsgSkillTipPanel = (function (_super) {
         __extends(MsgSkillTipPanel, _super);
         function MsgSkillTipPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.middle = 0;
-            _this.center = 0;
-            _this.frameUpFun = function (t) { _this.upData(t); };
-            TimeUtil.addFrameTick(_this.frameUpFun);
-            return _this;
+            var _this = this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.middle = 0;
+            this.center = 0;
+            this.frameUpFun = function (t) { _this.upData(t); };
+            TimeUtil.addFrameTick(this.frameUpFun);
         }
         MsgSkillTipPanel.prototype.upData = function (t) {
             if (this.renderList.length <= 0) {
@@ -114,7 +108,7 @@ var msgtip;
             UIManager.getInstance().addUIContainer(this.msgSkillTipPanel);
         };
         return MsgSkillTipPanel;
-    }(UIConatiner));
+    })(UIConatiner);
     msgtip.MsgSkillTipPanel = MsgSkillTipPanel;
 })(msgtip || (msgtip = {}));
 //# sourceMappingURL=MsgSkillTipPanel.js.map

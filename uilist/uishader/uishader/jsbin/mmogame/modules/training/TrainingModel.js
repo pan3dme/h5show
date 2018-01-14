@@ -1,12 +1,12 @@
 var training;
 (function (training) {
-    var TaskVo = /** @class */ (function () {
+    var TaskVo = (function () {
         function TaskVo() {
         }
         return TaskVo;
-    }());
+    })();
     training.TaskVo = TaskVo;
-    var TrainingModel = /** @class */ (function () {
+    var TrainingModel = (function () {
         function TrainingModel() {
         }
         TrainingModel.getInstance = function () {
@@ -113,7 +113,7 @@ var training;
             }
         };
         return TrainingModel;
-    }());
+    })();
     training.TrainingModel = TrainingModel;
 })(training || (training = {}));
 //# sourceMappingURL=TrainingModel.js.map

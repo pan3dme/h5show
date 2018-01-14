@@ -112,6 +112,7 @@
     <TypeScriptCompile Include="arpg2dsrc\left\prop\mesh\TexturePicUi.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\PropModel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\view\FloatPropMeshPanel.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\prop\view\OpPropMeshPanel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\view\SciencePropMeshPanel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\view\TexturePropMeshPanel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\view\Vec3PropMeshPanel.ts" />

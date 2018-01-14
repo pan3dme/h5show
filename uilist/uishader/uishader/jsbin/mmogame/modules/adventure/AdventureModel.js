@@ -1,6 +1,6 @@
 var adventure;
 (function (adventure) {
-    var AdventureModel = /** @class */ (function () {
+    var AdventureModel = (function () {
         function AdventureModel() {
             this.initData();
         }
@@ -36,7 +36,7 @@ var adventure;
             return tb.TB_risk_data.get_TB_risk_data(this.getPlayCurId() + 1000000);
         };
         return AdventureModel;
-    }());
+    })();
     adventure.AdventureModel = AdventureModel;
 })(adventure || (adventure = {}));
 //# sourceMappingURL=AdventureModel.js.map

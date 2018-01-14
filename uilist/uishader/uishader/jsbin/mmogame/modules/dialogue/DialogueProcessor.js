@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var dialog;
 (function (dialog) {
-    var DialogueModule = /** @class */ (function (_super) {
+    var DialogueModule = (function (_super) {
         __extends(DialogueModule, _super);
         function DialogueModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         DialogueModule.prototype.getModuleName = function () {
             return "DialogueModule";
@@ -22,22 +17,22 @@ var dialog;
             return [new DialogueProcessor()];
         };
         return DialogueModule;
-    }(Module));
+    })(Module);
     dialog.DialogueModule = DialogueModule;
-    var DialogueEvent = /** @class */ (function (_super) {
+    var DialogueEvent = (function (_super) {
         __extends(DialogueEvent, _super);
         function DialogueEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         DialogueEvent.SHOW_DIALOGUE_PANEL = "SHOW_DIALOGUE_PANEL";
         DialogueEvent.HIDE_DIALOGUE_PANEL = "HIDE_DIALOGUE_PANEL";
         return DialogueEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     dialog.DialogueEvent = DialogueEvent;
-    var DialogueProcessor = /** @class */ (function (_super) {
+    var DialogueProcessor = (function (_super) {
         __extends(DialogueProcessor, _super);
         function DialogueProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         DialogueProcessor.prototype.getName = function () {
             return "DialogueProcessor";
@@ -107,7 +102,7 @@ var dialog;
             ];
         };
         return DialogueProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     dialog.DialogueProcessor = DialogueProcessor;
 })(dialog || (dialog = {}));
 //# sourceMappingURL=DialogueProcessor.js.map

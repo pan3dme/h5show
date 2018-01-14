@@ -1,6 +1,6 @@
 var prop;
 (function (prop) {
-    var PropModel = /** @class */ (function () {
+    var PropModel = (function () {
         function PropModel() {
             this._top = 350;
         }
@@ -26,9 +26,11 @@ var prop;
                 else if ($ui instanceof materialui.TextureSampleNodeUI) {
                     this.metaDataView = new prop.TexturePropMeshPanel();
                 }
+                else if ($ui instanceof materialui.ResultNodeUI) {
+                    this.metaDataView = new prop.OpPropMeshPanel();
+                }
                 else {
                     this.showSciencePropPanel();
-                    return;
                 }
                 this.lastNodel = $ui;
                 this.metaDataView.data = $ui;
@@ -42,7 +44,6 @@ var prop;
                 this.lastNodel = null;
             }
             this.metaDataView = new prop.SciencePropMeshPanel();
-            this.metaDataView.data = new SceneChar;
         };
         PropModel.prototype.moveTop = function ($ty) {
             this._top = $ty;
@@ -51,7 +52,7 @@ var prop;
             }
         };
         return PropModel;
-    }());
+    })();
     prop.PropModel = PropModel;
 })(prop || (prop = {}));
 //# sourceMappingURL=PropModel.js.map

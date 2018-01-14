@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var prop;
 (function (prop) {
-    var TextLabelUIMeshVo = /** @class */ (function (_super) {
+    var TextLabelUIMeshVo = (function (_super) {
         __extends(TextLabelUIMeshVo, _super);
         function TextLabelUIMeshVo() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         Object.defineProperty(TextLabelUIMeshVo.prototype, "name", {
             get: function () {
@@ -33,13 +28,12 @@ var prop;
             this.clear = true;
         };
         return TextLabelUIMeshVo;
-    }(bloodTittle.baseMeshVo));
-    var TextLabelUIDisp2D = /** @class */ (function (_super) {
+    })(bloodTittle.baseMeshVo);
+    var TextLabelUIDisp2D = (function (_super) {
         __extends(TextLabelUIDisp2D, _super);
         function TextLabelUIDisp2D() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.tempMatrix = new Matrix3D;
-            return _this;
+            _super.apply(this, arguments);
+            this.tempMatrix = new Matrix3D;
         }
         TextLabelUIDisp2D.prototype.makeData = function () {
             if (this._data) {
@@ -79,14 +73,15 @@ var prop;
             }
         };
         return TextLabelUIDisp2D;
-    }(Disp2DBaseText));
+    })(Disp2DBaseText);
     prop.TextLabelUIDisp2D = TextLabelUIDisp2D;
-    var TextLabelUI = /** @class */ (function (_super) {
+    var TextLabelUI = (function (_super) {
         __extends(TextLabelUI, _super);
         function TextLabelUI() {
-            var _this = _super.call(this) || this;
-            _this._x = 0;
-            _this._y = 0;
+            var _this = this;
+            _super.call(this);
+            this._x = 0;
+            this._y = 0;
             if (!TextLabelUI._dis2DUIContianer) {
                 TextLabelUI._dis2DUIContianer = new Dis2DUIContianerPanel(TextLabelUIDisp2D, new Rectangle(0, 0, 128, 24), 50);
                 TextLabelUI._dis2DUIContianer.left = 0;
@@ -95,10 +90,9 @@ var prop;
                 UIManager.getInstance().addUIContainer(TextLabelUI._dis2DUIContianer);
                 TimeUtil.addFrameTick(function (t) { _this.upFrame(t); });
             }
-            _this.textLabelUIMeshVo = _this.getCharNameMeshVo();
-            _this.initView();
-            _this.resize();
-            return _this;
+            this.textLabelUIMeshVo = this.getCharNameMeshVo();
+            this.initView();
+            this.resize();
         }
         TextLabelUI.prototype.destory = function () {
             this.textLabelUIMeshVo.clear = true;
@@ -154,7 +148,7 @@ var prop;
             configurable: true
         });
         return TextLabelUI;
-    }(EventDispatcher));
+    })(EventDispatcher);
     prop.TextLabelUI = TextLabelUI;
 })(prop || (prop = {}));
 //# sourceMappingURL=TextLabelUI.js.map

@@ -1,38 +1,32 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var materialui;
 (function (materialui) {
-    var TextureSampleNodeUI = /** @class */ (function (_super) {
+    var TextureSampleNodeUI = (function (_super) {
         __extends(TextureSampleNodeUI, _super);
         function TextureSampleNodeUI() {
-            var _this = _super.call(this) || this;
-            _this.name = "TextureSampleNodeUI" + random(9999999);
-            _this.left = 400;
-            _this.top = 100;
-            _this._wrap = 0;
-            _this._mipmap = 0;
-            _this._filter = 0;
-            _this._permul = false;
-            _this.nodeTree = new materialui.NodeTreeTex;
-            _this.nodeTree.ui = _this;
-            _this.nodeTree.type = materialui.NodeTree.TEX;
-            _this.width = 162;
-            _this.height = 140;
-            _this.initItem();
-            _this.resetBgSize();
-            _this.drawTitleToFrame("纹理采样");
-            _this.a_texture_pic_frame = _this.getTexturePicUi();
-            _this.a_texture_pic_frame.x = 20;
-            _this.a_texture_pic_frame.y = 55;
-            return _this;
+            _super.call(this);
+            this.name = "TextureSampleNodeUI" + random(9999999);
+            this.left = 400;
+            this.top = 100;
+            this._wrap = 0;
+            this._mipmap = 0;
+            this._filter = 0;
+            this._permul = false;
+            this.nodeTree = new materialui.NodeTreeTex;
+            this.nodeTree.ui = this;
+            this.nodeTree.type = materialui.NodeTree.TEX;
+            this.width = 162;
+            this.height = 140;
+            this.initItem();
+            this.resetBgSize();
+            this.drawTitleToFrame("纹理采样");
+            this.a_texture_pic_frame = this.getTexturePicUi();
+            this.a_texture_pic_frame.x = 20;
+            this.a_texture_pic_frame.y = 55;
         }
         TextureSampleNodeUI.prototype.drawTextureUrlToFrame = function ($ui, $img) {
             var $toRect = $ui.getSkinCtxRect();
@@ -143,10 +137,8 @@ var materialui;
             set: function (value) {
                 this.nodeTree.isMain = value;
                 if (value) {
-                    //  _mainTxt.text = "M";
                 }
                 else {
-                    //  _mainTxt.text = "";
                 }
             },
             enumerable: true,
@@ -162,7 +154,7 @@ var materialui;
         };
         TextureSampleNodeUI.texture_pic_frame_ID = 0;
         return TextureSampleNodeUI;
-    }(materialui.BaseMaterialNodeUI));
+    })(materialui.BaseMaterialNodeUI);
     materialui.TextureSampleNodeUI = TextureSampleNodeUI;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=TextureSampleNodeUI.js.map

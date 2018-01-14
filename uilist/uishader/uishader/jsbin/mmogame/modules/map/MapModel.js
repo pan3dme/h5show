@@ -1,10 +1,10 @@
 var map;
 (function (map) {
-    var MapMenuVo = /** @class */ (function () {
+    var MapMenuVo = (function () {
         function MapMenuVo() {
         }
         return MapMenuVo;
-    }());
+    })();
     map.MapMenuVo = MapMenuVo;
     //export class WorldMapVo {
     //    public id: number
@@ -27,13 +27,13 @@ var map;
     //        return $arr;
     //    }
     //}
-    var MapServerVo = /** @class */ (function () {
+    var MapServerVo = (function () {
         function MapServerVo() {
         }
         return MapServerVo;
-    }());
+    })();
     map.MapServerVo = MapServerVo;
-    var MapModel = /** @class */ (function () {
+    var MapModel = (function () {
         function MapModel() {
             this.lockItem = [false, true, true, true];
             this._dic = new Object;
@@ -90,7 +90,7 @@ var map;
         };
         MapModel.tabType = 0;
         return MapModel;
-    }());
+    })();
     map.MapModel = MapModel;
 })(map || (map = {}));
 //# sourceMappingURL=MapModel.js.map

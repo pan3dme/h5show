@@ -1,30 +1,24 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var ObjData = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var ObjData = (function (_super) {
     __extends(ObjData, _super);
     function ObjData() {
-        var _this = _super.call(this) || this;
-        _this.vertices = new Array;
-        _this.uvs = new Array;
-        _this.indexs = new Array;
-        _this.lightuvs = new Array;
-        _this.normals = new Array;
-        _this.tangents = new Array;
-        _this.bitangents = new Array;
+        _super.call(this);
+        this.vertices = new Array;
+        this.uvs = new Array;
+        this.indexs = new Array;
+        this.lightuvs = new Array;
+        this.normals = new Array;
+        this.tangents = new Array;
+        this.bitangents = new Array;
         //public collision: CollisionItemVo;
-        _this.treNum = 0;
+        this.treNum = 0;
         /**顶点 uv lightuv normal 合成一个 va */
-        _this.compressBuffer = false;
-        _this.hasdispose = false;
-        return _this;
+        this.compressBuffer = false;
+        this.hasdispose = false;
     }
     ObjData.prototype.destory = function () {
         this.vertices.length = 0;
@@ -72,5 +66,5 @@ var ObjData = /** @class */ (function (_super) {
         this.hasdispose = true;
     };
     return ObjData;
-}(ResCount));
+})(ResCount);
 //# sourceMappingURL=ObjData.js.map

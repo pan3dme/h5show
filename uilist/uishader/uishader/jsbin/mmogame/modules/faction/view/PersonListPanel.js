@@ -1,29 +1,23 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var faction;
 (function (faction) {
-    var PersonListVo = /** @class */ (function () {
+    var PersonListVo = (function () {
         function PersonListVo() {
             this.isok = false;
         }
         return PersonListVo;
-    }());
+    })();
     faction.PersonListVo = PersonListVo;
-    var PersonListPanel = /** @class */ (function (_super) {
+    var PersonListPanel = (function (_super) {
         __extends(PersonListPanel, _super);
         function PersonListPanel() {
-            var _this = _super.call(this) || this;
-            _this.left = 43;
-            _this.top = 132;
-            return _this;
+            _super.call(this);
+            this.left = 43;
+            this.top = 132;
         }
         PersonListPanel.prototype.init = function ($atlas) {
             this.baseAtlas = $atlas;
@@ -104,14 +98,13 @@ var faction;
             UIManager.getInstance().removeUIContainer(this);
         };
         return PersonListPanel;
-    }(SList));
+    })(SList);
     faction.PersonListPanel = PersonListPanel;
-    var PersonListItemRender = /** @class */ (function (_super) {
+    var PersonListItemRender = (function (_super) {
         __extends(PersonListItemRender, _super);
         function PersonListItemRender() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.IdentityKeyName = ["族长", "副族长", "长老", "精英", "成员"];
-            return _this;
+            _super.apply(this, arguments);
+            this.IdentityKeyName = ["族长", "副族长", "长老", "精英", "成员"];
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -278,7 +271,7 @@ var faction;
             }
         };
         return PersonListItemRender;
-    }(SListItem));
+    })(SListItem);
     faction.PersonListItemRender = PersonListItemRender;
 })(faction || (faction = {}));
 //# sourceMappingURL=PersonListPanel.js.map

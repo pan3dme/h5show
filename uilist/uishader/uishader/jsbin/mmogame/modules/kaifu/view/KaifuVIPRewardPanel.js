@@ -1,24 +1,18 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var kaifu;
 (function (kaifu) {
-    var KaifuVIPRewardPanel = /** @class */ (function (_super) {
+    var KaifuVIPRewardPanel = (function (_super) {
         __extends(KaifuVIPRewardPanel, _super);
         function KaifuVIPRewardPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            return _this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
         }
         KaifuVIPRewardPanel.prototype.setUIAtlas = function ($uiatlas, $winMidRender) {
             this._baseUiAtlas = $uiatlas;
@@ -115,9 +109,9 @@ var kaifu;
             NetManager.getInstance().protocolos.activity_opt_buy_dailygift(this._activeID, $id);
         };
         return KaifuVIPRewardPanel;
-    }(kaifu.KaifuBaseContainer));
+    })(kaifu.KaifuBaseContainer);
     kaifu.KaifuVIPRewardPanel = KaifuVIPRewardPanel;
-    var KaifuVipRewardItem = /** @class */ (function () {
+    var KaifuVipRewardItem = (function () {
         function KaifuVipRewardItem() {
         }
         KaifuVipRewardItem.prototype.create = function ($render, $topRender, $id, $container) {
@@ -180,7 +174,7 @@ var kaifu;
             $ui.uiRender.uiAtlas.updateCtx(ctx, $rec.pixelX, $rec.pixelY);
         };
         return KaifuVipRewardItem;
-    }());
+    })();
     kaifu.KaifuVipRewardItem = KaifuVipRewardItem;
 })(kaifu || (kaifu = {}));
 //# sourceMappingURL=KaifuVIPRewardPanel.js.map

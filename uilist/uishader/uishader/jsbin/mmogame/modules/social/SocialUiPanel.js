@@ -1,38 +1,32 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var social;
 (function (social) {
-    var SocialUiPanel = /** @class */ (function (_super) {
+    var SocialUiPanel = (function (_super) {
         __extends(SocialUiPanel, _super);
         function SocialUiPanel() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._bottomRender = new UIRenderComponent;
-            _this.addRender(_this._bottomRender);
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            _this._publicRender = new UIRenderComponent;
-            _this.addRender(_this._publicRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            _this._PaneltopRender = new UIRenderComponent;
-            _this.addRender(_this._PaneltopRender);
-            _this._redPointRender = new RedPointRender;
-            _this.addRender(_this._redPointRender);
-            _this._redPointRender1 = new RedPointRender;
-            _this._baseRender.uiAtlas = new UIAtlas();
-            return _this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._bottomRender = new UIRenderComponent;
+            this.addRender(this._bottomRender);
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
+            this._publicRender = new UIRenderComponent;
+            this.addRender(this._publicRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
+            this._PaneltopRender = new UIRenderComponent;
+            this.addRender(this._PaneltopRender);
+            this._redPointRender = new RedPointRender;
+            this.addRender(this._redPointRender);
+            this._redPointRender1 = new RedPointRender;
+            this._baseRender.uiAtlas = new UIAtlas();
         }
         SocialUiPanel.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -148,17 +142,16 @@ var social;
             }
         };
         return SocialUiPanel;
-    }(WindowUi));
+    })(WindowUi);
     social.SocialUiPanel = SocialUiPanel;
-    var BottomUiparts = /** @class */ (function (_super) {
+    var BottomUiparts = (function (_super) {
         __extends(BottomUiparts, _super);
         function BottomUiparts() {
-            var _this = _super.call(this) || this;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            return _this;
+            _super.call(this);
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
         }
         BottomUiparts.prototype.setRender = function ($bottomRender, $base, $public, $topRender, $redRender) {
             this._bottomRender = $bottomRender;
@@ -251,7 +244,7 @@ var social;
             }
         };
         return BottomUiparts;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     social.BottomUiparts = BottomUiparts;
 })(social || (social = {}));
 //# sourceMappingURL=SocialUiPanel.js.map
