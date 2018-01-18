@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var prop;
 (function (prop) {
-    var ComBoBoxCtrl2D = (function (_super) {
+    var ComBoBoxCtrl2D = /** @class */ (function (_super) {
         __extends(ComBoBoxCtrl2D, _super);
         function ComBoBoxCtrl2D() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ComBoBoxCtrl2D.prototype.initView = function () {
             this.textLabelUI = new prop.TextLabelUI();
@@ -90,7 +95,7 @@ var prop;
             configurable: true
         });
         return ComBoBoxCtrl2D;
-    })(prop.BaseReflComponent);
+    }(prop.BaseReflComponent));
     prop.ComBoBoxCtrl2D = ComBoBoxCtrl2D;
 })(prop || (prop = {}));
 //# sourceMappingURL=ComBoBoxCtrl2D.js.map

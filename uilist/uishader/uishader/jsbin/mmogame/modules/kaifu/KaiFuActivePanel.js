@@ -1,26 +1,32 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var kaifu;
 (function (kaifu) {
-    var KaiFuActivePanel = (function (_super) {
+    var KaiFuActivePanel = /** @class */ (function (_super) {
         __extends(KaiFuActivePanel, _super);
         function KaiFuActivePanel() {
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.tabNameAry = ["开服寻宝", "七日目标", "每日礼包", "开服礼包"];
-            this._currentIdx = -1;
-            this.panelDic = [];
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.middle = 0;
-            this.center = 0;
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.tabNameAry = ["开服寻宝", "七日目标", "每日礼包", "开服礼包"];
+            _this._currentIdx = -1;
+            _this.panelDic = [];
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.middle = 0;
+            _this.center = 0;
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            return _this;
         }
         KaiFuActivePanel.prototype.applyLoad = function () {
             var _this = this;
@@ -167,7 +173,7 @@ var kaifu;
             }
         };
         return KaiFuActivePanel;
-    })(WindowUi);
+    }(WindowUi));
     kaifu.KaiFuActivePanel = KaiFuActivePanel;
 })(kaifu || (kaifu = {}));
 //# sourceMappingURL=KaiFuActivePanel.js.map

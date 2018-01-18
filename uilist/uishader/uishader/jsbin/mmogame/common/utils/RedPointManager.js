@@ -1,9 +1,14 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var RedPointManager = (function () {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var RedPointManager = /** @class */ (function () {
     function RedPointManager() {
         this._dic = new Object;
     }
@@ -84,13 +89,14 @@ var RedPointManager = (function () {
         return this._dic[$id];
     };
     return RedPointManager;
-})();
-var RedPointRender = (function (_super) {
+}());
+var RedPointRender = /** @class */ (function (_super) {
     __extends(RedPointRender, _super);
     function RedPointRender() {
-        _super.call(this);
-        this._getSrcList = new Array;
-        this.uiAtlas = RedPointManager.getInstance().uiAtlas;
+        var _this = _super.call(this) || this;
+        _this._getSrcList = new Array;
+        _this.uiAtlas = RedPointManager.getInstance().uiAtlas;
+        return _this;
     }
     RedPointRender.prototype.getRedPointUI = function ($container, $nodeID, $v2d, $style) {
         if ($style === void 0) { $style = "style"; }
@@ -145,11 +151,11 @@ var RedPointRender = (function (_super) {
         }
     };
     return RedPointRender;
-})(UIRenderComponent);
-var RedPointCompenent = (function (_super) {
+}(UIRenderComponent));
+var RedPointCompenent = /** @class */ (function (_super) {
     __extends(RedPointCompenent, _super);
     function RedPointCompenent() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     // public show(): void {
     //     this.redPointContainer.addChild(this);
@@ -186,17 +192,17 @@ var RedPointCompenent = (function (_super) {
         // 
     };
     return RedPointCompenent;
-})(UICompenent);
-var RedPointEvent = (function (_super) {
+}(UICompenent));
+var RedPointEvent = /** @class */ (function (_super) {
     __extends(RedPointEvent, _super);
     function RedPointEvent() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     RedPointEvent.SHOW_REDPOINT_EVENT = "SHOW_REDPOINT_EVENT";
     RedPointEvent.HIDE_REDPOINT_EVENT = "HIDE_REDPOINT_EVENT";
     return RedPointEvent;
-})(BaseEvent);
-var RedPointNode = (function () {
+}(BaseEvent));
+var RedPointNode = /** @class */ (function () {
     function RedPointNode() {
         this.children = new Array;
         this.isList = false;
@@ -275,5 +281,5 @@ var RedPointNode = (function () {
         this._ui = null;
     };
     return RedPointNode;
-})();
+}());
 //# sourceMappingURL=RedPointManager.js.map

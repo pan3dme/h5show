@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var sboss;
 (function (sboss) {
-    var PbossLeftListRender = (function (_super) {
+    var PbossLeftListRender = /** @class */ (function (_super) {
         __extends(PbossLeftListRender, _super);
         function PbossLeftListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         // private S_KILL_TIP: UICompenent;
         PbossLeftListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
@@ -149,17 +154,19 @@ var sboss;
                 //     msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "等级不够，请多多练练再来", 99)
                 // } else {
                 this.setSelect();
+                // }
             }
         };
         return PbossLeftListRender;
-    })(SListItem);
+    }(SListItem));
     sboss.PbossLeftListRender = PbossLeftListRender;
-    var PbossLeftList = (function (_super) {
+    var PbossLeftList = /** @class */ (function (_super) {
         __extends(PbossLeftList, _super);
         function PbossLeftList() {
-            _super.call(this);
-            this.left = 325;
-            this.top = 149;
+            var _this = _super.call(this) || this;
+            _this.left = 325;
+            _this.top = 149;
+            return _this;
         }
         PbossLeftList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -192,26 +199,26 @@ var sboss;
             }
         };
         return PbossLeftList;
-    })(SList);
+    }(SList));
     sboss.PbossLeftList = PbossLeftList;
-    var PersonBossPanel = (function (_super) {
+    var PersonBossPanel = /** @class */ (function (_super) {
         __extends(PersonBossPanel, _super);
         function PersonBossPanel() {
-            var _this = this;
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._midRender.uiAtlas = new UIAtlas;
-            this._frameFun = function (t) { _this.upTime(t); };
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._midRender.uiAtlas = new UIAtlas;
+            _this._frameFun = function (t) { _this.upTime(t); };
+            return _this;
         }
         PersonBossPanel.prototype.setRender = function ($uiAtlas, $win) {
             this._bottomRender.uiAtlas = $uiAtlas;
@@ -435,7 +442,7 @@ var sboss;
             }
         };
         return PersonBossPanel;
-    })(UIConatiner);
+    }(UIConatiner));
     sboss.PersonBossPanel = PersonBossPanel;
 })(sboss || (sboss = {}));
 //# sourceMappingURL=PersonBossPanel.js.map

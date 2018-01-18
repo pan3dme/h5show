@@ -1,4 +1,4 @@
-var ViewFrustum = (function () {
+var ViewFrustum = /** @class */ (function () {
     function ViewFrustum() {
     }
     ViewFrustum.prototype.init = function () {
@@ -73,6 +73,7 @@ var ViewFrustum = (function () {
                 // var _vcMin: Vector3D = new Vector3D();
                 if (this.panleAry[j].x > 0) {
                     _vcMax.x = vcMax.x;
+                    //_vcMin.x = vcMin.x;
                 }
                 else {
                     //_vcMin.x = vcMax.x;
@@ -80,6 +81,7 @@ var ViewFrustum = (function () {
                 }
                 if (this.panleAry[j].y > 0) {
                     _vcMax.y = vcMax.y;
+                    //_vcMin.y = vcMin.y;
                 }
                 else {
                     //_vcMin.y = vcMax.y;
@@ -87,6 +89,7 @@ var ViewFrustum = (function () {
                 }
                 if (this.panleAry[j].z > 0) {
                     _vcMax.z = vcMax.z;
+                    //_vcMin.z = vcMin.z;
                 }
                 else {
                     //_vcMin.z = vcMax.z;
@@ -120,5 +123,5 @@ var ViewFrustum = (function () {
         this.capsuleLineSprite.upToGpu();
     };
     return ViewFrustum;
-})();
+}());
 //# sourceMappingURL=ViewFrustum.js.map

@@ -1,0 +1,4 @@
+[
+{"id" : 1, "name" : "测试1服", "pid" : 3, "sid" : 1001, "gate_ip" : "14.17.112.99", "gate_port" : 443, "state" : 3, "isnew" : 0},
+{"id" : 2, "name" : "测试2服", "pid" : 3, "sid" : 1002, "gate_ip" : "14.17.112.99", "gate_port" : 443, "state" : 1, "isnew" : 1}
+]

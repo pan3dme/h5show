@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var MaterialViewBuildUtils = (function () {
+    var MaterialViewBuildUtils = /** @class */ (function () {
         function MaterialViewBuildUtils() {
         }
         MaterialViewBuildUtils.getInstance = function () {
@@ -106,7 +106,7 @@ var materialui;
             return ui;
         };
         return MaterialViewBuildUtils;
-    })();
+    }());
     materialui.MaterialViewBuildUtils = MaterialViewBuildUtils;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialViewBuildUtils.js.map

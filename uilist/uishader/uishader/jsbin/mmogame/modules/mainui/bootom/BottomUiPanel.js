@@ -1,17 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var bottomui;
 (function (bottomui) {
-    var HornTxtVo = (function () {
+    var HornTxtVo = /** @class */ (function () {
         function HornTxtVo() {
         }
         return HornTxtVo;
-    })();
+    }());
     bottomui.HornTxtVo = HornTxtVo;
-    var SysInfoPanel = (function () {
+    var SysInfoPanel = /** @class */ (function () {
         function SysInfoPanel($ui, $bg, $uiAtlas) {
             this.lastTimePositon = 0; //移动时间标注点
             this.totalTime = 10000; //一个循环的时间。走0-0.5的UV
@@ -81,15 +86,15 @@ var bottomui;
             this.uiAtlas.updateCtx($ctx, $uiRect.pixelX, $uiRect.pixelY);
         };
         return SysInfoPanel;
-    })();
+    }());
     bottomui.SysInfoPanel = SysInfoPanel;
-    var InfoTipIconVo = (function () {
+    var InfoTipIconVo = /** @class */ (function () {
         function InfoTipIconVo() {
         }
         return InfoTipIconVo;
-    })();
+    }());
     bottomui.InfoTipIconVo = InfoTipIconVo;
-    var InfoTipManager = (function () {
+    var InfoTipManager = /** @class */ (function () {
         function InfoTipManager($container, $bg, $mid) {
             this.showData = [1, 2, 3, 4, 5, 6];
             this.visible = true;
@@ -150,7 +155,7 @@ var bottomui;
                     // ModulePageManager.openPanel(SharedDef.MODULE_SOCIAL);
                     ModuleEventManager.dispatchEvent(new social.SocialUiEvent(social.SocialUiEvent.SHOW_APPLYPANEL_EVENT));
                     break;
-                case 2:
+                case 2://家族
                     if (GuidData.faction) {
                         ModulePageManager.openPanel(SharedDef.MODULE_FACTION);
                     }
@@ -158,12 +163,12 @@ var bottomui;
                         ModuleEventManager.dispatchEvent(new faction.FactionEvent(faction.FactionEvent.SHOW_INVITATION_EVENT));
                     }
                     break;
-                case 3:
+                case 3://礼物
                     // GuidData.faction.queenGiftUncheckNum = 0
                     this.refresh();
                     // ModuleEventManager.dispatchEvent(new faction.GiftprocessingEvent(faction.GiftprocessingEvent.SHOW_Gift_EVENT));
                     break;
-                case 4:
+                case 4://私聊
                     // Chat.ChatModel.showType = SharedDef.CHAT_TYPE_WHISPER;
                     // ModulePageManager.openPanel(PanelClass.SHOW_CHAT_PANEL);
                     var $arr = Chat.ChatModel.getInstance().getChatItemByType(SharedDef.CHAT_TYPE_WHISPER);
@@ -174,7 +179,7 @@ var bottomui;
                         }
                     }
                     break;
-                case 5:
+                case 5://邮件
                     //ModulePageManager.openPanel(PanelClass.SHOW_CHAT_PANEL);
                     //email.EmailModel.getInstance().lastGetEmailTipTime = GameInstance.getServerNow();
                     ModulePageManager.openPanel(SharedDef.MODULE_MAIL);
@@ -191,27 +196,28 @@ var bottomui;
             }
         };
         return InfoTipManager;
-    })();
+    }());
     bottomui.InfoTipManager = InfoTipManager;
-    var BottomUiPanel = (function (_super) {
+    var BottomUiPanel = /** @class */ (function (_super) {
         __extends(BottomUiPanel, _super);
         function BottomUiPanel() {
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.expNum5 = 5;
-            this.expNum = 0.7;
-            this.interfaceUI = true;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.bottom = 0;
-            this.center = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._midRender.uiAtlas = new UIAtlas;
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.expNum5 = 5;
+            _this.expNum = 0.7;
+            _this.interfaceUI = true;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.bottom = 0;
+            _this.center = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._midRender.uiAtlas = new UIAtlas;
+            return _this;
         }
         BottomUiPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -295,7 +301,7 @@ var bottomui;
             }
         };
         return BottomUiPanel;
-    })(UIPanel);
+    }(UIPanel));
     bottomui.BottomUiPanel = BottomUiPanel;
 })(bottomui || (bottomui = {}));
 //# sourceMappingURL=BottomUiPanel.js.map

@@ -1,25 +1,31 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var boss;
 (function (boss) {
-    var BossViewPanel = (function (_super) {
+    var BossViewPanel = /** @class */ (function (_super) {
         __extends(BossViewPanel, _super);
         function BossViewPanel() {
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._baseUiAtlas = new UIAtlas;
-            this.setBlackBg();
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._baseUiAtlas = new UIAtlas;
+            _this.setBlackBg();
+            return _this;
         }
         BossViewPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -57,6 +63,7 @@ var boss;
                 var rewarui = this._baseRender.getComponent("t_reward" + i);
                 this.addChild(rewarui);
                 this.rewardList.push(rewarui);
+                //IconManager.getInstance().drawItemIcon60(this.rewardList[i], 0, 0);
             }
         };
         BossViewPanel.prototype.showrankPanel = function () {
@@ -147,13 +154,13 @@ var boss;
             this._data = null;
         };
         return BossViewPanel;
-    })(WindowMinUi);
+    }(WindowMinUi));
     boss.BossViewPanel = BossViewPanel;
-    var BossViewData = (function () {
+    var BossViewData = /** @class */ (function () {
         function BossViewData() {
         }
         return BossViewData;
-    })();
+    }());
     boss.BossViewData = BossViewData;
 })(boss || (boss = {}));
 //# sourceMappingURL=BossViewPanel.js.map

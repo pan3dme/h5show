@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var minmap;
 (function (minmap) {
-    var MinMapImgShader = (function (_super) {
+    var MinMapImgShader = /** @class */ (function (_super) {
         __extends(MinMapImgShader, _super);
         function MinMapImgShader() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         MinMapImgShader.prototype.binLocation = function ($context) {
             $context.bindAttribLocation(this.program, 0, "v3Pos");
@@ -50,15 +55,16 @@ var minmap;
         };
         MinMapImgShader.MinMapImgShader = "MinMapImgShader";
         return MinMapImgShader;
-    })(Shader3D);
-    var MinMapImg = (function (_super) {
+    }(Shader3D));
+    var MinMapImg = /** @class */ (function (_super) {
         __extends(MinMapImg, _super);
         function MinMapImg() {
-            _super.call(this);
-            this._scaleData = [0, 0, 1, 1];
-            this._rotation = 0;
-            this.keyScale = 1;
-            this.uvDataPos = new Vector2D();
+            var _this = _super.call(this) || this;
+            _this._scaleData = [0, 0, 1, 1];
+            _this._rotation = 0;
+            _this.keyScale = 1;
+            _this.uvDataPos = new Vector2D();
+            return _this;
         }
         MinMapImg.prototype.initData = function () {
             this.objData = new ObjData();
@@ -121,13 +127,14 @@ var minmap;
                 Scene_data.context3D.setVc4fv(this.shader, "uvdata", [$pos.x, $pos.y, $scale.x, $scale.y]);
                 Scene_data.context3D.setRenderTexture(this.shader, "s_texture", this.texture, 0);
                 Scene_data.context3D.drawCall(this.objData.indexBuffer, this.objData.treNum);
+                //AstarUtil.sceneRotationInfo();
             }
         };
         MinMapImg.prototype.interactiveEvent = function ($e) {
             return false;
         };
         return MinMapImg;
-    })(UIRenderComponent);
+    }(UIRenderComponent));
     minmap.MinMapImg = MinMapImg;
 })(minmap || (minmap = {}));
 //# sourceMappingURL=MinMapImg.js.map

@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var chgfish;
 (function (chgfish) {
-    var ChgfishModule = (function (_super) {
+    var ChgfishModule = /** @class */ (function (_super) {
         __extends(ChgfishModule, _super);
         function ChgfishModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ChgfishModule.prototype.getModuleName = function () {
             return "ChgfishModule";
@@ -17,12 +22,12 @@ var chgfish;
             return [new ChgfishProcessor()];
         };
         return ChgfishModule;
-    })(Module);
+    }(Module));
     chgfish.ChgfishModule = ChgfishModule;
-    var ChgfishEvent = (function (_super) {
+    var ChgfishEvent = /** @class */ (function (_super) {
         __extends(ChgfishEvent, _super);
         function ChgfishEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         //展示面板
         ChgfishEvent.SHOW_Chgfish_EVENT = "SHOW_Chgfish_EVENT";
@@ -31,12 +36,12 @@ var chgfish;
         //刷新
         ChgfishEvent.REFRESH_Chgfish_EVENT = "REFRESH_Chgfish_EVENT";
         return ChgfishEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     chgfish.ChgfishEvent = ChgfishEvent;
-    var ChgfishProcessor = (function (_super) {
+    var ChgfishProcessor = /** @class */ (function (_super) {
         __extends(ChgfishProcessor, _super);
         function ChgfishProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ChgfishProcessor.prototype.getName = function () {
             return "ChgfishProcessor";
@@ -98,7 +103,7 @@ var chgfish;
             ];
         };
         return ChgfishProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     chgfish.ChgfishProcessor = ChgfishProcessor;
 })(chgfish || (chgfish = {}));
 //# sourceMappingURL=ChgfishProcessor.js.map

@@ -1,16 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var FactionData = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var FactionData = /** @class */ (function (_super) {
     __extends(FactionData, _super);
     function FactionData() {
-        _super.apply(this, arguments);
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         //获得自己的职务
-        this._playerIdentity = -1;
-        this._goldDonation = 0;
-        this._ybDonation = 0;
+        _this._playerIdentity = -1;
+        _this._goldDonation = 0;
+        _this._ybDonation = 0;
+        return _this;
     }
     FactionData.prototype.onBaseCreated = function () {
         //var level: number = this.GetUInt32(0);
@@ -152,6 +158,8 @@ var FactionData = (function (_super) {
                 ModuleEventManager.dispatchEvent(new faction.FactionEvent(faction.FactionEvent.REFRESHFACTIONLEV_EVENT));
             }
             else if (kNum >= SharedDef.FACTION_INT_FIELD_GIFT_WEEK_POINT_START && kNum < SharedDef.FACTION_INT_FIELD_GIFT_WEEK_POINT_END) {
+                // 礼物周榜魅力值计数监听
+                // ModuleEventManager.dispatchEvent(new faction.FactionEvent(faction.FactionEvent.WEEK_RANK_CHANGE_EVENT));
             }
             else if (kNum >= SharedDef.FACTION_INT_FIELD_BOSSDENFENSE_START && kNum < SharedDef.FACTION_INT_FIELD_BOSSDENFENSE_END) {
                 this.leadChange();
@@ -818,8 +826,8 @@ var FactionData = (function (_super) {
         ModuleEventManager.dispatchEvent(new faction.FactionEvent(faction.FactionEvent.SHOW_FACTIONACTIVE_TRIP_CHANGE_EVENT));
     };
     return FactionData;
-})(GuidObject);
-var FactionItemData = (function () {
+}(GuidObject));
+var FactionItemData = /** @class */ (function () {
     function FactionItemData() {
         this.force = 0; //成员战斗力
         this.level = 0; //0.成员等级
@@ -831,25 +839,25 @@ var FactionItemData = (function () {
         this.contribution = 0; //历史贡献
     }
     return FactionItemData;
-})();
-var FactionEventData = (function () {
+}());
+var FactionEventData = /** @class */ (function () {
     function FactionEventData() {
     }
     return FactionEventData;
-})();
-var FactionShopData = (function () {
+}());
+var FactionShopData = /** @class */ (function () {
     function FactionShopData() {
     }
     return FactionShopData;
-})();
-var FactionBossRankData = (function () {
+}());
+var FactionBossRankData = /** @class */ (function () {
     function FactionBossRankData() {
     }
     return FactionBossRankData;
-})();
-var FactionLeadData = (function () {
+}());
+var FactionLeadData = /** @class */ (function () {
     function FactionLeadData() {
     }
     return FactionLeadData;
-})();
+}());
 //# sourceMappingURL=FactionData.js.map

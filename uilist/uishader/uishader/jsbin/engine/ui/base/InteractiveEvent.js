@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var InteractiveEvent = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var InteractiveEvent = /** @class */ (function (_super) {
     __extends(InteractiveEvent, _super);
     function InteractiveEvent() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     InteractiveEvent.Down = "down";
     InteractiveEvent.Up = "Up";
@@ -14,5 +19,5 @@ var InteractiveEvent = (function (_super) {
     InteractiveEvent.PinchStart = "PinchStart";
     InteractiveEvent.Pinch = "Pinch";
     return InteractiveEvent;
-})(BaseEvent);
+}(BaseEvent));
 //# sourceMappingURL=InteractiveEvent.js.map

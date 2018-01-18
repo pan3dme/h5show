@@ -1,22 +1,28 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var faction;
 (function (faction) {
-    var ApplyFactionListVo = (function () {
+    var ApplyFactionListVo = /** @class */ (function () {
         function ApplyFactionListVo() {
         }
         return ApplyFactionListVo;
-    })();
+    }());
     faction.ApplyFactionListVo = ApplyFactionListVo;
-    var ApplyFactionList = (function (_super) {
+    var ApplyFactionList = /** @class */ (function (_super) {
         __extends(ApplyFactionList, _super);
         function ApplyFactionList() {
-            _super.call(this);
-            this.left = 305;
-            this.top = 174;
+            var _this = _super.call(this) || this;
+            _this.left = 305;
+            _this.top = 174;
+            return _this;
         }
         ApplyFactionList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -57,13 +63,14 @@ var faction;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return ApplyFactionList;
-    })(SList);
+    }(SList));
     faction.ApplyFactionList = ApplyFactionList;
-    var ApplyFactionRender = (function (_super) {
+    var ApplyFactionRender = /** @class */ (function (_super) {
         __extends(ApplyFactionRender, _super);
         function ApplyFactionRender() {
-            _super.apply(this, arguments);
-            this._num = 1;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this._num = 1;
+            return _this;
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -136,7 +143,7 @@ var faction;
             NetManager.getInstance().protocolos.faction_manager(SharedDef.FACTION_MANAGER_TYPE_AGREE_JOIN, 0, 0, guid, "");
         };
         return ApplyFactionRender;
-    })(SListItem);
+    }(SListItem));
     faction.ApplyFactionRender = ApplyFactionRender;
 })(faction || (faction = {}));
 //# sourceMappingURL=ApplyFactionList.js.map

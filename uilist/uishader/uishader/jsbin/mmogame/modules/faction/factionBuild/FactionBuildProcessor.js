@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var faction;
 (function (faction) {
-    var FactionBuildEvent = (function (_super) {
+    var FactionBuildEvent = /** @class */ (function (_super) {
         __extends(FactionBuildEvent, _super);
         function FactionBuildEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         FactionBuildEvent.SHOW_BUILD_EVENT = "SHOW_BUILD_EVENT";
         FactionBuildEvent.HIDE_BUILD_EVENT = "HIDE_BUILD_EVENT";
@@ -16,12 +21,12 @@ var faction;
         FactionBuildEvent.BUILD_STATE = "BUILD_STATE";
         FactionBuildEvent.BUILD_ENDTIME = "BUILD_ENDTIME";
         return FactionBuildEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     faction.FactionBuildEvent = FactionBuildEvent;
-    var FactionBuildProcessor = (function (_super) {
+    var FactionBuildProcessor = /** @class */ (function (_super) {
         __extends(FactionBuildProcessor, _super);
         function FactionBuildProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         FactionBuildProcessor.prototype.getName = function () {
             return "FactionBuildProcessor";
@@ -49,6 +54,9 @@ var faction;
                 var $engineEvent = $event;
                 if ($engineEvent.type == EngineEvent.MONEY_TYPE_SILVER
                     || $engineEvent.type == EngineEvent.MONEY_TYPE_GOLD_INGOT) {
+                    // if (this._factionBossUiPanel && this._factionBossUiPanel.factionTreasurePanel) {
+                    //     this._factionBossUiPanel.factionTreasurePanel.treasureTopPanel.resetMoney();
+                    // }
                 }
             }
             if ($event instanceof UIPanelEvent) {
@@ -134,7 +142,7 @@ var faction;
             return obj;
         };
         return FactionBuildProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     faction.FactionBuildProcessor = FactionBuildProcessor;
 })(faction || (faction = {}));
 //# sourceMappingURL=FactionBuildProcessor.js.map

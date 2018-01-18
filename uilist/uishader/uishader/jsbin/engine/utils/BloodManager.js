@@ -1,11 +1,16 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var bloodTittle;
 (function (bloodTittle) {
-    var TextJumpType = (function () {
+    var TextJumpType = /** @class */ (function () {
         function TextJumpType() {
         }
         TextJumpType.NORMALDAMAGE = 1; //普通伤害
@@ -23,18 +28,18 @@ var bloodTittle;
         TextJumpType.MYNORMALDAMAGEUP = 14; //自己受伤普通伤害上
         TextJumpType.MISS = 15; //未命中，对敌方
         return TextJumpType;
-    })();
+    }());
     bloodTittle.TextJumpType = TextJumpType;
-    var TextJumpUiVo = (function () {
+    var TextJumpUiVo = /** @class */ (function () {
         function TextJumpUiVo() {
         }
         return TextJumpUiVo;
-    })();
+    }());
     bloodTittle.TextJumpUiVo = TextJumpUiVo;
-    var TextJumpUiDrawAndRefreash = (function (_super) {
+    var TextJumpUiDrawAndRefreash = /** @class */ (function (_super) {
         __extends(TextJumpUiDrawAndRefreash, _super);
         function TextJumpUiDrawAndRefreash() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         TextJumpUiDrawAndRefreash.prototype.makeData = function () {
             if (this._data) {
@@ -416,13 +421,14 @@ var bloodTittle;
             return changevo;
         };
         return TextJumpUiDrawAndRefreash;
-    })(Disp2DBaseText);
+    }(Disp2DBaseText));
     bloodTittle.TextJumpUiDrawAndRefreash = TextJumpUiDrawAndRefreash;
-    var CharNameUiVo = (function (_super) {
+    var CharNameUiVo = /** @class */ (function (_super) {
         __extends(CharNameUiVo, _super);
         function CharNameUiVo() {
-            _super.apply(this, arguments);
-            this.tempMatrix = new Matrix3D;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.tempMatrix = new Matrix3D;
+            return _this;
         }
         CharNameUiVo.prototype.makeData = function () {
             if (this._data) {
@@ -465,13 +471,14 @@ var bloodTittle;
             }
         };
         return CharNameUiVo;
-    })(Disp2DBaseText);
+    }(Disp2DBaseText));
     bloodTittle.CharNameUiVo = CharNameUiVo;
-    var CharTitleUiVo = (function (_super) {
+    var CharTitleUiVo = /** @class */ (function (_super) {
         __extends(CharTitleUiVo, _super);
         function CharTitleUiVo() {
-            _super.apply(this, arguments);
-            this.tempMatrix = new Matrix3D;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.tempMatrix = new Matrix3D;
+            return _this;
         }
         CharTitleUiVo.prototype.makeData = function () {
             var _this = this;
@@ -520,9 +527,9 @@ var bloodTittle;
             }
         };
         return CharTitleUiVo;
-    })(Disp2DBaseText);
+    }(Disp2DBaseText));
     bloodTittle.CharTitleUiVo = CharTitleUiVo;
-    var baseMeshVo = (function () {
+    var baseMeshVo = /** @class */ (function () {
         function baseMeshVo() {
             this._visible = true;
             this.visibleChange = false;
@@ -540,13 +547,13 @@ var bloodTittle;
             configurable: true
         });
         return baseMeshVo;
-    })();
+    }());
     bloodTittle.baseMeshVo = baseMeshVo;
 })(bloodTittle || (bloodTittle = {}));
-var CharTitleMeshVo = (function (_super) {
+var CharTitleMeshVo = /** @class */ (function (_super) {
     __extends(CharTitleMeshVo, _super);
     function CharTitleMeshVo() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     CharTitleMeshVo.prototype.destory = function () {
         this.pos = null;
@@ -565,11 +572,11 @@ var CharTitleMeshVo = (function (_super) {
         configurable: true
     });
     return CharTitleMeshVo;
-})(bloodTittle.baseMeshVo);
-var CharNameMeshVo = (function (_super) {
+}(bloodTittle.baseMeshVo));
+var CharNameMeshVo = /** @class */ (function (_super) {
     __extends(CharNameMeshVo, _super);
     function CharNameMeshVo() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Object.defineProperty(CharNameMeshVo.prototype, "name", {
         get: function () {
@@ -589,11 +596,11 @@ var CharNameMeshVo = (function (_super) {
         this.clear = true;
     };
     return CharNameMeshVo;
-})(bloodTittle.baseMeshVo);
-var BloodLineMeshVo = (function (_super) {
+}(bloodTittle.baseMeshVo));
+var BloodLineMeshVo = /** @class */ (function (_super) {
     __extends(BloodLineMeshVo, _super);
     function BloodLineMeshVo() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     BloodLineMeshVo.prototype.destory = function () {
         this.pos = null;
@@ -602,26 +609,26 @@ var BloodLineMeshVo = (function (_super) {
         this.clear = true;
     };
     return BloodLineMeshVo;
-})(bloodTittle.baseMeshVo);
-var JumpTextMeshVo = (function (_super) {
+}(bloodTittle.baseMeshVo));
+var JumpTextMeshVo = /** @class */ (function (_super) {
     __extends(JumpTextMeshVo, _super);
     function JumpTextMeshVo() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     JumpTextMeshVo.prototype.destory = function () {
         this.pos = null;
         this.clear = true;
     };
     return JumpTextMeshVo;
-})(bloodTittle.baseMeshVo);
-var JumpTxtContianerPanel = (function (_super) {
+}(bloodTittle.baseMeshVo));
+var JumpTxtContianerPanel = /** @class */ (function (_super) {
     __extends(JumpTxtContianerPanel, _super);
     function JumpTxtContianerPanel($classVo, $rect, $num) {
-        _super.call(this, $classVo, $rect, $num);
+        return _super.call(this, $classVo, $rect, $num) || this;
     }
     return JumpTxtContianerPanel;
-})(Dis2DUIContianerPanel);
-var BloodManager = (function () {
+}(Dis2DUIContianerPanel));
+var BloodManager = /** @class */ (function () {
     function BloodManager() {
         this.uiContianerItem = new Array();
         this._charTitleContianerPanel = new Dis2DUIContianerPanel(bloodTittle.CharTitleUiVo, new Rectangle(0, 0, 131, 69), 10);
@@ -691,13 +698,12 @@ var BloodManager = (function () {
         //this.update();
     };
     return BloodManager;
-})();
-var bloodTittle;
+}());
 (function (bloodTittle) {
-    var BloodUIShader = (function (_super) {
+    var BloodUIShader = /** @class */ (function (_super) {
         __extends(BloodUIShader, _super);
         function BloodUIShader() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         BloodUIShader.prototype.binLocation = function ($context) {
             $context.bindAttribLocation(this.program, 0, "v3Pos");
@@ -743,14 +749,15 @@ var bloodTittle;
         };
         BloodUIShader.BloodUIShader = "BloodUIShader";
         return BloodUIShader;
-    })(Shader3D);
+    }(Shader3D));
     bloodTittle.BloodUIShader = BloodUIShader;
-    var BloodUICompenent = (function (_super) {
+    var BloodUICompenent = /** @class */ (function (_super) {
         __extends(BloodUICompenent, _super);
         function BloodUICompenent() {
-            _super.call(this);
-            this.lifeNum = 100;
-            this.colortype = 0; //0,1,2;
+            var _this = _super.call(this) || this;
+            _this.lifeNum = 100;
+            _this.colortype = 0; //0,1,2;
+            return _this;
         }
         BloodUICompenent.prototype.pushVaData = function (objData, i, beginIndex) {
             objData.vertices.push(0, 0, 0, 1, 0, 0, 1, -1, 0, 0, -1, 0);
@@ -759,13 +766,14 @@ var bloodTittle;
             return beginIndex + 4;
         };
         return BloodUICompenent;
-    })(UICompenent);
+    }(UICompenent));
     bloodTittle.BloodUICompenent = BloodUICompenent;
-    var BloodDisp2DBaseText = (function (_super) {
+    var BloodDisp2DBaseText = /** @class */ (function (_super) {
         __extends(BloodDisp2DBaseText, _super);
         function BloodDisp2DBaseText() {
-            _super.apply(this, arguments);
-            this.tempMatrix = new Matrix3D;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.tempMatrix = new Matrix3D;
+            return _this;
         }
         BloodDisp2DBaseText.prototype.makeData = function () {
             if (this._data) {
@@ -798,13 +806,14 @@ var bloodTittle;
             }
         };
         return BloodDisp2DBaseText;
-    })(Disp2DBaseText);
+    }(Disp2DBaseText));
     bloodTittle.BloodDisp2DBaseText = BloodDisp2DBaseText;
-    var BloodUIRenderComponent = (function (_super) {
+    var BloodUIRenderComponent = /** @class */ (function (_super) {
         __extends(BloodUIRenderComponent, _super);
         function BloodUIRenderComponent() {
-            _super.call(this);
-            this.nextTime = 0;
+            var _this = _super.call(this) || this;
+            _this.nextTime = 0;
+            return _this;
         }
         BloodUIRenderComponent.prototype.initData = function () {
             this._uiList = new Array;
@@ -881,20 +890,21 @@ var bloodTittle;
             }
         };
         return BloodUIRenderComponent;
-    })(UIRenderComponent);
+    }(UIRenderComponent));
     bloodTittle.BloodUIRenderComponent = BloodUIRenderComponent;
-    var BloodLineUIConatiner = (function (_super) {
+    var BloodLineUIConatiner = /** @class */ (function (_super) {
         __extends(BloodLineUIConatiner, _super);
         function BloodLineUIConatiner() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this._baseRender = new BloodUIRenderComponent();
-            this.addRender(this._baseRender);
-            this._baseRender.uiAtlas = new UIAtlas;
-            this._baseRender.uiAtlas.configData = new Array;
-            this._uiItem = new Array();
-            this.loadBloodTexture();
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this._baseRender = new BloodUIRenderComponent();
+            _this.addRender(_this._baseRender);
+            _this._baseRender.uiAtlas = new UIAtlas;
+            _this._baseRender.uiAtlas.configData = new Array;
+            _this._uiItem = new Array();
+            _this.loadBloodTexture();
+            return _this;
         }
         BloodLineUIConatiner.prototype.loadBloodTexture = function () {
             var _this = this;
@@ -933,7 +943,7 @@ var bloodTittle;
             this._uiItem.push($BloodDisp2DBaseText);
         };
         return BloodLineUIConatiner;
-    })(UIConatiner);
+    }(UIConatiner));
     bloodTittle.BloodLineUIConatiner = BloodLineUIConatiner;
 })(bloodTittle || (bloodTittle = {}));
 /*

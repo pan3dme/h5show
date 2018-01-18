@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var mapnew;
 (function (mapnew) {
-    var MapNewEvent = (function (_super) {
+    var MapNewEvent = /** @class */ (function (_super) {
         __extends(MapNewEvent, _super);
         function MapNewEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MapNewEvent.SHOW_MAP_FORM_MINI = "SHOW_MAP_FORM_MINI"; //显示面板
         MapNewEvent.SHOW_MAP_NEW_EVENT = "SHOW_MAP_NEW_EVENT"; //显示面板
@@ -16,12 +21,12 @@ var mapnew;
         MapNewEvent.HIDE_MAP_NEW_EVENT = "HIDE_MAP_NEW_EVENT"; //显示面板
         MapNewEvent.SELECT_MAP_NEW_CELL = "SELECT_MAP_NEW_CELL"; //显示面板
         return MapNewEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     mapnew.MapNewEvent = MapNewEvent;
-    var MapNewModule = (function (_super) {
+    var MapNewModule = /** @class */ (function (_super) {
         __extends(MapNewModule, _super);
         function MapNewModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MapNewModule.prototype.getModuleName = function () {
             return "MapNewModule";
@@ -30,13 +35,14 @@ var mapnew;
             return [new MapNewProcessor()];
         };
         return MapNewModule;
-    })(Module);
+    }(Module));
     mapnew.MapNewModule = MapNewModule;
-    var MapNewProcessor = (function (_super) {
+    var MapNewProcessor = /** @class */ (function (_super) {
         __extends(MapNewProcessor, _super);
         function MapNewProcessor() {
-            _super.apply(this, arguments);
-            this.lastOpenTab = 0;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.lastOpenTab = 0;
+            return _this;
         }
         MapNewProcessor.prototype.getName = function () {
             return "MapNewProcessor";
@@ -74,6 +80,7 @@ var mapnew;
                         if ($dd.type == 1) {
                             this.mapNewPanel.selectmapOBJ($dd.data);
                         }
+                        //   
                     }
                 }
             }
@@ -122,7 +129,7 @@ var mapnew;
             ];
         };
         return MapNewProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     mapnew.MapNewProcessor = MapNewProcessor;
 })(mapnew || (mapnew = {}));
 //# sourceMappingURL=MapNewProcessor.js.map

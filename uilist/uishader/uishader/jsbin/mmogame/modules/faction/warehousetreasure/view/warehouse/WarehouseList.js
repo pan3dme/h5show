@@ -1,15 +1,21 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var warehousetreasure;
 (function (warehousetreasure) {
-    var TreasurehouseListRender = (function (_super) {
+    var TreasurehouseListRender = /** @class */ (function (_super) {
         __extends(TreasurehouseListRender, _super);
         function TreasurehouseListRender() {
-            _super.apply(this, arguments);
-            this.hasLight = false;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.hasLight = false;
+            return _this;
         }
         TreasurehouseListRender.prototype.setNewData = function ($data) {
             this._listItemData.data = $data;
@@ -44,9 +50,9 @@ var warehousetreasure;
             configurable: true
         });
         return TreasurehouseListRender;
-    })(ListItemRender);
+    }(ListItemRender));
     warehousetreasure.TreasurehouseListRender = TreasurehouseListRender;
-    var WarehouseList = (function () {
+    var WarehouseList = /** @class */ (function () {
         function WarehouseList($perent) {
             this.perent = $perent;
             this._listRender = new UIListRenderComponent;
@@ -126,7 +132,7 @@ var warehousetreasure;
             this.perent.removeRender(this._listRender);
         };
         return WarehouseList;
-    })();
+    }());
     warehousetreasure.WarehouseList = WarehouseList;
 })(warehousetreasure || (warehousetreasure = {}));
 //# sourceMappingURL=WarehouseList.js.map

@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var ranking;
 (function (ranking) {
-    var RankingModule = (function (_super) {
+    var RankingModule = /** @class */ (function (_super) {
         __extends(RankingModule, _super);
         function RankingModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         RankingModule.prototype.getModuleName = function () {
             return "RankingModule";
@@ -18,12 +23,12 @@ var ranking;
             return [new RankingProcessor()];
         };
         return RankingModule;
-    })(Module);
+    }(Module));
     ranking.RankingModule = RankingModule;
-    var RankingEvent = (function (_super) {
+    var RankingEvent = /** @class */ (function (_super) {
         __extends(RankingEvent, _super);
         function RankingEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         RankingEvent.HIDE_RANKING_EVENT = "HIDE_RANKING_EVENT";
         RankingEvent.SHOW_RANKING_EVENT = "SHOW_RANKING_EVENT";
@@ -33,12 +38,12 @@ var ranking;
         RankingEvent.RANKING_OWN_EVENT = "RANKING_OWN_EVENT";
         RankingEvent.REWARD_RANK_PANLE = "REWARD_RANK_PANLE";
         return RankingEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     ranking.RankingEvent = RankingEvent;
-    var RankingProcessor = (function (_super) {
+    var RankingProcessor = /** @class */ (function (_super) {
         __extends(RankingProcessor, _super);
         function RankingProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         RankingProcessor.prototype.getName = function () {
             return "RankingProcessor";
@@ -149,19 +154,19 @@ var ranking;
             ];
         };
         return RankingProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     ranking.RankingProcessor = RankingProcessor;
-    var RankQueryData = (function () {
+    var RankQueryData = /** @class */ (function () {
         function RankQueryData() {
         }
         return RankQueryData;
-    })();
+    }());
     ranking.RankQueryData = RankQueryData;
-    var RankItemData = (function () {
+    var RankItemData = /** @class */ (function () {
         function RankItemData() {
         }
         return RankItemData;
-    })();
+    }());
     ranking.RankItemData = RankItemData;
 })(ranking || (ranking = {}));
 //# sourceMappingURL=RankingProcessor.js.map

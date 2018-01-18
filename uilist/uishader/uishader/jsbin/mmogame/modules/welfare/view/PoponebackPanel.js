@@ -1,31 +1,37 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var welfare;
 (function (welfare) {
-    var PoponebackVo = (function () {
+    var PoponebackVo = /** @class */ (function () {
         function PoponebackVo() {
         }
         return PoponebackVo;
-    })();
+    }());
     welfare.PoponebackVo = PoponebackVo;
-    var PoponebackPanel = (function (_super) {
+    var PoponebackPanel = /** @class */ (function (_super) {
         __extends(PoponebackPanel, _super);
         function PoponebackPanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.middle = 0;
-            this.center = 0;
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.middle = 0;
+            _this.center = 0;
             //添加好友面板渲染器
-            this._AbgRender = new UIRenderComponent;
-            this.addRender(this._AbgRender);
-            this._AbottomRender = new UIRenderComponent;
-            this.addRender(this._AbottomRender);
-            this._AbaseRender = new UIRenderComponent;
-            this.addRender(this._AbaseRender);
+            _this._AbgRender = new UIRenderComponent;
+            _this.addRender(_this._AbgRender);
+            _this._AbottomRender = new UIRenderComponent;
+            _this.addRender(_this._AbottomRender);
+            _this._AbaseRender = new UIRenderComponent;
+            _this.addRender(_this._AbaseRender);
+            return _this;
             // this._AtopRender1 = new UIRenderComponent;
             // this.addRender(this._AtopRender1)
             // this._AtopRender2 = new UIRenderComponent;
@@ -194,17 +200,18 @@ var welfare;
             }
         };
         return PoponebackPanel;
-    })(UIConatiner);
+    }(UIConatiner));
     welfare.PoponebackPanel = PoponebackPanel;
     /**
      * 奖励信息list
      */
-    var RewardMsgList = (function (_super) {
+    var RewardMsgList = /** @class */ (function (_super) {
         __extends(RewardMsgList, _super);
         function RewardMsgList() {
-            _super.call(this);
-            this.left = 372;
-            this.top = 198;
+            var _this = _super.call(this) || this;
+            _this.left = 372;
+            _this.top = 198;
+            return _this;
         }
         RewardMsgList.prototype.init = function ($uiAtlas) {
             RewardMsgListRender.baseAtlas = $uiAtlas;
@@ -248,12 +255,12 @@ var welfare;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return RewardMsgList;
-    })(SList);
+    }(SList));
     welfare.RewardMsgList = RewardMsgList;
-    var RewardMsgListRender = (function (_super) {
+    var RewardMsgListRender = /** @class */ (function (_super) {
         __extends(RewardMsgListRender, _super);
         function RewardMsgListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -280,7 +287,7 @@ var welfare;
             LabelTextFont.writeSingleLabel(this.uiAtlas, this.I3text.skinName, "", 16, TextAlign.LEFT, "#d6e7ff");
         };
         return RewardMsgListRender;
-    })(SListItem);
+    }(SListItem));
     welfare.RewardMsgListRender = RewardMsgListRender;
 })(welfare || (welfare = {}));
 //# sourceMappingURL=PoponebackPanel.js.map

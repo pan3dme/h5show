@@ -1,14 +1,20 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Display3DSky = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Display3DSky = /** @class */ (function (_super) {
     __extends(Display3DSky, _super);
     function Display3DSky() {
-        _super.call(this);
-        this.shader = ProgrmaManager.getInstance().getProgram(SkyShader.Sky_Shader);
-        this.program = this.shader.program;
+        var _this = _super.call(this) || this;
+        _this.shader = ProgrmaManager.getInstance().getProgram(SkyShader.Sky_Shader);
+        _this.program = _this.shader.program;
+        return _this;
     }
     Display3DSky.prototype.setObjUrl = function (value) {
         var _this = this;
@@ -34,5 +40,5 @@ var Display3DSky = (function (_super) {
         Scene_data.context3D.drawCall(this.objData.indexBuffer, this.objData.treNum);
     };
     return Display3DSky;
-})(Display3D);
+}(Display3D));
 //# sourceMappingURL=Display3DSky.js.map

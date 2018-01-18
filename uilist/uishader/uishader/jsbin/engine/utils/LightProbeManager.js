@@ -1,4 +1,4 @@
-var LightProbeManager = (function () {
+var LightProbeManager = /** @class */ (function () {
     function LightProbeManager() {
         this._defaultVec = new Array;
         var ary = [0.4444730390920146, -0.3834955622240026, -0.33124467509627725, 0.09365654209093091,
@@ -84,8 +84,8 @@ var LightProbeManager = (function () {
         return arr;
     };
     return LightProbeManager;
-})();
-var PosItem = (function () {
+}());
+var PosItem = /** @class */ (function () {
     function PosItem(basePos, centerPos) {
         this.pos = new Vector3D(basePos.x, basePos.y, basePos.z);
         this.vecNum = basePos.resultSHVec;
@@ -96,5 +96,5 @@ var PosItem = (function () {
         this.bais = 1 / this.bais;
     };
     return PosItem;
-})();
+}());
 //# sourceMappingURL=LightProbeManager.js.map

@@ -1,4 +1,4 @@
-var UIRenderComponent = (function () {
+var UIRenderComponent = /** @class */ (function () {
     function UIRenderComponent() {
         this._rendering = false;
         this.scale = 1;
@@ -330,6 +330,7 @@ var UIRenderComponent = (function () {
         for (var i = 0; i < this._uiList.length; i++) {
             this._uiList[i].update();
             if (this._uiList[i].vcId != i) {
+                // console.log(this._uiList[i].vcId , i)
             }
         }
         Scene_data.context3D.setVc4fvLocation(this.uiProLocation, this.renderData);
@@ -390,5 +391,5 @@ var UIRenderComponent = (function () {
         this.renderData2 = null;
     };
     return UIRenderComponent;
-})();
+}());
 //# sourceMappingURL=UIRenderComponent.js.map

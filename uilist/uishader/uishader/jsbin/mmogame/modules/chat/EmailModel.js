@@ -1,12 +1,12 @@
 var email;
 (function (email) {
-    var EmailVo = (function () {
+    var EmailVo = /** @class */ (function () {
         function EmailVo() {
         }
         return EmailVo;
-    })();
+    }());
     email.EmailVo = EmailVo;
-    var EmailModel = (function () {
+    var EmailModel = /** @class */ (function () {
         function EmailModel() {
             this._emailItem = new Array;
             this.lastGetEmailTipTime = 0;
@@ -68,7 +68,7 @@ var email;
             NetManager.getInstance().protocolos.pick_mail_one_step();
         };
         return EmailModel;
-    })();
+    }());
     email.EmailModel = EmailModel;
 })(email || (email = {}));
 //# sourceMappingURL=EmailModel.js.map

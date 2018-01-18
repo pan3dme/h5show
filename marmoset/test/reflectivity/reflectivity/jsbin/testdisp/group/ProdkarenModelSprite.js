@@ -40,10 +40,10 @@ var ProdkarenModelShader = /** @class */ (function (_super) {
             "attribute vec2 vTexCoord2;\n" +
             "#endif\n" +
             "varying highp vec3 D;\n" +
-            "varying mediump vec2 j;\n" +
-            "varying mediump vec3 E;\n" +
-            "varying mediump vec3 F;\n" +
-            "varying mediump vec3 G;\n" +
+            "varying  vec2 j;\n" +
+            "varying  vec3 E;\n" +
+            "varying  vec3 F;\n" +
+            "varying  vec3 G;\n" +
             "#ifdef VERTEX_COLOR\n" +
             "varying lowp vec4 H;\n" +
             "#endif\n" +
@@ -61,9 +61,9 @@ var ProdkarenModelShader = /** @class */ (function (_super) {
             "}vec3 ih(mat4 o,vec3 id){return o[0].xyz*id.x+o[1].xyz*id.y+o[2].xyz*id.z;\n" +
             "}void main(void){gl_Position=m(uModelViewProjectionMatrix,vPosition.xyz);\n" +
             "j=vTexCoord;\n" +
-            "E=ih(uSkyMatrix,ic(vTangent));\n" +
-            "F=ih(uSkyMatrix,ic(vBitangent));\n" +
-            "G=ih(uSkyMatrix,ic(vNormal));\n" +
+            "E=ic(vTangent);\n" +
+            "F=ic(vBitangent);\n" +
+            "G=ic(vNormal);\n" +
             "D=m(uSkyMatrix,vPosition.xyz).xyz;\n" +
             "#ifdef VERTEX_COLOR\n" +
             "H=vColor;\n" +
@@ -82,10 +82,10 @@ var ProdkarenModelShader = /** @class */ (function (_super) {
             "#extension GL_OES_standard_derivatives : enable\n" +
             "precision mediump float;\n" +
             "varying highp vec3 D;\n" +
-            "varying mediump vec2 j;\n" +
-            "varying mediump vec3 E;\n" +
-            "varying mediump vec3 F;\n" +
-            "varying mediump vec3 G;\n" +
+            "varying  vec2 j;\n" +
+            "varying  vec3 E;\n" +
+            "varying  vec3 F;\n" +
+            "varying  vec3 G;\n" +
             "#ifdef VERTEX_COLOR\n" +
             "varying lowp vec4 H;\n" +
             "#endif\n" +
@@ -588,7 +588,7 @@ var ProdkarenModelShader = /** @class */ (function (_super) {
             "vec3 outv3c3=vec3(0.99,1.0,1.0);\n" +
             "vec3 K=L(J.xyz);\n" +
             "vec3 N=O(texture2D(tNormal,j).xyz);\n" +
-            //  "outv3c3=N.xyz;\n" +
+            "outv3c3=N.xyz;\n" +
             "vec3 T=normalize(uCameraPosition-D);\n" +
             "J=texture2D(tReflectivity,j);\n" +
             "vec3 U=L(J.xyz);\n" +

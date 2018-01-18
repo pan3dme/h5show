@@ -1,26 +1,31 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Chat;
 (function (Chat) {
-    var ChatEvent = (function (_super) {
+    var ChatEvent = /** @class */ (function (_super) {
         __extends(ChatEvent, _super);
         function ChatEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ChatEvent.SHOW_CHAT_EVENT = "SHOW_CHAT_EVENT"; //显示面板
         ChatEvent.HIDE_CHAT_EVENT = "HIDE_CHAT_EVENT"; //显示面板
         ChatEvent.CHAT_INFO_TO_PANEL = "CHAT_INFO_TO_PANEL"; //主场UI显示聊天内容
         ChatEvent.REFRESH_EMAIL_LIST = "REFRESH_EMAIL_LIST"; //
         return ChatEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     Chat.ChatEvent = ChatEvent;
-    var ChatModule = (function (_super) {
+    var ChatModule = /** @class */ (function (_super) {
         __extends(ChatModule, _super);
         function ChatModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ChatModule.prototype.getModuleName = function () {
             return "ChatModule";
@@ -29,12 +34,12 @@ var Chat;
             return [new ChatProcessor()];
         };
         return ChatModule;
-    })(Module);
+    }(Module));
     Chat.ChatModule = ChatModule;
-    var ChatProcessor = (function (_super) {
+    var ChatProcessor = /** @class */ (function (_super) {
         __extends(ChatProcessor, _super);
         function ChatProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ChatProcessor.prototype.getName = function () {
             return "ChatProcessor";
@@ -88,7 +93,7 @@ var Chat;
             ];
         };
         return ChatProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     Chat.ChatProcessor = ChatProcessor;
 })(Chat || (Chat = {}));
 //# sourceMappingURL=ChatProcessor.js.map

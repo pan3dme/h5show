@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var MaterialCompile = (function () {
+    var MaterialCompile = /** @class */ (function () {
         function MaterialCompile() {
             this.maxPriority = 0;
         }
@@ -82,7 +82,7 @@ var materialui;
             }
         };
         return MaterialCompile;
-    })();
+    }());
     materialui.MaterialCompile = MaterialCompile;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialCompile.js.map

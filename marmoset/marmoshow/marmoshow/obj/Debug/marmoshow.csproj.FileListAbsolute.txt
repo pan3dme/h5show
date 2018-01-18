@@ -1,0 +1,7 @@
+F:\slefSvn\trunk\h5show\marmoset\marmoshow\marmoshow\bin\marmoshow.dll.config
+F:\slefSvn\trunk\h5show\marmoset\marmoshow\marmoshow\bin\marmoshow.dll
+F:\slefSvn\trunk\h5show\marmoset\marmoshow\marmoshow\bin\marmoshow.pdb
+F:\slefSvn\trunk\h5show\marmoset\marmoshow\marmoshow\obj\Debug\marmoshow.csproj.CoreCompileInputs.cache
+F:\slefSvn\trunk\h5show\marmoset\marmoshow\marmoshow\obj\Debug\marmoshow.dll
+F:\slefSvn\trunk\h5show\marmoset\marmoshow\marmoshow\obj\Debug\marmoshow.pdb
+F:\slefSvn\trunk\h5show\marmoset\marmoshow\marmoshow\obj\Debug\marmoshow.csprojResolveAssemblyReference.cache

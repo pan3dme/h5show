@@ -1,15 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var meridian;
 (function (meridian) {
-    var MeridianBuyListRender = (function (_super) {
+    var MeridianBuyListRender = /** @class */ (function (_super) {
         __extends(MeridianBuyListRender, _super);
         function MeridianBuyListRender() {
-            _super.apply(this, arguments);
-            this._canclick = true;
+            //public static baseAtlas: UIAtlas;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this._canclick = true;
+            return _this;
         }
         MeridianBuyListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -54,6 +61,7 @@ var meridian;
                 }
             }
             else {
+                // msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "您操作太快了", 99);
             }
         };
         MeridianBuyListRender.prototype.refreshDraw = function () {
@@ -99,12 +107,12 @@ var meridian;
             LabelTextFont.writeSingleLabel(this.uiAtlas, this.BUY_HAS_RES.skinName, ColorType.Brown7a2f21 + "拥有：" + value, 16, TextAlign.LEFT);
         };
         return MeridianBuyListRender;
-    })(SListItem);
+    }(SListItem));
     meridian.MeridianBuyListRender = MeridianBuyListRender;
-    var MeridianBuyList = (function (_super) {
+    var MeridianBuyList = /** @class */ (function (_super) {
         __extends(MeridianBuyList, _super);
         function MeridianBuyList() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         MeridianBuyList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -148,24 +156,25 @@ var meridian;
             }
         };
         return MeridianBuyList;
-    })(SList);
+    }(SList));
     meridian.MeridianBuyList = MeridianBuyList;
-    var MeridianBuyPanel = (function (_super) {
+    var MeridianBuyPanel = /** @class */ (function (_super) {
         __extends(MeridianBuyPanel, _super);
         function MeridianBuyPanel() {
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._midRender.uiAtlas = new UIAtlas;
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._midRender.uiAtlas = new UIAtlas;
+            return _this;
         }
         MeridianBuyPanel.prototype.dispose = function () {
             this._bottomRender.dispose();
@@ -226,7 +235,7 @@ var meridian;
             this.meridianBuyList.init(this._midRender.uiAtlas);
         };
         return MeridianBuyPanel;
-    })(WindowMinUi);
+    }(WindowMinUi));
     meridian.MeridianBuyPanel = MeridianBuyPanel;
 })(meridian || (meridian = {}));
 //# sourceMappingURL=MeridianBuyPanel.js.map

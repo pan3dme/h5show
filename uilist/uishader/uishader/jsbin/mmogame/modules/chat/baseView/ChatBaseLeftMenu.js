@@ -1,18 +1,24 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Chat;
 (function (Chat) {
-    var ChatBaseLeftMenu = (function (_super) {
+    var ChatBaseLeftMenu = /** @class */ (function (_super) {
         __extends(ChatBaseLeftMenu, _super);
         function ChatBaseLeftMenu() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.top = 0;
-            this.left = 0;
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.top = 0;
+            _this.left = 0;
+            return _this;
         }
         ChatBaseLeftMenu.prototype.setRender = function ($bg, $mid, $top) {
             this._bottomRender = $bg;
@@ -84,7 +90,7 @@ var Chat;
         };
         ChatBaseLeftMenu.testNum = 0;
         return ChatBaseLeftMenu;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     Chat.ChatBaseLeftMenu = ChatBaseLeftMenu;
 })(Chat || (Chat = {}));
 //# sourceMappingURL=ChatBaseLeftMenu.js.map

@@ -1,6 +1,6 @@
 var leftui;
 (function (leftui) {
-    var LeftHangUpBossVo = (function () {
+    var LeftHangUpBossVo = /** @class */ (function () {
         function LeftHangUpBossVo($perent, $mid, $top) {
             this.perent = $perent;
             this._midRender = $mid;
@@ -96,7 +96,7 @@ var leftui;
             this.perent.setUiListVisibleByItem(this.uiList, false);
         };
         return LeftHangUpBossVo;
-    })();
+    }());
     leftui.LeftHangUpBossVo = LeftHangUpBossVo;
 })(leftui || (leftui = {}));
 //# sourceMappingURL=LeftHangUpBossVo.js.map

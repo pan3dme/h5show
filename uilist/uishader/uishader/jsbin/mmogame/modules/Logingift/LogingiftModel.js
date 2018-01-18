@@ -1,6 +1,6 @@
 var logingift;
 (function (logingift) {
-    var LogingiftModel = (function () {
+    var LogingiftModel = /** @class */ (function () {
         function LogingiftModel() {
         }
         LogingiftModel.getInstance = function () {
@@ -63,13 +63,13 @@ var logingift;
             return false;
         };
         return LogingiftModel;
-    })();
+    }());
     logingift.LogingiftModel = LogingiftModel;
-    var LogingiftVo = (function () {
+    var LogingiftVo = /** @class */ (function () {
         function LogingiftVo() {
         }
         return LogingiftVo;
-    })();
+    }());
     logingift.LogingiftVo = LogingiftVo;
 })(logingift || (logingift = {}));
 //# sourceMappingURL=LogingiftModel.js.map

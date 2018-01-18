@@ -57,7 +57,7 @@
         private upFrameData(): void {
             TimeUtil.update();
             FpsMc.update();
-            var istrue: boolean = false
+            var istrue: boolean = true
             if (istrue) {
                 SceneManager.getInstance().update();
             } else {

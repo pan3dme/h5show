@@ -1,26 +1,32 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var email;
 (function (email) {
-    var MailPanel = (function (_super) {
+    var MailPanel = /** @class */ (function (_super) {
         __extends(MailPanel, _super);
         function MailPanel() {
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.middle = 0;
-            this.center = 0;
-            this.setBlackBg();
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._redPointRender = new RedPointRender;
-            this.addRender(this._redPointRender);
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.middle = 0;
+            _this.center = 0;
+            _this.setBlackBg();
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._redPointRender = new RedPointRender;
+            _this.addRender(_this._redPointRender);
+            return _this;
         }
         MailPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -146,12 +152,12 @@ var email;
             //this.windowRankSList.setRankData();
         };
         return MailPanel;
-    })(WindowMinUi);
+    }(WindowMinUi));
     email.MailPanel = MailPanel;
-    var MailSList = (function (_super) {
+    var MailSList = /** @class */ (function (_super) {
         __extends(MailSList, _super);
         function MailSList() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         MailSList.prototype.init = function ($uiAtlas, $panel) {
             MailSListRender.baseAtlas = $uiAtlas;
@@ -200,12 +206,12 @@ var email;
             }
         };
         return MailSList;
-    })(SList);
+    }(SList));
     email.MailSList = MailSList;
-    var MailSListRender = (function (_super) {
+    var MailSListRender = /** @class */ (function (_super) {
         __extends(MailSListRender, _super);
         function MailSListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MailSListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -308,13 +314,13 @@ var email;
             UiDraw.clearUI(this.r_title);
         };
         return MailSListRender;
-    })(SListItem);
+    }(SListItem));
     email.MailSListRender = MailSListRender;
-    var WindowRankVo = (function () {
+    var WindowRankVo = /** @class */ (function () {
         function WindowRankVo() {
         }
         return WindowRankVo;
-    })();
+    }());
     email.WindowRankVo = WindowRankVo;
 })(email || (email = {}));
 //# sourceMappingURL=MailPanel.js.map

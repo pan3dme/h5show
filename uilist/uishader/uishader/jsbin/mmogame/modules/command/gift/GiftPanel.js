@@ -1,11 +1,16 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var gift;
 (function (gift) {
-    var GiftCell = (function () {
+    var GiftCell = /** @class */ (function () {
         function GiftCell($midRender, $topRender, $perent, $frameId) {
             var _this = this;
             this.select = false;
@@ -158,36 +163,37 @@ var gift;
             }
         };
         return GiftCell;
-    })();
+    }());
     gift.GiftCell = GiftCell;
-    var GiftPanel = (function (_super) {
+    var GiftPanel = /** @class */ (function (_super) {
         __extends(GiftPanel, _super);
         function GiftPanel() {
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.cellWidht = 119;
-            this.moveTx = 0;
-            this.basePos = new Vector2D(254, 180);
-            this._pxleft = 0;
-            this._msgTxt = "请输入文字..";
-            this.cutFrameNum = 0;
-            this._lastMouseX = 0;
-            this._lastRoleRotatioinY = 0;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._cellMidRender = new UIRenderComponent;
-            this.addRender(this._cellMidRender);
-            this._cellTopRender = new UIRenderComponent;
-            this.addRender(this._cellTopRender);
-            this._midRender.uiAtlas = new UIAtlas;
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.cellWidht = 119;
+            _this.moveTx = 0;
+            _this.basePos = new Vector2D(254, 180);
+            _this._pxleft = 0;
+            _this._msgTxt = "请输入文字..";
+            _this.cutFrameNum = 0;
+            _this._lastMouseX = 0;
+            _this._lastRoleRotatioinY = 0;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._cellMidRender = new UIRenderComponent;
+            _this.addRender(_this._cellMidRender);
+            _this._cellTopRender = new UIRenderComponent;
+            _this.addRender(_this._cellTopRender);
+            _this._midRender.uiAtlas = new UIAtlas;
+            return _this;
         }
         GiftPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -407,7 +413,7 @@ var gift;
             UIManager.getInstance().removeUIContainer(this);
         };
         return GiftPanel;
-    })(WindowMinUi);
+    }(WindowMinUi));
     gift.GiftPanel = GiftPanel;
 })(gift || (gift = {}));
 //# sourceMappingURL=GiftPanel.js.map

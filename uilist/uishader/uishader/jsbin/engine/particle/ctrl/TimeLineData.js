@@ -1,4 +1,4 @@
-var TimeLineData = (function () {
+var TimeLineData = /** @class */ (function () {
     function TimeLineData() {
         this.dataAry = new Array;
     }
@@ -59,5 +59,5 @@ var TimeLineData = (function () {
         return obj;
     };
     return TimeLineData;
-})();
+}());
 //# sourceMappingURL=TimeLineData.js.map

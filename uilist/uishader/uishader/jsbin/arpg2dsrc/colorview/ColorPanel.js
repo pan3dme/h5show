@@ -1,27 +1,33 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var colorview;
 (function (colorview) {
-    var ColorPanel = (function (_super) {
+    var ColorPanel = /** @class */ (function (_super) {
         __extends(ColorPanel, _super);
         function ColorPanel() {
-            _super.call(this);
-            this.maincary = [0xFF0000, 0xFFFF00, 0x00FF00, 0x00FFFF, 0x0000FF, 0xFF00FF, 0xFF0000];
-            this.layer = 2000;
-            this.left = 400;
-            this.top = 200;
-            this.width = 300;
-            this.height = 300;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._topRender.uiAtlas = new UIAtlas();
+            var _this = _super.call(this) || this;
+            _this.maincary = [0xFF0000, 0xFFFF00, 0x00FF00, 0x00FFFF, 0x0000FF, 0xFF00FF, 0xFF0000];
+            _this.layer = 2000;
+            _this.left = 400;
+            _this.top = 200;
+            _this.width = 300;
+            _this.height = 300;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._topRender.uiAtlas = new UIAtlas();
+            return _this;
         }
         ColorPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -254,7 +260,7 @@ var colorview;
             Scene_data.uiStage.removeEventListener(InteractiveEvent.Up, this.onUp, this);
         };
         return ColorPanel;
-    })(UIPanel);
+    }(UIPanel));
     colorview.ColorPanel = ColorPanel;
 })(colorview || (colorview = {}));
 //# sourceMappingURL=ColorPanel.js.map

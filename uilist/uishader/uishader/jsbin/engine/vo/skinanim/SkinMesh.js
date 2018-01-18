@@ -1,19 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var SkinMesh = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SkinMesh = /** @class */ (function (_super) {
     __extends(SkinMesh, _super);
     function SkinMesh() {
-        _super.apply(this, arguments);
-        this.meshAry = new Array;
-        this.fileScale = 1;
-        this.tittleHeight = 0;
-        this.hitBox = new Vector2D(0, 0);
-        this.type = 0;
-        this.animDic = new Object;
-        this.ready = false;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.meshAry = new Array;
+        _this.fileScale = 1;
+        _this.tittleHeight = 0;
+        _this.hitBox = new Vector2D(0, 0);
+        _this.type = 0;
+        _this.animDic = new Object;
+        _this.ready = false;
+        return _this;
     }
     SkinMesh.prototype.makeHitBoxItem = function () {
         this.hitPosItem = new Array;
@@ -107,5 +113,5 @@ var SkinMesh = (function (_super) {
         this.animDic = null;
     };
     return SkinMesh;
-})(ResCount);
+}(ResCount));
 //# sourceMappingURL=SkinMesh.js.map

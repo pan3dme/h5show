@@ -1,14 +1,21 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var ObjDataManager = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var ObjDataManager = /** @class */ (function (_super) {
     __extends(ObjDataManager, _super);
     function ObjDataManager() {
+        var _this = 
         //this._dic = new Object();
-        _super.call(this);
-        this._loadList = new Object();
+        _super.call(this) || this;
+        _this._loadList = new Object();
+        return _this;
     }
     ObjDataManager.getInstance = function () {
         if (!this._instance) {
@@ -101,10 +108,10 @@ var ObjDataManager = (function (_super) {
             typeItem.push(tf);
             if (tf) {
                 switch (i) {
-                    case 1:
+                    case 1://uv
                         dataWidth += 2;
                         break;
-                    case 2:
+                    case 2://lightuv
                         dataWidth += 2;
                         break;
                     default:
@@ -165,5 +172,5 @@ var ObjDataManager = (function (_super) {
         $objData.bitangentBuffer = Scene_data.context3D.uploadBuff3D($objData.bitangents);
     };
     return ObjDataManager;
-})(ResGC);
+}(ResGC));
 //# sourceMappingURL=ObjDataManager.js.map
