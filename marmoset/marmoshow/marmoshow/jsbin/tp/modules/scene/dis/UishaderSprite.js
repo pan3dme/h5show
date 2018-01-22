@@ -124,6 +124,7 @@ var UishaderSprite = (function (_super) {
             Scene_data.context3D.setVcMatrix4fv(this.shader, "posMatrix3D", this.posMatrix.m);
             //Scene_data.context3D.setVa(0, 3, this.objData.vertexBuffer);
             //Scene_data.context3D.setVa(1, 3, this.objData.vertexBuffer);
+            console.log("ccav");
             Scene_data.context3D.renderContext.bindBuffer(Scene_data.context3D.renderContext.ARRAY_BUFFER, this.objData.vertexBuffer);
             Scene_data.context3D.renderContext.enableVertexAttribArray(0);
             Scene_data.context3D.renderContext.vertexAttribPointer(0, 3, Scene_data.context3D.renderContext.FLOAT, false, 0, 0);

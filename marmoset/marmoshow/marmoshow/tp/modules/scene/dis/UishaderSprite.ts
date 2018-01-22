@@ -153,7 +153,7 @@ class UishaderSprite extends BaseDiplay3dSprite {
             //Scene_data.context3D.setVa(0, 3, this.objData.vertexBuffer);
             //Scene_data.context3D.setVa(1, 3, this.objData.vertexBuffer);
 
-
+            console.log("ccav")
 
 
             Scene_data.context3D.renderContext.bindBuffer(Scene_data.context3D.renderContext.ARRAY_BUFFER, this.objData.vertexBuffer);
