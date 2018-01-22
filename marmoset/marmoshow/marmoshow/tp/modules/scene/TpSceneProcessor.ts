@@ -49,7 +49,8 @@ class TpSceneProcessor extends BaseProcessor {
         var $ds: UishaderSprite = new UishaderSprite();
         $ds.loadFileById($id, $baseuv, $nrmuv)
         SceneManager.getInstance().addDisplay($ds);
-       // SceneManager.getInstance().addDisplay(new ProdkarenModelSprite);
+        $ds.x=50
+      SceneManager.getInstance().addDisplay(new ProdkarenModelSprite);
 
     }
     private loadPartRes( groupRes: GroupRes): void {

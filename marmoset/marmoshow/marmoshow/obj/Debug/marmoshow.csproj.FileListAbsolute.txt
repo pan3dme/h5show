@@ -5,3 +5,8 @@ F:\slefSvn\trunk\h5show\marmoset\marmoshow\marmoshow\obj\Debug\marmoshow.csproj.
 F:\slefSvn\trunk\h5show\marmoset\marmoshow\marmoshow\obj\Debug\marmoshow.dll
 F:\slefSvn\trunk\h5show\marmoset\marmoshow\marmoshow\obj\Debug\marmoshow.pdb
 F:\slefSvn\trunk\h5show\marmoset\marmoshow\marmoshow\obj\Debug\marmoshow.csprojResolveAssemblyReference.cache
+C:\wamp\www\h5show\marmoset\marmoshow\marmoshow\obj\Debug\marmoshow.dll
+C:\wamp\www\h5show\marmoset\marmoshow\marmoshow\obj\Debug\marmoshow.pdb
+C:\wamp\www\h5show\marmoset\marmoshow\marmoshow\bin\marmoshow.dll.config
+C:\wamp\www\h5show\marmoset\marmoshow\marmoshow\bin\marmoshow.dll
+C:\wamp\www\h5show\marmoset\marmoshow\marmoshow\bin\marmoshow.pdb

@@ -67,7 +67,7 @@
         var gl: WebGLRenderingContext = Scene_data.context3D.renderContext
         var $texture: WebGLTexture = gl.createTexture();
         gl.bindTexture(gl.TEXTURE_2D, $texture);
-        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, !0);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,1);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 256, 2048, 0, gl.RGBA, gl.UNSIGNED_BYTE, a)
 
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
