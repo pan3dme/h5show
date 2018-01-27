@@ -32,11 +32,15 @@ var testScene;
         TestDispStart.prototype.upFrameData = function () {
             TimeUtil.update();
             FpsMc.update();
-            var istrue = true;
+            var istrue = false;
             if (istrue) {
                 SceneManager.getInstance().update();
             }
             else {
+                SceneRenderToTextrue.getInstance().renderToTexture();
+                if (SceneRenderToTextrue.getInstance().fbo) {
+                    BloomRenderModel.getInstance().showTexture(SceneRenderToTextrue.getInstance().fbo.texture);
+                }
             }
         };
         TestDispStart.prototype.resetSize = function () {

@@ -7,6 +7,9 @@
         }
         return this._instance;
     }
+    public get displayList(): Array<Display3D> {
+        return this._displayList;
+    }
 
     private _displayList: Array<Display3D>;
     private _display2DList: Array<Display3D>;

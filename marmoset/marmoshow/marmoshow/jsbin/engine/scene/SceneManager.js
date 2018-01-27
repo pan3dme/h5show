@@ -25,6 +25,13 @@ var SceneManager = (function () {
         }
         return this._instance;
     };
+    Object.defineProperty(SceneManager.prototype, "displayList", {
+        get: function () {
+            return this._displayList;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(SceneManager.prototype, "displayRoleList", {
         get: function () {
             return this._displayRoleList;

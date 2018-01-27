@@ -42,11 +42,14 @@
         private upFrameData(): void {
             TimeUtil.update();
             FpsMc.update();
-            var istrue: boolean = true
+            var istrue: boolean = false
             if (istrue) {
                 SceneManager.getInstance().update();
             } else {
-               
+                SceneRenderToTextrue.getInstance().renderToTexture()
+                if (SceneRenderToTextrue.getInstance().fbo) {
+                    BloomRenderModel.getInstance().showTexture(SceneRenderToTextrue.getInstance().fbo.texture)
+                }
             }
 
         }
