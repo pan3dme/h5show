@@ -1,4 +1,4 @@
-var BitMapData = (function () {
+var BitMapData = /** @class */ (function () {
     function BitMapData($w, $h) {
         this.width = $w;
         this.height = $h;
@@ -36,5 +36,5 @@ var BitMapData = (function () {
         return $v;
     };
     return BitMapData;
-})();
+}());
 //# sourceMappingURL=BitMapData.js.map

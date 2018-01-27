@@ -1,9 +1,14 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var SkillKeyVo = (function () {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SkillKeyVo = /** @class */ (function () {
     function SkillKeyVo() {
         this.frame = 0;
     }
@@ -12,11 +17,11 @@ var SkillKeyVo = (function () {
         this.url = $data.url;
     };
     return SkillKeyVo;
-})();
-var SkillFixEffectKeyVo = (function (_super) {
+}());
+var SkillFixEffectKeyVo = /** @class */ (function (_super) {
     __extends(SkillFixEffectKeyVo, _super);
     function SkillFixEffectKeyVo() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     SkillFixEffectKeyVo.prototype.setData = function ($data) {
         _super.prototype.setData.call(this, $data);
@@ -30,11 +35,11 @@ var SkillFixEffectKeyVo = (function (_super) {
         }
     };
     return SkillFixEffectKeyVo;
-})(SkillKeyVo);
-var SkillTrajectoryTargetKeyVo = (function (_super) {
+}(SkillKeyVo));
+var SkillTrajectoryTargetKeyVo = /** @class */ (function (_super) {
     __extends(SkillTrajectoryTargetKeyVo, _super);
     function SkillTrajectoryTargetKeyVo() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     SkillTrajectoryTargetKeyVo.prototype.setData = function ($data) {
         _super.prototype.setData.call(this, $data);
@@ -55,5 +60,5 @@ var SkillTrajectoryTargetKeyVo = (function (_super) {
         this.multype = $data.multype;
     };
     return SkillTrajectoryTargetKeyVo;
-})(SkillKeyVo);
+}(SkillKeyVo));
 //# sourceMappingURL=SkillKeyVo.js.map

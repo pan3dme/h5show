@@ -1,28 +1,34 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Display3dMovie = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Display3dMovie = /** @class */ (function (_super) {
     __extends(Display3dMovie, _super);
     function Display3dMovie() {
-        _super.call(this);
-        this._completeState = 0;
-        this._defaultAction = "stand";
-        this._curentFrame = 0;
-        this._actionTime = 0;
-        this._fileScale = 1;
+        var _this = _super.call(this) || this;
+        _this._completeState = 0;
+        _this._defaultAction = "stand";
+        _this._curentFrame = 0;
+        _this._actionTime = 0;
+        _this._fileScale = 1;
         /**正在播放的技能*/
-        this.isSinging = false;
-        this._nextScale = 1;
-        this.locationDic = new Object;
-        this._animDic = new Object;
-        this._partDic = new Object;
-        this._partUrl = new Object;
-        this._preLoadActionDic = new Object;
-        this._waitLoadActionDic = new Object;
-        this.showCapsule = false;
-        this._enablePhysics = false;
+        _this.isSinging = false;
+        _this._nextScale = 1;
+        _this.locationDic = new Object;
+        _this._animDic = new Object;
+        _this._partDic = new Object;
+        _this._partUrl = new Object;
+        _this._preLoadActionDic = new Object;
+        _this._waitLoadActionDic = new Object;
+        _this.showCapsule = false;
+        _this._enablePhysics = false;
+        return _this;
     }
     Object.defineProperty(Display3dMovie.prototype, "curentAction", {
         get: function () {
@@ -755,5 +761,5 @@ var Display3dMovie = (function (_super) {
     Display3dMovie.prototype.changePos = function () {
     };
     return Display3dMovie;
-})(Display3DSprite);
+}(Display3DSprite));
 //# sourceMappingURL=Display3dMovie.js.map

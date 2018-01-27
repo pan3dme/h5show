@@ -1,1 +1,1 @@
-{"version":3,"file":"MountChar.js","sourceRoot":"","sources":["../../../mmogame/data/MountChar.ts"],"names":["MountChar","MountChar.constructor"],"mappings":";;;;;AAAA;IAAwBA,6BAAaA;IAArCA;QAAwBC,8BAAaA;IAiBrCA,CAACA;IAADD,gBAACA;AAADA,CAACA,AAjBD,EAAwB,aAAa,EAiBpC"}
+{"version":3,"file":"MountChar.js","sourceRoot":"","sources":["../../../mmogame/data/MountChar.ts"],"names":[],"mappings":";;;;;;;;;;AAAA;IAAwB,6BAAa;IAArC;;IAiBA,CAAC;IAAD,gBAAC;AAAD,CAAC,AAjBD,CAAwB,aAAa,GAiBpC"}

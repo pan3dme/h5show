@@ -1,16 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Camera3D = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Camera3D = /** @class */ (function (_super) {
     __extends(Camera3D, _super);
     function Camera3D() {
-        _super.call(this);
-        this._distance = 500;
-        this.lastFoucs3D = new Vector3D;
-        this.needChange = true;
-        this.cameraMatrix = new Matrix3D;
+        var _this = _super.call(this) || this;
+        _this._distance = 500;
+        _this.lastFoucs3D = new Vector3D;
+        _this.needChange = true;
+        _this.cameraMatrix = new Matrix3D;
+        return _this;
     }
     Object.defineProperty(Camera3D.prototype, "distance", {
         get: function () {
@@ -68,6 +74,7 @@ var Camera3D = (function (_super) {
             else {
                 this.needChange = false;
             }
+            // Scene_data.focus3D.rotationY = Scene_data.gameAngle;
         }
     };
     Object.defineProperty(Camera3D.prototype, "postion", {
@@ -78,5 +85,5 @@ var Camera3D = (function (_super) {
         configurable: true
     });
     return Camera3D;
-})(Object3D);
+}(Object3D));
 //# sourceMappingURL=Camera3D.js.map

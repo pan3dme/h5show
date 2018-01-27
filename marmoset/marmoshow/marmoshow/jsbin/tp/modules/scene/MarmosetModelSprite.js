@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var MarmosetModelShader = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var MarmosetModelShader = /** @class */ (function (_super) {
     __extends(MarmosetModelShader, _super);
     function MarmosetModelShader() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     MarmosetModelShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "v3Position");
@@ -59,12 +64,13 @@ var MarmosetModelShader = (function (_super) {
     };
     MarmosetModelShader.MarmosetModelShader = "MarmosetModelShader";
     return MarmosetModelShader;
-})(Shader3D);
-var MarmosetModelSprite = (function (_super) {
+}(Shader3D));
+var MarmosetModelSprite = /** @class */ (function (_super) {
     __extends(MarmosetModelSprite, _super);
     function MarmosetModelSprite() {
-        _super.call(this);
-        this.skipNum = 0;
+        var _this = _super.call(this) || this;
+        _this.skipNum = 0;
+        return _this;
     }
     MarmosetModelSprite.prototype.initModeStr = function ($vec, $index) {
         ProgrmaManager.getInstance().registe(MarmosetModelShader.MarmosetModelShader, new MarmosetModelShader);
@@ -171,5 +177,5 @@ var MarmosetModelSprite = (function (_super) {
         return $dataArr;
     };
     return MarmosetModelSprite;
-})(BaseDiplay3dSprite);
+}(BaseDiplay3dSprite));
 //# sourceMappingURL=MarmosetModelSprite.js.map

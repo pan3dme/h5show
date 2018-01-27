@@ -4,7 +4,7 @@
  * @class egret.Endian
  * @classdesc
  */
-var Endian = (function () {
+var Endian = /** @class */ (function () {
     function Endian() {
     }
     /**
@@ -20,14 +20,14 @@ var Endian = (function () {
      */
     Endian.BIG_ENDIAN = "bigEndian";
     return Endian;
-})();
+}());
 /**
  * @class ByteArray
  * @classdesc
  * ByteArray 类提供用于优化读取、写入以及处理二进制数据的方法和属性。
  * 注意：ByteArray 类适用于需要在字节层访问数据的高级 开发人员。
  */
-var ByteArray = (function () {
+var ByteArray = /** @class */ (function () {
     /**
      * 创建一个 ByteArray 对象以引用指定的 ArrayBuffer 对象
      * @param buffer {ArrayBuffer} 数据源
@@ -650,6 +650,7 @@ var ByteArray = (function () {
             return true;
         }
         else {
+            //$error(1025);
         }
     };
     /**********************/
@@ -802,6 +803,7 @@ var ByteArray = (function () {
     };
     ByteArray.prototype.decoderError = function (fatal, opt_code_point) {
         if (fatal) {
+            //$error(1027);
         }
         return opt_code_point || 0xFFFD;
     };
@@ -855,5 +857,5 @@ var ByteArray = (function () {
     ByteArray.SIZE_OF_FLOAT32 = 4;
     ByteArray.SIZE_OF_FLOAT64 = 8;
     return ByteArray;
-})();
+}());
 //# sourceMappingURL=ByteArray.js.map

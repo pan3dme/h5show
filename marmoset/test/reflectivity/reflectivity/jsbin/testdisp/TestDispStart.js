@@ -45,7 +45,7 @@ var testScene;
         TestDispStart.prototype.upFrameData = function () {
             TimeUtil.update();
             FpsMc.update();
-            var istrue = true;
+            var istrue = false;
             if (istrue) {
                 SceneManager.getInstance().update();
             }

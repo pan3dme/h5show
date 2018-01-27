@@ -1,4 +1,4 @@
-var ArtFont = (function () {
+var ArtFont = /** @class */ (function () {
     function ArtFont() {
         this.fontData = new Dictionary([]);
         this.fontData_Unit = new Dictionary([]);
@@ -38,6 +38,7 @@ var ArtFont = (function () {
                     $arr.push(new Rectangle($uiRect.pixelX + j * $rectFont.width, $uiRect.pixelY, $rectFont.width, $rectFont.height));
                 }
                 this.fontData["NUM" + $id] = $arr;
+                //  console.log("NUM" + $id, $arr)
             }
             //万、亿
             if ($skinName.search("B_") != -1) {
@@ -55,6 +56,7 @@ var ArtFont = (function () {
                     $arr.push(new Rectangle($uiRect.pixelX + j * $rectFont.width, $uiRect.pixelY, $rectFont.width, $rectFont.height));
                 }
                 this.fontData_Unit["BNUM" + $id] = $arr;
+                //  console.log("NUM" + $id, $arr)
             }
         }
     };
@@ -364,5 +366,5 @@ var ArtFont = (function () {
     ArtFont.num60 = "NUM60"; //NUM
     ArtFont.num61 = "NUM61"; //NUM
     return ArtFont;
-})();
+}());
 //# sourceMappingURL=ArtFont.js.map

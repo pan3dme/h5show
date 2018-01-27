@@ -1,4 +1,4 @@
-var TpGame = (function () {
+var TpGame = /** @class */ (function () {
     function TpGame() {
         this.uiReadyNum = 0;
         this.uiAllNum = 0;
@@ -26,5 +26,5 @@ var TpGame = (function () {
     TpGame.GM = true;
     TpGame.ready = false;
     return TpGame;
-})();
+}());
 //# sourceMappingURL=TpGame.js.map

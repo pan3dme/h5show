@@ -1,27 +1,33 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var CombineParticle = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var CombineParticle = /** @class */ (function (_super) {
     __extends(CombineParticle, _super);
     function CombineParticle() {
-        _super.call(this);
-        this._maxTime = 1000000;
-        this._rotationX = 0;
-        this._rotationY = 0;
-        this._rotationZ = 0;
-        this.hasMulItem = false;
-        this.sceneVisible = true;
-        this.dynamic = false;
-        this._displayAry = new Array;
-        this._time = 0;
-        this.bindMatrix = new Matrix3D;
-        this.invertBindMatrix = new Matrix3D;
-        this.bindVecter3d = new Vector3D();
-        this.bindScale = new Vector3D(1, 1, 1);
-        this.groupMatrix = new Matrix3D();
-        this.groupRotationMatrix = new Matrix3D();
+        var _this = _super.call(this) || this;
+        _this._maxTime = 1000000;
+        _this._rotationX = 0;
+        _this._rotationY = 0;
+        _this._rotationZ = 0;
+        _this.hasMulItem = false;
+        _this.sceneVisible = true;
+        _this.dynamic = false;
+        _this._displayAry = new Array;
+        _this._time = 0;
+        _this.bindMatrix = new Matrix3D;
+        _this.invertBindMatrix = new Matrix3D;
+        _this.bindVecter3d = new Vector3D();
+        _this.bindScale = new Vector3D(1, 1, 1);
+        _this.groupMatrix = new Matrix3D();
+        _this.groupRotationMatrix = new Matrix3D();
+        return _this;
         //this.groupBindMatrix = new Matrix3D();
     }
     Object.defineProperty(CombineParticle.prototype, "displayAry", {
@@ -266,6 +272,16 @@ var CombineParticle = (function (_super) {
             else {
                 this.bindMatrix.invertToMatrix(this.invertBindMatrix);
             }
+            //if (this.hasMulItem){
+            //    if (this._bindTarget.getSunType() == 1){
+            //        var bt: any = this._bindTarget;
+            //        if (typeof bt.getMulSocket == 'function') {
+            //            for (var i: number = 0; i < this._displayAry.length; i++) {
+            //                bt.getMulSocket(this._displayAry[i].getMulBindList());
+            //            }
+            //        }
+            //    }
+            //}
         }
     };
     CombineParticle.prototype.reset = function () {
@@ -367,5 +383,5 @@ var CombineParticle = (function (_super) {
         this.groupRotationMatrix = null;
     };
     return CombineParticle;
-})(EventDispatcher);
+}(EventDispatcher));
 //# sourceMappingURL=CombineParticle.js.map

@@ -35,10 +35,10 @@ class ProdkarenModelShader extends Shader3D {
             "attribute vec2 vTexCoord2;\n" +
             "#endif\n" +
             "varying highp vec3 D;\n" +
-            "varying  vec2 j;\n" +
-            "varying  vec3 E;\n" +
-            "varying  vec3 F;\n" +
-            "varying  vec3 G;\n" +
+            "varying mediump vec2 j;\n" +
+            "varying mediump vec3 E;\n" +
+            "varying mediump vec3 F;\n" +
+            "varying mediump vec3 G;\n" +
             "#ifdef VERTEX_COLOR\n" +
             "varying lowp vec4 H;\n" +
             "#endif\n" +
@@ -81,10 +81,10 @@ class ProdkarenModelShader extends Shader3D {
             "#extension GL_OES_standard_derivatives : enable\n" +
             "precision mediump float;\n" +
             "varying highp vec3 D;\n" +
-            "varying  vec2 j;\n" +
-            "varying  vec3 E;\n" +
-            "varying  vec3 F;\n" +
-            "varying  vec3 G;\n" +
+            "varying mediump vec2 j;\n" +
+            "varying mediump vec3 E;\n" +
+            "varying mediump vec3 F;\n" +
+            "varying mediump vec3 G;\n" +
             "#ifdef VERTEX_COLOR\n" +
             "varying lowp vec4 H;\n" +
             "#endif\n" +
@@ -587,11 +587,9 @@ class ProdkarenModelShader extends Shader3D {
             "#endif\n" +
             "void main(void){\n" +
             "vec4 J=texture2D(tAlbedo,j);\n" +
-
             "vec3 outv3c3=vec3(0.99,1.0,1.0);\n" +
             "vec3 K=L(J.xyz);\n" +
             "vec3 N=O(texture2D(tNormal,j).xyz);\n" +
-            "outv3c3=N.xyz;\n" +
             "vec3 T=normalize(uCameraPosition-D);\n" +
             "J=texture2D(tReflectivity,j);\n" +
             "vec3 U=L(J.xyz);\n" +
@@ -602,9 +600,9 @@ class ProdkarenModelShader extends Shader3D {
             "dn*=dd;\n" +
             "vec3 dv=reflect(-T,N);\n" +
             "vec3 dA=dB(dv,V);\n" +
-
             "dA*=dC(dv,G);\n" +
-           
+    
+           /*
             "#ifdef LIGHT_COUNT\n"+
                 "highp float dD=10.0/log2(V*0.968+0.03);\n"+
                 "dD*=dD;\n"+
@@ -628,9 +626,12 @@ class ProdkarenModelShader extends Shader3D {
                     "float dV=dE*pow(saturate(dot(dU,N)),dD);\n"+
                     "dA+=dV*dP;\n"+
                 "}\n"+
-            "#endif\n"+
+            "#endif\n" +
+
+            */
            
             "dA*=dY(T,N,U,V*V);\n" +
+           // "outv3c3=dA.xyz;\n" +
             "gl_FragColor.xyz=dn*K+dA;\n" +
             "if(outv3c3.x!=0.99){\n" +
             "gl_FragColor.xyz=outv3c3.xyz;\n" +

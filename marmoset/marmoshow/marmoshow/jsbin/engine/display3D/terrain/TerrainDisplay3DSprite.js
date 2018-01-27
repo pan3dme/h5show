@@ -1,9 +1,14 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var GroundDataMesh = (function () {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var GroundDataMesh = /** @class */ (function () {
     function GroundDataMesh() {
     }
     //处理成可以使用的2幂材质数据源
@@ -82,13 +87,14 @@ var GroundDataMesh = (function () {
         return $groudItem;
     };
     return GroundDataMesh;
-})();
-var TerrainDisplay3DSprite = (function (_super) {
+}());
+var TerrainDisplay3DSprite = /** @class */ (function (_super) {
     __extends(TerrainDisplay3DSprite, _super);
     function TerrainDisplay3DSprite() {
-        _super.call(this);
+        var _this = _super.call(this) || this;
         ProgrmaManager.getInstance().registe(TerrainDisplay3DShader.TerrainDisplay3DShader, new TerrainDisplay3DShader());
-        this.groundShader = ProgrmaManager.getInstance().getProgram(TerrainDisplay3DShader.TerrainDisplay3DShader);
+        _this.groundShader = ProgrmaManager.getInstance().getProgram(TerrainDisplay3DShader.TerrainDisplay3DShader);
+        return _this;
     }
     TerrainDisplay3DSprite.prototype.update = function () {
         if (this.groundShader && this.baseSixteenRes && this.idMapPicDataTexture) {
@@ -128,5 +134,5 @@ var TerrainDisplay3DSprite = (function (_super) {
         });
     };
     return TerrainDisplay3DSprite;
-})(Display3DSprite);
+}(Display3DSprite));
 //# sourceMappingURL=TerrainDisplay3DSprite.js.map

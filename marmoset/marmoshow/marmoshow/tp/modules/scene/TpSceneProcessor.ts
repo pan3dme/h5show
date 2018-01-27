@@ -34,7 +34,7 @@ class TpSceneProcessor extends BaseProcessor {
           //      this.addBaseModel(1001, "pan/marmoset/model/1003.jpg");
             //    this.addBaseModel(1002, "pan/marmoset/model/1007.jpg");
         
-                Scene_data.cam3D.distance = 250;
+                Scene_data.cam3D.distance = 150;
             }
         }
     }
@@ -49,8 +49,14 @@ class TpSceneProcessor extends BaseProcessor {
         var $ds: UishaderSprite = new UishaderSprite();
         $ds.loadFileById($id, $baseuv, $nrmuv)
         SceneManager.getInstance().addDisplay($ds);
-        $ds.x=50
-      SceneManager.getInstance().addDisplay(new ProdkarenModelSprite);
+        $ds.x = 0
+        console.log(Scene_data.cam3D.distance)
+
+  
+        //var $prodkarenModelSprite: ProdkarenModelSprite = new ProdkarenModelSprite
+        //$prodkarenModelSprite.x=-50
+        //SceneManager.getInstance().addDisplay($prodkarenModelSprite);
+        
 
     }
     private loadPartRes( groupRes: GroupRes): void {
@@ -78,7 +84,7 @@ class TpSceneProcessor extends BaseProcessor {
         ProgrmaManager.getInstance().registe(LineDisplayShader.LineShader, new LineDisplayShader);
         var $GridLineSprite: GridLineSprite = new GridLineSprite();
         $GridLineSprite.y = 0;
-        SceneManager.getInstance().addDisplay($GridLineSprite);
+      //  SceneManager.getInstance().addDisplay($GridLineSprite);
         SceneManager.getInstance().ready = true;
 
     }

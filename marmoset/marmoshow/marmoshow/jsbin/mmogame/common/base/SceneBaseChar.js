@@ -1,14 +1,20 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var SceneBaseChar = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SceneBaseChar = /** @class */ (function (_super) {
     __extends(SceneBaseChar, _super);
     function SceneBaseChar() {
-        _super.apply(this, arguments);
-        this._avatar = -1;
-        this._visible = true;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._avatar = -1;
+        _this._visible = true;
+        return _this;
     }
     Object.defineProperty(SceneBaseChar.prototype, "visible", {
         get: function () {
@@ -50,5 +56,5 @@ var SceneBaseChar = (function (_super) {
         return getModelUrl(String(num + $suffix));
     };
     return SceneBaseChar;
-})(Display3dMovie);
+}(Display3dMovie));
 //# sourceMappingURL=SceneBaseChar.js.map
