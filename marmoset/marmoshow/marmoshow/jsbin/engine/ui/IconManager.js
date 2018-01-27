@@ -1,4 +1,4 @@
-var IconManager = /** @class */ (function () {
+var IconManager = (function () {
     function IconManager() {
         this._dic = new Object;
         this._loadDic = new Object;
@@ -10,5 +10,5 @@ var IconManager = /** @class */ (function () {
         return this._instance;
     };
     return IconManager;
-}());
+})();
 //# sourceMappingURL=IconManager.js.map

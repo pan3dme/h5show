@@ -1,22 +1,16 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var BinLogStru = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var BinLogStru = (function (_super) {
     __extends(BinLogStru, _super);
     function BinLogStru() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
         //public _value_u32:number;
-        _this._value_u32_buffer = new DataView(new ArrayBuffer(4));
+        this._value_u32_buffer = new DataView(new ArrayBuffer(4));
         //public _old_value_u32:number;
-        _this._old_value_u32_buffer = new DataView(new ArrayBuffer(4));
-        return _this;
+        this._old_value_u32_buffer = new DataView(new ArrayBuffer(4));
     }
     /*获得一个可以使用的对象*/
     BinLogStru.malloc = function () {
@@ -339,7 +333,6 @@ var BinLogStru = /** @class */ (function (_super) {
                 bytes.writeDouble(this._old_value_dbe);
             else
                 bytes.writeUnsignedInt(this.old_value);
-            //bytes.writeUnsignedInt(this._old_value_u32);
         }
     };
     BinLogStru.prototype.clone = function () {
@@ -361,5 +354,5 @@ var BinLogStru = /** @class */ (function (_super) {
     };
     BinLogStru._pool = new Array;
     return BinLogStru;
-}(SyncEvent));
+})(SyncEvent);
 //# sourceMappingURL=BinLogStru.js.map

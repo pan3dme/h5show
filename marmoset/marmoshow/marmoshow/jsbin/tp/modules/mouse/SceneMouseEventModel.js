@@ -1,4 +1,4 @@
-var SceneMouseEventModel = /** @class */ (function () {
+var SceneMouseEventModel = (function () {
     function SceneMouseEventModel() {
         this.lastRotationY = 0;
         this.lastRotationX = 0;
@@ -39,5 +39,5 @@ var SceneMouseEventModel = /** @class */ (function () {
         this._isMouseDown = false;
     };
     return SceneMouseEventModel;
-}());
+})();
 //# sourceMappingURL=SceneMouseEventModel.js.map

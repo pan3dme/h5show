@@ -1,4 +1,4 @@
-var GameInstance = /** @class */ (function () {
+var GameInstance = (function () {
     function GameInstance() {
     }
     GameInstance.initData = function () {
@@ -42,5 +42,5 @@ var GameInstance = /** @class */ (function () {
     //单独在场景播放特效
     GameInstance.allStr = "";
     return GameInstance;
-}());
+})();
 //# sourceMappingURL=GameInstance.js.map

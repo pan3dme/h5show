@@ -1,17 +1,12 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var UishaderShader = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var UishaderShader = (function (_super) {
     __extends(UishaderShader, _super);
     function UishaderShader() {
-        return _super.call(this) || this;
+        _super.call(this);
     }
     UishaderShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "vPosition");
@@ -142,13 +137,12 @@ var UishaderShader = /** @class */ (function (_super) {
     };
     UishaderShader.UishaderShader = "UishaderShader";
     return UishaderShader;
-}(Shader3D));
-var UishaderSprite = /** @class */ (function (_super) {
+})(Shader3D);
+var UishaderSprite = (function (_super) {
     __extends(UishaderSprite, _super);
     function UishaderSprite() {
-        var _this = _super.call(this) || this;
-        _this.skipNum = 0;
-        return _this;
+        _super.call(this);
+        this.skipNum = 0;
     }
     UishaderSprite.prototype.initModeStr = function ($vec, $index) {
         ProgrmaManager.getInstance().registe(UishaderShader.UishaderShader, new UishaderShader);
@@ -296,5 +290,5 @@ var UishaderSprite = /** @class */ (function (_super) {
         return $dataArr;
     };
     return UishaderSprite;
-}(BaseDiplay3dSprite));
+})(BaseDiplay3dSprite);
 //# sourceMappingURL=UishaderSprite.js.map

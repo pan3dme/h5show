@@ -1,4 +1,4 @@
-var Quaternion = /** @class */ (function () {
+var Quaternion = (function () {
     function Quaternion($x, $y, $z, $w) {
         if ($x === void 0) { $x = 0; }
         if ($y === void 0) { $y = 0; }
@@ -123,5 +123,5 @@ var Quaternion = /** @class */ (function () {
         }
     };
     return Quaternion;
-}());
+})();
 //# sourceMappingURL=Quaternion.js.map

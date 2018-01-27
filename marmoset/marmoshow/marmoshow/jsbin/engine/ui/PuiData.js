@@ -1,4 +1,4 @@
-var PuiData = /** @class */ (function () {
+var PuiData = (function () {
     function PuiData() {
     }
     /** 方形高亮64*64 */
@@ -181,5 +181,5 @@ var PuiData = /** @class */ (function () {
     PuiData.ARROWUP = "ARROWUP"; //上箭头
     PuiData.ARROWDOWN = "ARROWDOWN"; //下箭头   
     return PuiData;
-}());
+})();
 //# sourceMappingURL=PuiData.js.map

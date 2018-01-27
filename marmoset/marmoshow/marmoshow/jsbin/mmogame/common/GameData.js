@@ -1,11 +1,11 @@
-var ModulePageManager = /** @class */ (function () {
+var ModulePageManager = (function () {
     function ModulePageManager() {
     }
     ModulePageManager.showResTittle = function ($arr) {
     };
     return ModulePageManager;
-}());
-var GameData = /** @class */ (function () {
+})();
+var GameData = (function () {
     function GameData() {
     }
     GameData.getPublicUiAtlas = function ($fun) {
@@ -21,5 +21,5 @@ var GameData = /** @class */ (function () {
         }
     };
     return GameData;
-}());
+})();
 //# sourceMappingURL=GameData.js.map

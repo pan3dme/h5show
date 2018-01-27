@@ -1,4 +1,4 @@
-var MathClass = /** @class */ (function () {
+var MathClass = (function () {
     function MathClass() {
     }
     MathClass.getArrByStr = function (str) {
@@ -174,5 +174,5 @@ var MathClass = /** @class */ (function () {
         return a;
     };
     return MathClass;
-}());
+})();
 //# sourceMappingURL=MathClass.js.map

@@ -1,4 +1,4 @@
-var TestTriangle = /** @class */ (function () {
+var TestTriangle = (function () {
     function TestTriangle($p1, $p2, $p3, $precision) {
         if ($p1 === void 0) { $p1 = null; }
         if ($p2 === void 0) { $p2 = null; }
@@ -48,5 +48,5 @@ var TestTriangle = /** @class */ (function () {
     };
     TestTriangle.baseTri = new TestTriangle;
     return TestTriangle;
-}());
+})();
 //# sourceMappingURL=TestTriangle.js.map

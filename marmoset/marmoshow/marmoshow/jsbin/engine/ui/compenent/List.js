@@ -1,24 +1,18 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var List = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var List = (function (_super) {
     __extends(List, _super);
     function List() {
-        var _this = _super.call(this) || this;
-        _this._contentX = 0;
-        _this._contentY = 0;
-        _this._needScoller = false;
-        _this.lastcontentY = 0;
-        _this.addEventListener(InteractiveEvent.Down, _this.onDown, _this);
-        _this.addEventListener(InteractiveEvent.Up, _this.onListUp, _this);
-        return _this;
+        _super.call(this);
+        this._contentX = 0;
+        this._contentY = 0;
+        this._needScoller = false;
+        this.lastcontentY = 0;
+        this.addEventListener(InteractiveEvent.Down, this.onDown, this);
+        this.addEventListener(InteractiveEvent.Up, this.onListUp, this);
     }
     List.prototype.applyAbsolutePoint = function () {
         if (this.parent) {
@@ -160,11 +154,11 @@ var List = /** @class */ (function (_super) {
         Scene_data.uiStage.removeEventListener(InteractiveEvent.Up, this.onUp, this);
     };
     return List;
-}(UICompenent));
-var ListAtlas = /** @class */ (function (_super) {
+})(UICompenent);
+var ListAtlas = (function (_super) {
     __extends(ListAtlas, _super);
     function ListAtlas() {
-        return _super.call(this) || this;
+        _super.call(this);
     }
     ListAtlas.prototype.setData = function ($width, $height, itemWidth, itemHeight, itemNum) {
         this.ctx = UIManager.getInstance().getContext2D($width, $height, false);
@@ -188,13 +182,13 @@ var ListAtlas = /** @class */ (function (_super) {
         }
     };
     return ListAtlas;
-}(UIAtlas));
-var ListItemData = /** @class */ (function () {
+})(UIAtlas);
+var ListItemData = (function () {
     function ListItemData() {
     }
     return ListItemData;
-}());
-var ListItemRender = /** @class */ (function () {
+})();
+var ListItemRender = (function () {
     function ListItemRender() {
     }
     ListItemRender.prototype.setData = function ($listItemData, $atlas, $uvData) {
@@ -237,5 +231,5 @@ var ListItemRender = /** @class */ (function () {
         }
     };
     return ListItemRender;
-}());
+})();
 //# sourceMappingURL=List.js.map

@@ -1,7 +1,7 @@
 /***********************************************************************/
 /*************** 本代码由协议工具自动生成，请勿手动修改 ****************/
 /***********************************************************************/
-var point = /** @class */ (function () {
+var point = (function () {
     function point() {
     }
     /**
@@ -21,8 +21,8 @@ var point = /** @class */ (function () {
         output.writeFloat(this.pos_y);
     };
     return point;
-}());
-var taxi_menu_info = /** @class */ (function () {
+})();
+var taxi_menu_info = (function () {
     function taxi_menu_info() {
         /**
          * 传送地点名称
@@ -52,8 +52,8 @@ var taxi_menu_info = /** @class */ (function () {
         output.writeUint16(this.pos_y);
     };
     return taxi_menu_info;
-}());
-var char_create_info = /** @class */ (function () {
+})();
+var char_create_info = (function () {
     function char_create_info() {
         /**
          * 名称
@@ -107,8 +107,8 @@ var char_create_info = /** @class */ (function () {
         output.writeUint8(this.icon);
     };
     return char_create_info;
-}());
-var quest_option = /** @class */ (function () {
+})();
+var quest_option = (function () {
     function quest_option() {
         /**
          * 任务标题
@@ -138,8 +138,8 @@ var quest_option = /** @class */ (function () {
         output.writeUint32(this.flags);
     };
     return quest_option;
-}());
-var quest_canaccept_info = /** @class */ (function () {
+})();
+var quest_canaccept_info = (function () {
     function quest_canaccept_info() {
         /**
          * 标题
@@ -169,8 +169,8 @@ var quest_canaccept_info = /** @class */ (function () {
         output.writeUint32(this.quest_level);
     };
     return quest_canaccept_info;
-}());
-var gossip_menu_option_info = /** @class */ (function () {
+})();
+var gossip_menu_option_info = (function () {
     function gossip_menu_option_info() {
         /**
          * 选项文本
@@ -196,8 +196,8 @@ var gossip_menu_option_info = /** @class */ (function () {
         output.writeStringByLen(this.option_title, 200);
     };
     return gossip_menu_option_info;
-}());
-var item_cooldown_info = /** @class */ (function () {
+})();
+var item_cooldown_info = (function () {
     function item_cooldown_info() {
     }
     /**
@@ -217,8 +217,8 @@ var item_cooldown_info = /** @class */ (function () {
         output.writeUint32(this.cooldown);
     };
     return item_cooldown_info;
-}());
-var quest_status = /** @class */ (function () {
+})();
+var quest_status = (function () {
     function quest_status() {
     }
     /**
@@ -238,8 +238,8 @@ var quest_status = /** @class */ (function () {
         output.writeUint8(this.status);
     };
     return quest_status;
-}());
-var item_reward_info = /** @class */ (function () {
+})();
+var item_reward_info = (function () {
     function item_reward_info() {
     }
     /**
@@ -259,8 +259,8 @@ var item_reward_info = /** @class */ (function () {
         output.writeUint32(this.num);
     };
     return item_reward_info;
-}());
-var social_friend_info = /** @class */ (function () {
+})();
+var social_friend_info = (function () {
     function social_friend_info() {
         /**
          * 好友guid
@@ -300,8 +300,8 @@ var social_friend_info = /** @class */ (function () {
         output.writeUint16(this.vip);
     };
     return social_friend_info;
-}());
-var faction_info = /** @class */ (function () {
+})();
+var faction_info = (function () {
     function faction_info() {
         /**
          * 帮派guid
@@ -349,8 +349,8 @@ var faction_info = /** @class */ (function () {
         output.writeUint16(this.minlev);
     };
     return faction_info;
-}());
-var rank_info = /** @class */ (function () {
+})();
+var rank_info = (function () {
     function rank_info() {
         /**
          * 名字
@@ -374,8 +374,8 @@ var rank_info = /** @class */ (function () {
         output.writeFloat(this.value);
     };
     return rank_info;
-}());
-var line_info = /** @class */ (function () {
+})();
+var line_info = (function () {
     function line_info() {
     }
     /**
@@ -395,8 +395,8 @@ var line_info = /** @class */ (function () {
         output.writeUint8(this.rate);
     };
     return line_info;
-}());
-var wait_info = /** @class */ (function () {
+})();
+var wait_info = (function () {
     function wait_info() {
         /**
          * 名字
@@ -420,8 +420,8 @@ var wait_info = /** @class */ (function () {
         output.writeInt8(this.state);
     };
     return wait_info;
-}());
-var cultivation_rivals_info = /** @class */ (function () {
+})();
+var cultivation_rivals_info = (function () {
     function cultivation_rivals_info() {
         /**
          * 名字
@@ -459,8 +459,8 @@ var cultivation_rivals_info = /** @class */ (function () {
         output.writeUint32(this.gender);
     };
     return cultivation_rivals_info;
-}());
-var faction_gift_info = /** @class */ (function () {
+})();
+var faction_gift_info = (function () {
     function faction_gift_info() {
         /**
          * 赠送者guid
@@ -514,8 +514,8 @@ var faction_gift_info = /** @class */ (function () {
         output.writeStringByLen(this.reply_list, 100);
     };
     return faction_gift_info;
-}());
-var faction_gift_rank_info = /** @class */ (function () {
+})();
+var faction_gift_rank_info = (function () {
     function faction_gift_rank_info() {
         /**
          * 女王名称
@@ -559,8 +559,8 @@ var faction_gift_rank_info = /** @class */ (function () {
         output.writeUint32(this.guard_vip);
     };
     return faction_gift_rank_info;
-}());
-var mass_boss_info = /** @class */ (function () {
+})();
+var mass_boss_info = (function () {
     function mass_boss_info() {
     }
     /**
@@ -586,8 +586,8 @@ var mass_boss_info = /** @class */ (function () {
         output.writeUint16(this.count);
     };
     return mass_boss_info;
-}());
-var mass_boss_rank_info = /** @class */ (function () {
+})();
+var mass_boss_rank_info = (function () {
     function mass_boss_rank_info() {
         /**
          * 名称
@@ -611,8 +611,8 @@ var mass_boss_rank_info = /** @class */ (function () {
         output.writeDouble(this.dam);
     };
     return mass_boss_rank_info;
-}());
-var equip_info = /** @class */ (function () {
+})();
+var equip_info = (function () {
     function equip_info() {
         /**
          * 装备信息
@@ -634,8 +634,8 @@ var equip_info = /** @class */ (function () {
         output.writeStringByLen(this.equip, 50);
     };
     return equip_info;
-}());
-var act_rank_info = /** @class */ (function () {
+})();
+var act_rank_info = (function () {
     function act_rank_info() {
         /**
          * 名称
@@ -659,5 +659,5 @@ var act_rank_info = /** @class */ (function () {
         output.writeUint32(this.value);
     };
     return act_rank_info;
-}());
+})();
 //# sourceMappingURL=clientstru.js.map

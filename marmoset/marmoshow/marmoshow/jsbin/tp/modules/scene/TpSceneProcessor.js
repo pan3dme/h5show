@@ -1,17 +1,12 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var TpSceneModule = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var TpSceneModule = (function (_super) {
     __extends(TpSceneModule, _super);
     function TpSceneModule() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     TpSceneModule.prototype.getModuleName = function () {
         return "TpSceneModule";
@@ -20,21 +15,21 @@ var TpSceneModule = /** @class */ (function (_super) {
         return [new TpSceneProcessor()];
     };
     return TpSceneModule;
-}(Module));
-var TpSceneEvent = /** @class */ (function (_super) {
+})(Module);
+var TpSceneEvent = (function (_super) {
     __extends(TpSceneEvent, _super);
     function TpSceneEvent() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     //展示面板
     TpSceneEvent.SHOW_TP_SCENE_EVENT = "SHOW_TP_SCENE_EVENT";
     TpSceneEvent.ENTER_SCENE_EVENT = "ENTER_SCENE_EVENT";
     return TpSceneEvent;
-}(BaseEvent));
-var TpSceneProcessor = /** @class */ (function (_super) {
+})(BaseEvent);
+var TpSceneProcessor = (function (_super) {
     __extends(TpSceneProcessor, _super);
     function TpSceneProcessor() {
-        return _super.call(this) || this;
+        _super.call(this);
     }
     TpSceneProcessor.prototype.getName = function () {
         return "TpSceneProcessor";
@@ -92,5 +87,5 @@ var TpSceneProcessor = /** @class */ (function (_super) {
         ];
     };
     return TpSceneProcessor;
-}(BaseProcessor));
+})(BaseProcessor);
 //# sourceMappingURL=TpSceneProcessor.js.map

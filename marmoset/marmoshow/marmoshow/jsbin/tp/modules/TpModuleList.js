@@ -1,4 +1,4 @@
-var TpModuleList = /** @class */ (function () {
+var TpModuleList = (function () {
     function TpModuleList() {
     }
     TpModuleList.getModuleList = function () {
@@ -17,5 +17,5 @@ var TpModuleList = /** @class */ (function () {
         }
     };
     return TpModuleList;
-}());
+})();
 //# sourceMappingURL=TpModuleList.js.map

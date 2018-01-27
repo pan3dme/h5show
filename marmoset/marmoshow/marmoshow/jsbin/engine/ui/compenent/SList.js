@@ -1,33 +1,27 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var SList = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var SList = (function (_super) {
     __extends(SList, _super);
     function SList() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.p_scrollY = 0;
-        _this._showItemNum = 0;
-        _this._allItemNum = 0;
-        _this._topSize = 0;
-        _this._bottomSize = 0;
-        _this._outSize = 0;
-        _this._showDataIndex = 0;
-        _this.scrollLock = false;
-        _this._minScrollY = 0;
-        _this._maskLevel = 2;
-        _this._mouseY = 0;
+        _super.apply(this, arguments);
+        this.p_scrollY = 0;
+        this._showItemNum = 0;
+        this._allItemNum = 0;
+        this._topSize = 0;
+        this._bottomSize = 0;
+        this._outSize = 0;
+        this._showDataIndex = 0;
+        this.scrollLock = false;
+        this._minScrollY = 0;
+        this._maskLevel = 2;
+        this._mouseY = 0;
         /**拖动刷新 */
-        _this._dragFlag = false;
-        _this._dragY = 0;
-        _this._dragMaxY = 100;
-        return _this;
+        this._dragFlag = false;
+        this._dragY = 0;
+        this._dragMaxY = 100;
     }
     /**
      * $data 数据源
@@ -150,7 +144,6 @@ var SList = /** @class */ (function (_super) {
             if (i == $index) {
                 // if (!this._itemList[i].selected) {
                 this._itemList[i].selected = true;
-                // }
             }
             else {
                 if (this._itemList[i].selected) {
@@ -166,7 +159,6 @@ var SList = /** @class */ (function (_super) {
                 // if (!this._itemList[i].selected) {
                 this._itemList[i].selected = true;
                 this._lastSelectIndex = $index;
-                // }
             }
             else {
                 if (this._itemList[i].selected) {
@@ -377,8 +369,8 @@ var SList = /** @class */ (function (_super) {
         //FIXME
     };
     return SList;
-}(UIVirtualContainer));
-var SListItem = /** @class */ (function () {
+})(UIVirtualContainer);
+var SListItem = (function () {
     function SListItem() {
         this._height = 10;
         this._list = new Array;
@@ -488,18 +480,18 @@ var SListItem = /** @class */ (function () {
         }
     };
     return SListItem;
-}());
-var SListItemData = /** @class */ (function () {
+})();
+var SListItemData = (function () {
     function SListItemData() {
         //是否选中
         this.selected = false;
     }
     return SListItemData;
-}());
-var SListBgRender = /** @class */ (function (_super) {
+})();
+var SListBgRender = (function (_super) {
     __extends(SListBgRender, _super);
     function SListBgRender() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     SListBgRender.prototype.interactiveEvent = function ($e) {
         _super.prototype.interactiveEvent.call(this, $e);
@@ -507,11 +499,11 @@ var SListBgRender = /** @class */ (function (_super) {
         return tf;
     };
     return SListBgRender;
-}(UIRenderComponent));
-var SlistFrontRender = /** @class */ (function (_super) {
+})(UIRenderComponent);
+var SlistFrontRender = (function (_super) {
     __extends(SlistFrontRender, _super);
     function SlistFrontRender() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     // public slist: SList;
     SlistFrontRender.prototype.interactiveEvent = function ($e) {
@@ -519,11 +511,11 @@ var SlistFrontRender = /** @class */ (function (_super) {
         return false;
     };
     return SlistFrontRender;
-}(UIRenderComponent));
-var SListAtlas = /** @class */ (function (_super) {
+})(UIRenderComponent);
+var SListAtlas = (function (_super) {
     __extends(SListAtlas, _super);
     function SListAtlas() {
-        return _super.call(this) || this;
+        _super.call(this);
     }
     SListAtlas.prototype.setData = function ($width, $height, $xnum, $ynum) {
         this.ctx = UIManager.getInstance().getContext2D($width, $height, false);
@@ -565,18 +557,17 @@ var SListAtlas = /** @class */ (function (_super) {
         this.configData.push(rec);
     };
     return SListAtlas;
-}(UIAtlas));
+})(UIAtlas);
 /**
  * 横向单行滑动的Slist
  */
-var TransverseSList = /** @class */ (function (_super) {
+var TransverseSList = (function (_super) {
     __extends(TransverseSList, _super);
     function TransverseSList() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.p_scrollX = 0;
-        _this._minScrollX = 0;
-        _this._mouseX = 0;
-        return _this;
+        _super.apply(this, arguments);
+        this.p_scrollX = 0;
+        this._minScrollX = 0;
+        this._mouseX = 0;
     }
     /**
      * $data 数据源
@@ -801,5 +792,5 @@ var TransverseSList = /** @class */ (function (_super) {
         }
     };
     return TransverseSList;
-}(SList));
+})(SList);
 //# sourceMappingURL=SList.js.map

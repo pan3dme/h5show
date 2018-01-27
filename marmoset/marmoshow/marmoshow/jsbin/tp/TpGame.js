@@ -1,4 +1,4 @@
-var TpGame = /** @class */ (function () {
+var TpGame = (function () {
     function TpGame() {
         this.uiReadyNum = 0;
         this.uiAllNum = 0;
@@ -21,10 +21,20 @@ var TpGame = /** @class */ (function () {
         $evt.mapId = 5001;
         ModuleEventManager.dispatchEvent($evt);
     };
+    TpGame.prototype.upFrameData = function () {
+        TimeUtil.update();
+        FpsMc.update();
+        var istrue = false;
+        if (istrue) {
+            SceneManager.getInstance().update();
+        }
+        else {
+        }
+    };
     /**是否是外网 */
     TpGame.outNet = false;
     TpGame.GM = true;
     TpGame.ready = false;
     return TpGame;
-}());
+})();
 //# sourceMappingURL=TpGame.js.map

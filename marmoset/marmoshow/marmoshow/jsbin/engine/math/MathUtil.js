@@ -1,4 +1,4 @@
-var MathUtil = /** @class */ (function () {
+var MathUtil = (function () {
     function MathUtil() {
     }
     /**
@@ -99,5 +99,5 @@ var MathUtil = /** @class */ (function () {
         return aPro1;
     };
     return MathUtil;
-}());
+})();
 //# sourceMappingURL=MathUtil.js.map

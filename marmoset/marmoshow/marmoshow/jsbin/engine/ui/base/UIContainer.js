@@ -1,4 +1,4 @@
-var UIConatiner = /** @class */ (function () {
+var UIConatiner = (function () {
     function UIConatiner() {
         this.interfaceUI = false;
         this._x = 0;
@@ -419,5 +419,5 @@ var UIConatiner = /** @class */ (function () {
         $ui.height = temp.height;
     };
     return UIConatiner;
-}());
+})();
 //# sourceMappingURL=UIContainer.js.map

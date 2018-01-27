@@ -1,4 +1,4 @@
-var KeyMouseManeger = /** @class */ (function () {
+var KeyMouseManeger = (function () {
     function KeyMouseManeger() {
     }
     KeyMouseManeger.getInstance = function () {
@@ -69,5 +69,5 @@ var KeyMouseManeger = /** @class */ (function () {
         this.makeMouseEvent(evt, point);
     };
     return KeyMouseManeger;
-}());
+})();
 //# sourceMappingURL=KeyMouseManeger.js.map

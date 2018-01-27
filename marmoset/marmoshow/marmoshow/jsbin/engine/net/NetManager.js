@@ -1,4 +1,4 @@
-var NetManager = /** @class */ (function () {
+var NetManager = (function () {
     function NetManager() {
         var _this = this;
         this.connectState = 0; // 0断开 1正在连接 2连接成功
@@ -67,5 +67,5 @@ var NetManager = /** @class */ (function () {
         this._socket.close();
     };
     return NetManager;
-}());
+})();
 //# sourceMappingURL=NetManager.js.map

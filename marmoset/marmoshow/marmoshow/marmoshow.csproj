@@ -281,6 +281,7 @@
     <TypeScriptCompile Include="tp\modules\scene\ProdkarenResModel.ts" />
     <TypeScriptCompile Include="tp\modules\scene\TpSceneProcessor.ts" />
     <TypeScriptCompile Include="tp\modules\TpModuleList.ts" />
+    <TypeScriptCompile Include="tp\TestDispStart.ts" />
     <TypeScriptCompile Include="tp\TpGame.ts" />
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,4 @@
-var StringIndexer = /** @class */ (function () {
+var StringIndexer = (function () {
     function StringIndexer() {
         this._indexerExp = new Array();
         this._objs = new Array();
@@ -152,5 +152,5 @@ var StringIndexer = /** @class */ (function () {
         }
     };
     return StringIndexer;
-}());
+})();
 //# sourceMappingURL=StringIndexer.js.map

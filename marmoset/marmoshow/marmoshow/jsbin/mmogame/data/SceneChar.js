@@ -1,27 +1,21 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var CharUint = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var CharUint = (function (_super) {
     __extends(CharUint, _super);
     function CharUint() {
-        var _this = _super.call(this) || this;
+        _super.call(this);
         if (!CharUint.skipId) {
             CharUint.skipId = 1;
         }
         CharUint.skipId++;
-        _this.inScene = false;
-        _this.guid = CharUint.skipId;
-        _this._hp = 100;
-        _this._maxhp = 100;
-        _this.isDeath = false;
-        return _this;
+        this.inScene = false;
+        this.guid = CharUint.skipId;
+        this._hp = 100;
+        this._maxhp = 100;
+        this.isDeath = false;
     }
     CharUint.prototype.addChar = function () {
         if (!this.inScene) {
@@ -77,21 +71,20 @@ var CharUint = /** @class */ (function (_super) {
         this._maxhp = value;
     };
     return CharUint;
-}(Object3D));
-var SceneChar = /** @class */ (function (_super) {
+})(Object3D);
+var SceneChar = (function (_super) {
     __extends(SceneChar, _super);
     function SceneChar() {
-        var _this = _super.call(this) || this;
-        _this.speedTX = (1.5 / 20) * 1.5;
-        _this.life = 0;
-        _this._px = 0;
-        _this._py = 0;
-        _this._pz = 0;
-        _this._pRotationY = 0;
-        _this.tittleHeight = 50;
-        _this.toRotationY = 0;
-        _this.shadow = true;
-        return _this;
+        _super.call(this);
+        this.speedTX = (1.5 / 20) * 1.5;
+        this.life = 0;
+        this._px = 0;
+        this._py = 0;
+        this._pz = 0;
+        this._pRotationY = 0;
+        this.tittleHeight = 50;
+        this.toRotationY = 0;
+        this.shadow = true;
     }
     Object.defineProperty(SceneChar.prototype, "px", {
         get: function () {
@@ -482,5 +475,5 @@ var SceneChar = /** @class */ (function (_super) {
     SceneChar.MOUNT_SLOT = "mount_01";
     SceneChar.WING_SLOT = "wing_01";
     return SceneChar;
-}(SceneBaseChar));
+})(SceneBaseChar);
 //# sourceMappingURL=SceneChar.js.map

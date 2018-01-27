@@ -1,19 +1,13 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var CdRenderComponent = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var CdRenderComponent = (function (_super) {
     __extends(CdRenderComponent, _super);
     function CdRenderComponent() {
-        var _this = _super.call(this) || this;
-        _this.initProgram();
-        return _this;
+        _super.call(this);
+        this.initProgram();
     }
     CdRenderComponent.prototype.setVc = function () {
         for (var i = 0; i < this._uiList.length; i++) {
@@ -51,19 +45,18 @@ var CdRenderComponent = /** @class */ (function (_super) {
         return ui;
     };
     return CdRenderComponent;
-}(UIRenderComponent));
-var CdUICompenent = /** @class */ (function (_super) {
+})(UIRenderComponent);
+var CdUICompenent = (function (_super) {
     __extends(CdUICompenent, _super);
     function CdUICompenent() {
-        var _this = _super.call(this) || this;
-        _this.cdTotalnum = 0;
-        _this.lastTime = 0;
-        _this._skipNum = 0;
-        _this.colorVer = [1, 0.5, 0, 0.5];
-        _this.isRound = false;
-        _this.visible = true;
-        _this._skipNum = float2int(Math.random() * 360);
-        return _this;
+        _super.call(this);
+        this.cdTotalnum = 0;
+        this.lastTime = 0;
+        this._skipNum = 0;
+        this.colorVer = [1, 0.5, 0, 0.5];
+        this.isRound = false;
+        this.visible = true;
+        this._skipNum = float2int(Math.random() * 360);
     }
     CdUICompenent.prototype.setCdNum = function (value) {
         this._skipNum = 360 * value;
@@ -97,11 +90,11 @@ var CdUICompenent = /** @class */ (function (_super) {
         Scene_data.context3D.setVc4fv(program, "dataTime[" + index + "]", [nk, 0, 0, 1]);
     };
     return CdUICompenent;
-}(UICompenent));
-var CdUIShader = /** @class */ (function (_super) {
+})(UICompenent);
+var CdUIShader = (function (_super) {
     __extends(CdUIShader, _super);
     function CdUIShader() {
-        return _super.call(this) || this;
+        _super.call(this);
     }
     CdUIShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "v3Pos");
@@ -162,5 +155,5 @@ var CdUIShader = /** @class */ (function (_super) {
     };
     CdUIShader.CdUIShader = "CdUIShader";
     return CdUIShader;
-}(Shader3D));
+})(Shader3D);
 //# sourceMappingURL=CdUICompenent.js.map

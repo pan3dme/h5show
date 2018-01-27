@@ -1,4 +1,4 @@
-var Test = /** @class */ (function () {
+var Test = (function () {
     function Test() {
     }
     Test.prototype.readData = function ($bytes) {
@@ -17,5 +17,5 @@ var Test = /** @class */ (function () {
     Test.OBJS_TYPE = 2;
     Test.MATERIAL_TYPE = 3;
     return Test;
-}());
+})();
 //# sourceMappingURL=TestCplus.js.map

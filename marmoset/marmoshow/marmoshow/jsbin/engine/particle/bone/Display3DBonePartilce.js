@@ -1,17 +1,12 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Display3DBoneShader = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Display3DBoneShader = (function (_super) {
     __extends(Display3DBoneShader, _super);
     function Display3DBoneShader() {
-        return _super.call(this) || this;
+        _super.call(this);
     }
     Display3DBoneShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "pos");
@@ -33,7 +28,7 @@ var Display3DBoneShader = /** @class */ (function (_super) {
             "attribute vec4 boneID;" +
             "uniform vec4 boneQ[54];\n" +
             "uniform vec3 boneD[54];\n" +
-            "uniform mat4 vcmat[" + Display3DBoneShader.getVcSize() + "];\n" + //所有vc值
+            "uniform mat4 vcmat[" + Display3DBoneShader.getVcSize() + "];\n" +
             //"uniform mat4 viewMatrix3D;\n" +
             //"uniform mat4 camMatrix3D;\n" +
             //"uniform mat4 posMatrix3D;\n" +
@@ -59,13 +54,12 @@ var Display3DBoneShader = /** @class */ (function (_super) {
     Display3DBoneShader.Display3DBoneShader = "Display3DBoneShader";
     Display3DBoneShader.shader_mat4 = { viewMatrix3D: 0, camMatrix3D: 1, posMatrix3D: 2 };
     return Display3DBoneShader;
-}(Shader3D));
-var Display3DBonePartilce = /** @class */ (function (_super) {
+})(Shader3D);
+var Display3DBonePartilce = (function (_super) {
     __extends(Display3DBonePartilce, _super);
     function Display3DBonePartilce() {
-        var _this = _super.call(this) || this;
-        _this.skipNum = 0;
-        return _this;
+        _super.call(this);
+        this.skipNum = 0;
     }
     Object.defineProperty(Display3DBonePartilce.prototype, "modeldata", {
         get: function () {
@@ -131,5 +125,5 @@ var Display3DBonePartilce = /** @class */ (function (_super) {
         _super.prototype.resetVa.call(this);
     };
     return Display3DBonePartilce;
-}(Display3DParticle));
+})(Display3DParticle);
 //# sourceMappingURL=Display3DBonePartilce.js.map

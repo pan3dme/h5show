@@ -1,4 +1,4 @@
-var Engine = /** @class */ (function () {
+var Engine = (function () {
     function Engine() {
     }
     Engine.init = function ($caves) {
@@ -82,11 +82,9 @@ var Engine = /** @class */ (function () {
         Scene_data.canvas3D.style.top = "0px";
         if (Scene_data.verticalScene) {
             Scene_data.canvas3D.style.transform = "matrix(0,1,-1,0," + Scene_data.stageHeight + ",0)";
-            //Scene_data.canvas3D.style.webkitTransform = "matrix(0,1,-1,0," + Scene_data.stageHeight + ",0)";
         }
         else {
             Scene_data.canvas3D.style.transform = "matrix(1,0,0,1,0,0)";
-            //Scene_data.canvas3D.style.webkitTransform = "matrix(0,1,-1,0," + Scene_data.stageHeight + ",0)";
         }
         Scene_data.canvas3D.style.transformOrigin = "0px 0px 0px";
         Scene_data.canvas3D.style.top = "0px";
@@ -116,5 +114,5 @@ var Engine = /** @class */ (function () {
     Engine.needInputTxt = false; //在输入文本时，将不再可调整大小
     Engine.sceneCamScale = 1.76;
     return Engine;
-}());
+})();
 //# sourceMappingURL=Engine.js.map

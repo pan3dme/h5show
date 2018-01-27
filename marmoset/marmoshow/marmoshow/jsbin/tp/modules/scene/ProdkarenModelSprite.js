@@ -1,17 +1,12 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var ProdkarenModelShader = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var ProdkarenModelShader = (function (_super) {
     __extends(ProdkarenModelShader, _super);
     function ProdkarenModelShader() {
-        return _super.call(this) || this;
+        _super.call(this);
     }
     ProdkarenModelShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "vPosition");
@@ -71,11 +66,12 @@ var ProdkarenModelShader = /** @class */ (function (_super) {
     };
     ProdkarenModelShader.ProdkarenModelShader = "ProdkarenModelShader";
     return ProdkarenModelShader;
-}(Shader3D));
-var ProdkarenModelSprite = /** @class */ (function (_super) {
+})(Shader3D);
+var ProdkarenModelSprite = (function (_super) {
     __extends(ProdkarenModelSprite, _super);
     function ProdkarenModelSprite() {
-        var _this = _super.call(this) || this;
+        var _this = this;
+        _super.call(this);
         /*
         private parseFile(): void {
             if (this.reflectivityRes && this.reflectivityalphaRes) {
@@ -85,20 +81,19 @@ var ProdkarenModelSprite = /** @class */ (function (_super) {
             }
         }
         */
-        _this.skipNum = 0;
-        _this.scaleX = 1;
-        _this.scaleY = 1;
-        _this.scaleZ = 1;
+        this.skipNum = 0;
+        this.scaleX = 1;
+        this.scaleY = 1;
+        this.scaleZ = 1;
         ProgrmaManager.getInstance().registe(ProdkarenModelShader.ProdkarenModelShader, new ProdkarenModelShader);
-        _this.shader = ProgrmaManager.getInstance().getProgram(ProdkarenModelShader.ProdkarenModelShader);
-        _this.program = _this.shader.program;
+        this.shader = ProgrmaManager.getInstance().getProgram(ProdkarenModelShader.ProdkarenModelShader);
+        this.program = this.shader.program;
         ProdkarenResModel.getInstance().loadBuffByTxtUrl("model.txt", function ($buff) {
             _this.modelBuff = $buff;
         });
         GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/ccav.txt", function (groupRes) {
             _this.loadPartRes(groupRes);
         });
-        return _this;
     }
     ProdkarenModelSprite.prototype.loadPartRes = function (groupRes) {
         for (var i = 0; i < groupRes.dataAry.length; i++) {
@@ -213,5 +208,5 @@ var ProdkarenModelSprite = /** @class */ (function (_super) {
         Scene_data.context3D.setVc2f(this.shader, "uShadowKernelRotation", 0.5, 0.5);
     };
     return ProdkarenModelSprite;
-}(BaseDiplay3dSprite));
+})(BaseDiplay3dSprite);
 //# sourceMappingURL=ProdkarenModelSprite.js.map

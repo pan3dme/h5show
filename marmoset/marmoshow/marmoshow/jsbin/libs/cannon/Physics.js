@@ -1,4 +1,4 @@
-var Physics = /** @class */ (function () {
+var Physics = (function () {
     function Physics() {
     }
     //创建一个世界
@@ -343,5 +343,5 @@ var Physics = /** @class */ (function () {
     Physics.baseScale10 = 10;
     Physics.ready = false;
     return Physics;
-}());
+})();
 //# sourceMappingURL=Physics.js.map

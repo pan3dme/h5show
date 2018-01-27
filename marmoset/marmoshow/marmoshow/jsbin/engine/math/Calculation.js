@@ -1,4 +1,4 @@
-var ObjectMath = /** @class */ (function () {
+var ObjectMath = (function () {
     function ObjectMath() {
         this.a = 0;
         this.b = 0;
@@ -6,8 +6,8 @@ var ObjectMath = /** @class */ (function () {
         this.d = 0;
     }
     return ObjectMath;
-}());
-var Calculation = /** @class */ (function () {
+})();
+var Calculation = (function () {
     function Calculation() {
     }
     Calculation._PanelEquationFromThreePt = function (p1, p2, p3) {
@@ -51,5 +51,5 @@ var Calculation = /** @class */ (function () {
         return ret;
     };
     return Calculation;
-}());
+})();
 //# sourceMappingURL=Calculation.js.map

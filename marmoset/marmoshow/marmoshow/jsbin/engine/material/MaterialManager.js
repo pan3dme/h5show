@@ -1,23 +1,16 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var MaterialManager = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var MaterialManager = (function (_super) {
     __extends(MaterialManager, _super);
     function MaterialManager() {
-        var _this = 
         //this._dic = new Object();
-        _super.call(this) || this;
-        _this._loadDic = new Object();
-        _this._resDic = new Object();
-        _this._regDic = new Object();
-        return _this;
+        _super.call(this);
+        this._loadDic = new Object();
+        this._resDic = new Object();
+        this._regDic = new Object();
     }
     MaterialManager.getInstance = function () {
         if (!this._instance) {
@@ -111,9 +104,6 @@ var MaterialManager = /** @class */ (function (_super) {
                 ary[i].fun(material);
             }
             material.useNum++;
-            // if (_info.url.indexOf("m_ef_ver_byte.txt") != -1) {
-            //     console.log("aaaaaaaaaaaaaaaa", material.useNum)
-            // }
         }
         delete this._loadDic[_info.url];
         this._dic[_info.url] = material;
@@ -206,8 +196,8 @@ var MaterialManager = /** @class */ (function (_super) {
         _super.prototype.gc.call(this);
     };
     return MaterialManager;
-}(ResGC));
-var MaterialLoad = /** @class */ (function () {
+})(ResGC);
+var MaterialLoad = (function () {
     function MaterialLoad($fun, $info, $url, $autoReg, $regName, $shader3D) {
         this.fun = $fun;
         this.info = $info;
@@ -217,5 +207,5 @@ var MaterialLoad = /** @class */ (function () {
         this.shader3D = $shader3D;
     }
     return MaterialLoad;
-}());
+})();
 //# sourceMappingURL=MaterialManager.js.map

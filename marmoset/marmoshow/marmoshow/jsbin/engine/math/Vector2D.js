@@ -1,4 +1,4 @@
-var Vector2D = /** @class */ (function () {
+var Vector2D = (function () {
     function Vector2D($x, $y) {
         if ($x === void 0) { $x = 0; }
         if ($y === void 0) { $y = 0; }
@@ -34,5 +34,5 @@ var Vector2D = /** @class */ (function () {
         return Math.sqrt(xx * xx + yy * yy);
     };
     return Vector2D;
-}());
+})();
 //# sourceMappingURL=Vector2D.js.map

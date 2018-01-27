@@ -1,19 +1,13 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var MaterialShader = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var MaterialShader = (function (_super) {
     __extends(MaterialShader, _super);
     function MaterialShader() {
-        var _this = _super.call(this) || this;
-        _this.name = "Material_shader";
-        return _this;
+        _super.call(this);
+        this.name = "Material_shader";
     }
     MaterialShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "v3Position");
@@ -139,7 +133,6 @@ var MaterialShader = /** @class */ (function (_super) {
             $str +=
                 "suncos = clamp(suncos,0.0,1.0);\n" +
                     "v2 = sunColor * suncos + ambientColor;";
-            //"v2 = vec3(1.0,0.0,0.0);\n";
         }
         $str +=
             "gl_Position = vt0;" +
@@ -174,5 +167,5 @@ var MaterialShader = /** @class */ (function (_super) {
     };
     MaterialShader.MATERIAL_SHADER = "Material_shader";
     return MaterialShader;
-}(Shader3D));
+})(Shader3D);
 //# sourceMappingURL=MaterialShader.js.map
