@@ -1,4 +1,4 @@
-var MouseType = /** @class */ (function () {
+var MouseType = (function () {
     function MouseType() {
     }
     MouseType.MouseDown = "mousedown";
@@ -17,8 +17,8 @@ var MouseType = /** @class */ (function () {
     MouseType.TouchEnd = "touchend";
     MouseType.TouchClick = "touchstart";
     return MouseType;
-}());
-var KeyControl = /** @class */ (function () {
+})();
+var KeyControl = (function () {
     function KeyControl() {
         var _this = this;
         this._isUpData = true;
@@ -151,5 +151,5 @@ var KeyControl = /** @class */ (function () {
         _keyDic[$evt.keyCode] = false;
     };
     return KeyControl;
-}());
+})();
 //# sourceMappingURL=KeyControl.js.map

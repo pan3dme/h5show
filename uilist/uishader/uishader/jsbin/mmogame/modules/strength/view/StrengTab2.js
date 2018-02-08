@@ -1,33 +1,27 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var strengthgem;
 (function (strengthgem) {
-    var StrengTab2 = /** @class */ (function (_super) {
+    var StrengTab2 = (function (_super) {
         __extends(StrengTab2, _super);
         function StrengTab2() {
-            var _this = _super.call(this) || this;
-            _this._canclick = true;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._publicRender = new UIRenderComponent;
-            _this.addRender(_this._publicRender);
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            _this._redPointRender = new RedPointRender;
-            _this.addRender(_this._redPointRender);
-            return _this;
+            _super.call(this);
+            this._canclick = true;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._publicRender = new UIRenderComponent;
+            this.addRender(this._publicRender);
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
+            this._redPointRender = new RedPointRender;
+            this.addRender(this._redPointRender);
         }
         StrengTab2.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -352,7 +346,6 @@ var strengthgem;
                 }
             }
             else {
-                // msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "您操作太快了", 99);
             }
         };
         StrengTab2.prototype.senduplevgem = function ($vo, canbuy, $idx) {
@@ -376,7 +369,7 @@ var strengthgem;
             }
         };
         return StrengTab2;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     strengthgem.StrengTab2 = StrengTab2;
 })(strengthgem || (strengthgem = {}));
 //# sourceMappingURL=StrengTab2.js.map

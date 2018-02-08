@@ -1,6 +1,6 @@
 var chgfish;
 (function (chgfish) {
-    var ChgfishModel = /** @class */ (function () {
+    var ChgfishModel = (function () {
         function ChgfishModel() {
         }
         ChgfishModel.getInstance = function () {
@@ -62,7 +62,7 @@ var chgfish;
             return this._itemAry;
         };
         return ChgfishModel;
-    }());
+    })();
     chgfish.ChgfishModel = ChgfishModel;
 })(chgfish || (chgfish = {}));
 //# sourceMappingURL=ChgfishModel.js.map

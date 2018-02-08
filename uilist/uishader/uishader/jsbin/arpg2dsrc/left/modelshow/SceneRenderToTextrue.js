@@ -1,6 +1,6 @@
 var left;
 (function (left) {
-    var SceneRenderToTextrue = /** @class */ (function () {
+    var SceneRenderToTextrue = (function () {
         function SceneRenderToTextrue() {
             this.fw = 1024;
             this.fh = 1024;
@@ -64,7 +64,7 @@ var left;
             Engine.resetSize();
         };
         return SceneRenderToTextrue;
-    }());
+    })();
     left.SceneRenderToTextrue = SceneRenderToTextrue;
 })(left || (left = {}));
 //# sourceMappingURL=SceneRenderToTextrue.js.map

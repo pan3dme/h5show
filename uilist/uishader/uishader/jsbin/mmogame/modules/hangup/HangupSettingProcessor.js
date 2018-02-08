@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var Hangup;
 (function (Hangup) {
-    var HangupUiModel = /** @class */ (function (_super) {
+    var HangupUiModel = (function (_super) {
         __extends(HangupUiModel, _super);
         function HangupUiModel() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         HangupUiModel.prototype.getModuleName = function () {
             return "HangupUiModel";
@@ -22,24 +17,24 @@ var Hangup;
             return [new HangupSettingProcessor()];
         };
         return HangupUiModel;
-    }(Module));
+    })(Module);
     Hangup.HangupUiModel = HangupUiModel;
-    var HangupUiEvent = /** @class */ (function (_super) {
+    var HangupUiEvent = (function (_super) {
         __extends(HangupUiEvent, _super);
         function HangupUiEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //展示技能面板
         HangupUiEvent.SHOW_HANGUPUI_EVENT = "SHOW_HANGUPUI_EVENT";
         //隐藏技能面板
         HangupUiEvent.HIDE_HANGUPUI_EVENT = "HIDE_HANGUPUI_EVENT";
         return HangupUiEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     Hangup.HangupUiEvent = HangupUiEvent;
-    var HangupSettingProcessor = /** @class */ (function (_super) {
+    var HangupSettingProcessor = (function (_super) {
         __extends(HangupSettingProcessor, _super);
         function HangupSettingProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         HangupSettingProcessor.prototype.getName = function () {
             return "HangupSettingProcessor";
@@ -85,7 +80,7 @@ var Hangup;
             ];
         };
         return HangupSettingProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     Hangup.HangupSettingProcessor = HangupSettingProcessor;
 })(Hangup || (Hangup = {}));
 //# sourceMappingURL=HangupSettingProcessor.js.map

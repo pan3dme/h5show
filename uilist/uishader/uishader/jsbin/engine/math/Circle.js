@@ -1,4 +1,4 @@
-var Circle = /** @class */ (function () {
+var Circle = (function () {
     function Circle($x, $y, $radius) {
         if ($x === void 0) { $x = 0; }
         if ($y === void 0) { $y = 0; }
@@ -43,5 +43,5 @@ var Circle = /** @class */ (function () {
         return Math.sqrt(xx * xx + yy * yy) < this.radius;
     };
     return Circle;
-}());
+})();
 //# sourceMappingURL=Circle.js.map

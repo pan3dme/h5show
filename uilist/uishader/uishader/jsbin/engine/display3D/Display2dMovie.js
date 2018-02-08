@@ -1,30 +1,24 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Display2dMovie = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Display2dMovie = (function (_super) {
     __extends(Display2dMovie, _super);
     function Display2dMovie() {
-        var _this = _super.call(this) || this;
-        _this.batchPos = new Array;
-        _this._time = 0;
-        _this._allFrame = 12;
-        _this._uvData = [0, 0];
-        _this._uWidth = 0;
-        _this._vWidth = 0;
-        _this._state = 0;
-        _this.frameRate = 3;
-        _this.objData = new ObjData();
-        _this.watchCaramMatrix = new Matrix3D;
-        _this.shader = ProgrmaManager.getInstance().getProgram(Movie2DShader.MOVIE2D_SHADER);
-        _this.program = _this.shader.program;
-        return _this;
+        _super.call(this);
+        this.batchPos = new Array;
+        this._time = 0;
+        this._allFrame = 12;
+        this._uvData = [0, 0];
+        this._uWidth = 0;
+        this._vWidth = 0;
+        this._state = 0;
+        this.frameRate = 3;
+        this.objData = new ObjData();
+        this.watchCaramMatrix = new Matrix3D;
+        this.shader = ProgrmaManager.getInstance().getProgram(Movie2DShader.MOVIE2D_SHADER);
+        this.program = this.shader.program;
     }
     Display2dMovie.prototype.update = function () {
         this.watchCaramMatrix.identity();
@@ -130,5 +124,5 @@ var Display2dMovie = /** @class */ (function (_super) {
         }
     };
     return Display2dMovie;
-}(Display3D));
+})(Display3D);
 //# sourceMappingURL=Display2dMovie.js.map

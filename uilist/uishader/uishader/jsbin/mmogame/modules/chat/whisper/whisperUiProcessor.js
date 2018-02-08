@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var whisper;
 (function (whisper) {
-    var WhisperUiModule = /** @class */ (function (_super) {
+    var WhisperUiModule = (function (_super) {
         __extends(WhisperUiModule, _super);
         function WhisperUiModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         WhisperUiModule.prototype.getModuleName = function () {
             return "WhisperUiModule";
@@ -22,12 +17,12 @@ var whisper;
             return [new whisperUiProcessor()];
         };
         return WhisperUiModule;
-    }(Module));
+    })(Module);
     whisper.WhisperUiModule = WhisperUiModule;
-    var WhisperUiEvent = /** @class */ (function (_super) {
+    var WhisperUiEvent = (function (_super) {
         __extends(WhisperUiEvent, _super);
         function WhisperUiEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         WhisperUiEvent.SHOW_WHISPER_PANEL = "SHOW_WHISPER_PANEL";
         WhisperUiEvent.SELECT_ITEM_EVENT = "SELECT_ITEM_EVENT";
@@ -37,12 +32,12 @@ var whisper;
         //复制一条消息
         WhisperUiEvent.COPY_ONE_MSG_EVENT = "COPY_ONE_MSG_EVENT";
         return WhisperUiEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     whisper.WhisperUiEvent = WhisperUiEvent;
-    var whisperUiProcessor = /** @class */ (function (_super) {
+    var whisperUiProcessor = (function (_super) {
         __extends(whisperUiProcessor, _super);
         function whisperUiProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         whisperUiProcessor.prototype.getName = function () {
             return "whisperUiProcessor";
@@ -122,7 +117,7 @@ var whisper;
             ];
         };
         return whisperUiProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     whisper.whisperUiProcessor = whisperUiProcessor;
 })(whisper || (whisper = {}));
 //# sourceMappingURL=whisperUiProcessor.js.map

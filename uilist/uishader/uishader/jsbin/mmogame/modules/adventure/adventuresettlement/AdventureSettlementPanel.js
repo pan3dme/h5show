@@ -1,34 +1,29 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var adventuresettlement;
 (function (adventuresettlement) {
-    var AdventureSettlementPanel = /** @class */ (function (_super) {
+    var AdventureSettlementPanel = (function (_super) {
         __extends(AdventureSettlementPanel, _super);
         function AdventureSettlementPanel() {
-            var _this = _super.call(this) || this;
-            _this.uiAtlasComplet = false;
-            _this.rewardUiArr = new Array;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._bottomRender = new UIRenderComponent;
-            _this.addRender(_this._bottomRender);
-            _this._midRender = new UIRenderComponent;
-            _this.addRender(_this._midRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            _this._midRender.uiAtlas = new UIAtlas;
-            _this.updataFun = function (t) { _this.updata(t); };
-            return _this;
+            var _this = this;
+            _super.call(this);
+            this.uiAtlasComplet = false;
+            this.rewardUiArr = new Array;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._bottomRender = new UIRenderComponent;
+            this.addRender(this._bottomRender);
+            this._midRender = new UIRenderComponent;
+            this.addRender(this._midRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
+            this._midRender.uiAtlas = new UIAtlas;
+            this.updataFun = function (t) { _this.updata(t); };
         }
         AdventureSettlementPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -127,7 +122,7 @@ var adventuresettlement;
             UIManager.getInstance().removeUIContainer(this);
         };
         return AdventureSettlementPanel;
-    }(WindowCentenMin));
+    })(WindowCentenMin);
     adventuresettlement.AdventureSettlementPanel = AdventureSettlementPanel;
 })(adventuresettlement || (adventuresettlement = {}));
 //# sourceMappingURL=AdventureSettlementPanel.js.map

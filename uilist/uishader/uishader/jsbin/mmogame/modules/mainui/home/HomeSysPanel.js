@@ -1,16 +1,11 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var homeui;
 (function (homeui) {
-    var SystemUi = /** @class */ (function () {
+    var SystemUi = (function () {
         function SystemUi() {
         }
         SystemUi.prototype.clik = function () {
@@ -32,19 +27,18 @@ var homeui;
             });
         };
         return SystemUi;
-    }());
+    })();
     homeui.SystemUi = SystemUi;
-    var HomeSysPanel = /** @class */ (function (_super) {
+    var HomeSysPanel = (function (_super) {
         __extends(HomeSysPanel, _super);
         function HomeSysPanel() {
-            var _this = _super.call(this) || this;
-            _this.nodeDic = { 201: 6, 202: 14, 203: 17, 204: 20, 205: 27, 206: 37, 207: 50, 301: 55, 302: 60, 208: 80, 209: 127 };
-            _this.interfaceUI = true;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.right = 0;
-            _this.bottom = 0;
-            return _this;
+            _super.call(this);
+            this.nodeDic = { 201: 6, 202: 14, 203: 17, 204: 20, 205: 27, 206: 37, 207: 50, 301: 55, 302: 60, 208: 80, 209: 127 };
+            this.interfaceUI = true;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.right = 0;
+            this.bottom = 0;
         }
         HomeSysPanel.prototype.setRender = function ($bottom, $top) {
             this._baseRender = $bottom;
@@ -113,7 +107,7 @@ var homeui;
             }
         };
         return HomeSysPanel;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     homeui.HomeSysPanel = HomeSysPanel;
 })(homeui || (homeui = {}));
 //# sourceMappingURL=HomeSysPanel.js.map

@@ -1,5 +1,5 @@
 //伤害飘字显示类
-var DamageShowManage = /** @class */ (function () {
+var DamageShowManage = (function () {
     function DamageShowManage() {
     }
     DamageShowManage.getInstance = function () {
@@ -12,5 +12,5 @@ var DamageShowManage = /** @class */ (function () {
         console.log($sc.unit.getName() + "掉血:" + hp);
     };
     return DamageShowManage;
-}());
+})();
 //# sourceMappingURL=DamageShowManage.js.map

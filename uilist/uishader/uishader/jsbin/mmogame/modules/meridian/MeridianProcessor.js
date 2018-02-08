@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var meridian;
 (function (meridian) {
-    var MeridianEvent = /** @class */ (function (_super) {
+    var MeridianEvent = (function (_super) {
         __extends(MeridianEvent, _super);
         function MeridianEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MeridianEvent.SHOW_MERIDIAN_EVENT = "SHOW_MERIDIAN_EVENT"; //显示面板
         MeridianEvent.SHOW_MERIDIAN_BUY_EVENT = "SHOW_MERIDIAN_BUY_EVENT"; //显示面板
@@ -21,12 +16,12 @@ var meridian;
         MeridianEvent.CHG_MERIDIAL_FORCE = "CHG_MERIDIAL_FORCE"; //战力变化
         MeridianEvent.REFRISH_MERIDIAL_LIST = "REFRISH_MERIDIAL_LIST"; //刷新list
         return MeridianEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     meridian.MeridianEvent = MeridianEvent;
-    var MeridianModule = /** @class */ (function (_super) {
+    var MeridianModule = (function (_super) {
         __extends(MeridianModule, _super);
         function MeridianModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MeridianModule.prototype.getModuleName = function () {
             return "MeridianModule";
@@ -35,12 +30,12 @@ var meridian;
             return [new MeridianProcessor()];
         };
         return MeridianModule;
-    }(Module));
+    })(Module);
     meridian.MeridianModule = MeridianModule;
-    var MeridianProcessor = /** @class */ (function (_super) {
+    var MeridianProcessor = (function (_super) {
         __extends(MeridianProcessor, _super);
         function MeridianProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MeridianProcessor.prototype.getName = function () {
             return "MeridianProcessor";
@@ -152,9 +147,6 @@ var meridian;
                 var $tupoOrxiulian;
                 if (netxTb.costMoney.length) {
                     $tupoOrxiulian = true;
-                    // if(this._needItem.indexOf(netxTb.costMoney[0][0]) == -1){
-                    //     this._needItem.push(netxTb.costMoney[0][0]);
-                    // }
                 }
                 else {
                     $tupoOrxiulian = false;
@@ -181,7 +173,7 @@ var meridian;
             ];
         };
         return MeridianProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     meridian.MeridianProcessor = MeridianProcessor;
 })(meridian || (meridian = {}));
 //# sourceMappingURL=MeridianProcessor.js.map

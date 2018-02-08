@@ -1,16 +1,11 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var leftui;
 (function (leftui) {
-    var FamilyLeftUiVo = /** @class */ (function () {
+    var FamilyLeftUiVo = (function () {
         function FamilyLeftUiVo($perent, $mid, $top, $data) {
             this.id = 0;
             this._y = 0;
@@ -96,24 +91,24 @@ var leftui;
             this.perent.setUiListVisibleByItem(this.uiList, false);
         };
         return FamilyLeftUiVo;
-    }());
+    })();
     leftui.FamilyLeftUiVo = FamilyLeftUiVo;
-    var BoosChallenge = /** @class */ (function (_super) {
+    var BoosChallenge = (function (_super) {
         __extends(BoosChallenge, _super);
         function BoosChallenge() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         BoosChallenge.prototype.makeUi = function () {
             this.rect = new Rectangle(0, 0, 256, 90);
             this.uiList.push(this._midRender.getComponent("c_bg"));
         };
         return BoosChallenge;
-    }(FamilyLeftUiVo));
+    })(FamilyLeftUiVo);
     leftui.BoosChallenge = BoosChallenge;
-    var FamilyPk = /** @class */ (function (_super) {
+    var FamilyPk = (function (_super) {
         __extends(FamilyPk, _super);
         function FamilyPk() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         FamilyPk.prototype.makeUi = function () {
             this.rect = new Rectangle(0, 0, 256, 30);
@@ -126,7 +121,7 @@ var leftui;
             LabelTextFont.writeSingleLabel(this._topRender.uiAtlas, this.d_attack_name.skinName, ColorType.Coffeeff9200 + "荥蒙受或", 14 * 1.5, TextAlign.LEFT, ColorType.Coffeeff9200, "#27262e", 4);
         };
         return FamilyPk;
-    }(FamilyLeftUiVo));
+    })(FamilyLeftUiVo);
     leftui.FamilyPk = FamilyPk;
 })(leftui || (leftui = {}));
 //# sourceMappingURL=LeftFamilyUiVo.js.map

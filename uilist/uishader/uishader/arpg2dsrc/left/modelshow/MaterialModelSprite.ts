@@ -51,7 +51,7 @@ module left {
             super();
             //model/cartoontree05.txt
             //model/cartoontree05.txt
-            GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/pan3dme.txt", (groupRes: GroupRes) => {
+            GroupDataManager.getInstance().getGroupData(Scene_data.fileRoot + "model/pan3dme1.txt", (groupRes: GroupRes) => {
                 this.loadPartRes(groupRes)
             })
             this.setLightMapUrl("ui/load/blood.png")

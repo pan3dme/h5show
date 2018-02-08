@@ -1,4 +1,4 @@
-var MathClass = /** @class */ (function () {
+var MathClass = (function () {
     function MathClass() {
     }
     MathClass.getCamView = function (_Cam, _focus_3d) {
@@ -167,5 +167,5 @@ var MathClass = /** @class */ (function () {
         return a;
     };
     return MathClass;
-}());
+})();
 //# sourceMappingURL=MathClass.js.map

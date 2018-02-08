@@ -1,6 +1,6 @@
 var kuafu;
 (function (kuafu) {
-    var KuaFu3v3Model = /** @class */ (function () {
+    var KuaFu3v3Model = (function () {
         function KuaFu3v3Model() {
             //MERGE_TYPE_GAME_TO_PK
             this.tb_kuafu3v3_base = tb.TB_kuafu3v3_base.getItem()[0];
@@ -81,7 +81,7 @@ var kuafu;
         KuaFu3v3Model.nextCatchTime = 0;
         KuaFu3v3Model.lastTm = 0;
         return KuaFu3v3Model;
-    }());
+    })();
     kuafu.KuaFu3v3Model = KuaFu3v3Model;
 })(kuafu || (kuafu = {}));
 //# sourceMappingURL=KuaFu3v3Model.js.map

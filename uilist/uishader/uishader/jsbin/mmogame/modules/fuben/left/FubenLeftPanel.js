@@ -1,40 +1,35 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var fb;
 (function (fb) {
-    var FubenLeftPanel = /** @class */ (function (_super) {
+    var FubenLeftPanel = (function (_super) {
         __extends(FubenLeftPanel, _super);
         function FubenLeftPanel() {
-            var _this = _super.call(this) || this;
-            _this.uiAtlasComplet = false;
-            _this.hideOrShow = true;
-            _this.refresnum = 0;
-            _this.hasMoreReward = false;
-            _this.useFrameItem = new Array();
-            _this.lastTxtNum = 0;
-            _this.interfaceUI = true;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.left = 0;
-            _this.middle = 0;
-            _this._bottomRender = new UIRenderComponent();
-            _this.addRender(_this._bottomRender);
-            _this._midRender = new UIRenderComponent();
-            _this.addRender(_this._midRender);
-            _this._topRender = new UIRenderComponent();
-            _this.addRender(_this._topRender);
-            _this._midRender.uiAtlas = new UIAtlas;
-            _this._midRender.uiAtlas.setInfo("ui/uidata/fuben/left/fubenleft.xml", "ui/uidata/fuben/left/fubenleft.png", function () { _this.loadConfigCom(); });
-            _this.upDataFun = function (t) { _this.update(t); };
-            return _this;
+            var _this = this;
+            _super.call(this);
+            this.uiAtlasComplet = false;
+            this.hideOrShow = true;
+            this.refresnum = 0;
+            this.hasMoreReward = false;
+            this.useFrameItem = new Array();
+            this.lastTxtNum = 0;
+            this.interfaceUI = true;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.left = 0;
+            this.middle = 0;
+            this._bottomRender = new UIRenderComponent();
+            this.addRender(this._bottomRender);
+            this._midRender = new UIRenderComponent();
+            this.addRender(this._midRender);
+            this._topRender = new UIRenderComponent();
+            this.addRender(this._topRender);
+            this._midRender.uiAtlas = new UIAtlas;
+            this._midRender.uiAtlas.setInfo("ui/uidata/fuben/left/fubenleft.xml", "ui/uidata/fuben/left/fubenleft.png", function () { _this.loadConfigCom(); });
+            this.upDataFun = function (t) { _this.update(t); };
         }
         FubenLeftPanel.prototype.loadConfigCom = function () {
             this._bottomRender.uiAtlas = this._midRender.uiAtlas;
@@ -83,11 +78,11 @@ var fb;
                         this.rewardData = fb.FuBenModel.getInstance().getResFubenRewad();
                         this.enterVipFuben(this.rewardData);
                         break;
-                    case SharedDef.INSTANCE_SUB_TYPE_KUAFU_GROUP://组队副本
+                    case SharedDef.INSTANCE_SUB_TYPE_KUAFU_GROUP:
                         this.rewardData = fb.FuBenModel.getInstance().getTbGroupReward();
                         this.enterVipFuben(this.rewardData);
                         break;
-                    case SharedDef.INSTANCE_SUB_TYPE_FACTION_BOSSDEFENSE://家族BOSS
+                    case SharedDef.INSTANCE_SUB_TYPE_FACTION_BOSSDEFENSE:
                         this.rewardData = fb.FuBenModel.getInstance().getFactionLeadRewad();
                         this.enterVipFuben(this.rewardData);
                         break;
@@ -244,7 +239,7 @@ var fb;
             UIManager.getInstance().removeUIContainer(this);
         };
         return FubenLeftPanel;
-    }(UIConatiner));
+    })(UIConatiner);
     fb.FubenLeftPanel = FubenLeftPanel;
 })(fb || (fb = {}));
 //# sourceMappingURL=FubenLeftPanel.js.map

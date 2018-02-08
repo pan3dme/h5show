@@ -1,31 +1,25 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var SceneLoadUI = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var SceneLoadUI = (function (_super) {
     __extends(SceneLoadUI, _super);
     function SceneLoadUI() {
-        var _this = _super.call(this) || this;
-        _this.skipNum = 0;
-        _this.width = 400;
-        _this.height = 80;
-        _this.center = 0;
-        _this.bottom = 50;
-        _this._baImg = new UIBackImg();
+        _super.call(this);
+        this.skipNum = 0;
+        this.width = 400;
+        this.height = 80;
+        this.center = 0;
+        this.bottom = 50;
+        this._baImg = new UIBackImg();
         //   this._baImg.setImgInfo("ui/load/lod.jpg", 1024, 512);
-        _this.addRender(_this._baImg);
-        _this._baseRender = new UIRenderComponent;
-        _this.addRender(_this._baseRender);
-        _this._midRender = new UIRenderComponent;
-        _this.addRender(_this._midRender);
-        _this.loadConfigCom();
-        return _this;
+        this.addRender(this._baImg);
+        this._baseRender = new UIRenderComponent;
+        this.addRender(this._baseRender);
+        this._midRender = new UIRenderComponent;
+        this.addRender(this._midRender);
+        this.loadConfigCom();
     }
     SceneLoadUI.prototype.loadBackImg = function ($url) {
         this._baImg.setImgInfo($url, 1024, 512);
@@ -129,5 +123,5 @@ var SceneLoadUI = /** @class */ (function (_super) {
         this._baImg.resize();
     };
     return SceneLoadUI;
-}(UIConatiner));
+})(UIConatiner);
 //# sourceMappingURL=SceneLoadUI.js.map

@@ -1,6 +1,6 @@
 var prop;
 (function (prop) {
-    var MetaDataView = /** @class */ (function () {
+    var MetaDataView = (function () {
         function MetaDataView() {
             this._top = 350;
             this.creat(this.getView());
@@ -107,7 +107,7 @@ var prop;
             }
         };
         return MetaDataView;
-    }());
+    })();
     prop.MetaDataView = MetaDataView;
 })(prop || (prop = {}));
 //# sourceMappingURL=MetaDataView.js.map

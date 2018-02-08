@@ -1,28 +1,22 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var faction;
 (function (faction) {
-    var FactionLeaderPanel = /** @class */ (function (_super) {
+    var FactionLeaderPanel = (function (_super) {
         __extends(FactionLeaderPanel, _super);
         function FactionLeaderPanel() {
-            var _this = _super.call(this) || this;
-            _this._bgInit = false;
-            _this.rewardIconAry = new Array;
-            _this.hallLev = 0;
-            _this.leadNum = -1;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            return _this;
+            _super.call(this);
+            this._bgInit = false;
+            this.rewardIconAry = new Array;
+            this.hallLev = 0;
+            this.leadNum = -1;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
         }
         FactionLeaderPanel.prototype.dispose = function () {
             this._bgRender.dispose();
@@ -116,9 +110,6 @@ var faction;
                 var icon = this._baseRender.getComponent("t_icon" + i);
                 this.addChild(icon);
                 this.rewardIconAry.push(icon);
-                // var iconLab: UICompenent = this._baseRender.getComponent("t_icon_lab" + i);
-                // this.addChild(iconLab);
-                // this.rewardIconLabAry.push(iconLab);
             }
         };
         FactionLeaderPanel.prototype.drawBase = function () {
@@ -166,9 +157,9 @@ var faction;
             }
         };
         return FactionLeaderPanel;
-    }(UIConatiner));
+    })(UIConatiner);
     faction.FactionLeaderPanel = FactionLeaderPanel;
-    var LeaderIcon = /** @class */ (function () {
+    var LeaderIcon = (function () {
         function LeaderIcon() {
             this.posAry = [[26, -10], [0, 69], [0, 69], [4, 80], [9, 83], [9, 98], [28, -54]];
             this.baseX = 0;
@@ -321,7 +312,7 @@ var faction;
             }
         };
         return LeaderIcon;
-    }());
+    })();
     faction.LeaderIcon = LeaderIcon;
 })(faction || (faction = {}));
 //# sourceMappingURL=FactionLeaderPanel.js.map

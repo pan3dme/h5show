@@ -4,7 +4,7 @@
 * 事件ID与事件回调处于不同的数组，通过相同的数组下标关联
 * @author linbc
 */
-var NetEventDispatcher = /** @class */ (function () {
+var NetEventDispatcher = (function () {
     function NetEventDispatcher(type) {
         if (type === void 0) { type = 0; }
         this._callback_index = 0;
@@ -238,5 +238,5 @@ var NetEventDispatcher = /** @class */ (function () {
     //事件分发类型使用的是
     NetEventDispatcher.KEY_TYPE_INT_MASK = 2;
     return NetEventDispatcher;
-}());
+})();
 //# sourceMappingURL=NetEventDispatcher.js.map

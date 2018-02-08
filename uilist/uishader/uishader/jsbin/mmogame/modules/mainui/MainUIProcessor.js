@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var mainUi;
 (function (mainUi) {
-    var MainUiModule = /** @class */ (function (_super) {
+    var MainUiModule = (function (_super) {
         __extends(MainUiModule, _super);
         function MainUiModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MainUiModule.prototype.getModuleName = function () {
             return "MainUiModule";
@@ -22,12 +17,12 @@ var mainUi;
             return [new MainUiProcessor()];
         };
         return MainUiModule;
-    }(Module));
+    })(Module);
     mainUi.MainUiModule = MainUiModule;
-    var MainUiEvent = /** @class */ (function (_super) {
+    var MainUiEvent = (function (_super) {
         __extends(MainUiEvent, _super);
         function MainUiEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MainUiEvent.SHOW_MAINUI_EVENT = "SHOW_MAINUI_EVENT";
         MainUiEvent.SHOW_PANDA_EVENT = "SHOW_PANDA_EVENT";
@@ -37,22 +32,22 @@ var mainUi;
         MainUiEvent.REFRESH_MAINUI_PANEL = "REFRESH_MAINUI_PANEL";
         MainUiEvent.PLAYER_SKILL_CD_REFRESH = "PLAYER_SKILL_CD_REFRESH"; //重新更新自己的CD
         return MainUiEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     mainUi.MainUiEvent = MainUiEvent;
-    var MainOperatEvent = /** @class */ (function (_super) {
+    var MainOperatEvent = (function (_super) {
         __extends(MainOperatEvent, _super);
         function MainOperatEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MainOperatEvent.SHOW_MAIN_OPERAT_EVENT = "show_main_operat_event";
         MainOperatEvent.HIDE_MAIN_OPERAT_EVENT = "hide_main_operat_event";
         return MainOperatEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     mainUi.MainOperatEvent = MainOperatEvent;
-    var MainUiProcessor = /** @class */ (function (_super) {
+    var MainUiProcessor = (function (_super) {
         __extends(MainUiProcessor, _super);
         function MainUiProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         MainUiProcessor.prototype.getName = function () {
             return "MainUiProcessor";
@@ -64,7 +59,6 @@ var mainUi;
                 if ($mainUIEvent.type == MainUiEvent.SHOW_MAINUI_EVENT) {
                     SceneManager.getInstance().render = true;
                     if ((GuidData.map.isAdventureBaseScene() || GuidData.map.isAdventureBossScene()) && mainUi.MainUiModel.skillTabIndex == 0) {
-                        //  mainUi.MainUiModel.skillTabIndex =1
                     }
                     ModuleEventManager.dispatchEvent(new rightui.RightUiEvent(rightui.RightUiEvent.SHOW_RIGHT_UI_PANEL));
                     ModuleEventManager.dispatchEvent(new leftui.LeftUiEvent(leftui.LeftUiEvent.SHOW_LEFT_UI_PANEL));
@@ -219,7 +213,7 @@ var mainUi;
             return obj;
         };
         return MainUiProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     mainUi.MainUiProcessor = MainUiProcessor;
 })(mainUi || (mainUi = {}));
 //# sourceMappingURL=MainUIProcessor.js.map

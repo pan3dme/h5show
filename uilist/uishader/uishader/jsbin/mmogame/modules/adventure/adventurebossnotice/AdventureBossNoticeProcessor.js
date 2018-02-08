@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var adventurebossnotice;
 (function (adventurebossnotice) {
-    var AdventureBossNoticeModule = /** @class */ (function (_super) {
+    var AdventureBossNoticeModule = (function (_super) {
         __extends(AdventureBossNoticeModule, _super);
         function AdventureBossNoticeModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         AdventureBossNoticeModule.prototype.getModuleName = function () {
             return "AdventureBossNoticeModule";
@@ -22,22 +17,22 @@ var adventurebossnotice;
             return [new AdventureBossNoticeProcessor()];
         };
         return AdventureBossNoticeModule;
-    }(Module));
+    })(Module);
     adventurebossnotice.AdventureBossNoticeModule = AdventureBossNoticeModule;
-    var AdventureBossNoticeEvent = /** @class */ (function (_super) {
+    var AdventureBossNoticeEvent = (function (_super) {
         __extends(AdventureBossNoticeEvent, _super);
         function AdventureBossNoticeEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         AdventureBossNoticeEvent.SHOW_Adventure_Notice_UI_PANEL = "SHOW_Adventure_Notice_UI_PANEL";
         AdventureBossNoticeEvent.HIDE_Adventure_Notice_UI_PANEL = "HIDE_Adventure_Notice_UI_PANEL";
         return AdventureBossNoticeEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     adventurebossnotice.AdventureBossNoticeEvent = AdventureBossNoticeEvent;
-    var AdventureBossNoticeProcessor = /** @class */ (function (_super) {
+    var AdventureBossNoticeProcessor = (function (_super) {
         __extends(AdventureBossNoticeProcessor, _super);
         function AdventureBossNoticeProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         AdventureBossNoticeProcessor.prototype.getName = function () {
             return "AdventureBossNoticeProcessor";
@@ -84,7 +79,7 @@ var adventurebossnotice;
             ];
         };
         return AdventureBossNoticeProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     adventurebossnotice.AdventureBossNoticeProcessor = AdventureBossNoticeProcessor;
 })(adventurebossnotice || (adventurebossnotice = {}));
 //# sourceMappingURL=AdventureBossNoticeProcessor.js.map

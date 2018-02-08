@@ -82,6 +82,7 @@
 
         if (useNormal) {
             $str +=
+            "varying vec3 v7;\n"+
             "attribute vec3 v3Tangent;\n" +
             "attribute vec3 v3Bitangent;\n"
         }
@@ -134,6 +135,9 @@
                 $str +=
                 "v4 = mat3(rotationMatrix3D * v3Tangent,rotationMatrix3D * v3Bitangent, rotationMatrix3D * v3Normal);\n"
             }
+        }
+        if (useNormal) {
+            $str += "v7 = rotationMatrix3D * v3Normal;\n";
         }
 
         if (directLight) {

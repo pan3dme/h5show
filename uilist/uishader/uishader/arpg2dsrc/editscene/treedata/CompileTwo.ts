@@ -363,7 +363,9 @@
             } else if (this.fogMode != 0) {
                 varyStr += "varying vec3 v1;\n";
             }
-
+            if (this.useNormal) {
+                varyStr += "varying vec3 v7;\n";
+            }
             if (hasParticleColor) {
                 varyStr += "varying vec2 v1;\n";
             }

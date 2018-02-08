@@ -51,8 +51,9 @@
 
             var resultStr: string = this._compileGlslServer.compile(this.priorityList, $materialTree);
 
-         
-            left.ModelShowModel.getInstance().outShaderStr($materialTree);
+            console.log(resultStr);
+
+             left.ModelShowModel.getInstance().outShaderStr($materialTree);
 
         }
         public setPriority($node: NodeTree): void {

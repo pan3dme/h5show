@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var prop;
 (function (prop) {
-    var Vec3ColorCtrlUI = /** @class */ (function (_super) {
+    var Vec3ColorCtrlUI = (function (_super) {
         __extends(Vec3ColorCtrlUI, _super);
         function Vec3ColorCtrlUI() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         Vec3ColorCtrlUI.prototype.initView = function () {
             this.textLabelUI = new prop.TextLabelUI();
@@ -123,7 +118,7 @@ var prop;
             configurable: true
         });
         return Vec3ColorCtrlUI;
-    }(prop.BaseReflComponent));
+    })(prop.BaseReflComponent);
     prop.Vec3ColorCtrlUI = Vec3ColorCtrlUI;
 })(prop || (prop = {}));
 //# sourceMappingURL=Vec3ColorCtrlUI.js.map

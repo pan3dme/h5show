@@ -1,4 +1,4 @@
-var UIData = /** @class */ (function () {
+var UIData = (function () {
     function UIData() {
     }
     UIData.setDesignWH = function ($width, $height) {
@@ -92,8 +92,8 @@ var UIData = /** @class */ (function () {
     UIData._dic = new Dictionary([]);
     UIData._imgDic = new Dictionary([]);
     return UIData;
-}());
-var UiDraw = /** @class */ (function () {
+})();
+var UiDraw = (function () {
     function UiDraw() {
     }
     UiDraw.drawUseImg = function ($ui, $useImgAtlas, $skinName) {
@@ -369,8 +369,8 @@ var UiDraw = /** @class */ (function () {
         imgA.src = $url1;
     };
     return UiDraw;
-}());
-var UIuitl = /** @class */ (function () {
+})();
+var UIuitl = (function () {
     function UIuitl() {
     }
     UIuitl.getInstance = function () {
@@ -464,5 +464,5 @@ var UIuitl = /** @class */ (function () {
         }
     };
     return UIuitl;
-}());
+})();
 //# sourceMappingURL=UIData.js.map

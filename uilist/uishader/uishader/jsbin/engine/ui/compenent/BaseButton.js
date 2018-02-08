@@ -1,21 +1,15 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var BaseButton = /** @class */ (function (_super) {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var BaseButton = (function (_super) {
     __extends(BaseButton, _super);
     function BaseButton() {
-        var _this = _super.call(this) || this;
-        _this.trDown = new Rectangle;
-        _this._state = 0;
-        _this._currentState = 0;
-        return _this;
+        _super.call(this);
+        this.trDown = new Rectangle;
+        this._state = 0;
+        this._currentState = 0;
     }
     BaseButton.prototype.update = function () {
         if (this._currentState != this._state) {
@@ -40,5 +34,5 @@ var BaseButton = /** @class */ (function (_super) {
         this.uiRender.makeRenderDataVc(this.vcId);
     };
     return BaseButton;
-}(UICompenent));
+})(UICompenent);
 //# sourceMappingURL=BaseButton.js.map

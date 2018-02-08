@@ -1,33 +1,27 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var treasure;
 (function (treasure) {
-    var TreasureRightPanel = /** @class */ (function (_super) {
+    var TreasureRightPanel = (function (_super) {
         __extends(TreasureRightPanel, _super);
         function TreasureRightPanel() {
-            var _this = _super.call(this) || this;
-            _this._canclick = true;
-            _this.width = UIData.designWidth;
-            _this.height = UIData.designHeight;
-            _this.center = 0;
-            _this.middle = 0;
-            _this._publicRender = new UIRenderComponent;
-            _this.addRender(_this._publicRender);
-            _this._baseRender = new UIRenderComponent;
-            _this.addRender(_this._baseRender);
-            _this._topRender = new UIRenderComponent;
-            _this.addRender(_this._topRender);
-            _this._redPointRender = new RedPointRender;
-            _this.addRender(_this._redPointRender);
-            return _this;
+            _super.call(this);
+            this._canclick = true;
+            this.width = UIData.designWidth;
+            this.height = UIData.designHeight;
+            this.center = 0;
+            this.middle = 0;
+            this._publicRender = new UIRenderComponent;
+            this.addRender(this._publicRender);
+            this._baseRender = new UIRenderComponent;
+            this.addRender(this._baseRender);
+            this._topRender = new UIRenderComponent;
+            this.addRender(this._topRender);
+            this._redPointRender = new RedPointRender;
+            this.addRender(this._redPointRender);
         }
         TreasureRightPanel.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -335,7 +329,6 @@ var treasure;
                     }
                 }
                 else {
-                    // msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "您操作太快了", 99);
                 }
             }
             else {
@@ -343,18 +336,17 @@ var treasure;
             }
         };
         return TreasureRightPanel;
-    }(UIVirtualContainer));
+    })(UIVirtualContainer);
     treasure.TreasureRightPanel = TreasureRightPanel;
     /**
      * list
      */
-    var TreasureList = /** @class */ (function (_super) {
+    var TreasureList = (function (_super) {
         __extends(TreasureList, _super);
         function TreasureList() {
-            var _this = _super.call(this) || this;
-            _this.left = 46;
-            _this.top = 173;
-            return _this;
+            _super.call(this);
+            this.left = 46;
+            this.top = 173;
         }
         TreasureList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -426,12 +418,12 @@ var treasure;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return TreasureList;
-    }(EffectSlist));
+    })(EffectSlist);
     treasure.TreasureList = TreasureList;
-    var TreasureListRender = /** @class */ (function (_super) {
+    var TreasureListRender = (function (_super) {
         __extends(TreasureListRender, _super);
         function TreasureListRender() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -510,7 +502,6 @@ var treasure;
                     LabelTextFont.writeSingleLabel(this.uiAtlas, this.Sinfo.skinName, "收集" + $vo.tabvo.avtivedata[0][1] + "个碎片激活", 14, TextAlign.LEFT, ColorType.Brown6a4936);
                     UiDraw.uiAtlasDrawImg(this.uiAtlas, this.UnlockBg.skinName, UIData.publicUi, PuiData.MASK);
                 }
-                // UiDraw.uiAtlasDrawImg(this.uiAtlas, this.I2tembg.skinName, UIData.publicUi, PuiData.ITEMBG);
             }
         };
         TreasureListRender.prototype.render = function ($data) {
@@ -543,7 +534,7 @@ var treasure;
             this.Redpoint.preHide();
         };
         return TreasureListRender;
-    }(SListItem));
+    })(SListItem);
     treasure.TreasureListRender = TreasureListRender;
 })(treasure || (treasure = {}));
 //# sourceMappingURL=TreasureRightPanel.js.map

@@ -1,4 +1,4 @@
-var MainCharControlModel = /** @class */ (function () {
+var MainCharControlModel = (function () {
     function MainCharControlModel() {
         this.singingToPos = new Vector2D;
         this.lastOutStr = "";
@@ -86,7 +86,6 @@ var MainCharControlModel = /** @class */ (function () {
         var mainChar = GameInstance.mainChar;
         if (mainChar.unit) {
             mainChar.unit.sendPath($ary);
-            // console.log("发送移动线路--------------",TimeUtil.getTimer())
         }
     };
     MainCharControlModel.prototype.setWalkPathFun = function ($item, $bfun) {
@@ -104,10 +103,8 @@ var MainCharControlModel = /** @class */ (function () {
         if (isNaN($cdTime) || ($cdTime - TimeUtil.getTimer()) < 0) {
             tb.SkillData.setCdMeshData(SharedDef.PLAYER_INT_FIELD_RESTORE_POTION_CD, 12 * 1000);
             NetManager.getInstance().protocolos.use_restore_potion();
-            //  console.log("发送吃药")
         }
         else {
-            //  console.log("clikEatCd中")
         }
     };
     MainCharControlModel.prototype.downMount = function () {
@@ -213,7 +210,6 @@ var MainCharControlModel = /** @class */ (function () {
             $mainChar.pz = $nextPos.z;
         }
         else {
-            // console.log("不在可行走格子里", $nextPos)
         }
     };
     MainCharControlModel.prototype.getNearFiledRoad = function () {
@@ -262,8 +258,6 @@ var MainCharControlModel = /** @class */ (function () {
             }
         }
         if ($needOutput) {
-            //    console.log($outStr)
-            //    console.log("-----------------------------", TimeUtil.getTimer());
         }
         //var rrr: number = -Math.atan2(this._speedDirect.z, this._speedDirect.x) * 180 / Math.PI + 90;
         //console.log(Math.floor((rrr % 360 + 360) % 360));
@@ -283,7 +277,6 @@ var MainCharControlModel = /** @class */ (function () {
             }
             else {
                 if (AstarUtil.isGridCanWalk(leftPos) && AstarUtil.isGridCanWalk(rightPos)) {
-                    //console.log("两边都可选")
                 }
                 else {
                     if (AstarUtil.isGridCanWalk(leftPos)) {
@@ -322,5 +315,5 @@ var MainCharControlModel = /** @class */ (function () {
         configurable: true
     });
     return MainCharControlModel;
-}());
+})();
 //# sourceMappingURL=MainCharControlModel.js.map

@@ -1,14 +1,9 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Disp2DBaseText = /** @class */ (function () {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Disp2DBaseText = (function () {
     function Disp2DBaseText() {
         this.dtime = -1;
         this.time = 0;
@@ -53,18 +48,17 @@ var Disp2DBaseText = /** @class */ (function () {
         return false;
     };
     return Disp2DBaseText;
-}());
+})();
 //用于显示同屏2D容器，
-var Dis2DUIContianerPanel = /** @class */ (function (_super) {
+var Dis2DUIContianerPanel = (function (_super) {
     __extends(Dis2DUIContianerPanel, _super);
     function Dis2DUIContianerPanel($classVo, $rect, $num) {
-        var _this = _super.call(this) || this;
-        _this.width = UIData.designWidth;
-        _this.height = UIData.designHeight;
-        _this.creatBaseRender();
-        _this.addRender(_this._baseRender);
-        _this.initData($classVo, $rect, $num);
-        return _this;
+        _super.call(this);
+        this.width = UIData.designWidth;
+        this.height = UIData.designHeight;
+        this.creatBaseRender();
+        this.addRender(this._baseRender);
+        this.initData($classVo, $rect, $num);
     }
     Dis2DUIContianerPanel.prototype.creatBaseRender = function () {
         this._baseRender = new UIRenderComponent;
@@ -165,5 +159,5 @@ var Dis2DUIContianerPanel = /** @class */ (function (_super) {
         return $num;
     };
     return Dis2DUIContianerPanel;
-}(Dis2DUIContianerBase));
+})(Dis2DUIContianerBase);
 //# sourceMappingURL=Dis2DUIContianerPanel.js.map

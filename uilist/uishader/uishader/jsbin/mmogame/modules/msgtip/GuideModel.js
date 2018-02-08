@@ -1,6 +1,6 @@
 var msgtip;
 (function (msgtip) {
-    var GuideModel = /** @class */ (function () {
+    var GuideModel = (function () {
         function GuideModel() {
             var _this = this;
             this.closeGuild = false;
@@ -103,10 +103,9 @@ var msgtip;
                             case "sys206": //
                             case "sys207": //
                             case "sys302": //
-                            case "sys501"://
+                            case "sys501":
                                 if (mainUi.MainUiModel.skillTabIndex == 1) {
                                     if (mainUi.MainUiModel.systemTab == 2) {
-                                        //  this.e_anBut()
                                     }
                                     else {
                                         var $sysId = Number($tb.skinName.substring(3, $tb.skinName.length));
@@ -117,7 +116,6 @@ var msgtip;
                                     }
                                 }
                                 else {
-                                    //  this.c_qiehuanBut()
                                 }
                                 break;
                             default:
@@ -128,7 +126,6 @@ var msgtip;
                                     $canShow = true;
                                 }
                                 else {
-                                    //  this.popTempView($tb)
                                 }
                                 break;
                         }
@@ -155,19 +152,18 @@ var msgtip;
         GuideModel.prototype.getSysIsOpenBySkinName = function ($name) {
             var $sysId = 0;
             switch ($name) {
-                case "f_qichen"://可骑乘
+                case "f_qichen":
                     $sysId = 210;
                     break;
-                case "a_boss_but"://任务
+                case "a_boss_but":
                     if (!GuidData.map.isAdventureBaseScene()) {
                         return false;
-                        //break
                     }
                 case "a_list_cell": //任务
                 case "a_skill_2": //任务
                 case "a_family": //任务
                 case "a_bag": //任务
-                case "a_map_icon"://任务
+                case "a_map_icon":
                     return true;
                 default:
                     if ($name.search("panda") != -1) {
@@ -354,7 +350,7 @@ var msgtip;
             }
         };
         return GuideModel;
-    }());
+    })();
     msgtip.GuideModel = GuideModel;
 })(msgtip || (msgtip = {}));
 //# sourceMappingURL=GuideModel.js.map

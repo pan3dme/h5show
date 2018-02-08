@@ -1,19 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var adventurebang;
 (function (adventurebang) {
-    var AdventureBangModule = /** @class */ (function (_super) {
+    var AdventureBangModule = (function (_super) {
         __extends(AdventureBangModule, _super);
         function AdventureBangModule() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         AdventureBangModule.prototype.getModuleName = function () {
             return "AdventureBangModule";
@@ -22,22 +17,22 @@ var adventurebang;
             return [new AdventureBangProcessor()];
         };
         return AdventureBangModule;
-    }(Module));
+    })(Module);
     adventurebang.AdventureBangModule = AdventureBangModule;
-    var AdventureBangEvent = /** @class */ (function (_super) {
+    var AdventureBangEvent = (function (_super) {
         __extends(AdventureBangEvent, _super);
         function AdventureBangEvent() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         AdventureBangEvent.SHOW_ADVENTURE_BANG_PANEL = "SHOW_ADVENTURE_BANG_PANEL";
         AdventureBangEvent.HIDE_ADVENTURE_BANG_PANEL = "HIDE_ADVENTURE_BANG_PANEL";
         return AdventureBangEvent;
-    }(BaseEvent));
+    })(BaseEvent);
     adventurebang.AdventureBangEvent = AdventureBangEvent;
-    var AdventureBangProcessor = /** @class */ (function (_super) {
+    var AdventureBangProcessor = (function (_super) {
         __extends(AdventureBangProcessor, _super);
         function AdventureBangProcessor() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            _super.apply(this, arguments);
         }
         AdventureBangProcessor.prototype.getName = function () {
             return "AdventureBangProcessor";
@@ -77,7 +72,7 @@ var adventurebang;
             ];
         };
         return AdventureBangProcessor;
-    }(BaseProcessor));
+    })(BaseProcessor);
     adventurebang.AdventureBangProcessor = AdventureBangProcessor;
 })(adventurebang || (adventurebang = {}));
 //# sourceMappingURL=AdventureBangProcessor.js.map

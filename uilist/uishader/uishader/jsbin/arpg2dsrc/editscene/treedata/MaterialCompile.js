@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var MaterialCompile = /** @class */ (function () {
+    var MaterialCompile = (function () {
         function MaterialCompile() {
             this.maxPriority = 0;
         }
@@ -39,6 +39,7 @@ var materialui;
                 this.priorityList[this.nodeList[i].priority].push(this.nodeList[i]);
             }
             var resultStr = this._compileGlslServer.compile(this.priorityList, $materialTree);
+            console.log(resultStr);
             left.ModelShowModel.getInstance().outShaderStr($materialTree);
         };
         MaterialCompile.prototype.setPriority = function ($node) {
@@ -82,7 +83,7 @@ var materialui;
             }
         };
         return MaterialCompile;
-    }());
+    })();
     materialui.MaterialCompile = MaterialCompile;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialCompile.js.map
