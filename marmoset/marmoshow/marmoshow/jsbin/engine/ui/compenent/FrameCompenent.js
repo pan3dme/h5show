@@ -1,18 +1,24 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var FrameCompenent = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var FrameCompenent = /** @class */ (function (_super) {
     __extends(FrameCompenent, _super);
     function FrameCompenent() {
-        _super.call(this);
-        this.isTrue = false;
-        this.current = 0;
-        this.totalcurrent = 0;
-        this.speed = 6;
-        this.stopStatic = 0;
-        this.speedNum = 0;
+        var _this = _super.call(this) || this;
+        _this.isTrue = false;
+        _this.current = 0;
+        _this.totalcurrent = 0;
+        _this.speed = 6;
+        _this.stopStatic = 0;
+        _this.speedNum = 0;
+        return _this;
     }
     FrameCompenent.prototype.setFrameData = function ($rect) {
         this._frameData = $rect;
@@ -113,5 +119,5 @@ var FrameCompenent = (function (_super) {
         this.applyRenderSize();
     };
     return FrameCompenent;
-})(UICompenent);
+}(UICompenent));
 //# sourceMappingURL=FrameCompenent.js.map

@@ -5,7 +5,7 @@
 //package cow.net.structs
 //{	
 //import sys.utils.Stream;	
-var Protocols = (function () {
+var Protocols = /** @class */ (function () {
     /**
      * �����������ݰ����Զ����ܣ�
      * @param stream
@@ -3203,6 +3203,6 @@ var Protocols = (function () {
     /*����ð�����а���Ϣ */
     Protocols.SMSG_RISK_GET_RANK_RESULT = 405; //risk_get_rank_result
     return Protocols;
-})();
+}());
 //} 
 //# sourceMappingURL=Protocols.js.map

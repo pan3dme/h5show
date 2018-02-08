@@ -1,7 +1,7 @@
 /***********************************************************************/
 /*************** 本代码由协议工具自动生成，请勿手动修改 ****************/
 /***********************************************************************/
-var both_null_action = (function () {
+var both_null_action = /** @class */ (function () {
     function both_null_action() {
         this.optcode = 0;
     }
@@ -18,8 +18,8 @@ var both_null_action = (function () {
     both_null_action.param_count = 0;
     both_null_action.optname = "onNull_action";
     return both_null_action;
-})();
-var both_ping_pong = (function () {
+}());
+var both_ping_pong = /** @class */ (function () {
     function both_ping_pong() {
         this.optcode = 0;
     }
@@ -36,8 +36,8 @@ var both_ping_pong = (function () {
     both_ping_pong.param_count = 0;
     both_ping_pong.optname = "onPing_pong";
     return both_ping_pong;
-})();
-var c2s_forced_into = (function () {
+}());
+var c2s_forced_into = /** @class */ (function () {
     function c2s_forced_into() {
         this.optcode = 0;
     }
@@ -54,8 +54,8 @@ var c2s_forced_into = (function () {
     c2s_forced_into.param_count = 0;
     c2s_forced_into.optname = "onForced_into";
     return c2s_forced_into;
-})();
-var c2s_get_session = (function () {
+}());
+var c2s_get_session = /** @class */ (function () {
     function c2s_get_session() {
         this.optcode = 0;
     }
@@ -78,8 +78,8 @@ var c2s_get_session = (function () {
     c2s_get_session.param_count = 3;
     c2s_get_session.optname = "onGet_session";
     return c2s_get_session;
-})();
-var both_route_trace = (function () {
+}());
+var both_route_trace = /** @class */ (function () {
     function both_route_trace() {
         this.optcode = 0;
     }
@@ -98,8 +98,8 @@ var both_route_trace = (function () {
     both_route_trace.param_count = 1;
     both_route_trace.optname = "onRoute_trace";
     return both_route_trace;
-})();
-var c2s_write_client_log = (function () {
+}());
+var c2s_write_client_log = /** @class */ (function () {
     function c2s_write_client_log() {
         this.optcode = 0;
     }
@@ -124,8 +124,8 @@ var c2s_write_client_log = (function () {
     c2s_write_client_log.param_count = 4;
     c2s_write_client_log.optname = "onWrite_client_log";
     return c2s_write_client_log;
-})();
-var s2c_operation_failed = (function () {
+}());
+var s2c_operation_failed = /** @class */ (function () {
     function s2c_operation_failed() {
         this.optcode = 0;
     }
@@ -148,8 +148,8 @@ var s2c_operation_failed = (function () {
     s2c_operation_failed.param_count = 3;
     s2c_operation_failed.optname = "onOperation_failed";
     return s2c_operation_failed;
-})();
-var both_sync_mstime = (function () {
+}());
+var both_sync_mstime = /** @class */ (function () {
     function both_sync_mstime() {
         this.optcode = 0;
     }
@@ -172,8 +172,8 @@ var both_sync_mstime = (function () {
     both_sync_mstime.param_count = 3;
     both_sync_mstime.optname = "onSync_mstime";
     return both_sync_mstime;
-})();
-var s2c_ud_object = (function () {
+}());
+var s2c_ud_object = /** @class */ (function () {
     function s2c_ud_object() {
         this.optcode = 0;
     }
@@ -190,8 +190,8 @@ var s2c_ud_object = (function () {
     s2c_ud_object.param_count = 0;
     s2c_ud_object.optname = "onUd_object";
     return s2c_ud_object;
-})();
-var c2s_ud_control = (function () {
+}());
+var c2s_ud_control = /** @class */ (function () {
     function c2s_ud_control() {
         this.optcode = 0;
     }
@@ -208,8 +208,8 @@ var c2s_ud_control = (function () {
     c2s_ud_control.param_count = 0;
     c2s_ud_control.optname = "onUd_control";
     return c2s_ud_control;
-})();
-var s2c_ud_control_result = (function () {
+}());
+var s2c_ud_control_result = /** @class */ (function () {
     function s2c_ud_control_result() {
         this.optcode = 0;
     }
@@ -226,8 +226,8 @@ var s2c_ud_control_result = (function () {
     s2c_ud_control_result.param_count = 0;
     s2c_ud_control_result.optname = "onUd_control_result";
     return s2c_ud_control_result;
-})();
-var s2c_grid_ud_object = (function () {
+}());
+var s2c_grid_ud_object = /** @class */ (function () {
     function s2c_grid_ud_object() {
         this.optcode = 0;
     }
@@ -244,8 +244,8 @@ var s2c_grid_ud_object = (function () {
     s2c_grid_ud_object.param_count = 0;
     s2c_grid_ud_object.optname = "onGrid_ud_object";
     return s2c_grid_ud_object;
-})();
-var s2c_grid_ud_object_2 = (function () {
+}());
+var s2c_grid_ud_object_2 = /** @class */ (function () {
     function s2c_grid_ud_object_2() {
         this.optcode = 0;
     }
@@ -262,8 +262,8 @@ var s2c_grid_ud_object_2 = (function () {
     s2c_grid_ud_object_2.param_count = 0;
     s2c_grid_ud_object_2.optname = "onGrid_ud_object_2";
     return s2c_grid_ud_object_2;
-})();
-var s2c_login_queue_index = (function () {
+}());
+var s2c_login_queue_index = /** @class */ (function () {
     function s2c_login_queue_index() {
         this.optcode = 0;
     }
@@ -282,8 +282,8 @@ var s2c_login_queue_index = (function () {
     s2c_login_queue_index.param_count = 1;
     s2c_login_queue_index.optname = "onLogin_queue_index";
     return s2c_login_queue_index;
-})();
-var s2c_kicking_type = (function () {
+}());
+var s2c_kicking_type = /** @class */ (function () {
     function s2c_kicking_type() {
         this.optcode = 0;
     }
@@ -302,8 +302,8 @@ var s2c_kicking_type = (function () {
     s2c_kicking_type.param_count = 1;
     s2c_kicking_type.optname = "onKicking_type";
     return s2c_kicking_type;
-})();
-var c2s_get_chars_list = (function () {
+}());
+var c2s_get_chars_list = /** @class */ (function () {
     function c2s_get_chars_list() {
         this.optcode = 0;
     }
@@ -320,8 +320,8 @@ var c2s_get_chars_list = (function () {
     c2s_get_chars_list.param_count = 0;
     c2s_get_chars_list.optname = "onGet_chars_list";
     return c2s_get_chars_list;
-})();
-var s2c_chars_list = (function () {
+}());
+var s2c_chars_list = /** @class */ (function () {
     function s2c_chars_list() {
         this.optcode = 0;
         /**
@@ -357,8 +357,8 @@ var s2c_chars_list = (function () {
     s2c_chars_list.param_count = 4;
     s2c_chars_list.optname = "onChars_list";
     return s2c_chars_list;
-})();
-var c2s_check_name = (function () {
+}());
+var c2s_check_name = /** @class */ (function () {
     function c2s_check_name() {
         this.optcode = 0;
     }
@@ -377,8 +377,8 @@ var c2s_check_name = (function () {
     c2s_check_name.param_count = 1;
     c2s_check_name.optname = "onCheck_name";
     return c2s_check_name;
-})();
-var s2c_check_name_result = (function () {
+}());
+var s2c_check_name_result = /** @class */ (function () {
     function s2c_check_name_result() {
         this.optcode = 0;
     }
@@ -397,8 +397,8 @@ var s2c_check_name_result = (function () {
     s2c_check_name_result.param_count = 1;
     s2c_check_name_result.optname = "onCheck_name_result";
     return s2c_check_name_result;
-})();
-var c2s_char_create = (function () {
+}());
+var c2s_char_create = /** @class */ (function () {
     function c2s_char_create() {
         this.optcode = 0;
     }
@@ -418,8 +418,8 @@ var c2s_char_create = (function () {
     c2s_char_create.param_count = 1;
     c2s_char_create.optname = "onChar_create";
     return c2s_char_create;
-})();
-var s2c_char_create_result = (function () {
+}());
+var s2c_char_create_result = /** @class */ (function () {
     function s2c_char_create_result() {
         this.optcode = 0;
     }
@@ -438,8 +438,8 @@ var s2c_char_create_result = (function () {
     s2c_char_create_result.param_count = 1;
     s2c_char_create_result.optname = "onChar_create_result";
     return s2c_char_create_result;
-})();
-var c2s_delete_char = (function () {
+}());
+var c2s_delete_char = /** @class */ (function () {
     function c2s_delete_char() {
         this.optcode = 0;
     }
@@ -458,8 +458,8 @@ var c2s_delete_char = (function () {
     c2s_delete_char.param_count = 1;
     c2s_delete_char.optname = "onDelete_char";
     return c2s_delete_char;
-})();
-var s2c_delete_char_result = (function () {
+}());
+var s2c_delete_char_result = /** @class */ (function () {
     function s2c_delete_char_result() {
         this.optcode = 0;
     }
@@ -478,8 +478,8 @@ var s2c_delete_char_result = (function () {
     s2c_delete_char_result.param_count = 1;
     s2c_delete_char_result.optname = "onDelete_char_result";
     return s2c_delete_char_result;
-})();
-var c2s_player_login = (function () {
+}());
+var c2s_player_login = /** @class */ (function () {
     function c2s_player_login() {
         this.optcode = 0;
     }
@@ -498,8 +498,8 @@ var c2s_player_login = (function () {
     c2s_player_login.param_count = 1;
     c2s_player_login.optname = "onPlayer_login";
     return c2s_player_login;
-})();
-var c2s_player_logout = (function () {
+}());
+var c2s_player_logout = /** @class */ (function () {
     function c2s_player_logout() {
         this.optcode = 0;
     }
@@ -516,8 +516,8 @@ var c2s_player_logout = (function () {
     c2s_player_logout.param_count = 0;
     c2s_player_logout.optname = "onPlayer_logout";
     return c2s_player_logout;
-})();
-var c2s_regularise_account = (function () {
+}());
+var c2s_regularise_account = /** @class */ (function () {
     function c2s_regularise_account() {
         this.optcode = 0;
     }
@@ -536,8 +536,8 @@ var c2s_regularise_account = (function () {
     c2s_regularise_account.param_count = 1;
     c2s_regularise_account.optname = "onRegularise_account";
     return c2s_regularise_account;
-})();
-var c2s_char_remotestore = (function () {
+}());
+var c2s_char_remotestore = /** @class */ (function () {
     function c2s_char_remotestore() {
         this.optcode = 0;
     }
@@ -558,8 +558,8 @@ var c2s_char_remotestore = (function () {
     c2s_char_remotestore.param_count = 2;
     c2s_char_remotestore.optname = "onChar_remotestore";
     return c2s_char_remotestore;
-})();
-var c2s_char_remotestore_str = (function () {
+}());
+var c2s_char_remotestore_str = /** @class */ (function () {
     function c2s_char_remotestore_str() {
         this.optcode = 0;
     }
@@ -580,8 +580,8 @@ var c2s_char_remotestore_str = (function () {
     c2s_char_remotestore_str.param_count = 2;
     c2s_char_remotestore_str.optname = "onChar_remotestore_str";
     return c2s_char_remotestore_str;
-})();
-var c2s_teleport = (function () {
+}());
+var c2s_teleport = /** @class */ (function () {
     function c2s_teleport() {
         this.optcode = 0;
     }
@@ -600,8 +600,8 @@ var c2s_teleport = (function () {
     c2s_teleport.param_count = 1;
     c2s_teleport.optname = "onTeleport";
     return c2s_teleport;
-})();
-var both_move_stop = (function () {
+}());
+var both_move_stop = /** @class */ (function () {
     function both_move_stop() {
         this.optcode = 0;
     }
@@ -624,8 +624,8 @@ var both_move_stop = (function () {
     both_move_stop.param_count = 3;
     both_move_stop.optname = "onMove_stop";
     return both_move_stop;
-})();
-var both_unit_move = (function () {
+}());
+var both_unit_move = /** @class */ (function () {
     function both_unit_move() {
         this.optcode = 0;
         /**
@@ -658,8 +658,8 @@ var both_unit_move = (function () {
     both_unit_move.param_count = 4;
     both_unit_move.optname = "onUnit_move";
     return both_unit_move;
-})();
-var c2s_use_gameobject = (function () {
+}());
+var c2s_use_gameobject = /** @class */ (function () {
     function c2s_use_gameobject() {
         this.optcode = 0;
     }
@@ -678,8 +678,8 @@ var c2s_use_gameobject = (function () {
     c2s_use_gameobject.param_count = 1;
     c2s_use_gameobject.optname = "onUse_gameobject";
     return c2s_use_gameobject;
-})();
-var c2s_bag_exchange_pos = (function () {
+}());
+var c2s_bag_exchange_pos = /** @class */ (function () {
     function c2s_bag_exchange_pos() {
         this.optcode = 0;
     }
@@ -704,8 +704,8 @@ var c2s_bag_exchange_pos = (function () {
     c2s_bag_exchange_pos.param_count = 4;
     c2s_bag_exchange_pos.optname = "onBag_exchange_pos";
     return c2s_bag_exchange_pos;
-})();
-var c2s_bag_destroy = (function () {
+}());
+var c2s_bag_destroy = /** @class */ (function () {
     function c2s_bag_destroy() {
         this.optcode = 0;
     }
@@ -728,8 +728,8 @@ var c2s_bag_destroy = (function () {
     c2s_bag_destroy.param_count = 3;
     c2s_bag_destroy.optname = "onBag_destroy";
     return c2s_bag_destroy;
-})();
-var c2s_bag_item_split = (function () {
+}());
+var c2s_bag_item_split = /** @class */ (function () {
     function c2s_bag_item_split() {
         this.optcode = 0;
     }
@@ -756,8 +756,8 @@ var c2s_bag_item_split = (function () {
     c2s_bag_item_split.param_count = 5;
     c2s_bag_item_split.optname = "onBag_item_split";
     return c2s_bag_item_split;
-})();
-var c2s_bag_item_user = (function () {
+}());
+var c2s_bag_item_user = /** @class */ (function () {
     function c2s_bag_item_user() {
         this.optcode = 0;
     }
@@ -778,8 +778,8 @@ var c2s_bag_item_user = (function () {
     c2s_bag_item_user.param_count = 2;
     c2s_bag_item_user.optname = "onBag_item_user";
     return c2s_bag_item_user;
-})();
-var s2c_bag_item_cooldown = (function () {
+}());
+var s2c_bag_item_cooldown = /** @class */ (function () {
     function s2c_bag_item_cooldown() {
         this.optcode = 0;
         /**
@@ -809,8 +809,8 @@ var s2c_bag_item_cooldown = (function () {
     s2c_bag_item_cooldown.param_count = 1;
     s2c_bag_item_cooldown.optname = "onBag_item_cooldown";
     return s2c_bag_item_cooldown;
-})();
-var s2c_grid_unit_move = (function () {
+}());
+var s2c_grid_unit_move = /** @class */ (function () {
     function s2c_grid_unit_move() {
         this.optcode = 0;
     }
@@ -827,8 +827,8 @@ var s2c_grid_unit_move = (function () {
     s2c_grid_unit_move.param_count = 0;
     s2c_grid_unit_move.optname = "onGrid_unit_move";
     return s2c_grid_unit_move;
-})();
-var s2c_grid_unit_move_2 = (function () {
+}());
+var s2c_grid_unit_move_2 = /** @class */ (function () {
     function s2c_grid_unit_move_2() {
         this.optcode = 0;
     }
@@ -845,8 +845,8 @@ var s2c_grid_unit_move_2 = (function () {
     s2c_grid_unit_move_2.param_count = 0;
     s2c_grid_unit_move_2.optname = "onGrid_unit_move_2";
     return s2c_grid_unit_move_2;
-})();
-var c2s_exchange_item = (function () {
+}());
+var c2s_exchange_item = /** @class */ (function () {
     function c2s_exchange_item() {
         this.optcode = 0;
     }
@@ -869,8 +869,8 @@ var c2s_exchange_item = (function () {
     c2s_exchange_item.param_count = 3;
     c2s_exchange_item.optname = "onExchange_item";
     return c2s_exchange_item;
-})();
-var c2s_bag_extension = (function () {
+}());
+var c2s_bag_extension = /** @class */ (function () {
     function c2s_bag_extension() {
         this.optcode = 0;
     }
@@ -893,8 +893,8 @@ var c2s_bag_extension = (function () {
     c2s_bag_extension.param_count = 3;
     c2s_bag_extension.optname = "onBag_extension";
     return c2s_bag_extension;
-})();
-var c2s_npc_get_goods_list = (function () {
+}());
+var c2s_npc_get_goods_list = /** @class */ (function () {
     function c2s_npc_get_goods_list() {
         this.optcode = 0;
     }
@@ -913,8 +913,8 @@ var c2s_npc_get_goods_list = (function () {
     c2s_npc_get_goods_list.param_count = 1;
     c2s_npc_get_goods_list.optname = "onNpc_get_goods_list";
     return c2s_npc_get_goods_list;
-})();
-var s2c_npc_goods_list = (function () {
+}());
+var s2c_npc_goods_list = /** @class */ (function () {
     function s2c_npc_goods_list() {
         this.optcode = 0;
         /**
@@ -943,8 +943,8 @@ var s2c_npc_goods_list = (function () {
     s2c_npc_goods_list.param_count = 2;
     s2c_npc_goods_list.optname = "onNpc_goods_list";
     return s2c_npc_goods_list;
-})();
-var c2s_store_buy = (function () {
+}());
+var c2s_store_buy = /** @class */ (function () {
     function c2s_store_buy() {
         this.optcode = 0;
     }
@@ -965,8 +965,8 @@ var c2s_store_buy = (function () {
     c2s_store_buy.param_count = 2;
     c2s_store_buy.optname = "onStore_buy";
     return c2s_store_buy;
-})();
-var c2s_npc_sell = (function () {
+}());
+var c2s_npc_sell = /** @class */ (function () {
     function c2s_npc_sell() {
         this.optcode = 0;
     }
@@ -989,8 +989,8 @@ var c2s_npc_sell = (function () {
     c2s_npc_sell.param_count = 3;
     c2s_npc_sell.optname = "onNpc_sell";
     return c2s_npc_sell;
-})();
-var c2s_npc_repurchase = (function () {
+}());
+var c2s_npc_repurchase = /** @class */ (function () {
     function c2s_npc_repurchase() {
         this.optcode = 0;
     }
@@ -1009,8 +1009,8 @@ var c2s_npc_repurchase = (function () {
     c2s_npc_repurchase.param_count = 1;
     c2s_npc_repurchase.optname = "onNpc_repurchase";
     return c2s_npc_repurchase;
-})();
-var c2s_avatar_fashion_enable = (function () {
+}());
+var c2s_avatar_fashion_enable = /** @class */ (function () {
     function c2s_avatar_fashion_enable() {
         this.optcode = 0;
     }
@@ -1029,8 +1029,8 @@ var c2s_avatar_fashion_enable = (function () {
     c2s_avatar_fashion_enable.param_count = 1;
     c2s_avatar_fashion_enable.optname = "onAvatar_fashion_enable";
     return c2s_avatar_fashion_enable;
-})();
-var c2s_questhelp_talk_option = (function () {
+}());
+var c2s_questhelp_talk_option = /** @class */ (function () {
     function c2s_questhelp_talk_option() {
         this.optcode = 0;
     }
@@ -1055,8 +1055,8 @@ var c2s_questhelp_talk_option = (function () {
     c2s_questhelp_talk_option.param_count = 4;
     c2s_questhelp_talk_option.optname = "onQuesthelp_talk_option";
     return c2s_questhelp_talk_option;
-})();
-var c2s_taxi_hello = (function () {
+}());
+var c2s_taxi_hello = /** @class */ (function () {
     function c2s_taxi_hello() {
         this.optcode = 0;
     }
@@ -1075,8 +1075,8 @@ var c2s_taxi_hello = (function () {
     c2s_taxi_hello.param_count = 1;
     c2s_taxi_hello.optname = "onTaxi_hello";
     return c2s_taxi_hello;
-})();
-var s2c_taxi_stations_list = (function () {
+}());
+var s2c_taxi_stations_list = /** @class */ (function () {
     function s2c_taxi_stations_list() {
         this.optcode = 0;
         /**
@@ -1108,8 +1108,8 @@ var s2c_taxi_stations_list = (function () {
     s2c_taxi_stations_list.param_count = 2;
     s2c_taxi_stations_list.optname = "onTaxi_stations_list";
     return s2c_taxi_stations_list;
-})();
-var c2s_taxi_select_station = (function () {
+}());
+var c2s_taxi_select_station = /** @class */ (function () {
     function c2s_taxi_select_station() {
         this.optcode = 0;
     }
@@ -1130,8 +1130,8 @@ var c2s_taxi_select_station = (function () {
     c2s_taxi_select_station.param_count = 2;
     c2s_taxi_select_station.optname = "onTaxi_select_station";
     return c2s_taxi_select_station;
-})();
-var c2s_gossip_select_option = (function () {
+}());
+var c2s_gossip_select_option = /** @class */ (function () {
     function c2s_gossip_select_option() {
         this.optcode = 0;
     }
@@ -1154,8 +1154,8 @@ var c2s_gossip_select_option = (function () {
     c2s_gossip_select_option.param_count = 3;
     c2s_gossip_select_option.optname = "onGossip_select_option";
     return c2s_gossip_select_option;
-})();
-var c2s_gossip_hello = (function () {
+}());
+var c2s_gossip_hello = /** @class */ (function () {
     function c2s_gossip_hello() {
         this.optcode = 0;
     }
@@ -1174,8 +1174,8 @@ var c2s_gossip_hello = (function () {
     c2s_gossip_hello.param_count = 1;
     c2s_gossip_hello.optname = "onGossip_hello";
     return c2s_gossip_hello;
-})();
-var s2c_gossip_message = (function () {
+}());
+var s2c_gossip_message = /** @class */ (function () {
     function s2c_gossip_message() {
         this.optcode = 0;
         /**
@@ -1213,8 +1213,8 @@ var s2c_gossip_message = (function () {
     s2c_gossip_message.param_count = 5;
     s2c_gossip_message.optname = "onGossip_message";
     return s2c_gossip_message;
-})();
-var c2s_questgiver_status_query = (function () {
+}());
+var c2s_questgiver_status_query = /** @class */ (function () {
     function c2s_questgiver_status_query() {
         this.optcode = 0;
     }
@@ -1233,8 +1233,8 @@ var c2s_questgiver_status_query = (function () {
     c2s_questgiver_status_query.param_count = 1;
     c2s_questgiver_status_query.optname = "onQuestgiver_status_query";
     return c2s_questgiver_status_query;
-})();
-var s2c_questgiver_status = (function () {
+}());
+var s2c_questgiver_status = /** @class */ (function () {
     function s2c_questgiver_status() {
         this.optcode = 0;
     }
@@ -1255,8 +1255,8 @@ var s2c_questgiver_status = (function () {
     s2c_questgiver_status.param_count = 2;
     s2c_questgiver_status.optname = "onQuestgiver_status";
     return s2c_questgiver_status;
-})();
-var both_query_quest_status = (function () {
+}());
+var both_query_quest_status = /** @class */ (function () {
     function both_query_quest_status() {
         this.optcode = 0;
         /**
@@ -1286,8 +1286,8 @@ var both_query_quest_status = (function () {
     both_query_quest_status.param_count = 1;
     both_query_quest_status.optname = "onQuery_quest_status";
     return both_query_quest_status;
-})();
-var c2s_questhelp_get_canaccept_list = (function () {
+}());
+var c2s_questhelp_get_canaccept_list = /** @class */ (function () {
     function c2s_questhelp_get_canaccept_list() {
         this.optcode = 0;
     }
@@ -1304,8 +1304,8 @@ var c2s_questhelp_get_canaccept_list = (function () {
     c2s_questhelp_get_canaccept_list.param_count = 0;
     c2s_questhelp_get_canaccept_list.optname = "onQuesthelp_get_canaccept_list";
     return c2s_questhelp_get_canaccept_list;
-})();
-var s2c_questhelp_canaccept_list = (function () {
+}());
+var s2c_questhelp_canaccept_list = /** @class */ (function () {
     function s2c_questhelp_canaccept_list() {
         this.optcode = 0;
         /**
@@ -1332,8 +1332,8 @@ var s2c_questhelp_canaccept_list = (function () {
     s2c_questhelp_canaccept_list.param_count = 1;
     s2c_questhelp_canaccept_list.optname = "onQuesthelp_canaccept_list";
     return s2c_questhelp_canaccept_list;
-})();
-var s2c_questupdate_faild = (function () {
+}());
+var s2c_questupdate_faild = /** @class */ (function () {
     function s2c_questupdate_faild() {
         this.optcode = 0;
     }
@@ -1352,8 +1352,8 @@ var s2c_questupdate_faild = (function () {
     s2c_questupdate_faild.param_count = 1;
     s2c_questupdate_faild.optname = "onQuestupdate_faild";
     return s2c_questupdate_faild;
-})();
-var s2c_questupdate_complete = (function () {
+}());
+var s2c_questupdate_complete = /** @class */ (function () {
     function s2c_questupdate_complete() {
         this.optcode = 0;
     }
@@ -1372,8 +1372,8 @@ var s2c_questupdate_complete = (function () {
     s2c_questupdate_complete.param_count = 1;
     s2c_questupdate_complete.optname = "onQuestupdate_complete";
     return s2c_questupdate_complete;
-})();
-var c2s_questlog_remove_quest = (function () {
+}());
+var c2s_questlog_remove_quest = /** @class */ (function () {
     function c2s_questlog_remove_quest() {
         this.optcode = 0;
     }
@@ -1394,8 +1394,8 @@ var c2s_questlog_remove_quest = (function () {
     c2s_questlog_remove_quest.param_count = 2;
     c2s_questlog_remove_quest.optname = "onQuestlog_remove_quest";
     return c2s_questlog_remove_quest;
-})();
-var c2s_questgiver_complete_quest = (function () {
+}());
+var c2s_questgiver_complete_quest = /** @class */ (function () {
     function c2s_questgiver_complete_quest() {
         this.optcode = 0;
     }
@@ -1418,8 +1418,8 @@ var c2s_questgiver_complete_quest = (function () {
     c2s_questgiver_complete_quest.param_count = 3;
     c2s_questgiver_complete_quest.optname = "onQuestgiver_complete_quest";
     return c2s_questgiver_complete_quest;
-})();
-var s2c_questhelp_next = (function () {
+}());
+var s2c_questhelp_next = /** @class */ (function () {
     function s2c_questhelp_next() {
         this.optcode = 0;
     }
@@ -1442,8 +1442,8 @@ var s2c_questhelp_next = (function () {
     s2c_questhelp_next.param_count = 3;
     s2c_questhelp_next.optname = "onQuesthelp_next";
     return s2c_questhelp_next;
-})();
-var c2s_questhelp_complete = (function () {
+}());
+var c2s_questhelp_complete = /** @class */ (function () {
     function c2s_questhelp_complete() {
         this.optcode = 0;
     }
@@ -1466,8 +1466,8 @@ var c2s_questhelp_complete = (function () {
     c2s_questhelp_complete.param_count = 3;
     c2s_questhelp_complete.optname = "onQuesthelp_complete";
     return c2s_questhelp_complete;
-})();
-var s2c_questupdate_accept = (function () {
+}());
+var s2c_questupdate_accept = /** @class */ (function () {
     function s2c_questupdate_accept() {
         this.optcode = 0;
     }
@@ -1486,8 +1486,8 @@ var s2c_questupdate_accept = (function () {
     s2c_questupdate_accept.param_count = 1;
     s2c_questupdate_accept.optname = "onQuestupdate_accept";
     return s2c_questupdate_accept;
-})();
-var c2s_questhelp_update_status = (function () {
+}());
+var c2s_questhelp_update_status = /** @class */ (function () {
     function c2s_questhelp_update_status() {
         this.optcode = 0;
     }
@@ -1510,8 +1510,8 @@ var c2s_questhelp_update_status = (function () {
     c2s_questhelp_update_status.param_count = 3;
     c2s_questhelp_update_status.optname = "onQuesthelp_update_status";
     return c2s_questhelp_update_status;
-})();
-var s2c_questgetter_complete = (function () {
+}());
+var s2c_questgetter_complete = /** @class */ (function () {
     function s2c_questgetter_complete() {
         this.optcode = 0;
     }
@@ -1530,8 +1530,8 @@ var s2c_questgetter_complete = (function () {
     s2c_questgetter_complete.param_count = 1;
     s2c_questgetter_complete.optname = "onQuestgetter_complete";
     return s2c_questgetter_complete;
-})();
-var c2s_questgiver_accept_quest = (function () {
+}());
+var c2s_questgiver_accept_quest = /** @class */ (function () {
     function c2s_questgiver_accept_quest() {
         this.optcode = 0;
     }
@@ -1552,8 +1552,8 @@ var c2s_questgiver_accept_quest = (function () {
     c2s_questgiver_accept_quest.param_count = 2;
     c2s_questgiver_accept_quest.optname = "onQuestgiver_accept_quest";
     return c2s_questgiver_accept_quest;
-})();
-var c2s_questupdate_use_item = (function () {
+}());
+var c2s_questupdate_use_item = /** @class */ (function () {
     function c2s_questupdate_use_item() {
         this.optcode = 0;
     }
@@ -1572,8 +1572,8 @@ var c2s_questupdate_use_item = (function () {
     c2s_questupdate_use_item.param_count = 1;
     c2s_questupdate_use_item.optname = "onQuestupdate_use_item";
     return c2s_questupdate_use_item;
-})();
-var c2s_questhelp_query_book = (function () {
+}());
+var c2s_questhelp_query_book = /** @class */ (function () {
     function c2s_questhelp_query_book() {
         this.optcode = 0;
     }
@@ -1592,8 +1592,8 @@ var c2s_questhelp_query_book = (function () {
     c2s_questhelp_query_book.param_count = 1;
     c2s_questhelp_query_book.optname = "onQuesthelp_query_book";
     return c2s_questhelp_query_book;
-})();
-var s2c_questhelp_book_quest = (function () {
+}());
+var s2c_questhelp_book_quest = /** @class */ (function () {
     function s2c_questhelp_book_quest() {
         this.optcode = 0;
     }
@@ -1612,8 +1612,8 @@ var s2c_questhelp_book_quest = (function () {
     s2c_questhelp_book_quest.param_count = 1;
     s2c_questhelp_book_quest.optname = "onQuesthelp_book_quest";
     return s2c_questhelp_book_quest;
-})();
-var s2c_use_gameobject_action = (function () {
+}());
+var s2c_use_gameobject_action = /** @class */ (function () {
     function s2c_use_gameobject_action() {
         this.optcode = 0;
     }
@@ -1634,8 +1634,8 @@ var s2c_use_gameobject_action = (function () {
     s2c_use_gameobject_action.param_count = 2;
     s2c_use_gameobject_action.optname = "onUse_gameobject_action";
     return s2c_use_gameobject_action;
-})();
-var c2s_set_attack_mode = (function () {
+}());
+var c2s_set_attack_mode = /** @class */ (function () {
     function c2s_set_attack_mode() {
         this.optcode = 0;
     }
@@ -1656,8 +1656,8 @@ var c2s_set_attack_mode = (function () {
     c2s_set_attack_mode.param_count = 2;
     c2s_set_attack_mode.optname = "onSet_attack_mode";
     return c2s_set_attack_mode;
-})();
-var both_select_target = (function () {
+}());
+var both_select_target = /** @class */ (function () {
     function both_select_target() {
         this.optcode = 0;
     }
@@ -1676,8 +1676,8 @@ var both_select_target = (function () {
     both_select_target.param_count = 1;
     both_select_target.optname = "onSelect_target";
     return both_select_target;
-})();
-var s2c_combat_state_update = (function () {
+}());
+var s2c_combat_state_update = /** @class */ (function () {
     function s2c_combat_state_update() {
         this.optcode = 0;
     }
@@ -1696,8 +1696,8 @@ var s2c_combat_state_update = (function () {
     s2c_combat_state_update.param_count = 1;
     s2c_combat_state_update.optname = "onCombat_state_update";
     return s2c_combat_state_update;
-})();
-var s2c_exp_update = (function () {
+}());
+var s2c_exp_update = /** @class */ (function () {
     function s2c_exp_update() {
         this.optcode = 0;
     }
@@ -1720,8 +1720,8 @@ var s2c_exp_update = (function () {
     s2c_exp_update.param_count = 3;
     s2c_exp_update.optname = "onExp_update";
     return s2c_exp_update;
-})();
-var both_spell_start = (function () {
+}());
+var both_spell_start = /** @class */ (function () {
     function both_spell_start() {
         this.optcode = 0;
     }
@@ -1748,8 +1748,8 @@ var both_spell_start = (function () {
     both_spell_start.param_count = 5;
     both_spell_start.optname = "onSpell_start";
     return both_spell_start;
-})();
-var both_spell_stop = (function () {
+}());
+var both_spell_stop = /** @class */ (function () {
     function both_spell_stop() {
         this.optcode = 0;
     }
@@ -1768,8 +1768,8 @@ var both_spell_stop = (function () {
     both_spell_stop.param_count = 1;
     both_spell_stop.optname = "onSpell_stop";
     return both_spell_stop;
-})();
-var both_jump = (function () {
+}());
+var both_jump = /** @class */ (function () {
     function both_jump() {
         this.optcode = 0;
     }
@@ -1792,8 +1792,8 @@ var both_jump = (function () {
     both_jump.param_count = 3;
     both_jump.optname = "onJump";
     return both_jump;
-})();
-var c2s_resurrection = (function () {
+}());
+var c2s_resurrection = /** @class */ (function () {
     function c2s_resurrection() {
         this.optcode = 0;
     }
@@ -1814,8 +1814,8 @@ var c2s_resurrection = (function () {
     c2s_resurrection.param_count = 2;
     c2s_resurrection.optname = "onResurrection";
     return c2s_resurrection;
-})();
-var both_trade_request = (function () {
+}());
+var both_trade_request = /** @class */ (function () {
     function both_trade_request() {
         this.optcode = 0;
     }
@@ -1834,8 +1834,8 @@ var both_trade_request = (function () {
     both_trade_request.param_count = 1;
     both_trade_request.optname = "onTrade_request";
     return both_trade_request;
-})();
-var both_trade_reply = (function () {
+}());
+var both_trade_reply = /** @class */ (function () {
     function both_trade_reply() {
         this.optcode = 0;
     }
@@ -1856,8 +1856,8 @@ var both_trade_reply = (function () {
     both_trade_reply.param_count = 2;
     both_trade_reply.optname = "onTrade_reply";
     return both_trade_reply;
-})();
-var s2c_trade_start = (function () {
+}());
+var s2c_trade_start = /** @class */ (function () {
     function s2c_trade_start() {
         this.optcode = 0;
     }
@@ -1876,8 +1876,8 @@ var s2c_trade_start = (function () {
     s2c_trade_start.param_count = 1;
     s2c_trade_start.optname = "onTrade_start";
     return s2c_trade_start;
-})();
-var both_trade_decide_items = (function () {
+}());
+var both_trade_decide_items = /** @class */ (function () {
     function both_trade_decide_items() {
         this.optcode = 0;
         /**
@@ -1908,8 +1908,8 @@ var both_trade_decide_items = (function () {
     both_trade_decide_items.param_count = 3;
     both_trade_decide_items.optname = "onTrade_decide_items";
     return both_trade_decide_items;
-})();
-var s2c_trade_finish = (function () {
+}());
+var s2c_trade_finish = /** @class */ (function () {
     function s2c_trade_finish() {
         this.optcode = 0;
     }
@@ -1926,8 +1926,8 @@ var s2c_trade_finish = (function () {
     s2c_trade_finish.param_count = 0;
     s2c_trade_finish.optname = "onTrade_finish";
     return s2c_trade_finish;
-})();
-var both_trade_cancel = (function () {
+}());
+var both_trade_cancel = /** @class */ (function () {
     function both_trade_cancel() {
         this.optcode = 0;
     }
@@ -1944,8 +1944,8 @@ var both_trade_cancel = (function () {
     both_trade_cancel.param_count = 0;
     both_trade_cancel.optname = "onTrade_cancel";
     return both_trade_cancel;
-})();
-var both_trade_ready = (function () {
+}());
+var both_trade_ready = /** @class */ (function () {
     function both_trade_ready() {
         this.optcode = 0;
     }
@@ -1962,8 +1962,8 @@ var both_trade_ready = (function () {
     both_trade_ready.param_count = 0;
     both_trade_ready.optname = "onTrade_ready";
     return both_trade_ready;
-})();
-var s2c_chat_unit_talk = (function () {
+}());
+var s2c_chat_unit_talk = /** @class */ (function () {
     function s2c_chat_unit_talk() {
         this.optcode = 0;
     }
@@ -1986,8 +1986,8 @@ var s2c_chat_unit_talk = (function () {
     s2c_chat_unit_talk.param_count = 3;
     s2c_chat_unit_talk.optname = "onChat_unit_talk";
     return s2c_chat_unit_talk;
-})();
-var c2s_chat_near = (function () {
+}());
+var c2s_chat_near = /** @class */ (function () {
     function c2s_chat_near() {
         this.optcode = 0;
     }
@@ -2006,8 +2006,8 @@ var c2s_chat_near = (function () {
     c2s_chat_near.param_count = 1;
     c2s_chat_near.optname = "onChat_near";
     return c2s_chat_near;
-})();
-var c2s_chat_whisper = (function () {
+}());
+var c2s_chat_whisper = /** @class */ (function () {
     function c2s_chat_whisper() {
         this.optcode = 0;
     }
@@ -2028,8 +2028,8 @@ var c2s_chat_whisper = (function () {
     c2s_chat_whisper.param_count = 2;
     c2s_chat_whisper.optname = "onChat_whisper";
     return c2s_chat_whisper;
-})();
-var both_chat_faction = (function () {
+}());
+var both_chat_faction = /** @class */ (function () {
     function both_chat_faction() {
         this.optcode = 0;
     }
@@ -2054,8 +2054,8 @@ var both_chat_faction = (function () {
     both_chat_faction.param_count = 4;
     both_chat_faction.optname = "onChat_faction";
     return both_chat_faction;
-})();
-var both_chat_world = (function () {
+}());
+var both_chat_world = /** @class */ (function () {
     function both_chat_world() {
         this.optcode = 0;
     }
@@ -2080,8 +2080,8 @@ var both_chat_world = (function () {
     both_chat_world.param_count = 4;
     both_chat_world.optname = "onChat_world";
     return both_chat_world;
-})();
-var both_chat_horn = (function () {
+}());
+var both_chat_horn = /** @class */ (function () {
     function both_chat_horn() {
         this.optcode = 0;
     }
@@ -2106,8 +2106,8 @@ var both_chat_horn = (function () {
     both_chat_horn.param_count = 4;
     both_chat_horn.optname = "onChat_horn";
     return both_chat_horn;
-})();
-var both_chat_notice = (function () {
+}());
+var both_chat_notice = /** @class */ (function () {
     function both_chat_notice() {
         this.optcode = 0;
     }
@@ -2130,8 +2130,8 @@ var both_chat_notice = (function () {
     both_chat_notice.param_count = 3;
     both_chat_notice.optname = "onChat_notice";
     return both_chat_notice;
-})();
-var c2s_query_player_info = (function () {
+}());
+var c2s_query_player_info = /** @class */ (function () {
     function c2s_query_player_info() {
         this.optcode = 0;
     }
@@ -2154,8 +2154,8 @@ var c2s_query_player_info = (function () {
     c2s_query_player_info.param_count = 3;
     c2s_query_player_info.optname = "onQuery_player_info";
     return c2s_query_player_info;
-})();
-var s2c_query_result_update_object = (function () {
+}());
+var s2c_query_result_update_object = /** @class */ (function () {
     function s2c_query_result_update_object() {
         this.optcode = 0;
     }
@@ -2172,8 +2172,8 @@ var s2c_query_result_update_object = (function () {
     s2c_query_result_update_object.param_count = 0;
     s2c_query_result_update_object.optname = "onQuery_result_update_object";
     return s2c_query_result_update_object;
-})();
-var c2s_receive_gift_packs = (function () {
+}());
+var c2s_receive_gift_packs = /** @class */ (function () {
     function c2s_receive_gift_packs() {
         this.optcode = 0;
     }
@@ -2190,8 +2190,8 @@ var c2s_receive_gift_packs = (function () {
     c2s_receive_gift_packs.param_count = 0;
     c2s_receive_gift_packs.optname = "onReceive_gift_packs";
     return c2s_receive_gift_packs;
-})();
-var s2c_map_update_object = (function () {
+}());
+var s2c_map_update_object = /** @class */ (function () {
     function s2c_map_update_object() {
         this.optcode = 0;
     }
@@ -2208,8 +2208,8 @@ var s2c_map_update_object = (function () {
     s2c_map_update_object.param_count = 0;
     s2c_map_update_object.optname = "onMap_update_object";
     return s2c_map_update_object;
-})();
-var s2c_fighting_info_update_object = (function () {
+}());
+var s2c_fighting_info_update_object = /** @class */ (function () {
     function s2c_fighting_info_update_object() {
         this.optcode = 0;
     }
@@ -2226,8 +2226,8 @@ var s2c_fighting_info_update_object = (function () {
     s2c_fighting_info_update_object.param_count = 0;
     s2c_fighting_info_update_object.optname = "onFighting_info_update_object";
     return s2c_fighting_info_update_object;
-})();
-var s2c_fighting_info_update_object_2 = (function () {
+}());
+var s2c_fighting_info_update_object_2 = /** @class */ (function () {
     function s2c_fighting_info_update_object_2() {
         this.optcode = 0;
     }
@@ -2244,8 +2244,8 @@ var s2c_fighting_info_update_object_2 = (function () {
     s2c_fighting_info_update_object_2.param_count = 0;
     s2c_fighting_info_update_object_2.optname = "onFighting_info_update_object_2";
     return s2c_fighting_info_update_object_2;
-})();
-var c2s_instance_enter = (function () {
+}());
+var c2s_instance_enter = /** @class */ (function () {
     function c2s_instance_enter() {
         this.optcode = 0;
     }
@@ -2264,8 +2264,8 @@ var c2s_instance_enter = (function () {
     c2s_instance_enter.param_count = 1;
     c2s_instance_enter.optname = "onInstance_enter";
     return c2s_instance_enter;
-})();
-var c2s_instance_next_state = (function () {
+}());
+var c2s_instance_next_state = /** @class */ (function () {
     function c2s_instance_next_state() {
         this.optcode = 0;
     }
@@ -2286,8 +2286,8 @@ var c2s_instance_next_state = (function () {
     c2s_instance_next_state.param_count = 2;
     c2s_instance_next_state.optname = "onInstance_next_state";
     return c2s_instance_next_state;
-})();
-var c2s_instance_exit = (function () {
+}());
+var c2s_instance_exit = /** @class */ (function () {
     function c2s_instance_exit() {
         this.optcode = 0;
     }
@@ -2306,8 +2306,8 @@ var c2s_instance_exit = (function () {
     c2s_instance_exit.param_count = 1;
     c2s_instance_exit.optname = "onInstance_exit";
     return c2s_instance_exit;
-})();
-var c2s_limit_activity_receive = (function () {
+}());
+var c2s_limit_activity_receive = /** @class */ (function () {
     function c2s_limit_activity_receive() {
         this.optcode = 0;
     }
@@ -2328,8 +2328,8 @@ var c2s_limit_activity_receive = (function () {
     c2s_limit_activity_receive.param_count = 2;
     c2s_limit_activity_receive.optname = "onLimit_activity_receive";
     return c2s_limit_activity_receive;
-})();
-var s2c_kill_man = (function () {
+}());
+var s2c_kill_man = /** @class */ (function () {
     function s2c_kill_man() {
         this.optcode = 0;
     }
@@ -2354,8 +2354,8 @@ var s2c_kill_man = (function () {
     s2c_kill_man.param_count = 4;
     s2c_kill_man.optname = "onKill_man";
     return s2c_kill_man;
-})();
-var s2c_player_upgrade = (function () {
+}());
+var s2c_player_upgrade = /** @class */ (function () {
     function s2c_player_upgrade() {
         this.optcode = 0;
     }
@@ -2374,8 +2374,8 @@ var s2c_player_upgrade = (function () {
     s2c_player_upgrade.param_count = 1;
     s2c_player_upgrade.optname = "onPlayer_upgrade";
     return s2c_player_upgrade;
-})();
-var c2s_warehouse_save_money = (function () {
+}());
+var c2s_warehouse_save_money = /** @class */ (function () {
     function c2s_warehouse_save_money() {
         this.optcode = 0;
     }
@@ -2398,8 +2398,8 @@ var c2s_warehouse_save_money = (function () {
     c2s_warehouse_save_money.param_count = 3;
     c2s_warehouse_save_money.optname = "onWarehouse_save_money";
     return c2s_warehouse_save_money;
-})();
-var c2s_warehouse_take_money = (function () {
+}());
+var c2s_warehouse_take_money = /** @class */ (function () {
     function c2s_warehouse_take_money() {
         this.optcode = 0;
     }
@@ -2422,8 +2422,8 @@ var c2s_warehouse_take_money = (function () {
     c2s_warehouse_take_money.param_count = 3;
     c2s_warehouse_take_money.optname = "onWarehouse_take_money";
     return c2s_warehouse_take_money;
-})();
-var c2s_use_gold_opt = (function () {
+}());
+var c2s_use_gold_opt = /** @class */ (function () {
     function c2s_use_gold_opt() {
         this.optcode = 0;
     }
@@ -2444,8 +2444,8 @@ var c2s_use_gold_opt = (function () {
     c2s_use_gold_opt.param_count = 2;
     c2s_use_gold_opt.optname = "onUse_gold_opt";
     return c2s_use_gold_opt;
-})();
-var c2s_use_silver_opt = (function () {
+}());
+var c2s_use_silver_opt = /** @class */ (function () {
     function c2s_use_silver_opt() {
         this.optcode = 0;
     }
@@ -2464,8 +2464,8 @@ var c2s_use_silver_opt = (function () {
     c2s_use_silver_opt.param_count = 1;
     c2s_use_silver_opt.optname = "onUse_silver_opt";
     return c2s_use_silver_opt;
-})();
-var s2c_gm_rightfloat = (function () {
+}());
+var s2c_gm_rightfloat = /** @class */ (function () {
     function s2c_gm_rightfloat() {
         this.optcode = 0;
     }
@@ -2500,8 +2500,8 @@ var s2c_gm_rightfloat = (function () {
     s2c_gm_rightfloat.param_count = 9;
     s2c_gm_rightfloat.optname = "onGm_rightfloat";
     return s2c_gm_rightfloat;
-})();
-var s2c_del_gm_rightfloat = (function () {
+}());
+var s2c_del_gm_rightfloat = /** @class */ (function () {
     function s2c_del_gm_rightfloat() {
         this.optcode = 0;
     }
@@ -2520,8 +2520,8 @@ var s2c_del_gm_rightfloat = (function () {
     s2c_del_gm_rightfloat.param_count = 1;
     s2c_del_gm_rightfloat.optname = "onDel_gm_rightfloat";
     return s2c_del_gm_rightfloat;
-})();
-var both_sync_mstime_app = (function () {
+}());
+var both_sync_mstime_app = /** @class */ (function () {
     function both_sync_mstime_app() {
         this.optcode = 0;
     }
@@ -2544,8 +2544,8 @@ var both_sync_mstime_app = (function () {
     both_sync_mstime_app.param_count = 3;
     both_sync_mstime_app.optname = "onSync_mstime_app";
     return both_sync_mstime_app;
-})();
-var c2s_open_window = (function () {
+}());
+var c2s_open_window = /** @class */ (function () {
     function c2s_open_window() {
         this.optcode = 0;
     }
@@ -2564,8 +2564,8 @@ var c2s_open_window = (function () {
     c2s_open_window.param_count = 1;
     c2s_open_window.optname = "onOpen_window";
     return c2s_open_window;
-})();
-var c2s_player_gag = (function () {
+}());
+var c2s_player_gag = /** @class */ (function () {
     function c2s_player_gag() {
         this.optcode = 0;
     }
@@ -2588,8 +2588,8 @@ var c2s_player_gag = (function () {
     c2s_player_gag.param_count = 3;
     c2s_player_gag.optname = "onPlayer_gag";
     return c2s_player_gag;
-})();
-var c2s_player_kicking = (function () {
+}());
+var c2s_player_kicking = /** @class */ (function () {
     function c2s_player_kicking() {
         this.optcode = 0;
     }
@@ -2608,8 +2608,8 @@ var c2s_player_kicking = (function () {
     c2s_player_kicking.param_count = 1;
     c2s_player_kicking.optname = "onPlayer_kicking";
     return c2s_player_kicking;
-})();
-var s2c_merge_server_msg = (function () {
+}());
+var s2c_merge_server_msg = /** @class */ (function () {
     function s2c_merge_server_msg() {
         this.optcode = 0;
     }
@@ -2638,8 +2638,8 @@ var s2c_merge_server_msg = (function () {
     s2c_merge_server_msg.param_count = 6;
     s2c_merge_server_msg.optname = "onMerge_server_msg";
     return s2c_merge_server_msg;
-})();
-var c2s_rank_list_query = (function () {
+}());
+var c2s_rank_list_query = /** @class */ (function () {
     function c2s_rank_list_query() {
         this.optcode = 0;
     }
@@ -2664,8 +2664,8 @@ var c2s_rank_list_query = (function () {
     c2s_rank_list_query.param_count = 4;
     c2s_rank_list_query.optname = "onRank_list_query";
     return c2s_rank_list_query;
-})();
-var s2c_rank_list_query_result = (function () {
+}());
+var s2c_rank_list_query_result = /** @class */ (function () {
     function s2c_rank_list_query_result() {
         this.optcode = 0;
     }
@@ -2682,8 +2682,8 @@ var s2c_rank_list_query_result = (function () {
     s2c_rank_list_query_result.param_count = 0;
     s2c_rank_list_query_result.optname = "onRank_list_query_result";
     return s2c_rank_list_query_result;
-})();
-var c2s_client_update_scened = (function () {
+}());
+var c2s_client_update_scened = /** @class */ (function () {
     function c2s_client_update_scened() {
         this.optcode = 0;
     }
@@ -2700,8 +2700,8 @@ var c2s_client_update_scened = (function () {
     c2s_client_update_scened.param_count = 0;
     c2s_client_update_scened.optname = "onClient_update_scened";
     return c2s_client_update_scened;
-})();
-var s2c_num_lua = (function () {
+}());
+var s2c_num_lua = /** @class */ (function () {
     function s2c_num_lua() {
         this.optcode = 0;
     }
@@ -2718,8 +2718,8 @@ var s2c_num_lua = (function () {
     s2c_num_lua.param_count = 0;
     s2c_num_lua.optname = "onNum_lua";
     return s2c_num_lua;
-})();
-var c2s_loot_select = (function () {
+}());
+var c2s_loot_select = /** @class */ (function () {
     function c2s_loot_select() {
         this.optcode = 0;
     }
@@ -2740,8 +2740,8 @@ var c2s_loot_select = (function () {
     c2s_loot_select.param_count = 2;
     c2s_loot_select.optname = "onLoot_select";
     return c2s_loot_select;
-})();
-var c2s_goback_to_game_server = (function () {
+}());
+var c2s_goback_to_game_server = /** @class */ (function () {
     function c2s_goback_to_game_server() {
         this.optcode = 0;
     }
@@ -2758,8 +2758,8 @@ var c2s_goback_to_game_server = (function () {
     c2s_goback_to_game_server.param_count = 0;
     c2s_goback_to_game_server.optname = "onGoback_to_game_server";
     return c2s_goback_to_game_server;
-})();
-var c2s_world_war_CS_player_info = (function () {
+}());
+var c2s_world_war_CS_player_info = /** @class */ (function () {
     function c2s_world_war_CS_player_info() {
         this.optcode = 0;
     }
@@ -2776,8 +2776,8 @@ var c2s_world_war_CS_player_info = (function () {
     c2s_world_war_CS_player_info.param_count = 0;
     c2s_world_war_CS_player_info.optname = "onWorld_war_CS_player_info";
     return c2s_world_war_CS_player_info;
-})();
-var s2c_join_or_leave_server = (function () {
+}());
+var s2c_join_or_leave_server = /** @class */ (function () {
     function s2c_join_or_leave_server() {
         this.optcode = 0;
     }
@@ -2804,8 +2804,8 @@ var s2c_join_or_leave_server = (function () {
     s2c_join_or_leave_server.param_count = 5;
     s2c_join_or_leave_server.optname = "onJoin_or_leave_server";
     return s2c_join_or_leave_server;
-})();
-var both_world_war_SC_player_info = (function () {
+}());
+var both_world_war_SC_player_info = /** @class */ (function () {
     function both_world_war_SC_player_info() {
         this.optcode = 0;
     }
@@ -2822,8 +2822,8 @@ var both_world_war_SC_player_info = (function () {
     both_world_war_SC_player_info.param_count = 0;
     both_world_war_SC_player_info.optname = "onWorld_war_SC_player_info";
     return both_world_war_SC_player_info;
-})();
-var both_clientSubscription = (function () {
+}());
+var both_clientSubscription = /** @class */ (function () {
     function both_clientSubscription() {
         this.optcode = 0;
     }
@@ -2842,8 +2842,8 @@ var both_clientSubscription = (function () {
     both_clientSubscription.param_count = 1;
     both_clientSubscription.optname = "onClientSubscription";
     return both_clientSubscription;
-})();
-var s2c_lua_script = (function () {
+}());
+var s2c_lua_script = /** @class */ (function () {
     function s2c_lua_script() {
         this.optcode = 0;
     }
@@ -2860,8 +2860,8 @@ var s2c_lua_script = (function () {
     s2c_lua_script.param_count = 0;
     s2c_lua_script.optname = "onLua_script";
     return s2c_lua_script;
-})();
-var c2s_char_update_info = (function () {
+}());
+var c2s_char_update_info = /** @class */ (function () {
     function c2s_char_update_info() {
         this.optcode = 0;
     }
@@ -2881,8 +2881,8 @@ var c2s_char_update_info = (function () {
     c2s_char_update_info.param_count = 1;
     c2s_char_update_info.optname = "onChar_update_info";
     return c2s_char_update_info;
-})();
-var s2c_notice_watcher_map_info = (function () {
+}());
+var s2c_notice_watcher_map_info = /** @class */ (function () {
     function s2c_notice_watcher_map_info() {
         this.optcode = 0;
     }
@@ -2905,8 +2905,8 @@ var s2c_notice_watcher_map_info = (function () {
     s2c_notice_watcher_map_info.param_count = 3;
     s2c_notice_watcher_map_info.optname = "onNotice_watcher_map_info";
     return s2c_notice_watcher_map_info;
-})();
-var c2s_modify_watch = (function () {
+}());
+var c2s_modify_watch = /** @class */ (function () {
     function c2s_modify_watch() {
         this.optcode = 0;
     }
@@ -2929,8 +2929,8 @@ var c2s_modify_watch = (function () {
     c2s_modify_watch.param_count = 3;
     c2s_modify_watch.optname = "onModify_watch";
     return c2s_modify_watch;
-})();
-var c2s_kuafu_chuansong = (function () {
+}());
+var c2s_kuafu_chuansong = /** @class */ (function () {
     function c2s_kuafu_chuansong() {
         this.optcode = 0;
     }
@@ -2953,8 +2953,8 @@ var c2s_kuafu_chuansong = (function () {
     c2s_kuafu_chuansong.param_count = 3;
     c2s_kuafu_chuansong.optname = "onKuafu_chuansong";
     return c2s_kuafu_chuansong;
-})();
-var c2s_show_suit = (function () {
+}());
+var c2s_show_suit = /** @class */ (function () {
     function c2s_show_suit() {
         this.optcode = 0;
     }
@@ -2973,8 +2973,8 @@ var c2s_show_suit = (function () {
     c2s_show_suit.param_count = 1;
     c2s_show_suit.optname = "onShow_suit";
     return c2s_show_suit;
-})();
-var c2s_show_position = (function () {
+}());
+var c2s_show_position = /** @class */ (function () {
     function c2s_show_position() {
         this.optcode = 0;
     }
@@ -2993,8 +2993,8 @@ var c2s_show_position = (function () {
     c2s_show_position.param_count = 1;
     c2s_show_position.optname = "onShow_position";
     return c2s_show_position;
-})();
-var c2s_gold_respawn = (function () {
+}());
+var c2s_gold_respawn = /** @class */ (function () {
     function c2s_gold_respawn() {
         this.optcode = 0;
     }
@@ -3013,8 +3013,8 @@ var c2s_gold_respawn = (function () {
     c2s_gold_respawn.param_count = 1;
     c2s_gold_respawn.optname = "onGold_respawn";
     return c2s_gold_respawn;
-})();
-var s2c_field_death_cooldown = (function () {
+}());
+var s2c_field_death_cooldown = /** @class */ (function () {
     function s2c_field_death_cooldown() {
         this.optcode = 0;
     }
@@ -3041,8 +3041,8 @@ var s2c_field_death_cooldown = (function () {
     s2c_field_death_cooldown.param_count = 5;
     s2c_field_death_cooldown.optname = "onField_death_cooldown";
     return s2c_field_death_cooldown;
-})();
-var c2s_mall_buy = (function () {
+}());
+var c2s_mall_buy = /** @class */ (function () {
     function c2s_mall_buy() {
         this.optcode = 0;
     }
@@ -3065,8 +3065,8 @@ var c2s_mall_buy = (function () {
     c2s_mall_buy.param_count = 3;
     c2s_mall_buy.optname = "onMall_buy";
     return c2s_mall_buy;
-})();
-var c2s_strength = (function () {
+}());
+var c2s_strength = /** @class */ (function () {
     function c2s_strength() {
         this.optcode = 0;
     }
@@ -3085,8 +3085,8 @@ var c2s_strength = (function () {
     c2s_strength.param_count = 1;
     c2s_strength.optname = "onStrength";
     return c2s_strength;
-})();
-var s2c_strength_success = (function () {
+}());
+var s2c_strength_success = /** @class */ (function () {
     function s2c_strength_success() {
         this.optcode = 0;
     }
@@ -3105,8 +3105,8 @@ var s2c_strength_success = (function () {
     s2c_strength_success.param_count = 1;
     s2c_strength_success.optname = "onStrength_success";
     return s2c_strength_success;
-})();
-var c2s_forceInto = (function () {
+}());
+var c2s_forceInto = /** @class */ (function () {
     function c2s_forceInto() {
         this.optcode = 0;
     }
@@ -3123,8 +3123,8 @@ var c2s_forceInto = (function () {
     c2s_forceInto.param_count = 0;
     c2s_forceInto.optname = "onForceInto";
     return c2s_forceInto;
-})();
-var c2s_create_faction = (function () {
+}());
+var c2s_create_faction = /** @class */ (function () {
     function c2s_create_faction() {
         this.optcode = 0;
     }
@@ -3145,8 +3145,8 @@ var c2s_create_faction = (function () {
     c2s_create_faction.param_count = 2;
     c2s_create_faction.optname = "onCreate_faction";
     return c2s_create_faction;
-})();
-var c2s_faction_upgrade = (function () {
+}());
+var c2s_faction_upgrade = /** @class */ (function () {
     function c2s_faction_upgrade() {
         this.optcode = 0;
     }
@@ -3163,8 +3163,8 @@ var c2s_faction_upgrade = (function () {
     c2s_faction_upgrade.param_count = 0;
     c2s_faction_upgrade.optname = "onFaction_upgrade";
     return c2s_faction_upgrade;
-})();
-var c2s_faction_join = (function () {
+}());
+var c2s_faction_join = /** @class */ (function () {
     function c2s_faction_join() {
         this.optcode = 0;
     }
@@ -3183,8 +3183,8 @@ var c2s_faction_join = (function () {
     c2s_faction_join.param_count = 1;
     c2s_faction_join.optname = "onFaction_join";
     return c2s_faction_join;
-})();
-var c2s_raise_base_spell = (function () {
+}());
+var c2s_raise_base_spell = /** @class */ (function () {
     function c2s_raise_base_spell() {
         this.optcode = 0;
     }
@@ -3205,8 +3205,8 @@ var c2s_raise_base_spell = (function () {
     c2s_raise_base_spell.param_count = 2;
     c2s_raise_base_spell.optname = "onRaise_base_spell";
     return c2s_raise_base_spell;
-})();
-var c2s_upgrade_anger_spell = (function () {
+}());
+var c2s_upgrade_anger_spell = /** @class */ (function () {
     function c2s_upgrade_anger_spell() {
         this.optcode = 0;
     }
@@ -3225,8 +3225,8 @@ var c2s_upgrade_anger_spell = (function () {
     c2s_upgrade_anger_spell.param_count = 1;
     c2s_upgrade_anger_spell.optname = "onUpgrade_anger_spell";
     return c2s_upgrade_anger_spell;
-})();
-var c2s_raise_mount = (function () {
+}());
+var c2s_raise_mount = /** @class */ (function () {
     function c2s_raise_mount() {
         this.optcode = 0;
     }
@@ -3243,8 +3243,8 @@ var c2s_raise_mount = (function () {
     c2s_raise_mount.param_count = 0;
     c2s_raise_mount.optname = "onRaise_mount";
     return c2s_raise_mount;
-})();
-var c2s_upgrade_mount = (function () {
+}());
+var c2s_upgrade_mount = /** @class */ (function () {
     function c2s_upgrade_mount() {
         this.optcode = 0;
     }
@@ -3263,8 +3263,8 @@ var c2s_upgrade_mount = (function () {
     c2s_upgrade_mount.param_count = 1;
     c2s_upgrade_mount.optname = "onUpgrade_mount";
     return c2s_upgrade_mount;
-})();
-var c2s_upgrade_mount_one_step = (function () {
+}());
+var c2s_upgrade_mount_one_step = /** @class */ (function () {
     function c2s_upgrade_mount_one_step() {
         this.optcode = 0;
     }
@@ -3283,8 +3283,8 @@ var c2s_upgrade_mount_one_step = (function () {
     c2s_upgrade_mount_one_step.param_count = 1;
     c2s_upgrade_mount_one_step.optname = "onUpgrade_mount_one_step";
     return c2s_upgrade_mount_one_step;
-})();
-var c2s_illusion_mount_active = (function () {
+}());
+var c2s_illusion_mount_active = /** @class */ (function () {
     function c2s_illusion_mount_active() {
         this.optcode = 0;
     }
@@ -3303,8 +3303,8 @@ var c2s_illusion_mount_active = (function () {
     c2s_illusion_mount_active.param_count = 1;
     c2s_illusion_mount_active.optname = "onIllusion_mount_active";
     return c2s_illusion_mount_active;
-})();
-var c2s_illusion_mount = (function () {
+}());
+var c2s_illusion_mount = /** @class */ (function () {
     function c2s_illusion_mount() {
         this.optcode = 0;
     }
@@ -3323,8 +3323,8 @@ var c2s_illusion_mount = (function () {
     c2s_illusion_mount.param_count = 1;
     c2s_illusion_mount.optname = "onIllusion_mount";
     return c2s_illusion_mount;
-})();
-var c2s_ride_mount = (function () {
+}());
+var c2s_ride_mount = /** @class */ (function () {
     function c2s_ride_mount() {
         this.optcode = 0;
     }
@@ -3341,8 +3341,8 @@ var c2s_ride_mount = (function () {
     c2s_ride_mount.param_count = 0;
     c2s_ride_mount.optname = "onRide_mount";
     return c2s_ride_mount;
-})();
-var s2c_grid_unit_jump = (function () {
+}());
+var s2c_grid_unit_jump = /** @class */ (function () {
     function s2c_grid_unit_jump() {
         this.optcode = 0;
     }
@@ -3359,8 +3359,8 @@ var s2c_grid_unit_jump = (function () {
     s2c_grid_unit_jump.param_count = 0;
     s2c_grid_unit_jump.optname = "onGrid_unit_jump";
     return s2c_grid_unit_jump;
-})();
-var c2s_gem = (function () {
+}());
+var c2s_gem = /** @class */ (function () {
     function c2s_gem() {
         this.optcode = 0;
     }
@@ -3379,8 +3379,8 @@ var c2s_gem = (function () {
     c2s_gem.param_count = 1;
     c2s_gem.optname = "onGem";
     return c2s_gem;
-})();
-var c2s_change_battle_mode = (function () {
+}());
+var c2s_change_battle_mode = /** @class */ (function () {
     function c2s_change_battle_mode() {
         this.optcode = 0;
     }
@@ -3399,8 +3399,8 @@ var c2s_change_battle_mode = (function () {
     c2s_change_battle_mode.param_count = 1;
     c2s_change_battle_mode.optname = "onChange_battle_mode";
     return c2s_change_battle_mode;
-})();
-var s2c_peace_mode_cd = (function () {
+}());
+var s2c_peace_mode_cd = /** @class */ (function () {
     function s2c_peace_mode_cd() {
         this.optcode = 0;
     }
@@ -3419,8 +3419,8 @@ var s2c_peace_mode_cd = (function () {
     s2c_peace_mode_cd.param_count = 1;
     s2c_peace_mode_cd.optname = "onPeace_mode_cd";
     return s2c_peace_mode_cd;
-})();
-var c2s_divine_active = (function () {
+}());
+var c2s_divine_active = /** @class */ (function () {
     function c2s_divine_active() {
         this.optcode = 0;
     }
@@ -3439,8 +3439,8 @@ var c2s_divine_active = (function () {
     c2s_divine_active.param_count = 1;
     c2s_divine_active.optname = "onDivine_active";
     return c2s_divine_active;
-})();
-var c2s_divine_uplev = (function () {
+}());
+var c2s_divine_uplev = /** @class */ (function () {
     function c2s_divine_uplev() {
         this.optcode = 0;
     }
@@ -3459,8 +3459,8 @@ var c2s_divine_uplev = (function () {
     c2s_divine_uplev.param_count = 1;
     c2s_divine_uplev.optname = "onDivine_uplev";
     return c2s_divine_uplev;
-})();
-var c2s_divine_switch = (function () {
+}());
+var c2s_divine_switch = /** @class */ (function () {
     function c2s_divine_switch() {
         this.optcode = 0;
     }
@@ -3479,8 +3479,8 @@ var c2s_divine_switch = (function () {
     c2s_divine_switch.param_count = 1;
     c2s_divine_switch.optname = "onDivine_switch";
     return c2s_divine_switch;
-})();
-var c2s_jump_start = (function () {
+}());
+var c2s_jump_start = /** @class */ (function () {
     function c2s_jump_start() {
         this.optcode = 0;
     }
@@ -3501,8 +3501,8 @@ var c2s_jump_start = (function () {
     c2s_jump_start.param_count = 2;
     c2s_jump_start.optname = "onJump_start";
     return c2s_jump_start;
-})();
-var c2s_enter_vip_instance = (function () {
+}());
+var c2s_enter_vip_instance = /** @class */ (function () {
     function c2s_enter_vip_instance() {
         this.optcode = 0;
     }
@@ -3523,8 +3523,8 @@ var c2s_enter_vip_instance = (function () {
     c2s_enter_vip_instance.param_count = 2;
     c2s_enter_vip_instance.optname = "onEnter_vip_instance";
     return c2s_enter_vip_instance;
-})();
-var c2s_sweep_vip_instance = (function () {
+}());
+var c2s_sweep_vip_instance = /** @class */ (function () {
     function c2s_sweep_vip_instance() {
         this.optcode = 0;
     }
@@ -3543,8 +3543,8 @@ var c2s_sweep_vip_instance = (function () {
     c2s_sweep_vip_instance.param_count = 1;
     c2s_sweep_vip_instance.optname = "onSweep_vip_instance";
     return c2s_sweep_vip_instance;
-})();
-var c2s_hang_up = (function () {
+}());
+var c2s_hang_up = /** @class */ (function () {
     function c2s_hang_up() {
         this.optcode = 0;
     }
@@ -3561,8 +3561,8 @@ var c2s_hang_up = (function () {
     c2s_hang_up.param_count = 0;
     c2s_hang_up.optname = "onHang_up";
     return c2s_hang_up;
-})();
-var c2s_hang_up_setting = (function () {
+}());
+var c2s_hang_up_setting = /** @class */ (function () {
     function c2s_hang_up_setting() {
         this.optcode = 0;
     }
@@ -3587,8 +3587,8 @@ var c2s_hang_up_setting = (function () {
     c2s_hang_up_setting.param_count = 4;
     c2s_hang_up_setting.optname = "onHang_up_setting";
     return c2s_hang_up_setting;
-})();
-var c2s_enter_trial_instance = (function () {
+}());
+var c2s_enter_trial_instance = /** @class */ (function () {
     function c2s_enter_trial_instance() {
         this.optcode = 0;
     }
@@ -3605,8 +3605,8 @@ var c2s_enter_trial_instance = (function () {
     c2s_enter_trial_instance.param_count = 0;
     c2s_enter_trial_instance.optname = "onEnter_trial_instance";
     return c2s_enter_trial_instance;
-})();
-var c2s_sweep_trial_instance = (function () {
+}());
+var c2s_sweep_trial_instance = /** @class */ (function () {
     function c2s_sweep_trial_instance() {
         this.optcode = 0;
     }
@@ -3623,8 +3623,8 @@ var c2s_sweep_trial_instance = (function () {
     c2s_sweep_trial_instance.param_count = 0;
     c2s_sweep_trial_instance.optname = "onSweep_trial_instance";
     return c2s_sweep_trial_instance;
-})();
-var c2s_reset_trial_instance = (function () {
+}());
+var c2s_reset_trial_instance = /** @class */ (function () {
     function c2s_reset_trial_instance() {
         this.optcode = 0;
     }
@@ -3641,8 +3641,8 @@ var c2s_reset_trial_instance = (function () {
     c2s_reset_trial_instance.param_count = 0;
     c2s_reset_trial_instance.optname = "onReset_trial_instance";
     return c2s_reset_trial_instance;
-})();
-var s2c_sweep_instance_reward = (function () {
+}());
+var s2c_sweep_instance_reward = /** @class */ (function () {
     function s2c_sweep_instance_reward() {
         this.optcode = 0;
         /**
@@ -3680,8 +3680,8 @@ var s2c_sweep_instance_reward = (function () {
     s2c_sweep_instance_reward.param_count = 5;
     s2c_sweep_instance_reward.optname = "onSweep_instance_reward";
     return s2c_sweep_instance_reward;
-})();
-var c2s_reenter_instance = (function () {
+}());
+var c2s_reenter_instance = /** @class */ (function () {
     function c2s_reenter_instance() {
         this.optcode = 0;
     }
@@ -3698,8 +3698,8 @@ var c2s_reenter_instance = (function () {
     c2s_reenter_instance.param_count = 0;
     c2s_reenter_instance.optname = "onReenter_instance";
     return c2s_reenter_instance;
-})();
-var s2c_merry_go_round = (function () {
+}());
+var s2c_merry_go_round = /** @class */ (function () {
     function s2c_merry_go_round() {
         this.optcode = 0;
     }
@@ -3716,8 +3716,8 @@ var s2c_merry_go_round = (function () {
     s2c_merry_go_round.param_count = 0;
     s2c_merry_go_round.optname = "onMerry_go_round";
     return s2c_merry_go_round;
-})();
-var c2s_social_add_friend = (function () {
+}());
+var c2s_social_add_friend = /** @class */ (function () {
     function c2s_social_add_friend() {
         this.optcode = 0;
     }
@@ -3736,8 +3736,8 @@ var c2s_social_add_friend = (function () {
     c2s_social_add_friend.param_count = 1;
     c2s_social_add_friend.optname = "onSocial_add_friend";
     return c2s_social_add_friend;
-})();
-var c2s_social_sureadd_friend = (function () {
+}());
+var c2s_social_sureadd_friend = /** @class */ (function () {
     function c2s_social_sureadd_friend() {
         this.optcode = 0;
     }
@@ -3756,8 +3756,8 @@ var c2s_social_sureadd_friend = (function () {
     c2s_social_sureadd_friend.param_count = 1;
     c2s_social_sureadd_friend.optname = "onSocial_sureadd_friend";
     return c2s_social_sureadd_friend;
-})();
-var c2s_social_gift_friend = (function () {
+}());
+var c2s_social_gift_friend = /** @class */ (function () {
     function c2s_social_gift_friend() {
         this.optcode = 0;
         /**
@@ -3789,8 +3789,8 @@ var c2s_social_gift_friend = (function () {
     c2s_social_gift_friend.param_count = 2;
     c2s_social_gift_friend.optname = "onSocial_gift_friend";
     return c2s_social_gift_friend;
-})();
-var c2s_social_recommend_friend = (function () {
+}());
+var c2s_social_recommend_friend = /** @class */ (function () {
     function c2s_social_recommend_friend() {
         this.optcode = 0;
     }
@@ -3807,8 +3807,8 @@ var c2s_social_recommend_friend = (function () {
     c2s_social_recommend_friend.param_count = 0;
     c2s_social_recommend_friend.optname = "onSocial_recommend_friend";
     return c2s_social_recommend_friend;
-})();
-var s2c_social_get_recommend_friend = (function () {
+}());
+var s2c_social_get_recommend_friend = /** @class */ (function () {
     function s2c_social_get_recommend_friend() {
         this.optcode = 0;
         /**
@@ -3838,8 +3838,8 @@ var s2c_social_get_recommend_friend = (function () {
     s2c_social_get_recommend_friend.param_count = 1;
     s2c_social_get_recommend_friend.optname = "onSocial_get_recommend_friend";
     return s2c_social_get_recommend_friend;
-})();
-var c2s_social_revenge_enemy = (function () {
+}());
+var c2s_social_revenge_enemy = /** @class */ (function () {
     function c2s_social_revenge_enemy() {
         this.optcode = 0;
     }
@@ -3858,8 +3858,8 @@ var c2s_social_revenge_enemy = (function () {
     c2s_social_revenge_enemy.param_count = 1;
     c2s_social_revenge_enemy.optname = "onSocial_revenge_enemy";
     return c2s_social_revenge_enemy;
-})();
-var c2s_social_del_friend = (function () {
+}());
+var c2s_social_del_friend = /** @class */ (function () {
     function c2s_social_del_friend() {
         this.optcode = 0;
     }
@@ -3878,8 +3878,8 @@ var c2s_social_del_friend = (function () {
     c2s_social_del_friend.param_count = 1;
     c2s_social_del_friend.optname = "onSocial_del_friend";
     return c2s_social_del_friend;
-})();
-var c2s_teleport_main_city = (function () {
+}());
+var c2s_teleport_main_city = /** @class */ (function () {
     function c2s_teleport_main_city() {
         this.optcode = 0;
     }
@@ -3896,8 +3896,8 @@ var c2s_teleport_main_city = (function () {
     c2s_teleport_main_city.param_count = 0;
     c2s_teleport_main_city.optname = "onTeleport_main_city";
     return c2s_teleport_main_city;
-})();
-var c2s_chat_by_channel = (function () {
+}());
+var c2s_chat_by_channel = /** @class */ (function () {
     function c2s_chat_by_channel() {
         this.optcode = 0;
     }
@@ -3918,8 +3918,8 @@ var c2s_chat_by_channel = (function () {
     c2s_chat_by_channel.param_count = 2;
     c2s_chat_by_channel.optname = "onChat_by_channel";
     return c2s_chat_by_channel;
-})();
-var s2c_send_chat = (function () {
+}());
+var s2c_send_chat = /** @class */ (function () {
     function s2c_send_chat() {
         this.optcode = 0;
     }
@@ -3958,8 +3958,8 @@ var s2c_send_chat = (function () {
     s2c_send_chat.param_count = 11;
     s2c_send_chat.optname = "onSend_chat";
     return s2c_send_chat;
-})();
-var c2s_social_clear_apply = (function () {
+}());
+var c2s_social_clear_apply = /** @class */ (function () {
     function c2s_social_clear_apply() {
         this.optcode = 0;
     }
@@ -3976,8 +3976,8 @@ var c2s_social_clear_apply = (function () {
     c2s_social_clear_apply.param_count = 0;
     c2s_social_clear_apply.optname = "onSocial_clear_apply";
     return c2s_social_clear_apply;
-})();
-var c2s_msg_decline = (function () {
+}());
+var c2s_msg_decline = /** @class */ (function () {
     function c2s_msg_decline() {
         this.optcode = 0;
     }
@@ -3998,8 +3998,8 @@ var c2s_msg_decline = (function () {
     c2s_msg_decline.param_count = 2;
     c2s_msg_decline.optname = "onMsg_decline";
     return c2s_msg_decline;
-})();
-var s2c_faction_get_list_result = (function () {
+}());
+var s2c_faction_get_list_result = /** @class */ (function () {
     function s2c_faction_get_list_result() {
         this.optcode = 0;
         /**
@@ -4033,8 +4033,8 @@ var s2c_faction_get_list_result = (function () {
     s2c_faction_get_list_result.param_count = 3;
     s2c_faction_get_list_result.optname = "onFaction_get_list_result";
     return s2c_faction_get_list_result;
-})();
-var c2s_faction_getlist = (function () {
+}());
+var c2s_faction_getlist = /** @class */ (function () {
     function c2s_faction_getlist() {
         this.optcode = 0;
     }
@@ -4057,8 +4057,8 @@ var c2s_faction_getlist = (function () {
     c2s_faction_getlist.param_count = 3;
     c2s_faction_getlist.optname = "onFaction_getlist";
     return c2s_faction_getlist;
-})();
-var c2s_faction_manager = (function () {
+}());
+var c2s_faction_manager = /** @class */ (function () {
     function c2s_faction_manager() {
         this.optcode = 0;
     }
@@ -4085,8 +4085,8 @@ var c2s_faction_manager = (function () {
     c2s_faction_manager.param_count = 5;
     c2s_faction_manager.optname = "onFaction_manager";
     return c2s_faction_manager;
-})();
-var c2s_faction_member_operate = (function () {
+}());
+var c2s_faction_member_operate = /** @class */ (function () {
     function c2s_faction_member_operate() {
         this.optcode = 0;
     }
@@ -4113,8 +4113,8 @@ var c2s_faction_member_operate = (function () {
     c2s_faction_member_operate.param_count = 5;
     c2s_faction_member_operate.optname = "onFaction_member_operate";
     return c2s_faction_member_operate;
-})();
-var c2s_faction_fast_join = (function () {
+}());
+var c2s_faction_fast_join = /** @class */ (function () {
     function c2s_faction_fast_join() {
         this.optcode = 0;
     }
@@ -4131,8 +4131,8 @@ var c2s_faction_fast_join = (function () {
     c2s_faction_fast_join.param_count = 0;
     c2s_faction_fast_join.optname = "onFaction_fast_join";
     return c2s_faction_fast_join;
-})();
-var c2s_social_add_friend_byname = (function () {
+}());
+var c2s_social_add_friend_byname = /** @class */ (function () {
     function c2s_social_add_friend_byname() {
         this.optcode = 0;
     }
@@ -4151,8 +4151,8 @@ var c2s_social_add_friend_byname = (function () {
     c2s_social_add_friend_byname.param_count = 1;
     c2s_social_add_friend_byname.optname = "onSocial_add_friend_byname";
     return c2s_social_add_friend_byname;
-})();
-var c2s_read_mail = (function () {
+}());
+var c2s_read_mail = /** @class */ (function () {
     function c2s_read_mail() {
         this.optcode = 0;
     }
@@ -4171,8 +4171,8 @@ var c2s_read_mail = (function () {
     c2s_read_mail.param_count = 1;
     c2s_read_mail.optname = "onRead_mail";
     return c2s_read_mail;
-})();
-var c2s_pick_mail = (function () {
+}());
+var c2s_pick_mail = /** @class */ (function () {
     function c2s_pick_mail() {
         this.optcode = 0;
     }
@@ -4191,8 +4191,8 @@ var c2s_pick_mail = (function () {
     c2s_pick_mail.param_count = 1;
     c2s_pick_mail.optname = "onPick_mail";
     return c2s_pick_mail;
-})();
-var c2s_remove_mail = (function () {
+}());
+var c2s_remove_mail = /** @class */ (function () {
     function c2s_remove_mail() {
         this.optcode = 0;
     }
@@ -4211,8 +4211,8 @@ var c2s_remove_mail = (function () {
     c2s_remove_mail.param_count = 1;
     c2s_remove_mail.optname = "onRemove_mail";
     return c2s_remove_mail;
-})();
-var c2s_pick_mail_one_step = (function () {
+}());
+var c2s_pick_mail_one_step = /** @class */ (function () {
     function c2s_pick_mail_one_step() {
         this.optcode = 0;
     }
@@ -4229,8 +4229,8 @@ var c2s_pick_mail_one_step = (function () {
     c2s_pick_mail_one_step.param_count = 0;
     c2s_pick_mail_one_step.optname = "onPick_mail_one_step";
     return c2s_pick_mail_one_step;
-})();
-var c2s_remove_mail_one_step = (function () {
+}());
+var c2s_remove_mail_one_step = /** @class */ (function () {
     function c2s_remove_mail_one_step() {
         this.optcode = 0;
     }
@@ -4247,8 +4247,8 @@ var c2s_remove_mail_one_step = (function () {
     c2s_remove_mail_one_step.param_count = 0;
     c2s_remove_mail_one_step.optname = "onRemove_mail_one_step";
     return c2s_remove_mail_one_step;
-})();
-var c2s_block_chat = (function () {
+}());
+var c2s_block_chat = /** @class */ (function () {
     function c2s_block_chat() {
         this.optcode = 0;
     }
@@ -4267,8 +4267,8 @@ var c2s_block_chat = (function () {
     c2s_block_chat.param_count = 1;
     c2s_block_chat.optname = "onBlock_chat";
     return c2s_block_chat;
-})();
-var c2s_cancel_block_chat = (function () {
+}());
+var c2s_cancel_block_chat = /** @class */ (function () {
     function c2s_cancel_block_chat() {
         this.optcode = 0;
     }
@@ -4287,8 +4287,8 @@ var c2s_cancel_block_chat = (function () {
     c2s_cancel_block_chat.param_count = 1;
     c2s_cancel_block_chat.optname = "onCancel_block_chat";
     return c2s_cancel_block_chat;
-})();
-var c2s_use_broadcast_gameobject = (function () {
+}());
+var c2s_use_broadcast_gameobject = /** @class */ (function () {
     function c2s_use_broadcast_gameobject() {
         this.optcode = 0;
     }
@@ -4307,8 +4307,8 @@ var c2s_use_broadcast_gameobject = (function () {
     c2s_use_broadcast_gameobject.param_count = 1;
     c2s_use_broadcast_gameobject.optname = "onUse_broadcast_gameobject";
     return c2s_use_broadcast_gameobject;
-})();
-var c2s_world_boss_enroll = (function () {
+}());
+var c2s_world_boss_enroll = /** @class */ (function () {
     function c2s_world_boss_enroll() {
         this.optcode = 0;
     }
@@ -4325,8 +4325,8 @@ var c2s_world_boss_enroll = (function () {
     c2s_world_boss_enroll.param_count = 0;
     c2s_world_boss_enroll.optname = "onWorld_boss_enroll";
     return c2s_world_boss_enroll;
-})();
-var c2s_world_boss_fight = (function () {
+}());
+var c2s_world_boss_fight = /** @class */ (function () {
     function c2s_world_boss_fight() {
         this.optcode = 0;
     }
@@ -4343,8 +4343,8 @@ var c2s_world_boss_fight = (function () {
     c2s_world_boss_fight.param_count = 0;
     c2s_world_boss_fight.optname = "onWorld_boss_fight";
     return c2s_world_boss_fight;
-})();
-var c2s_change_line = (function () {
+}());
+var c2s_change_line = /** @class */ (function () {
     function c2s_change_line() {
         this.optcode = 0;
     }
@@ -4363,8 +4363,8 @@ var c2s_change_line = (function () {
     c2s_change_line.param_count = 1;
     c2s_change_line.optname = "onChange_line";
     return c2s_change_line;
-})();
-var c2s_roll_world_boss_treasure = (function () {
+}());
+var c2s_roll_world_boss_treasure = /** @class */ (function () {
     function c2s_roll_world_boss_treasure() {
         this.optcode = 0;
     }
@@ -4381,8 +4381,8 @@ var c2s_roll_world_boss_treasure = (function () {
     c2s_roll_world_boss_treasure.param_count = 0;
     c2s_roll_world_boss_treasure.optname = "onRoll_world_boss_treasure";
     return c2s_roll_world_boss_treasure;
-})();
-var s2c_roll_result = (function () {
+}());
+var s2c_roll_result = /** @class */ (function () {
     function s2c_roll_result() {
         this.optcode = 0;
     }
@@ -4409,8 +4409,8 @@ var s2c_roll_result = (function () {
     s2c_roll_result.param_count = 5;
     s2c_roll_result.optname = "onRoll_result";
     return s2c_roll_result;
-})();
-var s2c_boss_rank = (function () {
+}());
+var s2c_boss_rank = /** @class */ (function () {
     function s2c_boss_rank() {
         this.optcode = 0;
         /**
@@ -4444,8 +4444,8 @@ var s2c_boss_rank = (function () {
     s2c_boss_rank.param_count = 3;
     s2c_boss_rank.optname = "onBoss_rank";
     return s2c_boss_rank;
-})();
-var c2s_rank_add_like = (function () {
+}());
+var c2s_rank_add_like = /** @class */ (function () {
     function c2s_rank_add_like() {
         this.optcode = 0;
     }
@@ -4466,8 +4466,8 @@ var c2s_rank_add_like = (function () {
     c2s_rank_add_like.param_count = 2;
     c2s_rank_add_like.optname = "onRank_add_like";
     return c2s_rank_add_like;
-})();
-var s2c_rank_add_like_result = (function () {
+}());
+var s2c_rank_add_like_result = /** @class */ (function () {
     function s2c_rank_add_like_result() {
         this.optcode = 0;
     }
@@ -4490,8 +4490,8 @@ var s2c_rank_add_like_result = (function () {
     s2c_rank_add_like_result.param_count = 3;
     s2c_rank_add_like_result.optname = "onRank_add_like_result";
     return s2c_rank_add_like_result;
-})();
-var c2s_res_instance_enter = (function () {
+}());
+var c2s_res_instance_enter = /** @class */ (function () {
     function c2s_res_instance_enter() {
         this.optcode = 0;
     }
@@ -4510,8 +4510,8 @@ var c2s_res_instance_enter = (function () {
     c2s_res_instance_enter.param_count = 1;
     c2s_res_instance_enter.optname = "onRes_instance_enter";
     return c2s_res_instance_enter;
-})();
-var c2s_res_instance_sweep = (function () {
+}());
+var c2s_res_instance_sweep = /** @class */ (function () {
     function c2s_res_instance_sweep() {
         this.optcode = 0;
     }
@@ -4530,8 +4530,8 @@ var c2s_res_instance_sweep = (function () {
     c2s_res_instance_sweep.param_count = 1;
     c2s_res_instance_sweep.optname = "onRes_instance_sweep";
     return c2s_res_instance_sweep;
-})();
-var c2s_show_map_line = (function () {
+}());
+var c2s_show_map_line = /** @class */ (function () {
     function c2s_show_map_line() {
         this.optcode = 0;
     }
@@ -4548,8 +4548,8 @@ var c2s_show_map_line = (function () {
     c2s_show_map_line.param_count = 0;
     c2s_show_map_line.optname = "onShow_map_line";
     return c2s_show_map_line;
-})();
-var s2c_send_map_line = (function () {
+}());
+var s2c_send_map_line = /** @class */ (function () {
     function s2c_send_map_line() {
         this.optcode = 0;
         /**
@@ -4579,8 +4579,8 @@ var s2c_send_map_line = (function () {
     s2c_send_map_line.param_count = 1;
     s2c_send_map_line.optname = "onSend_map_line";
     return s2c_send_map_line;
-})();
-var s2c_item_notice = (function () {
+}());
+var s2c_item_notice = /** @class */ (function () {
     function s2c_item_notice() {
         this.optcode = 0;
         /**
@@ -4612,8 +4612,8 @@ var s2c_item_notice = (function () {
     s2c_item_notice.param_count = 2;
     s2c_item_notice.optname = "onItem_notice";
     return s2c_item_notice;
-})();
-var c2s_teleport_map = (function () {
+}());
+var c2s_teleport_map = /** @class */ (function () {
     function c2s_teleport_map() {
         this.optcode = 0;
     }
@@ -4634,8 +4634,8 @@ var c2s_teleport_map = (function () {
     c2s_teleport_map.param_count = 2;
     c2s_teleport_map.optname = "onTeleport_map";
     return c2s_teleport_map;
-})();
-var c2s_teleport_field_boss = (function () {
+}());
+var c2s_teleport_field_boss = /** @class */ (function () {
     function c2s_teleport_field_boss() {
         this.optcode = 0;
     }
@@ -4656,8 +4656,8 @@ var c2s_teleport_field_boss = (function () {
     c2s_teleport_field_boss.param_count = 2;
     c2s_teleport_field_boss.optname = "onTeleport_field_boss";
     return c2s_teleport_field_boss;
-})();
-var c2s_get_activity_reward = (function () {
+}());
+var c2s_get_activity_reward = /** @class */ (function () {
     function c2s_get_activity_reward() {
         this.optcode = 0;
     }
@@ -4678,8 +4678,8 @@ var c2s_get_activity_reward = (function () {
     c2s_get_activity_reward.param_count = 2;
     c2s_get_activity_reward.optname = "onGet_activity_reward";
     return c2s_get_activity_reward;
-})();
-var c2s_get_achieve_reward = (function () {
+}());
+var c2s_get_achieve_reward = /** @class */ (function () {
     function c2s_get_achieve_reward() {
         this.optcode = 0;
     }
@@ -4698,8 +4698,8 @@ var c2s_get_achieve_reward = (function () {
     c2s_get_achieve_reward.param_count = 1;
     c2s_get_achieve_reward.optname = "onGet_achieve_reward";
     return c2s_get_achieve_reward;
-})();
-var c2s_get_achieve_all_reward = (function () {
+}());
+var c2s_get_achieve_all_reward = /** @class */ (function () {
     function c2s_get_achieve_all_reward() {
         this.optcode = 0;
     }
@@ -4716,8 +4716,8 @@ var c2s_get_achieve_all_reward = (function () {
     c2s_get_achieve_all_reward.param_count = 0;
     c2s_get_achieve_all_reward.optname = "onGet_achieve_all_reward";
     return c2s_get_achieve_all_reward;
-})();
-var c2s_set_title = (function () {
+}());
+var c2s_set_title = /** @class */ (function () {
     function c2s_set_title() {
         this.optcode = 0;
     }
@@ -4736,8 +4736,8 @@ var c2s_set_title = (function () {
     c2s_set_title.param_count = 1;
     c2s_set_title.optname = "onSet_title";
     return c2s_set_title;
-})();
-var c2s_init_title = (function () {
+}());
+var c2s_init_title = /** @class */ (function () {
     function c2s_init_title() {
         this.optcode = 0;
     }
@@ -4756,8 +4756,8 @@ var c2s_init_title = (function () {
     c2s_init_title.param_count = 1;
     c2s_init_title.optname = "onInit_title";
     return c2s_init_title;
-})();
-var c2s_welfare_shouchong_reward = (function () {
+}());
+var c2s_welfare_shouchong_reward = /** @class */ (function () {
     function c2s_welfare_shouchong_reward() {
         this.optcode = 0;
     }
@@ -4774,8 +4774,8 @@ var c2s_welfare_shouchong_reward = (function () {
     c2s_welfare_shouchong_reward.param_count = 0;
     c2s_welfare_shouchong_reward.optname = "onWelfare_shouchong_reward";
     return c2s_welfare_shouchong_reward;
-})();
-var c2s_welfare_checkin = (function () {
+}());
+var c2s_welfare_checkin = /** @class */ (function () {
     function c2s_welfare_checkin() {
         this.optcode = 0;
     }
@@ -4792,8 +4792,8 @@ var c2s_welfare_checkin = (function () {
     c2s_welfare_checkin.param_count = 0;
     c2s_welfare_checkin.optname = "onWelfare_checkin";
     return c2s_welfare_checkin;
-})();
-var c2s_welfare_checkin_all = (function () {
+}());
+var c2s_welfare_checkin_all = /** @class */ (function () {
     function c2s_welfare_checkin_all() {
         this.optcode = 0;
     }
@@ -4812,8 +4812,8 @@ var c2s_welfare_checkin_all = (function () {
     c2s_welfare_checkin_all.param_count = 1;
     c2s_welfare_checkin_all.optname = "onWelfare_checkin_all";
     return c2s_welfare_checkin_all;
-})();
-var c2s_welfare_checkin_getback = (function () {
+}());
+var c2s_welfare_checkin_getback = /** @class */ (function () {
     function c2s_welfare_checkin_getback() {
         this.optcode = 0;
     }
@@ -4832,8 +4832,8 @@ var c2s_welfare_checkin_getback = (function () {
     c2s_welfare_checkin_getback.param_count = 1;
     c2s_welfare_checkin_getback.optname = "onWelfare_checkin_getback";
     return c2s_welfare_checkin_getback;
-})();
-var c2s_welfare_level = (function () {
+}());
+var c2s_welfare_level = /** @class */ (function () {
     function c2s_welfare_level() {
         this.optcode = 0;
     }
@@ -4852,8 +4852,8 @@ var c2s_welfare_level = (function () {
     c2s_welfare_level.param_count = 1;
     c2s_welfare_level.optname = "onWelfare_level";
     return c2s_welfare_level;
-})();
-var c2s_welfare_active_getback = (function () {
+}());
+var c2s_welfare_active_getback = /** @class */ (function () {
     function c2s_welfare_active_getback() {
         this.optcode = 0;
     }
@@ -4876,8 +4876,8 @@ var c2s_welfare_active_getback = (function () {
     c2s_welfare_active_getback.param_count = 3;
     c2s_welfare_active_getback.optname = "onWelfare_active_getback";
     return c2s_welfare_active_getback;
-})();
-var c2s_pick_quest_reward = (function () {
+}());
+var c2s_pick_quest_reward = /** @class */ (function () {
     function c2s_pick_quest_reward() {
         this.optcode = 0;
     }
@@ -4896,8 +4896,8 @@ var c2s_pick_quest_reward = (function () {
     c2s_pick_quest_reward.param_count = 1;
     c2s_pick_quest_reward.optname = "onPick_quest_reward";
     return c2s_pick_quest_reward;
-})();
-var c2s_talk_with_npc = (function () {
+}());
+var c2s_talk_with_npc = /** @class */ (function () {
     function c2s_talk_with_npc() {
         this.optcode = 0;
     }
@@ -4918,8 +4918,8 @@ var c2s_talk_with_npc = (function () {
     c2s_talk_with_npc.param_count = 2;
     c2s_talk_with_npc.optname = "onTalk_with_npc";
     return c2s_talk_with_npc;
-})();
-var c2s_use_virtual_item = (function () {
+}());
+var c2s_use_virtual_item = /** @class */ (function () {
     function c2s_use_virtual_item() {
         this.optcode = 0;
     }
@@ -4938,8 +4938,8 @@ var c2s_use_virtual_item = (function () {
     c2s_use_virtual_item.param_count = 1;
     c2s_use_virtual_item.optname = "onUse_virtual_item";
     return c2s_use_virtual_item;
-})();
-var c2s_pick_quest_chapter_reward = (function () {
+}());
+var c2s_pick_quest_chapter_reward = /** @class */ (function () {
     function c2s_pick_quest_chapter_reward() {
         this.optcode = 0;
     }
@@ -4958,8 +4958,8 @@ var c2s_pick_quest_chapter_reward = (function () {
     c2s_pick_quest_chapter_reward.param_count = 1;
     c2s_pick_quest_chapter_reward.optname = "onPick_quest_chapter_reward";
     return c2s_pick_quest_chapter_reward;
-})();
-var c2s_kuafu_3v3_match = (function () {
+}());
+var c2s_kuafu_3v3_match = /** @class */ (function () {
     function c2s_kuafu_3v3_match() {
         this.optcode = 0;
     }
@@ -4976,8 +4976,8 @@ var c2s_kuafu_3v3_match = (function () {
     c2s_kuafu_3v3_match.param_count = 0;
     c2s_kuafu_3v3_match.optname = "onKuafu_3v3_match";
     return c2s_kuafu_3v3_match;
-})();
-var s2c_kuafu_match_start = (function () {
+}());
+var s2c_kuafu_match_start = /** @class */ (function () {
     function s2c_kuafu_match_start() {
         this.optcode = 0;
     }
@@ -4996,8 +4996,8 @@ var s2c_kuafu_match_start = (function () {
     s2c_kuafu_match_start.param_count = 1;
     s2c_kuafu_match_start.optname = "onKuafu_match_start";
     return s2c_kuafu_match_start;
-})();
-var c2s_kuafu_3v3_buytimes = (function () {
+}());
+var c2s_kuafu_3v3_buytimes = /** @class */ (function () {
     function c2s_kuafu_3v3_buytimes() {
         this.optcode = 0;
     }
@@ -5016,8 +5016,8 @@ var c2s_kuafu_3v3_buytimes = (function () {
     c2s_kuafu_3v3_buytimes.param_count = 1;
     c2s_kuafu_3v3_buytimes.optname = "onKuafu_3v3_buytimes";
     return c2s_kuafu_3v3_buytimes;
-})();
-var c2s_kuafu_3v3_dayreward = (function () {
+}());
+var c2s_kuafu_3v3_dayreward = /** @class */ (function () {
     function c2s_kuafu_3v3_dayreward() {
         this.optcode = 0;
     }
@@ -5036,8 +5036,8 @@ var c2s_kuafu_3v3_dayreward = (function () {
     c2s_kuafu_3v3_dayreward.param_count = 1;
     c2s_kuafu_3v3_dayreward.optname = "onKuafu_3v3_dayreward";
     return c2s_kuafu_3v3_dayreward;
-})();
-var c2s_kuafu_3v3_getranlist = (function () {
+}());
+var c2s_kuafu_3v3_getranlist = /** @class */ (function () {
     function c2s_kuafu_3v3_getranlist() {
         this.optcode = 0;
     }
@@ -5054,8 +5054,8 @@ var c2s_kuafu_3v3_getranlist = (function () {
     c2s_kuafu_3v3_getranlist.param_count = 0;
     c2s_kuafu_3v3_getranlist.optname = "onKuafu_3v3_getranlist";
     return c2s_kuafu_3v3_getranlist;
-})();
-var s2c_kuafu_3v3_ranlist = (function () {
+}());
+var s2c_kuafu_3v3_ranlist = /** @class */ (function () {
     function s2c_kuafu_3v3_ranlist() {
         this.optcode = 0;
     }
@@ -5074,8 +5074,8 @@ var s2c_kuafu_3v3_ranlist = (function () {
     s2c_kuafu_3v3_ranlist.param_count = 1;
     s2c_kuafu_3v3_ranlist.optname = "onKuafu_3v3_ranlist";
     return s2c_kuafu_3v3_ranlist;
-})();
-var c2s_welfare_getalllist_getback = (function () {
+}());
+var c2s_welfare_getalllist_getback = /** @class */ (function () {
     function c2s_welfare_getalllist_getback() {
         this.optcode = 0;
     }
@@ -5094,8 +5094,8 @@ var c2s_welfare_getalllist_getback = (function () {
     c2s_welfare_getalllist_getback.param_count = 1;
     c2s_welfare_getalllist_getback.optname = "onWelfare_getalllist_getback";
     return c2s_welfare_getalllist_getback;
-})();
-var s2c_welfare_rewardlist_getback = (function () {
+}());
+var s2c_welfare_rewardlist_getback = /** @class */ (function () {
     function s2c_welfare_rewardlist_getback() {
         this.optcode = 0;
     }
@@ -5116,8 +5116,8 @@ var s2c_welfare_rewardlist_getback = (function () {
     s2c_welfare_rewardlist_getback.param_count = 2;
     s2c_welfare_rewardlist_getback.optname = "onWelfare_rewardlist_getback";
     return s2c_welfare_rewardlist_getback;
-})();
-var c2s_welfare_getall_getback = (function () {
+}());
+var c2s_welfare_getall_getback = /** @class */ (function () {
     function c2s_welfare_getall_getback() {
         this.optcode = 0;
     }
@@ -5136,8 +5136,8 @@ var c2s_welfare_getall_getback = (function () {
     c2s_welfare_getall_getback.param_count = 1;
     c2s_welfare_getall_getback.optname = "onWelfare_getall_getback";
     return c2s_welfare_getall_getback;
-})();
-var c2s_kuafu_3v3_getmyrank = (function () {
+}());
+var c2s_kuafu_3v3_getmyrank = /** @class */ (function () {
     function c2s_kuafu_3v3_getmyrank() {
         this.optcode = 0;
     }
@@ -5154,8 +5154,8 @@ var c2s_kuafu_3v3_getmyrank = (function () {
     c2s_kuafu_3v3_getmyrank.param_count = 0;
     c2s_kuafu_3v3_getmyrank.optname = "onKuafu_3v3_getmyrank";
     return c2s_kuafu_3v3_getmyrank;
-})();
-var s2c_kuafu_3v3_myrank = (function () {
+}());
+var s2c_kuafu_3v3_myrank = /** @class */ (function () {
     function s2c_kuafu_3v3_myrank() {
         this.optcode = 0;
     }
@@ -5174,8 +5174,8 @@ var s2c_kuafu_3v3_myrank = (function () {
     s2c_kuafu_3v3_myrank.param_count = 1;
     s2c_kuafu_3v3_myrank.optname = "onKuafu_3v3_myrank";
     return s2c_kuafu_3v3_myrank;
-})();
-var s2c_kuafu_3v3_kill_detail = (function () {
+}());
+var s2c_kuafu_3v3_kill_detail = /** @class */ (function () {
     function s2c_kuafu_3v3_kill_detail() {
         this.optcode = 0;
     }
@@ -5196,8 +5196,8 @@ var s2c_kuafu_3v3_kill_detail = (function () {
     s2c_kuafu_3v3_kill_detail.param_count = 2;
     s2c_kuafu_3v3_kill_detail.optname = "onKuafu_3v3_kill_detail";
     return s2c_kuafu_3v3_kill_detail;
-})();
-var s2c_kuafu_3v3_wait_info = (function () {
+}());
+var s2c_kuafu_3v3_wait_info = /** @class */ (function () {
     function s2c_kuafu_3v3_wait_info() {
         this.optcode = 0;
         /**
@@ -5227,8 +5227,8 @@ var s2c_kuafu_3v3_wait_info = (function () {
     s2c_kuafu_3v3_wait_info.param_count = 1;
     s2c_kuafu_3v3_wait_info.optname = "onKuafu_3v3_wait_info";
     return s2c_kuafu_3v3_wait_info;
-})();
-var both_kuafu_3v3_cancel_match = (function () {
+}());
+var both_kuafu_3v3_cancel_match = /** @class */ (function () {
     function both_kuafu_3v3_cancel_match() {
         this.optcode = 0;
     }
@@ -5247,8 +5247,8 @@ var both_kuafu_3v3_cancel_match = (function () {
     both_kuafu_3v3_cancel_match.param_count = 1;
     both_kuafu_3v3_cancel_match.optname = "onKuafu_3v3_cancel_match";
     return both_kuafu_3v3_cancel_match;
-})();
-var c2s_kuafu_3v3_match_oper = (function () {
+}());
+var c2s_kuafu_3v3_match_oper = /** @class */ (function () {
     function c2s_kuafu_3v3_match_oper() {
         this.optcode = 0;
     }
@@ -5267,8 +5267,8 @@ var c2s_kuafu_3v3_match_oper = (function () {
     c2s_kuafu_3v3_match_oper.param_count = 1;
     c2s_kuafu_3v3_match_oper.optname = "onKuafu_3v3_match_oper";
     return c2s_kuafu_3v3_match_oper;
-})();
-var s2c_kuafu_3v3_decline_match = (function () {
+}());
+var s2c_kuafu_3v3_decline_match = /** @class */ (function () {
     function s2c_kuafu_3v3_decline_match() {
         this.optcode = 0;
     }
@@ -5287,8 +5287,8 @@ var s2c_kuafu_3v3_decline_match = (function () {
     s2c_kuafu_3v3_decline_match.param_count = 1;
     s2c_kuafu_3v3_decline_match.optname = "onKuafu_3v3_decline_match";
     return s2c_kuafu_3v3_decline_match;
-})();
-var c2s_kuafu_xianfu_match = (function () {
+}());
+var c2s_kuafu_xianfu_match = /** @class */ (function () {
     function c2s_kuafu_xianfu_match() {
         this.optcode = 0;
     }
@@ -5307,8 +5307,8 @@ var c2s_kuafu_xianfu_match = (function () {
     c2s_kuafu_xianfu_match.param_count = 1;
     c2s_kuafu_xianfu_match.optname = "onKuafu_xianfu_match";
     return c2s_kuafu_xianfu_match;
-})();
-var s2c_kuafu_match_wait = (function () {
+}());
+var s2c_kuafu_match_wait = /** @class */ (function () {
     function s2c_kuafu_match_wait() {
         this.optcode = 0;
     }
@@ -5335,8 +5335,8 @@ var s2c_kuafu_match_wait = (function () {
     s2c_kuafu_match_wait.param_count = 5;
     s2c_kuafu_match_wait.optname = "onKuafu_match_wait";
     return s2c_kuafu_match_wait;
-})();
-var s2c_kuafu_xianfu_minimap_info = (function () {
+}());
+var s2c_kuafu_xianfu_minimap_info = /** @class */ (function () {
     function s2c_kuafu_xianfu_minimap_info() {
         this.optcode = 0;
     }
@@ -5353,8 +5353,8 @@ var s2c_kuafu_xianfu_minimap_info = (function () {
     s2c_kuafu_xianfu_minimap_info.param_count = 0;
     s2c_kuafu_xianfu_minimap_info.optname = "onKuafu_xianfu_minimap_info";
     return s2c_kuafu_xianfu_minimap_info;
-})();
-var c2s_buy_xianfu_item = (function () {
+}());
+var c2s_buy_xianfu_item = /** @class */ (function () {
     function c2s_buy_xianfu_item() {
         this.optcode = 0;
     }
@@ -5377,8 +5377,8 @@ var c2s_buy_xianfu_item = (function () {
     c2s_buy_xianfu_item.param_count = 3;
     c2s_buy_xianfu_item.optname = "onBuy_xianfu_item";
     return c2s_buy_xianfu_item;
-})();
-var c2s_xianfu_random_respawn = (function () {
+}());
+var c2s_xianfu_random_respawn = /** @class */ (function () {
     function c2s_xianfu_random_respawn() {
         this.optcode = 0;
     }
@@ -5395,8 +5395,8 @@ var c2s_xianfu_random_respawn = (function () {
     c2s_xianfu_random_respawn.param_count = 0;
     c2s_xianfu_random_respawn.optname = "onXianfu_random_respawn";
     return c2s_xianfu_random_respawn;
-})();
-var c2s_doujiantai_fight = (function () {
+}());
+var c2s_doujiantai_fight = /** @class */ (function () {
     function c2s_doujiantai_fight() {
         this.optcode = 0;
     }
@@ -5415,8 +5415,8 @@ var c2s_doujiantai_fight = (function () {
     c2s_doujiantai_fight.param_count = 1;
     c2s_doujiantai_fight.optname = "onDoujiantai_fight";
     return c2s_doujiantai_fight;
-})();
-var c2s_doujiantai_buytime = (function () {
+}());
+var c2s_doujiantai_buytime = /** @class */ (function () {
     function c2s_doujiantai_buytime() {
         this.optcode = 0;
     }
@@ -5435,8 +5435,8 @@ var c2s_doujiantai_buytime = (function () {
     c2s_doujiantai_buytime.param_count = 1;
     c2s_doujiantai_buytime.optname = "onDoujiantai_buytime";
     return c2s_doujiantai_buytime;
-})();
-var c2s_doujiantai_clearcd = (function () {
+}());
+var c2s_doujiantai_clearcd = /** @class */ (function () {
     function c2s_doujiantai_clearcd() {
         this.optcode = 0;
     }
@@ -5453,8 +5453,8 @@ var c2s_doujiantai_clearcd = (function () {
     c2s_doujiantai_clearcd.param_count = 0;
     c2s_doujiantai_clearcd.optname = "onDoujiantai_clearcd";
     return c2s_doujiantai_clearcd;
-})();
-var c2s_doujiantai_first_reward = (function () {
+}());
+var c2s_doujiantai_first_reward = /** @class */ (function () {
     function c2s_doujiantai_first_reward() {
         this.optcode = 0;
     }
@@ -5473,8 +5473,8 @@ var c2s_doujiantai_first_reward = (function () {
     c2s_doujiantai_first_reward.param_count = 1;
     c2s_doujiantai_first_reward.optname = "onDoujiantai_first_reward";
     return c2s_doujiantai_first_reward;
-})();
-var both_doujiantai_get_enemys_info = (function () {
+}());
+var both_doujiantai_get_enemys_info = /** @class */ (function () {
     function both_doujiantai_get_enemys_info() {
         this.optcode = 0;
     }
@@ -5491,8 +5491,8 @@ var both_doujiantai_get_enemys_info = (function () {
     both_doujiantai_get_enemys_info.param_count = 0;
     both_doujiantai_get_enemys_info.optname = "onDoujiantai_get_enemys_info";
     return both_doujiantai_get_enemys_info;
-})();
-var c2s_doujiantai_get_rank = (function () {
+}());
+var c2s_doujiantai_get_rank = /** @class */ (function () {
     function c2s_doujiantai_get_rank() {
         this.optcode = 0;
     }
@@ -5513,8 +5513,8 @@ var c2s_doujiantai_get_rank = (function () {
     c2s_doujiantai_get_rank.param_count = 2;
     c2s_doujiantai_get_rank.optname = "onDoujiantai_get_rank";
     return c2s_doujiantai_get_rank;
-})();
-var c2s_doujiantai_refresh_enemys = (function () {
+}());
+var c2s_doujiantai_refresh_enemys = /** @class */ (function () {
     function c2s_doujiantai_refresh_enemys() {
         this.optcode = 0;
     }
@@ -5531,8 +5531,8 @@ var c2s_doujiantai_refresh_enemys = (function () {
     c2s_doujiantai_refresh_enemys.param_count = 0;
     c2s_doujiantai_refresh_enemys.optname = "onDoujiantai_refresh_enemys";
     return c2s_doujiantai_refresh_enemys;
-})();
-var both_doujiantai_top3 = (function () {
+}());
+var both_doujiantai_top3 = /** @class */ (function () {
     function both_doujiantai_top3() {
         this.optcode = 0;
     }
@@ -5549,8 +5549,8 @@ var both_doujiantai_top3 = (function () {
     both_doujiantai_top3.param_count = 0;
     both_doujiantai_top3.optname = "onDoujiantai_top3";
     return both_doujiantai_top3;
-})();
-var both_use_jump_point = (function () {
+}());
+var both_use_jump_point = /** @class */ (function () {
     function both_use_jump_point() {
         this.optcode = 0;
     }
@@ -5569,8 +5569,8 @@ var both_use_jump_point = (function () {
     both_use_jump_point.param_count = 1;
     both_use_jump_point.optname = "onUse_jump_point";
     return both_use_jump_point;
-})();
-var c2s_bag_item_sell = (function () {
+}());
+var c2s_bag_item_sell = /** @class */ (function () {
     function c2s_bag_item_sell() {
         this.optcode = 0;
     }
@@ -5591,8 +5591,8 @@ var c2s_bag_item_sell = (function () {
     c2s_bag_item_sell.param_count = 2;
     c2s_bag_item_sell.optname = "onBag_item_sell";
     return c2s_bag_item_sell;
-})();
-var c2s_bag_item_sort = (function () {
+}());
+var c2s_bag_item_sort = /** @class */ (function () {
     function c2s_bag_item_sort() {
         this.optcode = 0;
     }
@@ -5609,8 +5609,8 @@ var c2s_bag_item_sort = (function () {
     c2s_bag_item_sort.param_count = 0;
     c2s_bag_item_sort.optname = "onBag_item_sort";
     return c2s_bag_item_sort;
-})();
-var c2s_submit_quest_daily2 = (function () {
+}());
+var c2s_submit_quest_daily2 = /** @class */ (function () {
     function c2s_submit_quest_daily2() {
         this.optcode = 0;
     }
@@ -5627,8 +5627,8 @@ var c2s_submit_quest_daily2 = (function () {
     c2s_submit_quest_daily2.param_count = 0;
     c2s_submit_quest_daily2.optname = "onSubmit_quest_daily2";
     return c2s_submit_quest_daily2;
-})();
-var s2c_attribute_changed = (function () {
+}());
+var s2c_attribute_changed = /** @class */ (function () {
     function s2c_attribute_changed() {
         this.optcode = 0;
     }
@@ -5645,8 +5645,8 @@ var s2c_attribute_changed = (function () {
     s2c_attribute_changed.param_count = 0;
     s2c_attribute_changed.optname = "onAttribute_changed";
     return s2c_attribute_changed;
-})();
-var s2c_bag_find_equip_better = (function () {
+}());
+var s2c_bag_find_equip_better = /** @class */ (function () {
     function s2c_bag_find_equip_better() {
         this.optcode = 0;
     }
@@ -5667,8 +5667,8 @@ var s2c_bag_find_equip_better = (function () {
     s2c_bag_find_equip_better.param_count = 2;
     s2c_bag_find_equip_better.optname = "onBag_find_equip_better";
     return s2c_bag_find_equip_better;
-})();
-var s2c_module_active = (function () {
+}());
+var s2c_module_active = /** @class */ (function () {
     function s2c_module_active() {
         this.optcode = 0;
     }
@@ -5687,8 +5687,8 @@ var s2c_module_active = (function () {
     s2c_module_active.param_count = 1;
     s2c_module_active.optname = "onModule_active";
     return s2c_module_active;
-})();
-var c2s_pick_daily2_quest_reward = (function () {
+}());
+var c2s_pick_daily2_quest_reward = /** @class */ (function () {
     function c2s_pick_daily2_quest_reward() {
         this.optcode = 0;
     }
@@ -5707,8 +5707,8 @@ var c2s_pick_daily2_quest_reward = (function () {
     c2s_pick_daily2_quest_reward.param_count = 1;
     c2s_pick_daily2_quest_reward.optname = "onPick_daily2_quest_reward";
     return c2s_pick_daily2_quest_reward;
-})();
-var c2s_finish_now_guide = (function () {
+}());
+var c2s_finish_now_guide = /** @class */ (function () {
     function c2s_finish_now_guide() {
         this.optcode = 0;
     }
@@ -5725,8 +5725,8 @@ var c2s_finish_now_guide = (function () {
     c2s_finish_now_guide.param_count = 0;
     c2s_finish_now_guide.optname = "onFinish_now_guide";
     return c2s_finish_now_guide;
-})();
-var c2s_get_cultivation_info = (function () {
+}());
+var c2s_get_cultivation_info = /** @class */ (function () {
     function c2s_get_cultivation_info() {
         this.optcode = 0;
     }
@@ -5743,8 +5743,8 @@ var c2s_get_cultivation_info = (function () {
     c2s_get_cultivation_info.param_count = 0;
     c2s_get_cultivation_info.optname = "onGet_cultivation_info";
     return c2s_get_cultivation_info;
-})();
-var s2c_update_cultivation_info = (function () {
+}());
+var s2c_update_cultivation_info = /** @class */ (function () {
     function s2c_update_cultivation_info() {
         this.optcode = 0;
     }
@@ -5765,8 +5765,8 @@ var s2c_update_cultivation_info = (function () {
     s2c_update_cultivation_info.param_count = 2;
     s2c_update_cultivation_info.optname = "onUpdate_cultivation_info";
     return s2c_update_cultivation_info;
-})();
-var c2s_get_cultivation_rivals_info = (function () {
+}());
+var c2s_get_cultivation_rivals_info = /** @class */ (function () {
     function c2s_get_cultivation_rivals_info() {
         this.optcode = 0;
     }
@@ -5783,8 +5783,8 @@ var c2s_get_cultivation_rivals_info = (function () {
     c2s_get_cultivation_rivals_info.param_count = 0;
     c2s_get_cultivation_rivals_info.optname = "onGet_cultivation_rivals_info";
     return c2s_get_cultivation_rivals_info;
-})();
-var s2c_update_cultivation_rivals_info_list = (function () {
+}());
+var s2c_update_cultivation_rivals_info_list = /** @class */ (function () {
     function s2c_update_cultivation_rivals_info_list() {
         this.optcode = 0;
         /**
@@ -5814,8 +5814,8 @@ var s2c_update_cultivation_rivals_info_list = (function () {
     s2c_update_cultivation_rivals_info_list.param_count = 1;
     s2c_update_cultivation_rivals_info_list.optname = "onUpdate_cultivation_rivals_info_list";
     return s2c_update_cultivation_rivals_info_list;
-})();
-var c2s_get_cultivation_reward = (function () {
+}());
+var c2s_get_cultivation_reward = /** @class */ (function () {
     function c2s_get_cultivation_reward() {
         this.optcode = 0;
     }
@@ -5832,8 +5832,8 @@ var c2s_get_cultivation_reward = (function () {
     c2s_get_cultivation_reward.param_count = 0;
     c2s_get_cultivation_reward.optname = "onGet_cultivation_reward";
     return c2s_get_cultivation_reward;
-})();
-var c2s_refresh_cultivation_rivals = (function () {
+}());
+var c2s_refresh_cultivation_rivals = /** @class */ (function () {
     function c2s_refresh_cultivation_rivals() {
         this.optcode = 0;
     }
@@ -5850,8 +5850,8 @@ var c2s_refresh_cultivation_rivals = (function () {
     c2s_refresh_cultivation_rivals.param_count = 0;
     c2s_refresh_cultivation_rivals.optname = "onRefresh_cultivation_rivals";
     return c2s_refresh_cultivation_rivals;
-})();
-var c2s_plunder_cultivation_rival = (function () {
+}());
+var c2s_plunder_cultivation_rival = /** @class */ (function () {
     function c2s_plunder_cultivation_rival() {
         this.optcode = 0;
     }
@@ -5870,8 +5870,8 @@ var c2s_plunder_cultivation_rival = (function () {
     c2s_plunder_cultivation_rival.param_count = 1;
     c2s_plunder_cultivation_rival.optname = "onPlunder_cultivation_rival";
     return c2s_plunder_cultivation_rival;
-})();
-var c2s_revenge_cultivation_rival = (function () {
+}());
+var c2s_revenge_cultivation_rival = /** @class */ (function () {
     function c2s_revenge_cultivation_rival() {
         this.optcode = 0;
     }
@@ -5890,8 +5890,8 @@ var c2s_revenge_cultivation_rival = (function () {
     c2s_revenge_cultivation_rival.param_count = 1;
     c2s_revenge_cultivation_rival.optname = "onRevenge_cultivation_rival";
     return c2s_revenge_cultivation_rival;
-})();
-var c2s_buy_cultivation_left_plunder_count = (function () {
+}());
+var c2s_buy_cultivation_left_plunder_count = /** @class */ (function () {
     function c2s_buy_cultivation_left_plunder_count() {
         this.optcode = 0;
     }
@@ -5910,8 +5910,8 @@ var c2s_buy_cultivation_left_plunder_count = (function () {
     c2s_buy_cultivation_left_plunder_count.param_count = 1;
     c2s_buy_cultivation_left_plunder_count.optname = "onBuy_cultivation_left_plunder_count";
     return c2s_buy_cultivation_left_plunder_count;
-})();
-var s2c_show_cultivation_result_list = (function () {
+}());
+var s2c_show_cultivation_result_list = /** @class */ (function () {
     function s2c_show_cultivation_result_list() {
         this.optcode = 0;
         /**
@@ -5945,8 +5945,8 @@ var s2c_show_cultivation_result_list = (function () {
     s2c_show_cultivation_result_list.param_count = 3;
     s2c_show_cultivation_result_list.optname = "onShow_cultivation_result_list";
     return s2c_show_cultivation_result_list;
-})();
-var c2s_get_login_activity_reward = (function () {
+}());
+var c2s_get_login_activity_reward = /** @class */ (function () {
     function c2s_get_login_activity_reward() {
         this.optcode = 0;
     }
@@ -5965,8 +5965,8 @@ var c2s_get_login_activity_reward = (function () {
     c2s_get_login_activity_reward.param_count = 1;
     c2s_get_login_activity_reward.optname = "onGet_login_activity_reward";
     return c2s_get_login_activity_reward;
-})();
-var s2c_cast_spell_start = (function () {
+}());
+var s2c_cast_spell_start = /** @class */ (function () {
     function s2c_cast_spell_start() {
         this.optcode = 0;
     }
@@ -5991,8 +5991,8 @@ var s2c_cast_spell_start = (function () {
     s2c_cast_spell_start.param_count = 4;
     s2c_cast_spell_start.optname = "onCast_spell_start";
     return s2c_cast_spell_start;
-})();
-var c2s_finish_optional_guide_step = (function () {
+}());
+var c2s_finish_optional_guide_step = /** @class */ (function () {
     function c2s_finish_optional_guide_step() {
         this.optcode = 0;
     }
@@ -6013,8 +6013,8 @@ var c2s_finish_optional_guide_step = (function () {
     c2s_finish_optional_guide_step.param_count = 2;
     c2s_finish_optional_guide_step.optname = "onFinish_optional_guide_step";
     return c2s_finish_optional_guide_step;
-})();
-var c2s_execute_quest_cmd_after_accepted = (function () {
+}());
+var c2s_execute_quest_cmd_after_accepted = /** @class */ (function () {
     function c2s_execute_quest_cmd_after_accepted() {
         this.optcode = 0;
     }
@@ -6033,8 +6033,8 @@ var c2s_execute_quest_cmd_after_accepted = (function () {
     c2s_execute_quest_cmd_after_accepted.param_count = 1;
     c2s_execute_quest_cmd_after_accepted.optname = "onExecute_quest_cmd_after_accepted";
     return c2s_execute_quest_cmd_after_accepted;
-})();
-var s2c_show_unit_attribute = (function () {
+}());
+var s2c_show_unit_attribute = /** @class */ (function () {
     function s2c_show_unit_attribute() {
         this.optcode = 0;
     }
@@ -6051,8 +6051,8 @@ var s2c_show_unit_attribute = (function () {
     s2c_show_unit_attribute.param_count = 0;
     s2c_show_unit_attribute.optname = "onShow_unit_attribute";
     return s2c_show_unit_attribute;
-})();
-var c2s_back_to_famity = (function () {
+}());
+var c2s_back_to_famity = /** @class */ (function () {
     function c2s_back_to_famity() {
         this.optcode = 0;
     }
@@ -6069,8 +6069,8 @@ var c2s_back_to_famity = (function () {
     c2s_back_to_famity.param_count = 0;
     c2s_back_to_famity.optname = "onBack_to_famity";
     return c2s_back_to_famity;
-})();
-var s2c_faction_boss_send_result = (function () {
+}());
+var s2c_faction_boss_send_result = /** @class */ (function () {
     function s2c_faction_boss_send_result() {
         this.optcode = 0;
     }
@@ -6093,8 +6093,8 @@ var s2c_faction_boss_send_result = (function () {
     s2c_faction_boss_send_result.param_count = 3;
     s2c_faction_boss_send_result.optname = "onFaction_boss_send_result";
     return s2c_faction_boss_send_result;
-})();
-var c2s_challange_boss = (function () {
+}());
+var c2s_challange_boss = /** @class */ (function () {
     function c2s_challange_boss() {
         this.optcode = 0;
     }
@@ -6111,8 +6111,8 @@ var c2s_challange_boss = (function () {
     c2s_challange_boss.param_count = 0;
     c2s_challange_boss.optname = "onChallange_boss";
     return c2s_challange_boss;
-})();
-var c2s_pick_offline_reward = (function () {
+}());
+var c2s_pick_offline_reward = /** @class */ (function () {
     function c2s_pick_offline_reward() {
         this.optcode = 0;
     }
@@ -6129,8 +6129,8 @@ var c2s_pick_offline_reward = (function () {
     c2s_pick_offline_reward.param_count = 0;
     c2s_pick_offline_reward.optname = "onPick_offline_reward";
     return c2s_pick_offline_reward;
-})();
-var s2c_offline_reward_result = (function () {
+}());
+var s2c_offline_reward_result = /** @class */ (function () {
     function s2c_offline_reward_result() {
         this.optcode = 0;
         /**
@@ -6168,8 +6168,8 @@ var s2c_offline_reward_result = (function () {
     s2c_offline_reward_result.param_count = 5;
     s2c_offline_reward_result.optname = "onOffline_reward_result";
     return s2c_offline_reward_result;
-})();
-var c2s_smelting_equip = (function () {
+}());
+var c2s_smelting_equip = /** @class */ (function () {
     function c2s_smelting_equip() {
         this.optcode = 0;
     }
@@ -6188,8 +6188,8 @@ var c2s_smelting_equip = (function () {
     c2s_smelting_equip.param_count = 1;
     c2s_smelting_equip.optname = "onSmelting_equip";
     return c2s_smelting_equip;
-})();
-var c2s_storehouse_hand_in = (function () {
+}());
+var c2s_storehouse_hand_in = /** @class */ (function () {
     function c2s_storehouse_hand_in() {
         this.optcode = 0;
     }
@@ -6208,8 +6208,8 @@ var c2s_storehouse_hand_in = (function () {
     c2s_storehouse_hand_in.param_count = 1;
     c2s_storehouse_hand_in.optname = "onStorehouse_hand_in";
     return c2s_storehouse_hand_in;
-})();
-var c2s_storehouse_exchange = (function () {
+}());
+var c2s_storehouse_exchange = /** @class */ (function () {
     function c2s_storehouse_exchange() {
         this.optcode = 0;
     }
@@ -6228,8 +6228,8 @@ var c2s_storehouse_exchange = (function () {
     c2s_storehouse_exchange.param_count = 1;
     c2s_storehouse_exchange.optname = "onStorehouse_exchange";
     return c2s_storehouse_exchange;
-})();
-var c2s_storehouse_destroy = (function () {
+}());
+var c2s_storehouse_destroy = /** @class */ (function () {
     function c2s_storehouse_destroy() {
         this.optcode = 0;
     }
@@ -6248,8 +6248,8 @@ var c2s_storehouse_destroy = (function () {
     c2s_storehouse_destroy.param_count = 1;
     c2s_storehouse_destroy.optname = "onStorehouse_destroy";
     return c2s_storehouse_destroy;
-})();
-var c2s_send_faction_gift = (function () {
+}());
+var c2s_send_faction_gift = /** @class */ (function () {
     function c2s_send_faction_gift() {
         this.optcode = 0;
         /**
@@ -6283,8 +6283,8 @@ var c2s_send_faction_gift = (function () {
     c2s_send_faction_gift.param_count = 3;
     c2s_send_faction_gift.optname = "onSend_faction_gift";
     return c2s_send_faction_gift;
-})();
-var c2s_get_faction_gift_exreward = (function () {
+}());
+var c2s_get_faction_gift_exreward = /** @class */ (function () {
     function c2s_get_faction_gift_exreward() {
         this.optcode = 0;
     }
@@ -6303,8 +6303,8 @@ var c2s_get_faction_gift_exreward = (function () {
     c2s_get_faction_gift_exreward.param_count = 1;
     c2s_get_faction_gift_exreward.optname = "onGet_faction_gift_exreward";
     return c2s_get_faction_gift_exreward;
-})();
-var c2s_get_all_faction_gift_exreward = (function () {
+}());
+var c2s_get_all_faction_gift_exreward = /** @class */ (function () {
     function c2s_get_all_faction_gift_exreward() {
         this.optcode = 0;
     }
@@ -6321,8 +6321,8 @@ var c2s_get_all_faction_gift_exreward = (function () {
     c2s_get_all_faction_gift_exreward.param_count = 0;
     c2s_get_all_faction_gift_exreward.optname = "onGet_all_faction_gift_exreward";
     return c2s_get_all_faction_gift_exreward;
-})();
-var s2c_show_faction_gift_page = (function () {
+}());
+var s2c_show_faction_gift_page = /** @class */ (function () {
     function s2c_show_faction_gift_page() {
         this.optcode = 0;
     }
@@ -6339,8 +6339,8 @@ var s2c_show_faction_gift_page = (function () {
     s2c_show_faction_gift_page.param_count = 0;
     s2c_show_faction_gift_page.optname = "onShow_faction_gift_page";
     return s2c_show_faction_gift_page;
-})();
-var s2c_show_faction_gift_info = (function () {
+}());
+var s2c_show_faction_gift_info = /** @class */ (function () {
     function s2c_show_faction_gift_info() {
         this.optcode = 0;
     }
@@ -6357,8 +6357,8 @@ var s2c_show_faction_gift_info = (function () {
     s2c_show_faction_gift_info.param_count = 0;
     s2c_show_faction_gift_info.optname = "onShow_faction_gift_info";
     return s2c_show_faction_gift_info;
-})();
-var s2c_show_faction_gift_unthank_page = (function () {
+}());
+var s2c_show_faction_gift_unthank_page = /** @class */ (function () {
     function s2c_show_faction_gift_unthank_page() {
         this.optcode = 0;
     }
@@ -6375,8 +6375,8 @@ var s2c_show_faction_gift_unthank_page = (function () {
     s2c_show_faction_gift_unthank_page.param_count = 0;
     s2c_show_faction_gift_unthank_page.optname = "onShow_faction_gift_unthank_page";
     return s2c_show_faction_gift_unthank_page;
-})();
-var s2c_show_faction_gift_history_page = (function () {
+}());
+var s2c_show_faction_gift_history_page = /** @class */ (function () {
     function s2c_show_faction_gift_history_page() {
         this.optcode = 0;
     }
@@ -6393,8 +6393,8 @@ var s2c_show_faction_gift_history_page = (function () {
     s2c_show_faction_gift_history_page.param_count = 0;
     s2c_show_faction_gift_history_page.optname = "onShow_faction_gift_history_page";
     return s2c_show_faction_gift_history_page;
-})();
-var c2s_get_faction_gift_rank_page = (function () {
+}());
+var c2s_get_faction_gift_rank_page = /** @class */ (function () {
     function c2s_get_faction_gift_rank_page() {
         this.optcode = 0;
     }
@@ -6413,8 +6413,8 @@ var c2s_get_faction_gift_rank_page = (function () {
     c2s_get_faction_gift_rank_page.param_count = 1;
     c2s_get_faction_gift_rank_page.optname = "onGet_faction_gift_rank_page";
     return c2s_get_faction_gift_rank_page;
-})();
-var s2c_show_faction_gift_rank_result_list = (function () {
+}());
+var s2c_show_faction_gift_rank_result_list = /** @class */ (function () {
     function s2c_show_faction_gift_rank_result_list() {
         this.optcode = 0;
         /**
@@ -6449,8 +6449,8 @@ var s2c_show_faction_gift_rank_result_list = (function () {
     s2c_show_faction_gift_rank_result_list.param_count = 3;
     s2c_show_faction_gift_rank_result_list.optname = "onShow_faction_gift_rank_result_list";
     return s2c_show_faction_gift_rank_result_list;
-})();
-var s2c_show_faction_gift_rank_change = (function () {
+}());
+var s2c_show_faction_gift_rank_change = /** @class */ (function () {
     function s2c_show_faction_gift_rank_change() {
         this.optcode = 0;
     }
@@ -6474,8 +6474,8 @@ var s2c_show_faction_gift_rank_change = (function () {
     s2c_show_faction_gift_rank_change.param_count = 3;
     s2c_show_faction_gift_rank_change.optname = "onShow_faction_gift_rank_change";
     return s2c_show_faction_gift_rank_change;
-})();
-var s2c_show_faction_gift_rank_info = (function () {
+}());
+var s2c_show_faction_gift_rank_info = /** @class */ (function () {
     function s2c_show_faction_gift_rank_info() {
         this.optcode = 0;
     }
@@ -6495,8 +6495,8 @@ var s2c_show_faction_gift_rank_info = (function () {
     s2c_show_faction_gift_rank_info.param_count = 1;
     s2c_show_faction_gift_rank_info.optname = "onShow_faction_gift_rank_info";
     return s2c_show_faction_gift_rank_info;
-})();
-var c2s_divine_forge = (function () {
+}());
+var c2s_divine_forge = /** @class */ (function () {
     function c2s_divine_forge() {
         this.optcode = 0;
     }
@@ -6517,8 +6517,8 @@ var c2s_divine_forge = (function () {
     c2s_divine_forge.param_count = 2;
     c2s_divine_forge.optname = "onDivine_forge";
     return c2s_divine_forge;
-})();
-var c2s_divine_advance = (function () {
+}());
+var c2s_divine_advance = /** @class */ (function () {
     function c2s_divine_advance() {
         this.optcode = 0;
     }
@@ -6537,8 +6537,8 @@ var c2s_divine_advance = (function () {
     c2s_divine_advance.param_count = 1;
     c2s_divine_advance.optname = "onDivine_advance";
     return c2s_divine_advance;
-})();
-var c2s_divine_spirit = (function () {
+}());
+var c2s_divine_spirit = /** @class */ (function () {
     function c2s_divine_spirit() {
         this.optcode = 0;
     }
@@ -6561,8 +6561,8 @@ var c2s_divine_spirit = (function () {
     c2s_divine_spirit.param_count = 3;
     c2s_divine_spirit.optname = "onDivine_spirit";
     return c2s_divine_spirit;
-})();
-var c2s_query_mass_boss_info = (function () {
+}());
+var c2s_query_mass_boss_info = /** @class */ (function () {
     function c2s_query_mass_boss_info() {
         this.optcode = 0;
     }
@@ -6581,8 +6581,8 @@ var c2s_query_mass_boss_info = (function () {
     c2s_query_mass_boss_info.param_count = 1;
     c2s_query_mass_boss_info.optname = "onQuery_mass_boss_info";
     return c2s_query_mass_boss_info;
-})();
-var s2c_mass_boss_info_ret = (function () {
+}());
+var s2c_mass_boss_info_ret = /** @class */ (function () {
     function s2c_mass_boss_info_ret() {
         this.optcode = 0;
     }
@@ -6603,8 +6603,8 @@ var s2c_mass_boss_info_ret = (function () {
     s2c_mass_boss_info_ret.param_count = 2;
     s2c_mass_boss_info_ret.optname = "onMass_boss_info_ret";
     return s2c_mass_boss_info_ret;
-})();
-var c2s_query_mass_boss_rank = (function () {
+}());
+var c2s_query_mass_boss_rank = /** @class */ (function () {
     function c2s_query_mass_boss_rank() {
         this.optcode = 0;
     }
@@ -6623,8 +6623,8 @@ var c2s_query_mass_boss_rank = (function () {
     c2s_query_mass_boss_rank.param_count = 1;
     c2s_query_mass_boss_rank.optname = "onQuery_mass_boss_rank";
     return c2s_query_mass_boss_rank;
-})();
-var s2c_mass_boss_rank_result = (function () {
+}());
+var s2c_mass_boss_rank_result = /** @class */ (function () {
     function s2c_mass_boss_rank_result() {
         this.optcode = 0;
         /**
@@ -6654,8 +6654,8 @@ var s2c_mass_boss_rank_result = (function () {
     s2c_mass_boss_rank_result.param_count = 1;
     s2c_mass_boss_rank_result.optname = "onMass_boss_rank_result";
     return s2c_mass_boss_rank_result;
-})();
-var c2s_try_mass_boss = (function () {
+}());
+var c2s_try_mass_boss = /** @class */ (function () {
     function c2s_try_mass_boss() {
         this.optcode = 0;
     }
@@ -6674,8 +6674,8 @@ var c2s_try_mass_boss = (function () {
     c2s_try_mass_boss.param_count = 1;
     c2s_try_mass_boss.optname = "onTry_mass_boss";
     return c2s_try_mass_boss;
-})();
-var c2s_buy_mass_boss_times = (function () {
+}());
+var c2s_buy_mass_boss_times = /** @class */ (function () {
     function c2s_buy_mass_boss_times() {
         this.optcode = 0;
     }
@@ -6694,8 +6694,8 @@ var c2s_buy_mass_boss_times = (function () {
     c2s_buy_mass_boss_times.param_count = 1;
     c2s_buy_mass_boss_times.optname = "onBuy_mass_boss_times";
     return c2s_buy_mass_boss_times;
-})();
-var c2s_group_instance_match = (function () {
+}());
+var c2s_group_instance_match = /** @class */ (function () {
     function c2s_group_instance_match() {
         this.optcode = 0;
     }
@@ -6714,8 +6714,8 @@ var c2s_group_instance_match = (function () {
     c2s_group_instance_match.param_count = 1;
     c2s_group_instance_match.optname = "onGroup_instance_match";
     return c2s_group_instance_match;
-})();
-var c2s_buy_group_instance_times = (function () {
+}());
+var c2s_buy_group_instance_times = /** @class */ (function () {
     function c2s_buy_group_instance_times() {
         this.optcode = 0;
     }
@@ -6734,8 +6734,8 @@ var c2s_buy_group_instance_times = (function () {
     c2s_buy_group_instance_times.param_count = 1;
     c2s_buy_group_instance_times.optname = "onBuy_group_instance_times";
     return c2s_buy_group_instance_times;
-})();
-var c2s_talisman_active = (function () {
+}());
+var c2s_talisman_active = /** @class */ (function () {
     function c2s_talisman_active() {
         this.optcode = 0;
     }
@@ -6754,8 +6754,8 @@ var c2s_talisman_active = (function () {
     c2s_talisman_active.param_count = 1;
     c2s_talisman_active.optname = "onTalisman_active";
     return c2s_talisman_active;
-})();
-var c2s_talisman_lvup = (function () {
+}());
+var c2s_talisman_lvup = /** @class */ (function () {
     function c2s_talisman_lvup() {
         this.optcode = 0;
     }
@@ -6774,8 +6774,8 @@ var c2s_talisman_lvup = (function () {
     c2s_talisman_lvup.param_count = 1;
     c2s_talisman_lvup.optname = "onTalisman_lvup";
     return c2s_talisman_lvup;
-})();
-var c2s_wings_active = (function () {
+}());
+var c2s_wings_active = /** @class */ (function () {
     function c2s_wings_active() {
         this.optcode = 0;
     }
@@ -6792,8 +6792,8 @@ var c2s_wings_active = (function () {
     c2s_wings_active.param_count = 0;
     c2s_wings_active.optname = "onWings_active";
     return c2s_wings_active;
-})();
-var c2s_wings_bless = (function () {
+}());
+var c2s_wings_bless = /** @class */ (function () {
     function c2s_wings_bless() {
         this.optcode = 0;
     }
@@ -6810,8 +6810,8 @@ var c2s_wings_bless = (function () {
     c2s_wings_bless.param_count = 0;
     c2s_wings_bless.optname = "onWings_bless";
     return c2s_wings_bless;
-})();
-var c2s_wings_rankup = (function () {
+}());
+var c2s_wings_rankup = /** @class */ (function () {
     function c2s_wings_rankup() {
         this.optcode = 0;
     }
@@ -6828,8 +6828,8 @@ var c2s_wings_rankup = (function () {
     c2s_wings_rankup.param_count = 0;
     c2s_wings_rankup.optname = "onWings_rankup";
     return c2s_wings_rankup;
-})();
-var c2s_wings_strength = (function () {
+}());
+var c2s_wings_strength = /** @class */ (function () {
     function c2s_wings_strength() {
         this.optcode = 0;
     }
@@ -6846,8 +6846,8 @@ var c2s_wings_strength = (function () {
     c2s_wings_strength.param_count = 0;
     c2s_wings_strength.optname = "onWings_strength";
     return c2s_wings_strength;
-})();
-var c2s_meridian_practise = (function () {
+}());
+var c2s_meridian_practise = /** @class */ (function () {
     function c2s_meridian_practise() {
         this.optcode = 0;
     }
@@ -6864,8 +6864,8 @@ var c2s_meridian_practise = (function () {
     c2s_meridian_practise.param_count = 0;
     c2s_meridian_practise.optname = "onMeridian_practise";
     return c2s_meridian_practise;
-})();
-var c2s_add_meridian_exp = (function () {
+}());
+var c2s_add_meridian_exp = /** @class */ (function () {
     function c2s_add_meridian_exp() {
         this.optcode = 0;
     }
@@ -6884,8 +6884,8 @@ var c2s_add_meridian_exp = (function () {
     c2s_add_meridian_exp.param_count = 1;
     c2s_add_meridian_exp.optname = "onAdd_meridian_exp";
     return c2s_add_meridian_exp;
-})();
-var c2s_raise_mount_level_base = (function () {
+}());
+var c2s_raise_mount_level_base = /** @class */ (function () {
     function c2s_raise_mount_level_base() {
         this.optcode = 0;
     }
@@ -6902,8 +6902,8 @@ var c2s_raise_mount_level_base = (function () {
     c2s_raise_mount_level_base.param_count = 0;
     c2s_raise_mount_level_base.optname = "onRaise_mount_level_base";
     return c2s_raise_mount_level_base;
-})();
-var c2s_active_mount = (function () {
+}());
+var c2s_active_mount = /** @class */ (function () {
     function c2s_active_mount() {
         this.optcode = 0;
     }
@@ -6920,8 +6920,8 @@ var c2s_active_mount = (function () {
     c2s_active_mount.param_count = 0;
     c2s_active_mount.optname = "onActive_mount";
     return c2s_active_mount;
-})();
-var s2c_show_faction_bossdefense_damage_list = (function () {
+}());
+var s2c_show_faction_bossdefense_damage_list = /** @class */ (function () {
     function s2c_show_faction_bossdefense_damage_list() {
         this.optcode = 0;
         /**
@@ -6951,8 +6951,8 @@ var s2c_show_faction_bossdefense_damage_list = (function () {
     s2c_show_faction_bossdefense_damage_list.param_count = 1;
     s2c_show_faction_bossdefense_damage_list.optname = "onShow_faction_bossdefense_damage_list";
     return s2c_show_faction_bossdefense_damage_list;
-})();
-var s2c_show_faction_tower_sweep_list = (function () {
+}());
+var s2c_show_faction_tower_sweep_list = /** @class */ (function () {
     function s2c_show_faction_tower_sweep_list() {
         this.optcode = 0;
         /**
@@ -6982,8 +6982,8 @@ var s2c_show_faction_tower_sweep_list = (function () {
     s2c_show_faction_tower_sweep_list.param_count = 1;
     s2c_show_faction_tower_sweep_list.optname = "onShow_faction_tower_sweep_list";
     return s2c_show_faction_tower_sweep_list;
-})();
-var s2c_send_instance_result = (function () {
+}());
+var s2c_send_instance_result = /** @class */ (function () {
     function s2c_send_instance_result() {
         this.optcode = 0;
         /**
@@ -7021,8 +7021,8 @@ var s2c_send_instance_result = (function () {
     s2c_send_instance_result.param_count = 5;
     s2c_send_instance_result.optname = "onSend_instance_result";
     return s2c_send_instance_result;
-})();
-var c2s_match_single_pvp = (function () {
+}());
+var c2s_match_single_pvp = /** @class */ (function () {
     function c2s_match_single_pvp() {
         this.optcode = 0;
     }
@@ -7039,8 +7039,8 @@ var c2s_match_single_pvp = (function () {
     c2s_match_single_pvp.param_count = 0;
     c2s_match_single_pvp.optname = "onMatch_single_pvp";
     return c2s_match_single_pvp;
-})();
-var c2s_buy_match_single_pvp_times = (function () {
+}());
+var c2s_buy_match_single_pvp_times = /** @class */ (function () {
     function c2s_buy_match_single_pvp_times() {
         this.optcode = 0;
     }
@@ -7059,8 +7059,8 @@ var c2s_buy_match_single_pvp_times = (function () {
     c2s_buy_match_single_pvp_times.param_count = 1;
     c2s_buy_match_single_pvp_times.optname = "onBuy_match_single_pvp_times";
     return c2s_buy_match_single_pvp_times;
-})();
-var c2s_pick_match_single_pvp_extra_reward = (function () {
+}());
+var c2s_pick_match_single_pvp_extra_reward = /** @class */ (function () {
     function c2s_pick_match_single_pvp_extra_reward() {
         this.optcode = 0;
     }
@@ -7079,8 +7079,8 @@ var c2s_pick_match_single_pvp_extra_reward = (function () {
     c2s_pick_match_single_pvp_extra_reward.param_count = 1;
     c2s_pick_match_single_pvp_extra_reward.optname = "onPick_match_single_pvp_extra_reward";
     return c2s_pick_match_single_pvp_extra_reward;
-})();
-var c2s_equipdevelop_operate = (function () {
+}());
+var c2s_equipdevelop_operate = /** @class */ (function () {
     function c2s_equipdevelop_operate() {
         this.optcode = 0;
     }
@@ -7107,8 +7107,8 @@ var c2s_equipdevelop_operate = (function () {
     c2s_equipdevelop_operate.param_count = 5;
     c2s_equipdevelop_operate.optname = "onEquipdevelop_operate";
     return c2s_equipdevelop_operate;
-})();
-var c2s_active_appearance = (function () {
+}());
+var c2s_active_appearance = /** @class */ (function () {
     function c2s_active_appearance() {
         this.optcode = 0;
     }
@@ -7127,8 +7127,8 @@ var c2s_active_appearance = (function () {
     c2s_active_appearance.param_count = 1;
     c2s_active_appearance.optname = "onActive_appearance";
     return c2s_active_appearance;
-})();
-var c2s_equip_appearance = (function () {
+}());
+var c2s_equip_appearance = /** @class */ (function () {
     function c2s_equip_appearance() {
         this.optcode = 0;
     }
@@ -7147,8 +7147,8 @@ var c2s_equip_appearance = (function () {
     c2s_equip_appearance.param_count = 1;
     c2s_equip_appearance.optname = "onEquip_appearance";
     return c2s_equip_appearance;
-})();
-var c2s_cancel_equip_appearance = (function () {
+}());
+var c2s_cancel_equip_appearance = /** @class */ (function () {
     function c2s_cancel_equip_appearance() {
         this.optcode = 0;
     }
@@ -7167,8 +7167,8 @@ var c2s_cancel_equip_appearance = (function () {
     c2s_cancel_equip_appearance.param_count = 1;
     c2s_cancel_equip_appearance.optname = "onCancel_equip_appearance";
     return c2s_cancel_equip_appearance;
-})();
-var c2s_rename = (function () {
+}());
+var c2s_rename = /** @class */ (function () {
     function c2s_rename() {
         this.optcode = 0;
     }
@@ -7187,8 +7187,8 @@ var c2s_rename = (function () {
     c2s_rename.param_count = 1;
     c2s_rename.optname = "onRename";
     return c2s_rename;
-})();
-var c2s_unlock_title = (function () {
+}());
+var c2s_unlock_title = /** @class */ (function () {
     function c2s_unlock_title() {
         this.optcode = 0;
     }
@@ -7207,8 +7207,8 @@ var c2s_unlock_title = (function () {
     c2s_unlock_title.param_count = 1;
     c2s_unlock_title.optname = "onUnlock_title";
     return c2s_unlock_title;
-})();
-var c2s_social_buy_revenge_times = (function () {
+}());
+var c2s_social_buy_revenge_times = /** @class */ (function () {
     function c2s_social_buy_revenge_times() {
         this.optcode = 0;
     }
@@ -7227,8 +7227,8 @@ var c2s_social_buy_revenge_times = (function () {
     c2s_social_buy_revenge_times.param_count = 1;
     c2s_social_buy_revenge_times.optname = "onSocial_buy_revenge_times";
     return c2s_social_buy_revenge_times;
-})();
-var c2s_enter_risk_instance = (function () {
+}());
+var c2s_enter_risk_instance = /** @class */ (function () {
     function c2s_enter_risk_instance() {
         this.optcode = 0;
     }
@@ -7245,8 +7245,8 @@ var c2s_enter_risk_instance = (function () {
     c2s_enter_risk_instance.param_count = 0;
     c2s_enter_risk_instance.optname = "onEnter_risk_instance";
     return c2s_enter_risk_instance;
-})();
-var c2s_social_remove_enemy = (function () {
+}());
+var c2s_social_remove_enemy = /** @class */ (function () {
     function c2s_social_remove_enemy() {
         this.optcode = 0;
     }
@@ -7265,8 +7265,8 @@ var c2s_social_remove_enemy = (function () {
     c2s_social_remove_enemy.param_count = 1;
     c2s_social_remove_enemy.optname = "onSocial_remove_enemy";
     return c2s_social_remove_enemy;
-})();
-var c2s_get_player_overview = (function () {
+}());
+var c2s_get_player_overview = /** @class */ (function () {
     function c2s_get_player_overview() {
         this.optcode = 0;
     }
@@ -7285,8 +7285,8 @@ var c2s_get_player_overview = (function () {
     c2s_get_player_overview.param_count = 1;
     c2s_get_player_overview.optname = "onGet_player_overview";
     return c2s_get_player_overview;
-})();
-var s2c_show_player_overview = (function () {
+}());
+var s2c_show_player_overview = /** @class */ (function () {
     function s2c_show_player_overview() {
         this.optcode = 0;
         /**
@@ -7332,8 +7332,8 @@ var s2c_show_player_overview = (function () {
     s2c_show_player_overview.param_count = 9;
     s2c_show_player_overview.optname = "onShow_player_overview";
     return s2c_show_player_overview;
-})();
-var c2s_send_faction_invite = (function () {
+}());
+var c2s_send_faction_invite = /** @class */ (function () {
     function c2s_send_faction_invite() {
         this.optcode = 0;
     }
@@ -7352,8 +7352,8 @@ var c2s_send_faction_invite = (function () {
     c2s_send_faction_invite.param_count = 1;
     c2s_send_faction_invite.optname = "onSend_faction_invite";
     return c2s_send_faction_invite;
-})();
-var s2c_show_faction_invite = (function () {
+}());
+var s2c_show_faction_invite = /** @class */ (function () {
     function s2c_show_faction_invite() {
         this.optcode = 0;
     }
@@ -7378,8 +7378,8 @@ var s2c_show_faction_invite = (function () {
     s2c_show_faction_invite.param_count = 4;
     s2c_show_faction_invite.optname = "onShow_faction_invite";
     return s2c_show_faction_invite;
-})();
-var c2s_buy_vipgift = (function () {
+}());
+var c2s_buy_vipgift = /** @class */ (function () {
     function c2s_buy_vipgift() {
         this.optcode = 0;
     }
@@ -7398,8 +7398,8 @@ var c2s_buy_vipgift = (function () {
     c2s_buy_vipgift.param_count = 1;
     c2s_buy_vipgift.optname = "onBuy_vipgift";
     return c2s_buy_vipgift;
-})();
-var c2s_activity_opt_buy_dailygift = (function () {
+}());
+var c2s_activity_opt_buy_dailygift = /** @class */ (function () {
     function c2s_activity_opt_buy_dailygift() {
         this.optcode = 0;
     }
@@ -7420,8 +7420,8 @@ var c2s_activity_opt_buy_dailygift = (function () {
     c2s_activity_opt_buy_dailygift.param_count = 2;
     c2s_activity_opt_buy_dailygift.optname = "onActivity_opt_buy_dailygift";
     return c2s_activity_opt_buy_dailygift;
-})();
-var c2s_draw_lottery = (function () {
+}());
+var c2s_draw_lottery = /** @class */ (function () {
     function c2s_draw_lottery() {
         this.optcode = 0;
     }
@@ -7442,8 +7442,8 @@ var c2s_draw_lottery = (function () {
     c2s_draw_lottery.param_count = 2;
     c2s_draw_lottery.optname = "onDraw_lottery";
     return c2s_draw_lottery;
-})();
-var c2s_activity_opt_get_rank_process_reward = (function () {
+}());
+var c2s_activity_opt_get_rank_process_reward = /** @class */ (function () {
     function c2s_activity_opt_get_rank_process_reward() {
         this.optcode = 0;
     }
@@ -7464,8 +7464,8 @@ var c2s_activity_opt_get_rank_process_reward = (function () {
     c2s_activity_opt_get_rank_process_reward.param_count = 2;
     c2s_activity_opt_get_rank_process_reward.optname = "onActivity_opt_get_rank_process_reward";
     return c2s_activity_opt_get_rank_process_reward;
-})();
-var c2s_activity_opt_get_rank_list = (function () {
+}());
+var c2s_activity_opt_get_rank_list = /** @class */ (function () {
     function c2s_activity_opt_get_rank_list() {
         this.optcode = 0;
     }
@@ -7484,8 +7484,8 @@ var c2s_activity_opt_get_rank_list = (function () {
     c2s_activity_opt_get_rank_list.param_count = 1;
     c2s_activity_opt_get_rank_list.optname = "onActivity_opt_get_rank_list";
     return c2s_activity_opt_get_rank_list;
-})();
-var s2c_activity_opt_show_rank_list = (function () {
+}());
+var s2c_activity_opt_show_rank_list = /** @class */ (function () {
     function s2c_activity_opt_show_rank_list() {
         this.optcode = 0;
         /**
@@ -7517,8 +7517,8 @@ var s2c_activity_opt_show_rank_list = (function () {
     s2c_activity_opt_show_rank_list.param_count = 2;
     s2c_activity_opt_show_rank_list.optname = "onActivity_opt_show_rank_list";
     return s2c_activity_opt_show_rank_list;
-})();
-var c2s_activity_opt_buy_limitgift = (function () {
+}());
+var c2s_activity_opt_buy_limitgift = /** @class */ (function () {
     function c2s_activity_opt_buy_limitgift() {
         this.optcode = 0;
     }
@@ -7539,8 +7539,8 @@ var c2s_activity_opt_buy_limitgift = (function () {
     c2s_activity_opt_buy_limitgift.param_count = 2;
     c2s_activity_opt_buy_limitgift.optname = "onActivity_opt_buy_limitgift";
     return c2s_activity_opt_buy_limitgift;
-})();
-var c2s_welfare_get_recharge_reward = (function () {
+}());
+var c2s_welfare_get_recharge_reward = /** @class */ (function () {
     function c2s_welfare_get_recharge_reward() {
         this.optcode = 0;
     }
@@ -7559,8 +7559,8 @@ var c2s_welfare_get_recharge_reward = (function () {
     c2s_welfare_get_recharge_reward.param_count = 1;
     c2s_welfare_get_recharge_reward.optname = "onWelfare_get_recharge_reward";
     return c2s_welfare_get_recharge_reward;
-})();
-var c2s_welfare_get_consume_reward = (function () {
+}());
+var c2s_welfare_get_consume_reward = /** @class */ (function () {
     function c2s_welfare_get_consume_reward() {
         this.optcode = 0;
     }
@@ -7579,8 +7579,8 @@ var c2s_welfare_get_consume_reward = (function () {
     c2s_welfare_get_consume_reward.param_count = 1;
     c2s_welfare_get_consume_reward.optname = "onWelfare_get_consume_reward";
     return c2s_welfare_get_consume_reward;
-})();
-var c2s_welfare_get_sevenday_reward = (function () {
+}());
+var c2s_welfare_get_sevenday_reward = /** @class */ (function () {
     function c2s_welfare_get_sevenday_reward() {
         this.optcode = 0;
     }
@@ -7599,8 +7599,8 @@ var c2s_welfare_get_sevenday_reward = (function () {
     c2s_welfare_get_sevenday_reward.param_count = 1;
     c2s_welfare_get_sevenday_reward.optname = "onWelfare_get_sevenday_reward";
     return c2s_welfare_get_sevenday_reward;
-})();
-var s2c_send_server_open_time = (function () {
+}());
+var s2c_send_server_open_time = /** @class */ (function () {
     function s2c_send_server_open_time() {
         this.optcode = 0;
     }
@@ -7619,8 +7619,8 @@ var s2c_send_server_open_time = (function () {
     s2c_send_server_open_time.param_count = 1;
     s2c_send_server_open_time.optname = "onSend_server_open_time";
     return s2c_send_server_open_time;
-})();
-var c2s_risk_get_rank = (function () {
+}());
+var c2s_risk_get_rank = /** @class */ (function () {
     function c2s_risk_get_rank() {
         this.optcode = 0;
     }
@@ -7637,8 +7637,8 @@ var c2s_risk_get_rank = (function () {
     c2s_risk_get_rank.param_count = 0;
     c2s_risk_get_rank.optname = "onRisk_get_rank";
     return c2s_risk_get_rank;
-})();
-var s2c_risk_get_rank_result = (function () {
+}());
+var s2c_risk_get_rank_result = /** @class */ (function () {
     function s2c_risk_get_rank_result() {
         this.optcode = 0;
         /**
@@ -7668,5 +7668,5 @@ var s2c_risk_get_rank_result = (function () {
     s2c_risk_get_rank_result.param_count = 1;
     s2c_risk_get_rank_result.optname = "onRisk_get_rank_result";
     return s2c_risk_get_rank_result;
-})();
+}());
 //# sourceMappingURL=clientmsg.js.map

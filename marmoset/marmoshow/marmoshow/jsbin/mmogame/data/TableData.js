@@ -4,13 +4,13 @@ function traceNoTabelData() {
 }
 var tb;
 (function (tb) {
-    var SkillLevelVo = (function () {
+    var SkillLevelVo = /** @class */ (function () {
         function SkillLevelVo() {
         }
         return SkillLevelVo;
-    })();
+    }());
     tb.SkillLevelVo = SkillLevelVo;
-    var TB_item_template = (function () {
+    var TB_item_template = /** @class */ (function () {
         function TB_item_template($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -86,9 +86,9 @@ var tb;
             return $str + this.name;
         };
         return TB_item_template;
-    })();
+    }());
     tb.TB_item_template = TB_item_template;
-    var SkillLearnVo = (function () {
+    var SkillLearnVo = /** @class */ (function () {
         function SkillLearnVo() {
         }
         SkillLearnVo.prototype.parse = function ($obj) {
@@ -101,9 +101,9 @@ var tb;
             makeArray($obj.resource, this.resource);
         };
         return SkillLearnVo;
-    })();
+    }());
     tb.SkillLearnVo = SkillLearnVo;
-    var TB_skill_uplevel = (function () {
+    var TB_skill_uplevel = /** @class */ (function () {
         function TB_skill_uplevel($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -127,9 +127,9 @@ var tb;
             return $vo;
         };
         return TB_skill_uplevel;
-    })();
+    }());
     tb.TB_skill_uplevel = TB_skill_uplevel;
-    var TB_world_map = (function () {
+    var TB_world_map = /** @class */ (function () {
         function TB_world_map($obj) {
             if (!$obj) {
                 console.log("空");
@@ -155,9 +155,9 @@ var tb;
             return $vo;
         };
         return TB_world_map;
-    })();
+    }());
     tb.TB_world_map = TB_world_map;
-    var TB_meridian_item = (function () {
+    var TB_meridian_item = /** @class */ (function () {
         function TB_meridian_item($obj) {
             if (!$obj) {
                 console.log("空");
@@ -182,9 +182,9 @@ var tb;
             return $vo;
         };
         return TB_meridian_item;
-    })();
+    }());
     tb.TB_meridian_item = TB_meridian_item;
-    var TB_meridian_source = (function () {
+    var TB_meridian_source = /** @class */ (function () {
         function TB_meridian_source($obj) {
             if (!$obj) {
                 console.log("空");
@@ -211,9 +211,9 @@ var tb;
             return $vo;
         };
         return TB_meridian_source;
-    })();
+    }());
     tb.TB_meridian_source = TB_meridian_source;
-    var TB_meridian_info = (function () {
+    var TB_meridian_info = /** @class */ (function () {
         function TB_meridian_info($obj) {
             if (!$obj) {
                 console.log("空");
@@ -247,9 +247,9 @@ var tb;
             return $vo;
         };
         return TB_meridian_info;
-    })();
+    }());
     tb.TB_meridian_info = TB_meridian_info;
-    var TB_group_instance_base = (function () {
+    var TB_group_instance_base = /** @class */ (function () {
         function TB_group_instance_base($obj) {
             if (!$obj) {
                 console.log("空");
@@ -289,9 +289,9 @@ var tb;
             return $vo;
         };
         return TB_group_instance_base;
-    })();
+    }());
     tb.TB_group_instance_base = TB_group_instance_base;
-    var TB_group_instance_buy = (function () {
+    var TB_group_instance_buy = /** @class */ (function () {
         function TB_group_instance_buy($obj) {
             if (!$obj) {
                 console.log("空");
@@ -318,9 +318,9 @@ var tb;
             return $vo;
         };
         return TB_group_instance_buy;
-    })();
+    }());
     tb.TB_group_instance_buy = TB_group_instance_buy;
-    var TB_mass_boss_info = (function () {
+    var TB_mass_boss_info = /** @class */ (function () {
         function TB_mass_boss_info($obj) {
             if (!$obj) {
                 console.log("空");
@@ -347,9 +347,9 @@ var tb;
             return $vo;
         };
         return TB_mass_boss_info;
-    })();
+    }());
     tb.TB_mass_boss_info = TB_mass_boss_info;
-    var TB_mass_boss_base = (function () {
+    var TB_mass_boss_base = /** @class */ (function () {
         function TB_mass_boss_base($obj) {
             if (!$obj) {
                 console.log("空");
@@ -364,9 +364,9 @@ var tb;
             return $vo;
         };
         return TB_mass_boss_base;
-    })();
+    }());
     tb.TB_mass_boss_base = TB_mass_boss_base;
-    var TB_mass_boss_times = (function () {
+    var TB_mass_boss_times = /** @class */ (function () {
         function TB_mass_boss_times($obj) {
             if (!$obj) {
                 console.log("空");
@@ -390,9 +390,9 @@ var tb;
             return $vo;
         };
         return TB_mass_boss_times;
-    })();
+    }());
     tb.TB_mass_boss_times = TB_mass_boss_times;
-    var TB_anger_limit = (function () {
+    var TB_anger_limit = /** @class */ (function () {
         function TB_anger_limit(value) {
             if (!value) {
                 console.log("空");
@@ -406,9 +406,9 @@ var tb;
             return $vo;
         };
         return TB_anger_limit;
-    })();
+    }());
     tb.TB_anger_limit = TB_anger_limit;
-    var TB_item_illusion = (function () {
+    var TB_item_illusion = /** @class */ (function () {
         function TB_item_illusion($obj) {
             if (!$obj) {
                 console.log("空");
@@ -425,9 +425,9 @@ var tb;
             return $vo;
         };
         return TB_item_illusion;
-    })();
+    }());
     tb.TB_item_illusion = TB_item_illusion;
-    var TB_system_guide = (function () {
+    var TB_system_guide = /** @class */ (function () {
         function TB_system_guide($obj) {
             if (!$obj) {
                 console.log("空");
@@ -461,9 +461,9 @@ var tb;
             }
         };
         return TB_system_guide;
-    })();
+    }());
     tb.TB_system_guide = TB_system_guide;
-    var TB_quest_daily2_base = (function () {
+    var TB_quest_daily2_base = /** @class */ (function () {
         // id,limit
         // int,int
         function TB_quest_daily2_base($obj) {
@@ -480,9 +480,9 @@ var tb;
             return $vo;
         };
         return TB_quest_daily2_base;
-    })();
+    }());
     tb.TB_quest_daily2_base = TB_quest_daily2_base;
-    var TB_map_field_boss = (function () {
+    var TB_map_field_boss = /** @class */ (function () {
         function TB_map_field_boss($obj) {
             if (!$obj) {
                 console.log("空");
@@ -508,9 +508,9 @@ var tb;
             return $vo;
         };
         return TB_map_field_boss;
-    })();
+    }());
     tb.TB_map_field_boss = TB_map_field_boss;
-    var TB_item_slot = (function () {
+    var TB_item_slot = /** @class */ (function () {
         function TB_item_slot($obj) {
             if (!$obj) {
                 console.log("空");
@@ -538,9 +538,9 @@ var tb;
             }
         };
         return TB_item_slot;
-    })();
+    }());
     tb.TB_item_slot = TB_item_slot;
-    var TB_quest_daily2_set = (function () {
+    var TB_quest_daily2_set = /** @class */ (function () {
         // id,limit
         // int,int
         function TB_quest_daily2_set($obj) {
@@ -560,9 +560,9 @@ var tb;
             return $vo;
         };
         return TB_quest_daily2_set;
-    })();
+    }());
     tb.TB_quest_daily2_set = TB_quest_daily2_set;
-    var TB_quest_daily2_finish_reward = (function () {
+    var TB_quest_daily2_finish_reward = /** @class */ (function () {
         // id,limit
         // int,int
         function TB_quest_daily2_finish_reward($obj) {
@@ -579,9 +579,9 @@ var tb;
             return $vo;
         };
         return TB_quest_daily2_finish_reward;
-    })();
+    }());
     tb.TB_quest_daily2_finish_reward = TB_quest_daily2_finish_reward;
-    var TB_quest_daily2 = (function () {
+    var TB_quest_daily2 = /** @class */ (function () {
         // id,limit
         // int,int
         function TB_quest_daily2($obj) {
@@ -608,9 +608,9 @@ var tb;
             return $vo;
         };
         return TB_quest_daily2;
-    })();
+    }());
     tb.TB_quest_daily2 = TB_quest_daily2;
-    var TB_item_quality_color = (function () {
+    var TB_item_quality_color = /** @class */ (function () {
         function TB_item_quality_color($obj) {
             if (!$obj) {
                 console.log("空");
@@ -624,9 +624,9 @@ var tb;
             return $vo;
         };
         return TB_item_quality_color;
-    })();
+    }());
     tb.TB_item_quality_color = TB_item_quality_color;
-    var TB_quest_daily_base = (function () {
+    var TB_quest_daily_base = /** @class */ (function () {
         function TB_quest_daily_base(value) {
             if (!value) {
                 console.log("空");
@@ -640,9 +640,9 @@ var tb;
             return $vo;
         };
         return TB_quest_daily_base;
-    })();
+    }());
     tb.TB_quest_daily_base = TB_quest_daily_base;
-    var TB_kuafu3v3_month_reward = (function () {
+    var TB_kuafu3v3_month_reward = /** @class */ (function () {
         function TB_kuafu3v3_month_reward($obj) {
             if (!$obj) {
                 console.log("空");
@@ -672,9 +672,9 @@ var tb;
             return $vo;
         };
         return TB_kuafu3v3_month_reward;
-    })();
+    }());
     tb.TB_kuafu3v3_month_reward = TB_kuafu3v3_month_reward;
-    var TB_map_jump_point_detail = (function () {
+    var TB_map_jump_point_detail = /** @class */ (function () {
         function TB_map_jump_point_detail($obj) {
             if (!$obj) {
                 console.log("空");
@@ -690,9 +690,9 @@ var tb;
             return $vo;
         };
         return TB_map_jump_point_detail;
-    })();
+    }());
     tb.TB_map_jump_point_detail = TB_map_jump_point_detail;
-    var TB_kuafu3v3_week_reward = (function () {
+    var TB_kuafu3v3_week_reward = /** @class */ (function () {
         function TB_kuafu3v3_week_reward($obj) {
             if (!$obj) {
                 console.log("空");
@@ -718,9 +718,9 @@ var tb;
             return $vo;
         };
         return TB_kuafu3v3_week_reward;
-    })();
+    }());
     tb.TB_kuafu3v3_week_reward = TB_kuafu3v3_week_reward;
-    var TB_kuafu3v3_base = (function () {
+    var TB_kuafu3v3_base = /** @class */ (function () {
         function TB_kuafu3v3_base($obj) {
             if (!$obj) {
                 console.log("空");
@@ -740,9 +740,9 @@ var tb;
             return $arr;
         };
         return TB_kuafu3v3_base;
-    })();
+    }());
     tb.TB_kuafu3v3_base = TB_kuafu3v3_base;
-    var TB_kuafu3v3_day_reward = (function () {
+    var TB_kuafu3v3_day_reward = /** @class */ (function () {
         function TB_kuafu3v3_day_reward($obj) {
             if (!$obj) {
                 console.log("空");
@@ -767,9 +767,9 @@ var tb;
             return $vo;
         };
         return TB_kuafu3v3_day_reward;
-    })();
+    }());
     tb.TB_kuafu3v3_day_reward = TB_kuafu3v3_day_reward;
-    var Tb_rank_reward = (function () {
+    var Tb_rank_reward = /** @class */ (function () {
         function Tb_rank_reward(value) {
             if (!value) {
                 console.log("空");
@@ -785,9 +785,9 @@ var tb;
             return $vo;
         };
         return Tb_rank_reward;
-    })();
+    }());
     tb.Tb_rank_reward = Tb_rank_reward;
-    var TB_faction_creat = (function () {
+    var TB_faction_creat = /** @class */ (function () {
         function TB_faction_creat(value) {
             if (!value) {
                 console.log("空");
@@ -808,9 +808,9 @@ var tb;
             return $arr;
         };
         return TB_faction_creat;
-    })();
+    }());
     tb.TB_faction_creat = TB_faction_creat;
-    var Tb_faction_icon = (function () {
+    var Tb_faction_icon = /** @class */ (function () {
         function Tb_faction_icon(value) {
             if (!value) {
                 console.log("空");
@@ -841,9 +841,9 @@ var tb;
             configurable: true
         });
         return Tb_faction_icon;
-    })();
+    }());
     tb.Tb_faction_icon = Tb_faction_icon;
-    var Tb_faction_base = (function () {
+    var Tb_faction_base = /** @class */ (function () {
         function Tb_faction_base(value) {
             if (!value) {
                 traceNoTabelData();
@@ -879,9 +879,9 @@ var tb;
             return $vo;
         };
         return Tb_faction_base;
-    })();
+    }());
     tb.Tb_faction_base = Tb_faction_base;
-    var Tb_faction_zhiwei = (function () {
+    var Tb_faction_zhiwei = /** @class */ (function () {
         function Tb_faction_zhiwei(value) {
             if (!value) {
                 console.log("空");
@@ -908,9 +908,9 @@ var tb;
             return $vo;
         };
         return Tb_faction_zhiwei;
-    })();
+    }());
     tb.Tb_faction_zhiwei = Tb_faction_zhiwei;
-    var Tb_faction_donation = (function () {
+    var Tb_faction_donation = /** @class */ (function () {
         function Tb_faction_donation(value) {
             if (!value) {
                 console.log("空");
@@ -937,9 +937,9 @@ var tb;
             return $vo;
         };
         return Tb_faction_donation;
-    })();
+    }());
     tb.Tb_faction_donation = Tb_faction_donation;
-    var Tb_faction_shop = (function () {
+    var Tb_faction_shop = /** @class */ (function () {
         function Tb_faction_shop(value) {
             if (!value) {
                 console.log("空");
@@ -968,9 +968,9 @@ var tb;
             return $vo;
         };
         return Tb_faction_shop;
-    })();
+    }());
     tb.Tb_faction_shop = Tb_faction_shop;
-    var TB_skill_base = (function () {
+    var TB_skill_base = /** @class */ (function () {
         function TB_skill_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1018,10 +1018,10 @@ var tb;
             return $vo;
         };
         return TB_skill_base;
-    })();
+    }());
     tb.TB_skill_base = TB_skill_base;
     //坐骑基本属性
-    var TB_mount_base_vo = (function () {
+    var TB_mount_base_vo = /** @class */ (function () {
         // public activation: boolean;//是否激活
         // public current: boolean;  //是否为当前阶
         // public needExp: number;//一星到下一星培养需要总经验
@@ -1057,9 +1057,9 @@ var tb;
             return $arr;
         };
         return TB_mount_base_vo;
-    })();
+    }());
     tb.TB_mount_base_vo = TB_mount_base_vo;
-    var TB_quest_chapter = (function () {
+    var TB_quest_chapter = /** @class */ (function () {
         function TB_quest_chapter($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1074,9 +1074,9 @@ var tb;
             return $vo;
         };
         return TB_quest_chapter;
-    })();
+    }());
     tb.TB_quest_chapter = TB_quest_chapter;
-    var TB_risk_chapter = (function () {
+    var TB_risk_chapter = /** @class */ (function () {
         function TB_risk_chapter($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1102,9 +1102,9 @@ var tb;
             return $vo;
         };
         return TB_risk_chapter;
-    })();
+    }());
     tb.TB_risk_chapter = TB_risk_chapter;
-    var TB_risk_data = (function () {
+    var TB_risk_data = /** @class */ (function () {
         function TB_risk_data($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1129,9 +1129,9 @@ var tb;
             return $vo;
         };
         return TB_risk_data;
-    })();
+    }());
     tb.TB_risk_data = TB_risk_data;
-    var TB_risk_base = (function () {
+    var TB_risk_base = /** @class */ (function () {
         function TB_risk_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1145,12 +1145,12 @@ var tb;
             return $vo;
         };
         return TB_risk_base;
-    })();
+    }());
     tb.TB_risk_base = TB_risk_base;
     /**
      * 挂机品质选择表数据
      */
-    var TB_hook_quality_Vo = (function () {
+    var TB_hook_quality_Vo = /** @class */ (function () {
         function TB_hook_quality_Vo($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1160,12 +1160,12 @@ var tb;
             this.text = $obj.text;
         }
         return TB_hook_quality_Vo;
-    })();
+    }());
     tb.TB_hook_quality_Vo = TB_hook_quality_Vo;
     /**
      * 挂机血瓶种类表数据
      */
-    var TB_hook_hp_item_Vo = (function () {
+    var TB_hook_hp_item_Vo = /** @class */ (function () {
         function TB_hook_hp_item_Vo($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1180,12 +1180,12 @@ var tb;
             return $vo;
         };
         return TB_hook_hp_item_Vo;
-    })();
+    }());
     tb.TB_hook_hp_item_Vo = TB_hook_hp_item_Vo;
     /*
     *坐骑升星表
     */
-    var TB_mount_train_vo = (function () {
+    var TB_mount_train_vo = /** @class */ (function () {
         function TB_mount_train_vo($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1215,12 +1215,12 @@ var tb;
             return $arr;
         };
         return TB_mount_train_vo;
-    })();
+    }());
     tb.TB_mount_train_vo = TB_mount_train_vo;
     /*
     *坐骑进阶表数据
     */
-    var TB_mount_upgrade = (function () {
+    var TB_mount_upgrade = /** @class */ (function () {
         function TB_mount_upgrade($obj) {
             this.id = $obj.id;
             this.upgradeExp = $obj.upgradeExp;
@@ -1234,10 +1234,10 @@ var tb;
             return $vo;
         };
         return TB_mount_upgrade;
-    })();
+    }());
     tb.TB_mount_upgrade = TB_mount_upgrade;
     //坐骑幻化数据
-    var TB_mount_illusion_vo = (function () {
+    var TB_mount_illusion_vo = /** @class */ (function () {
         function TB_mount_illusion_vo($obj) {
             this.spellVolist = new Array; //坐骑幻化技能列表
             this.prosKeys = new Array; //坐骑属性key
@@ -1279,10 +1279,10 @@ var tb;
             return $vo;
         };
         return TB_mount_illusion_vo;
-    })();
+    }());
     tb.TB_mount_illusion_vo = TB_mount_illusion_vo;
     //坐骑幻化技能
-    var SpellVo = (function () {
+    var SpellVo = /** @class */ (function () {
         function SpellVo() {
         }
         SpellVo.prototype.parse = function ($obj) {
@@ -1299,9 +1299,9 @@ var tb;
             makeArray($obj.uplevel_id, this.uplevel_id);
         };
         return SpellVo;
-    })();
+    }());
     tb.SpellVo = SpellVo;
-    var TB_divine_streng = (function () {
+    var TB_divine_streng = /** @class */ (function () {
         function TB_divine_streng($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1318,9 +1318,9 @@ var tb;
             return $vo;
         };
         return TB_divine_streng;
-    })();
+    }());
     tb.TB_divine_streng = TB_divine_streng;
-    var TB_divine_bless = (function () {
+    var TB_divine_bless = /** @class */ (function () {
         function TB_divine_bless($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1336,9 +1336,9 @@ var tb;
             return $vo;
         };
         return TB_divine_bless;
-    })();
+    }());
     tb.TB_divine_bless = TB_divine_bless;
-    var TB_creature_template = (function () {
+    var TB_creature_template = /** @class */ (function () {
         function TB_creature_template($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1377,9 +1377,9 @@ var tb;
             return $vo;
         };
         return TB_creature_template;
-    })();
+    }());
     tb.TB_creature_template = TB_creature_template;
-    var TB_quest_vip_instance = (function () {
+    var TB_quest_vip_instance = /** @class */ (function () {
         function TB_quest_vip_instance($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1393,9 +1393,9 @@ var tb;
             return $vo;
         };
         return TB_quest_vip_instance;
-    })();
+    }());
     tb.TB_quest_vip_instance = TB_quest_vip_instance;
-    var TB_divine_base = (function () {
+    var TB_divine_base = /** @class */ (function () {
         function TB_divine_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1420,9 +1420,9 @@ var tb;
             return $vo;
         };
         return TB_divine_base;
-    })();
+    }());
     tb.TB_divine_base = TB_divine_base;
-    var TB_map = (function () {
+    var TB_map = /** @class */ (function () {
         //id,parentid,name,type, inst_type, is_instance, shadow, count, day_limit, week_limit, music
         //int, int, string, int, int, int, int, int, int, int, string
         function TB_map($obj) {
@@ -1467,9 +1467,9 @@ var tb;
             return $arr;
         };
         return TB_map;
-    })();
+    }());
     tb.TB_map = TB_map;
-    var TB_map_trial = (function () {
+    var TB_map_trial = /** @class */ (function () {
         // id,model,firstReward,showreward,force,resetgold,time
         //   int,int,array,array,int,int,int
         function TB_map_trial($obj) {
@@ -1501,9 +1501,9 @@ var tb;
             return $arr;
         };
         return TB_map_trial;
-    })();
+    }());
     tb.TB_map_trial = TB_map_trial;
-    var TB_store = (function () {
+    var TB_store = /** @class */ (function () {
         function TB_store($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1519,9 +1519,9 @@ var tb;
             return $vo;
         };
         return TB_store;
-    })();
+    }());
     tb.TB_store = TB_store;
-    var TB_shop_item_relate_id = (function () {
+    var TB_shop_item_relate_id = /** @class */ (function () {
         function TB_shop_item_relate_id($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1545,9 +1545,9 @@ var tb;
             return null;
         };
         return TB_shop_item_relate_id;
-    })();
+    }());
     tb.TB_shop_item_relate_id = TB_shop_item_relate_id;
-    var TB_shop = (function () {
+    var TB_shop = /** @class */ (function () {
         function TB_shop($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1585,9 +1585,9 @@ var tb;
             return $arr;
         };
         return TB_shop;
-    })();
+    }());
     tb.TB_shop = TB_shop;
-    var TB_map_navigation = (function () {
+    var TB_map_navigation = /** @class */ (function () {
         function TB_map_navigation($obj) {
             this.navi = new Array;
             if (!$obj) {
@@ -1603,9 +1603,9 @@ var tb;
             return $vo;
         };
         return TB_map_navigation;
-    })();
+    }());
     tb.TB_map_navigation = TB_map_navigation;
-    var TB_map_object = (function () {
+    var TB_map_object = /** @class */ (function () {
         //    id,type, name, position, color
         //int, int, string, array, int
         function TB_map_object($obj) {
@@ -1626,9 +1626,9 @@ var tb;
             return $vo;
         };
         return TB_map_object;
-    })();
+    }());
     tb.TB_map_object = TB_map_object;
-    var TB_map_vip = (function () {
+    var TB_map_vip = /** @class */ (function () {
         //id,indx,vip,modle,reward,raiseHardBattlePoints
         //  int,int,int,int,array,array
         function TB_map_vip($obj) {
@@ -1664,9 +1664,9 @@ var tb;
             return $arr;
         };
         return TB_map_vip;
-    })();
+    }());
     tb.TB_map_vip = TB_map_vip;
-    var Tb_social_familiay = (function () {
+    var Tb_social_familiay = /** @class */ (function () {
         function Tb_social_familiay($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1680,9 +1680,9 @@ var tb;
             return $vo;
         };
         return Tb_social_familiay;
-    })();
+    }());
     tb.Tb_social_familiay = Tb_social_familiay;
-    var Tb_social_shop = (function () {
+    var Tb_social_shop = /** @class */ (function () {
         function Tb_social_shop($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1704,9 +1704,9 @@ var tb;
             return $arr;
         };
         return Tb_social_shop;
-    })();
+    }());
     tb.Tb_social_shop = Tb_social_shop;
-    var TB_msg_text_type = (function () {
+    var TB_msg_text_type = /** @class */ (function () {
         function TB_msg_text_type($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1720,9 +1720,9 @@ var tb;
             return $vo;
         };
         return TB_msg_text_type;
-    })();
+    }());
     tb.TB_msg_text_type = TB_msg_text_type;
-    var TB_worldboss_base = (function () {
+    var TB_worldboss_base = /** @class */ (function () {
         //id,entry,items
         //int,int,array
         function TB_worldboss_base($obj) {
@@ -1740,9 +1740,9 @@ var tb;
             return $vo;
         };
         return TB_worldboss_base;
-    })();
+    }());
     tb.TB_worldboss_base = TB_worldboss_base;
-    var TB_worldboss_time = (function () {
+    var TB_worldboss_time = /** @class */ (function () {
         //id,entry,items
         //int,int,array
         function TB_worldboss_time($obj) {
@@ -1761,9 +1761,9 @@ var tb;
             return $vo;
         };
         return TB_worldboss_time;
-    })();
+    }());
     tb.TB_worldboss_time = TB_worldboss_time;
-    var TB_vip_base = (function () {
+    var TB_vip_base = /** @class */ (function () {
         function TB_vip_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1790,9 +1790,9 @@ var tb;
             return $arr;
         };
         return TB_vip_base;
-    })();
+    }());
     tb.TB_vip_base = TB_vip_base;
-    var TB_worldboss_rank_reward = (function () {
+    var TB_worldboss_rank_reward = /** @class */ (function () {
         function TB_worldboss_rank_reward($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1811,9 +1811,9 @@ var tb;
             return $arr;
         };
         return TB_worldboss_rank_reward;
-    })();
+    }());
     tb.TB_worldboss_rank_reward = TB_worldboss_rank_reward;
-    var TB_skill_show = (function () {
+    var TB_skill_show = /** @class */ (function () {
         function TB_skill_show($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1831,9 +1831,9 @@ var tb;
             return $vo;
         };
         return TB_skill_show;
-    })();
+    }());
     tb.TB_skill_show = TB_skill_show;
-    var TB_msg = (function () {
+    var TB_msg = /** @class */ (function () {
         function TB_msg($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1851,9 +1851,9 @@ var tb;
             return $vo;
         };
         return TB_msg;
-    })();
+    }());
     tb.TB_msg = TB_msg;
-    var TB_activity_base = (function () {
+    var TB_activity_base = /** @class */ (function () {
         function TB_activity_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1899,9 +1899,9 @@ var tb;
             return $arr;
         };
         return TB_activity_base;
-    })();
+    }());
     tb.TB_activity_base = TB_activity_base;
-    var TB_activity_reward = (function () {
+    var TB_activity_reward = /** @class */ (function () {
         function TB_activity_reward($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1929,9 +1929,9 @@ var tb;
             return $arr;
         };
         return TB_activity_reward;
-    })();
+    }());
     tb.TB_activity_reward = TB_activity_reward;
-    var TB_social_num = (function () {
+    var TB_social_num = /** @class */ (function () {
         function TB_social_num($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1946,9 +1946,9 @@ var tb;
             return $vo;
         };
         return TB_social_num;
-    })();
+    }());
     tb.TB_social_num = TB_social_num;
-    var TB_creature_dialogue = (function () {
+    var TB_creature_dialogue = /** @class */ (function () {
         function TB_creature_dialogue($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -1964,9 +1964,9 @@ var tb;
             return $vo;
         };
         return TB_creature_dialogue;
-    })();
+    }());
     tb.TB_creature_dialogue = TB_creature_dialogue;
-    var TB_quest = (function () {
+    var TB_quest = /** @class */ (function () {
         function TB_quest($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2012,9 +2012,9 @@ var tb;
             return $vo;
         };
         return TB_quest;
-    })();
+    }());
     tb.TB_quest = TB_quest;
-    var TB_instance_res = (function () {
+    var TB_instance_res = /** @class */ (function () {
         function TB_instance_res($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2049,9 +2049,9 @@ var tb;
             return $vo;
         };
         return TB_instance_res;
-    })();
+    }());
     tb.TB_instance_res = TB_instance_res;
-    var TB_achieve_base = (function () {
+    var TB_achieve_base = /** @class */ (function () {
         function TB_achieve_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2084,9 +2084,9 @@ var tb;
             return $vo;
         };
         return TB_achieve_base;
-    })();
+    }());
     tb.TB_achieve_base = TB_achieve_base;
-    var TB_achieve_progress = (function () {
+    var TB_achieve_progress = /** @class */ (function () {
         function TB_achieve_progress($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2111,9 +2111,9 @@ var tb;
             return $vo;
         };
         return TB_achieve_progress;
-    })();
+    }());
     tb.TB_achieve_progress = TB_achieve_progress;
-    var TB_title_base = (function () {
+    var TB_title_base = /** @class */ (function () {
         function TB_title_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2146,9 +2146,9 @@ var tb;
             return $vo;
         };
         return TB_title_base;
-    })();
+    }());
     tb.TB_title_base = TB_title_base;
-    var TB_shop_chongzhi = (function () {
+    var TB_shop_chongzhi = /** @class */ (function () {
         function TB_shop_chongzhi($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2166,9 +2166,9 @@ var tb;
             return $arr;
         };
         return TB_shop_chongzhi;
-    })();
+    }());
     tb.TB_shop_chongzhi = TB_shop_chongzhi;
-    var TB_gameobject_template = (function () {
+    var TB_gameobject_template = /** @class */ (function () {
         function TB_gameobject_template($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2196,9 +2196,9 @@ var tb;
             return $vo;
         };
         return TB_gameobject_template;
-    })();
+    }());
     tb.TB_gameobject_template = TB_gameobject_template;
-    var TB_welfare_shouchong = (function () {
+    var TB_welfare_shouchong = /** @class */ (function () {
         function TB_welfare_shouchong($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2223,9 +2223,9 @@ var tb;
             return $arr;
         };
         return TB_welfare_shouchong;
-    })();
+    }());
     tb.TB_welfare_shouchong = TB_welfare_shouchong;
-    var TB_welfare_checkin = (function () {
+    var TB_welfare_checkin = /** @class */ (function () {
         function TB_welfare_checkin($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2252,9 +2252,9 @@ var tb;
             return $arr;
         };
         return TB_welfare_checkin;
-    })();
+    }());
     tb.TB_welfare_checkin = TB_welfare_checkin;
-    var TB_welfare_checkin_all = (function () {
+    var TB_welfare_checkin_all = /** @class */ (function () {
         function TB_welfare_checkin_all($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2280,9 +2280,9 @@ var tb;
             return $arr;
         };
         return TB_welfare_checkin_all;
-    })();
+    }());
     tb.TB_welfare_checkin_all = TB_welfare_checkin_all;
-    var TB_welfare_level = (function () {
+    var TB_welfare_level = /** @class */ (function () {
         function TB_welfare_level($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2308,9 +2308,9 @@ var tb;
             return $arr;
         };
         return TB_welfare_level;
-    })();
+    }());
     tb.TB_welfare_level = TB_welfare_level;
-    var TB_welfare_back = (function () {
+    var TB_welfare_back = /** @class */ (function () {
         function TB_welfare_back($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2344,9 +2344,9 @@ var tb;
             return $arr;
         };
         return TB_welfare_back;
-    })();
+    }());
     tb.TB_welfare_back = TB_welfare_back;
-    var TB_kuafu_xianfu_condition = (function () {
+    var TB_kuafu_xianfu_condition = /** @class */ (function () {
         function TB_kuafu_xianfu_condition($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2381,9 +2381,9 @@ var tb;
             return $arr;
         };
         return TB_kuafu_xianfu_condition;
-    })();
+    }());
     tb.TB_kuafu_xianfu_condition = TB_kuafu_xianfu_condition;
-    var TB_welfare_level_show = (function () {
+    var TB_welfare_level_show = /** @class */ (function () {
         function TB_welfare_level_show($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2403,9 +2403,9 @@ var tb;
             return $arr;
         };
         return TB_welfare_level_show;
-    })();
+    }());
     tb.TB_welfare_level_show = TB_welfare_level_show;
-    var TB_kuafu_xianfu_base = (function () {
+    var TB_kuafu_xianfu_base = /** @class */ (function () {
         function TB_kuafu_xianfu_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2422,9 +2422,9 @@ var tb;
             return $vo;
         };
         return TB_kuafu_xianfu_base;
-    })();
+    }());
     tb.TB_kuafu_xianfu_base = TB_kuafu_xianfu_base;
-    var TB_doujiantai_first = (function () {
+    var TB_doujiantai_first = /** @class */ (function () {
         function TB_doujiantai_first($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2450,9 +2450,9 @@ var tb;
             return $arr;
         };
         return TB_doujiantai_first;
-    })();
+    }());
     tb.TB_doujiantai_first = TB_doujiantai_first;
-    var TB_doujiantai_day = (function () {
+    var TB_doujiantai_day = /** @class */ (function () {
         function TB_doujiantai_day($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2477,9 +2477,9 @@ var tb;
             return $arr;
         };
         return TB_doujiantai_day;
-    })();
+    }());
     tb.TB_doujiantai_day = TB_doujiantai_day;
-    var TB_system_preview = (function () {
+    var TB_system_preview = /** @class */ (function () {
         function TB_system_preview($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2510,9 +2510,9 @@ var tb;
             return $arr;
         };
         return TB_system_preview;
-    })();
+    }());
     tb.TB_system_preview = TB_system_preview;
-    var TB_system_icon = (function () {
+    var TB_system_icon = /** @class */ (function () {
         function TB_system_icon($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2546,9 +2546,9 @@ var tb;
             return $vo;
         };
         return TB_system_icon;
-    })();
+    }());
     tb.TB_system_icon = TB_system_icon;
-    var TB_system_base = (function () {
+    var TB_system_base = /** @class */ (function () {
         function TB_system_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2580,9 +2580,9 @@ var tb;
             return $arr;
         };
         return TB_system_base;
-    })();
+    }());
     tb.TB_system_base = TB_system_base;
-    var TB_doujiantai_combat_win = (function () {
+    var TB_doujiantai_combat_win = /** @class */ (function () {
         function TB_doujiantai_combat_win($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2611,9 +2611,9 @@ var tb;
             return $arr;
         };
         return TB_doujiantai_combat_win;
-    })();
+    }());
     tb.TB_doujiantai_combat_win = TB_doujiantai_combat_win;
-    var TB_doujiantai_base = (function () {
+    var TB_doujiantai_base = /** @class */ (function () {
         function TB_doujiantai_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2648,9 +2648,9 @@ var tb;
             return $arr;
         };
         return TB_doujiantai_base;
-    })();
+    }());
     tb.TB_doujiantai_base = TB_doujiantai_base;
-    var TB_bianqiang_sub = (function () {
+    var TB_bianqiang_sub = /** @class */ (function () {
         function TB_bianqiang_sub($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2683,9 +2683,9 @@ var tb;
             return $arr;
         };
         return TB_bianqiang_sub;
-    })();
+    }());
     tb.TB_bianqiang_sub = TB_bianqiang_sub;
-    var TB_bianqiang_value = (function () {
+    var TB_bianqiang_value = /** @class */ (function () {
         function TB_bianqiang_value($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2711,9 +2711,9 @@ var tb;
             return $arr;
         };
         return TB_bianqiang_value;
-    })();
+    }());
     tb.TB_bianqiang_value = TB_bianqiang_value;
-    var TB_bianqiang_rank = (function () {
+    var TB_bianqiang_rank = /** @class */ (function () {
         function TB_bianqiang_rank($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2741,9 +2741,9 @@ var tb;
             return $arr;
         };
         return TB_bianqiang_rank;
-    })();
+    }());
     tb.TB_bianqiang_rank = TB_bianqiang_rank;
-    var TB_xiulianchang_base = (function () {
+    var TB_xiulianchang_base = /** @class */ (function () {
         function TB_xiulianchang_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2776,9 +2776,9 @@ var tb;
             return $arr;
         };
         return TB_xiulianchang_base;
-    })();
+    }());
     tb.TB_xiulianchang_base = TB_xiulianchang_base;
-    var TB_xiulianchang_vip = (function () {
+    var TB_xiulianchang_vip = /** @class */ (function () {
         function TB_xiulianchang_vip($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2807,9 +2807,9 @@ var tb;
             return $arr;
         };
         return TB_xiulianchang_vip;
-    })();
+    }());
     tb.TB_xiulianchang_vip = TB_xiulianchang_vip;
-    var TB_faction_privilege = (function () {
+    var TB_faction_privilege = /** @class */ (function () {
         function TB_faction_privilege($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2827,9 +2827,9 @@ var tb;
             return $vo;
         };
         return TB_faction_privilege;
-    })();
+    }());
     tb.TB_faction_privilege = TB_faction_privilege;
-    var TB_xiulianchang_reward = (function () {
+    var TB_xiulianchang_reward = /** @class */ (function () {
         function TB_xiulianchang_reward($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2856,9 +2856,9 @@ var tb;
             return $arr;
         };
         return TB_xiulianchang_reward;
-    })();
+    }());
     tb.TB_xiulianchang_reward = TB_xiulianchang_reward;
-    var TB_char_level = (function () {
+    var TB_char_level = /** @class */ (function () {
         function TB_char_level($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2882,9 +2882,9 @@ var tb;
             return $arr;
         };
         return TB_char_level;
-    })();
+    }());
     tb.TB_char_level = TB_char_level;
-    var TB_login_activity_reward = (function () {
+    var TB_login_activity_reward = /** @class */ (function () {
         function TB_login_activity_reward($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2912,9 +2912,9 @@ var tb;
             return $arr;
         };
         return TB_login_activity_reward;
-    })();
+    }());
     tb.TB_login_activity_reward = TB_login_activity_reward;
-    var TB_login_activity_preview = (function () {
+    var TB_login_activity_preview = /** @class */ (function () {
         function TB_login_activity_preview($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2943,9 +2943,9 @@ var tb;
             return $arr;
         };
         return TB_login_activity_preview;
-    })();
+    }());
     tb.TB_login_activity_preview = TB_login_activity_preview;
-    var TB_worldboss_roll = (function () {
+    var TB_worldboss_roll = /** @class */ (function () {
         function TB_worldboss_roll($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -2969,9 +2969,9 @@ var tb;
             return $arr;
         };
         return TB_worldboss_roll;
-    })();
+    }());
     tb.TB_worldboss_roll = TB_worldboss_roll;
-    var TB_faction_boss = (function () {
+    var TB_faction_boss = /** @class */ (function () {
         function TB_faction_boss($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3004,9 +3004,9 @@ var tb;
             return $arr;
         };
         return TB_faction_boss;
-    })();
+    }());
     tb.TB_faction_boss = TB_faction_boss;
-    var TB_faction_boss_reward = (function () {
+    var TB_faction_boss_reward = /** @class */ (function () {
         function TB_faction_boss_reward($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3036,9 +3036,9 @@ var tb;
             return $arr;
         };
         return TB_faction_boss_reward;
-    })();
+    }());
     tb.TB_faction_boss_reward = TB_faction_boss_reward;
-    var TB_faction_building_base = (function () {
+    var TB_faction_building_base = /** @class */ (function () {
         function TB_faction_building_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3068,9 +3068,9 @@ var tb;
             return $arr;
         };
         return TB_faction_building_base;
-    })();
+    }());
     tb.TB_faction_building_base = TB_faction_building_base;
-    var TB_faction_building = (function () {
+    var TB_faction_building = /** @class */ (function () {
         function TB_faction_building($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3109,9 +3109,9 @@ var tb;
             return $arr;
         };
         return TB_faction_building;
-    })();
+    }());
     tb.TB_faction_building = TB_faction_building;
-    var TB_faction_gift = (function () {
+    var TB_faction_gift = /** @class */ (function () {
         function TB_faction_gift($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3139,9 +3139,9 @@ var tb;
             return $arr;
         };
         return TB_faction_gift;
-    })();
+    }());
     tb.TB_faction_gift = TB_faction_gift;
-    var TB_talisman_base = (function () {
+    var TB_talisman_base = /** @class */ (function () {
         function TB_talisman_base($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3175,9 +3175,9 @@ var tb;
             return $arr;
         };
         return TB_talisman_base;
-    })();
+    }());
     tb.TB_talisman_base = TB_talisman_base;
-    var TB_mount_raise_level = (function () {
+    var TB_mount_raise_level = /** @class */ (function () {
         function TB_mount_raise_level($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3206,9 +3206,9 @@ var tb;
             return $arr;
         };
         return TB_mount_raise_level;
-    })();
+    }());
     tb.TB_mount_raise_level = TB_mount_raise_level;
-    var TB_talisman_spirit = (function () {
+    var TB_talisman_spirit = /** @class */ (function () {
         function TB_talisman_spirit($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3239,9 +3239,9 @@ var tb;
             return $arr;
         };
         return TB_talisman_spirit;
-    })();
+    }());
     tb.TB_talisman_spirit = TB_talisman_spirit;
-    var TB_equipdevelop_strength = (function () {
+    var TB_equipdevelop_strength = /** @class */ (function () {
         function TB_equipdevelop_strength($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3271,9 +3271,9 @@ var tb;
             return $arr;
         };
         return TB_equipdevelop_strength;
-    })();
+    }());
     tb.TB_equipdevelop_strength = TB_equipdevelop_strength;
-    var TB_equipdevelop_refine = (function () {
+    var TB_equipdevelop_refine = /** @class */ (function () {
         function TB_equipdevelop_refine($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3305,9 +3305,9 @@ var tb;
             return $arr;
         };
         return TB_equipdevelop_refine;
-    })();
+    }());
     tb.TB_equipdevelop_refine = TB_equipdevelop_refine;
-    var TB_equipdevelop_gem_part = (function () {
+    var TB_equipdevelop_gem_part = /** @class */ (function () {
         function TB_equipdevelop_gem_part($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3336,9 +3336,9 @@ var tb;
             return $arr;
         };
         return TB_equipdevelop_gem_part;
-    })();
+    }());
     tb.TB_equipdevelop_gem_part = TB_equipdevelop_gem_part;
-    var TB_equipdevelop_gem = (function () {
+    var TB_equipdevelop_gem = /** @class */ (function () {
         function TB_equipdevelop_gem($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3366,9 +3366,9 @@ var tb;
             return $arr;
         };
         return TB_equipdevelop_gem;
-    })();
+    }());
     tb.TB_equipdevelop_gem = TB_equipdevelop_gem;
-    var TB_equipdevelop_washattrs = (function () {
+    var TB_equipdevelop_washattrs = /** @class */ (function () {
         function TB_equipdevelop_washattrs($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3395,9 +3395,9 @@ var tb;
             return $arr;
         };
         return TB_equipdevelop_washattrs;
-    })();
+    }());
     tb.TB_equipdevelop_washattrs = TB_equipdevelop_washattrs;
-    var TB_equipdevelop_bonus = (function () {
+    var TB_equipdevelop_bonus = /** @class */ (function () {
         function TB_equipdevelop_bonus($obj) {
             if (!$obj) {
                 traceNoTabelData();
@@ -3425,10 +3425,10 @@ var tb;
             return $arr;
         };
         return TB_equipdevelop_bonus;
-    })();
+    }());
     tb.TB_equipdevelop_bonus = TB_equipdevelop_bonus;
 })(tb || (tb = {}));
-var ResTabelVo = (function () {
+var ResTabelVo = /** @class */ (function () {
     function ResTabelVo() {
         this.size = 0;
     }
@@ -3471,8 +3471,8 @@ var ResTabelVo = (function () {
         return this.data[$id];
     };
     return ResTabelVo;
-})();
-var TableData = (function () {
+}());
+var TableData = /** @class */ (function () {
     function TableData() {
         this.tb = new Object;
     }
@@ -3739,5 +3739,5 @@ var TableData = (function () {
     TableData.tb_faction_skill_building = "tb_faction_skill_building";
     TableData.tb_faction_skill_lvup = "tb_faction_skill_lvup";
     return TableData;
-})();
+}());
 //# sourceMappingURL=TableData.js.map

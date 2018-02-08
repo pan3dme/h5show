@@ -1,4 +1,4 @@
-var ObjectDef = (function () {
+var ObjectDef = /** @class */ (function () {
     function ObjectDef() {
     }
     ObjectDef.getPrefix = function (s) {
@@ -33,5 +33,5 @@ var ObjectDef = (function () {
     ObjectDef.GLOBAL_VALUE = "G.globalvalue";
     ObjectDef.GAME_CONFIG = "G.gameconfig";
     return ObjectDef;
-})();
+}());
 //# sourceMappingURL=ObjectDef.js.map

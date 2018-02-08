@@ -260,6 +260,8 @@ class UishaderSprite extends BaseDiplay3dSprite {
             Scene_data.context3D.setRenderTexture(this.shader, "tReflectivity", this._reflectivity.texture, 2);
             Scene_data.context3D.setRenderTexture(this.shader, "tSkySpecular", this._tSkySpecular.texture, 3);
 
+          
+            //Scene_data.context3D.setRenderTexture(this.shader, "tAlbedo", this.skyboxTexture, 0);
 
             this.setPrgFc()
 
@@ -293,11 +295,7 @@ class UishaderSprite extends BaseDiplay3dSprite {
         TextureManager.getInstance().getTexture(Scene_data.fileRoot + $nrmuv, ($texture: TextureRes) => {
             this._nrmTextureRes = $texture;
         });
-        this.loadAlphaJpg("pan/marmoset/model/1005.jpg", "pan/marmoset/model/1009.jpg");
-
-        ProdkarenResModel.getInstance().loadSkyTextureByUrl("picsky.txt", ($texture: TextureRes) => {
-            this._tSkySpecular = $texture
-        });
+    
 
     }
     private loadAlphaJpg($rgbUrl: string, $alphaUrl: string): void {
@@ -314,7 +312,7 @@ class UishaderSprite extends BaseDiplay3dSprite {
                     rgbimgData.data[i + 3] = alphaimgData.data[i];
                 }
                 TextureManager.getInstance().addRes(Scene_data.fileRoot + $rgbUrl, rgbimgData);
-                TextureManager.getInstance().getTexture(Scene_data.fileRoot + "pan/marmoset/model/1005.jpg", ($texture: TextureRes) => {
+                TextureManager.getInstance().getTexture(Scene_data.fileRoot + $rgbUrl, ($texture: TextureRes) => {
                     this._reflectivity = $texture;
                 });
              
@@ -322,7 +320,7 @@ class UishaderSprite extends BaseDiplay3dSprite {
 
         });
     }
-    public loadFileById($id: number, $baseuv: string, $nrmuv: string): void {
+    public loadFileById($id: number, $baseuv: string, $nrmuv: string, alphajpg: Array<string>): void {
         this.loadUvPic($baseuv, $nrmuv);
         LoadManager.getInstance().load(Scene_data.fileRoot + "pan/marmoset/model/objs" + $id + ".txt", LoadManager.XML_TYPE,
             ($objstr: string) => {
@@ -330,8 +328,42 @@ class UishaderSprite extends BaseDiplay3dSprite {
                 this.initModeStr(this.getArrByStr($dd[0]), this.getArrByStr($dd[1]));
             });
 
-     
+        this.loadAlphaJpg( alphajpg[0] ,  alphajpg[1]);
+        ProdkarenResModel.getInstance().loadSkyTextureByUrl("picsky.txt", ($texture: TextureRes) => {
+            this._tSkySpecular = $texture
+        });
+
+       
     }
+    /*
+    public skyboxTexture: WebGLTexture;
+    public loadSkyPic(): void {
+        LoadManager.getInstance().load(Scene_data.fileRoot + "pan/marmoset/model/skybox001.txt", LoadManager.XML_TYPE,
+            ($dtstr: string) => {
+                var configText: Array<string> = $dtstr.split(",");
+                var $dataArr: Uint8Array = new Uint8Array(configText.length)
+
+                for (var i: number = 0; i < configText.length; i++) {
+                    $dataArr[i]=Number(configText[i])
+                }
+                var a = $dataArr;
+                var b
+                var c
+                this.type = 3553;
+                var d: WebGLRenderingContext = Scene_data.context3D.renderContext
+                var id = d.createTexture();
+                d.bindTexture(this.type, id);
+                d.pixelStorei(d.UNPACK_FLIP_Y_WEBGL, !0);
+                d.texImage2D(this.type, 0, b || d.RGBA, 256, 2048, 0, b || d.RGBA, c || d.UNSIGNED_BYTE, a || null);
+                d.bindTexture(this.type, null)
+
+                this.skyboxTexture = id
+              
+            });
+
+
+    }
+    */
 
 
     protected initData(): void {

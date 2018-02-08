@@ -1,6 +1,6 @@
 var testScene;
 (function (testScene) {
-    var TestDispStart = (function () {
+    var TestDispStart = /** @class */ (function () {
         function TestDispStart() {
         }
         TestDispStart.prototype.init = function () {
@@ -22,11 +22,12 @@ var testScene;
             GameMouseManager.getInstance().addMouseEvent();
             SceneMouseEventModel.getInstance().initSceneFocueEvent();
             SceneManager.getInstance().ready = true;
-            this.addBaseModel(1000, "pan/marmoset/model/1007.jpg", "pan/marmoset/model/1004.jpg");
+            this.addBaseModel(1000, "pan/marmoset/model/1007.jpg", "pan/marmoset/model/1004.jpg", ["pan/marmoset/model/1005.jpg", "pan/marmoset/model/1009.jpg"]);
+            this.addBaseModel(1001, "pan/marmoset/model/1003.jpg", "pan/marmoset/model/1006.jpg", ["pan/marmoset/model/1001.jpg", "pan/marmoset/model/1008.jpg"]);
         };
-        TestDispStart.prototype.addBaseModel = function ($id, $baseuv, $nrmuv) {
+        TestDispStart.prototype.addBaseModel = function ($id, $baseuv, $nrmuv, alphajpg) {
             var $ds = new UishaderSprite();
-            $ds.loadFileById($id, $baseuv, $nrmuv);
+            $ds.loadFileById($id, $baseuv, $nrmuv, alphajpg);
             SceneManager.getInstance().addDisplay($ds);
         };
         TestDispStart.prototype.upFrameData = function () {
@@ -47,7 +48,7 @@ var testScene;
             Engine.resetSize();
         };
         return TestDispStart;
-    })();
+    }());
     testScene.TestDispStart = TestDispStart;
 })(testScene || (testScene = {}));
 //# sourceMappingURL=TestDispStart.js.map

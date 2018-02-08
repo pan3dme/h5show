@@ -1,16 +1,22 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Display3DParticle = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Display3DParticle = /** @class */ (function (_super) {
     __extends(Display3DParticle, _super);
     function Display3DParticle() {
-        _super.call(this);
-        this.isInGroup = false;
-        this.visible = true;
-        this._rotationMatrix = new Matrix3D();
-        this.modelMatrix = new Matrix3D();
+        var _this = _super.call(this) || this;
+        _this.isInGroup = false;
+        _this.visible = true;
+        _this._rotationMatrix = new Matrix3D();
+        _this.modelMatrix = new Matrix3D();
+        return _this;
     }
     Display3DParticle.prototype.onCreated = function () {
     };
@@ -145,6 +151,7 @@ var Display3DParticle = (function (_super) {
         if (!this.invertBindMatrix.isIdentity) {
             //this.bindMatrix.invert();
             this._rotationMatrix.prepend(this.invertBindMatrix);
+            //this.bindMatrix.invert();
         }
     };
     Display3DParticle.prototype.resetPos = function () {
@@ -190,5 +197,5 @@ var Display3DParticle = (function (_super) {
         this.groupRotation = null;
     };
     return Display3DParticle;
-})(Object3D);
+}(Object3D));
 //# sourceMappingURL=Display3DParticle.js.map

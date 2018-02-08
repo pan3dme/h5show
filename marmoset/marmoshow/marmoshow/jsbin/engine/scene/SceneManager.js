@@ -1,4 +1,4 @@
-var SceneManager = (function () {
+var SceneManager = /** @class */ (function () {
     function SceneManager() {
         //private _sceneLoader: SceneRes;
         this._ready = false;
@@ -356,6 +356,21 @@ var SceneManager = (function () {
                         $far = $p.z;
                     }
                 }
+                /*
+                if (this._displayList[i].objData) {
+                
+                    for (var j: number = 0; j < $dis.objData.vertices.length/3; j++) {
+                        $p.x = $dis.objData.vertices[j * 3 + 0]
+                        $p.y = $dis.objData.vertices[j * 3 + 1]
+                        $p.z = $dis.objData.vertices[j * 3 + 2]
+                        $p = $dis.posMatrix.transformVector($p);
+                        $p=Scene_data.cam3D.cameraMatrix.transformVector($p)
+                        if ($p.z > $far) {
+                            $far = $p.z
+                        }
+                    }
+                }
+                */
             }
         }
         Scene_data.camFar = Math.max(500, $far + 100);
@@ -365,6 +380,9 @@ var SceneManager = (function () {
         var num = 0;
         for (var i = 0; i < this._displayList.length; i++) {
             this._displayList[i].update();
+            // if (this._displayList[i].sceneVisible) {
+            //     num++;
+            // }
         }
         // FpsMc.tipStr = "drawNum:" + (num + this._displayRoleList.length) + "/" + this._displayList.length; 
     };
@@ -389,5 +407,5 @@ var SceneManager = (function () {
     };
     SceneManager.mapQudaTreeDistance = 200;
     return SceneManager;
-})();
+}());
 //# sourceMappingURL=SceneManager.js.map

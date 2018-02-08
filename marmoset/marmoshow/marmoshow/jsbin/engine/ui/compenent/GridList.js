@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var GridList = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var GridList = /** @class */ (function (_super) {
     __extends(GridList, _super);
     function GridList() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     GridList.prototype.testPoint = function ($x, $y) {
         if ($x > this.absoluteX
@@ -109,11 +114,11 @@ var GridList = (function (_super) {
         return beginIndex + (this._itemRenderAry.length + 1) * 2;
     };
     return GridList;
-})(List);
-var GridListAtlas = (function (_super) {
+}(List));
+var GridListAtlas = /** @class */ (function (_super) {
     __extends(GridListAtlas, _super);
     function GridListAtlas() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     GridListAtlas.prototype.getAlphaImg = function ($width, $height) {
         var $ImageData = this.ctx.createImageData($width, $height);
@@ -151,5 +156,5 @@ var GridListAtlas = (function (_super) {
         }
     };
     return GridListAtlas;
-})(ListAtlas);
+}(ListAtlas));
 //# sourceMappingURL=GridList.js.map

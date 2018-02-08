@@ -1,4 +1,4 @@
-var FpsMc = (function () {
+var FpsMc = /** @class */ (function () {
     function FpsMc() {
         this.drawNum = 0;
         this.fpsStr = "";
@@ -17,8 +17,8 @@ var FpsMc = (function () {
     FpsMc.fpsNowNum = 0;
     FpsMc.tipStr = "";
     return FpsMc;
-})();
-var FpsStage = (function () {
+}());
+var FpsStage = /** @class */ (function () {
     function FpsStage() {
         this.lastTime = 0;
         this.cPos = new Vector2D(150, 100);
@@ -111,5 +111,5 @@ var FpsStage = (function () {
     };
     FpsStage.showFps = false;
     return FpsStage;
-})();
+}());
 //# sourceMappingURL=FpsStage.js.map

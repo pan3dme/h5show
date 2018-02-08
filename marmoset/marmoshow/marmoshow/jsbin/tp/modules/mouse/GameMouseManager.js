@@ -1,4 +1,4 @@
-var GameMouseManager = (function () {
+var GameMouseManager = /** @class */ (function () {
     function GameMouseManager() {
     }
     GameMouseManager.getInstance = function () {
@@ -76,5 +76,5 @@ var GameMouseManager = (function () {
     GameMouseManager.prototype.walkPathComplete = function () {
     };
     return GameMouseManager;
-})();
+}());
 //# sourceMappingURL=GameMouseManager.js.map

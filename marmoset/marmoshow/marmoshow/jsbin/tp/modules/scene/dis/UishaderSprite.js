@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var UishaderShader = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var UishaderShader = /** @class */ (function (_super) {
     __extends(UishaderShader, _super);
     function UishaderShader() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     UishaderShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "vPosition");
@@ -137,12 +142,13 @@ var UishaderShader = (function (_super) {
     };
     UishaderShader.UishaderShader = "UishaderShader";
     return UishaderShader;
-})(Shader3D);
-var UishaderSprite = (function (_super) {
+}(Shader3D));
+var UishaderSprite = /** @class */ (function (_super) {
     __extends(UishaderSprite, _super);
     function UishaderSprite() {
-        _super.call(this);
-        this.skipNum = 0;
+        var _this = _super.call(this) || this;
+        _this.skipNum = 0;
+        return _this;
     }
     UishaderSprite.prototype.initModeStr = function ($vec, $index) {
         ProgrmaManager.getInstance().registe(UishaderShader.UishaderShader, new UishaderShader);
@@ -224,6 +230,7 @@ var UishaderSprite = (function (_super) {
             Scene_data.context3D.setRenderTexture(this.shader, "tNormal", this._nrmTextureRes.texture, 1);
             Scene_data.context3D.setRenderTexture(this.shader, "tReflectivity", this._reflectivity.texture, 2);
             Scene_data.context3D.setRenderTexture(this.shader, "tSkySpecular", this._tSkySpecular.texture, 3);
+            //Scene_data.context3D.setRenderTexture(this.shader, "tAlbedo", this.skyboxTexture, 0);
             this.setPrgFc();
             Scene_data.context3D.drawCall(this.objData.indexBuffer, this.objData.treNum);
         }
@@ -246,10 +253,6 @@ var UishaderSprite = (function (_super) {
         TextureManager.getInstance().getTexture(Scene_data.fileRoot + $nrmuv, function ($texture) {
             _this._nrmTextureRes = $texture;
         });
-        this.loadAlphaJpg("pan/marmoset/model/1005.jpg", "pan/marmoset/model/1009.jpg");
-        ProdkarenResModel.getInstance().loadSkyTextureByUrl("picsky.txt", function ($texture) {
-            _this._tSkySpecular = $texture;
-        });
     };
     UishaderSprite.prototype.loadAlphaJpg = function ($rgbUrl, $alphaUrl) {
         var _this = this;
@@ -265,20 +268,53 @@ var UishaderSprite = (function (_super) {
                     rgbimgData.data[i + 3] = alphaimgData.data[i];
                 }
                 TextureManager.getInstance().addRes(Scene_data.fileRoot + $rgbUrl, rgbimgData);
-                TextureManager.getInstance().getTexture(Scene_data.fileRoot + "pan/marmoset/model/1005.jpg", function ($texture) {
+                TextureManager.getInstance().getTexture(Scene_data.fileRoot + $rgbUrl, function ($texture) {
                     _this._reflectivity = $texture;
                 });
             });
         });
     };
-    UishaderSprite.prototype.loadFileById = function ($id, $baseuv, $nrmuv) {
+    UishaderSprite.prototype.loadFileById = function ($id, $baseuv, $nrmuv, alphajpg) {
         var _this = this;
         this.loadUvPic($baseuv, $nrmuv);
         LoadManager.getInstance().load(Scene_data.fileRoot + "pan/marmoset/model/objs" + $id + ".txt", LoadManager.XML_TYPE, function ($objstr) {
             var $dd = $objstr.split("|");
             _this.initModeStr(_this.getArrByStr($dd[0]), _this.getArrByStr($dd[1]));
         });
+        this.loadAlphaJpg(alphajpg[0], alphajpg[1]);
+        ProdkarenResModel.getInstance().loadSkyTextureByUrl("picsky.txt", function ($texture) {
+            _this._tSkySpecular = $texture;
+        });
     };
+    /*
+    public skyboxTexture: WebGLTexture;
+    public loadSkyPic(): void {
+        LoadManager.getInstance().load(Scene_data.fileRoot + "pan/marmoset/model/skybox001.txt", LoadManager.XML_TYPE,
+            ($dtstr: string) => {
+                var configText: Array<string> = $dtstr.split(",");
+                var $dataArr: Uint8Array = new Uint8Array(configText.length)
+
+                for (var i: number = 0; i < configText.length; i++) {
+                    $dataArr[i]=Number(configText[i])
+                }
+                var a = $dataArr;
+                var b
+                var c
+                this.type = 3553;
+                var d: WebGLRenderingContext = Scene_data.context3D.renderContext
+                var id = d.createTexture();
+                d.bindTexture(this.type, id);
+                d.pixelStorei(d.UNPACK_FLIP_Y_WEBGL, !0);
+                d.texImage2D(this.type, 0, b || d.RGBA, 256, 2048, 0, b || d.RGBA, c || d.UNSIGNED_BYTE, a || null);
+                d.bindTexture(this.type, null)
+
+                this.skyboxTexture = id
+              
+            });
+
+
+    }
+    */
     UishaderSprite.prototype.initData = function () {
     };
     UishaderSprite.prototype.getArrByStr = function ($dtstr) {
@@ -290,5 +326,5 @@ var UishaderSprite = (function (_super) {
         return $dataArr;
     };
     return UishaderSprite;
-})(BaseDiplay3dSprite);
+}(BaseDiplay3dSprite));
 //# sourceMappingURL=UishaderSprite.js.map

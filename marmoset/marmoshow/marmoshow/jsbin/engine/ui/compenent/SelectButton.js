@@ -1,13 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var SelectButton = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SelectButton = /** @class */ (function (_super) {
     __extends(SelectButton, _super);
     function SelectButton() {
-        _super.call(this);
-        this._selected = false;
+        var _this = _super.call(this) || this;
+        _this._selected = false;
+        return _this;
     }
     Object.defineProperty(SelectButton.prototype, "selected", {
         get: function () {
@@ -43,5 +49,5 @@ var SelectButton = (function (_super) {
         return _super.prototype.interactiveEvent.call(this, e);
     };
     return SelectButton;
-})(BaseButton);
+}(BaseButton));
 //# sourceMappingURL=SelectButton.js.map

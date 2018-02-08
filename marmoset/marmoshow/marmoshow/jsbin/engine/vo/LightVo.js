@@ -1,4 +1,4 @@
-var LightVo = (function () {
+var LightVo = /** @class */ (function () {
     function LightVo() {
         this.sunDirect = new Array(0, 1, 0);
         this.sunColor = new Array(2, 0, 0);
@@ -16,5 +16,5 @@ var LightVo = (function () {
         this.ambientColor[2] = ac.z;
     };
     return LightVo;
-})();
+}());
 //# sourceMappingURL=LightVo.js.map

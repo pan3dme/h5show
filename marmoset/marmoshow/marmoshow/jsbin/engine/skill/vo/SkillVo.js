@@ -1,4 +1,4 @@
-var SkillVo = (function () {
+var SkillVo = /** @class */ (function () {
     function SkillVo() {
     }
     SkillVo.prototype.setData = function ($info) {
@@ -37,13 +37,13 @@ var SkillVo = (function () {
     };
     SkillVo.defaultBloodTime = 250;
     return SkillVo;
-})();
-var SkillType = (function () {
+}());
+var SkillType = /** @class */ (function () {
     function SkillType() {
     }
     SkillType.TrajectoryDynamicTarget = 1;
     SkillType.FixEffect = 4;
     SkillType.TrajectoryDynamicPoint = 3;
     return SkillType;
-})();
+}());
 //# sourceMappingURL=SkillVo.js.map

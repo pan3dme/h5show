@@ -1,9 +1,9 @@
-var TextRegVo = (function () {
+var TextRegVo = /** @class */ (function () {
     function TextRegVo() {
     }
     return TextRegVo;
-})();
-var TextRegExp = (function () {
+}());
+var TextRegExp = /** @class */ (function () {
     function TextRegExp() {
     }
     TextRegExp.pushStr = function ($str) {
@@ -149,8 +149,8 @@ var TextRegExp = (function () {
     };
     TextRegExp.defaultColor = "#000000";
     return TextRegExp;
-})();
-var LabelTextFont = (function () {
+}());
+var LabelTextFont = /** @class */ (function () {
     function LabelTextFont() {
     }
     /*
@@ -410,5 +410,5 @@ var LabelTextFont = (function () {
         $uiAtlas.updateCtx($ctx, $uiRect.pixelX, $uiRect.pixelY);
     };
     return LabelTextFont;
-})();
+}());
 //# sourceMappingURL=LabelTextFont.js.map

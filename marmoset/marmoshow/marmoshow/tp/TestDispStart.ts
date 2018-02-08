@@ -28,12 +28,13 @@
             SceneManager.getInstance().ready = true;
 
 
-            this.addBaseModel(1000, "pan/marmoset/model/1007.jpg", "pan/marmoset/model/1004.jpg");
+            this.addBaseModel(1000, "pan/marmoset/model/1007.jpg", "pan/marmoset/model/1004.jpg", ["pan/marmoset/model/1005.jpg", "pan/marmoset/model/1009.jpg"]);
+            this.addBaseModel(1001, "pan/marmoset/model/1003.jpg", "pan/marmoset/model/1006.jpg", ["pan/marmoset/model/1001.jpg", "pan/marmoset/model/1008.jpg"]);
 
         }
-        private addBaseModel($id: number, $baseuv: string, $nrmuv: string): void {
+        private addBaseModel($id: number, $baseuv: string, $nrmuv: string, alphajpg: Array<string>): void {
             var $ds: UishaderSprite = new UishaderSprite();
-            $ds.loadFileById($id, $baseuv, $nrmuv)
+            $ds.loadFileById($id, $baseuv, $nrmuv, alphajpg)
             SceneManager.getInstance().addDisplay($ds);
 
         }

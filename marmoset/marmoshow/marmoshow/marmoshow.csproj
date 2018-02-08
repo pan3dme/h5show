@@ -278,8 +278,6 @@
     <TypeScriptCompile Include="tp\modules\scene\dis\BloomRenderModel.ts" />
     <TypeScriptCompile Include="tp\modules\scene\dis\SceneRenderToTextrue.ts" />
     <TypeScriptCompile Include="tp\modules\scene\dis\UishaderSprite.ts" />
-    <TypeScriptCompile Include="tp\modules\scene\MarmosetModelSprite.ts" />
-    <TypeScriptCompile Include="tp\modules\scene\ProdkarenModelSprite.ts" />
     <TypeScriptCompile Include="tp\modules\scene\ProdkarenResModel.ts" />
     <TypeScriptCompile Include="tp\TestDispStart.ts" />
   </ItemGroup>

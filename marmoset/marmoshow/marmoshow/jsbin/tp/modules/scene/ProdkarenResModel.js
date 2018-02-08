@@ -1,4 +1,4 @@
-var ProdkarenResModel = (function () {
+var ProdkarenResModel = /** @class */ (function () {
     function ProdkarenResModel() {
     }
     ProdkarenResModel.getInstance = function () {
@@ -92,6 +92,22 @@ var ProdkarenResModel = (function () {
                     _this.getImageDataByItemData($alphaItem, function ($alphaimageData) {
                         for (var i = 0; i < $rgbimageData.data.length; i += 4) {
                             $rgbimageData.data[i + 3] = $alphaimageData.data[i + 0];
+                            //$rgbimageData.data[i + 0] = $alphaimageData.data[i + 0];
+                            //$rgbimageData.data[i + 1] = $alphaimageData.data[i + 0];
+                            //$rgbimageData.data[i + 2] = $alphaimageData.data[i + 0];
+                            /*
+                                        if ((i / 4) % 2 == 0) {
+                                            $rgbimageData.data[i + 0] = 255;
+                                            $rgbimageData.data[i + 1] = 0;
+                                            $rgbimageData.data[i + 2] = 0;
+                                            $rgbimageData.data[i + 3] = 255;
+                                        } else {
+                                            $rgbimageData.data[i + 0] = 255;
+                                            $rgbimageData.data[i + 1] = 255;
+                                            $rgbimageData.data[i + 2] = 255;
+                                            $rgbimageData.data[i + 3] =255;
+                                        }
+                                        */
                         }
                         var $textureRes = new TextureRes();
                         $textureRes.texture = _this.getTexture($rgbimageData);
@@ -151,5 +167,5 @@ var ProdkarenResModel = (function () {
         return $dataArr;
     };
     return ProdkarenResModel;
-})();
+}());
 //# sourceMappingURL=ProdkarenResModel.js.map

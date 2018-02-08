@@ -133,7 +133,7 @@
         var fovh: number = Scene_data.stageHeight
         Scene_data.sceneViewHW = Math.max(fovw, fovh)
   
-        Scene_data.viewMatrx3D.perspectiveFieldOfViewLH(this.sceneCamScale, 1, 50, Scene_data.camFar);
+        Scene_data.viewMatrx3D.perspectiveFieldOfViewLH(this.sceneCamScale, 1, 1, Scene_data.camFar);
         Scene_data.viewMatrx3D.appendScale(1 * (Scene_data.sceneViewHW / fovw * 2), fovw / fovh * (Scene_data.sceneViewHW / fovw * 2), 1);
 
 

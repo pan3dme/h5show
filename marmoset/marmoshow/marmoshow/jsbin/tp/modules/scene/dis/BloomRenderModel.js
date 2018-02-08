@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var BloomRenderModelShader = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var BloomRenderModelShader = /** @class */ (function (_super) {
     __extends(BloomRenderModelShader, _super);
     function BloomRenderModelShader() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     BloomRenderModelShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "v3Position");
@@ -44,11 +49,11 @@ var BloomRenderModelShader = (function (_super) {
     };
     BloomRenderModelShader.BloomRenderModelShader = "BloomRenderModelShader";
     return BloomRenderModelShader;
-})(Shader3D);
-var BloomRenderModel = (function (_super) {
+}(Shader3D));
+var BloomRenderModel = /** @class */ (function (_super) {
     __extends(BloomRenderModel, _super);
     function BloomRenderModel() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     BloomRenderModel.getInstance = function () {
         if (!this._instance) {
@@ -94,5 +99,5 @@ var BloomRenderModel = (function (_super) {
         }
     };
     return BloomRenderModel;
-})(BaseDiplay3dSprite);
+}(BaseDiplay3dSprite));
 //# sourceMappingURL=BloomRenderModel.js.map
