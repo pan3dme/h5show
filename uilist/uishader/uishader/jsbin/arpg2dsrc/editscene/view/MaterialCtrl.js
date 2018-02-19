@@ -2,15 +2,18 @@ var materialui;
 (function (materialui) {
     var MaterialCtrl = /** @class */ (function () {
         function MaterialCtrl() {
-            this.nodeList = new Array;
-            this.uiList = new Array;
-            this._materialTree = new materialui.MaterialTree;
+            this.initData();
         }
         MaterialCtrl.getInstance = function () {
             if (!this._instance) {
                 this._instance = new MaterialCtrl();
             }
             return this._instance;
+        };
+        MaterialCtrl.prototype.initData = function () {
+            this.nodeList = new Array;
+            this.uiList = new Array;
+            this._materialTree = new materialui.MaterialTree;
         };
         MaterialCtrl.prototype.addNodeUI = function (ui) {
             var node = ui.nodeTree;

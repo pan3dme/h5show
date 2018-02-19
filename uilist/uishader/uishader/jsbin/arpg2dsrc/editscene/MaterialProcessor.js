@@ -20,6 +20,7 @@ var materialui;
         MaterialEvent.SELECT_MATERIAL_NODE_UI = "SELECT_MATERIAL_NODE_UI"; //
         MaterialEvent.COMPILE_MATERIAL = "COMPILE_MATERIAL"; //
         MaterialEvent.SCENE_UI_TRUE_MOVE = "SCENE_UI_TRUE_MOVE"; //
+        MaterialEvent.INUPT_NEW_MATERIAL_FILE = "CLEAR_MATERIAL_ALL_UI"; //
         return MaterialEvent;
     }(BaseEvent));
     materialui.MaterialEvent = MaterialEvent;
@@ -63,6 +64,9 @@ var materialui;
                 if ($materialEvent.type == MaterialEvent.SCENE_UI_TRUE_MOVE) {
                     this.stageMoveTx($materialEvent.v2d);
                 }
+                if ($materialEvent.type == MaterialEvent.INUPT_NEW_MATERIAL_FILE) {
+                    this.clearAllMaterialUi($materialEvent.materailTree);
+                }
             }
             if ($event instanceof materialui.MEvent_Material_Connect) {
                 var $mevent_Material_Connect = $event;
@@ -79,6 +83,18 @@ var materialui;
                     this.setConnetLine($mevent_Material_Connect.startNode, $mevent_Material_Connect.endNode);
                 }
             }
+        };
+        MaterialProcessor.prototype.clearAllMaterialUi = function ($materailTree) {
+            var $len = UIManager.getInstance()._containerList.length;
+            for (var i = ($len - 1); i >= 0; i--) {
+                var $temp = UIManager.getInstance()._containerList[i];
+                if ($temp.name) {
+                    this.delUI($temp);
+                }
+            }
+            materialui.MaterialCtrl.getInstance().initData();
+            this.baseMaterialTree = $materailTree;
+            materialui.MaterialViewBuildUtils.getInstance().setData($materailTree.data);
         };
         MaterialProcessor.prototype.setConnetLine = function ($startItem, $endItem) {
             this.lineContainer.addConnentLine($startItem, $endItem);
@@ -112,6 +128,7 @@ var materialui;
                 new MaterialEvent(MaterialEvent.SAVE_MATERIA_PANEL),
                 new MaterialEvent(MaterialEvent.COMPILE_MATERIAL),
                 new MaterialEvent(MaterialEvent.SCENE_UI_TRUE_MOVE),
+                new MaterialEvent(MaterialEvent.INUPT_NEW_MATERIAL_FILE),
                 new materialui.MEvent_Material_Connect(materialui.MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STARTDRAG),
                 new materialui.MEvent_Material_Connect(materialui.MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STOPDRAG),
                 new materialui.MEvent_Material_Connect(materialui.MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_REMOVELINE),
@@ -157,7 +174,6 @@ var materialui;
                 materialui.MaterialViewBuildUtils.getInstance().addFun = function (ui) { materialui.MaterialCtrl.getInstance().addNodeUI(ui); };
                 materialui.MaterialViewBuildUtils.getInstance().setData($materialTree.data);
                 ModuleEventManager.dispatchEvent(new left.LeftEvent(left.LeftEvent.SHOW_LEFT_PANEL));
-                //  this.stageMoveTx(new Vector2D(-1000, 0));
             });
         };
         MaterialProcessor.prototype.onKeyDown = function ($evt) {
@@ -168,7 +184,9 @@ var materialui;
                 case KeyboardType.Delete:
                     var $selectUi = this.getSelUI();
                     if ($selectUi) {
-                        this.delUI($selectUi);
+                        if (!($selectUi instanceof materialui.ResultNodeUI)) {
+                            this.delUI($selectUi);
+                        }
                     }
                     break;
                 case KeyboardType.S:
@@ -187,9 +205,6 @@ var materialui;
             }
         };
         MaterialProcessor.prototype.delUI = function ($ui) {
-            if ($ui instanceof materialui.ResultNodeUI) {
-                return;
-            }
             $ui.removeAllNodeLine();
             UIManager.getInstance().removeUIContainer($ui);
         };

@@ -38,6 +38,7 @@
 
 
         }
+  
         public drawLine(): void {
             for (var i: number = 0; i < this._dataAry.length; i++) {
                 var inAry: Array<any> = this._dataAry[i].inAry;

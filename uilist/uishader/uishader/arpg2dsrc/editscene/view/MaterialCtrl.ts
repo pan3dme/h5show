@@ -9,6 +9,10 @@
             return this._instance;
         }
         public constructor() {
+            this.initData();
+        }
+        public initData(): void {
+
             this.nodeList = new Array;
             this.uiList = new Array;
             this._materialTree = new MaterialTree;

@@ -5,8 +5,10 @@
         public static SELECT_MATERIAL_NODE_UI: string = "SELECT_MATERIAL_NODE_UI"; //
         public static COMPILE_MATERIAL: string = "COMPILE_MATERIAL"; //
         public static SCENE_UI_TRUE_MOVE: string = "SCENE_UI_TRUE_MOVE"; //
+        public static INUPT_NEW_MATERIAL_FILE: string = "CLEAR_MATERIAL_ALL_UI"; //
         public nodeUi: BaseMaterialNodeUI
         public v2d: Vector2D
+        public materailTree: MaterialTree
 
     }
     export class MaterialModule extends Module {
@@ -41,8 +43,12 @@
                 }
                 if ($materialEvent.type == MaterialEvent.SCENE_UI_TRUE_MOVE) {
                     this.stageMoveTx($materialEvent.v2d)
-     
                 }
+                if ($materialEvent.type == MaterialEvent.INUPT_NEW_MATERIAL_FILE) {
+                    this.clearAllMaterialUi($materialEvent.materailTree);
+                }
+
+                
             }
             if ($event instanceof MEvent_Material_Connect) {
 
@@ -65,6 +71,19 @@
             }
      
 
+        }
+        private clearAllMaterialUi($materailTree: MaterialTree): void {
+            var $len: number = UIManager.getInstance()._containerList.length
+            for (var i: number = ($len-1); i >=0; i--) {
+                var $temp: BaseMaterialNodeUI = <BaseMaterialNodeUI>UIManager.getInstance()._containerList[i]
+                if ($temp.name) {
+                    this.delUI($temp);
+                }
+            }
+            MaterialCtrl.getInstance().initData();
+            this.baseMaterialTree = $materailTree;
+            MaterialViewBuildUtils.getInstance().setData($materailTree.data);
+     
         }
         public  setConnetLine($startItem: ItemMaterialUI, $endItem: ItemMaterialUI):void {
             this.lineContainer.addConnentLine($startItem, $endItem);
@@ -107,6 +126,7 @@
                 new MaterialEvent(MaterialEvent.SAVE_MATERIA_PANEL),
                 new MaterialEvent(MaterialEvent.COMPILE_MATERIAL),
                 new MaterialEvent(MaterialEvent.SCENE_UI_TRUE_MOVE),
+                new MaterialEvent(MaterialEvent.INUPT_NEW_MATERIAL_FILE),
                 
                 new MEvent_Material_Connect(MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STARTDRAG),
                 new MEvent_Material_Connect(MEvent_Material_Connect.MEVENT_MATERIAL_CONNECT_STOPDRAG),
@@ -169,12 +189,7 @@
                 this.baseMaterialTree = $materialTree
                 MaterialViewBuildUtils.getInstance().addFun = (ui: BaseMaterialNodeUI) => { MaterialCtrl.getInstance().addNodeUI(ui)};
                 MaterialViewBuildUtils.getInstance().setData($materialTree.data)
-
-
                 ModuleEventManager.dispatchEvent(new left.LeftEvent(left.LeftEvent.SHOW_LEFT_PANEL));
-
-            //  this.stageMoveTx(new Vector2D(-1000, 0));
-
             });
 
         }
@@ -185,14 +200,13 @@
             Arpg2dGameStart.altKey = $evt.altKey
             switch ($evt.keyCode) {
                 case KeyboardType.C:
-
-               
                     break
                 case KeyboardType.Delete:
-
                     var $selectUi: BaseMaterialNodeUI = this.getSelUI();
-                    if ($selectUi) {
-                        this.delUI($selectUi);
+                    if ($selectUi ) {
+                        if ( !($selectUi instanceof ResultNodeUI)) {
+                            this.delUI($selectUi);
+                        }
                     }
                     break
                 case KeyboardType.S:
@@ -200,10 +214,7 @@
                         ModuleEventManager.dispatchEvent(new materialui.MaterialEvent(materialui.MaterialEvent.SAVE_MATERIA_PANEL));
                     }
                 case KeyboardType.O:
-
                     ModuleEventManager.dispatchEvent(new left.LeftEvent(left.LeftEvent.SHOW_LEFT_PANEL));
-
-
                     break
                 case KeyboardType.Z:
 
@@ -217,10 +228,8 @@
           
         }
         private delUI($ui: BaseMaterialNodeUI): void {
-            if ($ui instanceof ResultNodeUI) {
-                return;
-            }
-
+           
+       
             $ui.removeAllNodeLine();
             UIManager.getInstance().removeUIContainer($ui)
         }

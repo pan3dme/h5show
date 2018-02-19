@@ -165,8 +165,10 @@
             var $vo: MenuListData = new MenuListData("其它", "4")
             $vo.subMenu = new Array;
             $vo.subMenu.push(new MenuListData("菲捏尔", "41"));
+            $vo.subMenu.push(new MenuListData("導入材質", "42"));
             return $vo;
         }
+
         public moseMoveTo($ui: FrameCompenent): void {
 
             var isSub: boolean = false
@@ -274,6 +276,9 @@
                     case "41":
                         this.onTempNode(new FresnelNodeUI(), evt)
                         break;
+                    case "42":
+                       this.selectInputDae(evt)
+                        break;
                     default:
                         break;
                 }
@@ -283,6 +288,43 @@
                 ModuleEventManager.dispatchEvent(new RightMenuEvent(RightMenuEvent.HIDE_RIGHT_MENU));
             }
 
+
+        }
+        private _inputHtmlSprite: HTMLInputElement
+        protected selectInputDae(evt: InteractiveEvent): void {
+            this._inputHtmlSprite = <HTMLInputElement>document.createElement('input');
+            this._inputHtmlSprite.setAttribute('id', '_ef');
+            this._inputHtmlSprite.setAttribute('type', 'file');
+            this._inputHtmlSprite.setAttribute("style", 'visibility:hidden');
+            this._inputHtmlSprite.click();
+            this._inputHtmlSprite.value;
+            this._inputHtmlSprite.addEventListener("change", (cevt: any) => { this.changeFile(cevt) });
+        }
+        private changeFile(evt: any): void {
+            for (var i: number = 0; i < this._inputHtmlSprite.files.length && i < 1; i++) {
+                var simpleFile: File = <File>this._inputHtmlSprite.files[i];
+                if (!/image\/\w+/.test(simpleFile.type)) {
+                    var $reader: FileReader = new FileReader();
+                    $reader.readAsText(simpleFile);
+                    $reader.onload = ($temp: Event) => { this.readOnLod($temp) }
+                } else {
+                    alert("请确保文件类型为图像类型");
+                }
+
+            }
+            this._inputHtmlSprite = null;
+        }
+        private readOnLod($temp: Event): void {
+            var $reader: FileReader = <FileReader>($temp.target);
+            var $materailTree: MaterialTree = new MaterialTree;
+            $materailTree.url = "selectUrl.txt";
+            var $obj: any = JSON.parse($reader.result)
+            $materailTree.setData($obj);
+
+
+            var $materialEvent: MaterialEvent = new MaterialEvent(MaterialEvent.INUPT_NEW_MATERIAL_FILE)
+            $materialEvent.materailTree = $materailTree
+            ModuleEventManager.dispatchEvent($materialEvent);
 
         }
 

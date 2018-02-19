@@ -221,7 +221,8 @@
   
             console.log($objdata);
 
-            ModelShowModel.getInstance().lightSpriteList.inputObjdata = $objdata
+            ModelShowModel.getInstance().lightSpriteList.inputObjdata = $objdata;
+            ModelShowModel.getInstance().lightSpriteList.objData = $objdata;
         }
 
         private readVecFloat($byte: ByteArray): Array<number> {

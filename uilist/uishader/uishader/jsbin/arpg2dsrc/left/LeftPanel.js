@@ -190,6 +190,7 @@ var left;
             $objdata.indexBuffer = Scene_data.context3D.uploadIndexBuff3D($objdata.indexs);
             console.log($objdata);
             left.ModelShowModel.getInstance().lightSpriteList.inputObjdata = $objdata;
+            left.ModelShowModel.getInstance().lightSpriteList.objData = $objdata;
         };
         LeftPanel.prototype.readVecFloat = function ($byte) {
             var $arr = new Array();

@@ -149,6 +149,7 @@ var materialui;
             var $vo = new MenuListData("其它", "4");
             $vo.subMenu = new Array;
             $vo.subMenu.push(new MenuListData("菲捏尔", "41"));
+            $vo.subMenu.push(new MenuListData("導入材質", "42"));
             return $vo;
         };
         RightMenuPanel.prototype.moseMoveTo = function ($ui) {
@@ -251,12 +252,50 @@ var materialui;
                     case "41":
                         this.onTempNode(new materialui.FresnelNodeUI(), evt);
                         break;
+                    case "42":
+                        this.selectInputDae(evt);
+                        break;
                     default:
                         break;
                 }
                 console.log(seleceVo.data.key);
                 ModuleEventManager.dispatchEvent(new materialui.RightMenuEvent(materialui.RightMenuEvent.HIDE_RIGHT_MENU));
             }
+        };
+        RightMenuPanel.prototype.selectInputDae = function (evt) {
+            var _this = this;
+            this._inputHtmlSprite = document.createElement('input');
+            this._inputHtmlSprite.setAttribute('id', '_ef');
+            this._inputHtmlSprite.setAttribute('type', 'file');
+            this._inputHtmlSprite.setAttribute("style", 'visibility:hidden');
+            this._inputHtmlSprite.click();
+            this._inputHtmlSprite.value;
+            this._inputHtmlSprite.addEventListener("change", function (cevt) { _this.changeFile(cevt); });
+        };
+        RightMenuPanel.prototype.changeFile = function (evt) {
+            var _this = this;
+            for (var i = 0; i < this._inputHtmlSprite.files.length && i < 1; i++) {
+                var simpleFile = this._inputHtmlSprite.files[i];
+                if (!/image\/\w+/.test(simpleFile.type)) {
+                    var $reader = new FileReader();
+                    $reader.readAsText(simpleFile);
+                    $reader.onload = function ($temp) { _this.readOnLod($temp); };
+                }
+                else {
+                    alert("请确保文件类型为图像类型");
+                }
+            }
+            this._inputHtmlSprite = null;
+        };
+        RightMenuPanel.prototype.readOnLod = function ($temp) {
+            var $reader = ($temp.target);
+            var $materailTree = new materialui.MaterialTree;
+            $materailTree.url = "selectUrl.txt";
+            var $obj = JSON.parse($reader.result);
+            $materailTree.setData($obj);
+            var $materialEvent = new materialui.MaterialEvent(materialui.MaterialEvent.INUPT_NEW_MATERIAL_FILE);
+            $materialEvent.materailTree = $materailTree;
+            ModuleEventManager.dispatchEvent($materialEvent);
         };
         RightMenuPanel.prototype.onTempNode = function ($ui, evt) {
             $ui.left = evt.x / materialui.MtlUiData.Scale - 200;
