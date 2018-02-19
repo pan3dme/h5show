@@ -116,6 +116,7 @@
     <TypeScriptCompile Include="arpg2dsrc\left\prop\view\SciencePropMeshPanel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\view\TexturePropMeshPanel.ts" />
     <TypeScriptCompile Include="arpg2dsrc\left\prop\view\Vec3PropMeshPanel.ts" />
+    <TypeScriptCompile Include="arpg2dsrc\left\TBNUtils.ts" />
     <TypeScriptCompile Include="engine\base\BitMapData.ts" />
     <TypeScriptCompile Include="engine\base\Camera3D.ts" />
     <TypeScriptCompile Include="engine\base\ColorType.ts" />

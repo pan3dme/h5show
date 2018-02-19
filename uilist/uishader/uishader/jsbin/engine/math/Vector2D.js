@@ -39,6 +39,9 @@ var Vector2D = /** @class */ (function () {
         var yy = p1.y - p2.y;
         return Math.sqrt(xx * xx + yy * yy);
     };
+    Vector2D.prototype.subtract = function (value) {
+        return new Vector2D(this.x - value.x, this.y - value.y);
+    };
     return Vector2D;
 }());
 //# sourceMappingURL=Vector2D.js.map

@@ -85,39 +85,28 @@ var left;
         MaterialModelSprite.prototype.update = function () {
             _super.prototype.update.call(this);
         };
-        MaterialModelSprite.prototype.setMaterialTexture = function ($material, $mp) {
-            if ($mp === void 0) { $mp = null; }
-            var texVec = $material.texList;
-            for (var i = 0; i < texVec.length; i++) {
-                if (texVec[i].type == TexItem.LIGHTMAP) {
-                    Scene_data.context3D.setRenderTexture($material.shader, texVec[i].name, this.lightMapTexture, texVec[i].id);
-                }
-                else if (texVec[i].type == TexItem.LTUMAP && Scene_data.pubLut) {
-                    Scene_data.context3D.setRenderTexture($material.shader, texVec[i].name, Scene_data.pubLut, texVec[i].id);
-                }
-                else if (texVec[i].type == TexItem.CUBEMAP) {
-                    if ($material.useDynamicIBL) {
-                    }
-                    else {
-                        var index = Math.floor($material.roughness * 5);
-                        if (Scene_data.skyCubeMap) {
-                            var cubeTexture = Scene_data.skyCubeMap[index];
-                            Scene_data.context3D.setRenderTextureCube($material.program, texVec[i].name, cubeTexture, texVec[i].id);
-                        }
-                    }
-                }
-                else {
-                    if (texVec[i].texture) {
-                        Scene_data.context3D.setRenderTexture($material.shader, texVec[i].name, texVec[i].texture, texVec[i].id);
-                    }
-                }
+        MaterialModelSprite.prototype.setInputVa = function () {
+            Scene_data.context3D.setVa(0, 3, this.inputObjdata.vertexBuffer);
+            Scene_data.context3D.setVa(1, 2, this.inputObjdata.uvBuffer);
+            if (!(this.material.directLight || this.material.noLight)) {
+                Scene_data.context3D.setVa(2, 2, this.inputObjdata.lightUvBuffer);
             }
-            if ($mp) {
-                for (i = 0; i < $mp.dynamicTexList.length; i++) {
-                    if ($mp.dynamicTexList[i].target) {
-                        Scene_data.context3D.setRenderTexture($material.shader, $mp.dynamicTexList[i].target.name, $mp.dynamicTexList[i].texture, $mp.dynamicTexList[i].target.id);
-                    }
-                }
+            if (this.material.usePbr || this.material.directLight) {
+                Scene_data.context3D.setVa(3, 3, this.inputObjdata.normalsBuffer);
+                Scene_data.context3D.setVcMatrix3fv(this.material.shader, "rotationMatrix3D", this._rotationData);
+            }
+            if (this.material.useNormal) {
+                Scene_data.context3D.setVa(4, 3, this.inputObjdata.tangentBuffer);
+                Scene_data.context3D.setVa(5, 3, this.inputObjdata.bitangentBuffer);
+            }
+            this.objData = this.inputObjdata;
+        };
+        MaterialModelSprite.prototype.setMaterialVaCompress = function () {
+            if (this.inputObjdata) {
+                this.setInputVa();
+            }
+            else {
+                _super.prototype.setMaterialVaCompress.call(this);
             }
         };
         return MaterialModelSprite;

@@ -40,5 +40,8 @@
         var yy: number = p1.y - p2.y;
         return Math.sqrt(xx * xx + yy * yy);
     }
+    public subtract(value: Vector2D): Vector2D {
+        return new Vector2D(this.x - value.x, this.y - value.y);
+    }
 
 } 

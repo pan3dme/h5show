@@ -73,12 +73,37 @@ module left {
             }
       
         }
+        public inputObjdata: ObjData
         public update(): void {
 
             super.update();
 
-
         }
+        private setInputVa(): void {
+            Scene_data.context3D.setVa(0, 3, this.inputObjdata.vertexBuffer);
+            Scene_data.context3D.setVa(1, 2, this.inputObjdata.uvBuffer);
+            if (!(this.material.directLight || this.material.noLight)) {
+                Scene_data.context3D.setVa(2, 2, this.inputObjdata.lightUvBuffer);
+            }
+            if (this.material.usePbr || this.material.directLight) {
+                Scene_data.context3D.setVa(3, 3, this.inputObjdata.normalsBuffer);
+                Scene_data.context3D.setVcMatrix3fv(this.material.shader, "rotationMatrix3D", this._rotationData);
+            }
+            if (this.material.useNormal) {
+                Scene_data.context3D.setVa(4, 3, this.inputObjdata.tangentBuffer);
+                Scene_data.context3D.setVa(5, 3, this.inputObjdata.bitangentBuffer);
+            }
+            this.objData = this.inputObjdata;
+        }
+        public setMaterialVaCompress(): void {
+            if (this.inputObjdata) {
+                this.setInputVa();
+            } else {
+                super.setMaterialVaCompress()
+            }
+        }
+
+        /*
         public setMaterialTexture($material: Material, $mp: MaterialBaseParam = null): void {
             var texVec: Array<TexItem> = $material.texList;
             for (var i: number = 0; i < texVec.length; i++) {
@@ -115,6 +140,8 @@ module left {
 
 
         }
+
+        */
   
     
     }

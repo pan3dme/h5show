@@ -186,28 +186,10 @@
         private changeFile(evt: any): void {
             for (var i: number = 0; i < this._inputHtmlSprite.files.length && i < 1; i++) {
                 var simpleFile: File = <File>this._inputHtmlSprite.files[i];
-
                 if (!/image\/\w+/.test(simpleFile.type)) {
                     var $reader: FileReader = new FileReader(); 
                     $reader.readAsArrayBuffer(simpleFile);
                     $reader.onload = ($temp: Event) => { this.readOnLod($temp) }
-                    /*
-                    reader.onload = function (f) {
-                       
-                        var newByte: ByteArray = new ByteArray(reader.result);
-                        var $objdata: ObjData = new ObjData();
-                        var $objurl: string = newByte.readUTF()
-                        console.log($objurl);
-                        $objdata.vertices = this.readVecFloat(newByte);
-                        $objdata.normals = this.readVecFloat(newByte);
-                        $objdata.uvs = this.readVecFloat(newByte);
-                        $objdata.lightuvs = this.readVecFloat(newByte);
-                        $objdata.indexs = this.readVecInt(newByte);
-                        console.log($objdata);
-          
-                    }  
-                    */
-
                 } else {
                     alert("请确保文件类型为图像类型");
                 }
@@ -226,7 +208,20 @@
             $objdata.uvs = this.readVecFloat(newByte);
             $objdata.lightuvs = this.readVecFloat(newByte);
             $objdata.indexs = this.readVecInt(newByte);
+            $objdata.treNum = $objdata.indexs.length;
+            TBNUtils.processTBN($objdata);
+
+            $objdata.vertexBuffer = Scene_data.context3D.uploadBuff3D($objdata.vertices);
+            $objdata.uvBuffer = Scene_data.context3D.uploadBuff3D($objdata.uvs);
+            $objdata.lightUvBuffer = Scene_data.context3D.uploadBuff3D($objdata.lightuvs);
+            $objdata.tangentBuffer = Scene_data.context3D.uploadBuff3D($objdata.tangents);
+            $objdata.bitangentBuffer = Scene_data.context3D.uploadBuff3D($objdata.bitangents);
+            $objdata.normalsBuffer = Scene_data.context3D.uploadBuff3D($objdata.normals);
+            $objdata.indexBuffer = Scene_data.context3D.uploadIndexBuff3D($objdata.indexs);
+  
             console.log($objdata);
+
+            ModelShowModel.getInstance().lightSpriteList.inputObjdata = $objdata
         }
 
         private readVecFloat($byte: ByteArray): Array<number> {

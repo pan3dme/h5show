@@ -24,7 +24,7 @@
                 }
             }
         }
-        private lightSpriteList: MaterialModelSprite
+        public lightSpriteList: MaterialModelSprite
         private gridLineSprite: GridLineSprite
         private addGridLineSprite(): void {
             ProgrmaManager.getInstance().registe(LineDisplayShader.LineShader, new LineDisplayShader);
