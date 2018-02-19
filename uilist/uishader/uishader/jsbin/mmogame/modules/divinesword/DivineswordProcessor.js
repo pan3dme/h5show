@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var divinesword;
 (function (divinesword) {
-    var DivineswordModule = (function (_super) {
+    var DivineswordModule = /** @class */ (function (_super) {
         __extends(DivineswordModule, _super);
         function DivineswordModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         DivineswordModule.prototype.getModuleName = function () {
             return "DivineswordModule";
@@ -17,24 +22,24 @@ var divinesword;
             return [new DivineswordProcessor()];
         };
         return DivineswordModule;
-    })(Module);
+    }(Module));
     divinesword.DivineswordModule = DivineswordModule;
-    var DivineswordEvent = (function (_super) {
+    var DivineswordEvent = /** @class */ (function (_super) {
         __extends(DivineswordEvent, _super);
         function DivineswordEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         DivineswordEvent.SHOW_TRAINING_PANEL = "SHOW_TRAINING_PANEL";
         DivineswordEvent.HIDE_TRAINING_PANEL = "HIDE_TRAINING_PANEL";
         // public static REFRESH_TRAINING_PANEL: string = "REFRESH_TRAINING_PANEL";
         DivineswordEvent.REFRESH_SKILL_PANEL = "REFRESH_SKILL_PANEL";
         return DivineswordEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     divinesword.DivineswordEvent = DivineswordEvent;
-    var DivineswordProcessor = (function (_super) {
+    var DivineswordProcessor = /** @class */ (function (_super) {
         __extends(DivineswordProcessor, _super);
         function DivineswordProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         DivineswordProcessor.prototype.getName = function () {
             return "DivineswordProcessor";
@@ -224,7 +229,7 @@ var divinesword;
             ];
         };
         return DivineswordProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     divinesword.DivineswordProcessor = DivineswordProcessor;
 })(divinesword || (divinesword = {}));
 //# sourceMappingURL=DivineswordProcessor.js.map

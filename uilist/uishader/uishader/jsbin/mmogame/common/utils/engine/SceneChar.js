@@ -1,32 +1,38 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var SceneChar = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SceneChar = /** @class */ (function (_super) {
     __extends(SceneChar, _super);
     function SceneChar() {
-        _super.call(this);
-        this.speedTX = 1.5 / 20;
-        this.life = 0;
-        this.isMount = false;
-        this._px = 0;
-        this._py = 0;
-        this._pz = 0;
-        this._pRotationY = 0;
-        this._isBoss = false;
-        this._weaponNum = -1;
-        this._wingID = -1;
-        this.tittleHeight = 50;
-        this.jumpEndTime = 0;
-        this.lastJumpDan = -1;
-        this.toRotationY = 0;
-        this._showHitBox = false;
+        var _this = _super.call(this) || this;
+        _this.speedTX = 1.5 / 20;
+        _this.life = 0;
+        _this.isMount = false;
+        _this._px = 0;
+        _this._py = 0;
+        _this._pz = 0;
+        _this._pRotationY = 0;
+        _this._isBoss = false;
+        _this._weaponNum = -1;
+        _this._wingID = -1;
+        _this.tittleHeight = 50;
+        _this.jumpEndTime = 0;
+        _this.lastJumpDan = -1;
+        _this.toRotationY = 0;
+        _this._showHitBox = false;
         // private triIndex: Array<number> = [0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7]
         // private triIndex: Array<number> = [0, 4, 5, 0, 5, 1, 1, 5, 6, 1, 6, 2, 2, 6, 7, 2, 7, 3, 3, 7, 4, 3, 4, 0]
-        this.triIndex = [0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7, 0, 4, 5, 0, 5, 1, 1, 5, 6, 1, 6, 2, 2, 6, 7, 2, 7, 3, 3, 7, 4, 3, 4, 0];
-        this.shadow = true;
-        this.skillitem = new Array();
+        _this.triIndex = [0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7, 0, 4, 5, 0, 5, 1, 1, 5, 6, 1, 6, 2, 2, 6, 7, 2, 7, 3, 3, 7, 4, 3, 4, 0];
+        _this.shadow = true;
+        _this.skillitem = new Array();
+        return _this;
     }
     Object.defineProperty(SceneChar.prototype, "isDeath", {
         get: function () {
@@ -639,13 +645,18 @@ var SceneChar = (function (_super) {
         if ($staticNum == SharedDef.DEATH_STATE_ALIVE) {
             this.play(CharAction.STANAD, 2);
             this.visible = true;
+            //this.setHp(this.unit.getMaxHp())
+            //      console.log(this.unit.getHp())
+            //       console.log("复活DEATH_STATE_ALIVE ", this.unit.getGuid(), this.unit.getName());
         }
         else if ($staticNum == SharedDef.DEATH_STATE_CORPSE) {
             this.play(CharAction.DEATH, 1);
             this.visible = true;
+            //    console.log("死亡!!!!!!!DEATH_STATE_CORPSE ", this.unit.getGuid(), this.unit.getName());
         }
         else if ($staticNum == SharedDef.DEATH_STATE_DEAD) {
             this.visible = false;
+            //     console.log("消失@@@@@@@@@@@@@ DEATH_STATE_DEAD ", this.unit.getGuid(), this.unit.getName());
         }
         this.refreshLifeNum();
         this.refreshPos();
@@ -679,6 +690,9 @@ var SceneChar = (function (_super) {
         this.life = this.unit.getHp() / this.unit.getMaxHp() * 100;
         if (this._charBloodVo) {
             this._charBloodVo.num = this.life;
+            //if (this.unit.isMain && GameInstance.mainUi) {
+            //    GameInstance.mainUi.topLeftPanel.changeBloodData()
+            //}
         }
         if (this._isBoss) {
             var num = this.life / 100;
@@ -1025,5 +1039,5 @@ var SceneChar = (function (_super) {
     SceneChar.Defaul_Man_Avatar = 2002; //男
     SceneChar.Defaul_WoMan_Avater = 2012; //女
     return SceneChar;
-})(SceneBaseChar);
+}(SceneBaseChar));
 //# sourceMappingURL=SceneChar.js.map

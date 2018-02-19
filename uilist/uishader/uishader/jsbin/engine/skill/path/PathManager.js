@@ -1,4 +1,4 @@
-var PathManager = (function () {
+var PathManager = /** @class */ (function () {
     function PathManager() {
     }
     PathManager.reg = function (types, cls) {
@@ -15,5 +15,5 @@ var PathManager = (function () {
     };
     PathManager.dic = new Object;
     return PathManager;
-})();
+}());
 //# sourceMappingURL=PathManager.js.map

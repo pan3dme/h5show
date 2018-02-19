@@ -1,28 +1,34 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var copytask;
 (function (copytask) {
-    var TeamcopyUiPanel = (function (_super) {
+    var TeamcopyUiPanel = /** @class */ (function (_super) {
         __extends(TeamcopyUiPanel, _super);
         function TeamcopyUiPanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bigPic = new UIRenderOnlyPicComponent();
-            this.addRender(this._bigPic);
-            this._winmidRender = new UIRenderComponent;
-            this.addRender(this._winmidRender);
-            this._publicRender = new UIRenderComponent;
-            this.addRender(this._publicRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bigPic = new UIRenderOnlyPicComponent();
+            _this.addRender(_this._bigPic);
+            _this._winmidRender = new UIRenderComponent;
+            _this.addRender(_this._winmidRender);
+            _this._publicRender = new UIRenderComponent;
+            _this.addRender(_this._publicRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            return _this;
         }
         TeamcopyUiPanel.prototype.dispose = function () {
             this._topRender.dispose();
@@ -215,14 +221,15 @@ var copytask;
             }
         };
         return TeamcopyUiPanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     copytask.TeamcopyUiPanel = TeamcopyUiPanel;
-    var TeamCopyList = (function (_super) {
+    var TeamCopyList = /** @class */ (function (_super) {
         __extends(TeamCopyList, _super);
         function TeamCopyList() {
-            _super.call(this);
-            this.left = 47;
-            this.top = 83;
+            var _this = _super.call(this) || this;
+            _this.left = 47;
+            _this.top = 83;
+            return _this;
         }
         TeamCopyList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -258,12 +265,12 @@ var copytask;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return TeamCopyList;
-    })(SList);
+    }(SList));
     copytask.TeamCopyList = TeamCopyList;
-    var TeamCopyListRender = (function (_super) {
+    var TeamCopyListRender = /** @class */ (function (_super) {
         __extends(TeamCopyListRender, _super);
         function TeamCopyListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         TeamCopyListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -369,7 +376,7 @@ var copytask;
             UiDraw.clearUI(this.Spic);
         };
         return TeamCopyListRender;
-    })(SListItem);
+    }(SListItem));
     copytask.TeamCopyListRender = TeamCopyListRender;
 })(copytask || (copytask = {}));
 //# sourceMappingURL=TeamcopyUiPanel.js.map

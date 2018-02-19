@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var prop;
 (function (prop) {
-    var TexturePicIMeshVo = (function (_super) {
+    var TexturePicIMeshVo = /** @class */ (function (_super) {
         __extends(TexturePicIMeshVo, _super);
         function TexturePicIMeshVo() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         Object.defineProperty(TexturePicIMeshVo.prototype, "url", {
             get: function () {
@@ -39,12 +44,13 @@ var prop;
             this.clear = true;
         };
         return TexturePicIMeshVo;
-    })(bloodTittle.baseMeshVo);
-    var TexturePicUIDisp2D = (function (_super) {
+    }(bloodTittle.baseMeshVo));
+    var TexturePicUIDisp2D = /** @class */ (function (_super) {
         __extends(TexturePicUIDisp2D, _super);
         function TexturePicUIDisp2D() {
-            _super.apply(this, arguments);
-            this.tempMatrix = new Matrix3D;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.tempMatrix = new Matrix3D;
+            return _this;
         }
         TexturePicUIDisp2D.prototype.makeData = function () {
             if (this._data) {
@@ -96,16 +102,15 @@ var prop;
             }
         };
         return TexturePicUIDisp2D;
-    })(Disp2DBaseText);
+    }(Disp2DBaseText));
     prop.TexturePicUIDisp2D = TexturePicUIDisp2D;
-    var TexturePicUi = (function (_super) {
+    var TexturePicUi = /** @class */ (function (_super) {
         __extends(TexturePicUi, _super);
         function TexturePicUi() {
-            var _this = this;
-            _super.call(this);
-            this.$dulbelClikTm = 0;
-            this._x = 0;
-            this._y = 0;
+            var _this = _super.call(this) || this;
+            _this.$dulbelClikTm = 0;
+            _this._x = 0;
+            _this._y = 0;
             if (!TexturePicUi._dis2DUIContianer) {
                 TexturePicUi._dis2DUIContianer = new Dis2DUIContianerPanel(TexturePicUIDisp2D, new Rectangle(0, 0, 64, 64), 2);
                 TexturePicUi._dis2DUIContianer.left = 0;
@@ -114,9 +119,10 @@ var prop;
                 UIManager.getInstance().addUIContainer(TexturePicUi._dis2DUIContianer);
                 TimeUtil.addFrameTick(function (t) { _this.upFrame(t); });
             }
-            this.textLabelUIMeshVo = this.getCharNameMeshVo();
-            this.initView();
-            this.resize();
+            _this.textLabelUIMeshVo = _this.getCharNameMeshVo();
+            _this.initView();
+            _this.resize();
+            return _this;
         }
         TexturePicUi.prototype.destory = function () {
             this.textLabelUIMeshVo.clear = true;
@@ -201,7 +207,7 @@ var prop;
             configurable: true
         });
         return TexturePicUi;
-    })(EventDispatcher);
+    }(EventDispatcher));
     prop.TexturePicUi = TexturePicUi;
 })(prop || (prop = {}));
 //# sourceMappingURL=TexturePicUi.js.map

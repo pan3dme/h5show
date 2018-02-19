@@ -15,3 +15,4 @@ C:\wamp\www\h5show\uilist\uishader\uishader\bin\uishader.pdb
 C:\wamp\www\h5show\uilist\uishader\uishader\obj\Debug\uishader.dll
 C:\wamp\www\h5show\uilist\uishader\uishader\obj\Debug\uishader.pdb
 F:\slefSvn\trunk\h5show\uilist\uishader\uishader\obj\Debug\uishader.csprojResolveAssemblyReference.cache
+C:\wamp\www\h5show\uilist\uishader\uishader\obj\Debug\uishader.csproj.CoreCompileInputs.cache

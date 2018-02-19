@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var store;
 (function (store) {
-    var StoreModule = (function (_super) {
+    var StoreModule = /** @class */ (function (_super) {
         __extends(StoreModule, _super);
         function StoreModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         StoreModule.prototype.getModuleName = function () {
             return "StoreModule";
@@ -17,12 +22,12 @@ var store;
             return [new StoreProcessor()];
         };
         return StoreModule;
-    })(Module);
+    }(Module));
     store.StoreModule = StoreModule;
-    var StoreEvent = (function (_super) {
+    var StoreEvent = /** @class */ (function (_super) {
         __extends(StoreEvent, _super);
         function StoreEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         //展示面板
         StoreEvent.SHOW_Store_EVENT = "SHOW_Store_EVENT";
@@ -35,12 +40,12 @@ var store;
         //选中页签事件
         StoreEvent.SELECT_TAB_EVENT = "SELECT_TAB_EVENT";
         return StoreEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     store.StoreEvent = StoreEvent;
-    var StoreProcessor = (function (_super) {
+    var StoreProcessor = /** @class */ (function (_super) {
         __extends(StoreProcessor, _super);
         function StoreProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         StoreProcessor.prototype.getName = function () {
             return "StoreProcessor";
@@ -134,7 +139,7 @@ var store;
             ];
         };
         return StoreProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     store.StoreProcessor = StoreProcessor;
 })(store || (store = {}));
 //# sourceMappingURL=StoreProcessor.js.map

@@ -1,25 +1,31 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var charbg;
 (function (charbg) {
-    var CharInfoPanel = (function (_super) {
+    var CharInfoPanel = /** @class */ (function (_super) {
         __extends(CharInfoPanel, _super);
         function CharInfoPanel() {
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.partNameAry = ["武器", "衣服", "护手", "腰带", "鞋子", "头饰", "项链", "手镯", "戒指", "腰坠"];
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.middle = 0;
-            this.center = 0;
-            this.setBlackBg();
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.partNameAry = ["武器", "衣服", "护手", "腰带", "鞋子", "头饰", "项链", "手镯", "戒指", "腰坠"];
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.middle = 0;
+            _this.center = 0;
+            _this.setBlackBg();
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            return _this;
         }
         CharInfoPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -137,7 +143,7 @@ var charbg;
             UIManager.getInstance().addUIContainer(this);
         };
         return CharInfoPanel;
-    })(WindowMinUi);
+    }(WindowMinUi));
     charbg.CharInfoPanel = CharInfoPanel;
 })(charbg || (charbg = {}));
 //# sourceMappingURL=CharInfoPanel.js.map

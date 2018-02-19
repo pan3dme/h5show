@@ -1,22 +1,22 @@
 var social;
 (function (social) {
     //技能的三个类型
-    var SkillBaseType = (function () {
+    var SkillBaseType = /** @class */ (function () {
         function SkillBaseType() {
         }
         SkillBaseType.ZHUDONG = 0;
         SkillBaseType.NUQI = 1;
         SkillBaseType.BEIDONG = 2;
         return SkillBaseType;
-    })();
+    }());
     social.SkillBaseType = SkillBaseType;
-    var SocialgivingData = (function () {
+    var SocialgivingData = /** @class */ (function () {
         function SocialgivingData() {
         }
         return SocialgivingData;
-    })();
+    }());
     social.SocialgivingData = SocialgivingData;
-    var SocialModel = (function () {
+    var SocialModel = /** @class */ (function () {
         function SocialModel() {
         }
         SocialModel.getInstance = function () {
@@ -26,7 +26,7 @@ var social;
             return this._instance;
         };
         return SocialModel;
-    })();
+    }());
     social.SocialModel = SocialModel;
 })(social || (social = {}));
 //# sourceMappingURL=SocialModel.js.map

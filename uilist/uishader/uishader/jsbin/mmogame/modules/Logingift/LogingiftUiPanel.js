@@ -1,32 +1,38 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var logingift;
 (function (logingift) {
-    var LogingiftUiPanel = (function (_super) {
+    var LogingiftUiPanel = /** @class */ (function (_super) {
         __extends(LogingiftUiPanel, _super);
         function LogingiftUiPanel() {
-            _super.call(this);
-            this._lastMouseX = 0;
-            this._lastRoleRotatioinY = 0;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._baImg = new UIBackImg();
-            this._baImg.setImgInfo("ui/uidata/basebg/skillbg.png", 128, 64);
-            this.addRender(this._baImg);
-            this._publicbgRender = new UIRenderComponent;
-            this.addRender(this._publicbgRender);
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._baseRender.uiAtlas = new UIAtlas();
+            var _this = _super.call(this) || this;
+            _this._lastMouseX = 0;
+            _this._lastRoleRotatioinY = 0;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._baImg = new UIBackImg();
+            _this._baImg.setImgInfo("ui/uidata/basebg/skillbg.png", 128, 64);
+            _this.addRender(_this._baImg);
+            _this._publicbgRender = new UIRenderComponent;
+            _this.addRender(_this._publicbgRender);
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._baseRender.uiAtlas = new UIAtlas();
+            return _this;
         }
         LogingiftUiPanel.prototype.dispose = function () {
             this._baImg.dispose();
@@ -197,17 +203,18 @@ var logingift;
             }
         };
         return LogingiftUiPanel;
-    })(UIPanel);
+    }(UIPanel));
     logingift.LogingiftUiPanel = LogingiftUiPanel;
     /**
      * 登入大礼list
      */
-    var LogingiftList = (function (_super) {
+    var LogingiftList = /** @class */ (function (_super) {
         __extends(LogingiftList, _super);
         function LogingiftList() {
-            _super.call(this);
-            this.left = 351;
-            this.top = 75;
+            var _this = _super.call(this) || this;
+            _this.left = 351;
+            _this.top = 75;
+            return _this;
         }
         LogingiftList.prototype.init = function ($uiAtlas) {
             LogingiftListRender.baseAtlas = $uiAtlas;
@@ -246,12 +253,12 @@ var logingift;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return LogingiftList;
-    })(SList);
+    }(SList));
     logingift.LogingiftList = LogingiftList;
-    var LogingiftListRender = (function (_super) {
+    var LogingiftListRender = /** @class */ (function (_super) {
         __extends(LogingiftListRender, _super);
         function LogingiftListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -392,7 +399,7 @@ var logingift;
             LabelTextFont.clearLabel(this.uiAtlas, this.Itembg.skinName);
         };
         return LogingiftListRender;
-    })(SListItem);
+    }(SListItem));
     logingift.LogingiftListRender = LogingiftListRender;
 })(logingift || (logingift = {}));
 //# sourceMappingURL=LogingiftUiPanel.js.map

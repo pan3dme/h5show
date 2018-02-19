@@ -1,26 +1,32 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var welfare;
 (function (welfare) {
-    var WelfareEveryCheckin = (function (_super) {
+    var WelfareEveryCheckin = /** @class */ (function (_super) {
         __extends(WelfareEveryCheckin, _super);
         function WelfareEveryCheckin() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            return _this;
         }
         WelfareEveryCheckin.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -199,17 +205,18 @@ var welfare;
             }
         };
         return WelfareEveryCheckin;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     welfare.WelfareEveryCheckin = WelfareEveryCheckin;
     /**
      * 签到List
      */
-    var WelfareEveryCheckinList = (function (_super) {
+    var WelfareEveryCheckinList = /** @class */ (function (_super) {
         __extends(WelfareEveryCheckinList, _super);
         function WelfareEveryCheckinList() {
-            _super.call(this);
-            this.left = 217;
-            this.top = 79;
+            var _this = _super.call(this) || this;
+            _this.left = 217;
+            _this.top = 79;
+            return _this;
         }
         // private _frameRender: FrameUIRender;
         WelfareEveryCheckinList.prototype.init = function ($uiAtlas) {
@@ -303,12 +310,12 @@ var welfare;
             this.hideEffect();
         };
         return WelfareEveryCheckinList;
-    })(EffectSlist);
+    }(EffectSlist));
     welfare.WelfareEveryCheckinList = WelfareEveryCheckinList;
-    var WelfareEveryCheckinListRender = (function (_super) {
+    var WelfareEveryCheckinListRender = /** @class */ (function (_super) {
         __extends(WelfareEveryCheckinListRender, _super);
         function WelfareEveryCheckinListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -447,6 +454,8 @@ var welfare;
                                 ModulePageManager.openPanel(SharedDef.MODULE_MALL, [SharedDef.MODULE_MALL_RECHARGE]);
                             }
                         }, 2, ["前往充值", "取消"]);
+                        // });
+                        // ModuleEventManager.dispatchEvent(new welfare.WelfareEvent(welfare.WelfareEvent.OPPENWIN_Vip_Welfare_EVENT));
                     }
                 }
             }
@@ -478,6 +487,9 @@ var welfare;
                         ModulePageManager.openPanel(SharedDef.MODULE_MALL, [SharedDef.MODULE_MALL_RECHARGE]);
                     }
                 }, 2, ["直接签到", "前往充值"]);
+                // var $evtee = new welfare.WelfareEvent(welfare.WelfareEvent.OPPENWIN_Qiandao_Welfare_EVENT);
+                // $evtee.data = vo
+                // ModuleEventManager.dispatchEvent($evtee);
             }
         };
         // private CheckinFun(a: any): void {
@@ -502,7 +514,7 @@ var welfare;
             UiDraw.clearUI(this.I1select);
         };
         return WelfareEveryCheckinListRender;
-    })(SListItem);
+    }(SListItem));
     welfare.WelfareEveryCheckinListRender = WelfareEveryCheckinListRender;
 })(welfare || (welfare = {}));
 //# sourceMappingURL=WelfareEveryCheckin.js.map

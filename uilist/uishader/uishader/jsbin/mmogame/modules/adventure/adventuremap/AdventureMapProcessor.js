@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var adventuremap;
 (function (adventuremap) {
-    var AdventureMapModule = (function (_super) {
+    var AdventureMapModule = /** @class */ (function (_super) {
         __extends(AdventureMapModule, _super);
         function AdventureMapModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         AdventureMapModule.prototype.getModuleName = function () {
             return "AdventureMapModule";
@@ -17,22 +22,22 @@ var adventuremap;
             return [new AdventureMapProcessor()];
         };
         return AdventureMapModule;
-    })(Module);
+    }(Module));
     adventuremap.AdventureMapModule = AdventureMapModule;
-    var AdventureMapEvent = (function (_super) {
+    var AdventureMapEvent = /** @class */ (function (_super) {
         __extends(AdventureMapEvent, _super);
         function AdventureMapEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         AdventureMapEvent.SHOW_ADVENTURE_MAP_PANEL = "SHOW_ADVENTURE_UI_PANEL";
         AdventureMapEvent.HIDE_ADVENTURE_MAP_PANEL = "HIDE_ADVENTURE_UI_PANEL";
         return AdventureMapEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     adventuremap.AdventureMapEvent = AdventureMapEvent;
-    var AdventureMapProcessor = (function (_super) {
+    var AdventureMapProcessor = /** @class */ (function (_super) {
         __extends(AdventureMapProcessor, _super);
         function AdventureMapProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         AdventureMapProcessor.prototype.getName = function () {
             return "AdventureMapProcessor";
@@ -119,7 +124,7 @@ var adventuremap;
             ];
         };
         return AdventureMapProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     adventuremap.AdventureMapProcessor = AdventureMapProcessor;
 })(adventuremap || (adventuremap = {}));
 //# sourceMappingURL=AdventureMapProcessor.js.map

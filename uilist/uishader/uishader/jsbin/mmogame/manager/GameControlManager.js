@@ -1,4 +1,4 @@
-var GameControlManager = (function () {
+var GameControlManager = /** @class */ (function () {
     function GameControlManager() {
         var _this = this;
         this._lastMousePos = new Vector3D;
@@ -60,6 +60,15 @@ var GameControlManager = (function () {
         if (!$evt.shiftKey) {
             if ($evt.keyCode == KeyboardType.G) {
                 GameControlManager.sendGmCom("@完成当前主线");
+                //  AotuSkillManager.getInstance().jumpTo();
+                // MainCharControlModel.getInstance().setSpeedDirect(new Vector3D(1, 0, 0));
+                // MainCharControlModel.getInstance().setSpeedDirect(new Vector3D(1, 0, 0));
+                //var bsc: SceneChar = GameInstance.mainChar;
+                //BloodManager.getInstance().setJumpNum(new Vector3D(bsc.x + random(50) - 25, bsc.y + 30, bsc.z + random(50) - 25),999);
+                //var $MsgTipEvent: msgtip.MsgTipEvent = new msgtip.MsgTipEvent(msgtip.MsgTipEvent.SHOW_SYSTEM_OPEN_DATA)
+                //$MsgTipEvent.data = PanelClass.SHOW_FUBEN_EVENT
+                //ModuleEventManager.dispatchEvent($MsgTipEvent);
+                // this.showTopCenterPic()
             }
             if ($evt.keyCode == KeyboardType.T) {
                 // ModuleEventManager.dispatchEvent(new fightui.FightUiEvent(fightui.FightUiEvent.AAA));
@@ -121,6 +130,7 @@ var GameControlManager = (function () {
             GameControlManager.sendGmCom("@Script");
         }
         else if ($evt.keyCode == KeyboardType.Q) {
+            // ModuleEventManager.dispatchEvent(new strengthgem.StrengthGemEvent(strengthgem.StrengthGemEvent.SHOW_STRENGTHGEM_PANEL));
         }
         else if ($evt.keyCode == KeyboardType.X) {
             // ModuleEventManager.dispatchEvent(new newbieguide.NewbieguideEvent(newbieguide.NewbieguideEvent.HIDE_BIEGUIDE_EVENT));
@@ -137,6 +147,7 @@ var GameControlManager = (function () {
             // ModulePageManager.openPanel(PanelClass.SHOW_bianqiang_PANEL);
             // ModuleEventManager.dispatchEvent(new faction.FactionBossEvent(faction.FactionBossEvent.SHOW_BOSS_EVENT));
             ModuleEventManager.dispatchEvent(new selectserver.SelectServerEvent(selectserver.SelectServerEvent.SHOW_JOINGAME_EVENT));
+            // GameControlManager.sendGmCom("@假充值 1")
         }
         else if ($evt.keyCode == KeyboardType.E) {
             //NetManager.getInstance().protocolos.init_title(10);
@@ -366,5 +377,5 @@ var GameControlManager = (function () {
     };
     GameControlManager.waitGmItem = new Array;
     return GameControlManager;
-})();
+}());
 //# sourceMappingURL=GameControlManager.js.map

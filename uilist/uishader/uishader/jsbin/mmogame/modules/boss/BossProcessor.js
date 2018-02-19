@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var boss;
 (function (boss) {
-    var BossModule = (function (_super) {
+    var BossModule = /** @class */ (function (_super) {
         __extends(BossModule, _super);
         function BossModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         BossModule.prototype.getModuleName = function () {
             return "BossModule";
@@ -17,12 +22,12 @@ var boss;
             return [new BossProcessor()];
         };
         return BossModule;
-    })(Module);
+    }(Module));
     boss.BossModule = BossModule;
-    var BossEvent = (function (_super) {
+    var BossEvent = /** @class */ (function (_super) {
         __extends(BossEvent, _super);
         function BossEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         BossEvent.SHOW_BOSS_PANEL_EVENT = "show_boss_panel_event";
         BossEvent.HIDE_BOSS_PANEL_EVENT = "hide_boss_panel_event";
@@ -36,12 +41,12 @@ var boss;
         BossEvent.HIDE_OFTENRANK_PANEL = "HIDE_OFTENRANK_PANEL";
         BossEvent.SHOW_BOSSVIEW_PANEL = "SHOW_BOSSVIEW_PANEL";
         return BossEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     boss.BossEvent = BossEvent;
-    var BossProcessor = (function (_super) {
+    var BossProcessor = /** @class */ (function (_super) {
         __extends(BossProcessor, _super);
         function BossProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         BossProcessor.prototype.getName = function () {
             return "BossProcessor";
@@ -50,8 +55,10 @@ var boss;
             if ($event instanceof BossEvent) {
                 var $bossEvent = $event;
                 if ($bossEvent.type == BossEvent.SHOW_BOSS_PANEL_EVENT) {
+                    //this.show($bossEvent.data);
                 }
                 else if ($bossEvent.type == BossEvent.HIDE_BOSS_PANEL_EVENT) {
+                    //this.hide();
                 }
                 else if ($bossEvent.type == BossEvent.SHOW_BOSSHP_EVENT) {
                     //this.showBossUiHp()
@@ -64,10 +71,13 @@ var boss;
                     this.refreshHp($bossEvent.data);
                 }
                 else if ($bossEvent.type == BossEvent.SHOW_CHEST_EVENT) {
+                    //this.showChest($bossEvent.data);
                 }
                 else if ($bossEvent.type == BossEvent.HIDE_CHEST_EVENT) {
+                    //this.hideChest();
                 }
                 else if ($bossEvent.type == BossEvent.CHEST_CHANGE_EVENT) {
+                    //this.refreshChest($bossEvent.data)
                 }
                 else if ($bossEvent.type == BossEvent.SHOW_OFTENRANK_PANEL) {
                     //时时排行榜
@@ -246,7 +256,7 @@ var boss;
             return obj;
         };
         return BossProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     boss.BossProcessor = BossProcessor;
 })(boss || (boss = {}));
 //# sourceMappingURL=BossProcessor.js.map

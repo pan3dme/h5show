@@ -1,20 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var shieldui;
 (function (shieldui) {
-    var BlockVo = (function () {
+    var BlockVo = /** @class */ (function () {
         function BlockVo() {
         }
         return BlockVo;
-    })();
+    }());
     shieldui.BlockVo = BlockVo;
-    var ShieldItemRender = (function (_super) {
+    var ShieldItemRender = /** @class */ (function (_super) {
         __extends(ShieldItemRender, _super);
         function ShieldItemRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         ShieldItemRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -94,14 +99,15 @@ var shieldui;
             });
         };
         return ShieldItemRender;
-    })(SListItem);
+    }(SListItem));
     shieldui.ShieldItemRender = ShieldItemRender;
-    var ShieldSList = (function (_super) {
+    var ShieldSList = /** @class */ (function (_super) {
         __extends(ShieldSList, _super);
         function ShieldSList() {
-            _super.call(this);
-            this.center = 0;
-            this.middle = 0;
+            var _this = _super.call(this) || this;
+            _this.center = 0;
+            _this.middle = 0;
+            return _this;
         }
         ShieldSList.prototype.init = function ($uiAtlas) {
             ShieldItemRender.baseAtlas = $uiAtlas;
@@ -135,24 +141,25 @@ var shieldui;
         };
         ShieldSList.listWidth600 = 600;
         return ShieldSList;
-    })(SList);
+    }(SList));
     shieldui.ShieldSList = ShieldSList;
-    var ShieldUiPanel = (function (_super) {
+    var ShieldUiPanel = /** @class */ (function (_super) {
         __extends(ShieldUiPanel, _super);
         function ShieldUiPanel() {
-            _super.call(this);
-            this.uiAtlasComplet = false;
-            this.width = 640;
-            this.height = 540;
-            this.center = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent();
-            this.addRender(this._bottomRender);
-            this._topRender = new UIRenderComponent();
-            this.addRender(this._topRender);
-            this._midRender = new UIRenderComponent();
-            this.addRender(this._midRender);
-            this._topRender.uiAtlas = new UIAtlas;
+            var _this = _super.call(this) || this;
+            _this.uiAtlasComplet = false;
+            _this.width = 640;
+            _this.height = 540;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent();
+            _this.addRender(_this._bottomRender);
+            _this._topRender = new UIRenderComponent();
+            _this.addRender(_this._topRender);
+            _this._midRender = new UIRenderComponent();
+            _this.addRender(_this._midRender);
+            _this._topRender.uiAtlas = new UIAtlas;
+            return _this;
         }
         ShieldUiPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -247,7 +254,7 @@ var shieldui;
             UIManager.getInstance().removeUIContainer(this);
         };
         return ShieldUiPanel;
-    })(UIConatiner);
+    }(UIConatiner));
     shieldui.ShieldUiPanel = ShieldUiPanel;
 })(shieldui || (shieldui = {}));
 //# sourceMappingURL=ShieldUiPanel.js.map

@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var BaseDiplay3dShader = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var BaseDiplay3dShader = /** @class */ (function (_super) {
     __extends(BaseDiplay3dShader, _super);
     function BaseDiplay3dShader() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     BaseDiplay3dShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "v3Position");
@@ -43,13 +48,14 @@ var BaseDiplay3dShader = (function (_super) {
     };
     BaseDiplay3dShader.BaseDiplay3dShader = "BaseDiplay3dShader";
     return BaseDiplay3dShader;
-})(Shader3D);
-var BaseDiplay3dSprite = (function (_super) {
+}(Shader3D));
+var BaseDiplay3dSprite = /** @class */ (function (_super) {
     __extends(BaseDiplay3dSprite, _super);
     function BaseDiplay3dSprite() {
-        _super.call(this);
-        this.initData();
-        this.updateMatrix;
+        var _this = _super.call(this) || this;
+        _this.initData();
+        _this.updateMatrix;
+        return _this;
     }
     BaseDiplay3dSprite.prototype.initData = function () {
         ProgrmaManager.getInstance().registe(BaseDiplay3dShader.BaseDiplay3dShader, new BaseDiplay3dShader);
@@ -96,5 +102,5 @@ var BaseDiplay3dSprite = (function (_super) {
         }
     };
     return BaseDiplay3dSprite;
-})(Display3D);
+}(Display3D));
 //# sourceMappingURL=BaseDiplay3dSprite.js.map

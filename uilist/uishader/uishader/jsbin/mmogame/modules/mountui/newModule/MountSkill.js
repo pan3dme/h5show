@@ -1,24 +1,30 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var mountui;
 (function (mountui) {
-    var MountSkill = (function (_super) {
+    var MountSkill = /** @class */ (function (_super) {
         __extends(MountSkill, _super);
         function MountSkill() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._publicRender = new UIRenderComponent;
-            this.addRender(this._publicRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._publicRender = new UIRenderComponent;
+            _this.addRender(_this._publicRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            return _this;
         }
         MountSkill.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -74,14 +80,15 @@ var mountui;
             }
         };
         return MountSkill;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     mountui.MountSkill = MountSkill;
-    var MountSkillList = (function (_super) {
+    var MountSkillList = /** @class */ (function (_super) {
         __extends(MountSkillList, _super);
         function MountSkillList() {
-            _super.call(this);
-            this.left = 608;
-            this.top = 83;
+            var _this = _super.call(this) || this;
+            _this.left = 608;
+            _this.top = 83;
+            return _this;
         }
         MountSkillList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -130,13 +137,14 @@ var mountui;
                 UIManager.getInstance().removeUIContainer(this);
         };
         return MountSkillList;
-    })(SList);
+    }(SList));
     mountui.MountSkillList = MountSkillList;
-    var MountSkillListRender = (function (_super) {
+    var MountSkillListRender = /** @class */ (function (_super) {
         __extends(MountSkillListRender, _super);
         function MountSkillListRender() {
-            _super.apply(this, arguments);
-            this._canclick = true;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this._canclick = true;
+            return _this;
         }
         //private _bgRender: UIRenderComponent;
         //private _baseRender: UIRenderComponent;
@@ -185,6 +193,9 @@ var mountui;
                     this.applyrender();
                 }
                 if (val) {
+                    // var $evt = new copytask.CopytaskUiEvent(copytask.CopytaskUiEvent.SELECT_ITEM_EVENT);
+                    // $evt.data = this.itdata;
+                    // ModuleEventManager.dispatchEvent($evt);
                 }
             },
             enumerable: true,
@@ -268,9 +279,11 @@ var mountui;
                                     var $aaa = new wintittle.WindowRestTittleEvent(wintittle.WindowRestTittleEvent.SHOW_WINDOW_RES_PANEL);
                                     $aaa.data = this.itdata.data.tabskill_uplev.uplevel_cost[0][0];
                                     ModuleEventManager.dispatchEvent($aaa);
+                                    // msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "资源不足", 99);
                                 }
                             }
                             else {
+                                // msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "您操作太快了", 99);
                             }
                         }
                         break;
@@ -289,7 +302,7 @@ var mountui;
             this.Redpoint.preHide();
         };
         return MountSkillListRender;
-    })(SListItem);
+    }(SListItem));
     mountui.MountSkillListRender = MountSkillListRender;
 })(mountui || (mountui = {}));
 //# sourceMappingURL=MountSkill.js.map

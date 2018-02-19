@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var adventuresettlement;
 (function (adventuresettlement) {
-    var AdventureSettlementModule = (function (_super) {
+    var AdventureSettlementModule = /** @class */ (function (_super) {
         __extends(AdventureSettlementModule, _super);
         function AdventureSettlementModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         AdventureSettlementModule.prototype.getModuleName = function () {
             return "AdventureSettlementModule";
@@ -17,22 +22,22 @@ var adventuresettlement;
             return [new AdventureSettlementProcessor()];
         };
         return AdventureSettlementModule;
-    })(Module);
+    }(Module));
     adventuresettlement.AdventureSettlementModule = AdventureSettlementModule;
-    var AdventureSettlementEvent = (function (_super) {
+    var AdventureSettlementEvent = /** @class */ (function (_super) {
         __extends(AdventureSettlementEvent, _super);
         function AdventureSettlementEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         AdventureSettlementEvent.SHOW_ADVENTURE_SETTLEMENT_UI_PANEL = "SHOW_ADVENTURE_SETTLEMENT_UI_PANEL";
         AdventureSettlementEvent.HIDE_ADVENTURE_SETTLEMENT_UI_PANEL = "HIDE_ADVENTURE_SETTLEMENT_UI_PANEL";
         return AdventureSettlementEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     adventuresettlement.AdventureSettlementEvent = AdventureSettlementEvent;
-    var AdventureSettlementProcessor = (function (_super) {
+    var AdventureSettlementProcessor = /** @class */ (function (_super) {
         __extends(AdventureSettlementProcessor, _super);
         function AdventureSettlementProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         AdventureSettlementProcessor.prototype.getName = function () {
             return "AdventureSettlementProcessor";
@@ -80,7 +85,7 @@ var adventuresettlement;
             ];
         };
         return AdventureSettlementProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     adventuresettlement.AdventureSettlementProcessor = AdventureSettlementProcessor;
 })(adventuresettlement || (adventuresettlement = {}));
 //# sourceMappingURL=AdventureSettlementProcessor.js.map

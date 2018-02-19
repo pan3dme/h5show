@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var left;
 (function (left) {
-    var modelShowRender = (function (_super) {
+    var modelShowRender = /** @class */ (function (_super) {
         __extends(modelShowRender, _super);
         function modelShowRender() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         modelShowRender.prototype.makeRenderDataVc = function ($vcId) {
             _super.prototype.makeRenderDataVc.call(this, $vcId);
@@ -20,26 +25,26 @@ var left;
             }
         };
         return modelShowRender;
-    })(UIRenderOnlyPicComponent);
+    }(UIRenderOnlyPicComponent));
     left.modelShowRender = modelShowRender;
-    var LeftPanel = (function (_super) {
+    var LeftPanel = /** @class */ (function (_super) {
         __extends(LeftPanel, _super);
         function LeftPanel() {
-            var _this = this;
-            _super.call(this);
-            this.left = 0;
-            this.top = 0;
-            this.width = 300;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this.modelPic = new modelShowRender();
-            this.addRender(this.modelPic);
-            this._topRender.uiAtlas = new UIAtlas();
-            this._topRender.uiAtlas.setInfo("pan/marmoset/uilist/left/left.xml", "pan/marmoset/uilist/left/left.png", function () { _this.loadConfigCom(); });
+            var _this = _super.call(this) || this;
+            _this.left = 0;
+            _this.top = 0;
+            _this.width = 300;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this.modelPic = new modelShowRender();
+            _this.addRender(_this.modelPic);
+            _this._topRender.uiAtlas = new UIAtlas();
+            _this._topRender.uiAtlas.setInfo("pan/marmoset/uilist/left/left.xml", "pan/marmoset/uilist/left/left.png", function () { _this.loadConfigCom(); });
+            return _this;
         }
         LeftPanel.prototype.initView = function () {
             var $ui = this.addChild(this.modelPic.getComponent("a_model_show"));
@@ -63,6 +68,7 @@ var left;
                 this.showModelPic.width = this.width - 20;
                 this.showModelPic.height = this.width - 20;
                 this.a_compile_but.y = this.showModelPic.height + 20;
+                this.a_input_dae.y = this.a_compile_but.y;
             }
         };
         LeftPanel.prototype.a_left_lineDown = function ($e) {
@@ -113,6 +119,7 @@ var left;
             this._bottomRender.uiAtlas = this._topRender.uiAtlas;
             this._midRender.uiAtlas = this._topRender.uiAtlas;
             this.modelPic.uiAtlas = this._topRender.uiAtlas;
+            this.a_input_dae = this.addEvntBut("a_input_dae", this._topRender);
             this.a_compile_but = this.addEvntBut("a_compile_but", this._topRender);
             this.a_panel_bg = this.addChild(this._bottomRender.getComponent("a_panel_bg"));
             this.a_panel_bg.left = 0;
@@ -128,12 +135,86 @@ var left;
                 case this.a_compile_but:
                     ModuleEventManager.dispatchEvent(new materialui.MaterialEvent(materialui.MaterialEvent.COMPILE_MATERIAL));
                     break;
+                case this.a_input_dae:
+                    console.log("inputdae");
+                    this.selectInputDae(evt);
+                    break;
                 default:
                     break;
             }
         };
+        LeftPanel.prototype.selectInputDae = function (evt) {
+            var _this = this;
+            this._inputHtmlSprite = document.createElement('input');
+            this._inputHtmlSprite.setAttribute('id', '_ef');
+            this._inputHtmlSprite.setAttribute('type', 'file');
+            this._inputHtmlSprite.setAttribute("style", 'visibility:hidden');
+            this._inputHtmlSprite.click();
+            this._inputHtmlSprite.value;
+            this._inputHtmlSprite.addEventListener("change", function (cevt) { _this.changeFile(cevt); });
+        };
+        LeftPanel.prototype.changeFile = function (evt) {
+            var _this = this;
+            for (var i = 0; i < this._inputHtmlSprite.files.length && i < 1; i++) {
+                var simpleFile = this._inputHtmlSprite.files[i];
+                if (!/image\/\w+/.test(simpleFile.type)) {
+                    var $reader = new FileReader();
+                    $reader.readAsArrayBuffer(simpleFile);
+                    $reader.onload = function ($temp) { _this.readOnLod($temp); };
+                    /*
+                    reader.onload = function (f) {
+                       
+                        var newByte: ByteArray = new ByteArray(reader.result);
+                        var $objdata: ObjData = new ObjData();
+                        var $objurl: string = newByte.readUTF()
+                        console.log($objurl);
+                        $objdata.vertices = this.readVecFloat(newByte);
+                        $objdata.normals = this.readVecFloat(newByte);
+                        $objdata.uvs = this.readVecFloat(newByte);
+                        $objdata.lightuvs = this.readVecFloat(newByte);
+                        $objdata.indexs = this.readVecInt(newByte);
+                        console.log($objdata);
+          
+                    }
+                    */
+                }
+                else {
+                    alert("请确保文件类型为图像类型");
+                }
+            }
+            this._inputHtmlSprite = null;
+        };
+        LeftPanel.prototype.readOnLod = function ($temp) {
+            var $reader = ($temp.target);
+            var newByte = new ByteArray($reader.result);
+            var $objdata = new ObjData();
+            var $objurl = newByte.readUTF();
+            console.log($objurl);
+            $objdata.vertices = this.readVecFloat(newByte);
+            $objdata.normals = this.readVecFloat(newByte);
+            $objdata.uvs = this.readVecFloat(newByte);
+            $objdata.lightuvs = this.readVecFloat(newByte);
+            $objdata.indexs = this.readVecInt(newByte);
+            console.log($objdata);
+        };
+        LeftPanel.prototype.readVecFloat = function ($byte) {
+            var $arr = new Array();
+            var $len = $byte.readInt();
+            for (var i = 0; i < $len; i++) {
+                $arr.push($byte.readFloat());
+            }
+            return $arr;
+        };
+        LeftPanel.prototype.readVecInt = function ($byte) {
+            var $arr = new Array();
+            var $len = $byte.readInt();
+            for (var i = 0; i < $len; i++) {
+                $arr.push($byte.readInt());
+            }
+            return $arr;
+        };
         return LeftPanel;
-    })(UIPanel);
+    }(UIPanel));
     left.LeftPanel = LeftPanel;
 })(left || (left = {}));
 //# sourceMappingURL=LeftPanel.js.map

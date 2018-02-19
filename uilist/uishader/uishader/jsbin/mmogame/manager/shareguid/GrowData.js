@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var GrowData = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var GrowData = /** @class */ (function (_super) {
     __extends(GrowData, _super);
     function GrowData() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     GrowData.prototype.onBaseCreated = function () {
         var _this = this;
@@ -178,8 +183,12 @@ var GrowData = (function (_super) {
                         if (!$flag) {
                             //新增
                             console.log("--2222");
+                            // var $evtt = new mountui.MountUiEvent(mountui.MountUiEvent.POP_THE_UNREAL_PANEL);
+                            // $evtt.data = 3
+                            // ModuleEventManager.dispatchEvent($evtt);
                         }
                         else {
+                            //变化
                         }
                     }
                 }
@@ -207,8 +216,11 @@ var GrowData = (function (_super) {
                             }
                         }
                         if (!$flag) {
+                            //新增
+                            // ModuleEventManager.dispatchEvent(new sb.ShenBingEvent(sb.ShenBingEvent.NEWADD_DIVINE_EVENT));
                         }
                         else {
+                            //变化
                         }
                     }
                 }
@@ -665,15 +677,15 @@ var GrowData = (function (_super) {
             this.GetUInt32(SharedDef.SPELL_INT_FIELD_PLAYER_ACTIVITY_DATA_START + $offset * SharedDef.MAX_PLAYERACTIVITTYDATAINT_COUNT + 3)];
     };
     return GrowData;
-})(GuidObject);
-var DivineVo = (function () {
+}(GuidObject));
+var DivineVo = /** @class */ (function () {
     function DivineVo() {
     }
     return DivineVo;
-})();
-var TreasureVo = (function () {
+}());
+var TreasureVo = /** @class */ (function () {
     function TreasureVo() {
     }
     return TreasureVo;
-})();
+}());
 //# sourceMappingURL=GrowData.js.map

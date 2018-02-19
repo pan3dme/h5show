@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var materialui;
 (function (materialui) {
-    var MtUICompenent = (function (_super) {
+    var MtUICompenent = /** @class */ (function (_super) {
         __extends(MtUICompenent, _super);
         function MtUICompenent() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         MtUICompenent.prototype.applyAbsolutePoint = function () {
             if (this.parent) {
@@ -44,7 +49,7 @@ var materialui;
             }
         };
         return MtUICompenent;
-    })(UICompenent);
+    }(UICompenent));
     materialui.MtUICompenent = MtUICompenent;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MtUICompenent.js.map

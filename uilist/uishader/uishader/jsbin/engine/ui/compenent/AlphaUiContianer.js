@@ -1,12 +1,17 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var AlphaUIShader = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var AlphaUIShader = /** @class */ (function (_super) {
     __extends(AlphaUIShader, _super);
     function AlphaUIShader() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     AlphaUIShader.prototype.binLocation = function ($context) {
         $context.bindAttribLocation(this.program, 0, "v3Pos");
@@ -51,11 +56,11 @@ var AlphaUIShader = (function (_super) {
     };
     AlphaUIShader.AlphaUiShader = "AlphaUiShader";
     return AlphaUIShader;
-})(Shader3D);
-var AlphaUIRenderComponent = (function (_super) {
+}(Shader3D));
+var AlphaUIRenderComponent = /** @class */ (function (_super) {
     __extends(AlphaUIRenderComponent, _super);
     function AlphaUIRenderComponent() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     AlphaUIRenderComponent.prototype.update = function () {
         if (!this.visible || this._uiList.length == 0) {
@@ -114,12 +119,13 @@ var AlphaUIRenderComponent = (function (_super) {
         return ui;
     };
     return AlphaUIRenderComponent;
-})(UIRenderComponent);
-var AlphaGrid9UICompenent = (function (_super) {
+}(UIRenderComponent));
+var AlphaGrid9UICompenent = /** @class */ (function (_super) {
     __extends(AlphaGrid9UICompenent, _super);
     function AlphaGrid9UICompenent() {
-        _super.call(this);
-        this.alpha = 1;
+        var _this = _super.call(this) || this;
+        _this.alpha = 1;
+        return _this;
     }
     AlphaGrid9UICompenent.prototype.setVc = function (program, index) {
         Scene_data.context3D.setVc4fv(program, "ui[" + index + "]", this.renderData);
@@ -127,12 +133,13 @@ var AlphaGrid9UICompenent = (function (_super) {
         Scene_data.context3D.setVc1fv(program, "alpha[" + index + "]", [this.alpha]);
     };
     return AlphaGrid9UICompenent;
-})(Grid9Compenent);
-var AlphaUICompenent = (function (_super) {
+}(Grid9Compenent));
+var AlphaUICompenent = /** @class */ (function (_super) {
     __extends(AlphaUICompenent, _super);
     function AlphaUICompenent() {
-        _super.call(this);
-        this.alpha = 1;
+        var _this = _super.call(this) || this;
+        _this.alpha = 1;
+        return _this;
     }
     AlphaUICompenent.prototype.setVc = function (program, index) {
         Scene_data.context3D.setVc4fv(program, "ui[" + index + "]", this.renderData);
@@ -140,15 +147,15 @@ var AlphaUICompenent = (function (_super) {
         Scene_data.context3D.setVc1fv(program, "alpha[" + index + "]", [this.alpha]);
     };
     return AlphaUICompenent;
-})(UICompenent);
-var AlphaUiContianer = (function (_super) {
+}(UICompenent));
+var AlphaUiContianer = /** @class */ (function (_super) {
     __extends(AlphaUiContianer, _super);
     function AlphaUiContianer($classVo, $rect, $num) {
-        _super.call(this, $classVo, $rect, $num);
+        return _super.call(this, $classVo, $rect, $num) || this;
     }
     AlphaUiContianer.prototype.creatBaseRender = function () {
         this._baseRender = new AlphaUIRenderComponent;
     };
     return AlphaUiContianer;
-})(Dis2DUIContianerPanel);
+}(Dis2DUIContianerPanel));
 //# sourceMappingURL=AlphaUiContianer.js.map

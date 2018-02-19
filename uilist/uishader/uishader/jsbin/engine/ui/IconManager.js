@@ -1,4 +1,4 @@
-var IconManager = (function () {
+var IconManager = /** @class */ (function () {
     function IconManager() {
         this._dic = new Object;
         this._loadDic = new Object;
@@ -40,6 +40,7 @@ var IconManager = (function () {
                     else {
                         obj.fun(_img);
                     }
+                    //loadList[i](_img);
                 }
                 delete _this._loadDic[uri];
                 _this._dic[uri] = _img;
@@ -275,5 +276,5 @@ var IconManager = (function () {
         ModuleEventManager.dispatchEvent(evt);
     };
     return IconManager;
-})();
+}());
 //# sourceMappingURL=IconManager.js.map

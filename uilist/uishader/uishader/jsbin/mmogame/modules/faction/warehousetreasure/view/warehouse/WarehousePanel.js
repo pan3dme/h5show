@@ -1,24 +1,30 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var warehousetreasure;
 (function (warehousetreasure) {
-    var WarehousePanel = (function (_super) {
+    var WarehousePanel = /** @class */ (function (_super) {
         __extends(WarehousePanel, _super);
         function WarehousePanel() {
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            return _this;
         }
         WarehousePanel.prototype.dispose = function () {
             this._bottomRender.dispose();
@@ -73,6 +79,7 @@ var warehousetreasure;
                 // LabelTextFont.writeSingleLabel(this._topRender.uiAtlas, this.e_cangku_num_txt.skinName, ColorType.Orange853d07 + $has+"/" + $tb.params[0], 16, TextAlign.CENTER);
                 UIuitl.getInstance().drawCostUI(this._topRender.uiAtlas, this.e_txt_bg_0.skinName, [String(-1), $has + "/" + $tb.params[0]], ColorType.Orange853d07, 100, 20);
                 UIuitl.getInstance().drawCostUI(this._topRender.uiAtlas, this.e_txt_bg_1.skinName, [6, GuidData.player.getResTypeStr(6)], ColorType.Orange853d07, 83, 20);
+                // LabelTextFont.writeSingleLabel(this._topRender.uiAtlas, this.e_gonxian_txt.skinName, String(GuidData.player.getResTypeStr(6)), 16, TextAlign.CENTER, ColorType.Orange853d07);
             }
         };
         WarehousePanel.prototype.show = function () {
@@ -131,7 +138,7 @@ var warehousetreasure;
             return $str + " " + $tb.name + " " + ColorType.Orange853d07;
         };
         return WarehousePanel;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     warehousetreasure.WarehousePanel = WarehousePanel;
 })(warehousetreasure || (warehousetreasure = {}));
 //# sourceMappingURL=WarehousePanel.js.map

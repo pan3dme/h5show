@@ -1,27 +1,33 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var strengthgem;
 (function (strengthgem) {
-    var StrengTab0 = (function (_super) {
+    var StrengTab0 = /** @class */ (function (_super) {
         __extends(StrengTab0, _super);
         function StrengTab0() {
-            _super.call(this);
-            this._canclick = true;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._publicRender = new UIRenderComponent;
-            this.addRender(this._publicRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._redPointRender = new RedPointRender;
-            this.addRender(this._redPointRender);
+            var _this = _super.call(this) || this;
+            _this._canclick = true;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._publicRender = new UIRenderComponent;
+            _this.addRender(_this._publicRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._redPointRender = new RedPointRender;
+            _this.addRender(_this._redPointRender);
+            return _this;
         }
         StrengTab0.prototype.dispose = function () {
             this._baseRender.dispose();
@@ -117,6 +123,12 @@ var strengthgem;
         StrengTab0.prototype.InitEqu = function () {
             for (var i = 0; i < 10; i++) {
                 this.EuqUIAry[i].data = strengthgem.NewStrengModel.getInstance().getstrengvo(i + 1);
+                // } else if ($value == 1) {
+                //     this.EuqUIAry[i].data = NewStrengModel.getInstance().getrefiningvo(i + 1);
+                // } else if ($value == 2) {
+                //     this.EuqUIAry[i].data = NewStrengModel.getInstance().getGemvo(i + 1);
+                // } else {
+                // }
             }
             //模拟选中第一条数据
             var evt = new InteractiveEvent(InteractiveEvent.Down);
@@ -338,6 +350,7 @@ var strengthgem;
                 }
             }
             else {
+                // msgtip.MsgTipManager.outStr(ColorType.colorce0a00 + "您操作太快了", 99);
             }
         };
         StrengTab0.prototype.sendStreng = function ($num) {
@@ -368,7 +381,7 @@ var strengthgem;
             }
         };
         return StrengTab0;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     strengthgem.StrengTab0 = StrengTab0;
 })(strengthgem || (strengthgem = {}));
 //# sourceMappingURL=StrengTab0.js.map

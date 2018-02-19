@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var leftui;
 (function (leftui) {
-    var LeftUiModule = (function (_super) {
+    var LeftUiModule = /** @class */ (function (_super) {
         __extends(LeftUiModule, _super);
         function LeftUiModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         LeftUiModule.prototype.getModuleName = function () {
             return "LeftUiModule";
@@ -17,24 +22,24 @@ var leftui;
             return [new LeftUiProcessor()];
         };
         return LeftUiModule;
-    })(Module);
+    }(Module));
     leftui.LeftUiModule = LeftUiModule;
-    var LeftUiEvent = (function (_super) {
+    var LeftUiEvent = /** @class */ (function (_super) {
         __extends(LeftUiEvent, _super);
         function LeftUiEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         LeftUiEvent.SHOW_LEFT_UI_PANEL = "SHOW_LEFT_UI_PANEL";
         LeftUiEvent.HIDE_LEFT_UI_PANEL = "HIDE_LEFT_UI_PANEL";
         LeftUiEvent.REFRESH_QUEST_EVENT = "REFRESH_QUEST_EVENT";
         LeftUiEvent.LEFT_HANGUP_BASE_REFRESH = "LEFT_HANGUP_BASE_REFRESH"; // 基础挂机数据更新
         return LeftUiEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     leftui.LeftUiEvent = LeftUiEvent;
-    var LeftUiProcessor = (function (_super) {
+    var LeftUiProcessor = /** @class */ (function (_super) {
         __extends(LeftUiProcessor, _super);
         function LeftUiProcessor() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         LeftUiProcessor.prototype.getName = function () {
             return "LeftUiProcessor";
@@ -46,6 +51,7 @@ var leftui;
                     this.showPanel();
                 }
                 if ($topUiEvent.type == LeftUiEvent.LEFT_HANGUP_BASE_REFRESH) {
+                    //   this.showEffect();
                 }
                 if ($topUiEvent.type == LeftUiEvent.HIDE_LEFT_UI_PANEL) {
                     this.hidePanel();
@@ -99,8 +105,10 @@ var leftui;
             }
             this.leftUiPanel.load(function () {
                 if (GuidData.map.isFamilyScene()) {
+                    //    this.leftUiPanel.tabId = 1;
                 }
                 else {
+                    //     this.leftUiPanel.tabId = 0;
                 }
                 if (GuidData.map.isAdventureBossScene()) {
                     AotuSkillManager.getInstance().aotuBattle = true;
@@ -118,7 +126,7 @@ var leftui;
             ];
         };
         return LeftUiProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     leftui.LeftUiProcessor = LeftUiProcessor;
 })(leftui || (leftui = {}));
 //# sourceMappingURL=LeftUiProcessor.js.map

@@ -1,11 +1,16 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var divinesword;
 (function (divinesword) {
-    var SkillItemCell = (function () {
+    var SkillItemCell = /** @class */ (function () {
         function SkillItemCell() {
             this._selected = false;
         }
@@ -84,46 +89,47 @@ var divinesword;
             }
         };
         return SkillItemCell;
-    })();
+    }());
     divinesword.SkillItemCell = SkillItemCell;
-    var SkillItemData = (function () {
+    var SkillItemData = /** @class */ (function () {
         function SkillItemData() {
         }
         return SkillItemData;
-    })();
+    }());
     divinesword.SkillItemData = SkillItemData;
-    var DivineswordSkill = (function (_super) {
+    var DivineswordSkill = /** @class */ (function (_super) {
         __extends(DivineswordSkill, _super);
         function DivineswordSkill() {
-            _super.call(this);
-            this._complete = false;
-            this._canclick = true;
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bgRender = new UIRenderComponent;
-            this.addRender(this._bgRender);
-            this._baseRender = new UIRenderComponent;
-            this.addRender(this._baseRender);
-            this._frameRender = new FrameUIRender();
-            this.addRender(this._frameRender);
-            this._frameBuleKoRender = new FrameUIRender();
-            this.addRender(this._frameBuleKoRender);
-            this._frameRedKoRender = new FrameUIRender();
-            this.addRender(this._frameRedKoRender);
-            this._frameBuleRender = new FrameUIRender();
-            this.addRender(this._frameBuleRender);
-            this._frameRedRender = new FrameUIRender();
-            this.addRender(this._frameRedRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._topbgRender = new UIRenderComponent;
-            this.addRender(this._topbgRender);
-            this._toptopRender = new UIRenderComponent;
-            this.addRender(this._toptopRender);
-            this._redPointRender = new RedPointRender;
-            this.addRender(this._redPointRender);
+            var _this = _super.call(this) || this;
+            _this._complete = false;
+            _this._canclick = true;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bgRender = new UIRenderComponent;
+            _this.addRender(_this._bgRender);
+            _this._baseRender = new UIRenderComponent;
+            _this.addRender(_this._baseRender);
+            _this._frameRender = new FrameUIRender();
+            _this.addRender(_this._frameRender);
+            _this._frameBuleKoRender = new FrameUIRender();
+            _this.addRender(_this._frameBuleKoRender);
+            _this._frameRedKoRender = new FrameUIRender();
+            _this.addRender(_this._frameRedKoRender);
+            _this._frameBuleRender = new FrameUIRender();
+            _this.addRender(_this._frameBuleRender);
+            _this._frameRedRender = new FrameUIRender();
+            _this.addRender(_this._frameRedRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._topbgRender = new UIRenderComponent;
+            _this.addRender(_this._topbgRender);
+            _this._toptopRender = new UIRenderComponent;
+            _this.addRender(_this._toptopRender);
+            _this._redPointRender = new RedPointRender;
+            _this.addRender(_this._redPointRender);
+            return _this;
         }
         DivineswordSkill.prototype.dispose = function () {
             this._bgRender.dispose();
@@ -571,7 +577,7 @@ var divinesword;
             }
         };
         return DivineswordSkill;
-    })(UIVirtualContainer);
+    }(UIVirtualContainer));
     divinesword.DivineswordSkill = DivineswordSkill;
 })(divinesword || (divinesword = {}));
 //# sourceMappingURL=DivineswordSkill.js.map

@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var MaterialBaseData = (function () {
+    var MaterialBaseData = /** @class */ (function () {
         function MaterialBaseData() {
             this.baseColor = new Vector3D;
             this.roughness = 0;
@@ -24,7 +24,7 @@ var materialui;
             this.url = obj.url;
         };
         return MaterialBaseData;
-    })();
+    }());
     materialui.MaterialBaseData = MaterialBaseData;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=MaterialBaseData.js.map

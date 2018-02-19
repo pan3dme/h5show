@@ -70,6 +70,7 @@
                 this.showModelPic.height = this.width - 20;
 
                 this.a_compile_but.y = this.showModelPic.height + 20;
+                this.a_input_dae.y = this.a_compile_but.y 
             }
 
         }
@@ -129,11 +130,14 @@
         }
         private a_panel_bg: UICompenent;
         private a_compile_but: UICompenent
+        private a_input_dae: UICompenent
         private loadConfigCom(): void {
             this._bottomRender.uiAtlas = this._topRender.uiAtlas
             this._midRender.uiAtlas = this._topRender.uiAtlas;
             this.modelPic.uiAtlas = this._topRender.uiAtlas;
 
+            
+            this.a_input_dae = this.addEvntBut("a_input_dae", this._topRender)
             this.a_compile_but = this.addEvntBut("a_compile_but", this._topRender)
 
             this.a_panel_bg = this.addChild(this._bottomRender.getComponent("a_panel_bg"));
@@ -156,9 +160,90 @@
                 case this.a_compile_but:
                     ModuleEventManager.dispatchEvent(new materialui.MaterialEvent(materialui.MaterialEvent.COMPILE_MATERIAL));
                     break
+                case this.a_input_dae:
+                    console.log("inputdae")
+                    this.selectInputDae(evt)
+                    break
                 default:
                     break
             }
+        }
+
+        private _inputHtmlSprite: HTMLInputElement
+        protected selectInputDae(evt: InteractiveEvent): void {
+
+
+                this._inputHtmlSprite = <HTMLInputElement>document.createElement('input');
+                this._inputHtmlSprite.setAttribute('id', '_ef');
+                this._inputHtmlSprite.setAttribute('type', 'file');
+                this._inputHtmlSprite.setAttribute("style", 'visibility:hidden');
+                this._inputHtmlSprite.click();
+                this._inputHtmlSprite.value;
+                this._inputHtmlSprite.addEventListener("change", (cevt: any) => { this.changeFile(cevt) });
+     
+
+        }
+        private changeFile(evt: any): void {
+            for (var i: number = 0; i < this._inputHtmlSprite.files.length && i < 1; i++) {
+                var simpleFile: File = <File>this._inputHtmlSprite.files[i];
+
+                if (!/image\/\w+/.test(simpleFile.type)) {
+                    var $reader: FileReader = new FileReader(); 
+                    $reader.readAsArrayBuffer(simpleFile);
+                    $reader.onload = ($temp: Event) => { this.readOnLod($temp) }
+                    /*
+                    reader.onload = function (f) {
+                       
+                        var newByte: ByteArray = new ByteArray(reader.result);
+                        var $objdata: ObjData = new ObjData();
+                        var $objurl: string = newByte.readUTF()
+                        console.log($objurl);
+                        $objdata.vertices = this.readVecFloat(newByte);
+                        $objdata.normals = this.readVecFloat(newByte);
+                        $objdata.uvs = this.readVecFloat(newByte);
+                        $objdata.lightuvs = this.readVecFloat(newByte);
+                        $objdata.indexs = this.readVecInt(newByte);
+                        console.log($objdata);
+          
+                    }  
+                    */
+
+                } else {
+                    alert("请确保文件类型为图像类型");
+                }
+            
+            }
+            this._inputHtmlSprite = null;
+        }
+        private readOnLod($temp: Event): void {
+            var $reader: FileReader = <FileReader>($temp.target);
+            var newByte: ByteArray = new ByteArray($reader.result);
+            var $objdata: ObjData = new ObjData();
+            var $objurl: string = newByte.readUTF()
+            console.log($objurl);
+            $objdata.vertices = this.readVecFloat(newByte);
+            $objdata.normals = this.readVecFloat(newByte);
+            $objdata.uvs = this.readVecFloat(newByte);
+            $objdata.lightuvs = this.readVecFloat(newByte);
+            $objdata.indexs = this.readVecInt(newByte);
+            console.log($objdata);
+        }
+
+        private readVecFloat($byte: ByteArray): Array<number> {
+            var $arr: Array<number> = new Array();
+            var $len: number = $byte.readInt();
+            for (var i: number = 0; i < $len; i++) {
+                $arr.push($byte.readFloat())
+            }
+            return $arr
+        }
+        private readVecInt($byte: ByteArray): Array<number> {
+            var $arr: Array<number> = new Array();
+            var $len: number = $byte.readInt();
+            for (var i: number = 0; i < $len; i++) {
+                $arr.push($byte.readInt())
+            }
+            return $arr
         }
     
     }

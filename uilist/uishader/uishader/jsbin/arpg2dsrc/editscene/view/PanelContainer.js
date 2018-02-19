@@ -1,6 +1,6 @@
 var materialui;
 (function (materialui) {
-    var PanelContainer = (function () {
+    var PanelContainer = /** @class */ (function () {
         function PanelContainer($panel, $render) {
             this.panel = $panel;
             this.uiRender = $render;
@@ -103,7 +103,7 @@ var materialui;
             }
         };
         return PanelContainer;
-    })();
+    }());
     materialui.PanelContainer = PanelContainer;
 })(materialui || (materialui = {}));
 //# sourceMappingURL=PanelContainer.js.map

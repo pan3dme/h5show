@@ -1,17 +1,23 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Skill = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Skill = /** @class */ (function (_super) {
     __extends(Skill, _super);
     function Skill() {
-        _super.call(this);
-        this.isDeath = true;
-        this.time = 0;
-        this.targetFlag = 0;
-        this.targetShockFlag = 0;
-        this.needSound = false;
+        var _this = _super.call(this) || this;
+        _this.isDeath = true;
+        _this.time = 0;
+        _this.targetFlag = 0;
+        _this.targetShockFlag = 0;
+        _this.needSound = false;
+        return _this;
     }
     Skill.prototype.setData = function ($data, $skillData) {
         this.skillVo = new SkillVo();
@@ -259,5 +265,5 @@ var Skill = (function (_super) {
     };
     Skill.MaxTime = 1000 * 5;
     return Skill;
-})(ResCount);
+}(ResCount));
 //# sourceMappingURL=Skill.js.map

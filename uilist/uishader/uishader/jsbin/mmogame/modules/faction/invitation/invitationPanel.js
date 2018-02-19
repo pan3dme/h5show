@@ -1,24 +1,30 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var faction;
 (function (faction) {
-    var InvitationPanel = (function (_super) {
+    var InvitationPanel = /** @class */ (function (_super) {
         __extends(InvitationPanel, _super);
         function InvitationPanel() {
-            _super.call(this);
-            this.setBlackBg();
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._publicbgRender = new UIRenderComponent;
-            this.addRender(this._publicbgRender);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this._topRender.uiAtlas = new UIAtlas();
+            var _this = _super.call(this) || this;
+            _this.setBlackBg();
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._publicbgRender = new UIRenderComponent;
+            _this.addRender(_this._publicbgRender);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this._topRender.uiAtlas = new UIAtlas();
+            return _this;
         }
         InvitationPanel.prototype.dispose = function () {
             this._topRender.dispose();
@@ -82,18 +88,19 @@ var faction;
             }
         };
         return InvitationPanel;
-    })(WindowMinUi);
+    }(WindowMinUi));
     faction.InvitationPanel = InvitationPanel;
     /**
      * 邀请入家族list
      */
-    var InvitationList = (function (_super) {
+    var InvitationList = /** @class */ (function (_super) {
         __extends(InvitationList, _super);
         function InvitationList() {
-            _super.call(this);
-            this.left = 184;
-            this.top = 99;
-            this.setShowLevel(6);
+            var _this = _super.call(this) || this;
+            _this.left = 184;
+            _this.top = 99;
+            _this.setShowLevel(6);
+            return _this;
         }
         InvitationList.prototype.init = function ($uiAtlas) {
             this.baseAtlas = $uiAtlas;
@@ -125,12 +132,12 @@ var faction;
             UIManager.getInstance().removeUIContainer(this);
         };
         return InvitationList;
-    })(SList);
+    }(SList));
     faction.InvitationList = InvitationList;
-    var InvitationListRender = (function (_super) {
+    var InvitationListRender = /** @class */ (function (_super) {
         __extends(InvitationListRender, _super);
         function InvitationListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         InvitationListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -177,7 +184,7 @@ var faction;
             UiDraw.clearUI(this.Aslist_bg);
         };
         return InvitationListRender;
-    })(SListItem);
+    }(SListItem));
     faction.InvitationListRender = InvitationListRender;
 })(faction || (faction = {}));
 //# sourceMappingURL=invitationPanel.js.map

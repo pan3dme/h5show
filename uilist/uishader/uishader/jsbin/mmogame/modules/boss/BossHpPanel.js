@@ -1,26 +1,32 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var BossHpPanel = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var BossHpPanel = /** @class */ (function (_super) {
     __extends(BossHpPanel, _super);
     function BossHpPanel() {
-        _super.call(this);
-        this.uiAtlasComplet = false;
-        this.hpcur = 1;
-        this.hptabelNum = 2;
-        this.interfaceUI = true;
-        this.width = UIData.designWidth;
-        this.height = UIData.designHeight;
-        this.center = 0;
-        this.top = 0;
-        this._bottomRender = new UIRenderComponent();
-        this.addRender(this._bottomRender);
-        this._midRender = new UIRenderComponent();
-        this.addRender(this._midRender);
-        this._topRender = new UIRenderComponent();
-        this.addRender(this._topRender);
+        var _this = _super.call(this) || this;
+        _this.uiAtlasComplet = false;
+        _this.hpcur = 1;
+        _this.hptabelNum = 2;
+        _this.interfaceUI = true;
+        _this.width = UIData.designWidth;
+        _this.height = UIData.designHeight;
+        _this.center = 0;
+        _this.top = 0;
+        _this._bottomRender = new UIRenderComponent();
+        _this.addRender(_this._bottomRender);
+        _this._midRender = new UIRenderComponent();
+        _this.addRender(_this._midRender);
+        _this._topRender = new UIRenderComponent();
+        _this.addRender(_this._topRender);
+        return _this;
     }
     BossHpPanel.prototype.applyLoad = function () {
         var _this = this;
@@ -94,5 +100,5 @@ var BossHpPanel = (function (_super) {
         }
     };
     return BossHpPanel;
-})(UIPanel);
+}(UIPanel));
 //# sourceMappingURL=BossHpPanel.js.map

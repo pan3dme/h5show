@@ -1,4 +1,4 @@
-var Processor = (function () {
+var Processor = /** @class */ (function () {
     function Processor() {
     }
     Processor.prototype.getName = function () {
@@ -32,5 +32,5 @@ var Processor = (function () {
         return obj;
     };
     return Processor;
-})();
+}());
 //# sourceMappingURL=Processor.js.map

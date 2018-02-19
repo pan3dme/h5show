@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var sboss;
 (function (sboss) {
-    var SbossModule = (function (_super) {
+    var SbossModule = /** @class */ (function (_super) {
         __extends(SbossModule, _super);
         function SbossModule() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         SbossModule.prototype.getModuleName = function () {
             return "SbossModule";
@@ -17,12 +22,12 @@ var sboss;
             return [new SbossProcessor()];
         };
         return SbossModule;
-    })(Module);
+    }(Module));
     sboss.SbossModule = SbossModule;
-    var SbossEvent = (function (_super) {
+    var SbossEvent = /** @class */ (function (_super) {
         __extends(SbossEvent, _super);
         function SbossEvent() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         SbossEvent.SHOW_SBOSS_PANEL = "SHOW_SBOSS_PANEL";
         SbossEvent.HIDE_SBOSS_PANEL = "HIDE_SBOSS_PANEL";
@@ -34,14 +39,15 @@ var sboss;
         SbossEvent.PBOSS_REFRISH_PANEL = "PBOSS_REFRISH_PANEL";
         SbossEvent.SET_LASTID = "SET_LASTID";
         return SbossEvent;
-    })(BaseEvent);
+    }(BaseEvent));
     sboss.SbossEvent = SbossEvent;
-    var SbossProcessor = (function (_super) {
+    var SbossProcessor = /** @class */ (function (_super) {
         __extends(SbossProcessor, _super);
         function SbossProcessor() {
-            _super.apply(this, arguments);
-            this._nodeInit = false;
-            this._lastId = 0;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this._nodeInit = false;
+            _this._lastId = 0;
+            return _this;
         }
         SbossProcessor.prototype.getName = function () {
             return "SbossProcessor";
@@ -70,6 +76,9 @@ var sboss;
                     }
                     else if ($SbossEvent.type == SbossEvent.PBOSS_REFRISH_PANEL) {
                         this.sbossPanel.personBossPanel.selectMeshBossByVo($SbossEvent.data);
+                        // } else if ($SbossEvent.type == SbossEvent.PBOSS_REDPOINT_CHG) {
+                        //     console.log("-------------------红点处理--------------------");
+                        //     this.processRedPoint();
                     }
                 }
                 if ($SbossEvent.type == SbossEvent.WBOSS_MORE_REWARD) {
@@ -401,7 +410,7 @@ var sboss;
             return obj;
         };
         return SbossProcessor;
-    })(BaseProcessor);
+    }(BaseProcessor));
     sboss.SbossProcessor = SbossProcessor;
 })(sboss || (sboss = {}));
 //# sourceMappingURL=SbossProcessor.js.map

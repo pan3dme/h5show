@@ -1,14 +1,19 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Camand;
 (function (Camand) {
-    var CammandRender = (function (_super) {
+    var CammandRender = /** @class */ (function (_super) {
         __extends(CammandRender, _super);
         function CammandRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         CammandRender.prototype.draw = function () {
             var ctx = UIManager.getInstance().getContext2D(this.uvData.ow, this.uvData.oh, false);
@@ -26,27 +31,28 @@ var Camand;
             ctx.fillText($str, $xpos, $ypos);
         };
         return CammandRender;
-    })(ListItemRender);
+    }(ListItemRender));
     Camand.CammandRender = CammandRender;
-    var CammandPanel = (function (_super) {
+    var CammandPanel = /** @class */ (function (_super) {
         __extends(CammandPanel, _super);
         function CammandPanel() {
-            _super.call(this);
-            this.chatItem = new Array();
-            this.mapItem = ["高山竹林", "darkmap"];
-            this.mapId = 1;
-            this.charArr = ["wd", "em"];
-            this.charId = 0;
+            var _this = _super.call(this) || this;
+            _this.chatItem = new Array();
+            _this.mapItem = ["高山竹林", "darkmap"];
+            _this.mapId = 1;
+            _this.charArr = ["wd", "em"];
+            _this.charId = 0;
             //  this.makeBgWinPanel();
-            this.width = 600;
-            this.height = 400;
-            this.center = 0;
-            this.middle = 0;
-            this._listRender = new UIListRenderComponent;
-            this.addRender(this._listRender);
-            this._baseRender = new UIRenderComponent();
-            this.addRender(this._baseRender);
-            this.addList();
+            _this.width = 600;
+            _this.height = 400;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._listRender = new UIListRenderComponent;
+            _this.addRender(_this._listRender);
+            _this._baseRender = new UIRenderComponent();
+            _this.addRender(_this._baseRender);
+            _this.addList();
+            return _this;
         }
         CammandPanel.prototype.addList = function () {
             var $pos = new Vector2D(30, 20);
@@ -451,6 +457,7 @@ var Camand;
                     pos.y = ty;
                     vecItem.push(pos);
                     if (i < 2 || j < 2 || i > (w - 2) || j > (h - 2)) {
+                        //   $navMeshStaticMesh.astarItem[i][j] = 0  //特殊边缘为不可寻走
                     }
                 }
             }
@@ -488,12 +495,12 @@ var Camand;
             UIManager.getInstance().removeUIContainer(this);
         };
         return CammandPanel;
-    })(UIConatiner);
+    }(UIConatiner));
     Camand.CammandPanel = CammandPanel;
-    var SceneModelTwoTexture = (function (_super) {
+    var SceneModelTwoTexture = /** @class */ (function (_super) {
         __extends(SceneModelTwoTexture, _super);
         function SceneModelTwoTexture() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         SceneModelTwoTexture.prototype.loadGroup = function ($name) {
             var _this = this;
@@ -513,12 +520,12 @@ var Camand;
             }
         };
         return SceneModelTwoTexture;
-    })(Display3DSprite);
+    }(Display3DSprite));
     Camand.SceneModelTwoTexture = SceneModelTwoTexture;
-    var MonsterChar = (function (_super) {
+    var MonsterChar = /** @class */ (function (_super) {
         __extends(MonsterChar, _super);
         function MonsterChar() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         MonsterChar.prototype.destory = function () {
             _super.prototype.destory.call(this);
@@ -547,9 +554,9 @@ var Camand;
             //  this.walkPathComplete()
         };
         return MonsterChar;
-    })(SceneChar);
+    }(SceneChar));
     Camand.MonsterChar = MonsterChar;
-    var SceneMonster = (function () {
+    var SceneMonster = /** @class */ (function () {
         function SceneMonster() {
             var _this = this;
             this.monsterItem = new Array();
@@ -602,6 +609,7 @@ var Camand;
             for (var i = 0; this.monsterItem && i < this.monsterItem.length; i++) {
                 var $MonsterChar = this.monsterItem[i];
                 if ($MonsterChar) {
+                    //$MonsterChar.playSkillAction("skill_01")
                 }
             }
         };
@@ -619,7 +627,7 @@ var Camand;
             return char;
         };
         return SceneMonster;
-    })();
+    }());
     Camand.SceneMonster = SceneMonster;
 })(Camand || (Camand = {}));
 //# sourceMappingURL=CammandPanel.js.map

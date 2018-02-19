@@ -1,20 +1,25 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var mapnew;
 (function (mapnew) {
-    var MapnewLisDataMesh = (function () {
+    var MapnewLisDataMesh = /** @class */ (function () {
         function MapnewLisDataMesh() {
         }
         return MapnewLisDataMesh;
-    })();
+    }());
     mapnew.MapnewLisDataMesh = MapnewLisDataMesh;
-    var MapnewListRender = (function (_super) {
+    var MapnewListRender = /** @class */ (function (_super) {
         __extends(MapnewListRender, _super);
         function MapnewListRender() {
-            _super.apply(this, arguments);
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         MapnewListRender.prototype.create = function ($container, $bgRender, $baseRender, $customizeRenderAry) {
             if ($customizeRenderAry === void 0) { $customizeRenderAry = null; }
@@ -77,12 +82,12 @@ var mapnew;
             }
         };
         return MapnewListRender;
-    })(SListItem);
+    }(SListItem));
     mapnew.MapnewListRender = MapnewListRender;
-    var MapNewList = (function (_super) {
+    var MapNewList = /** @class */ (function (_super) {
         __extends(MapNewList, _super);
         function MapNewList() {
-            _super.call(this);
+            return _super.call(this) || this;
         }
         MapNewList.prototype.init = function ($uiAtlas) {
             MapnewListRender.baseAtlas = $uiAtlas;
@@ -103,26 +108,26 @@ var mapnew;
             }
         };
         return MapNewList;
-    })(SList);
+    }(SList));
     mapnew.MapNewList = MapNewList;
-    var MapNewPanel = (function (_super) {
+    var MapNewPanel = /** @class */ (function (_super) {
         __extends(MapNewPanel, _super);
         function MapNewPanel() {
-            var _this = this;
-            _super.call(this);
-            this.width = UIData.designWidth;
-            this.height = UIData.designHeight;
-            this.center = 0;
-            this.middle = 0;
-            this._bottomRender = new UIRenderComponent;
-            this.addRender(this._bottomRender);
-            this._midRender = new UIRenderComponent;
-            this.addRender(this._midRender);
-            this.mapWalkLineComponent = new map.MapWalkLineComponent;
-            this.addRender(this.mapWalkLineComponent);
-            this._topRender = new UIRenderComponent;
-            this.addRender(this._topRender);
-            this.upDataFun = function () { _this.upDataFrame(); };
+            var _this = _super.call(this) || this;
+            _this.width = UIData.designWidth;
+            _this.height = UIData.designHeight;
+            _this.center = 0;
+            _this.middle = 0;
+            _this._bottomRender = new UIRenderComponent;
+            _this.addRender(_this._bottomRender);
+            _this._midRender = new UIRenderComponent;
+            _this.addRender(_this._midRender);
+            _this.mapWalkLineComponent = new map.MapWalkLineComponent;
+            _this.addRender(_this.mapWalkLineComponent);
+            _this._topRender = new UIRenderComponent;
+            _this.addRender(_this._topRender);
+            _this.upDataFun = function () { _this.upDataFrame(); };
+            return _this;
         }
         MapNewPanel.prototype.applyLoad = function () {
             var _this = this;
@@ -375,7 +380,7 @@ var mapnew;
             UIManager.getInstance().removeUIContainer(this);
         };
         return MapNewPanel;
-    })(WindowMinUi);
+    }(WindowMinUi));
     mapnew.MapNewPanel = MapNewPanel;
 })(mapnew || (mapnew = {}));
 //# sourceMappingURL=MapNewPanel.js.map

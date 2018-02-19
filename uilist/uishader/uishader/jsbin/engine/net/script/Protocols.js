@@ -5,7 +5,7 @@
 //package cow.net.structs
 //{	
 //import sys.utils.Stream;	
-var Protocols = (function () {
+var Protocols = /** @class */ (function () {
     /**
      * �����������ݰ����Զ����ܣ�
      * @param stream
@@ -3406,6 +3406,6 @@ var Protocols = (function () {
     /*��ȡ���ظ�������*/
     Protocols.CMSG_PICK_STAGE_INSTANCE_BONUS = 426; //pick_stage_instance_bonus
     return Protocols;
-})();
-//} 
+}());
+//}
 //# sourceMappingURL=Protocols.js.map

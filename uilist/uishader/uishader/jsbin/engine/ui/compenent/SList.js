@@ -1,27 +1,33 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var SList = (function (_super) {
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SList = /** @class */ (function (_super) {
     __extends(SList, _super);
     function SList() {
-        _super.apply(this, arguments);
-        this.p_scrollY = 0;
-        this._showItemNum = 0;
-        this._allItemNum = 0;
-        this._topSize = 0;
-        this._bottomSize = 0;
-        this._outSize = 0;
-        this._showDataIndex = 0;
-        this.scrollLock = false;
-        this._minScrollY = 0;
-        this._maskLevel = 2;
-        this._mouseY = 0;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.p_scrollY = 0;
+        _this._showItemNum = 0;
+        _this._allItemNum = 0;
+        _this._topSize = 0;
+        _this._bottomSize = 0;
+        _this._outSize = 0;
+        _this._showDataIndex = 0;
+        _this.scrollLock = false;
+        _this._minScrollY = 0;
+        _this._maskLevel = 2;
+        _this._mouseY = 0;
         /**拖动刷新 */
-        this._dragFlag = false;
-        this._dragY = 0;
-        this._dragMaxY = 100;
+        _this._dragFlag = false;
+        _this._dragY = 0;
+        _this._dragMaxY = 100;
+        return _this;
     }
     /**
      * $data 数据源
@@ -133,6 +139,10 @@ var SList = (function (_super) {
                 // if (!this._itemList[i].selected) {
                 //刷新时，需要重复选中
                 this._itemList[i].selected = true;
+                // if (this._itemList[i].itdata && this._itemList[i].itdata.data) {
+                //     this.currentSelIdx = this._itemList[i].itdata.data.id;
+                // }
+                // }
             }
             else {
                 if (this._itemList[i].selected) {
@@ -148,6 +158,7 @@ var SList = (function (_super) {
             if (this._itemList[i].itdata && this._itemList[i].itdata.id == $index) {
                 // if (!this._itemList[i].selected) {
                 this._itemList[i].selected = true;
+                // }
             }
             else {
                 if (this._itemList[i].selected) {
@@ -424,8 +435,8 @@ var SList = (function (_super) {
         this.bgMask.dispose();
     };
     return SList;
-})(UIVirtualContainer);
-var SListItem = (function () {
+}(UIVirtualContainer));
+var SListItem = /** @class */ (function () {
     function SListItem() {
         this._height = 10;
         this._list = new Array;
@@ -536,18 +547,18 @@ var SListItem = (function () {
         }
     };
     return SListItem;
-})();
-var SListItemData = (function () {
+}());
+var SListItemData = /** @class */ (function () {
     function SListItemData() {
         //是否选中
         this.selected = false;
     }
     return SListItemData;
-})();
-var SListBgRender = (function (_super) {
+}());
+var SListBgRender = /** @class */ (function (_super) {
     __extends(SListBgRender, _super);
     function SListBgRender() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     SListBgRender.prototype.interactiveEvent = function ($e) {
         _super.prototype.interactiveEvent.call(this, $e);
@@ -555,11 +566,11 @@ var SListBgRender = (function (_super) {
         return tf;
     };
     return SListBgRender;
-})(UIRenderComponent);
-var SlistFrontRender = (function (_super) {
+}(UIRenderComponent));
+var SlistFrontRender = /** @class */ (function (_super) {
     __extends(SlistFrontRender, _super);
     function SlistFrontRender() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     // public slist: SList;
     SlistFrontRender.prototype.interactiveEvent = function ($e) {
@@ -567,11 +578,11 @@ var SlistFrontRender = (function (_super) {
         //return false;
     };
     return SlistFrontRender;
-})(UIRenderComponent);
-var SListAtlas = (function (_super) {
+}(UIRenderComponent));
+var SListAtlas = /** @class */ (function (_super) {
     __extends(SListAtlas, _super);
     function SListAtlas() {
-        _super.call(this);
+        return _super.call(this) || this;
     }
     SListAtlas.prototype.setData = function ($width, $height, $xnum, $ynum) {
         this.ctx = UIManager.getInstance().getContext2D($width, $height, false);
@@ -613,17 +624,18 @@ var SListAtlas = (function (_super) {
         this.configData.push(rec);
     };
     return SListAtlas;
-})(UIAtlas);
+}(UIAtlas));
 /**
  * 横向单行滑动的Slist
  */
-var TransverseSList = (function (_super) {
+var TransverseSList = /** @class */ (function (_super) {
     __extends(TransverseSList, _super);
     function TransverseSList() {
-        _super.apply(this, arguments);
-        this.p_scrollX = 0;
-        this._minScrollX = 0;
-        this._mouseX = 0;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.p_scrollX = 0;
+        _this._minScrollX = 0;
+        _this._mouseX = 0;
+        return _this;
     }
     /**
      * $data 数据源
@@ -860,12 +872,13 @@ var TransverseSList = (function (_super) {
         }
     };
     return TransverseSList;
-})(SList);
-var EffectSlist = (function (_super) {
+}(SList));
+var EffectSlist = /** @class */ (function (_super) {
     __extends(EffectSlist, _super);
     function EffectSlist() {
-        _super.apply(this, arguments);
-        this._effRender = new FrameUIRender();
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._effRender = new FrameUIRender();
+        return _this;
     }
     EffectSlist.prototype.setEffectUrl = function ($name, $wnum, $hNum, num) {
         var _this = this;
@@ -950,5 +963,5 @@ var EffectSlist = (function (_super) {
         this._effRender.dispose();
     };
     return EffectSlist;
-})(SList);
+}(SList));
 //# sourceMappingURL=SList.js.map
