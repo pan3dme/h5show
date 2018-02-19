@@ -126,6 +126,8 @@ var prop;
         }
         TexturePicUi.prototype.destory = function () {
             this.textLabelUIMeshVo.clear = true;
+            var $ui = this.textLabelUIMeshVo.textLabelUIDisp2D.ui;
+            $ui.removeEventListener(InteractiveEvent.Down, this.butClik, this);
         };
         TexturePicUi.prototype.initView = function () {
             this.textLabelUIMeshVo.url = "";
@@ -137,6 +139,7 @@ var prop;
         };
         TexturePicUi.prototype.butClik = function (evt) {
             var _this = this;
+            console.log(TimeUtil.getTimer(), this.$dulbelClikTm);
             if (TimeUtil.getTimer() < this.$dulbelClikTm) {
                 this._inputHtmlSprite = document.createElement('input');
                 this._inputHtmlSprite.setAttribute('id', '_ef');

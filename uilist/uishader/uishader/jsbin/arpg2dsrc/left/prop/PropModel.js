@@ -15,7 +15,6 @@ var prop;
                 if (this.metaDataView) {
                     this.metaDataView.destory();
                     this.metaDataView = null;
-                    this.lastNodel = null;
                 }
                 if ($ui instanceof materialui.ConstVec3NodeUI) {
                     this.metaDataView = new prop.Vec3PropMeshPanel();

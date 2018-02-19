@@ -2,6 +2,7 @@ var left;
 (function (left) {
     var ModelShowModel = /** @class */ (function () {
         function ModelShowModel() {
+            this.skipNum = 0;
         }
         ModelShowModel.getInstance = function () {
             if (!this._instance) {
@@ -35,10 +36,10 @@ var left;
             $buildMaterialShader.buildParamAry($treeMater);
             $buildMaterialShader.vertex = $buildMaterialShader.getVertexShaderString();
             $buildMaterialShader.fragment = $str;
-            console.log($buildMaterialShader.vertex);
-            console.log("-----------");
-            console.log($buildMaterialShader.fragment);
-            console.log("+++++++++++++");
+            //  console.log($buildMaterialShader.vertex);
+            //  console.log("-----------")
+            // console.log($buildMaterialShader.fragment);
+            console.log("+++++++++++++", this.skipNum++);
             $buildMaterialShader.encode();
             this.lightSpriteList.material.shader = $buildMaterialShader;
             this.lightSpriteList.material.program = $buildMaterialShader.program;

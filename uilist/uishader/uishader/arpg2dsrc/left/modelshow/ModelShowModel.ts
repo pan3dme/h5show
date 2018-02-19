@@ -31,6 +31,7 @@
             this.gridLineSprite = new GridLineSprite();
             this.lightSpriteList = new MaterialModelSprite();
         }
+        private skipNum: number=0
         public outShaderStr($treeMater: materialui.MaterialTree): void {
 
             var $str: string = $treeMater.shaderStr;
@@ -42,10 +43,10 @@
             $buildMaterialShader.vertex = $buildMaterialShader.getVertexShaderString();
             $buildMaterialShader.fragment = $str;
 
-            console.log($buildMaterialShader.vertex);
-            console.log("-----------")
-            console.log($buildMaterialShader.fragment);
-            console.log("+++++++++++++")
+          //  console.log($buildMaterialShader.vertex);
+          //  console.log("-----------")
+           // console.log($buildMaterialShader.fragment);
+            console.log("+++++++++++++", this.skipNum++)
 
             $buildMaterialShader.encode();
  

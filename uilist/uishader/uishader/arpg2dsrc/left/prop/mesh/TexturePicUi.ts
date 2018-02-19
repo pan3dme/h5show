@@ -98,6 +98,9 @@
         }
         public destory(): void {
             this.textLabelUIMeshVo.clear = true
+
+            var $ui: UICompenent = this.textLabelUIMeshVo.textLabelUIDisp2D.ui;
+            $ui.removeEventListener(InteractiveEvent.Down, this.butClik, this);
         }
         protected initView(): void {
             this.textLabelUIMeshVo.url = "";
@@ -110,7 +113,7 @@
         private $dulbelClikTm: number = 0;
         private _inputHtmlSprite: HTMLInputElement
         protected butClik(evt: InteractiveEvent): void {
-
+            console.log(TimeUtil.getTimer() , this.$dulbelClikTm)
             if (TimeUtil.getTimer() < this.$dulbelClikTm) {
                 this._inputHtmlSprite = <HTMLInputElement>document.createElement('input');
                 this._inputHtmlSprite.setAttribute('id', '_ef');

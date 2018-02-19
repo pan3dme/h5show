@@ -16,7 +16,6 @@
                 if (this.metaDataView) {
                     this.metaDataView.destory()
                     this.metaDataView = null;
-                    this.lastNodel = null;
                 }
                 if ($ui instanceof materialui.ConstVec3NodeUI) {
                     this.metaDataView = new Vec3PropMeshPanel();
@@ -30,6 +29,7 @@
                     this.showSciencePropPanel();
   
                 }
+
                 this.lastNodel = $ui;
                 this.metaDataView.data = $ui;
                 this.metaDataView.top = this._top

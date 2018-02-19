@@ -39,7 +39,7 @@ var materialui;
                 this.priorityList[this.nodeList[i].priority].push(this.nodeList[i]);
             }
             var resultStr = this._compileGlslServer.compile(this.priorityList, $materialTree);
-            console.log(resultStr);
+            // console.log(resultStr);
             left.ModelShowModel.getInstance().outShaderStr($materialTree);
         };
         MaterialCompile.prototype.setPriority = function ($node) {
