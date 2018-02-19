@@ -23,7 +23,7 @@
    
             this.left = 0;
             this.top = 0;
-            this.width=300
+            this.width=600
             this._bottomRender = new UIRenderComponent;
             this.addRender(this._bottomRender);
 

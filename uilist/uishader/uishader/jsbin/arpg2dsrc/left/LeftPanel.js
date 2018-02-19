@@ -33,7 +33,7 @@ var left;
             var _this = _super.call(this) || this;
             _this.left = 0;
             _this.top = 0;
-            _this.width = 300;
+            _this.width = 600;
             _this._bottomRender = new UIRenderComponent;
             _this.addRender(_this._bottomRender);
             _this._midRender = new UIRenderComponent;
