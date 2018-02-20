@@ -129,6 +129,10 @@ var left;
             Scene_data.uiStage.addEventListener(InteractiveEvent.Move, this.onMoveLine, this);
             this.initView();
             this.resize();
+            prop.PropModel.getInstance().moveTop(this.width + 60);
+            var $materialEvent = new materialui.MaterialEvent(materialui.MaterialEvent.SCENE_UI_TRUE_MOVE);
+            $materialEvent.v2d = new Vector2D(0, 0);
+            ModuleEventManager.dispatchEvent($materialEvent);
         };
         LeftPanel.prototype.butClik = function (evt) {
             switch (evt.target) {

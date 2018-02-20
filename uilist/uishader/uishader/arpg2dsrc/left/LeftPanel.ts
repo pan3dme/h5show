@@ -101,7 +101,6 @@
                 this.width = this.lastWidth + Tx;
                 this.resize();
                 prop.PropModel.getInstance().moveTop(this.width + 60)
-
                 var $materialEvent: materialui.MaterialEvent = new materialui.MaterialEvent(materialui.MaterialEvent.SCENE_UI_TRUE_MOVE)
                 $materialEvent.v2d = new Vector2D((this.width - $lastW) / materialui.MtlUiData.Scale, 0);
                 ModuleEventManager.dispatchEvent($materialEvent);
@@ -152,6 +151,11 @@
             this.initView()
             this.resize();
 
+
+            prop.PropModel.getInstance().moveTop(this.width + 60)
+            var $materialEvent: materialui.MaterialEvent = new materialui.MaterialEvent(materialui.MaterialEvent.SCENE_UI_TRUE_MOVE)
+            $materialEvent.v2d = new Vector2D(0, 0);
+            ModuleEventManager.dispatchEvent($materialEvent);
 
           
         }
