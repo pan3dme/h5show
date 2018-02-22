@@ -149,28 +149,15 @@
             this.lineContainer = new MaterialLineContainer()
             UIManager.getInstance().addUIContainer(this.lineContainer);
 
-
-
-            var readtxt: boolean = true
-            if (readtxt) {
-                this.readMaterialTree()
-            } else {
-               // MaterialCtrl.getInstance().addNodeUI(new ResultNodeUI())
-               // MaterialCtrl.getInstance().addNodeUI(new TextureSampleNodeUI())
-            }
-
+            this.readMaterialTree()
 
             document.addEventListener(MouseType.MouseWheel, ($evt: MouseWheelEvent) => { this.onMouseWheel($evt) });
             document.addEventListener(MouseType.MouseDown, ($evt: MouseEvent) => { this.onMouse($evt) });
             document.addEventListener(MouseType.MouseMove, ($evt: MouseEvent) => { this.onMouseMove($evt) });
             document.addEventListener(MouseType.MouseUp, ($evt: MouseEvent) => { this.onMouseUp($evt) });
 
-
-
             document.addEventListener(MouseType.KeyDown, ($evt: KeyboardEvent) => { this.onKeyDown($evt) })
             document.addEventListener(MouseType.KeyUp, ($evt: KeyboardEvent) => { this.onKeyUp($evt) })
-
-
            
             document.addEventListener("contextmenu", (event: any) => {
                 event.preventDefault();

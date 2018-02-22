@@ -145,14 +145,7 @@ var materialui;
             var _this = this;
             this.lineContainer = new materialui.MaterialLineContainer();
             UIManager.getInstance().addUIContainer(this.lineContainer);
-            var readtxt = true;
-            if (readtxt) {
-                this.readMaterialTree();
-            }
-            else {
-                // MaterialCtrl.getInstance().addNodeUI(new ResultNodeUI())
-                // MaterialCtrl.getInstance().addNodeUI(new TextureSampleNodeUI())
-            }
+            this.readMaterialTree();
             document.addEventListener(MouseType.MouseWheel, function ($evt) { _this.onMouseWheel($evt); });
             document.addEventListener(MouseType.MouseDown, function ($evt) { _this.onMouse($evt); });
             document.addEventListener(MouseType.MouseMove, function ($evt) { _this.onMouseMove($evt); });
