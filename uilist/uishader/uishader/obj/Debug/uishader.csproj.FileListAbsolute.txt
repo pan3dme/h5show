@@ -17,3 +17,10 @@ C:\wamp\www\h5show\uilist\uishader\uishader\obj\Debug\uishader.csproj.CoreCompil
 C:\wamp\www\h5show\uilist\uishader\uishader\obj\Debug\uishader.dll
 C:\wamp\www\h5show\uilist\uishader\uishader\obj\Debug\uishader.pdb
 C:\wamp\www\h5show\uilist\uishader\uishader\obj\Debug\uishader.csprojResolveAssemblyReference.cache
+E:\github\h5show\uilist\uishader\uishader\bin\uishader.dll.config
+E:\github\h5show\uilist\uishader\uishader\bin\uishader.dll
+E:\github\h5show\uilist\uishader\uishader\bin\uishader.pdb
+E:\github\h5show\uilist\uishader\uishader\obj\Debug\uishader.csprojResolveAssemblyReference.cache
+E:\github\h5show\uilist\uishader\uishader\obj\Debug\uishader.csproj.CoreCompileInputs.cache
+E:\github\h5show\uilist\uishader\uishader\obj\Debug\uishader.dll
+E:\github\h5show\uilist\uishader\uishader\obj\Debug\uishader.pdb
